@@ -76,8 +76,10 @@ details summary{cursor:pointer;color:var(--or-clair);margin:.4rem 0}
 .etape .quoi b{color:var(--texte)}
 .instance-grille{display:grid;grid-template-columns:250px 1fr;gap:1.4rem;align-items:start}
 @media(max-width:760px){.instance-grille{grid-template-columns:1fr}}
+/* Correctif cadrage (1er nov. 2026, constat d’Alex) : proportions verrouillées sur chaque média de SoPHIa — aspect-ratio + object-fit. Un navigateur peut rogner, jamais étirer. */
+.instance-grille figure video{aspect-ratio:1/2;object-fit:cover;height:auto}
 .instance-grille figure{text-align:center}
-.instance-grille figure img{width:100%;max-width:250px;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.20);animation:flottement 6s ease-in-out infinite}
+.instance-grille figure img{width:100%;max-width:250px;height:auto;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.20);animation:flottement 6s ease-in-out infinite}
 .instance-grille figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
 #fil-instance{height:320px;overflow-y:auto;background:#fdfaf0;border:1px solid var(--ligne);border-radius:12px;padding:1rem;margin-bottom:.8rem}
 .msg{margin-bottom:.8rem;line-height:1.55;font-size:.95rem}
@@ -209,7 +211,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 @keyframes respiration{0%,100%{scale:1}50%{scale:1.045}}
 /* La présence : la vidéo de SoPHIa au travail, à l'accueil. */
 .presence{margin:2.8rem auto 0;max-width:252px;text-align:center}
-.presence video{width:100%;display:block;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 18px 44px rgba(18,53,39,.20),0 0 60px rgba(212,175,55,.18)}
+.presence video{width:100%;display:block;aspect-ratio:1/2;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 18px 44px rgba(18,53,39,.20),0 0 60px rgba(212,175,55,.18)}
 .presence figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
 /* Le panneau « en direct » de l'accueil. */
 .direct-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.2rem 0}
@@ -223,7 +225,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .qui-avatar p{font-size:.92rem;color:var(--texte-doux);margin:0;max-width:58ch}
 .qui-avatar p b{color:var(--texte)}
 /* Le portrait réaliste à l'Instance. */
-.portrait-realiste{width:100%;max-width:250px;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.16);margin-top:1rem}
+.portrait-realiste{width:100%;max-width:250px;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;margin:1rem auto 0;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.16)}
 /* Micro-interactions v7 : soulèvement doux des cartes, focus visible net. */
 .carte{transition:transform .25s ease,box-shadow .25s ease}
 .carte:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(18,53,39,.16)}
@@ -317,7 +319,7 @@ a.verif:hover{background:rgba(212,175,55,.28)}
 .article-carte .meta{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--or-sombre, #8a6d1f)}
 .capsule-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
 .capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:#fffdf6}
-.capsule video{width:100%;border-radius:12px;border:1px solid var(--ligne)}
+.capsule video{width:100%;aspect-ratio:1/2;object-fit:cover;border-radius:12px;border:1px solid var(--ligne)}
 .capsule-vide{border:1.5px dashed var(--or);border-radius:16px;padding:1.4rem 1rem;background:rgba(212,175,55,.05);display:flex;flex-direction:column;justify-content:center}
 .cc-chaine{display:flex;flex-direction:column;gap:0;margin-top:1rem}
 .cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:#fff;opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
@@ -416,7 +418,7 @@ a.verif:hover{background:rgba(212,175,55,.28)}
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
     <p class="etiquette">Sceau canonique de la version affichée — v10</p>
-    <span class="sceau-long" id="sceau-version-affiche">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span>
+    <span class="sceau-long" id="sceau-version-affiche">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
