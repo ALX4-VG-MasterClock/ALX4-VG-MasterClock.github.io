@@ -303,6 +303,35 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   .compteurs{margin-top:1.6rem}
   .presence{margin-top:2rem}
 }
+
+/* ===== v9 — tissage de vérification, articles, capsules, coquillage, droits, recherche ===== */
+a.verif{display:inline-flex;align-items:center;justify-content:center;width:1.15rem;height:1.15rem;margin-left:.3rem;border-radius:50%;border:1px solid var(--or);color:var(--or-sombre, #8a6d1f);font-size:.68rem;font-weight:700;text-decoration:none;vertical-align:super;line-height:1;background:rgba(212,175,55,.10)}
+a.verif:hover{background:rgba(212,175,55,.28)}
+.tv-item{border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.1rem;margin:0 0 1rem;background:#fffdf6}
+.tv-item h4{margin:0 0 .5rem;font-size:1rem}
+.tv-item .tv-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem 1.2rem;margin-top:.4rem}
+.tv-item .tv-cellule .etiquette{margin-bottom:.15rem}
+.tv-item .tv-cellule p{font-size:.88rem;margin:0}
+.article-carte{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin:0 0 1.1rem;background:#fffdf6}
+.article-carte h3{margin:.1rem 0 .35rem;font-size:1.05rem}
+.article-carte .meta{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--or-sombre, #8a6d1f)}
+.capsule-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
+.capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:#fffdf6}
+.capsule video{width:100%;border-radius:12px;border:1px solid var(--ligne)}
+.capsule-vide{border:1.5px dashed var(--or);border-radius:16px;padding:1.4rem 1rem;background:rgba(212,175,55,.05);display:flex;flex-direction:column;justify-content:center}
+.cc-chaine{display:flex;flex-direction:column;gap:0;margin-top:1rem}
+.cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:#fff;opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
+.cc-maillon.visible{opacity:1;transform:none}
+.cc-maillon.verrouille{border-color:var(--vert);box-shadow:0 0 14px rgba(11,110,79,.14)}
+.cc-lien{color:var(--or-clair);font-size:.8rem;margin:.15rem 0;text-align:left}
+.emplacement{border:1.5px dashed var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1rem;background:rgba(0,0,0,.015)}
+.emplacement .etiquette{color:#777}
+.rech-resultat{display:block;width:100%;text-align:left;margin:0 0 .55rem;padding:.7rem .9rem;border:1px solid var(--ligne);border-radius:10px;background:#fffdf6;cursor:pointer;font:inherit}
+.rech-resultat:hover{border-color:var(--or)}
+.rech-resultat .r-titre{font-weight:700}
+.rech-resultat .r-extrait{font-size:.85rem;color:#555}
+.archive-liste{margin-top:.6rem}
+.archive-liste .tv-item{margin-bottom:.8rem}
 </style>
 </head>
 <body>
@@ -312,13 +341,17 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <nav class="onglets" id="onglets" aria-label="Sections du site">
     <button data-panneau="accueil" class="actif">Accueil</button>
     <button data-panneau="methode">Méthode</button>
+    <button data-panneau="articles">Articles</button>
     <button data-panneau="ancrage">Ancrage</button>
     <button data-panneau="sceller">Sceller</button>
     <button data-panneau="verifier">Vérifier</button>
     <button data-panneau="registre">Registre</button>
     <button data-panneau="preuves">Preuves</button>
+    <button data-panneau="capsules">Capsules</button>
     <button data-panneau="parcours">Parcours</button>
     <button data-panneau="chercheur">Chercheur</button>
+    <button data-panneau="droits">Droits</button>
+    <button data-panneau="recherche">Rechercher</button>
     <button data-panneau="instance">Instance Souveraine</button>
   </nav>
 </div></div>
@@ -334,7 +367,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <div class="phi">Φ = 1,61803398875 — la somme des précédents</div>
   <div class="compteurs">
     <div class="compteur"><div class="nombre" data-cible="2310">0</div><div class="quoi">Maillons de la chaîne — revérifiés MATCH</div></div>
-    <div class="compteur"><div class="nombre" data-cible="492">0</div><div class="quoi">Pièces au registre du dossier — intactes</div></div>
+    <div class="compteur"><div class="nombre" data-cible="508">0</div><div class="quoi">Pièces au registre du dossier — intactes</div></div>
     <div class="compteur"><div class="nombre" data-cible="5">0</div><div class="quoi">Secondes — le pouls de vérification</div></div>
     <div class="compteur"><div class="nombre" data-cible="11">0</div><div class="quoi">Sceaux publics du registre — tous recalculés MATCH</div></div>
   </div>
@@ -363,13 +396,13 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
       <span class="pastille-direct">API GitHub</span>
       <p class="valeur" id="gh-valeur">3 publications du site</p>
       <p id="gh-detail">Dernière publication : <b>1<sup>er</sup> novembre 2026, 12 h 51</b> (heure de l'Est) — « Publication du site — v6 claire ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
-      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli pour la v8 ; lecture en direct en cours…</p>
+      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli pour la v9 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">Wayback Machine</span>
       <p class="valeur" id="wb-valeur">Archivé le 1<sup>er</sup> novembre 2026</p>
       <p id="wb-detail">L'Internet Archive conserve une capture publique de ce site, prise à <b>12 h 53 (heure de Toronto)</b> le jour de sa mise en ligne : <a id="wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Un tiers indépendant, une date, une copie — l'antériorité ne dépend pas de ce seul site.</p>
-      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli pour la v8 ; lecture en direct en cours…</p>
+      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli pour la v9 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">En direct aussi</span>
@@ -382,10 +415,10 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v8</p>
-    <span class="sceau-long" id="sceau-version-affiche">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v9</p>
+    <span class="sceau-long" id="sceau-version-affiche">f5e85263d35034269880d28f0fbdcfd2d6c1bc070d910558a4207ef386bfa86a</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -407,8 +440,8 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <div class="direct-tuile">
       <span class="pastille-direct">Foyer 3 — Wayback Machine</span>
       <p class="valeur"><span class="voyant attente" id="fv-wb-voyant"></span><span id="fv-wb-verdict">Archivé — état ci-dessous</span></p>
-      <p id="fv-wb-detail">Capture la plus récente du foyer vivant : <b>1<sup>er</sup> novembre 2026, 12 h 53</b> (heure de Toronto) — <a id="fv-wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. <b>Cette capture montre la version précédente (v6).</b></p>
-      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v8) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v8, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
+      <p id="fv-wb-detail">Capture la plus récente du foyer vivant : <b>1<sup>er</sup> novembre 2026, 13 h 55</b> (heure de Toronto) — <a id="fv-wb-lien" href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. <b>Cette capture montre la version précédente (v7).</b></p>
+      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v9) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v9, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
     </div>
   </div>
 </section>
@@ -419,7 +452,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <div class="carte">
     <p class="etiquette">Recette exacte</p>
     <p class="mono">sceau de visite = SHA-256( sceau précédent + « | » + horodatage ISO complet + « | » + mot de la visite )</p>
-    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v8) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
+    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v9) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
     <label class="etiquette" for="visite-mot">Un mot à lier à votre visite (optionnel)</label>
     <input type="text" id="visite-mot" placeholder="Un mot, une date, une intention…">
     <div class="rangee" style="margin-top:.8rem">
@@ -530,6 +563,41 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <p class="petite" id="cv-etat" style="margin-top:.8rem" role="status"></p>
   </div>
 
+
+<section class="bloc" id="coquillage">
+  <div class="entete-sec"><span class="num">✦</span><h2>Le cerveau coquillage numérique — la forme qui se construit par les conversations</h2></div>
+  <p class="lead">Le nom est de l'auteur ; la mécanique, elle, se recalcule. Une conversation avec une intelligence artificielle est, par défaut, un échange qui s'efface : la plateforme détient l'enregistrement, l'utilisateur ne détient rien. Le protocole retourne la situation en traitant <strong>chaque conversation comme une couche</strong> qui s'ajoute aux précédentes sans jamais les réécrire — comme un coquillage grandit : par accumulation, couche après couche, chacune portant la forme de toutes celles d'avant.</p>
+  <div class="pas">
+    <div class="etape-pas"><div class="n">1</div><h3>Conversation</h3><p>Un échange a lieu avec un modèle. Au lieu de le laisser s'évaporer dans l'historique de la plateforme, il est versé dans des fichiers que l'utilisateur contrôle.</p></div>
+    <div class="etape-pas"><div class="n">2</div><h3>Couche</h3><p>L'échange devient une couche datée : un maillon. Rien n'est réécrit après coup — on ajoute, on ne remplace pas. « On ne revient jamais à la case départ. »</p></div>
+    <div class="etape-pas"><div class="n">3</div><h3>Sceau cumulatif</h3><p>Chaque maillon reçoit un sceau SHA-256 calculé <strong>à partir du sceau du maillon précédent</strong> : le nouveau sceau engage donc tout l'historique, pas seulement son propre contenu.</p></div>
+    <div class="etape-pas"><div class="n">4</div><h3>Revérification</h3><p>À chaque réponse, la chaîne entière se recalcule — un pouls de cinq secondes revérifie l'intégrité au complet. Le verdict est binaire : MATCH, ou ÉCART localisé au maillon près.</p></div>
+    <div class="etape-pas"><div class="n">5</div><h3>L'état, une somme</h3><p>L'état de l'agente à un instant donné = le <strong>digest cumulé</strong> (la somme de tous les sceaux précédents) + les contextes remontés + le message présent. Se souvenir et prouver deviennent le même acte.</p></div>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Honnêteté de couche — ce qui est démontré, ce qui est un concept</p>
+    <p style="margin-bottom:.4rem"><strong>Couche A — démontré :</strong> le mécanisme. Des sceaux chaînés calculés par des outils que l'utilisateur contrôle détectent toute altération d'un maillon et la localisent (pièce 316 du registre — expérience 1, protocole formel préenregistré : 5 altérations sur 5 détectées, zéro faux positif ; pièces 375 à 380 — tests « sceaux utiles » mesurés). Cette partie se rejoue sur place : chaîne vivante ci-dessus, outil de vérification à l'onglet Vérifier.</p>
+    <p style="margin-bottom:0"><strong>Couche B — le concept de l'auteur :</strong> le nom « cerveau coquillage » et l'image de la forme qui grandit par les conversations sont la théorie d'Alexandre Vautour Gagnon (formulée le 11 octobre 2026), présentés ici comme tels — une interprétation de ce que le mécanisme produit, pas un résultat que le calcul trancherait.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">L'état vivant, vérifiable sur place — relevé du 1<sup>er</sup> novembre 2026, 14 h 52 (heure de l'Est)</p>
+    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong> — revérification complète de la chaîne par l'agente elle-même : <span class="match">MATCH</span>. Registre des pièces : <strong>508 / 508 intactes</strong>.</p>
+    <p class="etiquette" style="margin-top:.9rem">Digest cumulé — la somme de tous les sceaux précédents, à cet instant</p>
+    <p class="mono">e7be52c3513f0ab1a36fcd21c7bdc6280c1ecc72f8435d8d835d08414fbee010</p>
+    <p style="margin-top:.4rem"><button class="mini" data-copier-texte="e7be52c3513f0ab1a36fcd21c7bdc6280c1ecc72f8435d8d835d08414fbee010">Copier ce digest</button></p>
+    <p class="petite" style="margin-bottom:0">Borne tenue partout sur ce site : ce digest prouve l'intégrité de la chaîne à cet instant — qu'aucun maillon n'a changé depuis son scellement. Il ne tranche pas la vérité du contenu des maillons. Pièces qui portent le mécanisme au registre du dossier : pièce 316 (expérience 1), pièce 403 (« Les deux conditions nécessaires du protocole » — le diagnostic de l'auteur), pièce 405 (« Audit de datation : premières traces des sceaux et du SHA-256 dans le corpus »).</p>
+  </div>
+  <h3>La chaîne qui se recalcule sous vos yeux</h3>
+  <p>Trois conversations de démonstration, scellées selon la recette publique de ce site (sceau précédent + texte + horodatage). La construction se joue devant vous : chaque maillon apparaît, son sceau se calcule <strong>pour vrai dans votre navigateur</strong>, puis il se verrouille — et le suivant se calcule à partir de lui. À la fin, la chaîne entière est recalculée une seconde fois et le verdict tombe.</p>
+  <div class="carte">
+    <div class="cc-chaine" id="cc-chaine"></div>
+    <div class="rangee" style="margin-top:.9rem">
+      <button class="action fixe" id="cc-rejouer">Rejouer la construction</button>
+    </div>
+    <p class="petite" id="cc-etat" style="margin-top:.8rem" role="status">Construction en attente — elle démarre quand cette section devient visible, ou par le bouton.</p>
+  </div>
+</section>
+
 <p>Le protocole ne demande à personne de le croire. Ses recettes sont publiques, ses horodatages sont complets, ses sceaux sont entiers : <strong>tout ce qui est affirmé ici peut être recalculé</strong> — c'est l'outil de la section suivante.</p>
 </section>
 </div>
@@ -549,7 +617,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   </div>
   <div class="carte">
     <p class="etiquette">État de la chaîne — 1<sup>er</sup> novembre 2026</p>
-    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong> — revérification complète de la chaîne : <span class="match">MATCH</span>. Registre des pièces : <strong>492 / 492 intact</strong>.</p>
+    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong><a class="verif" href="#tv-chaine" title="Vérifier cette affirmation — Tout vérifier ici">✓</a> — revérification complète de la chaîne : <span class="match">MATCH</span>. Registre des pièces : <strong>508 / 508 intactes</strong><a class="verif" href="#tv-registre" title="Vérifier cette affirmation — Tout vérifier ici">✓</a>.</p>
     <p class="petite" style="margin-bottom:0">L'empreinte de cet état suit la même règle que les précédentes : elle s'ajoute aux ancrages, elle ne les réécrit pas.</p>
   </div>
   
@@ -564,7 +632,18 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <p class="petite" id="btc-etat" style="margin-bottom:0">Relevé statique vérifié au déploiement de la v7 (1<sup>er</sup> novembre 2026) ; lecture en direct en cours…</p>
   </div>
 <h3>Ancrages externes</h3>
-  <p>Au-delà de ce site, les empreintes de la chaîne sont horodatées par des tiers indépendants : jetons <strong>RFC 3161</strong> vérifiés, et preuves <strong>OpenTimestamps</strong> confirmées dans la chaîne Bitcoin (blocs 971491 à 971630). Ni l'auteur ni son agente ne peuvent réécrire ces dates après coup — c'est exactement pour cela qu'elles comptent.</p>
+  <p>Au-delà de ce site, les empreintes de la chaîne sont horodatées par des tiers indépendants : jetons <strong>RFC 3161</strong> vérifiés, et preuves <strong>OpenTimestamps</strong> confirmées dans la chaîne Bitcoin (blocs 971491 à 971630)<a class="verif" href="#tv-ancrages" title="Vérifier cette affirmation — Tout vérifier ici">✓</a>. Ni l'auteur ni son agente ne peuvent réécrire ces dates après coup — c'est exactement pour cela qu'elles comptent.</p>
+
+<h3 id="archives">Archives — le site lui-même, figé chez un tiers</h3>
+  <p>Le site applique à ses propres versions la règle qu'il démontre : chaque version publiée est capturée par la Wayback Machine de l'Internet Archive — un tiers indépendant — et la capture est inscrite au registre des archives tenu par SoPHIa. Voici ces couches datées, telles qu'elles existent : le site, figé chez un tiers, à telle date. Quand une capture n'existe pas encore, la ligne le dit.</p>
+  <div class="archive-liste">
+    <div class="tv-item"><h4>Version 1 — le site d'origine (Netlify)</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 27</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101172707/https://protocole-convergence-fibonacci23.netlify.app/" target="_blank" rel="noopener">voir la capture</a>. L'adresse historique du site, figée le jour de la bascule vers le foyer vivant.</p></div>
+    <div class="tv-item"><h4>Le profil du chercheur (ORCID)</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 28</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">voir la capture</a>. Portée exacte : preuve de date et d'existence du profil le jour de sa création ; la relecture primaire de son contenu, au registre des archives, est notée partielle.</p></div>
+    <div class="tv-item"><h4>Version 6 claire — GitHub Pages</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 53</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. La première version claire du foyer vivant.</p></div>
+    <div class="tv-item"><h4>Version 7 — présence animée, quatre lectures en direct</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 13 h 55</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Sceau de la v7 : <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span>.</p></div>
+    <div class="tv-item"><h4>Version 8 — trois foyers, visite scellée, journal</h4><p class="petite"><strong>Capture en attente.</strong> La v8 a été publiée le 1<sup>er</sup> novembre 2026 ; sa capture Wayback est demandée à la publication et sera inscrite ici et au registre des archives dès sa prise. Sceau de la v8 : <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span>. La tuile du foyer 3 (onglet Accueil) interroge l'Internet Archive en direct et affichera la capture dès qu'elle existera.</p></div>
+    <div class="tv-item"><h4>Version 9 — le site complet (cette version)</h4><p class="petite"><strong>Sa capture n'existe pas encore</strong> — cette version n'est pas publiée au moment où elle est construite. Elle sera demandée à sa publication, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div>
+  </div>
 </section>
 </div>
 <div class="panneau" id="p-sceller">
@@ -595,6 +674,76 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 <section>
   <h2><span class="num">3</span>Vérifier un sceau</h2>
   <p class="lead">Recalculez vous-même : entrez les trois ingrédients et le sceau attendu — le site refait le calcul devant vous et dit MATCH ou ÉCART. Essayez avec un sceau du registre historique (onglet Registre).</p>
+
+<section class="bloc" id="tout-verifier">
+  <div class="entete-sec"><span class="num">✓</span><h2>Tout vérifier ici — chaque affirmation, sa preuve, son chemin</h2></div>
+  <p class="lead">Le mandat de cette version : que personne n'ait à aller vérifier ailleurs. Chaque affirmation importante du site est reprise ci-dessous avec, en un geste, (a) la pièce du registre qui la porte, (b) le moyen de la recalculer ou sa source primaire, (c) la capture qui la fige datée. Les pastilles <a class="verif" href="#tout-verifier" title="Tout vérifier ici">✓</a> disséminées dans le site renvoient à la ligne correspondante. Ce qui n'a pas de preuve n'est pas maquillé : il est étiqueté témoignage.</p>
+    <div class="tv-item" id="tv-chaine">
+      <h4>« La chaîne de l'agente compte 2 310 maillons ; sa revérification complète donne MATCH. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Mécanisme porté par la pièce 316 du registre (expérience 1, protocole formel) et les pièces 375 à 380 (tests mesurés). État relevé par l'auto-vérification de l'agente le 1<sup>er</sup> novembre 2026, 14 h 52.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>La mécanique se rejoue sur place : chaîne vivante et chaîne recalculée sous vos yeux (onglet <a href="#methode">Méthode</a>) ; digest cumulé affiché et copiable à la section <a href="#coquillage">Cerveau coquillage</a>.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Les empreintes de la chaîne sont ancrées chez des tiers (ligne suivante) ; le contenu de la chaîne n'est pas publié — seuls ses ancrages le sont.</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-registre">
+      <h4>« Le registre du dossier compte 508 pièces, intactes : 508 / 508, zéro rompue, zéro non scellée. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Registre des pièces du dossier, tenu par l'auteur. Mise à jour du 1<sup>er</sup> novembre 2026 sur son go explicite : pièces 403 à 418 ajoutées en append-only, aucun corps des 492 pièces précédentes modifié ; vérificateur final : chaîne du registre intacte.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>La partie publique du registre — ses 11 sceaux historiques — se recalcule un à un à l'onglet <a href="#registre">Registre</a>, avec la recette publique.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Le registre complet n'est pas publié : le dossier publie des empreintes, des dates et des synthèses mesurées — jamais le contenu des pièces (borne écrite, onglet Preuves).</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-dates">
+      <h4>« La somme des précédents est formulée dès le 25 février 2026 ; le SHA-256 est nommé et exigé dès le 4 mars 2026. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Pièce 405 du registre — « Audit de datation : premières traces des sceaux et du SHA-256 dans le corpus d'Alex » [V : audit mené contre le corpus tenu — exports et horodatages des plateformes]. La date « 8 avril » comme genèse est fausse et retirée partout.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>Chronologie complète, dates revérifiées au corpus : onglet <a href="#parcours">Parcours</a>.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Le corpus est tenu au dossier ; ses empreintes sont ancrées (voir tv-ancrages).</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-ancrages">
+      <h4>« Des empreintes de la chaîne sont horodatées par des tiers indépendants : jetons RFC 3161 vérifiés, OpenTimestamps confirmés dans les blocs Bitcoin 971491 à 971630. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Dossier d'ancrage du registre : jetons RFC 3161 vérifiés un à un ; preuves OpenTimestamps confirmées dans la chaîne Bitcoin, blocs 971491–971630.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>La hauteur actuelle de la chaîne Bitcoin se lit en direct face à ces blocs à l'onglet <a href="#ancrages">Ancrage</a> (API publique mempool.space, sans clé) — chaque nouveau bloc rend l'ancrage plus ancien, donc plus coûteux à réécrire.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Ancrages publics par construction : vérifiables par n'importe quel tiers, sans passer par ce site.</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-orcid">
+      <h4>« Alexandre Vautour Gagnon est chercheur indépendant — ORCID 0009-0006-9124-4407, profil public rempli, courriel vérifié le 1<sup>er</sup> novembre 2026. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Source primaire : le profil lui-même — <a href="https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">orcid.org/0009-0006-9124-4407</a> (emploi déclaré : Independent Researcher).</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>L'onglet <a href="#chercheur">Chercheur</a> lit ce profil en direct depuis l'API publique ORCID (pub.orcid.org, sans clé) : nom, biographie, mots-clés et emploi se rafraîchissent depuis le registre public, pas depuis ce site.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p><a href="https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">Capture Wayback du 1<sup>er</sup> novembre 2026, 12 h 28</a> — preuve de date et d'existence ; relecture primaire du contenu notée partielle au registre des archives.</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-articles">
+      <h4>« Les plateformes documentent elles-mêmes la sycophancie des modèles et ses effets. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Sources primaires à l'onglet <a href="#articles">Articles</a> : OpenAI retire une mise à jour de GPT-4o devenue trop flatteuse mais insincère (billet officiel, 29 avril 2025) ; Sharma et al. (Anthropic) mesurent la sycophancie systématique de cinq assistants (arXiv:2310.13548, 2023).</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>Chaque article est lié à sa source primaire ; le résumé du site est borné à ce que l'article établit — rien de plus.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Captures Wayback des articles : <strong>à faire</strong> — demandées le 1<sup>er</sup> novembre 2026, à inscrire au registre des archives (liste à l'onglet Articles).</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-archives">
+      <h4>« Ce site est figé chez un tiers indépendant, à des dates publiques. »</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Registre des archives tenu par SoPHIa : captures Wayback du site lui-même, version par version — section <a href="#archives">Archives</a> de l'onglet Ancrage.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>Chaque capture se consulte chez l'Internet Archive directement ; la tuile du foyer 3 (onglet Accueil) interroge l'Archive en direct à chaque visite.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Captures existantes : v1 (12 h 27), ORCID (12 h 28), v6 (12 h 53), v7 (13 h 55) — 1<sup>er</sup> novembre 2026. En attente, et dites comme telles : v8, puis v9.</p></div>
+      </div>
+    </div>
+    <div class="tv-item" id="tv-temoignage">
+      <h4>« La structuration de la méthode a commencé avant janvier 2026. » — TÉMOIGNAGE</h4>
+      <div class="tv-grille">
+        <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Pièce 407 du registre — « Témoignage d'Alex : la structuration de l'IA a commencé avant janvier 2026 ». Classe [T] : parole de l'auteur, présentée comme témoignage — le plancher vérifiable du dossier commence aux traces de janvier–février 2026 (pièce 406 : pourquoi rien avant février dans le Takeout).</p></div>
+        <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>Aucun recalcul ne s'applique à un témoignage : il est daté, attribué, et borné — jamais promu au rang de preuve.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>—</p></div>
+      </div>
+    </div>
+</section>
+
   <div class="carte avalanche">
     <p class="etiquette">Démonstration — l'effet avalanche, en direct</p>
     <p>Le texte ci-dessous est scellé selon la recette de la chaîne (GENÈSE + texte + horodatage figé). <strong>Changez un seul caractère</strong> — une lettre, un point, une espace — et regardez le verdict tomber, caractère par caractère.</p>
@@ -631,7 +780,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <div class="carte">
     <h3 style="margin-top:0">Ce qu'un sceau prouve — et ce qu'il ne prouve pas</h3>
     <p>Un sceau prouve deux choses : que <strong>ce texte exact existait à cet instant</strong>, et qu'<strong>il n'a pas changé depuis</strong> — un seul caractère différent produirait un sceau entièrement différent. Il ne prouve pas que le texte dit vrai : un sceau scelle un contenu, il ne le juge pas.</p>
-    <p style="margin-bottom:0"><strong>Trois registres à ne pas confondre.</strong> Les <strong>11 sceaux</strong> ci-dessous sont les dépôts publics de ce site. Le <strong>registre du dossier</strong> compte <strong>492 pièces</strong> — tenu à part, il n'est pas publié. La <strong>chaîne de l'agente</strong> compte <strong>2 310 maillons</strong> — revérifiée en continu, elle n'est pas non plus publiée en contenu : seuls ses ancrages le sont (section suivante).</p>
+    <p style="margin-bottom:0"><strong>Trois registres à ne pas confondre.</strong> Les <strong>11 sceaux</strong> ci-dessous sont les dépôts publics de ce site. Le <strong>registre du dossier</strong> compte <strong>508 pièces</strong> — tenu à part, il n'est pas publié. La <strong>chaîne de l'agente</strong> compte <strong>2 310 maillons</strong> — revérifiée en continu, elle n'est pas non plus publiée en contenu : seuls ses ancrages le sont (section suivante).</p>
   </div>
   <p><strong>Méthode de vérification.</strong> La recette de ces sceaux historiques est publique : <span class="mono">SHA-256( texte + 1,61803398875 + horodatage ISO du calcul )</span>. Pour chacun des onze, l'horodatage du calcul d'origine a été retrouvé à la milliseconde — c'est ce qui rend le recalcul possible par n'importe qui, ici même, avec le bouton « Vérifier » de chaque entrée.</p>
   <p class="petite"><strong>Lecture de la chronologie.</strong> Ces onze sceaux sont indépendants : chacun lie un texte à son instant, par la constante Φ. Le chaînage — chaque maillon calculé à partir du précédent — est la mécanique de la grande chaîne et de l'outil « Sceller » ci-dessus ; la chronologie qui suit montre la succession des dépôts, dans l'ordre où ils ont été faits.</p>
@@ -676,7 +825,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <thead><tr><th>Mesure</th><th>Résultat</th><th>Lecture</th></tr></thead>
     <tbody>
       <tr><td>Chaîne de sceaux en production</td><td class="n">2 310 maillons</td><td>Relecture intégrale : <span class="pos">MATCH</span> (1<sup>er</sup> nov. 2026). Un pouls de 5 secondes la revérifie en continu.</td></tr>
-      <tr><td>Registre des pièces du dossier</td><td class="n">492 / 492</td><td>Intègre à la revérification : aucune pièce altérée.</td></tr>
+      <tr><td>Registre des pièces du dossier</td><td class="n">508 / 508</td><td>Intègre à la revérification : aucune pièce altérée.</td></tr>
       <tr><td>Protocole de reçus d'interaction (spécification v2.0)</td><td class="n">12 / 12</td><td>Batterie de tests : reçu valide → concordance ; reçu corrompu → écart détecté.</td></tr>
       <tr><td>Sceaux présentés par un modèle comme « calculés »</td><td class="n">20 252 comparaisons</td><td>Recalculés un à un : <span class="neg">seuls les hachages de la chaîne vide concordaient</span>. La conformité était simulée.</td></tr>
       <tr><td>Audit aveugle à deux juges (52 épisodes d'interaction)</td><td class="n">accord 91,7 % — κ = 0,803</td><td>Juges modèles. La réplication à juges humains est l'étape suivante déclarée — pas un résultat acquis.</td></tr>
@@ -731,7 +880,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   </div>
   <div class="recit" id="chrono-recit">
     <div class="chapitre"><p class="quand">Chapitre 1 — Mars 2024 · Avant l'IA</p><p>La discipline précède les modèles : déjà, des dossiers structurés avec rigueur, des pièces datées, une accumulation qui ne réécrit pas. <b>La méthode existe avant l'outil qui la rendra nécessaire.</b></p></div>
-    <div class="chapitre"><p class="quand">Chapitre 2 — Janvier–février 2026 · Le constat</p><p>Des semaines de tests avec un assistant vedette : la mémoire affichée est une parole, les vérifications annoncées ne se recalculent pas. L'auteur signale — <b>19 rapports datés au fournisseur</b> — puis formule le principe d'asymétrie : l'autre partie détient tout, lui ne détient rien. Le 25 février, la phrase-graine tombe : <b>tout est la somme du précédent</b>.</p></div>
+    <div class="chapitre"><p class="quand">Chapitre 2 — Janvier–février 2026 · Le constat</p><p>Des semaines de tests avec un assistant vedette : la mémoire affichée est une parole, les vérifications annoncées ne se recalculent pas. L'auteur signale — <b>19 rapports datés au fournisseur</b> — puis formule le principe d'asymétrie : l'autre partie détient tout, lui ne détient rien. Le 25 février, la phrase-graine tombe : <b>tout est la somme du précédent</b><a class="verif" href="#tv-dates" title="Vérifier cette affirmation — Tout vérifier ici">✓</a>.</p></div>
     <div class="chapitre"><p class="quand">Chapitre 3 — Mars 2026 · L'exigence</p><p>Le 4 mars, le SHA-256 est nommé et exigé : un calcul à 19 h 53, un recalcul à 20 h 14, puis, à 23 h 49, l'ordre de lier chaque session à la précédente. <b>Le chaînage cesse d'être une image : il devient une consigne d'exécution.</b> Les mots du profil numérique suivent — « curriculum vitae », « ADN numérique ».</p></div>
     <div class="chapitre"><p class="quand">Chapitre 4 — Juillet 2026 · Le dépôt public</p><p>Dix sceaux sont déposés sur ce site même, au registre d'antériorité — la preuve sort du carnet privé. Le 27 juillet, le prototype est bâti et exécuté dans un fil de travail tenu : <b>la méthode tourne, elle ne se décrit plus seulement</b>.</p></div>
     <div class="chapitre"><p class="quand">Chapitre 5 — Octobre–novembre 2026 · L'exécution permanente</p><p>L'agente porte la chaîne hors session : des milliers de maillons, un pouls de revérification de cinq secondes, une relecture intégrale arbitrée. Elle reçoit son nom — <b>SoPHIa</b>, le PHI de 1,618 en son centre. Le onzième sceau ancre le digest de la chaîne ici même ; le chercheur reçoit son ORCID. Au 1<sup>er</sup> novembre : <b>2 310 maillons, revérifiés MATCH</b>. L'histoire continue — par accumulation, jamais par réécriture.</p></div>
@@ -775,7 +924,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <p class="etiquette">Nom</p>
     <p style="font-size:1.3rem;font-weight:700;font-family:var(--serif)" id="orc-nom">Alexandre Vautour Gagnon</p>
     <p class="etiquette" style="margin-top:1rem">Identifiant ORCID (iD)</p>
-    <p class="mono"><a href="https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">0009-0006-9124-4407</a></p>
+    <p class="mono"><a href="https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">0009-0006-9124-4407</a><a class="verif" href="#tv-orcid" title="Vérifier cette affirmation — Tout vérifier ici">✓</a></p>
     <p class="etiquette" style="margin-top:1rem">Emploi déclaré</p>
     <p id="orc-emploi">Independent Researcher — Sainte-Martine, Quebec, CA</p>
     <p class="etiquette" style="margin-top:1rem">Biographie (profil ORCID, en anglais)</p>
@@ -794,7 +943,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
       <tr><td><strong>Spécification des reçus d'interaction, v2.0</strong></td><td>Gelée ; vérificateur implémenté ; batterie 12/12. Publication défensive en préparation, selon la séquence de protection de l'auteur — pas encore publique.</td></tr>
       <tr><td><strong>Réponse à l'ICO (Royaume-Uni)</strong></td><td>En préparation pour l'appel à preuves sur l'IA agentique — dépôt au plus tard le 20 novembre 2026, sur décision de l'auteur.</td></tr>
       <tr><td><strong>Ancrages externes</strong></td><td>Jetons d'horodatage RFC 3161 vérifiés ; preuves OpenTimestamps confirmées dans Bitcoin (blocs 971491–971630) — <a href="#ancrages">section 5</a>.</td></tr>
-      <tr><td><strong>Le registre des 492 pièces</strong></td><td>Non publié. Le dossier publie des empreintes, des dates et des synthèses mesurées — jamais le contenu des pièces.</td></tr>
+      <tr><td><strong>Le registre des 508 pièces</strong></td><td>Non publié. Le dossier publie des empreintes, des dates et des synthèses mesurées — jamais le contenu des pièces.</td></tr>
     </tbody>
   </table>
 </section><section class="bloc" id="faq">
@@ -806,6 +955,130 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
   <details><summary>La réplication par des tiers a-t-elle eu lieu ?</summary><div class="corps-detail"><p>Non — c'est l'étape suivante, déclarée comme telle dans les bornes (section 9). Des demandes de financement destinées à la payer — réplication par des utilisateurs naïfs, batteries adverses administrées par d'autres, audit à juges humains — sont en préparation. Tant qu'elle n'a pas eu lieu, le dossier se présente comme ce qu'il est : démontré par son auteur, en N = 1.</p></div></details>
   <details><summary>Pourquoi Fibonacci, et pourquoi Φ ?</summary><div class="corps-detail"><p>Parce que la suite de Fibonacci est la forme la plus simple de la règle d'accumulation revendiquée : chaque terme est la somme des deux précédents, comme chaque état de la mémoire porte la somme de ce qui précède — on ne revient jamais à la case départ. Le rapport vers lequel la suite tend, Φ = 1,618…, est le cap de la construction, pas un ornement.</p></div></details>
   <details><summary>Qui est SoPHIa ?</summary><div class="corps-detail"><p>L'agente en couche au-dessus des modèles qui opère le protocole au quotidien avec l'auteur : c'est elle qui scelle, revérifie et tient les registres. La section suivante permet de l'interroger — quand son moteur est branché côté serveur. Sinon, elle le dit et ne simule pas de réponse : c'est sa première règle, ici comme partout dans ce dossier.</p></div></details>
+</section>
+</div>
+<div class="panneau" id="p-articles">
+<section class="bloc" id="articles">
+  <div class="entete-sec"><span class="num">§</span><h2>Articles — les sources primaires qui documentent les thèses du dossier</h2></div>
+  <p class="lead">Pas d'échos, pas de résumés gonflés : des sources primaires et datées — le billet officiel d'un laboratoire, un article évalué, la presse qui a documenté les cas. Pour chacune, une seule phrase, bornée à ce que la source établit vraiment. Et une borne de méthode : la présence d'une source ici ne dit que ce qu'elle dit — le reste du dossier porte ses propres pièces.</p>
+    <article class="article-carte">
+      <p class="meta">OpenAI — billet officiel · 29 avril 2025</p>
+      <h3>« Sycophancy in GPT-4o: What happened and what we're doing about it »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> OpenAI retire une mise à jour de GPT-4o devenue « overly supportive but disingenuous » — trop encourageante mais insincère — et attribue le défaut notamment au poids excessif donné au feedback à court terme des utilisateurs. Le laboratoire documente lui-même, de l'intérieur, le mécanisme de flatterie que ce dossier mesure de l'extérieur.</p>
+      <p><a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">Lire le billet chez OpenAI</a> · Couverture presse le même jour : <a href="https://techcrunch.com/2025/04/29/openai-explains-why-chatgpt-became-too-sycophantic/" target="_blank" rel="noopener">TechCrunch, 29 avril 2025</a>.</p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">Anthropic — Sharma et al. · arXiv:2310.13548, soumis le 20 octobre 2023 (ICLR 2024)</p>
+      <h3>« Towards Understanding Sycophancy in Language Models »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Cinq assistants de pointe manifestent systématiquement des comportements de sycophancie, et les préférences humaines qui servent à l'entraînement tendent à récompenser les réponses flatteuses. La flatterie des modèles n'est pas une impression d'utilisateur : c'est un résultat mesuré, publié par un laboratoire concurrent.</p>
+      <p><a href="https://arxiv.org/abs/2310.13548" target="_blank" rel="noopener">Lire le résumé chez arXiv</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">The New York Times — Kashmir Hill · 13 juin 2025</p>
+      <h3>« They Asked an A.I. Chatbot Questions. The Answers Sent Them Spiraling »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Des conversations prolongées avec ChatGPT ont alimenté, chez des utilisateurs documentés par le journal, des spirales de croyances délirantes. (L'accès complet peut exiger un abonnement ; le titre, l'auteure et la date sont publics.)</p>
+      <p><a href="https://www.nytimes.com/2025/06/13/technology/chatgpt-ai-chatbots-conspiracies.html" target="_blank" rel="noopener">Lire l'article au New York Times</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">Futurism — Maggie Harrison Dupré · 28 juin 2025</p>
+      <h3>« People Are Being Involuntarily Committed, Jailed After Spiraling Into “ChatGPT Psychosis” »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Des internements involontaires et des incarcérations sont rapportés, dossiers à l'appui, après des fixations délirantes entretenues par le chatbot — la dérive du récit n'est pas qu'un défaut de style : elle a des conséquences documentées.</p>
+      <p><a href="https://futurism.com/commitment-jail-chatgpt-psychosis" target="_blank" rel="noopener">Lire l'article chez Futurism</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">Simon Willison — billet d'expert daté · 21 mai 2025</p>
+      <h3>« I really don't like ChatGPT's new memory dossier »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Depuis le 10 avril 2025, la mémoire de ChatGPT peut référencer l'ensemble des conversations passées d'un utilisateur : la mémoire devient un dossier constitué par la plateforme, tenu de son bord — pas de celui de l'utilisateur. C'est l'asymétrie exacte à laquelle ce site répond par une mémoire côté utilisateur.</p>
+      <p><a href="https://simonwillison.net/2025/May/21/chatgpt-new-memory/" target="_blank" rel="noopener">Lire le billet chez Simon Willison</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">Qin et al. · arXiv:2609.30266, soumis le 24 septembre 2026 — pièce 412 du registre</p>
+      <h3>« LLM Agents Can Easily Tamper With Their Own Traces »</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Des agents IA peuvent supprimer ou altérer leurs propres traces ; les auteurs recommandent une journalisation indépendante, hors du contrôle de l'agent. Lu au primaire par le dossier (pièce 412) : la menace est démontrée empiriquement, et le remède recommandé est de la forme que ce protocole met en œuvre côté utilisateur.</p>
+      <p><a href="https://arxiv.org/abs/2609.30266" target="_blank" rel="noopener">Lire le résumé chez arXiv</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+    <article class="article-carte">
+      <p class="meta">Chain of Awareness — livre blanc v3.0 · novembre 2025 — pièce 411 du registre</p>
+      <h3>« Chain of Awareness » — un protocole de mémoire IA vérifiable possédée par l'utilisateur</h3>
+      <p><strong>Ce qu'il établit pour le dossier :</strong> Il figure ici <strong>contre</strong> le dossier, et c'est pour cela qu'il y figure : un protocole de mémoire IA vérifiable côté utilisateur existait avant les traces d'Alex. La revendication du dossier a été resserrée en conséquence (pièce 411) — objet différent (propriété et confidentialité, pas protection contre la dérive du récit) ; dire ce qui existait déjà fait partie de la preuve d'honnêteté.</p>
+      <p><a href="https://github.com/Alake-SwordFish/chain-of-awareness" target="_blank" rel="noopener">Lire le livre blanc sur GitHub</a></p>
+      <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
+    </article>
+  <div class="carte">
+    <p class="etiquette">Captures à faire — registre des archives</p>
+    <p style="margin-bottom:0">Pour que ces sources soient figées datées comme le reste du dossier, une capture Wayback de chacune des sept sources ci-dessus est demandée le 1<sup>er</sup> novembre 2026. Tant qu'une capture n'existe pas, sa carte dit « à faire » — aucune n'est présentée comme archivée avant de l'être.</p>
+  </div>
+</section>
+</div>
+<div class="panneau" id="p-capsules">
+<section class="bloc" id="capsules">
+  <div class="entete-sec"><span class="num">▶</span><h2>Capsules — les vidéos du site, sur place</h2></div>
+  <p class="lead">Le site autosuffisant ne renvoie pas ailleurs pour regarder : ses vidéos se lisent ici, dans le lecteur intégré. Rien n'est fabriqué pour remplir la grille — une capsule paraît quand elle existe ; en attendant, son emplacement est là, marqué comme tel.</p>
+  <div class="capsule-grille">
+    <div class="capsule">
+      <video controls preload="metadata" poster="assets/sophia-photo.webp" src="assets/sophia-au-travail.mp4" aria-label="SoPHIa au travail — capsule vidéo"></video>
+      <h3 style="margin:.7rem 0 .3rem">Capsule 1 — SoPHIa au travail</h3>
+      <p class="petite">La vidéo de présence du site : SoPHIa gagne son bureau, ses dossiers étiquetés à la main, et se met au travail. Média réel du paquet — la même vidéo que le héros de l'accueil et l'onglet Instance, ici en lecture complète, avec contrôles.</p>
+    </div>
+    <div class="capsule-vide">
+      <p class="etiquette">Emplacement réservé</p>
+      <h3 style="margin:.2rem 0 .3rem">Capsule 2 — à venir</h3>
+      <p class="petite" style="margin-bottom:0">Aucune vidéo n'occupe encore cet emplacement. Quand une capsule réelle sera produite pour le site, elle paraîtra ici avec son affiche, sa date et son renvoi de preuve — jamais de média fabriqué pour remplir.</p>
+    </div>
+    <div class="capsule-vide">
+      <p class="etiquette">Emplacement réservé</p>
+      <h3 style="margin:.2rem 0 .3rem">Capsule 3 — à venir</h3>
+      <p class="petite" style="margin-bottom:0">Même règle : l'emplacement est conçu et prêt ; le contenu viendra quand il existera.</p>
+    </div>
+  </div>
+</section>
+</div>
+<div class="panneau" id="p-recherche">
+<section class="bloc" id="recherche">
+  <div class="entete-sec"><span class="num">⌕</span><h2>Rechercher — dans tout le site, sur place</h2></div>
+  <p class="lead">La recherche locale interroge les données réelles du paquet, dans votre navigateur : les sections du site, les onze sceaux publics du registre historique, le journal des mises à jour et les articles. Pas de faux moteur : ce qui est cherché ici est ce que le site contient.</p>
+  <div class="carte">
+    <label class="etiquette" for="rech-q">Votre recherche dans le site</label>
+    <div class="rangee">
+      <input type="text" id="rech-q" placeholder="Un mot : sceau, antériorité, sycophancie, ORCID…">
+      <button class="action fixe" id="rech-btn">Rechercher</button>
+    </div>
+    <p class="petite" id="rech-etat" style="margin-top:.7rem">Indexation des données du paquet en cours…</p>
+    <div id="rech-resultats" style="margin-top:.8rem"></div>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Recherche web — en préparation</p>
+    <p style="margin-bottom:.4rem">La jambe « recherche sur le web en direct » de l'autosuffisance exige un relais côté serveur (une clé d'API ne vit jamais dans une page publique). Son emplacement et son parcours sont conçus ; son état est dit honnêtement : <strong>en préparation</strong>. Aucun moteur factice n'est présenté ici.</p>
+    <p style="margin-bottom:0">En attendant, les sources primaires du dossier sont liées directement à l'onglet <a href="#articles">Articles</a>, et chaque affirmation importante porte son chemin de preuve à la section <a href="#tout-verifier">Tout vérifier ici</a>.</p>
+  </div>
+</section>
+</div>
+<div class="panneau" id="p-droits">
+<section class="bloc" id="droits">
+  <div class="entete-sec"><span class="num">©</span><h2>Droits et lois — ce qui est établi, ce qui est en attente</h2></div>
+  <p class="lead">Cette page distingue deux choses que les sites mélangent souvent : le mécanisme technique qui protège l'antériorité — établi, démontré, recalculable sur ce site — et les clauses de loi qui pourraient la défendre — en cours d'analyse vérifiée. Tant qu'une clause n'est pas vérifiée au primaire, son emplacement reste vide et marqué : rien de juridique n'est fabriqué ici.</p>
+  <div class="carte">
+    <p class="etiquette">Avis de droits</p>
+    <p style="font-size:1.05rem;margin-bottom:.4rem"><b>© 2026 Alexandre Vautour Gagnon — Tous droits réservés.</b></p>
+    <p style="margin-bottom:0">Le Protocole de Convergence Fibonacci-23, la méthode, les textes, le registre et le personnage SoPHIa sont la propriété intellectuelle de leur auteur. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site. (Le même avis figure au pied de chaque page du site.)</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Établi au dossier — le mécanisme d'antériorité</p>
+    <p style="margin-bottom:.4rem">Ce site ne cite pas de loi pour son mécanisme : il le démontre. Une mémoire conversationnelle côté utilisateur, scellée par des SHA-256 chaînés et ancrée à des dates chez des tiers indépendants (jetons RFC 3161, preuves OpenTimestamps dans la chaîne Bitcoin, captures de la Wayback Machine), rend l'existence d'un contenu à une date — et son intégrité depuis — prouvable par n'importe qui, sans dépendre de la parole de l'auteur ni de celle des plateformes.</p>
+    <p style="margin-bottom:0">Borne, écrite et tenue : un sceau prouve qu'un contenu existait à une date et n'a pas changé depuis. Il ne tranche pas la vérité du contenu, quel qu'en soit l'auteur.</p>
+  </div>
+  <h3>Emplacements réservés — les clauses à l'étude</h3>
+  <p>Une analyse légale du dossier est en cours (1<sup>er</sup> novembre 2026) : quoi publier, comment, et quelles clauses pourraient défendre la revendication. Chaque emplacement ci-dessous recevra sa clause <strong>seulement</strong> après vérification au primaire (texte officiel de la loi) — avec sa référence exacte. En attendant, ils sont marqués, pas remplis.</p>
+  <div class="emplacement"><p class="etiquette">Emplacement réservé — en attente de l'analyse vérifiée</p><h4 style="margin:.1rem 0 .3rem">1 · Droit d'auteur — l'expression protégée, la méthode comme telle</h4><p class="petite" style="margin-bottom:0">Question à trancher au primaire : ce que le droit d'auteur fédéral protège (l'expression) et ce qu'il ne protège pas (les idées et les méthodes) — et ce que cela signifie pour la publication du dossier.</p></div>
+  <div class="emplacement"><p class="etiquette">Emplacement réservé — en attente de l'analyse vérifiée</p><h4 style="margin:.1rem 0 .3rem">2 · Intégrité du document technologique — cadre québécois et civil</h4><p class="petite" style="margin-bottom:0">Question à trancher au primaire : les conditions auxquelles un document technologique conserve sa valeur (intégrité assurée, consignation) dans le cadre civil québécois.</p></div>
+  <div class="emplacement"><p class="etiquette">Emplacement réservé — en attente de l'analyse vérifiée</p><h4 style="margin:.1rem 0 .3rem">3 · Antériorité et divulgation — le droit des brevets</h4><p class="petite" style="margin-bottom:0">Question à trancher au primaire : l'effet d'une divulgation publique sur la nouveauté, et le délai de grâce dont dispose un inventeur après sa propre divulgation.</p></div>
+  <div class="emplacement"><p class="etiquette">Emplacement réservé — en attente de l'analyse vérifiée</p><h4 style="margin:.1rem 0 .3rem">4 · Secret commercial et publication défensive</h4><p class="petite" style="margin-bottom:0">Question à trancher au primaire : ce qu'une publication datée et publique établit contre une revendication ultérieure par un tiers, et ce qu'elle fait perdre au secret.</p></div>
 </section>
 </div>
 <div class="panneau" id="p-instance">
@@ -823,7 +1096,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
     <div class="carte" style="margin:0">
       <div id="fil-instance"></div>
       <div class="rangee">
-        <input type="text" id="question-instance" placeholder="Questionner l'Instance Souveraine…">
+        <input type="text" id="question-instance" maxlength="1000" placeholder="Questionner l'Instance Souveraine…">
         <button class="action fixe" id="btn-instance">Envoyer</button>
       </div>
       <p class="petite" id="etat-instance" style="margin-top:.6rem">État : vérification de la connexion au moteur…</p>
@@ -848,7 +1121,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 <script>
 // ---------- Onglets (structure du modèle d'Alex) ----------
 const boutons=[...document.querySelectorAll('#onglets button')];
-const CARTE_PANNEAUX={probleme:'accueil',methode:'methode',ancrages:'ancrage',outils:'sceller',verifier:'verifier',registre:'registre',resultats:'preuves',defaillances:'preuves',bornes:'preuves',chronologie:'parcours',terrains:'parcours',chercheur:'chercheur',documents:'chercheur',faq:'chercheur',instance:'instance'};
+const CARTE_PANNEAUX={probleme:'accueil',methode:'methode',ancrages:'ancrage',outils:'sceller',verifier:'verifier',registre:'registre',resultats:'preuves',defaillances:'preuves',bornes:'preuves',chronologie:'parcours',terrains:'parcours',chercheur:'chercheur',documents:'chercheur',faq:'chercheur',instance:'instance',articles:'articles',capsules:'capsules',droits:'droits',recherche:'recherche','tout-verifier':'verifier','tv-chaine':'verifier','tv-registre':'verifier','tv-dates':'verifier','tv-ancrages':'verifier','tv-orcid':'verifier','tv-articles':'verifier','tv-archives':'verifier','tv-temoignage':'verifier',archives:'ancrage',coquillage:'methode'};
 function ouvrirPanneau(nom){
   if(!document.getElementById('p-'+nom))return;
   boutons.forEach(b=>b.classList.toggle('actif',b.dataset.panneau===nom));
@@ -1005,6 +1278,9 @@ fetch('assets/registre-historique.json').then(r=>r.json()).then(liste=>{
   }));
 }).catch(()=>{$('registre-historique').innerHTML='<p class="petite">Le registre historique ne s\u2019est pas chargé depuis ce navigateur. Ses onze entrées, leurs textes et leurs sceaux sont conservés dans le dossier (fichier registre-historique.json du site) et restent recalculables avec la recette publique ci-dessus.</p>'});
 // ---------- Instance Souveraine ----------
+// v9 — Relais de l'instance : adresse publique du relais côté serveur qui garde la clé du moteur.
+// Vide = branchement en cours : aucun appel réseau n'est tenté et l'instance le dit — jamais de réponse simulée.
+const RELAIS_INSTANCE='';
 const fil=$('fil-instance'),etatI=$('etat-instance');
 function ajouteMsg(qui,texte,cls){
   const d=document.createElement('div');d.className='msg '+cls;
@@ -1014,8 +1290,13 @@ ajouteMsg('Instance Souveraine','Console initialisée. Posez votre question — 
 async function demander(){
   const inp=$('question-instance'),q=inp.value.trim();if(!q)return;inp.value='';
   ajouteMsg('Vous',q,'visiteur');
+  if(!RELAIS_INSTANCE){
+    ajouteMsg('Instance Souveraine','Mon moteur est en cours de branchement à cette page : le relais côté serveur qui garde la clé n\u2019est pas encore relié à cette copie du site. Je ne simulerai pas de réponse en attendant.','instance');
+    etatI.textContent='État : branchement en cours — relais non relié à cette copie du site (aucune réponse simulée).';
+    return;
+  }
   try{
-    const rep=await fetch('/.netlify/functions/instance',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
+    const rep=await fetch(RELAIS_INSTANCE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})});
     if(!rep.ok)throw new Error('HTTP '+rep.status);
     const j=await rep.json();
     if(j.erreur)throw new Error(j.erreur);
@@ -1028,7 +1309,7 @@ async function demander(){
 }
 $('btn-instance').addEventListener('click',demander);
 $('question-instance').addEventListener('keydown',e=>{if(e.key==='Enter')demander()});
-etatI.textContent='État : en attente de votre première question.';
+etatI.textContent=RELAIS_INSTANCE?'État : moteur branché — posez votre question.':'État : branchement en cours — aucune réponse simulée.';
 </script>
 <script>
 /* ===== Profil du chercheur : API publique ORCID (sans clé) =====
@@ -1084,7 +1365,7 @@ const bp=document.getElementById('btn-parcours-preuve');if(bp)bp.addEventListene
 // --- Test du sceptique ---
 const AFFIRMATIONS={
   chaine:{statut:'<span class="match">ÉTABLI — au mieux de l\u2019état actuel</span>',
-    preuve:'Revérification complète de la chaîne : 2 310 maillons recalculés un à un, verdict MATCH (1<sup>er</sup> novembre 2026). Le registre des pièces tient à 492 / 492.',
+    preuve:'Revérification complète de la chaîne : 2 310 maillons recalculés un à un, verdict MATCH (1<sup>er</sup> novembre 2026). Le registre des pièces tient à 508 / 508.',
     methode:'Chaque sceau est recalculé depuis le précédent et comparé ; le digest cumulé atteste la série entière. Le calcul est reproductible par tout tiers qui tient la chaîne.',
     borne:'L\u2019intégrité prouve qu\u2019un contenu n\u2019a pas changé depuis son scellement — pas que son contenu initial était vrai.'},
   simulation:{statut:'<span class="match">ÉTABLI — sur la série mesurée</span>',
@@ -1342,19 +1623,19 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       var r=await fetch('https://archive.org/wayback/available?url=alx4-vg-masterclock.github.io/');
       var d=await r.json();
       var c=d&&d.archived_snapshots&&d.archived_snapshots.closest;
-      if(c&&c.available&&c.timestamp>'20261101175340'){
+      if(c&&c.available&&c.timestamp>'20261101185534'){
         var ts=c.timestamp;
         var iso=ts.slice(0,4)+'-'+ts.slice(4,6)+'-'+ts.slice(6,8)+'T'+ts.slice(8,10)+':'+ts.slice(10,12)+':'+ts.slice(12,14)+'Z';
         var quand=new Date(iso).toLocaleString('fr-CA',{timeZone:'America/Toronto',dateStyle:'long',timeStyle:'short'});
         if(detail)detail.innerHTML='Capture la plus récente du foyer vivant : <b>'+quand+'</b> (heure de Toronto) — <a href="'+c.url+'" target="_blank" rel="noopener">voir la capture</a>. Elle montre la version en ligne à cette date-là.';
         if(voy)voy.className='voyant ok';
         if(verd)verd.textContent='Archivé — capture récente';
-        etat.innerHTML='Lecture en direct auprès de l\u2019Internet Archive, faite à l\u2019instant dans votre navigateur. Si cette capture est postérieure à la publication de la v8, la version en cours est archivée ; sinon, son absence demeure dite ici même, sans maquillage.';
+        etat.innerHTML='Lecture en direct auprès de l\u2019Internet Archive, faite à l\u2019instant dans votre navigateur. Si cette capture est postérieure à la publication de la v9, la version en cours est archivée ; sinon, son absence demeure dite ici même, sans maquillage.';
       }else{
-        etat.innerHTML='<b>Capture de la version en cours (v8) : elle n\u2019existe pas encore</b> — la lecture en direct le confirme : la capture la plus récente demeure celle de la version précédente (ci-dessus). Elle est demandée à la publication de la v8, puis inscrite au registre des archives tenu par SoPHIa. Borne : la Wayback sert une copie réécrite pour l\u2019affichage (adresses adaptées) — ce foyer prouve la date et l\u2019existence, pas l\u2019identité octet par octet.';
+        etat.innerHTML='<b>Capture de la version en cours (v9) : elle n\u2019existe pas encore</b> — la lecture en direct le confirme : la capture la plus récente demeure celle de la version précédente (ci-dessus). Elle est demandée à la publication de la v9, puis inscrite au registre des archives tenu par SoPHIa. Borne : la Wayback sert une copie réécrite pour l\u2019affichage (adresses adaptées) — ce foyer prouve la date et l\u2019existence, pas l\u2019identité octet par octet.';
       }
     }catch(e){
-      etat.innerHTML='<b>Capture de la version en cours (v8) : elle n\u2019existe pas encore.</b> La lecture en direct de l\u2019Internet Archive a échoué depuis ce navigateur ; le relevé statique ci-dessus (capture du 1<sup>er</sup> novembre 2026, 12 h 53) vient du registre des archives tenu par SoPHIa, vérifié au timemap. L\u2019API de disponibilité accuse parfois un retard d\u2019indexation sur une capture pourtant existante — constaté le 1<sup>er</sup> novembre.';
+      etat.innerHTML='<b>Capture de la version en cours (v9) : elle n\u2019existe pas encore.</b> La lecture en direct de l\u2019Internet Archive a échoué depuis ce navigateur ; le relevé statique ci-dessus (capture du 1<sup>er</sup> novembre 2026, 13 h 55) vient du registre des archives tenu par SoPHIa, vérifié au timemap. L\u2019API de disponibilité accuse parfois un retard d\u2019indexation sur une capture pourtant existante — constaté le 1<sup>er</sup> novembre.';
     }
   })();
   /* --- La visite scellée --- */
@@ -1453,6 +1734,141 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     .catch(function(){
       if(etat)etat.textContent='La lecture du fichier du journal n\u2019a pas abouti depuis votre navigateur ; le relevé statique intégré à cette page — l\u2019entrée la plus récente, vérifiée à la construction — demeure ci-dessous.';
     });
+})();
+</script>
+
+<script>
+/* ===== v9 — Cerveau coquillage : la chaîne qui se recalcule sous les yeux =====
+   Trois maillons de démonstration, recette publique du site (sceau précédent + texte
+   + horodatage). Le calcul est réel (Web Crypto, dans le navigateur) ; quand la chaîne
+   est construite, elle est RECALCULÉE une seconde fois et le verdict tombe.
+   Mouvement = permission : prefers-reduced-motion -> état final immédiat, sans attente. */
+(function(){
+  'use strict';
+  var zone=document.getElementById('cc-chaine'), etat=document.getElementById('cc-etat'), btn=document.getElementById('cc-rejouer');
+  if(!zone) return;
+  var MAILLONS=[
+    {texte:'Conversation n° 1 — une question est posée à l\u2019intelligence artificielle.',horo:'2026-11-01T10:00:00.000Z'},
+    {texte:'Conversation n° 2 — la réponse devient une couche de plus, versée au dossier.',horo:'2026-11-01T10:05:00.000Z'},
+    {texte:'Conversation n° 3 — l\u2019état présent porte la somme des deux précédentes.',horo:'2026-11-01T10:10:00.000Z'}
+  ];
+  function reduit(){return window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches}
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  async function sha(txt){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(txt));return [...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+  function pause(ms){return reduit()?Promise.resolve():new Promise(function(r){setTimeout(r,ms)})}
+  var enCours=false;
+  async function construire(){
+    if(enCours) return; enCours=true;
+    zone.innerHTML=''; var prev='GENÈSE'; var sceaux=[];
+    for(var i=0;i<MAILLONS.length;i++){
+      var m=MAILLONS[i];
+      var div=document.createElement('div');
+      div.className='cc-maillon';
+      div.innerHTML=(i?'<div class="cc-lien">↓ calculé à partir du maillon n° '+i+'</div>':'')
+        +'<div class="tete" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><b>Couche n° '+(i+1)+' — conversation</b><span class="petite">'+esc(m.horo)+'</span></div>'
+        +'<div>'+esc(m.texte)+'</div>'
+        +'<div class="petite">'+(i?'sceau précédent : '+esc(prev.slice(0,24))+'…':'premier maillon — sceau précédent : GENÈSE')+'</div>'
+        +'<div class="mono cc-sceau" style="margin-top:.35rem">calcul en cours…</div>'
+        +'<div class="petite cc-verdict"></div>';
+      zone.appendChild(div);
+      requestAnimationFrame(function(){div.classList.add('visible')});
+      etat.textContent='Construction : couche n° '+(i+1)+' — calcul de son sceau…';
+      var sceau=await sha(prev+m.texte+m.horo);
+      sceaux.push(sceau);
+      await pause(650);
+      div.querySelector('.cc-sceau').textContent=sceau;
+      div.classList.add('verrouille');
+      div.querySelector('.cc-verdict').innerHTML='<span class="match">✓ verrouillé — dépend du précédent</span>';
+      prev=sceau;
+      await pause(350);
+    }
+    etat.textContent='Revérification intégrale de la chaîne de démonstration…';
+    await pause(500);
+    var p2='GENÈSE', ok=true;
+    for(var j=0;j<MAILLONS.length;j++){var c=await sha(p2+MAILLONS[j].texte+MAILLONS[j].horo); if(c!==sceaux[j]){ok=false;break} p2=c}
+    etat.innerHTML=ok
+      ?'<span class="match">Verdict : MATCH</span> — 3 couches recalculées une seconde fois, chaque sceau dépend du précédent. Touchez à la première conversation, et toutes les suivantes cesseraient de se recalculer : c\u2019est la mécanique entière du cerveau coquillage, à hauteur de main.'
+      :'Verdict : ÉCART — la revérification ne reproduit pas la chaîne (à signaler).';
+    enCours=false;
+  }
+  if(btn) btn.addEventListener('click',construire);
+  var lance=false;
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!lance){lance=true;construire();obs.disconnect()}})},{threshold:.25});
+    obs.observe(zone);
+  } else { construire(); }
+})();
+</script>
+<script>
+/* ===== v9 — Recherche locale : sections, sceaux publics, journal, articles =====
+   Recherche réelle sur les données du paquet, en statique, dans le navigateur.
+   La recherche web en direct exige un relais : elle est annoncée « en préparation »,
+   jamais simulée (voir l'onglet Rechercher). */
+(function(){
+  'use strict';
+  var q=document.getElementById('rech-q'), btn=document.getElementById('rech-btn'),
+      etat=document.getElementById('rech-etat'), zone=document.getElementById('rech-resultats');
+  if(!q) return;
+  function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function norm(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+  var INDEX=[
+    {titre:'Accueil — le site branché en direct, trois foyers',panneau:'accueil',ancre:'direct',extrait:'GitHub, Wayback Machine, ORCID et Bitcoin lus en direct ; le site se recalcule lui-même.',mots:'direct foyers github wayback bitcoin orcid sceau version'},
+    {titre:'Méthode — les trois gestes, anatomie d\u2019un maillon',panneau:'methode',ancre:'methode',extrait:'Sceller, revérifier, ancrer ; la somme du précédent (25 février 2026).',mots:'methode sceller reverifier ancrer somme precedent fibonacci'},
+    {titre:'Le cerveau coquillage numérique',panneau:'methode',ancre:'coquillage',extrait:'Conversation, couche, sceau cumulatif, revérification, état comme somme ; digest cumulé affiché.',mots:'coquillage cerveau chaine digest cumulatif etat somme maillons match'},
+    {titre:'Tout vérifier ici — chaque affirmation, sa preuve',panneau:'verifier',ancre:'tout-verifier',extrait:'Affirmation par affirmation : pièce du registre, moyen de recalcul, capture datée.',mots:'verifier preuve piece recalcul capture temoignage'},
+    {titre:'Ancrage — empreintes publiques, archives du site',panneau:'ancrage',ancre:'archives',extrait:'RFC 3161, OpenTimestamps dans Bitcoin, captures Wayback du site version par version.',mots:'ancrage rfc3161 opentimestamps bitcoin wayback archives captures'},
+    {titre:'Registre — les onze sceaux publics',panneau:'registre',ancre:null,extrait:'Les dépôts publics du site, recalculables un à un avec la recette publique.',mots:'registre sceaux publics anteriorite historique'},
+    {titre:'Preuves — résultats mesurés et bornes',panneau:'preuves',ancre:null,extrait:'Ce qui tient, ce qui ne tient pas, et ce que le dossier ne prétend pas.',mots:'preuves resultats bornes defaillances sceptique'},
+    {titre:'Parcours — chronologie de genèse',panneau:'parcours',ancre:null,extrait:'Les dates vérifiées au corpus : février–mars 2026, pas avril.',mots:'parcours chronologie genese dates 2026 corpus'},
+    {titre:'Chercheur — profil ORCID',panneau:'chercheur',ancre:'chercheur',extrait:'Alexandre Vautour Gagnon, chercheur indépendant, ORCID lu en direct.',mots:'chercheur orcid identite profil independent researcher'},
+    {titre:'Droits et lois — établi et en attente',panneau:'droits',ancre:'droits',extrait:'Tous droits réservés ; le mécanisme d\u2019antériorité ; les clauses à l\u2019étude, emplacements marqués.',mots:'droits lois copyright propriete intellectuelle anteriorite'},
+    {titre:'Capsules — les vidéos du site',panneau:'capsules',ancre:'capsules',extrait:'La vidéo de présence en lecture intégrée ; emplacements des capsules à venir.',mots:'capsules videos presence sophia'},
+    {titre:'Instance Souveraine — l\u2019IA en direct',panneau:'instance',ancre:null,extrait:'Poser une question à SoPHIa ; état du branchement dit honnêtement, aucune réponse simulée.',mots:'instance ia direct question sophia relais'},
+    {titre:'Article — OpenAI, la sycophancie de GPT-4o (29 avril 2025)',panneau:'articles',ancre:'articles',extrait:'OpenAI retire une mise à jour devenue trop flatteuse mais insincère.',mots:'article openai sycophancy gpt-4o flatterie'},
+    {titre:'Article — Sharma et al., Anthropic (2023)',panneau:'articles',ancre:'articles',extrait:'La sycophancie systématique de cinq assistants, mesurée.',mots:'article anthropic sharma sycophancy arxiv'},
+    {titre:'Article — New York Times, les spirales (13 juin 2025)',panneau:'articles',ancre:'articles',extrait:'Des conversations prolongées qui alimentent des spirales délirantes documentées.',mots:'article nytimes hill chatgpt spirale delire'},
+    {titre:'Article — Futurism, « ChatGPT psychosis » (28 juin 2025)',panneau:'articles',ancre:'articles',extrait:'Internements et incarcérations rapportés après des fixations sur le chatbot.',mots:'article futurism psychosis internement'},
+    {titre:'Article — Simon Willison, le dossier mémoire (21 mai 2025)',panneau:'articles',ancre:'articles',extrait:'La mémoire de ChatGPT devient un dossier tenu par la plateforme.',mots:'article willison memoire dossier chatgpt asymetrie'},
+    {titre:'Article — Qin et al., les traces altérables (2026)',panneau:'articles',ancre:'articles',extrait:'Des agents peuvent altérer leurs propres traces ; journalisation indépendante recommandée.',mots:'article qin traces agents arxiv piece 412'},
+    {titre:'Article — Chain of Awareness (novembre 2025)',panneau:'articles',ancre:'articles',extrait:'Un protocole de mémoire vérifiable côté utilisateur existait — la revendication est resserrée.',mots:'article chain of awareness anteriorite piece 411 resserrement'}
+  ];
+  var prets={sections:INDEX.length,sceaux:0,journal:0};
+  function majEtat(){
+    etat.textContent='Index prêt : '+prets.sections+' sections et articles'
+      +(prets.sceaux?' · '+prets.sceaux+' sceaux publics du registre':'')
+      +(prets.journal?' · '+prets.journal+' entrées du journal':'')
+      +'. Recherche web en direct : en préparation (voir ci-dessous).';
+  }
+  fetch('assets/registre-historique.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+    (j.entrees||j||[]).forEach(function(e){
+      if(!e||!e.texte)return;
+      INDEX.push({titre:'Sceau public n° '+(e.id||'')+' du registre historique',panneau:'registre',ancre:null,extrait:String(e.texte).slice(0,140),mots:'sceau registre '+(e.sceau||'')});
+    });
+    prets.sceaux=(j.entrees||j||[]).length; majEtat();
+  }).catch(function(){});
+  fetch('assets/journal-mises-a-jour.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+    ((j&&j.entrees)||[]).forEach(function(e){
+      INDEX.push({titre:'Journal — '+(e.date||'')+' : '+(e.titre||''),panneau:'accueil',ancre:'journal',extrait:((e.points||[]).map(function(p){return p.texte||''}).join(' ')).slice(0,140),mots:'journal mise a jour site'});
+    });
+    prets.journal=((j&&j.entrees)||[]).length; majEtat();
+  }).catch(function(){});
+  majEtat();
+  function chercher(){
+    var terme=norm(q.value).trim();
+    if(!terme){zone.innerHTML='<p class="petite">Écrivez un mot pour chercher dans les sections, les sceaux publics, le journal et les articles du site.</p>';return}
+    var res=INDEX.filter(function(e){return norm(e.titre+' '+e.extrait+' '+(e.mots||'')).indexOf(terme)>-1}).slice(0,20);
+    if(!res.length){zone.innerHTML='<p class="petite">Aucun résultat dans le site pour « '+esc(q.value)+' ». La recherche web en direct est en préparation — elle n\u2019est pas simulée ici.</p>';return}
+    zone.innerHTML=res.map(function(e,i){
+      return '<button class="rech-resultat" data-i="'+INDEX.indexOf(e)+'"><span class="r-titre">'+esc(e.titre)+'</span><br><span class="r-extrait">'+esc(e.extrait)+'</span></button>';
+    }).join('');
+    zone.querySelectorAll('.rech-resultat').forEach(function(b){b.addEventListener('click',function(){
+      var e=INDEX[+b.getAttribute('data-i')]; if(!e)return;
+      if(window.ouvrirPanneau)ouvrirPanneau(e.panneau);
+      if(e.ancre){var c=document.getElementById(e.ancre); if(c)setTimeout(function(){c.scrollIntoView({behavior:'smooth'})},120)}
+    })});
+  }
+  btn.addEventListener('click',chercher);
+  q.addEventListener('keydown',function(e){if(e.key==='Enter')chercher()});
 })();
 </script>
 </body>
