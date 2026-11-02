@@ -457,7 +457,7 @@ button.at-bloc{cursor:pointer}
 .rep{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:var(--vert);border:2px solid #08130e;box-shadow:0 0 9px rgba(53,192,139,.85);z-index:3}
 .rep.ancre{width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--or);box-shadow:0 0 14px rgba(212,175,55,.95)}
 .rep.loin{opacity:.35;background:#8a9a8a;border-style:dashed}
-.rep .rep-nom{position:absolute;left:15px;top:-5px;font-size:.68rem;font-weight:700;color:var(--or-clair);white-space:nowrap;text-shadow:0 1px 5px #000;display:none}
+.rep .rep-nom{position:absolute;left:15px;top:-8px;font-size:.68rem;font-weight:700;color:var(--or-clair);white-space:nowrap;display:none;background:rgba(5,12,9,.74);border:1px solid rgba(212,175,55,.38);border-radius:9px;padding:.2rem .45rem .26rem;text-shadow:0 1px 4px #000,0 0 3px #000;box-shadow:0 2px 10px rgba(0,0,0,.45)}
 .rep.ancre .rep-nom,.rep.choisi .rep-nom{display:block}
 .planete-horloge{position:absolute;top:50%;left:50%;width:124px;margin:-62px 0 0 -62px;transform:rotate(var(--a)) translateY(calc(var(--rayon-planete)*-1)) rotate(calc(var(--a)*-1));z-index:4}
 .ph-contre{animation:temps-contre 120s linear infinite;background:rgba(14,30,24,.97);border:1px solid rgba(212,175,55,.38);border-radius:14px;padding:.45rem .3rem .4rem;width:100%;text-align:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5);font:inherit;color:var(--texte)}
@@ -616,6 +616,23 @@ button.at-bloc{cursor:pointer}
   .meteo-jour{grid-template-columns:92px 26px 1fr;grid-template-rows:auto auto}
   .meteo-jour .mj-t{grid-column:3}
 }
+
+/* ===== v20 — Vérifie-moi sans moi : le vérificateur autonome, et le cartouche de l’ancre =====
+   Correctif 1 (inspection v19, 2 nov.) : l’étiquette de l’ancre, posée dans le
+   globe (overflow hidden, bord circulaire), y était coupée à droite en vue
+   étroite et sa 2e ligne noyée dans les nuages. Elle devient un cartouche posé
+   sur la SCÈNE (hors du globe), fond sombre, bord doré, ombrage porté — la
+   règle d’Alex : toute écriture sur image porte un ombrage qui la détache. */
+.etiquette-ancre{position:absolute;left:0;top:0;z-index:6;display:none;pointer-events:none;background:rgba(5,12,9,.80);border:1px solid rgba(212,175,55,.5);border-radius:10px;padding:.32rem .55rem .4rem;color:var(--or-clair);font-size:.68rem;font-weight:700;line-height:1.25;white-space:nowrap;text-shadow:0 1px 4px #000,0 0 3px #000;box-shadow:0 3px 14px rgba(0,0,0,.5)}
+.etiquette-ancre .ea-l2{display:block;font-size:.6rem;font-weight:600;color:#eef6e4;letter-spacing:.02em;margin-top:.14rem}
+/* Le vérificateur autonome : verdict en très grands caractères. */
+.vmm-verdict{font-family:var(--serif);font-size:2.7rem;font-weight:700;letter-spacing:.05em;line-height:1.1;margin:.7rem 0 .3rem}
+.vmm-verdict.ok{color:var(--or-clair)}
+.vmm-verdict.ecart{color:#e0655a}
+.vmm-verdict.attente{color:var(--texte-doux)}
+.vmm-zone{border:1.5px dashed var(--ligne);border-radius:12px;padding:1.1rem 1rem;text-align:center;color:var(--texte-doux);cursor:pointer;background:#0d1f19}
+.vmm-zone:hover,.vmm-zone.actif{border-color:var(--or);color:var(--or-clair)}
+.vmm-zone input[type=file]{display:none}
 </style>
 </head>
 <body>
@@ -732,10 +749,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v19 (2 novembre 2026 — l’onglet Application : le site s’installe comme une application ; la météo du lieu dans la grande lecture, l’ancre nommée sur le globe, et le correctif des grandes pastilles)</p>
-    <span class="sceau-long" id="sceau-version-affiche">d4c8e9faa11a2fd34f5a887f2deaf1cb50ae56d58b401a9b37be607e338f9097</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v20 (2 novembre 2026 — « Vérifie-moi sans moi » : le vérificateur autonome de l’onglet Vérifier — la page se recalcule chez le visiteur, à l’octet près —, le reçu de visite, l’auto-revérification, et le cartouche ombragé de l’ancre)</p>
+    <span class="sceau-long" id="sceau-version-affiche">4939e791ce1a1efa445d0990820e122c1b2468f5e2b5b5bd0076afea8645d362</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -810,6 +827,7 @@ button.at-bloc{cursor:pointer}
         <li>Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision.</li>
         <li>Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px).</li>
         <li>Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images.</li>
+        <li>Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau.</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -1381,6 +1399,56 @@ button.at-bloc{cursor:pointer}
 <section>
   <h2><span class="num">3</span>Vérifier un sceau</h2>
   <p class="lead">Recalculez vous-même : entrez les trois ingrédients et le sceau attendu — le site refait le calcul devant vous et dit MATCH ou ÉCART. Essayez avec un sceau du registre historique (onglet Registre).</p>
+
+<section class="bloc" id="verifie-moi">
+  <div class="entete-sec"><span class="num">✓</span><h2>Vérifie-moi sans moi — le vérificateur autonome</h2></div>
+  <p class="lead">Le sceau de cette page se recalcule ici, dans votre navigateur — sans serveur, sans compte, sans SoPHIa. C'est le chaînon que la chaîne promettait depuis le début : le calcul que l'agente fait de son bord, n'importe qui peut le refaire du sien, à l'octet près. Trois gestes, une seule recette.</p>
+  <div class="carte">
+    <p class="etiquette">La recette, en trois temps</p>
+    <p><b>1 · Calculer</b> — lire les octets exacts du fichier, jamais une copie réécrite par l'affichage. <b>2 · Sceller</b> — le sceau d'une version est le SHA-256 du fichier où l'occurrence du sceau, dans le bloc étiqueté « Sceau canonique de la version affichée », est remplacée par 64 zéros. <b>3 · Re-vérifier</b> — recalculer, comparer : MATCH, ou ÉCART. C'est exactement le geste que SoPHIa refait sur sa propre chaîne.</p>
+    <p class="petite" style="margin-bottom:0">Auto-revérification de cette copie : <span class="voyant attente" id="vmm-auto-voyant"></span> <span id="vmm-auto-etat">premier recalcul automatique au chargement, puis toutes les cinq minutes…</span></p>
+  </div>
+  <p class="petite" id="vmm-alerte-contexte" hidden><b>Contexte non sécurisé détecté.</b> Le calcul d'empreinte de ce panneau exige les outils cryptographiques du navigateur, offerts seulement en contexte sécurisé (HTTPS, ou adresse locale). Cette copie semble ouverte autrement (fichier local, HTTP) : les boutons sont désactivés plutôt que de simuler un calcul. Ouvrez la version en ligne, ou servez ce dossier par un petit serveur local sécurisé, pour vérifier.</p>
+  <div class="carte">
+    <p class="etiquette">Geste 1 — cette page, maintenant</p>
+    <p>Relit les octets que le serveur vient de servir pour cette adresse, y cherche le sceau étiqueté, applique la recette et compare. La version détectée et le sceau recalculé s'affichent à côté du verdict.</p>
+    <p style="margin-bottom:0"><button class="action" id="vmm-btn-page">Vérifier cette page, maintenant</button></p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Geste 2 — une copie sauvegardée</p>
+    <p>Vous avez gardé le fichier d'une version, le mois passé ? Déposez-le : il est lu en octets, ici même — <b>le fichier ne quitte jamais votre appareil</b> — et la même recette le revérifie, des mois plus tard, contre le sceau qu'il porte.</p>
+    <div class="vmm-zone" id="vmm-zone">Déposez le fichier <span class="mono">index.html</span> sauvegardé ici, ou touchez pour le choisir<input type="file" id="vmm-fichier" accept=".html,.htm,text/html"></div>
+    <p class="etiquette" style="margin-top:1rem">Si le fichier déposé ne porte pas de sceau étiqueté</p>
+    <p class="petite">Collez le sceau attendu (64 caractères hexadécimaux) : le fichier sera alors haché tel quel, sans neutralisation.</p>
+    <input type="text" id="vmm-attendu-fichier" placeholder="Sceau attendu — seulement si le fichier n'en porte pas" autocomplete="off" spellcheck="false" style="width:100%">
+  </div>
+  <div class="carte">
+    <p class="etiquette">Geste 3 — un texte libre, son sceau</p>
+    <p>Collez un texte et le sceau qu'on vous a donné pour lui : le texte est haché tel quel, en UTF-8, et comparé. C'est le geste de base, sans fichier.</p>
+    <label class="etiquette" for="vmm-texte">Texte à hacher</label>
+    <textarea id="vmm-texte" rows="3" style="width:100%"></textarea>
+    <label class="etiquette" for="vmm-attendu-texte" style="margin-top:.8rem">Sceau attendu (64 caractères hexadécimaux)</label>
+    <input type="text" id="vmm-attendu-texte" placeholder="64 caractères hexadécimaux" autocomplete="off" spellcheck="false" style="width:100%">
+    <p class="rangee" style="margin-bottom:0"><button class="action" id="vmm-btn-texte">Hacher et comparer</button> <button class="secondaire" id="vmm-btn-exemple">Charger l'exemple public « abc »</button></p>
+    <p class="petite" style="margin-bottom:0">L'exemple « abc » est le vecteur de test public du SHA-256 : son empreinte publiée vaut <span class="mono">ba7816bf…f20015ad</span>. Si votre navigateur la retrouve, son calcul est le bon — avant même de vérifier cette page.</p>
+  </div>
+  <div class="carte" id="vmm-resultat" hidden>
+    <p class="etiquette" style="margin:0">Verdict du recalcul</p>
+    <p class="vmm-verdict attente" id="vmm-verdict" role="status">…</p>
+    <p id="vmm-detail" style="margin:.2rem 0 .8rem"></p>
+    <p class="etiquette">Sceau recalculé chez vous, à l'instant</p>
+    <span class="sceau-long" id="vmm-sceau">—</span>
+    <p class="rangee" style="margin-bottom:0"><button class="secondaire" id="vmm-copier">Copier ce sceau</button> <button class="action" id="vmm-recu" hidden>Télécharger mon reçu de visite</button></p>
+    <p class="petite" id="vmm-note-resultat" style="margin-bottom:0"></p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Les bornes, écrites</p>
+    <p class="petite">Le calcul prouve l'<b>identité à l'octet près</b> — que la copie est exactement celle que le sceau désigne. Il ne prouve <b>pas la vérité du contenu</b> : un texte faux peut être parfaitement scellé ; c'est l'antériorité et l'intégrité qui se prouvent ici, pas les opinions.</p>
+    <p class="petite">Le geste 1 relit la copie servie <b>à l'instant</b> : si le site a été republié entre votre arrivée et votre clic, c'est la nouvelle version qui est vérifiée — son numéro et son sceau sont affichés à côté du verdict, jamais cachés.</p>
+    <p class="petite">Une copie sauvegardée se revérifie hors ligne dès que la page a été chargée une fois en contexte sécurisé ; ouverte directement en fichier local, le navigateur refuse ses outils de calcul — le panneau le détecte et le dit, au lieu d'échouer en silence.</p>
+    <p class="petite" style="margin-bottom:0">L'auto-revérification court tant que la page reste ouverte, à intervalle sobre — jamais avant cinq minutes entre deux recalculs. Un échec de réseau y dit « non revérifié », jamais ÉCART : ne pas pouvoir relire n'est pas une preuve d'altération.</p>
+  </div>
+</section>
 
 <section class="bloc" id="tout-verifier">
   <div class="entete-sec"><span class="num">✓</span><h2>Tout vérifier ici — chaque affirmation, sa preuve, son chemin</h2></div>
@@ -3291,23 +3359,123 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     el.style.top=(DISQUE.cy-p.y*DISQUE.ry)+'%';
     el.classList.toggle('loin',!p.visible);
     el.title=l.nom+(p.visible?'':' — autre côté du globe');
+    if(l.ancre&&el._etiquette)placerEtiquetteAncre(el._etiquette,p);
+  }
+  // ----- v20 — Le cartouche de l’ancre, posé sur la scène -----
+  // Le repère vit dans le globe (overflow hidden, bord circulaire) : son
+  // étiquette y était coupée et noyée. Le cartouche vit sur la scène, mesuré
+  // au DOM à chaque appel : il suit le repère quand la vue tourne. Règles de
+  // garde — vue pleine : à droite du repère, retourné à sa gauche si la place
+  // manque ; vue compacte : sous le repère, décalé pour rester entier ; dans
+  // tous les cas, le cartouche reste dans la scène, à 2 px des bords au
+  // moins, et il s’estompe comme le repère quand l’ancre passe de l’autre
+  // côté du globe.
+  function placerEtiquetteAncre(etq,p,evitements){
+    var scene=$('planete-scene'); if(!scene)return;
+    var globe=scene.querySelector('.planete-globe'); if(!globe)return;
+    var rs=scene.getBoundingClientRect(), rg=globe.getBoundingClientRect();
+    var mx=(rg.left-rs.left)+(DISQUE.cx+p.x*DISQUE.rx)/100*rg.width;
+    var my=(rg.top-rs.top)+(DISQUE.cy-p.y*DISQUE.ry)/100*rg.height;
+    etq.style.display='block';
+    etq.style.opacity=p.visible?'1':'0.35';
+    var W=etq.offsetWidth, H=etq.offsetHeight, SW=scene.clientWidth, SH=scene.clientHeight;
+    // Positions candidates, dans l’ordre de préférence. Vue pleine : à
+    // droite du repère, puis à sa gauche, puis dessous. Vue compacte : sous
+    // le repère, puis au-dessus, puis décalé à droite. Chacune est ramenée
+    // dans la scène (2 px de marge au moins) avant d’être notée : le
+    // cartouche n’est JAMAIS coupé, c’est la garde qui prime.
+    var cand;
+    if(scene.classList.contains('compacte')){
+      cand=[[mx-16,my+14],[mx-16,my-H-14],[mx+9,my+14],[mx+9,my-H-14]];
+    }else{
+      cand=[[mx+9,my-14],[mx-9-W,my-14],[mx+9,my+18],[mx-9-W,my+18]];
+    }
+    function borner(x,y){
+      if(x+W>SW-2)x=SW-2-W;
+      if(x<2)x=2;
+      if(y<2)y=2;
+      if(y+H>SH-2)y=SH-2-H;
+      if(y<2)y=2;
+      return [x,y];
+    }
+    // Note d’une position : surface de pastilles couverte, la zone centrale
+    // d’une pastille (son texte) comptant dix fois — couvrir un bord passe,
+    // couvrir un nom ou une heure, non, tant qu’un autre choix existe.
+    function note(x,y){
+      if(!evitements||!evitements.length)return 0;
+      var tot=0;
+      for(var i=0;i<evitements.length;i++){
+        var r=evitements[i];
+        var ox=Math.min(x+W,r[2])-Math.max(x,r[0]);
+        var oy=Math.min(y+H,r[3])-Math.max(y,r[1]);
+        if(ox>0&&oy>0){
+          tot+=ox*oy;
+          var cx1=r[0]+(r[2]-r[0])*0.25, cx2=r[2]-(r[2]-r[0])*0.25;
+          var cy1=r[1]+(r[3]-r[1])*0.25, cy2=r[3]-(r[3]-r[1])*0.25;
+          var px=Math.min(x+W,cx2)-Math.max(x,cx1);
+          var py=Math.min(y+H,cy2)-Math.max(y,cy1);
+          if(px>0&&py>0)tot+=9*px*py;
+        }
+      }
+      return tot;
+    }
+    var choisi=null, meilleur=null;
+    for(var c=0;c<cand.length;c++){
+      var pos=borner(cand[c][0],cand[c][1]);
+      var n=note(pos[0],pos[1]);
+      if(n===0){choisi=pos;break}
+      if(!meilleur||n<meilleur.n)meilleur={pos:pos,n:n};
+    }
+    if(!choisi&&evitements&&evitements.length){
+      // Aucune position candidate n’est libre (scène saturée, petit
+      // écran) : le cartouche cherche la place la moins couverte de la
+      // scène, au pas de 8 px, la plus proche du repère à note égale.
+      // Il reste entier dans la scène, et son fond opaque le garde
+      // lisible partout : c’est lui qui couvre, jamais l’inverse.
+      var ref=borner(cand[0][0],cand[0][1]);
+      for(var gy=2;gy+H<=SH-2;gy+=8){
+        for(var gx=2;gx+W<=SW-2;gx+=8){
+          var n2=note(gx,gy);
+          if(n2===0){meilleur={pos:[gx,gy],n:0};gy=SH;break}
+          if(meilleur&&n2<meilleur.n)meilleur={pos:[gx,gy],n:n2};
+          else if(meilleur&&n2===meilleur.n){
+            var d1=(gx-mx)*(gx-mx)+(gy-my)*(gy-my);
+            var d2=(meilleur.pos[0]-mx)*(meilleur.pos[0]-mx)+(meilleur.pos[1]-my)*(meilleur.pos[1]-my);
+            if(d1<d2)meilleur={pos:[gx,gy],n:n2};
+          }
+        }
+      }
+      if(meilleur)choisi=meilleur.pos;
+      if(!choisi)choisi=ref;
+    }
+    if(!choisi)choisi=meilleur?meilleur.pos:borner(cand[0][0],cand[0][1]);
+    etq.style.left=choisi[0]+'px'; etq.style.top=choisi[1]+'px';
   }
   function creerRepere(l){
     var zone=$('planete-reperes'); if(!zone)return null;
     var s=document.createElement('span');
     s.className='rep'+(l.ancre?' ancre':'');
     s.setAttribute('data-act','choix'); s.setAttribute('data-id',l.id);
-    var n=document.createElement('span'); n.className='rep-nom';
     if(l.ancre){
-      // v19 — l’ancre se nomme au complet sur le globe, dans les mots d’Alex.
-      n.textContent='Sainte-Martine — Québec, Canada';
-      var so=document.createElement('span'); so.className='rep-ancrage';
+      // v19 — l’ancre se nomme au complet, dans les mots d’Alex.
+      // v20 — mais plus DANS le globe : le nom posé dans .planete-reperes est
+      // coupé par le bord circulaire du globe (overflow hidden) et sa 2e ligne
+      // se noyait dans les nuages (constats de l’inspection v19, 2 nov.). Le
+      // nom devient un cartouche posé sur la SCÈNE, hors du globe : fond
+      // sombre, bord doré, ombrage porté — et placerRepere le fait suivre le
+      // repère à chaque vue (voir placerEtiquetteAncre).
+      var etq=document.createElement('div'); etq.className='etiquette-ancre';
+      etq.textContent='Sainte-Martine — Québec, Canada';
+      var so=document.createElement('span'); so.className='ea-l2';
       so.textContent='ancrage : '+fmtCoord(l.lat,l.lon);
-      n.appendChild(so);
+      etq.appendChild(so);
+      var scene0=$('planete-scene'); if(scene0)scene0.appendChild(etq);
+      s._etiquette=etq;
     }else{
+      var n=document.createElement('span'); n.className='rep-nom';
       n.textContent=l.nom;
+      s.appendChild(n);
     }
-    s.appendChild(n);
     zone.appendChild(s);
     placerRepere(s,l);
     return s;
@@ -3757,6 +3925,21 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       e.el.style.width=e.w+'px'; e.el.style.height=e.h+'px';
       e.el.style.left='50%'; e.el.style.top='50%';
       e.el.style.transform='translate('+pl.p.x.toFixed(1)+'px,'+pl.p.y.toFixed(1)+'px) translate(-50%,-50%)';
+    });
+    // v20 — le cartouche de l’ancre se replace contre les pastilles posées :
+    // parmi ses positions candidates, celle qui n’en couvre aucune (à défaut,
+    // celle qui couvre le moins). Il reste entier dans la scène dans tous
+    // les cas — c’est la garde qui prime.
+    LIEUX.forEach(function(la){
+      if(!la.ancre)return;
+      var ra=refs[la.id];
+      if(!ra||!ra.rep||!ra.rep._etiquette)return;
+      var rects=[];
+      elems.forEach(function(e){
+        var pl=places[e.id]; if(!pl)return;
+        rects.push([geom.S/2+pl.p.x-e.w/2,geom.H/2+pl.p.y-e.h/2,geom.S/2+pl.p.x+e.w/2,geom.H/2+pl.p.y+e.h/2]);
+      });
+      placerEtiquetteAncre(ra.rep._etiquette,projection(la.lat,la.lon),rects);
     });
     rendreTraits(places,geom);
   }
@@ -4723,6 +4906,248 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       navigator.serviceWorker.register('sw.js').catch(function(){});
     });
   }
+})();
+</script>
+<script>
+// ---------- v20 — Vérifie-moi sans moi : le vérificateur autonome ----------
+// Le sceau de la page se recalcule chez le visiteur : octets exacts, recette
+// canonique, crypto.subtle du navigateur. Aucun envoi. L'auto-revérification
+// (couche agent, idée 31) relit la copie servie au chargement puis toutes
+// les cinq minutes ; un échec de réseau y dit « non revérifié », jamais ÉCART.
+(function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id)};
+  /*VMM-CORE-DEBUT*/
+  // Le cœur du calcul : des octets, rien que des octets (aucun DOM).
+  function vmmSha256Hex(tampon){
+    return crypto.subtle.digest('SHA-256',tampon).then(function(d){
+      var u=new Uint8Array(d),s='';
+      for(var i=0;i<u.length;i++){s+=('0'+u[i].toString(16)).slice(-2)}
+      return s;
+    });
+  }
+  // Cherche le bloc étiqueté « Sceau canonique de la version affichée » et
+  // retourne {sceau, version} — ou null si le fichier n'en porte pas.
+  function vmmExtraireEtiquette(tampon){
+    var texte=new TextDecoder('utf-8').decode(tampon);
+    var i=texte.indexOf('sceau-version-affiche">');
+    if(i<0)return null;
+    var m=texte.slice(i,i+300).match(/[0-9a-f]{64}/);
+    if(!m)return null;
+    var version=null;
+    var mentions=texte.slice(Math.max(0,i-600),i).match(/v(\d+)\s*\(/g);
+    if(mentions&&mentions.length){
+      var d=mentions[mentions.length-1].match(/v(\d+)/);
+      if(d)version=parseInt(d[1],10);
+    }
+    return {sceau:m[0],version:version};
+  }
+  // Positions (en octets) de toutes les occurrences ASCII d'une chaîne.
+  function vmmIndicesOctets(vue,chaine){
+    var idx=[],L=chaine.length;
+    for(var i=0;i+L<=vue.length;i++){
+      var ok=true;
+      for(var j=0;j<L;j++){if(vue[i+j]!==chaine.charCodeAt(j)){ok=false;break}}
+      if(ok){idx.push(i);i+=L-1}
+    }
+    return idx;
+  }
+  // La recette canonique : neutraliser le sceau étiqueté (64 fois « 0 »),
+  // hacher, comparer. Sans étiquette : hacher tel quel contre le sceau
+  // fourni (manuel), ou rendre le hachage seul (aucun verdict possible).
+  function vmmVerifierOctets(tampon,sceauManuel){
+    var et=vmmExtraireEtiquette(tampon);
+    if(et){
+      var copie=new Uint8Array(tampon);
+      var idx=vmmIndicesOctets(copie,et.sceau);
+      idx.forEach(function(o){for(var k=0;k<64;k++)copie[o+k]=48});
+      return vmmSha256Hex(copie.buffer).then(function(calc){
+        return {ok:calc===et.sceau,calc:calc,attendu:et.sceau,version:et.version,occurrences:idx.length,taille:tampon.byteLength,mode:'etiquette'};
+      });
+    }
+    return vmmSha256Hex(tampon).then(function(calc){
+      if(sceauManuel)return {ok:calc===sceauManuel,calc:calc,attendu:sceauManuel,version:null,occurrences:0,taille:tampon.byteLength,mode:'manuel'};
+      return {ok:null,calc:calc,attendu:null,version:null,occurrences:0,taille:tampon.byteLength,mode:'aucun'};
+    });
+  }
+  /*VMM-CORE-FIN*/
+  function normaliserSceau(s){
+    if(!s)return null;
+    var t=String(s).trim().toLowerCase().replace(/\s+/g,'');
+    return /^[0-9a-f]{64}$/.test(t)?t:null;
+  }
+  var contexteOk=!!(window.isSecureContext&&window.crypto&&crypto.subtle&&window.TextDecoder);
+  var zoneRes=$('vmm-resultat'), elVerdict=$('vmm-verdict'), elDetail=$('vmm-detail'),
+      elSceau=$('vmm-sceau'), elNote=$('vmm-note-resultat'), btnRecu=$('vmm-recu');
+  var dernier=null;
+  function afficher(res,source){
+    dernier={res:res,source:source,quand:new Date()};
+    zoneRes.hidden=false;
+    elSceau.textContent=res.calc;
+    var det=source+' · '+res.taille.toLocaleString('fr-CA')+' octets lus';
+    if(res.mode==='etiquette')det+=' · version détectée : v'+res.version+' · sceau étiqueté neutralisé ('+res.occurrences+' occurrence)';
+    if(res.mode==='manuel')det+=' · aucun sceau étiqueté dans le fichier : hachage tel quel, contre le sceau fourni';
+    if(res.mode==='aucun')det+=' · aucun sceau étiqueté, aucun sceau fourni';
+    elDetail.textContent=det;
+    if(res.ok===true){
+      elVerdict.textContent='MATCH'; elVerdict.className='vmm-verdict ok';
+      elNote.textContent='La copie est identique, à l’octet près, à celle que le sceau désigne. Le reçu de visite, généré sur votre appareil, garde la trace de VOTRE calcul.';
+      btnRecu.hidden=false;
+    }else if(res.ok===false){
+      elVerdict.textContent='ÉCART'; elVerdict.className='vmm-verdict ecart';
+      elNote.textContent='Le sceau recalculé ne correspond pas au sceau attendu ('+res.attendu+'). Un seul octet différent suffit : soit la copie a été altérée, soit ce n’est pas la version que ce sceau désigne.';
+      btnRecu.hidden=true;
+    }else{
+      elVerdict.textContent='AUCUN SCEAU'; elVerdict.className='vmm-verdict attente';
+      elNote.textContent='Ce fichier ne porte pas le bloc étiqueté des versions de ce site, et aucun sceau attendu n’a été fourni : voici son empreinte telle quelle, à comparer à la main contre un sceau de confiance.';
+      btnRecu.hidden=true;
+    }
+    zoneRes.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function afficherEchec(source,err){
+    dernier=null;
+    zoneRes.hidden=false;
+    elVerdict.textContent='LECTURE IMPOSSIBLE'; elVerdict.className='vmm-verdict attente';
+    elDetail.textContent=source;
+    elSceau.textContent='—';
+    elNote.textContent='La relecture a échoué ('+(err&&err.message?err.message:'réseau')+'). Ne pas pouvoir relire n’est pas un ÉCART : rien n’a été conclu sur cette copie.';
+    btnRecu.hidden=true;
+  }
+  function enCours(source){
+    zoneRes.hidden=false;
+    elVerdict.textContent='Calcul en cours…'; elVerdict.className='vmm-verdict attente';
+    elDetail.textContent=source; elSceau.textContent='…'; elNote.textContent=''; btnRecu.hidden=true;
+  }
+  function urlPage(){return location.href.split('#')[0]}
+  function relirePage(){
+    return fetch(urlPage(),{cache:'no-store'}).then(function(r){
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      return r.arrayBuffer();
+    });
+  }
+  // --- Geste 1 : cette page, maintenant ---
+  var btnPage=$('vmm-btn-page');
+  if(btnPage)btnPage.addEventListener('click',function(){
+    enCours('Relecture des octets servis pour cette adresse…');
+    relirePage().then(function(buf){return vmmVerifierOctets(buf,null)})
+      .then(function(res){afficher(res,'Cette page, relue à l’instant depuis le serveur')})
+      .catch(function(e){afficherEchec('Cette page, relue à l’instant depuis le serveur',e)});
+  });
+  // --- Geste 2 : une copie sauvegardée, déposée ---
+  var zone=$('vmm-zone'), inpFichier=$('vmm-fichier');
+  function lireFichier(f){
+    if(!f)return;
+    enCours('Lecture locale de « '+f.name+' » — le fichier ne quitte pas votre appareil…');
+    var promesse=(f.arrayBuffer?f.arrayBuffer():new Promise(function(res,rej){
+      var l=new FileReader(); l.onload=function(){res(l.result)}; l.onerror=rej; l.readAsArrayBuffer(f);
+    }));
+    promesse.then(function(buf){
+      var manuel=normaliserSceau($('vmm-attendu-fichier').value);
+      return vmmVerifierOctets(buf,manuel);
+    }).then(function(res){afficher(res,'Copie déposée : « '+f.name+' »')})
+      .catch(function(e){afficherEchec('Copie déposée : « '+f.name+' »',e)});
+  }
+  if(zone&&inpFichier){
+    zone.addEventListener('click',function(e){if(e.target!==inpFichier)inpFichier.click()});
+    zone.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();inpFichier.click()}});
+    inpFichier.addEventListener('change',function(){lireFichier(inpFichier.files&&inpFichier.files[0]);inpFichier.value=''});
+    ['dragover','dragenter'].forEach(function(ev){zone.addEventListener(ev,function(e){e.preventDefault();zone.classList.add('actif')})});
+    ['dragleave','drop'].forEach(function(ev){zone.addEventListener(ev,function(e){e.preventDefault();zone.classList.remove('actif')})});
+    zone.addEventListener('drop',function(e){var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];lireFichier(f)});
+  }
+  // --- Geste 3 : un texte libre ---
+  var btnTexte=$('vmm-btn-texte'), btnExemple=$('vmm-btn-exemple');
+  if(btnExemple)btnExemple.addEventListener('click',function(){
+    $('vmm-texte').value='abc';
+    $('vmm-attendu-texte').value='ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad';
+  });
+  if(btnTexte)btnTexte.addEventListener('click',function(){
+    var attendu=normaliserSceau($('vmm-attendu-texte').value);
+    if(!attendu){
+      zoneRes.hidden=false;
+      elVerdict.textContent='SCEAU ATTENDU ILLISIBLE'; elVerdict.className='vmm-verdict attente';
+      elDetail.textContent='Le sceau attendu doit compter exactement 64 caractères hexadécimaux (0-9, a-f).'; elSceau.textContent='—'; elNote.textContent=''; btnRecu.hidden=true; dernier=null;
+      return;
+    }
+    enCours('Hachage du texte collé, en UTF-8, tel quel…');
+    var buf=new TextEncoder().encode($('vmm-texte').value);
+    vmmSha256Hex(buf.buffer).then(function(calc){
+      afficher({ok:calc===attendu,calc:calc,attendu:attendu,version:null,occurrences:0,taille:buf.byteLength,mode:'manuel'},'Texte libre collé dans le panneau');
+    });
+  });
+  // --- Copier le sceau recalculé ---
+  var btnCopier=$('vmm-copier');
+  if(btnCopier)btnCopier.addEventListener('click',function(){
+    var t=elSceau.textContent;
+    function ok(){var a=btnCopier.textContent;btnCopier.textContent='Copié ✓';setTimeout(function(){btnCopier.textContent=a},1600)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){ok()})}
+    else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);ok()}
+  });
+  // --- Le reçu de visite : généré sur place, après un MATCH, à la demande ---
+  if(btnRecu)btnRecu.addEventListener('click',function(){
+    if(!dernier||dernier.res.ok!==true)return;
+    var d=dernier, fmt=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',dateStyle:'full',timeStyle:'medium'});
+    var lignes=[
+      'REÇU DE VISITE — Audit Unisson',
+      'Le site d’Alexandre Vautour Gagnon — la chaîne de mémoire, vérifiable par tous.',
+      '',
+      'Vérification faite dans votre navigateur, à votre demande, sans aucun envoi.',
+      'Date et heure : '+fmt.format(d.quand)+' (heure de Toronto)',
+      'Instant (ISO) : '+d.quand.toISOString(),
+      'Objet vérifié : '+d.source,
+      'Taille lue : '+d.res.taille+' octets'
+    ];
+    if(d.res.mode==='etiquette')lignes.push('Version détectée : v'+d.res.version);
+    lignes.push('Sceau recalculé chez vous : '+d.res.calc);
+    lignes.push('Verdict : MATCH — cette copie est identique, à l’octet près, à celle que le sceau désigne.');
+    lignes.push('');
+    lignes.push('Ce reçu est généré sur votre appareil, au moment du calcul. Il atteste que');
+    lignes.push('VOUS avez recalculé : il ne dépend ni du serveur, ni de l’agente.');
+    lignes.push('');
+    lignes.push('Vous avez vérifié ; vous n’avez rien laissé.');
+    var blob=new Blob([lignes.join('\n')],{type:'text/plain;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download='recu-de-visite.txt';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},400);
+  });
+  // --- Auto-revérification : au chargement, puis toutes les cinq minutes ---
+  var autoEtat=$('vmm-auto-etat'), autoVoyant=$('vmm-auto-voyant');
+  var autoDernier=null, autoOk=null, autoEchec=false;
+  function majLigneAuto(){
+    if(!autoEtat)return;
+    if(!contexteOk){autoEtat.textContent='non revérifié — contexte non sécurisé : le navigateur refuse ses outils de calcul (voir l’alerte du panneau).';return}
+    if(!autoDernier){autoEtat.textContent='premier recalcul automatique en cours…';return}
+    var mins=Math.max(0,Math.round((Date.now()-autoDernier.getTime())/60000));
+    var quand=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',hour:'2-digit',minute:'2-digit'}).format(autoDernier);
+    var ilya=mins<=0?'à l’instant':'il y a '+mins+' min';
+    if(autoEchec){
+      autoVoyant.className='voyant attente';
+      autoEtat.textContent='non revérifié — la relecture du réseau a échoué (tentative '+ilya+', à '+quand+', heure de Toronto). Ne pas pouvoir relire n’est pas un ÉCART.';
+    }else if(autoOk){
+      autoVoyant.className='voyant ok';
+      autoEtat.textContent='MATCH — la copie servie est identique au sceau qu’elle porte ; revérifié '+ilya+' (à '+quand+', heure de Toronto), puis toutes les cinq minutes tant que la page reste ouverte.';
+    }else{
+      autoVoyant.className='voyant ecart';
+      autoEtat.textContent='ÉCART au recalcul automatique de '+quand+' (heure de Toronto) : la copie servie ne correspond plus au sceau qu’elle porte — refaites le geste 1 pour le constater vous-même.';
+    }
+  }
+  function autoReverifier(){
+    if(!contexteOk){majLigneAuto();return}
+    relirePage().then(function(buf){return vmmVerifierOctets(buf,null)})
+      .then(function(res){autoOk=(res.ok===true);autoEchec=false;autoDernier=new Date();majLigneAuto()})
+      .catch(function(){autoOk=null;autoEchec=true;autoDernier=new Date();majLigneAuto()});
+  }
+  // --- Contexte non sécurisé : le dire, et désactiver plutôt que simuler ---
+  if(!contexteOk){
+    var alerte=$('vmm-alerte-contexte'); if(alerte)alerte.hidden=false;
+    [btnPage,btnTexte,btnExemple].forEach(function(b){if(b)b.disabled=true});
+    if(zone)zone.style.pointerEvents='none';
+  }
+  majLigneAuto();
+  setTimeout(autoReverifier,1500);
+  setInterval(autoReverifier,300000);
+  setInterval(majLigneAuto,30000);
 })();
 </script>
 </body>
