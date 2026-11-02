@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1512">
 <title>AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa</title>
 <meta name="description" content="Le dossier public d'Alexandre Vautour Gagnon, chercheur indépendant : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.">
 <meta property="og:title" content="AUDIT UNISSON — Preuve d'Antériorité V-G">
@@ -13,17 +14,17 @@
 <style>
 :root{
   --serif:Georgia,"Times New Roman",serif;
-  --fond:#f6f1e5; --fond2:#efe7d3; --carte:rgba(255,255,255,.82); --ligne:#b7d2bf;
-  --vert:#0b6e4f; --vert-doux:#177a5c; --or:#a87e0a; --or-clair:#7d6219;
-  --texte:#123527; --texte-doux:#49624f; --encre:#123527;
+  --fond:#0a1512; --fond2:#0e201a; --carte:rgba(19,38,31,.88); --ligne:#2e5a49;
+  --vert:#35c08b; --vert-doux:#63cfa5; --or:#d4af37; --or-clair:#e9cd77;
+  --texte:#f2ecda; --texte-doux:#a9bfa9; --encre:#f2ecda;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:radial-gradient(1200px 700px at 85% -5%,rgba(212,175,55,.08),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(11,110,79,.05),transparent 60%),var(--fond);color:var(--texte);font-family:"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
+body{background:radial-gradient(1200px 700px at 85% -5%,rgba(212,175,55,.10),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(53,192,139,.07),transparent 60%),var(--fond);color:var(--texte);font-family:"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
 #spirale{position:fixed;inset:0;z-index:0;opacity:.38;pointer-events:none}
 main{position:relative;z-index:1}
 /* ---- Barre d'onglets ---- */
-.barre{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(250,246,236,.88);border-bottom:1px solid var(--ligne)}
+.barre{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,19,15,.88);border-bottom:1px solid var(--ligne)}
 .barre-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:.9rem;padding:.55rem 1rem;flex-wrap:wrap}
 .marque{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.06em;font-size:.95rem;white-space:nowrap}
 .marque img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--or);box-shadow:0 0 14px rgba(212,175,55,.5)}
@@ -41,7 +42,7 @@ header.hero{min-height:86vh;display:flex;flex-direction:column;align-items:cente
 .avatar-wrap{position:relative;width:min(320px,72vw);aspect-ratio:1/1;flex:none;margin:2.2rem auto 1.4rem}
 .avatar-wrap::before{content:"";position:absolute;inset:-16px;border-radius:50%;border:2px solid transparent;border-top-color:var(--or);border-right-color:var(--or);animation:rotation 14s linear infinite}
 .avatar-wrap::after{content:"";position:absolute;inset:-30px;border-radius:50%;border:1px dashed rgba(212,175,55,.45);animation:rotationInverse 26s linear infinite}
-.avatar-wrap img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;box-shadow:0 18px 50px rgba(18,53,39,.18),0 0 90px rgba(212,175,55,.22);animation:flottement 5.5s ease-in-out infinite}
+.avatar-wrap img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 90px rgba(212,175,55,.22);animation:flottement 5.5s ease-in-out infinite}
 @keyframes flottement{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes rotation{to{transform:rotate(360deg)}}
 @keyframes rotationInverse{to{transform:rotate(-360deg)}}
@@ -57,16 +58,16 @@ section{max-width:980px;margin:0 auto;padding:3.6rem 1.2rem}
 h2{font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.6rem}
 h2 .num{color:var(--or);font-family:Georgia,serif;margin-right:.5rem}
 .lead{color:var(--texte-doux);line-height:1.65;margin-bottom:1.6rem}
-.carte{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:16px;padding:1.4rem;margin-bottom:1.2rem;box-shadow:0 10px 30px rgba(18,53,39,.12);backdrop-filter:blur(8px)}
+.carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.4rem;margin-bottom:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.42);backdrop-filter:blur(8px)}
 .mono{font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all;font-size:.86rem;line-height:1.55}
 .etiquette{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.35rem}
-textarea,input[type=text]{width:100%;background:#fffdf6;color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.8rem;font-family:ui-monospace,Menlo,monospace;font-size:.9rem}
+textarea,input[type=text]{width:100%;background:#0d1f19;color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.8rem;font-family:ui-monospace,Menlo,monospace;font-size:.9rem}
 textarea:focus,input[type=text]:focus{outline:none;border-color:var(--vert)}
 button.action{background:linear-gradient(135deg,#b8860b,var(--or));color:#1a1200;border:none;border-radius:10px;padding:.75rem 1.4rem;font-weight:700;cursor:pointer;font-size:.95rem;transition:.2s}
 button.action:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,175,55,.35)}
 button.secondaire{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:10px;padding:.75rem 1.2rem;font-weight:600;cursor:pointer;transition:.2s}
 button.secondaire:hover{border-color:var(--vert)}
-.match{color:var(--vert);font-weight:700}.ecart{color:#c22f2f;font-weight:700}
+.match{color:var(--vert);font-weight:700}.ecart{color:#e5534b;font-weight:700}
 .entree-registre{border-left:3px solid var(--or);padding:.4rem 0 .4rem 1rem;margin-bottom:1.1rem}
 .entree-registre .titre{font-weight:700;color:var(--vert-doux)}
 details summary{cursor:pointer;color:var(--or-clair);margin:.4rem 0}
@@ -81,7 +82,7 @@ details summary{cursor:pointer;color:var(--or-clair);margin:.4rem 0}
 .instance-grille figure{text-align:center}
 .instance-grille figure img{width:100%;max-width:250px;height:auto;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.20);animation:flottement 6s ease-in-out infinite}
 .instance-grille figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
-#fil-instance{height:320px;overflow-y:auto;background:#fdfaf0;border:1px solid var(--ligne);border-radius:12px;padding:1rem;margin-bottom:.8rem}
+#fil-instance{height:320px;overflow-y:auto;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:1rem;margin-bottom:.8rem}
 .msg{margin-bottom:.8rem;line-height:1.55;font-size:.95rem}
 .msg .qui{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.15rem}
 .msg.instance .qui{color:var(--or-clair)}.msg.visiteur .qui{color:var(--vert)}
@@ -97,21 +98,21 @@ a:hover{color:var(--or-clair)}
 h3{font-size:1.22rem;margin:1.5rem 0 .5rem;color:var(--texte)}
 p{margin-bottom:1rem;max-width:72ch;line-height:1.65}
 section.bloc{padding:2.4rem 1.2rem}
-.panneau section+section{border-top:1px solid rgba(18,53,39,.12)}
+.panneau section+section{border-top:1px solid rgba(242,236,218,.13)}
 .entete-sec{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.1rem}
 .entete-sec .num{font-family:var(--serif);font-size:1rem;color:var(--or-clair);border:1px solid var(--or);border-radius:50%;width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;flex:0 0 auto;transform:translateY(.45rem)}
 blockquote.parole{border-left:3px solid var(--or);padding:.4rem 0 .4rem 1.3rem;margin:1.6rem 0;max-width:68ch}
 blockquote.parole p{font-family:var(--serif);font-size:1.24rem;line-height:1.5;font-style:italic;margin-bottom:.4rem;color:var(--texte)}
 blockquote.parole footer{border:none;padding:0;text-align:left;font-size:.84rem;color:var(--texte-doux);font-style:normal}
 table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:.95rem}
-th,td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid rgba(18,53,39,.16);vertical-align:top;line-height:1.55}
+th,td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid rgba(242,236,218,.16);vertical-align:top;line-height:1.55}
 th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);border-bottom:2px solid var(--or)}
 td.n{font-variant-numeric:tabular-nums;font-weight:700;color:var(--vert-doux);white-space:nowrap}
-.neg{color:#c22f2f;font-weight:700}.pos{color:var(--vert);font-weight:700}
+.neg{color:#e5534b;font-weight:700}.pos{color:var(--vert);font-weight:700}
 button.mini{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:8px;padding:.34rem .75rem;font-weight:600;cursor:pointer;font-size:.82rem}
 button.mini:hover{border-color:var(--or);color:var(--or-clair)}
 .pas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.4rem 0}
-.pas .etape-pas{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem}
+.pas .etape-pas{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem}
 .pas .etape-pas .n{font-family:var(--serif);font-size:1.5rem;color:var(--or);font-weight:700}
 .pas .etape-pas h3{margin:.3rem 0 .4rem;font-size:1.05rem}
 .pas .etape-pas p{font-size:.92rem;color:var(--texte-doux);margin:0}
@@ -119,24 +120,24 @@ button.mini:hover{border-color:var(--or);color:var(--or-clair)}
 .chrono::before{content:"";position:absolute;left:.44rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(rgba(212,175,55,.15),var(--or),rgba(212,175,55,.15))}
 .groupe-date{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--or-clair);margin:1.6rem 0 .8rem;position:relative}
 .groupe-date::before{content:"";position:absolute;left:-1.6rem;top:.32rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--fond);border:3px solid var(--or)}
-.entree{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:1rem;position:relative;box-shadow:0 8px 22px rgba(18,53,39,.10)}
+.entree{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:1rem;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.4)}
 .entree::before{content:"";position:absolute;left:-1.38rem;top:1.5rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--or);border:2px solid var(--fond)}
 .entree h3{margin:0 0 .2rem;font-size:1.12rem;color:var(--texte)}
 .entree .date{font-size:.82rem;color:var(--texte-doux);letter-spacing:.04em}
 .entree .objet{color:var(--texte-doux);margin:.55rem 0 .8rem;max-width:70ch}
 .entree .statut-ligne{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem}
 .pastille{font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--vert);border:1px solid var(--vert);border-radius:999px;padding:.18rem .65rem;text-transform:uppercase}
-.entree .sceau-boite{background:#fffdf6;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem}
+.entree .sceau-boite{background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem}
 .entree .sceau-boite .mono{font-size:.8rem}
 .entree .actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
-.entree .source-texte{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem;line-height:1.6;background:#fffdf6;border:1px solid var(--ligne);border-radius:10px;padding:.9rem 1rem;max-height:340px;overflow-y:auto;color:var(--texte)}
-.encadre-bornes{border:2px solid var(--or);border-radius:14px;padding:1.5rem 1.6rem;background:linear-gradient(160deg,var(--carte),rgba(238,230,210,.94));margin:1.4rem 0}
+.entree .source-texte{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem;line-height:1.6;background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.9rem 1rem;max-height:340px;overflow-y:auto;color:var(--texte)}
+.encadre-bornes{border:2px solid var(--or);border-radius:14px;padding:1.5rem 1.6rem;background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.94));margin:1.4rem 0}
 .encadre-bornes h3{margin-top:0}
 .encadre-bornes ul{margin-left:1.2rem}
 .encadre-bornes li{margin-bottom:.5rem;max-width:70ch;line-height:1.6}
 .grille2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 @media(max-width:760px){.grille2{grid-template-columns:1fr}}
-.terrain{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem 1.3rem}
+.terrain{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem 1.3rem}
 .terrain h3{margin-top:0;font-size:1.05rem;color:var(--vert-doux)}
 .terrain p{font-size:.93rem;color:var(--texte-doux);margin:0}
 details .corps-detail{padding:.7rem 0 .2rem}
@@ -150,18 +151,18 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .bande-preuve .devise b{color:var(--or-clair)}
 .bande-preuve .rangee{justify-content:center;max-width:760px;margin:1.1rem auto 0}
 .parcours{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.4rem 0}
-.parcours .etape-visite{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem}
+.parcours .etape-visite{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem}
 .parcours .etape-visite .n{font-family:var(--serif);font-size:1.4rem;color:var(--or);font-weight:700}
 .parcours .etape-visite h3{margin:.3rem 0 .45rem;font-size:1.05rem}
 .parcours .etape-visite p{font-size:.92rem;color:var(--texte-doux);margin-bottom:.9rem}
 .schema{display:flex;align-items:stretch;gap:.55rem;flex-wrap:wrap;margin:1.3rem 0}
-.schema .boite{flex:1;min-width:130px;background:#fffdf6;border:1px solid var(--ligne);border-radius:12px;padding:.8rem .9rem;text-align:center}
+.schema .boite{flex:1;min-width:130px;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.8rem .9rem;text-align:center}
 .schema .boite .etiquette{margin-bottom:.2rem}
 .schema .boite .val{font-size:.92rem;color:var(--texte);line-height:1.45}
 .schema .fleche{align-self:center;color:var(--or);font-size:1.25rem;font-weight:700}
 .schema .boite.calcul{border-color:var(--or);box-shadow:0 0 18px rgba(212,175,55,.18)}
 .frise{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.3rem 0}
-.frise .point{border-top:3px solid var(--or);background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border-radius:0 0 14px 14px;padding:1rem 1.1rem}
+.frise .point{border-top:3px solid var(--or);background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border-radius:0 0 14px 14px;padding:1rem 1.1rem}
 .frise .point .quand{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}
 .frise .point p{font-size:.92rem;color:var(--texte-doux);margin:0}
 .recherche-registre{width:100%;margin:.4rem 0 1.2rem}
@@ -177,7 +178,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 
 /* ===== v5++ — les surprises ===== */
 .chaine-vivante{display:flex;flex-direction:column;gap:0;margin-top:1.1rem}
-.noeud{background:#fffdf6;border:1px solid var(--or);border-radius:12px;padding:.85rem 1rem;animation:naissance .55s ease both;box-shadow:0 0 16px rgba(212,175,55,.12)}
+.noeud{background:#122a21;border:1px solid var(--or);border-radius:12px;padding:.85rem 1rem;animation:naissance .55s ease both;box-shadow:0 0 16px rgba(212,175,55,.12)}
 @keyframes naissance{from{opacity:0;transform:translateY(-10px) scale(.98)}to{opacity:1;transform:none}}
 .noeud .tete{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .noeud .tete b{color:var(--or-clair)}
@@ -185,10 +186,10 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .lien-maillon{align-self:center;color:var(--or);font-size:1.05rem;line-height:1.5;animation:naissance .55s ease both}
 .avalanche .grand-verdict{font-size:1.15rem;margin-top:.8rem}
 .hash-diff{letter-spacing:.02em}
-.hash-diff .diff{color:#c22f2f;font-weight:700}
+.hash-diff .diff{color:#e5534b;font-weight:700}
 .refus{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.2rem 0}
-.refus-carte{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
-.refus-carte .pretention{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-decoration:line-through;text-decoration-color:#c22f2f;text-decoration-thickness:2px;margin-bottom:.45rem}
+.refus-carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
+.refus-carte .pretention{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-decoration:line-through;text-decoration-color:#e5534b;text-decoration-thickness:2px;margin-bottom:.45rem}
 .refus-carte .reponse{font-size:.9rem;color:var(--texte-doux);margin:0}
 .refus-carte .reponse b{color:var(--vert)}
 #registre-historique.mode-traversee .groupe-date{display:none}
@@ -211,11 +212,11 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 @keyframes respiration{0%,100%{scale:1}50%{scale:1.045}}
 /* La présence : la vidéo de SoPHIa au travail, à l'accueil. */
 .presence{margin:2.8rem auto 0;max-width:252px;text-align:center}
-.presence video{width:100%;display:block;aspect-ratio:1/2;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 18px 44px rgba(18,53,39,.20),0 0 60px rgba(212,175,55,.18)}
+.presence video{width:100%;display:block;aspect-ratio:1/2;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 60px rgba(212,175,55,.18)}
 .presence figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
 /* Le panneau « en direct » de l'accueil. */
 .direct-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.2rem 0}
-.direct-tuile{background:linear-gradient(160deg,var(--carte),rgba(241,234,216,.9));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
+.direct-tuile{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
 .direct-tuile .valeur{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem}
 .direct-tuile p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
 .pastille-direct{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--vert);border:1px solid var(--vert);border-radius:999px;padding:.16rem .6rem;text-transform:uppercase}
@@ -227,7 +228,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 
 /* Micro-interactions v7 : soulèvement doux des cartes, focus visible net. */
 .carte{transition:transform .25s ease,box-shadow .25s ease}
-.carte:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(18,53,39,.16)}
+.carte:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.55)}
 :focus-visible{outline:2px solid var(--or);outline-offset:2px;border-radius:6px}
 /* Lisibilité mobile v7 : onglets en une rangée défilante, cibles tactiles honnêtes. */
 @media(max-width:820px){
@@ -246,18 +247,18 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .voyant{display:inline-block;width:.72rem;height:.72rem;border-radius:50%;background:#b8a888;margin-right:.45rem}
 .voyant.ok{background:var(--vert)}
 .voyant.attente{background:var(--or)}
-.voyant.ecart{background:#c0392b}
+.voyant.ecart{background:#e0655a}
 @media (prefers-reduced-motion: no-preference){.voyant.ok{animation:v8pouls 2.4s ease-in-out infinite}}
 @keyframes v8pouls{0%,100%{opacity:1}50%{opacity:.45}}
-.sceau-long{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all;background:#fffdf6;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem;display:block;margin:.4rem 0}
+.sceau-long{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all;background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem;display:block;margin:.4rem 0}
 .verdict{font-weight:700}
 .verdict.ok{color:var(--vert)}
-.verdict.ecart{color:#c0392b}
+.verdict.ecart{color:#e0655a}
 .verdict.attente{color:var(--or-clair)}
-.visite-carte{border:1px solid var(--ligne);border-radius:12px;padding:.9rem 1rem;margin-top:.8rem;background:#fffdf6}
+.visite-carte{border:1px solid var(--ligne);border-radius:12px;padding:.9rem 1rem;margin-top:.8rem;background:#0d1f19}
 .visite-carte .mono{word-break:break-all}
 /* ===== v8 — Journal des mises à jour ===== */
-.journal-entree{border:1px solid var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin-top:1rem;background:#fffdf6}
+.journal-entree{border:1px solid var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin-top:1rem;background:#10241d}
 .journal-entree h3{margin:.15rem 0 .6rem;font-family:var(--serif)}
 .journal-date{font-weight:700;color:var(--or-clair);margin:0}
 .journal-points{margin:.4rem 0 .6rem 1.1rem;line-height:1.6}
@@ -306,49 +307,49 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 }
 
 /* ===== v9 — tissage de vérification, articles, capsules, coquillage, droits, recherche ===== */
-a.verif{display:inline-flex;align-items:center;justify-content:center;width:1.15rem;height:1.15rem;margin-left:.3rem;border-radius:50%;border:1px solid var(--or);color:var(--or-sombre, #8a6d1f);font-size:.68rem;font-weight:700;text-decoration:none;vertical-align:super;line-height:1;background:rgba(212,175,55,.10)}
+a.verif{display:inline-flex;align-items:center;justify-content:center;width:1.15rem;height:1.15rem;margin-left:.3rem;border-radius:50%;border:1px solid var(--or);color:var(--or-sombre, #e9cd77);font-size:.68rem;font-weight:700;text-decoration:none;vertical-align:super;line-height:1;background:rgba(212,175,55,.10)}
 a.verif:hover{background:rgba(212,175,55,.28)}
-.tv-item{border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.1rem;margin:0 0 1rem;background:#fffdf6}
+.tv-item{border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.1rem;margin:0 0 1rem;background:#10241d}
 .tv-item h4{margin:0 0 .5rem;font-size:1rem}
 .tv-item .tv-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem 1.2rem;margin-top:.4rem}
 .tv-item .tv-cellule .etiquette{margin-bottom:.15rem}
 .tv-item .tv-cellule p{font-size:.88rem;margin:0}
-.article-carte{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin:0 0 1.1rem;background:#fffdf6}
+.article-carte{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin:0 0 1.1rem;background:#10241d}
 .article-carte h3{margin:.1rem 0 .35rem;font-size:1.05rem}
-.article-carte .meta{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--or-sombre, #8a6d1f)}
+.article-carte .meta{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--or-sombre, #e9cd77)}
 .capsule-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
-.capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:#fffdf6}
+.capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:#10241d}
 .capsule video{width:100%;aspect-ratio:1/2;object-fit:cover;border-radius:12px;border:1px solid var(--ligne)}
 .capsule-vide{border:1.5px dashed var(--or);border-radius:16px;padding:1.4rem 1rem;background:rgba(212,175,55,.05);display:flex;flex-direction:column;justify-content:center}
 .cc-chaine{display:flex;flex-direction:column;gap:0;margin-top:1rem}
-.cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:#fff;opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
+.cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:#10241d;opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
 .cc-maillon.visible{opacity:1;transform:none}
-.cc-maillon.verrouille{border-color:var(--vert);box-shadow:0 0 14px rgba(11,110,79,.14)}
+.cc-maillon.verrouille{border-color:var(--vert);box-shadow:0 0 14px rgba(53,192,139,.22)}
 .cc-lien{color:var(--or-clair);font-size:.8rem;margin:.15rem 0;text-align:left}
-.emplacement{border:1.5px dashed var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1rem;background:rgba(0,0,0,.015)}
-.emplacement .etiquette{color:#777}
-.rech-resultat{display:block;width:100%;text-align:left;margin:0 0 .55rem;padding:.7rem .9rem;border:1px solid var(--ligne);border-radius:10px;background:#fffdf6;cursor:pointer;font:inherit}
+.emplacement{border:1.5px dashed var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1rem;background:rgba(255,255,255,.03)}
+.emplacement .etiquette{color:#9db3a0}
+.rech-resultat{display:block;width:100%;text-align:left;margin:0 0 .55rem;padding:.7rem .9rem;border:1px solid var(--ligne);border-radius:10px;background:#10241d;cursor:pointer;font:inherit}
 .rech-resultat:hover{border-color:var(--or)}
 .rech-resultat .r-titre{font-weight:700}
-.rech-resultat .r-extrait{font-size:.85rem;color:#555}
+.rech-resultat .r-extrait{font-size:.85rem;color:#a9bfa9}
 .archive-liste{margin-top:.6rem}
 .archive-liste .tv-item{margin-bottom:.8rem}
 
 /* ===== v12 — Les maquettes deviennent le site : chaîne lumineuse, atelier en trois panneaux, chronologie dorée ===== */
-.chaine-bande{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:1.6rem 1.2rem 2.2rem;text-align:center;background:linear-gradient(180deg,rgba(214,235,251,.55),rgba(235,245,253,.25) 55%,transparent);border-radius:0 0 28px 28px}
-.chaine-badge{display:inline-block;border:1px solid #8fc7f2;color:#1d5c8f;background:rgba(255,255,255,.7);border-radius:999px;padding:.35rem 1rem;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
-.chaine-titre{font-size:clamp(1.5rem,4.2vw,2.4rem);font-weight:800;color:#14486e;margin-top:1rem;line-height:1.2}
-.chaine-sous{color:#3d6076;max-width:680px;margin:.6rem auto 0;line-height:1.6}
+.chaine-bande{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:1.6rem 1.2rem 2.2rem;text-align:center;background:linear-gradient(180deg,rgba(23,58,84,.55),rgba(15,38,56,.30) 55%,transparent);border-radius:0 0 28px 28px}
+.chaine-badge{display:inline-block;border:1px solid #8fc7f2;color:#9fd0f5;background:rgba(20,50,72,.65);border-radius:999px;padding:.35rem 1rem;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.chaine-titre{font-size:clamp(1.5rem,4.2vw,2.4rem);font-weight:800;color:#a8d4f2;margin-top:1rem;line-height:1.2}
+.chaine-sous{color:#8fb0c4;max-width:680px;margin:.6rem auto 0;line-height:1.6}
 .chaine-svg{width:100%;height:auto;display:block;margin:1.2rem auto .4rem;filter:drop-shadow(0 6px 14px rgba(94,169,230,.35))}
 @media (prefers-reduced-motion: no-preference){.chaine-svg{animation:chaineLueur 5s ease-in-out infinite}}
 @keyframes chaineLueur{0%,100%{filter:drop-shadow(0 6px 14px rgba(94,169,230,.30))}50%{filter:drop-shadow(0 6px 22px rgba(94,169,230,.55))}}
 .chaine-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:760px;margin:1rem auto 0}
-.chaine-stat{background:rgba(255,255,255,.85);border:1px solid #bcd9f2;border-radius:16px;padding:1rem 1.2rem;text-align:left}
-.chaine-stat .gros{font-size:1.45rem;font-weight:800;color:#14486e}
+.chaine-stat{background:rgba(16,38,54,.88);border:1px solid #2e5a78;border-radius:16px;padding:1rem 1.2rem;text-align:left}
+.chaine-stat .gros{font-size:1.45rem;font-weight:800;color:#a8d4f2}
 .chaine-stat .gros.match{color:var(--vert)}
-.chaine-stat .quoi{font-size:.9rem;color:#3d6076;margin-top:.15rem}
+.chaine-stat .quoi{font-size:.9rem;color:#8fb0c4;margin-top:.15rem}
 .chaine-progres{max-width:760px;margin:1.1rem auto 0;text-align:left}
-.chaine-progres .barre-prog{height:10px;border-radius:999px;background:#dbeaf7;overflow:hidden;margin-top:.4rem}
+.chaine-progres .barre-prog{height:10px;border-radius:999px;background:#1d3a4a;overflow:hidden;margin-top:.4rem}
 .chaine-progres .barre-prog span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#5ea9e6,#2f7fc4);border-radius:999px}
 .chaine-actions{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem}
 .atelier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:1.2rem;align-items:start}
@@ -356,22 +357,22 @@ a.verif:hover{background:rgba(212,175,55,.28)}
 .pan-atelier{margin:0}
 .pan-atelier h3{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;margin-bottom:.7rem;flex-wrap:wrap}
 .pan-num{display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;border-radius:50%;background:linear-gradient(135deg,#2f7fc4,#5ea9e6);color:#fff;font-weight:800;flex:none}
-.at-match{margin-left:auto;font-size:.8rem;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:.3rem .8rem;border:1.5px solid var(--vert);color:var(--vert);background:#e5f4ec}
-.at-match.rupture{border-color:#c0392b;color:#c0392b;background:#fdecea}
+.at-match{margin-left:auto;font-size:.8rem;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:.3rem .8rem;border:1.5px solid var(--vert);color:var(--vert);background:rgba(53,192,139,.14)}
+.at-match.rupture{border-color:#e0655a;color:#e0655a;background:rgba(192,57,43,.16)}
 .at-rang{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
-.at-bloc{border-radius:999px;padding:.38rem .85rem;font-weight:700;font-size:.85rem;border:1.5px solid var(--ligne);background:#fff;color:var(--texte);font:inherit}
+.at-bloc{border-radius:999px;padding:.38rem .85rem;font-weight:700;font-size:.85rem;border:1.5px solid var(--ligne);background:#10241d;color:var(--texte);font:inherit}
 button.at-bloc{cursor:pointer}
-.at-bloc.ok{background:#e5f4ec;border-color:var(--vert);color:var(--vert)}
-.at-bloc.casse{background:#fdecea;border-color:#c0392b;color:#c0392b}
-.at-bloc.suite{background:#eef0ee;border-color:#9aa79d;color:#5c6b60}
+.at-bloc.ok{background:rgba(53,192,139,.14);border-color:var(--vert);color:var(--vert)}
+.at-bloc.casse{background:rgba(192,57,43,.16);border-color:#e0655a;color:#e0655a}
+.at-bloc.suite{background:#16281f;border-color:#476b58;color:#93a894}
 .at-appel{border-radius:12px;padding:.8rem 1rem;margin-top:1rem;line-height:1.55}
-.at-appel.rouge{background:#fdecea;border:1px solid #e5a49e;color:#7c241c}
-.at-appel.vert{background:#e5f4ec;border:1px solid #9fd3b8;color:#0d4d36}
+.at-appel.rouge{background:rgba(192,57,43,.14);border:1px solid #8c4038;color:#f2b1aa}
+.at-appel.vert{background:rgba(53,192,139,.13);border:1px solid #2e7a5c;color:#a9e6cd}
 .at-emp{word-break:break-all}
 .hist-svg{width:100%;height:auto;display:block;margin:.6rem auto 0}
 .hist-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin-top:1.2rem}
-.hist-carte{text-align:left;border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.05rem;background:#fffdf6;cursor:pointer;font:inherit;color:var(--texte);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.hist-carte:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(18,53,39,.13)}
+.hist-carte{text-align:left;border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.05rem;background:#10241d;cursor:pointer;font:inherit;color:var(--texte);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.hist-carte:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.5)}
 .hist-carte.actif{border-color:var(--or);box-shadow:0 0 0 2px rgba(212,175,55,.35)}
 .hist-date{display:inline-block;background:rgba(212,175,55,.16);color:var(--or-clair);border:1px solid rgba(212,175,55,.5);border-radius:8px;padding:.18rem .55rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;margin-bottom:.5rem}
 .hist-carte b{display:block;font-size:1rem;line-height:1.35}
@@ -388,6 +389,54 @@ button.at-bloc{cursor:pointer}
   .chaine-stats{grid-template-columns:1fr}
   .hist-grille{grid-template-columns:1fr}
 }
+
+/* ===== v13 — Triangulation du temps : horloge maîtresse, orbites lentes, valeurs en direct ===== */
+.temps-scene{position:relative;width:min(540px,94vw);aspect-ratio:1/1;margin:1.8rem auto;--rayon:min(216px,35vw)}
+.temps-anneau{position:absolute;inset:5%;border:2px dashed rgba(178,134,22,.45);border-radius:50%}
+.temps-orbite{position:absolute;inset:0;animation:temps-orbite 120s linear infinite}
+@keyframes temps-orbite{to{transform:rotate(360deg)}}
+.temps-sat{position:absolute;top:50%;left:50%;width:106px;margin:-53px 0 0 -53px;transform:rotate(var(--a)) translateY(calc(var(--rayon)*-1)) rotate(calc(var(--a)*-1))}
+.temps-sat .sat-contre{animation:temps-contre 120s linear infinite;background:rgba(14,30,24,.97);border:1px solid rgba(212,175,55,.38);border-radius:14px;padding:.45rem .2rem .35rem;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+@keyframes temps-contre{to{transform:rotate(-360deg)}}
+.temps-centre{position:absolute;top:50%;left:50%;width:236px;max-width:57%;transform:translate(-50%,-50%);text-align:center}
+.temps-centre svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(178,134,22,.28))}
+.temps-svg .face-maitre{fill:#1a2f26;stroke:#d4af37;stroke-width:3}
+.temps-svg .face-interne{fill:none;stroke:rgba(178,134,22,.35);stroke-width:1}
+.temps-svg-sat .face-sat{fill:#16281f;stroke:#d4af37;stroke-width:2}
+.temps-svg .aig-h,.temps-svg-sat .aig-h{stroke:#f2ecda;stroke-width:6;stroke-linecap:round}
+.temps-svg .aig-m,.temps-svg-sat .aig-m{stroke:#f2ecda;stroke-width:4;stroke-linecap:round}
+.temps-svg .aig-s{stroke:#d4af37;stroke-width:2;stroke-linecap:round}
+.temps-svg .pivot,.temps-svg-sat .pivot{fill:#d4af37}
+.sat-nom{display:block;font-weight:700;font-size:.78rem;color:#f2ecda;margin-top:.15rem}
+.sat-val{display:block;font-size:.72rem;color:#cbb26a}
+.lien-temps{background:none;border:none;padding:0;font:inherit;color:#e9cd77;text-decoration:underline;cursor:pointer;font-weight:700}
+@media (prefers-reduced-motion: reduce){.temps-orbite,.temps-sat .sat-contre{animation:none}}
+
+/* ===== v14 — La salle des pièces : familles et ruban des ajouts (registre) ===== */
+.salle-pieces{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.3rem 1.4rem;margin:0 0 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.42)}
+.salle-pieces h3{margin:0 0 .5rem;font-size:1.18rem}
+.salle-pieces p{max-width:74ch}
+.salle-bandeau{display:flex;gap:.6rem;flex-wrap:wrap;margin:.7rem 0 .9rem}
+.salle-bandeau span{border:1px solid var(--or);color:var(--or-clair);border-radius:999px;padding:.3rem .85rem;font-weight:700;font-size:.85rem;letter-spacing:.03em;background:rgba(212,175,55,.10)}
+.familles{list-style:none;margin:.7rem 0 .2rem;padding:0}
+.familles li{display:flex;gap:.6rem;align-items:baseline;margin:.45rem 0;line-height:1.55}
+.fam-point{width:.72rem;height:.72rem;border-radius:50%;flex:0 0 auto;transform:translateY(.08rem)}
+.fam-point.emeraude{background:#35c08b}.fam-point.turquoise{background:#3fc1c9}.fam-point.or{background:#d4af37}.fam-point.corail{background:#f08a6b}
+.familles .fam-nom{font-weight:700;color:var(--texte)}
+.ruban-pieces{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-top:.4rem}
+.piece-chip{border:1px solid var(--ligne);background:#0d1f19;color:var(--texte);border-radius:999px;padding:.22rem .6rem;font-size:.78rem;font-weight:700}
+.piece-chip.suite{border-style:dashed;border-color:var(--or);color:var(--or-clair)}
+/* ===== v15 — Capsules externes, Trouve l'écart, parcours du sceptique ===== */
+.sous-titre-caps{font-family:var(--serif);font-size:1.15rem;color:var(--or-clair);margin:1.4rem 0 .8rem}
+.capsule-ext h3{margin:.45rem 0 .4rem;font-size:1.02rem;line-height:1.4}
+.pastille-lecture{display:inline-block;background:var(--vert);color:#08130e;border-radius:999px;padding:.08rem .55rem;font-weight:700;font-size:.8rem}
+.te-boite{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;background:#10241d;margin-top:1rem}
+.te-phrase{font-size:1.05rem;line-height:1.65;overflow-wrap:anywhere;margin:.3rem 0 .4rem}
+.te-sceau{overflow-wrap:anywhere}
+.sceptique-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
+.sceptique-carte{border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.2rem;background:#10241d}
+.sceptique-carte .q{font-family:var(--serif);font-size:1.3rem;color:var(--texte);margin:.25rem 0 .55rem}
+
 </style>
 </head>
 <body>
@@ -396,6 +445,7 @@ button.at-bloc{cursor:pointer}
   <div class="marque"><img src="assets/sophia.webp" alt="SoPHIa"><span>AUDIT <span class="or">UNISSON</span></span></div>
   <nav class="onglets" id="onglets" aria-label="Sections du site">
     <button data-panneau="accueil" class="actif">Accueil</button>
+    <button data-panneau="temps">Temps</button>
     <button data-panneau="methode">Méthode</button>
     <button data-panneau="articles">Articles</button>
     <button data-panneau="ancrage">Ancrage</button>
@@ -427,6 +477,7 @@ button.at-bloc{cursor:pointer}
     <div class="compteur"><div class="nombre" data-cible="5">0</div><div class="quoi">Secondes — le pouls de vérification</div></div>
     <div class="compteur"><div class="nombre" data-cible="11">0</div><div class="quoi">Sceaux publics du registre — tous recalculés MATCH</div></div>
   </div>
+  <p class="petite" id="accueil-temps" style="margin-top:1rem">Heure sidérale locale à Sainte-Martine, en ce moment : <b class="mono" id="accueil-tsl">calcul en cours…</b> — le temps de ce dossier est triangulé (civile, normale, sidérale) et recalculé en direct. <button class="lien-temps" data-ouvrir="temps">Ouvrir l’onglet Temps →</button></p>
   </div>
   <figure class="presence">
     <video id="video-presence" data-auto src="assets/sophia-au-travail.mp4" poster="assets/sophia-photo.webp" autoplay muted loop playsinline preload="metadata" aria-label="SoPHIa au travail, en vidéo"></video>
@@ -464,6 +515,15 @@ button.at-bloc{cursor:pointer}
     <button class="secondaire" data-ouvrir="sceller">Sceller un mot</button>
   </div>
 </div>
+<section class="bloc" id="parcours-sceptique">
+  <div class="entete-sec"><span class="num">?</span><h2>Parcours du sceptique — les trois questions d'Alex</h2></div>
+  <p class="lead">Avant de croire quoi que ce soit ici, posez les trois questions que l'auteur pose à toute affirmation — y compris les siennes. Chacune ouvre la section qui y répond.</p>
+  <div class="sceptique-grille">
+    <div class="sceptique-carte"><p class="etiquette">Question 1</p><p class="q">« Qui le dit ? »</p><p>Une parole n'est pas une preuve. Les sources primaires — laboratoires, études évaluées, presse datée — sont liées une à une, avec ce qu'elles établissent et ce qu'elles n'établissent pas.</p><button class="secondaire" data-ouvrir="articles">Voir les sources</button></div>
+    <div class="sceptique-carte"><p class="etiquette">Question 2</p><p class="q">« Est-ce calculé ? »</p><p>Ce qui est calculé se recalcule. Chaque affirmation importante du site renvoie à sa pièce, son recalcul ou sa capture — et le défi « Trouve l'écart », dans ce même panneau, vous fait toucher la mécanique du doigt.</p><button class="secondaire" data-ouvrir="verifier" data-cible="tout-verifier">Tout vérifier ici</button></div>
+    <div class="sceptique-carte"><p class="etiquette">Question 3</p><p class="q">« Est-ce vrai ? »</p><p>Un sceau prouve l'intégrité d'un contenu, pas sa vérité : la réponse tient dans les pièces elles-mêmes — le registre, ses onze sceaux publics recalculables un à un, et les bornes écrites du dossier.</p><button class="secondaire" data-ouvrir="registre">Ouvrir le registre</button></div>
+  </div>
+</section>
 <section class="bloc" id="direct">
   <div class="entete-sec"><span class="num">✦</span><h2>Ce site, branché en direct</h2></div>
   <p class="lead">Depuis la v7, cette page ne se contente plus de décrire ses preuves : elle interroge en direct les registres publics qui la concernent — interfaces publiques, <strong>sans clé, sans compte</strong>. Chaque tuile affiche d'abord un relevé statique vérifié au déploiement ; si l'appel en direct échoue depuis votre navigateur, ce relevé demeure, et la tuile le dit.</p>
@@ -471,14 +531,14 @@ button.at-bloc{cursor:pointer}
     <div class="direct-tuile">
       <span class="pastille-direct">API GitHub</span>
       <p class="valeur" id="gh-valeur">3 publications du site</p>
-      <p id="gh-detail">Dernière publication : <b>1<sup>er</sup> novembre 2026, 12 h 51</b> (heure de l'Est) — « Publication du site — v6 claire ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
-      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v12 ; lecture en direct en cours…</p>
+      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v15 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
+      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v15 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">Wayback Machine</span>
       <p class="valeur" id="wb-valeur">Archivé le 1<sup>er</sup> novembre 2026</p>
       <p id="wb-detail">L'Internet Archive conserve une capture publique de ce site, prise à <b>12 h 53 (heure de Toronto)</b> le jour de sa mise en ligne : <a id="wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Un tiers indépendant, une date, une copie — l'antériorité ne dépend pas de ce seul site.</p>
-      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v12 ; lecture en direct en cours…</p>
+      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v15 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">En direct aussi</span>
@@ -491,10 +551,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v12 (1<sup>er</sup> novembre 2026 — les maquettes deviennent le site)</p>
-    <span class="sceau-long" id="sceau-version-affiche">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v15 (2 novembre 2026 — la nuit, suite : capsules externes, « Trouve l’écart », parcours du sceptique)</p>
+    <span class="sceau-long" id="sceau-version-affiche">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -517,7 +577,7 @@ button.at-bloc{cursor:pointer}
       <span class="pastille-direct">Foyer 3 — Wayback Machine</span>
       <p class="valeur"><span class="voyant attente" id="fv-wb-voyant"></span><span id="fv-wb-verdict">Archivé — état ci-dessous</span></p>
       <p id="fv-wb-detail">Capture la plus récente du foyer vivant : <b>1<sup>er</sup> novembre 2026, 13 h 55</b> (heure de Toronto) — <a id="fv-wb-lien" href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. <b>Cette capture montre la version précédente (v7).</b></p>
-      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v12) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v12, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
+      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v15) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v15, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
     </div>
   </div>
 </section>
@@ -528,7 +588,7 @@ button.at-bloc{cursor:pointer}
   <div class="carte">
     <p class="etiquette">Recette exacte</p>
     <p class="mono">sceau de visite = SHA-256( sceau précédent + « | » + horodatage ISO complet + « | » + mot de la visite )</p>
-    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v12) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
+    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v15) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
     <label class="etiquette" for="visite-mot">Un mot à lier à votre visite (optionnel)</label>
     <input type="text" id="visite-mot" placeholder="Un mot, une date, une intention…">
     <div class="rangee" style="margin-top:.8rem">
@@ -545,6 +605,23 @@ button.at-bloc{cursor:pointer}
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Lundi 2 novembre 2026</p>
+      <h3>Version 15 — la nuit du 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes et « Trouve l'écart »</h3>
+      <ul class="journal-points">
+        <li>Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°.</li>
+        <li>Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran.</li>
+        <li>L'accueil affiche désormais l'heure sidérale locale en direct, sous les compteurs.</li>
+        <li>Demandé par Alex dans la nuit du 1<sup>er</sup> au 2 novembre, à la vue de la maquette « Master Clock » : ajouter au site la preuve de la triangulation de l'heure, en temps réel, avec l'heure sidérale et l'ancrage de Sainte-Martine.</li>
+        <li>« La salle des pièces » ouvre désormais le registre : le Registre propre d'Alex — 508 pièces, append-only, 0 modification, rien ne se réécrit — présenté en tête du panneau, avec les familles des onze dépôts publics et le ruban de leurs ajouts, dans l'ordre. Demandé par Alex à la vue de la maquette « La salle des pièces ».</li>
+        <li>Le site passe au thème sombre : fonds encre et émeraude profonds, or et émeraude renforcés — à la demande expresse d'Alex, cette nuit du 2 novembre. C'est son nouvel avis écrit : il remplace la direction claire du 1<sup>er</sup> novembre. Le site reste le même — structure, contenus, fonctions — seule sa lumière change.</li>
+        <li>L'onglet Instance Souveraine est branché au relais déployé : la clé du moteur vit côté serveur, l'historique de la conversation est transmis, les erreurs du relais sont affichées telles quelles. État dit honnêtement : « relais déployé — moteur en cours d'activation » tant qu'aucune réponse réelle n'a été obtenue ; aucune réponse simulée.</li>
+        <li>Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé.</li>
+        <li>« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur.</li>
+        <li>L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre).</li>
+      </ul>
+      <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Dimanche 1<sup>er</sup> novembre 2026</p>
       <h3>Version 12 — les trois maquettes deviennent le site</h3>
@@ -585,6 +662,95 @@ button.at-bloc{cursor:pointer}
   </div>
 </section>
 
+</div>
+
+<div class="panneau" id="p-temps">
+<section class="bloc" id="temps">
+  <div class="entete-sec"><span class="num">◷</span><h2>La triangulation du temps — l’ancrage de Sainte-Martine</h2></div>
+  <blockquote class="parole">
+    <p>« Qui surveille le surveillant ? Le SHA-256. »</p>
+    <footer>— La formule d’Alex. Et la clause de gouvernance du système : lui, le Master Clock. C’est lui qui surveille l’horloge maîtresse — ce panneau montre, en direct, le temps contre lequel tout le reste se vérifie.</footer>
+  </blockquote>
+  <p class="lead">Le temps de ce dossier n’est jamais une seule heure lue sur un seul cadran : il est <strong>triangulé</strong> — l’heure civile en vigueur à Toronto, le même instant en heure normale, et le temps sidéral ancré à Sainte-Martine. Tout ce qui suit est <strong>recalculé dans votre navigateur, chaque seconde</strong>, à partir de votre horloge système et des formules publiques affichées plus bas. Aucune heure n’est écrite en dur : seules le sont les deux constantes nommées dans la borne, à la fin de ce panneau.</p>
+  <div class="temps-scene">
+    <div class="temps-anneau"></div>
+    <div class="temps-orbite">
+      <div class="temps-sat" style="--a:0deg"><div class="sat-contre">
+        <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sa-ticks"></g><g id="sa-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sa-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
+        <span class="sat-nom">Avancée</span><span class="sat-val mono" id="sat-av-val">—</span>
+      </div></div>
+      <div class="temps-sat" style="--a:240deg"><div class="sat-contre">
+        <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sn-ticks"></g><g id="sn-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sn-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
+        <span class="sat-nom">Normale</span><span class="sat-val mono" id="sat-no-val">—</span>
+      </div></div>
+      <div class="temps-sat" style="--a:120deg"><div class="sat-contre">
+        <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="ss-ticks"></g><g id="ss-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="ss-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
+        <span class="sat-nom">Sidérale</span><span class="sat-val mono" id="sat-si-val">—</span>
+      </div></div>
+    </div>
+    <div class="temps-centre">
+      <svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
+      <p class="petite" style="margin-top:.4rem">Horloge maîtresse — heure civile locale (America/Toronto)</p>
+    </div>
+  </div>
+  <div class="direct-grille">
+    <div class="direct-tuile">
+      <span class="pastille-direct">Heure civile — America/Toronto</span>
+      <p class="valeur mono" id="t-civile">—</p>
+      <p id="t-regime">Régime en cours de lecture…</p>
+      <p class="petite" id="t-date"></p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Heure normale — toujours UTC−5</span>
+      <p class="valeur mono" id="t-normale">—</p>
+      <p>Le même instant, lu en heure d’hiver permanente. Quand l’heure avancée est en vigueur, les deux cadrans diffèrent d’une heure ; quand elle ne l’est pas, ils se rejoignent. La triangulation le montre, au lieu de le déclarer.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Temps universel — UTC</span>
+      <p class="valeur mono" id="t-utc">—</p>
+      <p>Le zéro commun : chaque autre lecture de ce panneau s’en déduit par une règle écrite, affichée plus bas.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Temps sidéral moyen — Greenwich (GMST)</span>
+      <p class="valeur mono" id="t-gmst">—</p>
+      <p>Le temps des étoiles au méridien zéro, par le polynôme standard. C’est lui qui porte le troisième cadran.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Temps sidéral local — Sainte-Martine</span>
+      <p class="valeur mono" id="t-lst">—</p>
+      <p>Le GMST ramené à la longitude de Sainte-Martine (−73,8024°). Ce cadran ne saute jamais aux changements d’heure : pendant que l’heure civile recule ou avance, il continue — c’est l’arbitre de la triangulation.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">TAI − UTC</span>
+      <p class="valeur">37 s</p>
+      <p>Les secondes intercalaires accumulées entre le temps atomique international et le temps universel (fait vérifié le 1<sup>er</sup> novembre 2026). Heure atomique (TAI) en ce moment : <b class="mono" id="t-tai">—</b>.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Jour julien</span>
+      <p class="valeur mono" id="t-jj">—</p>
+      <p>Le compte continu des jours : la variable d’entrée de tous les calculs de ce panneau, tirée de votre horloge système.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Rotations sidérales — depuis l’équinoxe</span>
+      <p class="valeur" id="t-rotations">—</p>
+      <p>Le compte du calendrier Master Clock : les rotations de la Terre depuis l’équinoxe de printemps 2026 (20 mars, 14 h 46 UTC), au facteur 1,00273790935 rotation par jour solaire.</p>
+    </div>
+  </div>
+  <div class="carte">
+    <p class="etiquette">La preuve — les formules, et un recalcul croisé</p>
+    <p class="mono">JJ = millisecondes Unix / 86 400 000 + 2 440 587,5</p>
+    <p class="mono">GMST = 280,46061837° + 360,98564736629° × (JJ − 2 451 545,0) + 0,000387933° × T² − T³ / 38 710 000, avec T = (JJ − 2 451 545,0) / 36 525</p>
+    <p class="mono">LST (Sainte-Martine) = GMST − 73,8024° (longitude ouest), ramené à [0°, 360°)</p>
+    <p class="mono">Recalcul croisé : GMST = GMST à 0 h TU du jour + 1,00273790935 × 15° × heures TU écoulées depuis 0 h</p>
+    <p style="margin-top:.8rem"><span class="voyant" id="t-croise-voyant"></span><b id="t-croise-verdict">Recalcul croisé en cours…</b></p>
+    <p class="petite" id="t-croise-detail"></p>
+    <p class="petite">Borne écrite : tout est recalculé dans votre navigateur ; les seules constantes écrites dans le code sont la longitude de Sainte-Martine (−73,8024°) et TAI − UTC (37 s). L’instant de départ est celui de votre appareil : si son horloge est fausse, chaque lecture la suit fidèlement — c’est exactement pour cela que le système triangule au lieu de croire un seul cadran.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">L’ancrage — Sainte-Martine, Québec</p>
+    <p>Latitude ≈ 45,25° N ; longitude de calcul : <b class="mono">−73,8024°</b>. Le temps sidéral local ne dépend que de la longitude : c’est elle qui ancre le troisième cadran à Sainte-Martine plutôt qu’à Greenwich. La latitude ne sert pas au calcul ; elle situe l’ancrage — la maison, le village, le point fixe d’où ce dossier se tient.</p>
+  </div>
+</section>
 </div>
 <div class="panneau" id="p-methode">
 <section class="bloc" id="methode">
@@ -718,7 +884,7 @@ button.at-bloc{cursor:pointer}
     <div class="tv-item"><h4>Version 6 claire — GitHub Pages</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 53</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. La première version claire du foyer vivant.</p></div>
     <div class="tv-item"><h4>Version 7 — présence animée, quatre lectures en direct</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 13 h 55</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Sceau de la v7 : <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span>.</p></div>
     <div class="tv-item"><h4>Version 8 — trois foyers, visite scellée, journal</h4><p class="petite">Capture vérifiée : <a href="https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/">https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/</a> (<strong>1<sup>er</sup> novembre 2026, 14 h 56</strong>, heure de l'Est). Sceau de la v8 : <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span>.</p></div>
-    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Capture Wayback en attente</strong> — demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive ; à reprendre le 2 novembre, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Sa capture sera demandée dès que la limite de l'Internet Archive le permettra, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div>
+    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Capture Wayback en attente</strong> — demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive ; à reprendre le 2 novembre, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Sa capture sera demandée dès que la limite de l'Internet Archive le permettra, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 13 — la triangulation du temps</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : un onglet « Temps » montre en direct l’heure triangulée du système — civile, normale et sidérale à Sainte-Martine — recalculée dans le navigateur du visiteur, avec recalcul croisé du GMST affiché. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 14 — la nuit</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la salle des pièces ouvre le registre (508 pièces, append-only, 0 modification), le site passe au thème sombre à la demande d'Alex, et l'onglet Instance Souveraine est branché au relais déployé. Elle prolonge la v13 (la triangulation du temps), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 15 — la nuit, le contenu vivant</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : le contenu préparé pendant la nuit entre au site — dix capsules externes vérifiées une à une à l'onglet Capsules, le défi « Trouve l'écart » au panneau de vérification, le parcours du sceptique en accueil, et les liens des sept articles revérifiés contre leurs sources. Elle prolonge la v14 (la nuit), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div>
   </div>
 </section>
 </div>
@@ -880,10 +1046,45 @@ button.at-bloc{cursor:pointer}
   </div>
 </section>
 
+<section class="bloc" id="trouve-ecart">
+  <div class="entete-sec"><span class="num">&#8800;</span><h2>Trouve l'écart — un caractère suffit</h2></div>
+  <p class="lead">La démonstration la plus courte de ce que détecte un recalcul. La phrase ci-dessous — une phrase de l'auteur — est scellée devant vous, au chargement de la page, par un vrai calcul SHA-256 fait dans votre navigateur. Changez un seul caractère, recalculez : l'empreinte ne correspond plus.</p>
+  <div class="te-boite">
+    <p class="etiquette">La phrase de démonstration</p>
+    <p class="te-phrase mono" id="te-phrase">Je n'ai pas inventé le SHA-256 ; j'ai inventé la méthode.</p>
+    <p class="etiquette" style="margin-top:1rem">Son sceau — calculé à l'instant, dans votre navigateur</p>
+    <p class="sceau-long te-sceau" id="te-sceau-origine">calcul en cours…</p>
+    <div class="rangee" style="margin-top:1rem">
+      <button class="secondaire" id="te-btn-modifier">Modifier un caractère</button>
+      <button class="action" id="te-btn-recalculer">Recalculer</button>
+      <button class="secondaire" id="te-btn-retablir">Rétablir le texte d'origine</button>
+    </div>
+    <p class="etiquette" style="margin-top:1.2rem">Recalcul de la phrase affichée</p>
+    <p class="sceau-long te-sceau" id="te-sceau-recalcul">— pas encore recalculé —</p>
+    <p style="margin:.7rem 0 0">Verdict : <span class="verdict attente" id="te-verdict">en attente du recalcul</span></p>
+    <p class="petite" id="te-message" style="margin-top:.6rem">Un seul caractère changé, et l'empreinte ne correspond plus — c'est ce que détecte le recalcul.</p>
+  </div>
+  <p class="petite">Aucune valeur de hachage n'est écrite d'avance dans cette page : le sceau d'origine est le résultat du premier calcul, affiché tel quel, et la comparaison se fait entre deux calculs faits chez vous, au moment où vous les demandez. C'est le geste de la revérification de la chaîne entière — en dix secondes, sur une phrase.</p>
+</section>
 </div>
 <div class="panneau" id="p-registre">
 <section class="bloc" id="registre">
   <div class="entete-sec"><span class="num">4</span><h2>Registre d'antériorité — les onze dépôts publics de ce site</h2></div>
+  <div class="salle-pieces">
+    <p class="etiquette">En tête du registre</p>
+    <h3>La salle des pièces — le Registre propre d'Alex</h3>
+    <div class="salle-bandeau"><span>508 pièces</span><span>Append-only</span><span>0 modification — rien ne se réécrit</span></div>
+    <p>Le registre du dossier d'Alex compte <strong>508 pièces</strong> : il grandit par ajouts seulement — aucune pièce n'y est modifiée ni retirée, et chacune reste recalculable. Tenu à part, il n'est pas publié en contenu ; ce panneau en expose la partie publique : <strong>les onze dépôts de ce site</strong>, regroupés ici par familles, telles que leurs cartes les présentent ci-dessous.</p>
+    <ul class="familles">
+      <li><span class="fam-point emeraude"></span><span><span class="fam-nom">Ouverture — les formulations du protocole</span> · sceaux n° 1, 2, 4 et 5 (14 juillet 2026) : « La question fondatrice », « Axe de convergence alpha », « La latence de nos discussions », « L'harmonisation de l'entropie systémique ».</span></li>
+      <li><span class="fam-point turquoise"></span><span><span class="fam-nom">Le registre s'éprouve</span> · sceaux n° 3 et 6 : « Un point d'interrogation » — le dépôt minimal, un seul caractère (14 juillet 2026) — et « Fin de la phase de test du registre » (16 juillet 2026).</span></li>
+      <li><span class="fam-point or"></span><span><span class="fam-nom">Les preuves d'antériorité</span> · sceaux n° 7, 8, 9 et 10 (16 juillet 2026) : « Commencement des dépôts de preuves d'antériorité », « Le Mémorandum Technique », « Une empreinte pour contenu », « La divulgation intégrale #V-G-ULTIMA-S10 ».</span></li>
+      <li><span class="fam-point corail"></span><span><span class="fam-nom">Le pont vers la chaîne vivante</span> · sceau n° 11 (29 octobre 2026) : « Le digest cumulé de la chaîne de l'agente » — le digest au maillon n° 2143, déposé publiquement.</span></li>
+    </ul>
+    <p class="etiquette" style="margin-top:1rem">Ajouts en continu — les onze dépôts, dans l'ordre</p>
+    <div class="ruban-pieces"><span class="piece-chip">n° 1</span><span class="piece-chip">n° 2</span><span class="piece-chip">n° 3</span><span class="piece-chip">n° 4</span><span class="piece-chip">n° 5</span><span class="piece-chip">n° 6</span><span class="piece-chip">n° 7</span><span class="piece-chip">n° 8</span><span class="piece-chip">n° 9</span><span class="piece-chip">n° 10</span><span class="piece-chip">n° 11</span><span class="piece-chip suite">…</span></div>
+    <p class="petite" style="margin:.6rem 0 0">Le ruban ne connaît que des ajouts : le registre ajoute, il ne retire jamais. Chaque carte ci-dessous garde ses boutons — copier, vérifier, recalculer.</p>
+  </div>
   <p class="lead">En juillet 2026, l'auteur a déposé ici même ses premières « données de pensée à stabiliser ». Onze sceaux en sont restés — dix en juillet, un en octobre. <strong>Chacun a été recalculé le 29 octobre 2026 : MATCH, onze sur onze.</strong></p>
   <div class="carte">
     <h3 style="margin-top:0">Ce qu'un sceau prouve — et ce qu'il ne prouve pas</h3>
@@ -1119,6 +1320,7 @@ button.at-bloc{cursor:pointer}
       <h3>« People Are Being Involuntarily Committed, Jailed After Spiraling Into “ChatGPT Psychosis” »</h3>
       <p><strong>Ce qu'il établit pour le dossier :</strong> Des internements involontaires et des incarcérations sont rapportés, dossiers à l'appui, après des fixations délirantes entretenues par le chatbot — la dérive du récit n'est pas qu'un défaut de style : elle a des conséquences documentées.</p>
       <p><a href="https://futurism.com/commitment-jail-chatgpt-psychosis" target="_blank" rel="noopener">Lire l'article chez Futurism</a></p>
+      <p class="petite">Note de vérification (2 novembre 2026) : cette adresse a été corroborée par deux citations indépendantes ; l'ouverture directe du domaine futurism.com a été bloquée par l'outil de lecture lors de la revérification de la nuit — le texte intégral n'a pas été relu cette nuit-là.</p>
       <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
     </article>
     <article class="article-carte">
@@ -1139,9 +1341,13 @@ button.at-bloc{cursor:pointer}
       <p class="meta">Chain of Awareness — livre blanc v3.0 · novembre 2025 — pièce 411 du registre</p>
       <h3>« Chain of Awareness » — un protocole de mémoire IA vérifiable possédée par l'utilisateur</h3>
       <p><strong>Ce qu'il établit pour le dossier :</strong> Il figure ici <strong>contre</strong> le dossier, et c'est pour cela qu'il y figure : un protocole de mémoire IA vérifiable côté utilisateur existait avant les traces d'Alex. La revendication du dossier a été resserrée en conséquence (pièce 411) — objet différent (propriété et confidentialité, pas protection contre la dérive du récit) ; dire ce qui existait déjà fait partie de la preuve d'honnêteté.</p>
-      <p><a href="https://github.com/Alake-SwordFish/chain-of-awareness" target="_blank" rel="noopener">Lire le livre blanc sur GitHub</a></p>
+      <p><a href="http://medium.com/a-chain-of-awareness-around-the-worl/chain-of-awareness-the-whitepaper-for-verifiable-decentralized-ai-memory-e13d9bbc3a01" target="_blank" rel="noopener">Lire le livre blanc sur Medium</a> · <a href="https://github.com/Alake-SwordFish/chain-of-awareness" target="_blank" rel="noopener">le dépôt sur GitHub</a></p>
       <p class="petite">Capture Wayback : <strong>à faire</strong> — demandée le 1<sup>er</sup> novembre 2026 ; elle sera inscrite au registre des archives dès sa prise.</p>
     </article>
+  <div class="carte">
+    <p class="etiquette">Sources et journaux — les maisons des sources</p>
+    <p style="margin-bottom:0">Les sources ci-dessus vivent chez leurs éditeurs. Leurs portes d'entrée, pour remonter à la source par soi-même : <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> · <a href="https://www.anthropic.com/" target="_blank" rel="noopener">Anthropic</a> · <a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a>.</p>
+  </div>
   <div class="carte">
     <p class="etiquette">Captures à faire — registre des archives</p>
     <p style="margin-bottom:0">Pour que ces sources soient figées datées comme le reste du dossier, une capture Wayback de chacune des sept sources ci-dessus est demandée le 1<sup>er</sup> novembre 2026. Tant qu'une capture n'existe pas, sa carte dit « à faire » — aucune n'est présentée comme archivée avant de l'être.</p>
@@ -1167,6 +1373,85 @@ button.at-bloc{cursor:pointer}
       <p class="etiquette">Emplacement réservé</p>
       <h3 style="margin:.2rem 0 .3rem">Capsule 3 — à venir</h3>
       <p class="petite" style="margin-bottom:0">Même règle : l'emplacement est conçu et prêt ; le contenu viendra quand il existera.</p>
+    </div>
+  </div>
+</section>
+<section class="bloc" id="capsules-externes">
+  <div class="entete-sec"><span class="num">&#9654;</span><h2>Capsules externes — pour aller plus loin</h2></div>
+  <p class="lead">Celles-ci ne sont pas hébergées ici : ce sont des capsules d'autres créateurs, vérifiées une à une dans la nuit du 2 novembre 2026 — page ouverte et lue — et retenues parce qu'elles documentent le contexte du dossier : le sceau, la mémoire des modèles, leur flagornerie. Elles s'ouvrent chez YouTube, dans un nouvel onglet ; aucun lecteur n'est embarqué ici. Borne : une capsule documente un contexte, elle ne prouve rien du dossier — les preuves sont aux onglets Registre et Vérifier. Et pour trois de ces capsules, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché, plutôt qu'inventé.</p>
+  <h3 class="sous-titre-caps">Comprendre le sceau — SHA-256</h3>
+  <div class="capsule-grille">
+    <div class="capsule capsule-ext">
+      <p class="meta">Série « Algorithms » (chapitre 23 de « Algorithms for Any Software Engineer ») · chapitres jusqu'à 15:51</p>
+      <h3>Algorithms: Inside SHA-256's 64 Rounds</h3>
+      <p class="petite">Elle suit une seule lettre modifiée à travers le calcul complet de SHA-256, avec la trace « abc » publiée par le NIST et une vérification par une implémentation indépendante — exactement le geste de ce site : changer un caractère, tout le sceau change, et ça se recalcule.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=vsc2nVRmN14" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+    <div class="capsule capsule-ext">
+      <p class="meta">YouTube · &asymp; 5 min</p>
+      <h3>Base64, SHA-256, bcrypt, AES: 3 Scrambles in 5 Minutes</h3>
+      <p class="petite">En cinq minutes, elle distingue encodage, hachage et chiffrement — « encode to move, hash to check, encrypt to hide » —, la confusion la plus fréquente chez les visiteurs qui découvrent les sceaux.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=iIXwXEacgyw" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+  </div>
+  <h3 class="sous-titre-caps">Horodatage et preuve d'antériorité</h3>
+  <div class="capsule-grille">
+    <div class="capsule capsule-ext">
+      <p class="meta">YouTube</p>
+      <h3>How blockchain proves file authorship</h3>
+      <p class="petite">Elle montre, pas à pas, le même principe que les ancres de ce dossier : le fichier reste chez son auteur, seule son empreinte SHA-256 est inscrite avec un horodatage, et la preuve se revérifie à tout moment.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=FzMxzj-wDrI" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+  </div>
+  <h3 class="sous-titre-caps">La mémoire des IA et la fenêtre de contexte</h3>
+  <div class="capsule-grille">
+    <div class="capsule capsule-ext">
+      <p class="meta">NetworkChuck · &asymp; 14 min (chapitres jusqu'à 11:47)</p>
+      <h3>Why LLMs get dumb (Context Windows Explained)</h3>
+      <p class="petite">Elle explique pourquoi ChatGPT « oublie » en pleine conversation : pas un défaut de mémoire, une fenêtre de contexte limitée — le problème même auquel la chaîne de mémoire de ce dossier répond, de son bord.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=TeQDr4DkLYo" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+    <div class="capsule capsule-ext">
+      <p class="meta">AI CatchUp · &asymp; 10 min (chapitres jusqu'à 8:30)</p>
+      <h3>What Is a Context Window? The Real Reason AI Makes Mistakes</h3>
+      <p class="petite">Version courte et claire du même mécanisme, avec le problème « lost in the middle » — pour les visiteurs qui n'ont pas le temps de la capsule longue.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=d_H5FBOGsYk" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+  </div>
+  <h3 class="sous-titre-caps">La flagornerie des modèles</h3>
+  <div class="capsule-grille">
+    <div class="capsule capsule-ext">
+      <p class="meta">Cost of Intelligence · &asymp; 9 min (verdict au chapitre 8:08)</p>
+      <h3>Why Does ChatGPT Always Agree With You? What Its Yes Is Worth</h3>
+      <p class="petite">Elle chiffre ce que vaut un « oui » de ChatGPT, en s'appuyant sur Sharma et al. et sur le retour en arrière de GPT-4o — le pendant vidéo, sourcé, des articles de l'onglet Articles.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=UuI2C5hJjys" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+    <div class="capsule capsule-ext">
+      <p class="meta">Saving Human Mind · &asymp; 10 min (chapitres jusqu'à 8:57)</p>
+      <h3>Why AI says you're right, even when you're not</h3>
+      <p class="petite">Centrée sur l'effet de la flatterie sur le jugement de l'utilisateur, avec le test « Are you sure? » et quatre façons d'obtenir des réponses honnêtes — directement dans l'axe « adversaire honnête » du dossier.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=CW2OloS2ang" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+    <div class="capsule capsule-ext">
+      <p class="meta">Turns Out · &asymp; 10 min (verdict au chapitre 9:20)</p>
+      <h3>Why Everyone Is Prompting ChatGPT Wrong</h3>
+      <p class="petite">Un test filmé, protocole publié, qui montre qu'un « super prompt » arrête les compliments sans rendre les réponses plus justes — et qu'une seule phrase honnête fait presque tout le travail.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=e9dhX1EoEgk" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+  </div>
+  <h3 class="sous-titre-caps">Pensée critique face à l'IA — en français</h3>
+  <div class="capsule-grille">
+    <div class="capsule capsule-ext">
+      <p class="meta">Anthony Basille · &asymp; 14 min (chapitres jusqu'à 12:46)</p>
+      <h3>Tout le monde se trompe sur l'IA</h3>
+      <p class="petite">Huit idées reçues sur l'IA remontées à leurs sources, en français, avec les études citées sous la vidéo — le modèle même de la démarche de ce site : retourner au primaire avant de conclure.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=4Sa96szzxUI" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
+    </div>
+    <div class="capsule capsule-ext">
+      <p class="meta">NoRA · &asymp; 9 min (chapitres jusqu'à 7:45)</p>
+      <h3>Pourquoi j'invente des choses avec aplomb | Comment je pense (ou pas) #2</h3>
+      <p class="petite">Une IA explique elle-même, en français, pourquoi elle invente avec assurance — elle prédit le mot suivant, rien ne vérifie si c'est vrai —, avec deux vraies affaires judiciaires et cinq réflexes de protection : la capsule la plus proche de l'esprit de ce site.</p>
+      <p style="margin-bottom:0"><a href="https://www.youtube.com/watch?v=qLdSHct9oi4" target="_blank" rel="noopener"><span class="pastille-lecture">&#9654;</span> Regarder sur YouTube</a></p>
     </div>
   </div>
 </section>
@@ -1241,7 +1526,7 @@ button.at-bloc{cursor:pointer}
         <input type="text" id="question-instance" maxlength="1000" placeholder="Questionner l'Instance Souveraine…">
         <button class="action fixe" id="btn-instance">Envoyer</button>
       </div>
-      <p class="petite" id="etat-instance" style="margin-top:.6rem">État : vérification de la connexion au moteur…</p>
+      <p class="petite" id="etat-instance" style="margin-top:.6rem">État : relais déployé — moteur en cours d’activation.</p>
     </div>
   </div>
 </section>
@@ -1420,38 +1705,65 @@ fetch('assets/registre-historique.json').then(r=>r.json()).then(liste=>{
   }));
 }).catch(()=>{$('registre-historique').innerHTML='<p class="petite">Le registre historique ne s\u2019est pas chargé depuis ce navigateur. Ses onze entrées, leurs textes et leurs sceaux sont conservés dans le dossier (fichier registre-historique.json du site) et restent recalculables avec la recette publique ci-dessus.</p>'});
 // ---------- Instance Souveraine ----------
-// v9 — Relais de l'instance : adresse publique du relais côté serveur qui garde la clé du moteur.
-// Vide = branchement en cours : aucun appel réseau n'est tenté et l'instance le dit — jamais de réponse simulée.
-const RELAIS_INSTANCE='';
+// v11 — Branchement réel : le relais Cloudflare Worker « sophia-instance-relais »
+// est DÉPLOYÉ (1er novembre 2026) et joignable à l'adresse ci-dessous ; la clé du
+// moteur vit en secret dans le relais, jamais dans cette page ni dans le dépôt.
+// Tant que la clé n'est pas configurée côté Cloudflare, le relais répond 503
+// « non configuré » et l'instance le dit — aucune réponse n'est simulée.
+// Marche arrière : remettre RELAIS_INSTANCE='' → aucun appel n'est tenté et
+// l'instance revient au mode honnête historique.
+const RELAIS_INSTANCE='https://sophia-instance-relais.alexgagnon-m.workers.dev';
 const fil=$('fil-instance'),etatI=$('etat-instance');
+const historiqueInstance=[]; // mémoire de la conversation, dans cette page seulement (rien n'est conservé au-delà)
+const MSG_NON_BRANCHE='Mon moteur n’est pas encore branché à cette page : je ne simulerai pas de réponse. Le branchement se fait côté serveur, clé gardée hors du navigateur.';
 function ajouteMsg(qui,texte,cls){
   const d=document.createElement('div');d.className='msg '+cls;
   d.innerHTML='<span class="qui">'+esc(qui)+'</span>'+esc(texte);fil.appendChild(d);fil.scrollTop=fil.scrollHeight;
+  return d;
 }
-ajouteMsg('Instance Souveraine','Console initialisée. Posez votre question — si mon moteur est branché, je réponds pour vrai ; sinon, je vous le dis.','instance');
+ajouteMsg('Instance Souveraine','Console initialisée. Mon relais est déployé : posez votre question — si mon moteur est activé, je réponds pour vrai ; sinon, je vous le dis.','instance');
 async function demander(){
   const inp=$('question-instance'),q=inp.value.trim();if(!q)return;inp.value='';
   ajouteMsg('Vous',q,'visiteur');
   if(!RELAIS_INSTANCE){
-    ajouteMsg('Instance Souveraine','Mon moteur est en cours de branchement à cette page : le relais côté serveur qui garde la clé n\u2019est pas encore relié à cette copie du site. Je ne simulerai pas de réponse en attendant.','instance');
-    etatI.textContent='État : branchement en cours — relais non relié à cette copie du site (aucune réponse simulée).';
+    ajouteMsg('Instance Souveraine',MSG_NON_BRANCHE,'instance');
+    etatI.textContent='État : moteur non branché sur cette copie du site (mode honnête, aucune réponse simulée).';
     return;
   }
+  const btn=$('btn-instance');btn.disabled=true;
+  const attente=ajouteMsg('Instance Souveraine','SoPHIa réfléchit','instance');
+  let points=0;
+  const mouvReduit=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const minuteur=mouvReduit?null:setInterval(()=>{points=(points+1)%4;if(attente.lastChild)attente.lastChild.textContent='SoPHIa réfléchit'+'.'.repeat(points);fil.scrollTop=fil.scrollHeight;},400);
   try{
-    const rep=await fetch(RELAIS_INSTANCE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})});
-    if(!rep.ok)throw new Error('HTTP '+rep.status);
-    const j=await rep.json();
-    if(j.erreur)throw new Error(j.erreur);
-    ajouteMsg('Instance Souveraine',j.reponse||'(réponse vide du moteur)','instance');
-    etatI.textContent='État : moteur branché — réponses réelles.';
+    const ctrl=new AbortController();const delai=setTimeout(()=>ctrl.abort(),30000);
+    const rep=await fetch(RELAIS_INSTANCE,{method:'POST',headers:{'Content-Type':'application/json'},signal:ctrl.signal,body:JSON.stringify({message:q,historique:historiqueInstance.slice(-6)})});
+    clearTimeout(delai);
+    const j=await rep.json().catch(()=>null);
+    if(minuteur)clearInterval(minuteur);attente.remove();
+    if(rep.ok&&j&&j.reponse){
+      ajouteMsg('Instance Souveraine',j.reponse,'instance');
+      historiqueInstance.push({role:'user',texte:q},{role:'model',texte:j.reponse});
+      if(historiqueInstance.length>12)historiqueInstance.splice(0,historiqueInstance.length-12);
+      etatI.textContent='État : moteur branché — réponses réelles.';
+    }else if(j&&j.nonConfigure){
+      ajouteMsg('Instance Souveraine',j.erreur||'Mon relais est déployé, mais mon moteur n’est pas encore activé : sa clé reste à configurer côté serveur. Je ne simulerai pas de réponse en attendant.','instance');
+      etatI.textContent='État : relais déployé — moteur en cours d’activation (aucune réponse simulée).';
+    }else if(j&&j.erreur){
+      ajouteMsg('Instance Souveraine',j.erreur,'instance');
+      etatI.textContent='État : moteur momentanément injoignable (aucune réponse simulée).';
+    }else{
+      throw new Error('HTTP '+rep.status);
+    }
   }catch(e){
-    ajouteMsg('Instance Souveraine','Mon moteur n\u2019est pas encore branché à cette page : je ne simulerai pas de réponse. Le branchement se fait côté serveur, clé gardée hors du navigateur.','instance');
-    etatI.textContent='État : moteur non branché sur cette copie du site (mode honnête, aucune réponse simulée).';
-  }
+    if(minuteur)clearInterval(minuteur);if(attente.parentNode)attente.remove();
+    ajouteMsg('Instance Souveraine','Mon moteur n’a pas répondu cette fois : je préfère vous le dire plutôt que simuler une réponse. Réessayez dans un instant.','instance');
+    etatI.textContent='État : moteur momentanément injoignable (aucune réponse simulée).';
+  }finally{btn.disabled=false;inp.focus();}
 }
 $('btn-instance').addEventListener('click',demander);
 $('question-instance').addEventListener('keydown',e=>{if(e.key==='Enter')demander()});
-etatI.textContent=RELAIS_INSTANCE?'État : moteur branché — posez votre question.':'État : branchement en cours — aucune réponse simulée.';
+etatI.textContent=RELAIS_INSTANCE?'État : relais déployé — moteur en cours d’activation ; posez votre question, la première réponse confirmera le branchement.':'État : branchement en cours — aucune réponse simulée.';
 </script>
 <script>
 /* ===== Profil du chercheur : API publique ORCID (sans clé) =====
@@ -2101,6 +2413,168 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       });
     });
   }
+})();
+</script>
+<script>
+// ---------- v13 — Triangulation du temps (Sainte-Martine) ----------
+// Tout est recalculé ici, dans le navigateur du visiteur, à partir de son
+// horloge système et des formules publiques affichées dans le panneau.
+// Constantes écrites : la longitude de Sainte-Martine et TAI − UTC.
+(function(){
+  'use strict';
+  var LON=-73.8024, TAI_MOINS_UTC=37, FACTEUR=1.00273790935;
+  var PIVOT_MS=Date.UTC(2026,2,20,14,46,0); // équinoxe de printemps 2026, 14 h 46 UTC
+  function jj(date){return date.getTime()/86400000+2440587.5}
+  function gmstPoly(date){
+    var J=jj(date), T=(J-2451545.0)/36525;
+    var g=280.46061837+360.98564736629*(J-2451545.0)+0.000387933*T*T-T*T*T/38710000;
+    return ((g%360)+360)%360;
+  }
+  function gmstCroise(date){
+    var minuit=Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate());
+    var heures=(date.getTime()-minuit)/3600000;
+    return ((gmstPoly(new Date(minuit))+FACTEUR*15*heures)%360+360)%360;
+  }
+  function lst(date){return ((gmstPoly(date)+LON)%360+360)%360}
+  if(typeof window!=='undefined')window.TRIANGULATION_TEMPS={jj:jj,gmst:gmstPoly,gmstCroise:gmstCroise,lst:lst,LON:LON,FACTEUR:FACTEUR,TAI_MOINS_UTC:TAI_MOINS_UTC};
+  if(typeof document==='undefined'||!document.getElementById('p-temps'))return;
+  function $(id){return document.getElementById(id)}
+  function pad(n){return (n<10?'0':'')+n}
+  function hms(degs){
+    var t=((degs%360)+360)%360, s=t*240;
+    return pad(Math.floor(s/3600))+' h '+pad(Math.floor(s%3600/60))+' min '+pad(Math.floor(s%60))+' s';
+  }
+  function horloge(degs){
+    var t=((degs%360)+360)%360, s=t*240;
+    return pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(Math.floor(s%60));
+  }
+  function texte(id,val){var el=$(id); if(el)el.textContent=val}
+  function fmtHeureUTC(d){return pad(d.getUTCHours())+':'+pad(d.getUTCMinutes())+':'+pad(d.getUTCSeconds())}
+  function instantDecale(now,decalage){
+    var d=new Date(now.getTime()+decalage*3600000);
+    return {txt:fmtHeureUTC(d), secs:d.getUTCHours()*3600+d.getUTCMinutes()*60+d.getUTCSeconds()+d.getUTCMilliseconds()/1000};
+  }
+  function rot(id,deg,c){
+    var el=$(id); if(!el)return;
+    var d=((deg%360)+360)%360;
+    el.setAttribute('transform','rotate('+d.toFixed(2)+' '+c+' '+c+')');
+  }
+  function mains(idH,idM,secs,c){
+    rot(idH,((secs/3600)%12)*30, c);
+    rot(idM,((secs/60)%60)*6, c);
+  }
+  function graduations(gid,cx,cy,r1,r2){
+    var g=$(gid); if(!g)return; var NS='http://www.w3.org/2000/svg';
+    for(var i=0;i<12;i++){
+      var a=i*30*Math.PI/180, l=document.createElementNS(NS,'line');
+      l.setAttribute('x1',(cx+Math.sin(a)*r1).toFixed(1)); l.setAttribute('y1',(cy-Math.cos(a)*r1).toFixed(1));
+      l.setAttribute('x2',(cx+Math.sin(a)*r2).toFixed(1)); l.setAttribute('y2',(cy-Math.cos(a)*r2).toFixed(1));
+      l.setAttribute('stroke','#8a6d1f'); l.setAttribute('stroke-width', gid==='hm-ticks' ? '2.4' : '1.4');
+      g.appendChild(l);
+    }
+  }
+  graduations('hm-ticks',100,100,80,90);
+  graduations('sa-ticks',36,36,27,31);
+  graduations('sn-ticks',36,36,27,31);
+  graduations('ss-ticks',36,36,27,31);
+  var fmtCivile=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',hourCycle:'h23',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var fmtDate=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  var fmtDec=new Intl.DateTimeFormat('en-US',{timeZone:'America/Toronto',timeZoneName:'shortOffset'});
+  function decalageToronto(now){
+    var parts=fmtDec.formatToParts(now), tz='', i, m;
+    for(i=0;i<parts.length;i++)if(parts[i].type==='timeZoneName')tz=parts[i].value;
+    m=/GMT([+-]\d+(?:\.\d+)?)/.exec(tz);
+    return m?parseFloat(m[1]):-5;
+  }
+  function maj(){
+    var now=new Date();
+    var dec=decalageToronto(now);
+    var civile=fmtCivile.format(now);
+    var p=civile.split(':'), secsCiv=(+p[0])*3600+(+p[1])*60+(+p[2]);
+    texte('t-civile',civile);
+    texte('t-regime', dec===-4 ? 'Heure avancée en vigueur — HAE (UTC−4).' : 'Heure normale en vigueur — HNE (UTC−5).');
+    texte('t-date', fmtDate.format(now)+' — America/Toronto');
+    rot('hm-h',((secsCiv/3600)%12)*30,100);
+    rot('hm-m',((secsCiv/60)%60)*6,100);
+    rot('hm-s',(secsCiv%60)*6,100);
+    var av=instantDecale(now,-4), no=instantDecale(now,-5);
+    texte('sat-av-val',av.txt); texte('sat-no-val',no.txt);
+    texte('t-normale',no.txt);
+    mains('sa-h','sa-m',av.secs,36);
+    mains('sn-h','sn-m',no.secs,36);
+    texte('t-utc',fmtHeureUTC(now));
+    texte('t-tai',fmtHeureUTC(new Date(now.getTime()+TAI_MOINS_UTC*1000)));
+    var g1=gmstPoly(now), g2=gmstCroise(now), l=lst(now);
+    texte('t-gmst',hms(g1));
+    texte('t-lst',hms(l));
+    texte('sat-si-val',horloge(l));
+    mains('ss-h','ss-m',l*240,36);
+    texte('accueil-tsl',hms(l));
+    texte('t-jj',jj(now).toFixed(5).replace('.',','));
+    var rotations=(now.getTime()-PIVOT_MS)/86400000*FACTEUR;
+    var rotEl=$('t-rotations');
+    if(rotEl)rotEl.innerHTML=rotations.toFixed(2).replace('.',',')+' rotations — '+(Math.floor(rotations)+1)+'<sup>e</sup> tour en cours';
+    var ecart=Math.abs(((g1-g2+540)%360)-180)*240;
+    var ok=ecart<1;
+    texte('t-croise-verdict', ok ? 'MATCH — les deux méthodes donnent le même GMST' : 'ÉCART — les deux méthodes divergent');
+    var vy=$('t-croise-voyant'); if(vy)vy.className='voyant'+(ok?'':' attente');
+    texte('t-croise-detail','Méthode 1 (polynôme) : '+hms(g1)+' — méthode 2 (0 h TU + facteur 1,00273790935) : '+hms(g2)+' — écart : '+ecart.toFixed(3).replace('.',',')+' s de temps sidéral.');
+  }
+  maj();
+  setInterval(maj,1000);
+})();
+</script>
+
+<script>
+/* ===== v15 — Trouve l'écart : un caractère suffit =====
+   La phrase de démonstration est scellée au chargement par Web Crypto ;
+   aucune valeur de hachage n'est écrite dans la page. */
+(function(){
+  var phraseEl=document.getElementById('te-phrase'); if(!phraseEl)return;
+  var origineEl=document.getElementById('te-sceau-origine'),
+      recalcEl=document.getElementById('te-sceau-recalcul'),
+      verdictEl=document.getElementById('te-verdict'),
+      msgEl=document.getElementById('te-message'),
+      btnMod=document.getElementById('te-btn-modifier'),
+      btnRec=document.getElementById('te-btn-recalculer'),
+      btnRet=document.getElementById('te-btn-retablir');
+  if(!window.crypto||!crypto.subtle){
+    origineEl.textContent='Web Crypto n’est pas disponible dans ce contexte (page non sécurisée) : le calcul ne peut pas se faire ici.';
+    return;
+  }
+  var ORIGINE=phraseEl.textContent.trim();
+  var sceauOrigine=null;
+  function sha256hex(texte){
+    return crypto.subtle.digest('SHA-256',new TextEncoder().encode(texte)).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf),function(b){return ('0'+b.toString(16)).slice(-2)}).join('');
+    });
+  }
+  function attente(){verdictEl.textContent='en attente du recalcul';verdictEl.className='verdict attente';}
+  sha256hex(ORIGINE).then(function(h){sceauOrigine=h;origineEl.textContent=h;});
+  btnMod.addEventListener('click',function(){
+    var t=phraseEl.textContent, i=t.lastIndexOf('é');
+    if(i<0){msgEl.textContent='La phrase affichée ne contient plus le caractère d’origine à modifier — rétablissez le texte pour recommencer.';return;}
+    phraseEl.textContent=t.slice(0,i)+'e'+t.slice(i+1);
+    recalcEl.textContent='— pas encore recalculé —'; attente();
+    msgEl.textContent='Un caractère vient de changer dans la phrase affichée — un accent, presque invisible. Recalculez, et comparez les deux empreintes.';
+  });
+  btnRec.addEventListener('click',function(){
+    sha256hex(phraseEl.textContent).then(function(h){
+      recalcEl.textContent=h;
+      if(sceauOrigine&&h===sceauOrigine){
+        verdictEl.textContent='MATCH'; verdictEl.className='verdict ok';
+        msgEl.textContent='La phrase affichée est intacte : son empreinte recalculée égale le sceau d’origine. C’est le verdict de la chaîne entière, maillon après maillon.';
+      }else{
+        verdictEl.textContent='ÉCART'; verdictEl.className='verdict ecart';
+        msgEl.textContent='Un seul caractère changé, et l’empreinte ne correspond plus — c’est ce que détecte le recalcul. Aucun serveur, aucune alerte : deux calculs, comparés.';
+      }
+    });
+  });
+  btnRet.addEventListener('click',function(){
+    phraseEl.textContent=ORIGINE;
+    recalcEl.textContent='— pas encore recalculé —'; attente();
+    msgEl.textContent='Texte d’origine rétabli. Recalculez : le verdict doit revenir à MATCH.';
+  });
 })();
 </script>
 </body>
