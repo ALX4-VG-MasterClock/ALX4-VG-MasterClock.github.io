@@ -32,10 +32,31 @@
         },
         {
           "texte": "L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre)."
+        },
+        {
+          "texte": "« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile."
+        },
+        {
+          "texte": "Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement."
+        },
+        {
+          "texte": "L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026."
+        },
+        {
+          "texte": "« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée."
+        },
+        {
+          "texte": "L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux."
+        },
+        {
+          "texte": "Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit."
+        },
+        {
+          "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
         }
       ],
       "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Version 15 — la nuit du 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes et « Trouve l'écart »"
+      "titre": "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
     },
     {
       "date": "2026-11-01",
