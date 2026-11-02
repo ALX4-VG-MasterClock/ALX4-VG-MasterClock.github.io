@@ -509,6 +509,56 @@ button.at-bloc{cursor:pointer}
 .planete-globe picture{display:block;width:100%;height:100%}
 .planete-etat{margin-top:.7rem}
 
+/* ===== v18 — Les heures autour du globe : pastilles extérieures sur tous les écrans, globe pivotant, ombre de nuit calculée ===== */
+.planete-orbite{animation:none;z-index:3}
+.planete-globe{z-index:1;cursor:grab;touch-action:none}
+.planete-globe:active{cursor:grabbing}
+.planete-globe img{-webkit-user-drag:none;user-select:none}
+.planete-anneau,.planete-anneau2{display:none}
+#planete-traits{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+#planete-traits .trait-anneau{fill:none;stroke:rgba(178,134,22,.45);stroke-width:2;stroke-dasharray:7 7}
+#planete-traits .trait-anneau2{fill:none;stroke:rgba(53,192,139,.22);stroke-width:1}
+#planete-traits .trait-lien{stroke:rgba(212,175,55,.85);stroke-width:1.6}
+#planete-nuit{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+#planete-nuit .nuit-forme{fill:rgba(7,13,32,.55);stroke:rgba(130,160,255,.28);stroke-width:.5}
+.planete-reperes{z-index:2}
+.rep{cursor:pointer}
+.rep::after{content:"";position:absolute;inset:-7px;border-radius:50%}
+.planete-horloge{margin:0;z-index:4}
+.planete-horloge .ph-contre{animation:none;height:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+.ph-ligne-heure{display:block;white-space:nowrap;line-height:1.15}
+.ph-civile{font-size:1.02rem}
+.ph-secondes{font-size:.68rem;color:var(--texte-doux);font-weight:400;font-variant-numeric:tabular-nums}
+.ph-nom{font-size:.74rem;white-space:nowrap}
+.planete-horloge.choisi .ph-contre{background:rgba(212,175,55,.16);border:2px solid var(--or);box-shadow:0 0 0 1px var(--or),0 8px 22px rgba(212,175,55,.30)}
+.planete-horloge.choisi .ph-nom,.planete-horloge.choisi .ph-civile{color:#f2ecda}
+.planete-horloge.ancre{z-index:5}
+.planete-horloge.ancre .ph-contre{background:linear-gradient(160deg,#e8c95c,#c9a227);border:2px solid #f2d675;box-shadow:0 6px 20px rgba(212,175,55,.40)}
+.planete-horloge.ancre .ph-nom{font-size:.84rem;color:#08130e}
+.planete-horloge.ancre .ph-civile{font-size:1.12rem;color:#08130e}
+.planete-horloge.ancre .ph-secondes{color:rgba(8,19,14,.65)}
+.planete-horloge.ancre.choisi .ph-contre{box-shadow:0 0 0 2px #fff2c4,0 8px 24px rgba(212,175,55,.5)}
+.planete-orbite .temps-sat{margin:0;z-index:3}
+.planete-orbite .temps-sat .sat-contre{animation:none;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:.45rem;padding:.3rem .5rem;text-align:left;cursor:pointer}
+.planete-orbite .temps-sat .temps-svg-sat{width:44px;height:44px;flex:0 0 auto}
+.planete-orbite .temps-sat .sat-textes{display:flex;flex-direction:column;line-height:1.2}
+.planete-orbite .temps-sat .sat-nom{margin-top:0;font-size:.72rem}
+.planete-orbite .temps-sat .sat-val{font-size:.74rem;white-space:nowrap}
+.planete-cartes{display:none}
+.planete-scene.compacte{aspect-ratio:10/13}
+.planete-scene.compacte .ph-nom{font-size:.66rem}
+.planete-scene.compacte .ph-civile{font-size:.94rem}
+.planete-scene.compacte .ph-secondes{font-size:.62rem}
+.planete-scene.compacte .planete-horloge.ancre .ph-nom{font-size:.76rem}
+.planete-scene.compacte .planete-horloge.ancre .ph-civile{font-size:1rem}
+.planete-scene.compacte .temps-sat .temps-svg-sat{display:none}
+.planete-scene.compacte .temps-sat .sat-contre{justify-content:center;text-align:center}
+@media(max-width:820px){
+  .planete-orbite{display:block}
+  .planete-globe{width:50%}
+  .planete-cartes{display:none}
+}
+
 /* ===== v16 (suite) — miroir des ancrages, onglet Météo, recherche reliée ===== */
 .miroir-grille{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
@@ -638,14 +688,14 @@ button.at-bloc{cursor:pointer}
     <div class="direct-tuile">
       <span class="pastille-direct">API GitHub</span>
       <p class="valeur" id="gh-valeur">3 publications du site</p>
-      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v17 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
-      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v17 ; lecture en direct en cours…</p>
+      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v18 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
+      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v18 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">Wayback Machine</span>
       <p class="valeur" id="wb-valeur">Archivé le 1<sup>er</sup> novembre 2026</p>
       <p id="wb-detail">L'Internet Archive conserve une capture publique de ce site, prise à <b>12 h 53 (heure de Toronto)</b> le jour de sa mise en ligne : <a id="wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Un tiers indépendant, une date, une copie — l'antériorité ne dépend pas de ce seul site.</p>
-      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v17 ; lecture en direct en cours…</p>
+      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v18 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">En direct aussi</span>
@@ -658,10 +708,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v17 (2 novembre 2026 — la passe de fidélité : des pastilles cadrans espacées sur l’orbite, le repli JPEG de la Terre)</p>
-    <span class="sceau-long" id="sceau-version-affiche">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v18 (2 novembre 2026 — les heures autour du globe : des pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée)</p>
+    <span class="sceau-long" id="sceau-version-affiche">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -734,6 +784,7 @@ button.at-bloc{cursor:pointer}
         <li>Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit.</li>
         <li>La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit.</li>
         <li>Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision.</li>
+        <li>Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px).</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -792,26 +843,33 @@ button.at-bloc{cursor:pointer}
     <div class="planete-anneau2"></div>
     <div class="planete-orbite" id="planete-orbite">
 
-      <div class="temps-sat" style="--a:60deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:60deg" data-act="choix" data-id="sainte-martine" title="L’ancre — ouvrir sa grande lecture"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sa-ticks"></g><g id="sa-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sa-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
-        <span class="sat-nom">Avancée</span><span class="sat-val mono" id="sat-av-val">—</span>
+        <span class="sat-textes"><span class="sat-nom">Avancée</span><span class="sat-val mono" id="sat-av-val">—</span></span>
       </div></div>
-      <div class="temps-sat" style="--a:300deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:330deg" data-act="choix" data-id="sainte-martine" title="L’ancre — ouvrir sa grande lecture"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sn-ticks"></g><g id="sn-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sn-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
-        <span class="sat-nom">Normale</span><span class="sat-val mono" id="sat-no-val">—</span>
+        <span class="sat-textes"><span class="sat-nom">Normale</span><span class="sat-val mono" id="sat-no-val">—</span></span>
       </div></div>
-      <div class="temps-sat" style="--a:180deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:180deg" data-act="choix" data-id="sainte-martine" title="L’ancre — ouvrir sa grande lecture"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="ss-ticks"></g><g id="ss-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="ss-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
-        <span class="sat-nom">Sidérale</span><span class="sat-val mono" id="sat-si-val">—</span>
+        <span class="sat-textes"><span class="sat-nom">Sidérale</span><span class="sat-val mono" id="sat-si-val">—</span></span>
       </div></div>
       <div id="planete-horloges"></div>
     </div>
     <div class="planete-globe">
       <picture><source srcset="assets/terre-atlantique.webp" type="image/webp"><img src="assets/terre-atlantique.jpg" alt="La Terre vue de l’espace, centrée sur l’océan Atlantique : les Amériques à gauche, l’Afrique et l’Europe à droite" width="1000" height="1000" loading="eager"></picture>
+      <svg id="planete-nuit" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
       <div class="planete-reperes" id="planete-reperes"></div>
     </div>
+    <svg id="planete-traits" aria-hidden="true"></svg>
   </div>
-  <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Sur l’orbite tournent les trois horloges de la triangulation de l’ancre ; les horloges de comparaison que vous ajoutez s’y placent à l’angle de leur longitude — et quand deux angles sont trop proches, une pastille s’écarte sur un autre rayon ou sur un créneau voisin, reliée par un fin trait doré à son point de longitude vraie, plutôt que de masquer sa voisine. Sur mobile, l’orbite se retire et les horloges deviennent des cartes, ci-dessous — plus aucun chevauchement.</p>
+  <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N au départ : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Tout autour du globe, sur tous les écrans — mobile compris —, chaque lieu affiché porte une pastille entièrement à l’extérieur du disque : son nom et son heure en direct, en chiffres. Sainte-Martine y tient sa pastille d’ancre, dorée et plus grande, non retirable ; les trois horloges de la triangulation l’y rejoignent sur la piste extérieure, et les lieux de comparaison que vous ajoutez s’y placent à l’angle de leur longitude. Quand deux angles sont trop proches, une pastille s’écarte sur une autre piste ou un créneau voisin, reliée par un fin trait doré à son point de longitude vraie, plutôt que de masquer sa voisine — et aucune pastille ne passe jamais sous le globe : une piste n’est libre que si la pastille y tient entièrement hors du disque, rayon du globe et demi-diagonale comptés. Touchez une pastille ou un repère pour ouvrir la grande lecture de son lieu. Et le globe tourne : glissez-le au doigt ou à la souris, la vue pivote — les repères, les pastilles et l’ombre de nuit suivent — puis recentrez quand vous voulez.</p>
+  <p class="petite" id="planete-expo" style="text-align:center;max-width:64ch;margin:.55rem auto 0">Exposition de l’ancre : le coucher du Soleil de Sainte-Martine se calcule à l’instant…</p>
+  <div style="text-align:center;margin:.6rem 0 .2rem">
+    <button class="secondaire" id="planete-recentrer">Recentrer sur Sainte-Martine</button>
+  </div>
+  <p class="petite" style="max-width:72ch;margin:.5rem auto 0">Borne de l’ombrage et de la vue : la photo de la Terre est une image entièrement éclairée, et elle ne tourne pas — c’est la vue de l’Atlantique. L’ombre de nuit dessinée par-dessus est <strong>calculée</strong> à l’instant, dans votre navigateur, d’après la position du Soleil — déclinaison et longitude subsolaire, formules solaires standard de la NOAA, les mêmes familles que le lever et le coucher de l’ancre plus bas — puis projetée sur la même projection orthographique que les repères, et elle suit la rotation de la vue. C’est un schéma vrai par le calcul, pas une photo en direct du terminateur.</p>
   <div class="maitresse-carte">
     <div class="maitresse-cadran">
 <svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
@@ -2899,7 +2957,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   }
   function lstLieu(date,lon){return ((gmst(date)+lon)%360+360)%360}
   function projection(lat,lon){
-    var lat0=25*Math.PI/180, d0=-40;
+    var lat0=VUE.lat*Math.PI/180, d0=VUE.lon;
     var phi=lat*Math.PI/180, dLam=(lon-d0)*Math.PI/180;
     var cosc=Math.sin(lat0)*Math.sin(phi)+Math.cos(lat0)*Math.cos(phi)*Math.cos(dLam);
     var x=Math.cos(phi)*Math.sin(dLam);
@@ -2971,8 +3029,121 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       return (f.charAt(0)||c).toLowerCase();
     });
   }
+  // ----- v18 — Vue pivotante, Soleil calculé et ombre de nuit -----
+  var VUE={lat:25,lon:-40}; // centre de la projection orthographique (la vue Atlantique par défaut)
+  var dernierGlisser=0;
+  function definirVue(lon,lat){
+    VUE.lon=((lon+540)%360)-180;
+    VUE.lat=Math.max(-60,Math.min(60,lat));
+  }
+  function vueActuelle(){return {lat:VUE.lat,lon:VUE.lon}}
+  function pointSubsolaire(date){
+    // Formules solaires standard de la NOAA (année fractionnaire) : déclinaison
+    // du Soleil et équation du temps, puis la longitude où il est midi vrai.
+    var debut=Date.UTC(date.getUTCFullYear(),0,0);
+    var jour=Math.floor((Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate())-debut)/86400000);
+    var hUTC=date.getUTCHours()+date.getUTCMinutes()/60+date.getUTCSeconds()/3600;
+    var g=2*Math.PI/365*(jour-1+(hUTC-12)/24);
+    var eq=229.18*(0.000075+0.001868*Math.cos(g)-0.032077*Math.sin(g)-0.014615*Math.cos(2*g)-0.040849*Math.sin(2*g));
+    var decl=0.006918-0.399912*Math.cos(g)+0.070257*Math.sin(g)-0.006758*Math.cos(2*g)+0.000907*Math.sin(2*g)-0.002697*Math.cos(3*g)+0.00148*Math.sin(3*g);
+    var lon=(720-(hUTC*60+eq))/4;
+    return {lat:decl*180/Math.PI,lon:((lon+540)%360)-180,eqtime:eq};
+  }
+  function elevationSoleil(date,lat,lon){
+    var s=pointSubsolaire(date), rad=Math.PI/180;
+    var c=Math.sin(lat*rad)*Math.sin(s.lat*rad)+Math.cos(lat*rad)*Math.cos(s.lat*rad)*Math.cos((lon-s.lon)*rad);
+    c=Math.max(-1,Math.min(1,c));
+    return 90-Math.acos(c)*180/Math.PI;
+  }
+  function vecteurDir(lat,lon){
+    var r=Math.PI/180;
+    return {x:Math.cos(lat*r)*Math.cos(lon*r),y:Math.cos(lat*r)*Math.sin(lon*r),z:Math.sin(lat*r)};
+  }
+  function cheminNuit(date){
+    // Polygone de la partie visible du globe plongée dans la nuit, en
+    // coordonnées du disque unité (x vers l’est, y vers le nord) : l’arc
+    // visible du terminateur, fermé par l’arc du limbe opposé au Soleil.
+    var s=pointSubsolaire(date);
+    var S=vecteurDir(s.lat,s.lon), V=vecteurDir(VUE.lat,VUE.lon);
+    var rad=Math.PI/180, phi0=VUE.lat*rad, lam0=VUE.lon*rad;
+    var E={x:-Math.sin(lam0),y:Math.cos(lam0),z:0};
+    var N={x:-Math.sin(phi0)*Math.cos(lam0),y:-Math.sin(phi0)*Math.sin(lam0),z:Math.cos(phi0)};
+    function dot(a,b){return a.x*b.x+a.y*b.y+a.z*b.z}
+    function disquePlein(){
+      var c=[], i, t;
+      for(i=0;i<72;i++){t=i/72*2*Math.PI; c.push([Math.cos(t),Math.sin(t)])}
+      return c;
+    }
+    var dotSV=dot(S,V);
+    if(dotSV<-0.999999)return disquePlein();
+    if(dotSV>0.999999)return [];
+    var ref=Math.abs(S.z)<0.9?{x:0,y:0,z:1}:{x:1,y:0,z:0};
+    var u={x:S.y*ref.z-S.z*ref.y,y:S.z*ref.x-S.x*ref.z,z:S.x*ref.y-S.y*ref.x};
+    var ul=Math.sqrt(dot(u,u)); u={x:u.x/ul,y:u.y/ul,z:u.z/ul};
+    var v={x:S.y*u.z-S.z*u.y,y:S.z*u.x-S.x*u.z,z:S.x*u.y-S.y*u.x};
+    var NP=720, ech=[], i, t;
+    for(i=0;i<NP;i++){
+      t=i/NP*2*Math.PI;
+      var P={x:u.x*Math.cos(t)+v.x*Math.sin(t),y:u.y*Math.cos(t)+v.y*Math.sin(t),z:u.z*Math.cos(t)+v.z*Math.sin(t)};
+      ech.push({c:dot(P,V),x:dot(P,E),y:dot(P,N)});
+    }
+    var i0=-1;
+    for(i=0;i<NP;i++)if(ech[i].c<=0){i0=i;break}
+    if(i0===-1)return dot(S,V)<0?disquePlein():[];
+    var arc=[], avant=ech[i0], apres=null, k;
+    for(k=1;k<=NP;k++){
+      var sm=ech[(i0+k)%NP];
+      if(sm.c>0)arc.push(sm);
+      else if(arc.length){apres=sm;break}
+      else avant=sm;
+    }
+    if(!arc.length||!apres)return dot(S,V)<0?disquePlein():[];
+    function croisement(a,b){
+      var f=a.c/(a.c-b.c), x=a.x+(b.x-a.x)*f, y=a.y+(b.y-a.y)*f;
+      var L=Math.sqrt(x*x+y*y)||1;
+      return {x:x/L,y:y/L};
+    }
+    var deb=croisement(avant,arc[0]), fin=croisement(arc[arc.length-1],apres);
+    function pointLimbe(a){
+      return {x:E.x*Math.cos(a)+N.x*Math.sin(a),y:E.y*Math.cos(a)+N.y*Math.sin(a),z:E.z*Math.cos(a)+N.z*Math.sin(a)};
+    }
+    var deuxPi=2*Math.PI;
+    var aD=Math.atan2(deb.y,deb.x), aF=Math.atan2(fin.y,fin.x);
+    var delta=((aD-aF)%deuxPi+deuxPi)%deuxPi;
+    var sens=dot(pointLimbe(aF+delta/2),S)<0?1:-1;
+    var total=sens>0?delta:delta-deuxPi, pas=total/48;
+    var poly=[[deb.x,deb.y]];
+    arc.forEach(function(sm){poly.push([sm.x,sm.y])});
+    poly.push([fin.x,fin.y]);
+    for(k=1;k<48;k++){var a=aF+pas*k; poly.push([Math.cos(a),Math.sin(a)])}
+    return poly;
+  }
+  function couchersCandidats(date,lat,lon){
+    // Instants de coucher du Soleil (ms) autour de l’instant donné, par
+    // l’algorithme NOAA déjà utilisé pour l’ancre (soleil()) : les dates UTC
+    // voisines sont balayées pour ne pas rater le coucher « du jour » local.
+    var res=[], d, s, base;
+    for(d=-1;d<=1;d++){
+      var j=new Date(date.getTime()+d*86400000);
+      s=soleil(j,lat,lon);
+      if(!s)continue;
+      base=Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate());
+      res.push(base+s.coucher*3600000);
+    }
+    return res.sort(function(a,b){return a-b});
+  }
+  function prochainCoucher(date,lat,lon){
+    var cs=couchersCandidats(date,lat,lon), i;
+    for(i=0;i<cs.length;i++)if(cs[i]>=date.getTime()&&cs[i]-date.getTime()<=86400000)return cs[i];
+    return null;
+  }
+  function dernierCoucher(date,lat,lon){
+    var cs=couchersCandidats(date,lat,lon), i, r=null;
+    for(i=0;i<cs.length;i++)if(cs[i]<=date.getTime())r=cs[i];
+    return r;
+  }
   var PISTES_ORBITE=[1,0.78,1.18]; // v17 — pistes de l’orbite : rayon principal, intérieur, extérieur
-  if(typeof window!=='undefined')window.TEMPS_V16={jj:jj,gmst:gmstPoly,lstLieu:lstLieu,projection:projection,decalageHeures:decalageHeures,histoireHeure:histoireHeure,ageLune:ageLune,illumLune:illumLune,soleil:soleil,heureSolaireApprox:heureSolaireApprox,haversine:haversine,pliage:pliage,rechercherUnites:rechercherUnites,placerOrbite:placerOrbite,LAT_ANCRE:LAT_ANCRE,LON_ANCRE:LON_ANCRE};
+  if(typeof window!=='undefined')window.TEMPS_V16={jj:jj,gmst:gmstPoly,lstLieu:lstLieu,projection:projection,decalageHeures:decalageHeures,histoireHeure:histoireHeure,ageLune:ageLune,illumLune:illumLune,soleil:soleil,heureSolaireApprox:heureSolaireApprox,haversine:haversine,pliage:pliage,rechercherUnites:rechercherUnites,placerOrbite:placerOrbite,placerPastilles:placerPastilles,geometriePour:geometriePour,pointSubsolaire:pointSubsolaire,elevationSoleil:elevationSoleil,cheminNuit:cheminNuit,prochainCoucher:prochainCoucher,dernierCoucher:dernierCoucher,definirVue:definirVue,vueActuelle:vueActuelle,LAT_ANCRE:LAT_ANCRE,LON_ANCRE:LON_ANCRE};
   if(typeof document==='undefined')return;
   // ----- Outils d’affichage -----
   function $(id){return document.getElementById(id)}
@@ -3043,17 +3214,22 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   // ----- Planète : orbite, repères, cartes, grande lecture -----
   var ajoutes={}, refs={}, selection='sainte-martine';
   var DISQUE={cx:50, cy:49.8, rx:41.6, ry:39.8};
-  function creerRepere(l){
-    var zone=$('planete-reperes'); if(!zone)return;
+  function placerRepere(el,l){
     var p=projection(l.lat,l.lon);
+    el.style.left=(DISQUE.cx+p.x*DISQUE.rx)+'%';
+    el.style.top=(DISQUE.cy-p.y*DISQUE.ry)+'%';
+    el.classList.toggle('loin',!p.visible);
+    el.title=l.nom+(p.visible?'':' — autre côté du globe');
+  }
+  function creerRepere(l){
+    var zone=$('planete-reperes'); if(!zone)return null;
     var s=document.createElement('span');
-    s.className='rep'+(l.ancre?' ancre':'')+(p.visible?'':' loin');
-    s.style.left=(DISQUE.cx+p.x*DISQUE.rx)+'%';
-    s.style.top=(DISQUE.cy-p.y*DISQUE.ry)+'%';
-    s.title=l.nom+(p.visible?'':' — autre côté du globe');
+    s.className='rep'+(l.ancre?' ancre':'');
+    s.setAttribute('data-act','choix'); s.setAttribute('data-id',l.id);
     var n=document.createElement('span'); n.className='rep-nom'; n.textContent=l.nom;
     s.appendChild(n);
     zone.appendChild(s);
+    placerRepere(s,l);
     return s;
   }
   function ligneValeurs(l,now){
@@ -3067,32 +3243,19 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   function creerHorloge(l){
     var orb=$('planete-horloges'); if(!orb)return null;
     var wrap=document.createElement('div');
-    wrap.className='planete-horloge'; wrap.style.setProperty('--a',l.lon+'deg');
+    wrap.className='planete-horloge';
     var b=document.createElement('button');
     b.className='ph-contre'; b.setAttribute('data-act','choix'); b.setAttribute('data-id',l.id);
     b.setAttribute('aria-label','Grande lecture : '+l.nom);
     var interne=document.createElement('span'); interne.className='ph-interne';
-    var NS='http://www.w3.org/2000/svg';
-    var svg=document.createElementNS(NS,'svg');
-    svg.setAttribute('class','ph-cadran temps-svg-sat'); svg.setAttribute('viewBox','0 0 72 72'); svg.setAttribute('aria-hidden','true');
-    var face=document.createElementNS(NS,'circle');
-    face.setAttribute('cx','36'); face.setAttribute('cy','36'); face.setAttribute('r','33'); face.setAttribute('class','face-sat');
-    svg.appendChild(face);
-    function aiguille(classe,y2){
-      var g=document.createElementNS(NS,'g');
-      var li=document.createElementNS(NS,'line');
-      li.setAttribute('x1','36'); li.setAttribute('y1','36'); li.setAttribute('x2','36'); li.setAttribute('y2',y2); li.setAttribute('class',classe);
-      g.appendChild(li); svg.appendChild(g); return g;
-    }
-    var gh=aiguille('aig-h','23'), gm=aiguille('aig-m','16');
-    var piv=document.createElementNS(NS,'circle');
-    piv.setAttribute('cx','36'); piv.setAttribute('cy','36'); piv.setAttribute('r','3'); piv.setAttribute('class','pivot');
-    svg.appendChild(piv);
     var nom=document.createElement('span'); nom.className='ph-nom'; nom.textContent=l.nom;
+    var ligne=document.createElement('span'); ligne.className='ph-ligne-heure';
     var civ=document.createElement('span'); civ.className='ph-civile mono';
-    interne.appendChild(svg); interne.appendChild(nom); interne.appendChild(civ);
+    var sec=document.createElement('span'); sec.className='ph-secondes mono';
+    ligne.appendChild(civ); ligne.appendChild(sec);
+    interne.appendChild(nom); interne.appendChild(ligne);
     b.appendChild(interne); wrap.appendChild(b); orb.appendChild(wrap);
-    return {wrap:wrap,civ:civ,gh:gh,gm:gm};
+    return {wrap:wrap,civ:civ,sec:sec};
   }
   // ----- v17 — Espacement de l’orbite : des pastilles cadrans qui ne se touchent plus -----
   // Fonction pure (exposée pour vérification). Chaque élément reçoit une piste
@@ -3180,46 +3343,368 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     for(var id3 in poses)sortie[id3]={piste:poses[id3].piste,angleEff:poses[id3].angleEff,trait:poses[id3].trait};
     return sortie;
   }
+  // ----- v18 — Géométrie des pastilles et moteur d’espacement -----
+  // Règle vérifiée point par point : une position n’est libre que si la
+  // pastille y tient entièrement hors du disque du globe (distance du centre
+  // du globe au rectangle de la pastille ≥ rayon du globe + 2 px), dans les
+  // limites de la scène et de la fenêtre, et sans toucher aucune voisine
+  // (rectangles alignés, jeu visé de 4 px entre bords).
+  function geometriePour(S,H,vw){
+    var compacte=S<520;
+    var tailles=compacte
+      ? {lieu:{w:82,h:46},ancre:{w:108,h:56},sat:{w:88,h:50}}
+      : {lieu:{w:96,h:54},ancre:{w:128,h:64},sat:{w:136,h:60}};
+    for(var k in tailles){var t=tailles[k]; t.demi=Math.sqrt(t.w*t.w+t.h*t.h)/2}
+    // Limites du centre d’une pastille : verticalement, la pastille tient dans
+    // la scène ; horizontalement, elle peut déborder la scène — comme en v17 —
+    // mais jamais la fenêtre (limX = demi-fenêtre − marge).
+    return {S:S,H:H,compacte:compacte,Rg:S*0.25,pistes:[0.40,0.4275,0.455,0.4825,0.51,0.5375,0.565],tailles:tailles,
+      limX:(vw&&vw>S)?vw/2-4:S/2-2,limY:H/2-2};
+  }
+  function geometrieScene(){
+    var vw=(typeof window!=='undefined'&&window.innerWidth)?window.innerWidth:1200;
+    var S=Math.min(600,0.96*vw);
+    if(S<520)return geometriePour(S,Math.round(S*1.3),vw);
+    return geometriePour(S,S,vw);
+  }
+  function ROT(){return -40-VUE.lon}
+  function placerPastilles(elems,geom){
+    function norm(a){return ((a%360)+360)%360}
+    function pt(f,angDeg){
+      var r=angDeg*Math.PI/180;
+      return {x:f*geom.S*Math.sin(r),y:-f*geom.H*Math.cos(r)};
+    }
+    function dist(p,q){return Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y))}
+    function ecartRect(e,p,o){
+      // Distance entre deux rectangles alignés (0 s’ils se touchent ou se recouvrent).
+      var dxr=Math.max(Math.abs(p.x-o.p.x)-(e.w+o.w)/2,0);
+      var dyr=Math.max(Math.abs(p.y-o.p.y)-(e.h+o.h)/2,0);
+      return Math.sqrt(dxr*dxr+dyr*dyr);
+    }
+    function seTouchent(A,B){
+      return Math.abs(A.p.x-B.p.x)<(A.w+B.w)/2+4 && Math.abs(A.p.y-B.p.y)<(A.h+B.h)/2+4;
+    }
+    function librePoint(e,p,obs){
+      if(Math.abs(p.x)+e.w/2>geom.limX)return false;
+      if(Math.abs(p.y)+e.h/2>geom.limY)return false;
+      // Aucun coin de la pastille dans le disque : distance du centre du globe
+      // au rectangle (et non au centre de la pastille) ≥ rayon du globe + 2 px.
+      var gx=Math.max(Math.abs(p.x)-e.w/2,0), gy=Math.max(Math.abs(p.y)-e.h/2,0);
+      if(Math.sqrt(gx*gx+gy*gy)<geom.Rg+2)return false;
+      for(var i=0;i<obs.length;i++)if(seTouchent({p:p,w:e.w,h:e.h},obs[i]))return false;
+      return true;
+    }
+    function libre(e,f,ang,obs){return librePoint(e,pt(f,ang),obs)}
+    function chercherGrille(e,obs){
+      // Recours par grille : des centres candidats sont balayés dans toute la
+      // couronne des pistes (rayon continu), du méridien du lieu vers
+      // l’extérieur, jusqu’au premier centre vérifié libre.
+      var av=norm(e.angle), fMin=geom.pistes[0], fMax=geom.pistes[geom.pistes.length-1];
+      var pasG=10, cand=[], gx, gy;
+      var xMax=geom.limX-e.w/2, yMax=geom.limY-e.h/2;
+      for(gx=-xMax;gx<=xMax+0.01;gx+=pasG)for(gy=-yMax;gy<=yMax+0.01;gy+=pasG){
+        var f=Math.sqrt((gx/geom.S)*(gx/geom.S)+(gy/geom.H)*(gy/geom.H));
+        if(f<fMin-0.004||f>fMax+0.004)continue;
+        var ang=norm(Math.atan2(gx/geom.S,-gy/geom.H)*180/Math.PI);
+        var da=Math.abs(((ang-av+540)%360)-180);
+        cand.push({p:{x:gx,y:gy},f:f,ang:ang,da:da,dr:Math.abs(f-fMin)});
+      }
+      cand.sort(function(a,b){return (a.da-b.da)||(a.dr-b.dr)});
+      for(var i=0;i<cand.length;i++)
+        if(librePoint(e,cand[i].p,obs))return {piste:cand[i].f,angleEff:cand[i].ang,p:cand[i].p};
+      return null;
+    }
+    function chercher(e,obs){
+      var av=norm(e.angle), k, d, j;
+      for(k=0;k<geom.pistes.length;k++)
+        if(libre(e,geom.pistes[k],av,obs))return {piste:geom.pistes[k],angleEff:av,p:pt(geom.pistes[k],av)};
+      for(d=1;d<=179;d++){
+        var cand=[av+d,av-d];
+        for(j=0;j<2;j++)for(k=0;k<geom.pistes.length;k++)
+          if(libre(e,geom.pistes[k],cand[j],obs))return {piste:geom.pistes[k],angleEff:norm(cand[j]),p:pt(geom.pistes[k],norm(cand[j]))};
+      }
+      return null;
+    }
+    function repli(e,obs){
+      var av=norm(e.angle), mieux=null, mieuxScore=-Infinity, k, j;
+      for(k=0;k<geom.pistes.length;k++){
+        var p=pt(geom.pistes[k],av), dMin=Infinity;
+        for(j=0;j<obs.length;j++){var dd=ecartRect(e,p,obs[j]); if(dd<dMin)dMin=dd}
+        var score=dMin;
+        if(Math.abs(p.x)+e.w/2>geom.limX||Math.abs(p.y)+e.h/2>geom.limY)score-=10000;
+        var gx=Math.max(Math.abs(p.x)-e.w/2,0), gy=Math.max(Math.abs(p.y)-e.h/2,0);
+        if(Math.sqrt(gx*gx+gy*gy)<geom.Rg+2)score-=10000;
+        if(score>mieuxScore){mieuxScore=score; mieux={piste:geom.pistes[k],angleEff:av,p:p,repli:true}}
+      }
+      return mieux;
+    }
+    function chercherContinu(e,obs){
+      // Dernier recours : le rayon est balayé en continu (par quarts de piste)
+      // entre la piste intérieure et la piste extérieure, à chaque créneau.
+      var av=norm(e.angle), k, d, j, f;
+      var fMin=geom.pistes[0], fMax=geom.pistes[geom.pistes.length-1], pas=(fMax-fMin)/12;
+      for(d=0;d<=179;d++){
+        var cand=d===0?[av]:[av+d,av-d];
+        for(j=0;j<cand.length;j++)
+          for(k=0;k<=12;k++){
+            f=fMin+pas*k;
+            if(libre(e,f,cand[j],obs))return {piste:f,angleEff:norm(cand[j]),p:pt(f,norm(cand[j]))};
+          }
+      }
+      return null;
+    }
+    function seRecouvrent(A,B){
+      return Math.abs(A.p.x-B.p.x)<(A.w+B.w)/2 && Math.abs(A.p.y-B.p.y)<(A.h+B.h)/2;
+    }
+    function bilanDe(P2){
+      var ids=Object.keys(P2), rec=0, repl=0, i, j;
+      for(i=0;i<ids.length;i++){
+        if(P2[ids[i]].repli)repl++;
+        for(j=i+1;j<ids.length;j++)if(seRecouvrent(P2[ids[i]],P2[ids[j]]))rec++;
+      }
+      return {recouvrements:rec, replis:repl};
+    }
+    function meilleurQue(b1,b2){
+      return b1.recouvrements<b2.recouvrements||(b1.recouvrements===b2.recouvrements&&b1.replis<b2.replis);
+    }
+    function scoreDe(P2){
+      // Coût d’une configuration : un recouvrement vaut plus que tout le
+      // reste, un repli ensuite, puis le déplacement angulaire total —
+      // triple pour l’ancre, qui doit rester près de son méridien.
+      var ids=Object.keys(P2), rec=0, repl=0, cout=0, i, j;
+      for(i=0;i<ids.length;i++){
+        var A=P2[ids[i]];
+        if(A.repli)repl++;
+        var da=Math.abs(((A.angleEff-A.av0+540)%360)-180);
+        cout+=Math.min(da,90)*(A.prio===0?3:1);
+        for(j=i+1;j<ids.length;j++)if(seRecouvrent(A,P2[ids[j]]))rec++;
+      }
+      return rec*100000+repl*10000+cout;
+    }
+    function poseObjet(e,pl){
+      var av0=norm(e.angleVrai!==undefined?e.angleVrai:e.angle);
+      var ecart=Math.abs(((pl.angleEff-av0+540)%360)-180);
+      return {piste:pl.piste,angleEff:pl.angleEff,p:pl.p,demi:e.demi,w:e.w,h:e.h,prio:e.prio,av0:av0,
+        trait:pl.piste!==geom.pistes[0]||ecart>0.5,repli:!!pl.repli};
+    }
+    function resoudre(ordre){
+      var poses={};
+      function obstaclesSauf(id){
+        var obs=[];
+        for(var i2 in poses)if(i2!==id)obs.push(poses[i2]);
+        return obs;
+      }
+      function poser(e,pl){poses[e.id]=poseObjet(e,pl)}
+    ordre.forEach(function(e){
+      poser(e,chercher(e,obstaclesSauf(e.id))||repli(e,obstaclesSauf(e.id)));
+    });
+    // Passe de réparation (héritée de la v17) : tant qu’une paire se touche,
+    // on replace l’élément de priorité moindre dans un créneau vérifié libre
+    // contre tous les autres ; chaque réparation réussie supprime une
+    // collision sans en créer.
+    function collision(){
+      var ids=Object.keys(poses), i, j;
+      for(i=0;i<ids.length;i++)for(j=i+1;j<ids.length;j++){
+        if(seTouchent(poses[ids[i]],poses[ids[j]]))return [ids[i],ids[j]];
+      }
+      return null;
+    }
+    for(var essai=0;essai<80;essai++){
+      var col=collision(); if(!col)break;
+      var parId={};
+      ordre.forEach(function(e){parId[e.id]=e});
+      var cands=[col[0],col[1]].sort(function(a,b){return parId[b].prio-parId[a].prio});
+      var bouge=false;
+      for(var m=0;m<2&&!bouge;m++){
+        var idB=cands[m], eB=parId[idB], ancien=poses[idB];
+        delete poses[idB];
+        var pl2=chercher(eB,obstaclesSauf(idB));
+        if(pl2){poser(eB,pl2); bouge=true}
+        else poses[idB]=ancien;
+      }
+      if(!bouge)break;
+    }
+    // Consolidation : tout élément resté en repli, ou encore en collision,
+    // retente un créneau vérifié libre contre la configuration courante —
+    // d’abord sur les pistes, puis, au besoin, sur le rayon continu.
+    for(var tour=0;tour<3;tour++){
+      var aBouge=false;
+      ordre.forEach(function(e){
+        var pl=poses[e.id], enCollision=false, ids2=Object.keys(poses), q;
+        for(q=0;q<ids2.length;q++){
+          if(ids2[q]===e.id)continue;
+          if(seTouchent(pl,poses[ids2[q]])){enCollision=true;break}
+        }
+        if(!pl.repli&&!enCollision)return;
+        var ancien=pl;
+        delete poses[e.id];
+        var pl2=chercher(e,obstaclesSauf(e.id))||chercherContinu(e,obstaclesSauf(e.id))||chercherGrille(e,obstaclesSauf(e.id));
+        if(pl2){poser(e,pl2); aBouge=true}
+        else poses[e.id]=ancien;
+      });
+      if(!aBouge)break;
+    }
+    var b0=bilanDe(poses);
+    if(b0.recouvrements>0||b0.replis>0){
+      var coincesIds={}, idsC=Object.keys(poses), iC, jC;
+      for(iC=0;iC<idsC.length;iC++){
+        if(poses[idsC[iC]].repli)coincesIds[idsC[iC]]=true;
+        for(jC=iC+1;jC<idsC.length;jC++){
+          var A3=poses[idsC[iC]], B3=poses[idsC[jC]];
+          if(Math.abs(A3.p.x-B3.p.x)<(A3.w+B3.w)/2 && Math.abs(A3.p.y-B3.p.y)<(A3.h+B3.h)/2){coincesIds[idsC[iC]]=true; coincesIds[idsC[jC]]=true}
+        }
+      }
+      var coinces=[];
+      ordre.forEach(function(e){if(coincesIds[e.id])coinces.push(e)});
+      var base={};
+      Object.keys(poses).forEach(function(id){if(!coincesIds[id])base[id]=poses[id]});
+      var ordresR=[coinces.slice().sort(function(a,b){return (a.prio-b.prio)||(norm(a.angle)-norm(b.angle))}),
+                   coinces.slice().sort(function(a,b){return norm(b.angle)-norm(a.angle)})];
+      var meilleur=null, meilleurScore=scoreDe(poses);
+      for(var oi=0;oi<ordresR.length;oi++){
+        var essai={};
+        Object.keys(base).forEach(function(id){essai[id]=base[id]});
+        ordresR[oi].forEach(function(e){
+          var obs=[];
+          Object.keys(essai).forEach(function(id2){obs.push(essai[id2])});
+          var pl=chercherContinu(e,obs)||chercherGrille(e,obs)||repli(e,obs);
+          essai[e.id]=poseObjet(e,pl);
+        });
+        var bs=scoreDe(essai);
+        if(bs<meilleurScore){meilleur=essai; meilleurScore=bs}
+        if(meilleur){var bm2=bilanDe(meilleur); if(bm2.recouvrements===0&&bm2.replis===0)break}
+
+      }
+      if(meilleur){
+        Object.keys(poses).forEach(function(id){delete poses[id]});
+        Object.keys(meilleur).forEach(function(id){poses[id]=meilleur[id]});
+      }
+    }
+    // Recours régional, en boucle tant que le bilan s’améliore : toute la
+    // zone congestionnée est libérée — éléments coincés et voisins proches —
+    // puis repeuplée (pistes d’abord, rayon continu et grille ensuite), dans
+    // deux ordres d’insertion ; on ne garde que ce qui améliore le bilan
+    // (recouvrements d’abord, replis ensuite).
+    for(var tourZ=0;tourZ<4;tourZ++){
+      var b1=bilanDe(poses);
+      if(b1.recouvrements===0&&b1.replis===0)break;
+      var zone={}, idsZ=Object.keys(poses), iZ, jZ;
+      for(iZ=0;iZ<idsZ.length;iZ++){
+        if(poses[idsZ[iZ]].repli)zone[idsZ[iZ]]=true;
+        for(jZ=0;jZ<idsZ.length;jZ++)
+          if(iZ!==jZ&&seRecouvrent(poses[idsZ[iZ]],poses[idsZ[jZ]]))zone[idsZ[iZ]]=true;
+      }
+      var zoneIds=Object.keys(zone);
+      for(iZ=0;iZ<idsZ.length;iZ++){
+        if(zone[idsZ[iZ]])continue;
+        for(jZ=0;jZ<zoneIds.length;jZ++){
+          var A4=poses[idsZ[iZ]], B4=poses[zoneIds[jZ]];
+          if(Math.abs(A4.p.x-B4.p.x)<150&&Math.abs(A4.p.y-B4.p.y)<110){zone[idsZ[iZ]]=true;break}
+        }
+      }
+      var zoneElems=[];
+      ordre.forEach(function(e){if(zone[e.id])zoneElems.push(e)});
+      var zoneOrdres=[zoneElems, zoneElems.slice().sort(function(a,b){return norm(b.angle)-norm(a.angle)})];
+      var meilleurZ=null, meilleurSZ=scoreDe(poses);
+      for(var zo=0;zo<zoneOrdres.length;zo++){
+        var essaiZ={};
+        Object.keys(poses).forEach(function(id){if(!zone[id])essaiZ[id]=poses[id]});
+        zoneOrdres[zo].forEach(function(e){
+          var obs=[];
+          Object.keys(essaiZ).forEach(function(id2){obs.push(essaiZ[id2])});
+          var pl=chercher(e,obs)||chercherContinu(e,obs)||chercherGrille(e,obs)||repli(e,obs);
+          essaiZ[e.id]=poseObjet(e,pl);
+        });
+        var sz=scoreDe(essaiZ);
+        if(sz<meilleurSZ){meilleurZ=essaiZ; meilleurSZ=sz}
+      }
+      if(!meilleurZ)break;
+      Object.keys(poses).forEach(function(id){delete poses[id]});
+      Object.keys(meilleurZ).forEach(function(id){poses[id]=meilleurZ[id]});
+    }
+    return poses;
+    }
+    var ordreBase=elems.slice().sort(function(a,b){return (a.prio-b.prio)||(norm(a.angle)-norm(b.angle))});
+    var meilleur=resoudre(ordreBase), mb=bilanDe(meilleur), ms=scoreDe(meilleur);
+    if(mb.recouvrements>0||mb.replis>0){
+      // Essais supplémentaires : ordre bousculé dans chaque groupe de
+      // priorité et angles de départ décalés de quelques degrés (graine
+      // fixe : le résultat reste reproductible). On garde le meilleur bilan.
+      var graine=987654321;
+      function rand(){graine=(graine*1103515245+12345)%2147483648; return graine/2147483648}
+      var debutMs=Date.now();
+      for(var essaiR=0;essaiR<48;essaiR++){
+        if(essaiR>0&&Date.now()-debutMs>1600)break;
+        var groupes={};
+        elems.forEach(function(e){
+          var c={};
+          for(var k in e)c[k]=e[k];
+          c.angleVrai=e.angle;
+          c.angle=e.angle+(rand()*10-5);
+          (groupes[e.prio]=groupes[e.prio]||[]).push(c);
+        });
+        var ordreR=[];
+        [0,1,2].forEach(function(pr){
+          var g=groupes[pr]||[];
+          for(var i=g.length-1;i>0;i--){var j=Math.floor(rand()*(i+1)); var tmp=g[i]; g[i]=g[j]; g[j]=tmp}
+          ordreR=ordreR.concat(g);
+        });
+        var p2=resoudre(ordreR), b2=bilanDe(p2), s2=scoreDe(p2);
+        if(s2<ms){meilleur=p2; mb=b2; ms=s2}
+        if(mb.recouvrements===0&&mb.replis===0)break;
+      }
+    }
+    return meilleur;
+  }
   function espacerOrbite(){
-    var orb=$('planete-orbite'); if(!orb)return;
-    var elems=[], sats=orb.querySelectorAll('.temps-sat'), i;
+    var scene=$('planete-scene'); if(!scene)return;
+    var geom=geometrieScene();
+    scene.classList.toggle('compacte',geom.compacte);
+    var elems=[], sats=scene.querySelectorAll('.temps-sat'), i;
     for(i=0;i<sats.length;i++){
       var a=parseFloat((sats[i].style.getPropertyValue('--a')||'0').replace('deg',''));
-      elems.push({id:'__sat'+i,angle:a,demi:53,fixe:true});
+      elems.push({id:'__sat'+i,angle:a,w:geom.tailles.sat.w,h:geom.tailles.sat.h,demi:geom.tailles.sat.demi,prio:1,el:sats[i]});
     }
     LIEUX.forEach(function(l){
       var r=refs[l.id];
-      if(r&&r.horloge&&r.horloge.wrap)elems.push({id:l.id,angle:l.lon,demi:38,fixe:false});
+      if(!r||!r.horloge||!r.horloge.wrap)return;
+      var t=l.ancre?geom.tailles.ancre:geom.tailles.lieu;
+      elems.push({id:l.id,angle:l.lon+ROT(),w:t.w,h:t.h,demi:t.demi,prio:l.ancre?0:2,el:r.horloge.wrap});
     });
-    var places=placerOrbite(elems,206);
-    LIEUX.forEach(function(l){
-      var r=refs[l.id], pl=places[l.id];
-      if(!r||!r.horloge||!r.horloge.wrap||!pl)return;
-      r.horloge.wrap.style.setProperty('--a',pl.angleEff+'deg');
-      r.horloge.wrap.style.setProperty('--piste',pl.piste);
-      r.horloge.wrap.classList.toggle('decalee',!!pl.trait);
+    var places=placerPastilles(elems,geom);
+    elems.forEach(function(e){
+      var pl=places[e.id]; if(!pl)return;
+      e.el.style.width=e.w+'px'; e.el.style.height=e.h+'px';
+      e.el.style.left='50%'; e.el.style.top='50%';
+      e.el.style.transform='translate('+pl.p.x.toFixed(1)+'px,'+pl.p.y.toFixed(1)+'px) translate(-50%,-50%)';
     });
-    rendreTraits(places);
+    rendreTraits(places,geom);
   }
-  function rendreTraits(places){
-    var orb=$('planete-orbite'); if(!orb)return;
-    var anciens=orb.querySelectorAll('.ph-lien'), i;
-    for(i=0;i<anciens.length;i++)anciens[i].remove();
-    var RV=34.3333; // rayon principal en % de la largeur de la scène : min(206px,33vw) / min(600px,96vw)
-    function pt(facteur,angDeg){
-      var r=RV*facteur, rad=angDeg*Math.PI/180;
-      return {x:50+r*Math.sin(rad),y:50-r*Math.cos(rad)};
+  function rendreTraits(places,geom){
+    var svg=$('planete-traits'); if(!svg)return;
+    var NS='http://www.w3.org/2000/svg';
+    svg.setAttribute('viewBox','0 0 '+geom.S+' '+geom.H);
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    function ellipse(f,classe){
+      var el=document.createElementNS(NS,'ellipse');
+      el.setAttribute('cx',geom.S/2); el.setAttribute('cy',geom.H/2);
+      el.setAttribute('rx',f*geom.S); el.setAttribute('ry',f*geom.H);
+      el.setAttribute('class',classe);
+      svg.appendChild(el);
     }
+    ellipse(geom.pistes[0],'trait-anneau');
+    ellipse(0.30,'trait-anneau2');
     LIEUX.forEach(function(l){
       var pl=places[l.id];
       if(!pl||!pl.trait)return;
-      var v=pt(1,((l.lon%360)+360)%360), q=pt(pl.piste,pl.angleEff);
-      var dx=q.x-v.x, dy=q.y-v.y, L=Math.sqrt(dx*dx+dy*dy);
-      var t=document.createElement('div');
-      t.className='ph-lien'; t.setAttribute('aria-hidden','true');
-      t.style.left=((v.x+q.x)/2-L/2)+'%'; t.style.top=((v.y+q.y)/2)+'%'; t.style.width=L+'%';
-      t.style.transform='rotate('+(Math.atan2(dy,dx)*180/Math.PI)+'deg)';
-      orb.appendChild(t);
+      var av=((l.lon+ROT())%360+360)%360, r=av*Math.PI/180;
+      var li=document.createElementNS(NS,'line');
+      li.setAttribute('x1',geom.S/2+geom.pistes[0]*geom.S*Math.sin(r));
+      li.setAttribute('y1',geom.H/2-geom.pistes[0]*geom.H*Math.cos(r));
+      li.setAttribute('x2',geom.S/2+pl.p.x);
+      li.setAttribute('y2',geom.H/2+pl.p.y);
+      li.setAttribute('class','trait-lien');
+      svg.appendChild(li);
     });
   }
   function creerCarte(l){
@@ -3284,6 +3769,11 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     if(selection===id)selectionner('sainte-martine');
     rendreControles(); espacerOrbite(); majPlanete();
   }
+  function majGlobeSelection(){
+    var sel=lieuParId(selection); if(!sel)return;
+    var p=projection(sel.lat,sel.lon);
+    texte('x-globe',p.visible?'Repère visible sur le globe, dans la vue en cours.':'De l’autre côté du globe dans la vue en cours : le repère y est estompé et se dit « autre côté » plutôt que de disparaître.');
+  }
   function selectionner(id){
     var l=lieuParId(id); if(!l)return;
     selection=id;
@@ -3295,8 +3785,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     });
     texte('x-nom',l.nom+(l.ancre?' — l’ancre':''));
     texte('x-coords',fmtCoord(l.lat,l.lon));
-    var p=projection(l.lat,l.lon);
-    texte('x-globe',p.visible?'Repère visible sur le globe, côté Atlantique de la projection.':'De l’autre côté du globe pour cette projection : le repère y est estompé et se dit « autre côté » plutôt que de disparaître.');
+    majGlobeSelection();
     texte('x-zone',l.zone+(l.ancre?' — le fuseau de référence du système':''));
     texte('x-siderale-detail','GMST + sa longitude ('+fr(l.lon,2).replace('-','−')+'°) — le même polynôme que l’ancre.');
     var btn=$('x-retirer'); if(btn)btn.hidden=!!l.ancre;
@@ -3324,16 +3813,8 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       if(!l.ancre&&!ajoutes[l.id])return;
       var v=ligneValeurs(l,now), r=refs[l.id];
       if(r&&r.horloge){
-        r.horloge.civ.textContent=v.civile;
-        if(r.horloge.gh&&r.horloge.gm){
-          var pc=fmtCivil(l.zone).formatToParts(now), hh=0, mi=0, pi2;
-          for(pi2=0;pi2<pc.length;pi2++){
-            if(pc[pi2].type==='hour')hh=parseInt(pc[pi2].value,10);
-            if(pc[pi2].type==='minute')mi=parseInt(pc[pi2].value,10);
-          }
-          r.horloge.gh.setAttribute('transform','rotate('+(((hh%12)+mi/60)*30)+' 36 36)');
-          r.horloge.gm.setAttribute('transform','rotate('+(mi*6)+' 36 36)');
-        }
+        r.horloge.civ.textContent=v.civile.slice(0,5);
+        if(r.horloge.sec)r.horloge.sec.textContent=v.civile.slice(5);
       }
       if(r&&r.carte){
         r.carte.civ.textContent=v.civile;
@@ -3346,16 +3827,78 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       texte('x-civile',v2.civile);
       texte('x-siderale',hmsLong(lstLieu(now,sel.lon)));
       texte('x-ecart',sel.ancre?'0 h — c’est l’ancre':fmtEcart(v2.ecart)+(v2.ecart>0?' d’avance sur Sainte-Martine':' de retard sur Sainte-Martine'));
-      var hh=Math.floor(v2.solH), mm=Math.floor((v2.solH-hh)*60);
-      texte('x-journuit',(v2.jour?'Jour là-bas':'Nuit là-bas')+' — heure solaire approchée '+pad(hh)+' h '+pad(mm)+' (UTC + longitude/15 : une approximation, étiquetée comme telle).');
+      var elev=elevationSoleil(now,sel.lat,sel.lon);
+      var etatExpo=elev>=6?'Plein jour là-bas':(elev>=0?'Soleil bas là-bas':(elev>=-6?'Crépuscule là-bas — le Soleil est sous l’horizon, à moins de 6°':'Nuit là-bas'));
+      var couchSel=prochainCoucher(now,sel.lat,sel.lon);
+      texte('x-journuit',etatExpo+' — élévation solaire calculée : '+(elev<0?'−':'+')+fr(Math.abs(elev),1)+'°.'+(couchSel?' Coucher du Soleil calculé : '+fmtHeureZone(couchSel,sel.zone)+' (heure du lieu, dans les prochaines 24 h).':' Aucun coucher du Soleil dans les prochaines 24 h (jour ou nuit polaire, ou période sans transition).'));
     }
     // Miroir des ancrages — le bord du site
     texte('mir-site-civile',fmtCivil(ZONE_ANCRE).format(now));
     texte('mir-site-siderale',hmsLong(lstLieu(now,LON_ANCRE)));
     if(visiteur.zone)texte('mir-v-civile',fmtCivil(visiteur.zone).format(now));
     if(visiteur.lon!==null&&visiteur.lon!==undefined)texte('mir-v-siderale',hmsLong(lstLieu(now,visiteur.lon)));
+    rendreNuit(); rendreExpo();
   }
 
+  // ----- v18 — Rendu de l’ombre de nuit, exposition de l’ancre, rotation -----
+  function rendreNuit(){
+    var svg=$('planete-nuit'); if(!svg)return;
+    var poly=cheminNuit(new Date());
+    var NS='http://www.w3.org/2000/svg';
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    if(!poly.length)return;
+    var defs=document.createElementNS(NS,'defs');
+    var cp=document.createElementNS(NS,'clipPath');
+    cp.setAttribute('id','clip-disque-nuit');
+    var ell=document.createElementNS(NS,'ellipse');
+    ell.setAttribute('cx',DISQUE.cx); ell.setAttribute('cy',DISQUE.cy);
+    ell.setAttribute('rx',DISQUE.rx); ell.setAttribute('ry',DISQUE.ry);
+    cp.appendChild(ell); defs.appendChild(cp); svg.appendChild(defs);
+    var dAttr='M'+poly.map(function(p){
+      return (DISQUE.cx+p[0]*DISQUE.rx).toFixed(2)+' '+(DISQUE.cy-p[1]*DISQUE.ry).toFixed(2);
+    }).join(' L')+' Z';
+    var path=document.createElementNS(NS,'path');
+    path.setAttribute('d',dAttr);
+    path.setAttribute('class','nuit-forme');
+    path.setAttribute('clip-path','url(#clip-disque-nuit)');
+    svg.appendChild(path);
+  }
+  var expoTexte='';
+  function rendreExpo(){
+    var el=$('planete-expo'); if(!el)return;
+    var now=new Date();
+    var pc=prochainCoucher(now,LAT_ANCRE,LON_ANCRE), dc=dernierCoucher(now,LAT_ANCRE,LON_ANCRE);
+    var calcMs=pc||dc, t;
+    if(!calcMs){
+      t='À Sainte-Martine : aucun coucher du Soleil proche n’est calculé (cas polaire) — c’est dit, aucune heure n’est inventée.';
+    }else{
+      t='À Sainte-Martine, l’ancre est moins exposée au soleil '+(pc?'à partir de':'depuis')+' '+fmtHeureZone(calcMs,ZONE_ANCRE)+' — coucher calculé ici, par les formules solaires du panneau.';
+      var st=meteoEtat.mt, metMs=null, bd=Infinity;
+      if(st&&st.om&&st.om.daily&&st.om.daily.sunset&&st.om.daily.sunset.length){
+        for(var i2=0;i2<st.om.daily.sunset.length;i2++){
+          var cand=st.om.daily.sunset[i2]*1000, dd=Math.abs(cand-calcMs);
+          if(dd<bd){bd=dd; metMs=cand}
+        }
+      }
+      if(metMs!==null){
+        var ecartMin=Math.round(bd/60000);
+        t+=' La météo (Open-Meteo) donne '+fmtHeureZone(metMs,ZONE_ANCRE)+' — écart de '+ecartMin+' min entre les deux lectures'+(ecartMin<=5?' : elles se recoupent.':' : les deux sont affichées, aucune n’est choisie.');
+      }else{
+        t+=' Le coucher de la météo (Open-Meteo, onglet Météo) n’est pas encore lu : seule la valeur calculée est montrée, c’est dit.';
+      }
+    }
+    if(t!==expoTexte){expoTexte=t; el.textContent=t}
+  }
+  var dernierEspacement=0;
+  function appliquerVue(){
+    LIEUX.forEach(function(l){
+      var r=refs[l.id];
+      if(r&&r.rep)placerRepere(r.rep,l);
+    });
+    rendreNuit();
+    var t=Date.now();
+    if(t-dernierEspacement>120){dernierEspacement=t; espacerOrbite()}
+  }
   // ----- Les sens de l’ancre -----
   var sensEtat={om:null,met:null,kp:null,kpQuand:null,seisme:null,seismeGen:null};
   var visiteur={nom:null,region:null,lat:null,lon:null,zone:null,source:null};
@@ -3824,6 +4367,8 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   // ----- Initialisation -----
   if($('p-temps')){
     refs['sainte-martine']={rep:creerRepere(lieuParId('sainte-martine')),carte:creerCarte(lieuParId('sainte-martine'))};
+    refs['sainte-martine'].horloge=creerHorloge(lieuParId('sainte-martine'));
+    if(refs['sainte-martine'].horloge)refs['sainte-martine'].horloge.wrap.classList.add('ancre');
     selectionner('sainte-martine');
     ['paris','tokyo','sydney'].forEach(ajouter);
     rendreControles();
@@ -3834,6 +4379,9 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     if(selV)LIEUX.forEach(function(l){
       var o=document.createElement('option'); o.value=l.id; o.textContent=l.nom; selV.appendChild(o);
     });
+    document.addEventListener('click',function(ev){
+      if(Date.now()-dernierGlisser<400){ev.stopPropagation(); ev.preventDefault()}
+    },true);
     document.addEventListener('click',function(ev){
       var b=ev.target&&ev.target.closest?ev.target.closest('[data-act]'):null;
       if(!b)return;
@@ -3849,6 +4397,37 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       if(!selV)return;
       var l=lieuParId(selV.value); if(!l)return;
       poserVisiteur({nom:l.nom,region:'lieu choisi par toi dans la liste',lat:l.lat,lon:l.lon,zone:l.zone,source:'manuel'});
+    });
+    // ----- v18 — Rotation au doigt / à la souris, recentrage, redimensionnement -----
+    var globeEl=document.querySelector('.planete-globe');
+    if(globeEl){
+      var gliss=null;
+      globeEl.addEventListener('pointerdown',function(ev){
+        gliss={x:ev.clientX,y:ev.clientY,lon:VUE.lon,lat:VUE.lat,bouge:false};
+        try{globeEl.setPointerCapture(ev.pointerId)}catch(e){}
+      });
+      globeEl.addEventListener('pointermove',function(ev){
+        if(!gliss)return;
+        var dx=ev.clientX-gliss.x, dy=ev.clientY-gliss.y;
+        if(Math.abs(dx)+Math.abs(dy)>6)gliss.bouge=true;
+        if(!gliss.bouge)return;
+        var k=57.2958/(0.25*geometrieScene().S);
+        definirVue(gliss.lon-dx*k,gliss.lat+dy*k);
+        appliquerVue();
+      });
+      var finGliss=function(){
+        if(gliss&&gliss.bouge){dernierGlisser=Date.now(); espacerOrbite(); majGlobeSelection()}
+        gliss=null;
+      };
+      globeEl.addEventListener('pointerup',finGliss);
+      globeEl.addEventListener('pointercancel',finGliss);
+    }
+    var btnRec=$('planete-recentrer');
+    if(btnRec)btnRec.addEventListener('click',function(){definirVue(-40,25); appliquerVue(); espacerOrbite(); majGlobeSelection()});
+    var minuteurVue=null;
+    window.addEventListener('resize',function(){
+      clearTimeout(minuteurVue);
+      minuteurVue=setTimeout(function(){espacerOrbite()},150);
     });
     setInterval(majPlanete,1000); majPlanete();
     setInterval(function(){rendreSens(); rendreAgesMeteo()},30000);
