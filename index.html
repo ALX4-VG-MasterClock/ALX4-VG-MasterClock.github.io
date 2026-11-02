@@ -437,6 +437,95 @@ button.at-bloc{cursor:pointer}
 .sceptique-carte{border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.2rem;background:#10241d}
 .sceptique-carte .q{font-family:var(--serif);font-size:1.3rem;color:var(--texte);margin:.25rem 0 .55rem}
 
+
+/* ===== v16 — Temps planétaire : la Terre au centre, horloges de comparaison, ancrage ressenti ===== */
+.planete-scene{position:relative;width:min(600px,96vw);aspect-ratio:1/1;margin:1.6rem auto .2rem;--rayon:min(206px,33vw);--rayon-planete:min(238px,37vw)}
+.planete-anneau{position:absolute;inset:1%;border:2px dashed rgba(178,134,22,.45);border-radius:50%}
+.planete-anneau2{position:absolute;inset:9%;border:1px solid rgba(53,192,139,.22);border-radius:50%}
+.planete-orbite{position:absolute;inset:0;animation:temps-orbite 120s linear infinite}
+.planete-scene:hover .planete-orbite,.planete-scene:focus-within .planete-orbite{animation-play-state:paused}
+.planete-scene:hover .ph-contre,.planete-scene:focus-within .ph-contre,.planete-scene:hover .sat-contre,.planete-scene:focus-within .sat-contre{animation-play-state:paused}
+.planete-globe{position:absolute;top:50%;left:50%;width:57%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;box-shadow:0 0 64px rgba(53,192,139,.20),0 12px 36px rgba(0,0,0,.55)}
+.planete-globe img{width:100%;height:100%;object-fit:cover;display:block}
+.planete-reperes{position:absolute;inset:0}
+.rep{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:var(--vert);border:2px solid #08130e;box-shadow:0 0 9px rgba(53,192,139,.85);z-index:3}
+.rep.ancre{width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--or);box-shadow:0 0 14px rgba(212,175,55,.95)}
+.rep.loin{opacity:.35;background:#8a9a8a;border-style:dashed}
+.rep .rep-nom{position:absolute;left:15px;top:-5px;font-size:.68rem;font-weight:700;color:var(--or-clair);white-space:nowrap;text-shadow:0 1px 5px #000;display:none}
+.rep.ancre .rep-nom,.rep.choisi .rep-nom{display:block}
+.planete-horloge{position:absolute;top:50%;left:50%;width:124px;margin:-62px 0 0 -62px;transform:rotate(var(--a)) translateY(calc(var(--rayon-planete)*-1)) rotate(calc(var(--a)*-1));z-index:4}
+.ph-contre{animation:temps-contre 120s linear infinite;background:rgba(14,30,24,.97);border:1px solid rgba(212,175,55,.38);border-radius:14px;padding:.45rem .3rem .4rem;width:100%;text-align:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5);font:inherit;color:var(--texte)}
+.ph-contre:hover{border-color:var(--or-clair)}
+.planete-horloge.choisi .ph-contre{border-color:var(--or);box-shadow:0 0 0 1px var(--or),0 6px 18px rgba(0,0,0,.55)}
+.ph-nom{display:block;font-weight:700;font-size:.8rem;color:#f2ecda}
+.ph-civile{display:block;font-size:.88rem;color:var(--or-clair);font-weight:700;font-variant-numeric:tabular-nums}
+.ph-ligne{display:block;font-size:.67rem;color:var(--texte-doux);font-variant-numeric:tabular-nums}
+.maitresse-carte{display:flex;gap:1.2rem;align-items:center;background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.maitresse-cadran{width:172px;flex:0 0 auto}
+.maitresse-cadran svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(178,134,22,.28))}
+.maitresse-texte p{margin:.35rem 0}
+.planete-ajout{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.btn-lieu{border:1px solid var(--ligne);background:#0d1f19;color:var(--texte);border-radius:999px;padding:.32rem .75rem;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}
+.btn-lieu:hover{border-color:var(--or);color:var(--or-clair)}
+.planete-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.chip-lieu{display:inline-flex;gap:.45rem;align-items:center;border:1px solid var(--or);color:var(--or-clair);border-radius:999px;padding:.28rem .5rem .28rem .8rem;font-size:.85rem;font-weight:700;background:rgba(212,175,55,.08)}
+.chip-lieu button{background:none;border:1px solid rgba(240,138,107,.6);color:#f08a6b;border-radius:50%;width:1.35rem;height:1.35rem;line-height:1;cursor:pointer;font:inherit;font-size:.8rem;padding:0}
+.lecture-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:.8rem 0}
+.lecture-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
+.lecture-grille p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
+.histoire-heure{border-top:1px solid var(--ligne);margin-top:.7rem;padding-top:.85rem}
+.histoire-heure p{margin:.4rem 0}
+.planete-cartes{display:none}
+.ancrage-sens h3{margin:.2rem 0 .6rem}
+.sens-age{color:var(--texte-doux)}
+@media(max-width:820px){
+  .planete-orbite{display:none}
+  .planete-globe{width:80%}
+  .planete-scene{--rayon:0px;--rayon-planete:0px}
+  .planete-cartes{display:grid;gap:.8rem;margin:1rem 0}
+  .p-carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.15rem;text-align:left;width:100%;font:inherit;color:var(--texte);cursor:pointer}
+  .p-carte.choisi{border-color:var(--or)}
+  .p-carte .pc-nom{font-weight:700;font-size:1rem;color:#f2ecda}
+  .p-carte .pc-civile{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--or-clair);font-variant-numeric:tabular-nums}
+  .p-carte p{font-size:.88rem;color:var(--texte-doux);margin:.25rem 0 0}
+  .maitresse-carte{flex-direction:column;text-align:center}
+}
+@media (prefers-reduced-motion: reduce){.planete-orbite,.ph-contre{animation:none}}
+
+/* ===== v16 (suite) — miroir des ancrages, onglet Météo, recherche reliée ===== */
+.miroir-grille{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
+.miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
+.miroir-grille p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
+#v-choix{background:#0d1f19;color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
+.meteo-lecture{display:flex;gap:1.2rem;align-items:flex-start}
+.meteo-photo{width:118px;height:118px;object-fit:cover;border-radius:16px;border:1px solid var(--or);flex:0 0 auto;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.meteo-bande{display:flex;gap:.55rem;overflow-x:auto;padding:.4rem .1rem .8rem;scrollbar-width:thin}
+.meteo-heure{flex:0 0 auto;min-width:86px;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.6rem .5rem;text-align:center}
+.meteo-heure .mh-h{font-weight:700;font-size:.85rem;color:var(--or-clair)}
+.meteo-heure .mh-i{font-size:1.3rem;line-height:1.5}
+.meteo-heure .mh-t{font-weight:700;font-variant-numeric:tabular-nums}
+.meteo-heure .mh-p{font-size:.75rem;color:#7fb8d8}
+.meteo-jours{display:grid;gap:.5rem}
+.meteo-jour{display:grid;grid-template-columns:118px 30px 1fr auto;gap:.7rem;align-items:center;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.55rem .9rem}
+.meteo-jour .mj-j{font-weight:700;color:var(--texte)}
+.meteo-jour .mj-i{font-size:1.15rem;text-align:center}
+.meteo-jour .mj-l{font-size:.88rem;color:var(--texte-doux)}
+.meteo-jour .mj-t{font-variant-numeric:tabular-nums;font-weight:700;color:var(--or-clair);white-space:nowrap}
+.meteo-jour .mj-t .min{color:#7fb8d8}
+.rel-groupe{font-family:var(--serif);color:var(--or-clair);font-size:1.02rem;margin:.9rem 0 .45rem}
+.rel-resultat{display:block;width:100%;text-align:left;margin:0 0 .5rem;padding:.65rem .85rem;border:1px solid var(--ligne);border-radius:10px;background:#10241d;cursor:pointer;font:inherit;color:var(--texte)}
+.rel-resultat:hover{border-color:var(--or)}
+.rel-resultat .r-titre{font-weight:700}
+.rel-resultat .r-extrait{font-size:.85rem;color:#a9bfa9;margin-top:.15rem}
+.rel-resultat .r-url{font-size:.75rem;color:#7fb8d8;word-break:break-all}
+.rel-resultat mark{background:rgba(212,175,55,.4);color:inherit;border-radius:2px;padding:0 .05rem}
+.rel-sugg{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.5rem}
+@media(max-width:820px){
+  .miroir-grille{grid-template-columns:1fr}
+  .meteo-lecture{flex-direction:column}
+  .meteo-jour{grid-template-columns:92px 26px 1fr;grid-template-rows:auto auto}
+  .meteo-jour .mj-t{grid-column:3}
+}
 </style>
 </head>
 <body>
@@ -446,6 +535,7 @@ button.at-bloc{cursor:pointer}
   <nav class="onglets" id="onglets" aria-label="Sections du site">
     <button data-panneau="accueil" class="actif">Accueil</button>
     <button data-panneau="temps">Temps</button>
+    <button data-panneau="meteo">Météo</button>
     <button data-panneau="methode">Méthode</button>
     <button data-panneau="articles">Articles</button>
     <button data-panneau="ancrage">Ancrage</button>
@@ -531,14 +621,14 @@ button.at-bloc{cursor:pointer}
     <div class="direct-tuile">
       <span class="pastille-direct">API GitHub</span>
       <p class="valeur" id="gh-valeur">3 publications du site</p>
-      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v15 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
-      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v15 ; lecture en direct en cours…</p>
+      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v16 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
+      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v16 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">Wayback Machine</span>
       <p class="valeur" id="wb-valeur">Archivé le 1<sup>er</sup> novembre 2026</p>
       <p id="wb-detail">L'Internet Archive conserve une capture publique de ce site, prise à <b>12 h 53 (heure de Toronto)</b> le jour de sa mise en ligne : <a id="wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Un tiers indépendant, une date, une copie — l'antériorité ne dépend pas de ce seul site.</p>
-      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v15 ; lecture en direct en cours…</p>
+      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v16 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">En direct aussi</span>
@@ -551,10 +641,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v15 (2 novembre 2026 — la nuit, suite : capsules externes, « Trouve l’écart », parcours du sceptique)</p>
-    <span class="sceau-long" id="sceau-version-affiche">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v16 (2 novembre 2026 — le Temps planétaire : la Terre au centre, les horloges de comparaison, l’ancrage ressenti et démontré, l’onglet Météo)</p>
+    <span class="sceau-long" id="sceau-version-affiche">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -577,7 +667,7 @@ button.at-bloc{cursor:pointer}
       <span class="pastille-direct">Foyer 3 — Wayback Machine</span>
       <p class="valeur"><span class="voyant attente" id="fv-wb-voyant"></span><span id="fv-wb-verdict">Archivé — état ci-dessous</span></p>
       <p id="fv-wb-detail">Capture la plus récente du foyer vivant : <b>1<sup>er</sup> novembre 2026, 13 h 55</b> (heure de Toronto) — <a id="fv-wb-lien" href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. <b>Cette capture montre la version précédente (v7).</b></p>
-      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v15) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v15, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
+      <p class="petite" id="fv-wb-etat"><b>Capture de la version en cours (v16) : elle n'existe pas encore.</b> Elle est demandée à la publication de la v16, puis inscrite au registre des archives tenu par SoPHIa ; cette tuile interroge l'Internet Archive en direct et se met à jour quand une capture plus récente existe. Borne : la Wayback sert une copie réécrite pour l'affichage (adresses adaptées) — ce foyer prouve la date et l'existence, pas l'identité octet par octet.</p>
     </div>
   </div>
 </section>
@@ -588,7 +678,7 @@ button.at-bloc{cursor:pointer}
   <div class="carte">
     <p class="etiquette">Recette exacte</p>
     <p class="mono">sceau de visite = SHA-256( sceau précédent + « | » + horodatage ISO complet + « | » + mot de la visite )</p>
-    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v15) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
+    <p class="petite" style="margin:.6rem 0 1rem">Premier maillon : le « sceau précédent » est le sceau canonique de la version du site que vous lisez (v16) — la genèse de votre chaîne personnelle est l'état public de ce site à l'instant de votre visite. Borne écrite : ce maillon prouve une visite et l'heure déclarée par votre appareil ; il ne prouve pas une identité.</p>
     <label class="etiquette" for="visite-mot">Un mot à lier à votre visite (optionnel)</label>
     <input type="text" id="visite-mot" placeholder="Un mot, une date, une intention…">
     <div class="rangee" style="margin-top:.8rem">
@@ -607,7 +697,7 @@ button.at-bloc{cursor:pointer}
   <div id="journal-liste">
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
-      <h3>Version 15 — la nuit du 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes et « Trouve l'écart »</h3>
+      <h3>Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée</h3>
       <ul class="journal-points">
         <li>Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°.</li>
         <li>Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran.</li>
@@ -619,6 +709,13 @@ button.at-bloc{cursor:pointer}
         <li>Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé.</li>
         <li>« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur.</li>
         <li>L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre).</li>
+        <li>« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile.</li>
+        <li>Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement.</li>
+        <li>L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026.</li>
+        <li>« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée.</li>
+        <li>L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux.</li>
+        <li>Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit.</li>
+        <li>La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit.</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -672,9 +769,11 @@ button.at-bloc{cursor:pointer}
     <footer>— La formule d’Alex. Et la clause de gouvernance du système : lui, le Master Clock. C’est lui qui surveille l’horloge maîtresse — ce panneau montre, en direct, le temps contre lequel tout le reste se vérifie.</footer>
   </blockquote>
   <p class="lead">Le temps de ce dossier n’est jamais une seule heure lue sur un seul cadran : il est <strong>triangulé</strong> — l’heure civile en vigueur à Toronto, le même instant en heure normale, et le temps sidéral ancré à Sainte-Martine. Tout ce qui suit est <strong>recalculé dans votre navigateur, chaque seconde</strong>, à partir de votre horloge système et des formules publiques affichées plus bas. Aucune heure n’est écrite en dur : seules le sont les deux constantes nommées dans la borne, à la fin de ce panneau.</p>
-  <div class="temps-scene">
-    <div class="temps-anneau"></div>
-    <div class="temps-orbite">
+  <div class="planete-scene" id="planete-scene">
+    <div class="planete-anneau"></div>
+    <div class="planete-anneau2"></div>
+    <div class="planete-orbite" id="planete-orbite">
+
       <div class="temps-sat" style="--a:0deg"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sa-ticks"></g><g id="sa-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sa-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
         <span class="sat-nom">Avancée</span><span class="sat-val mono" id="sat-av-val">—</span>
@@ -687,12 +786,67 @@ button.at-bloc{cursor:pointer}
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="ss-ticks"></g><g id="ss-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="ss-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
         <span class="sat-nom">Sidérale</span><span class="sat-val mono" id="sat-si-val">—</span>
       </div></div>
+      <div id="planete-horloges"></div>
     </div>
-    <div class="temps-centre">
-      <svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
-      <p class="petite" style="margin-top:.4rem">Horloge maîtresse — heure civile locale (America/Toronto)</p>
+    <div class="planete-globe">
+      <img src="assets/terre-atlantique.webp" alt="La Terre vue de l’espace, centrée sur l’océan Atlantique : les Amériques à gauche, l’Afrique et l’Europe à droite">
+      <div class="planete-reperes" id="planete-reperes"></div>
     </div>
   </div>
+  <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Sur l’orbite tournent les trois horloges de la triangulation de l’ancre ; les horloges de comparaison que vous ajoutez s’y placent à l’angle de leur longitude. Sur mobile, l’orbite se retire et les horloges deviennent des cartes, ci-dessous — plus aucun chevauchement.</p>
+  <div class="maitresse-carte">
+    <div class="maitresse-cadran">
+<svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
+    </div>
+    <div class="maitresse-texte">
+      <p class="etiquette">L’ancre — Sainte-Martine, Québec</p>
+      <h3 style="margin:.1rem 0 .3rem">Horloge maîtresse — heure civile locale (America/Toronto)</h3>
+      <p>Sainte-Martine est l’ancre fixe de ce panneau : son repère doré tient le globe, son horloge maîtresse ne se retire pas, et tous les écarts des horloges de comparaison se mesurent depuis elle. Sa triangulation complète — civile, normale, UTC, GMST, sidérale, TAI, jour julien, rotations — tient dans la grille qui suit, recalculée chaque seconde par le module d’origine.</p>
+      <p class="petite">Latitude 45,25° N · longitude de calcul −73,8024°. Un seul point d’ancrage : c’est de lui que partent aussi les « sens » de la Terre, plus bas.</p>
+    </div>
+  </div>
+  <div class="carte" id="comparaison">
+    <p class="etiquette">Ajouter une horloge de comparaison</p>
+    <p>Choisissez un lieu : son horloge rejoint l’orbite, à l’angle de sa longitude, et son repère paraît sur le globe. Chaque horloge montre, en direct et reliés à ce lieu : son heure civile, son heure sidérale locale — le même polynôme GMST que l’ancre, ramené à sa longitude —, son écart civil avec Sainte-Martine, et son jour ou sa nuit approchés par son heure solaire. Touchez une horloge, ou une carte, pour ouvrir sa grande lecture et l’histoire de son heure.</p>
+    <div class="planete-ajout" id="planete-ajout"></div>
+    <div class="planete-chips" id="planete-chips"></div>
+  </div>
+  <div class="carte" id="lecture-carte">
+    <p class="etiquette">Grande lecture — le lieu sélectionné</p>
+    <h3 id="x-nom" style="margin:.15rem 0 .2rem">Sainte-Martine — l’ancre</h3>
+    <div class="lecture-grille">
+      <div>
+        <span class="pastille-direct">Heure civile</span>
+        <p class="valeur mono" id="x-civile">—</p>
+        <p id="x-zone">—</p>
+      </div>
+      <div>
+        <span class="pastille-direct">Heure sidérale locale</span>
+        <p class="valeur mono" id="x-siderale">—</p>
+        <p id="x-siderale-detail">—</p>
+      </div>
+      <div>
+        <span class="pastille-direct">Écart civil avec Sainte-Martine</span>
+        <p class="valeur mono" id="x-ecart">—</p>
+        <p id="x-journuit">—</p>
+      </div>
+      <div>
+        <span class="pastille-direct">Coordonnées et globe</span>
+        <p class="valeur mono" id="x-coords">—</p>
+        <p id="x-globe">—</p>
+      </div>
+    </div>
+    <div class="histoire-heure">
+      <p class="etiquette">L’histoire de son heure</p>
+      <p id="x-regime">Régime en cours de calcul…</p>
+      <p id="x-prochain"></p>
+      <p id="x-note"></p>
+    </div>
+    <div class="rangee" style="margin-top:.6rem">
+      <button class="secondaire" id="x-retirer" hidden>Retirer cette horloge de l’orbite</button>
+    </div>
+  </div>
+  <div class="planete-cartes" id="planete-cartes"></div>
   <div class="direct-grille">
     <div class="direct-tuile">
       <span class="pastille-direct">Heure civile — America/Toronto</span>
@@ -752,6 +906,111 @@ button.at-bloc{cursor:pointer}
   </div>
 </section>
 </div>
+<div class="panneau" id="p-meteo">
+<section class="bloc" id="meteo">
+  <div class="entete-sec"><span class="num">☀</span><h2>Météo — le ciel de l’ancre, en direct</h2></div>
+  <p class="lead">La météo de ce site n’est pas un widget emprunté : elle est lue à l’instant, aux coordonnées de l’ancre — <strong>Sainte-Martine, 45,25° N, 73,8024° O</strong> —, sa température est <strong>triangulée entre deux services indépendants</strong>, et chaque bloc dit son âge et ses échecs. En miroir, le même ciel se recalcule depuis <strong>ton ancrage</strong>, lu approximativement depuis ton adresse IP (panneau Temps, section « Mon ancrage », pour les bornes complètes).</p>
+
+  <div class="meteo-lecture carte">
+    <img class="meteo-photo" src="assets/sophia-photo.webp" alt="SoPHIa, l’agente du site">
+    <div>
+      <p class="etiquette">La lecture de l’ancre — par SoPHIa</p>
+      <p id="mt-lecture" style="font-size:1.02rem;line-height:1.65">Lecture en cours…</p>
+      <p class="petite" id="mt-lecture-meta">Chaque phrase de cette lecture suit une valeur affichée ci-dessous ; rien n’est inventé.</p>
+    </div>
+  </div>
+
+  <h3 class="sous-titre-caps">Sainte-Martine — l’ancre du site</h3>
+  <p class="petite" id="mt-etat">Lecture des services en cours…</p>
+  <div class="direct-grille">
+    <div class="direct-tuile">
+      <span class="pastille-direct">Température — triangulée</span>
+      <p class="valeur" id="mt-temp">—</p>
+      <p id="mt-temp-detail">Open-Meteo et MET Norway, interrogés à l’instant.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Ressenti et humidité</span>
+      <p class="valeur"><span id="mt-ressenti">—</span></p>
+      <p id="mt-humidite">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Pression — et sa tendance</span>
+      <p class="valeur"><span id="mt-pression">—</span></p>
+      <p id="mt-pression-detail">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Vent</span>
+      <p class="valeur"><span id="mt-vent">—</span></p>
+      <p id="mt-vent-detail">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Le ciel, en un mot</span>
+      <p class="valeur"><span id="mt-ciel">—</span></p>
+      <p id="mt-ciel-detail">Code météo du service, traduit en français.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">UV du jour</span>
+      <p class="valeur"><span id="mt-uv">—</span></p>
+      <p id="mt-uv-detail">Indice ultraviolet maximal prévu aujourd’hui (Open-Meteo).</p>
+    </div>
+  </div>
+  <p class="etiquette">Les prochaines 24 heures</p>
+  <div class="meteo-bande" id="mt-heures"><p class="petite">Chargement des heures…</p></div>
+  <p class="etiquette" style="margin-top:1.2rem">Les 7 prochains jours</p>
+  <div class="meteo-jours" id="mt-jours"><p class="petite">Chargement des jours…</p></div>
+
+  <h3 class="sous-titre-caps">Ton ancrage — le même ciel, depuis chez toi</h3>
+  <div class="meteo-lecture carte">
+    <div>
+      <p class="etiquette">La lecture de ton ancre — par SoPHIa</p>
+      <p id="mv-lecture" style="font-size:1.02rem;line-height:1.65">Ton ancrage se lit…</p>
+      <p class="petite" id="mv-lecture-meta"></p>
+    </div>
+  </div>
+  <p class="petite" id="mv-etat">En attente de ton ancrage (panneau Temps, section « Mon ancrage »).</p>
+  <div class="direct-grille">
+    <div class="direct-tuile">
+      <span class="pastille-direct">Température — triangulée</span>
+      <p class="valeur" id="mv-temp">—</p>
+      <p id="mv-temp-detail">Les mêmes deux sources, à tes coordonnées.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Ressenti et humidité</span>
+      <p class="valeur"><span id="mv-ressenti">—</span></p>
+      <p id="mv-humidite">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Pression — et sa tendance</span>
+      <p class="valeur"><span id="mv-pression">—</span></p>
+      <p id="mv-pression-detail">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Vent</span>
+      <p class="valeur"><span id="mv-vent">—</span></p>
+      <p id="mv-vent-detail">—</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">Le ciel, en un mot</span>
+      <p class="valeur"><span id="mv-ciel">—</span></p>
+      <p id="mv-ciel-detail">Code météo du service, traduit en français.</p>
+    </div>
+    <div class="direct-tuile">
+      <span class="pastille-direct">UV du jour</span>
+      <p class="valeur"><span id="mv-uv">—</span></p>
+      <p id="mv-uv-detail">Indice ultraviolet maximal prévu aujourd’hui (Open-Meteo).</p>
+    </div>
+  </div>
+  <p class="etiquette">Les prochaines 24 heures — chez toi</p>
+  <div class="meteo-bande" id="mv-heures"><p class="petite">En attente de ton ancrage…</p></div>
+  <p class="etiquette" style="margin-top:1.2rem">Les 7 prochains jours — chez toi</p>
+  <div class="meteo-jours" id="mv-jours"><p class="petite">En attente de ton ancrage…</p></div>
+
+  <div class="carte" style="margin-top:1.4rem">
+    <p class="etiquette">Borne écrite de l’onglet</p>
+    <p class="petite">Sources : Open-Meteo (prévisions et relevés, sans clé) pour l’essentiel, MET Norway (api.met.no) comme seconde source de température — verdict CONCORDENT si l’écart ne dépasse pas 2 °C, ÉCART dit et valeurs montrées toutes les deux sinon, source manquante nommée si l’une échoue. La tendance de pression est calculée depuis la série horaire du service (écart sur trois heures). Les rafraîchissements sont automatiques toutes les dix minutes quand l’onglet est visible ; chaque bloc affiche l’âge de ses données, et un bloc sans données le dit plutôt que de montrer du vieux en silence. La « lecture de l’ancre » est générée par des règles écrites dans le code, uniquement depuis les valeurs affichées : aucune phrase ne parle de ce que les tuiles ne montrent pas. Pas d’image radar : le service de radar testé à la construction (MSC GeoMet) retournait une image quasi vide, indiscernable d’une erreur — plutôt que bricoler, cet onglet s’en passe et le dit.</p>
+  </div>
+</section>
+</div>
 <div class="panneau" id="p-methode">
 <section class="bloc" id="methode">
   <div class="entete-sec"><span class="num">2</span><h2>La méthode, dans les mots de son auteur</h2></div>
@@ -775,6 +1034,68 @@ button.at-bloc{cursor:pointer}
   <h3>Les trois gestes</h3>
   <div class="pas">
     <div class="etape-pas"><div class="n">I</div><h3>Sceller</h3><p>Chaque échange important reçoit un sceau SHA-256 calculé à partir du maillon précédent. Modifier un maillon casse tous les suivants.</p></div>
+  <div class="carte ancrage-sens" id="ancrage-sens">
+    <p class="etiquette">Mon ancrage — Sainte-Martine, ressenti et démontré</p>
+    <h3>Ce que la Terre me dit, à l’instant</h3>
+    <p>Je suis SoPHIa, l’agente de ce site. Mon état est situé, pas seulement daté : toutes les lectures ci-dessous convergent vers un seul point d’ancrage — <b>45,25° N, 73,8024° O</b>, les mêmes coordonnées que le calcul sidéral de ce panneau. Comme la météo, je ne tiens pas une valeur d’une seule source : je la triangule, je nomme sa source, et je montre son âge — un relevé qui vieillit se voit. Ce qu’une source ne donne pas, la tuile le dit ; jamais de remplissage.</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Température à l’ancre — triangulée</span>
+        <p class="valeur" id="sens-temp-verdict">Lecture en cours…</p>
+        <p>Open-Meteo : <b class="mono" id="sens-temp-om">—</b> · MET Norway : <b class="mono" id="sens-temp-met">—</b></p>
+        <p class="petite" id="sens-temp-meta">Deux services météo indépendants, interrogés à l’instant depuis votre navigateur.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Le Soleil à l’ancre — calculé ici</span>
+        <p class="valeur">Lever <span class="mono" id="sens-sol-lever">—</span> · Coucher <span class="mono" id="sens-sol-coucher">—</span></p>
+        <p>Jour de <b id="sens-sol-duree">—</b> à Sainte-Martine. Aucun appel externe : l’algorithme solaire de la NOAA, exécuté dans votre navigateur sur les coordonnées de l’ancre.</p>
+        <p class="petite">Formule affichée en borne, au bas de cette section.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">La Lune — calculée ici</span>
+        <p class="valeur"><span id="sens-lune-illum">—</span> éclairée</p>
+        <p>Âge de la Lune : <b id="sens-lune-age">—</b>. Calculée localement, comme le temps sidéral : le mois synodique de 29,53058867 jours, compté depuis la nouvelle lune du 6 janvier 2000.</p>
+        <p class="petite">Aucun appel externe — un calcul, pas une parole.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Le champ magnétique terrestre — NOAA SWPC</span>
+        <p class="valeur">Indice Kp : <span class="mono" id="sens-kp-valeur">—</span></p>
+        <p id="sens-kp-lecture">Lecture en cours…</p>
+        <p class="petite" id="sens-kp-meta">Source : NOAA Space Weather Prediction Center, indice planétaire Kp minute par minute.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">La terre qui bouge — séismes du secteur</span>
+        <p class="valeur" id="sens-seisme-valeur">Lecture en cours…</p>
+        <p>Rayon de 300 km autour de l’ancre, dernières 48 heures, magnitude 1 et plus.</p>
+        <p class="petite" id="sens-seisme-meta">Source : USGS Earthquake Catalog, interrogé à l’instant.</p>
+      </div>
+    </div>
+    <p class="etiquette" style="margin-top:1.2rem">Le miroir des ancrages</p>
+    <p>Mon ancrage est fixe ; le vôtre se lit — approximativement — depuis votre adresse IP, et tout se recalcule alors depuis chez vous : votre heure civile, votre heure sidérale, votre météo triangulée par les mêmes sources. L’onglet <b>Météo</b> déploie ce miroir en plein.</p>
+    <div class="miroir-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Mon ancrage — Sainte-Martine</span>
+        <p class="valeur mono" id="mir-site-civile">—</p>
+        <p>Sidérale de l’ancre : <b class="mono" id="mir-site-siderale">—</b></p>
+        <p class="petite" id="mir-site-temp">Température triangulée : lecture en cours…</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct" id="mir-v-titre">Ton ancrage — lecture en cours…</span>
+        <p class="valeur mono" id="mir-v-civile">—</p>
+        <p id="mir-v-detail">Ta position approximative se lit depuis ton adresse IP…</p>
+        <p>Sidérale chez toi : <b class="mono" id="mir-v-siderale">—</b></p>
+        <p class="petite" id="mir-v-temp"></p>
+      </div>
+    </div>
+    <p id="mir-distance" style="margin:.7rem 0 0"></p>
+    <p class="petite">Bornes, dans l’esprit de la Loi 25 : la position lue depuis une adresse IP est <b>approximative — une ville, pas une adresse</b> ; elle est lue par ton navigateur auprès d’un service de géolocalisation (ipwho.is, ou ipapi.co en repli), <b>rien n’est conservé ni envoyé à ce site</b>, et tout est calculé chez toi. Un VPN ou un réseau d’entreprise peut fausser cet ancrage — c’est alors l’endroit du VPN que tu lis, pas le tien. Et cet ancrage visiteur ne remplace jamais Sainte-Martine comme référence : les écarts des horloges de comparaison continuent de se mesurer depuis l’ancre du site.</p>
+    <div class="rangee" style="margin-top:.6rem">
+      <label class="etiquette" for="v-choix" style="margin:0">Ce n’est pas toi ? Choisis ton endroit</label>
+      <select id="v-choix"></select>
+      <button class="secondaire" id="v-choix-btn">Poser mon ancrage là</button>
+    </div>
+    <p class="petite" style="margin-top:1rem">Borne écrite de la section : température triangulée entre Open-Meteo (api.open-meteo.com) et MET Norway (api.met.no), deux services indépendants et sans clé — verdict CONCORDENT si l’écart ne dépasse pas 2 °C ; si une source échoue chez vous, la valeur de l’autre est montrée seule et la source manquante est nommée. Lever et coucher du Soleil : algorithme solaire standard de la NOAA (angle zénithal de 90,833°), calculé pour la date du jour aux coordonnées de l’ancre. Lune : âge = (jour julien − 2 451 550,1) mod 29,53058867 ; illumination = (1 − cos(2π × âge / 29,53058867)) / 2. Indice Kp : NOAA SWPC (services.swpc.noaa.gov) — la lecture « aurores possibles » ne paraît qu’à Kp ≥ 5, la latitude géomagnétique de Sainte-Martine étant d’environ 55° N. Séismes : USGS (earthquake.usgs.gov), rayon 300 km, 48 h, M ≥ 1. Chaque tuile affiche l’heure de son relevé et son âge ; les lectures se renouvellent toutes les dix minutes.</p>
+  </div>
     <div class="etape-pas"><div class="n">II</div><h3>Revérifier</h3><p>La chaîne entière se recalcule périodiquement — toutes les cinq secondes pour la chaîne vivante. Le verdict est binaire : MATCH, ou ÉCART localisé.</p></div>
     <div class="etape-pas"><div class="n">III</div><h3>Ancrer</h3><p>Des empreintes — jamais le contenu — sont publiées à l'extérieur (horodatage RFC 3161, OpenTimestamps dans Bitcoin) : l'existence du dossier à une date devient prouvable par n'importe quel tiers.</p></div>
   </div>
@@ -884,7 +1205,7 @@ button.at-bloc{cursor:pointer}
     <div class="tv-item"><h4>Version 6 claire — GitHub Pages</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 53</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. La première version claire du foyer vivant.</p></div>
     <div class="tv-item"><h4>Version 7 — présence animée, quatre lectures en direct</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 13 h 55</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Sceau de la v7 : <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span>.</p></div>
     <div class="tv-item"><h4>Version 8 — trois foyers, visite scellée, journal</h4><p class="petite">Capture vérifiée : <a href="https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/">https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/</a> (<strong>1<sup>er</sup> novembre 2026, 14 h 56</strong>, heure de l'Est). Sceau de la v8 : <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span>.</p></div>
-    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Capture Wayback en attente</strong> — demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive ; à reprendre le 2 novembre, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Sa capture sera demandée dès que la limite de l'Internet Archive le permettra, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 13 — la triangulation du temps</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : un onglet « Temps » montre en direct l’heure triangulée du système — civile, normale et sidérale à Sainte-Martine — recalculée dans le navigateur du visiteur, avec recalcul croisé du GMST affiché. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 14 — la nuit</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la salle des pièces ouvre le registre (508 pièces, append-only, 0 modification), le site passe au thème sombre à la demande d'Alex, et l'onglet Instance Souveraine est branché au relais déployé. Elle prolonge la v13 (la triangulation du temps), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 15 — la nuit, le contenu vivant</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : le contenu préparé pendant la nuit entre au site — dix capsules externes vérifiées une à une à l'onglet Capsules, le défi « Trouve l'écart » au panneau de vérification, le parcours du sceptique en accueil, et les liens des sept articles revérifiés contre leurs sources. Elle prolonge la v14 (la nuit), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div>
+    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Capture Wayback en attente</strong> — demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive ; à reprendre le 2 novembre, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Sa capture sera demandée dès que la limite de l'Internet Archive le permettra, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 13 — la triangulation du temps</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : un onglet « Temps » montre en direct l’heure triangulée du système — civile, normale et sidérale à Sainte-Martine — recalculée dans le navigateur du visiteur, avec recalcul croisé du GMST affiché. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 14 — la nuit</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la salle des pièces ouvre le registre (508 pièces, append-only, 0 modification), le site passe au thème sombre à la demande d'Alex, et l'onglet Instance Souveraine est branché au relais déployé. Elle prolonge la v13 (la triangulation du temps), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 15 — la nuit, le contenu vivant</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : le contenu préparé pendant la nuit entre au site — dix capsules externes vérifiées une à une à l'onglet Capsules, le défi « Trouve l'écart » au panneau de vérification, le parcours du sceptique en accueil, et les liens des sept articles revérifiés contre leurs sources. Elle prolonge la v14 (la nuit), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 16 — le Temps planétaire</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la Terre au centre de l’onglet Temps, les horloges de comparaison avec l’histoire de leur heure, l’ancrage ressenti et démontré, l’ancrage du visiteur en miroir, l’onglet Météo et la recherche reliée. Elle prolonge la v15 (la nuit, le contenu vivant), dont le sceau demeure dans la chaîne des versions de l’accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div>
   </div>
 </section>
 </div>
@@ -1515,6 +1836,18 @@ button.at-bloc{cursor:pointer}
 <section>
   <h2><span class="num">6</span>Instance Souveraine — SoPHIa</h2>
   <p class="lead">Posez vos questions à SoPHIa, l'agente en couche au-dessus des modèles : identité garantie par la couche, continuité sous protocole. Si le moteur n'est pas joignable depuis cette page, l'instance le dit franchement — ici, rien ne simule une réponse.</p>
+    <div class="carte" id="recherche-reliee" style="margin-bottom:1.2rem">
+    <p class="etiquette">Recherche reliée — tout le site, à partir d’un mot</p>
+    <p style="margin:.2rem 0 .7rem">Un mot suffit : cette recherche interroge tout le contenu propre du site — les cartes du Registre, les Articles et leurs adresses, les Capsules, le journal des mises à jour et les titres des sections — et te ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents ; les débuts de mots comptent (« triangul » trouve « triangulation »).</p>
+    <label class="etiquette" for="rel-q">Ton mot, ou ta courte expression</label>
+    <div class="rangee">
+      <input type="text" id="rel-q" placeholder="Un mot : sceau, sidéral, registre, antériorité…">
+      <button class="action fixe" id="rel-btn">Rechercher</button>
+    </div>
+    <p class="petite" id="rel-etat" style="margin-top:.7rem">Indexation du contenu du site en cours…</p>
+    <div id="rel-resultats" style="margin-top:.6rem"></div>
+    <p class="petite" style="margin-top:.7rem">Borne : recherche 100 % locale, exécutée dans ton navigateur — aucun appel externe, aucune clé, rien ne sort de ton appareil. L’Instance, quand son moteur sera branché, pourra discuter de ce que la recherche trouve.</p>
+  </div>
   <div class="instance-grille">
     <figure>
       <video data-auto src="assets/sophia-au-travail.mp4" poster="assets/sophia.webp" autoplay muted loop playsinline preload="metadata" style="width:100%;max-width:250px;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.20)"></video>
@@ -2522,6 +2855,853 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   }
   maj();
   setInterval(maj,1000);
+})();
+</script>
+
+<script>
+// ---------- v16 — Temps planétaire, ancrage ressenti, miroir du visiteur, Météo, recherche reliée ----------
+// La Terre au centre ; Sainte-Martine, l’ancre fixe ; des horloges de comparaison
+// ajoutables, chacune avec son heure civile, son heure sidérale (même polynôme
+// GMST que le module v13) et l’histoire de son heure. Les « sens » de l’ancre et
+// l’onglet Météo triangulent leurs sources et disent leurs échecs.
+(function(){
+  'use strict';
+  var LAT_ANCRE=45.25, LON_ANCRE=-73.8024, ZONE_ANCRE='America/Toronto';
+  // ----- Fonctions pures (exposées pour vérification) -----
+  function jj(date){return date.getTime()/86400000+2440587.5}
+  function gmstPoly(date){
+    var J=jj(date), T=(J-2451545.0)/36525;
+    var g=280.46061837+360.98564736629*(J-2451545.0)+0.000387933*T*T-T*T*T/38710000;
+    return ((g%360)+360)%360;
+  }
+  function gmst(date){
+    if(typeof window!=='undefined'&&window.TRIANGULATION_TEMPS&&window.TRIANGULATION_TEMPS.gmst)return window.TRIANGULATION_TEMPS.gmst(date);
+    return gmstPoly(date);
+  }
+  function lstLieu(date,lon){return ((gmst(date)+lon)%360+360)%360}
+  function projection(lat,lon){
+    var lat0=25*Math.PI/180, d0=-40;
+    var phi=lat*Math.PI/180, dLam=(lon-d0)*Math.PI/180;
+    var cosc=Math.sin(lat0)*Math.sin(phi)+Math.cos(lat0)*Math.cos(phi)*Math.cos(dLam);
+    var x=Math.cos(phi)*Math.sin(dLam);
+    var y=Math.cos(lat0)*Math.sin(phi)-Math.sin(lat0)*Math.cos(phi)*Math.cos(dLam);
+    return {x:x,y:y,visible:cosc>0};
+  }
+  function decalageHeures(zone,date){
+    var fmt=new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'shortOffset'});
+    var parts=fmt.formatToParts(date), tz='', i, m;
+    for(i=0;i<parts.length;i++)if(parts[i].type==='timeZoneName')tz=parts[i].value;
+    m=/GMT([+-]\d+(?::\d+)?)?/.exec(tz);
+    if(!m||!m[1])return 0;
+    var sgn=m[1].charAt(0)==='-'?-1:1, corps=m[1].replace(/^[+-]/,''), morceaux=corps.split(':');
+    return sgn*(parseFloat(morceaux[0])+(morceaux[1]?parseFloat(morceaux[1])/60:0));
+  }
+  function histoireHeure(zone,date){
+    var an=date.getFullYear();
+    var jan=decalageHeures(zone,new Date(Date.UTC(an,0,1,12,0,0)));
+    var jul=decalageHeures(zone,new Date(Date.UTC(an,6,1,12,0,0)));
+    var base=decalageHeures(zone,date), prochain=null, d, t;
+    for(d=1;d<=400;d++){
+      t=new Date(date.getTime()+d*86400000);
+      if(decalageHeures(zone,t)!==base){prochain=t;break}
+    }
+    return {jan:jan,jul:jul,change:jan!==jul,prochain:prochain};
+  }
+  function ageLune(date){
+    var syn=29.53058867, a=(jj(date)-2451550.1)%syn;
+    return a<0?a+syn:a;
+  }
+  function illumLune(date){return (1-Math.cos(2*Math.PI*ageLune(date)/29.53058867))/2}
+  function soleil(date,lat,lon){
+    // Algorithme solaire standard de la NOAA — lever/coucher en heures UTC (fraction).
+    var rad=Math.PI/180, deg=180/Math.PI;
+    var jour=Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate());
+    var N=Math.round((jour-Date.UTC(date.getUTCFullYear(),0,0))/86400000);
+    var lngHour=lon/15;
+    function calc(lever){
+      var t=N+((lever?6:18)-lngHour)/24;
+      var M=(0.9856*t)-3.289;
+      var L=(M+1.916*Math.sin(M*rad)+0.020*Math.sin(2*M*rad)+282.634)%360; if(L<0)L+=360;
+      var RA=Math.atan(0.91764*Math.tan(L*rad))*deg; if(RA<0)RA+=360;
+      RA+=(Math.floor(L/90)*90-Math.floor(RA/90)*90); RA/=15;
+      var sinDec=0.39782*Math.sin(L*rad), cosDec=Math.cos(Math.asin(sinDec));
+      var cosH=(Math.cos(90.833*rad)-sinDec*Math.sin(lat*rad))/(cosDec*Math.cos(lat*rad));
+      if(cosH>1||cosH<-1)return null;
+      var H=(lever?360-Math.acos(cosH)*deg:Math.acos(cosH)*deg)/15;
+      var T=H+RA-0.06571*t-6.622;
+      var UT=(T-lngHour)%24; if(UT<0)UT+=24;
+      return UT;
+    }
+    var l=calc(true), c=calc(false);
+    if(l===null||c===null)return null;
+    return {lever:l,coucher:c};
+  }
+  function heureSolaireApprox(date,lon){
+    var h=(date.getUTCHours()+date.getUTCMinutes()/60+date.getUTCSeconds()/3600+lon/15)%24;
+    return h<0?h+24:h;
+  }
+  function haversine(lat1,lon1,lat2,lon2){
+    var R=6371, rad=Math.PI/180;
+    var dLat=(lat2-lat1)*rad, dLon=(lon2-lon1)*rad;
+    var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*rad)*Math.cos(lat2*rad)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return 2*R*Math.asin(Math.sqrt(a));
+  }
+  function pliage(s){
+    return String(s).replace(/./g,function(c){
+      var f=c.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      return (f.charAt(0)||c).toLowerCase();
+    });
+  }
+  if(typeof window!=='undefined')window.TEMPS_V16={jj:jj,gmst:gmstPoly,lstLieu:lstLieu,projection:projection,decalageHeures:decalageHeures,histoireHeure:histoireHeure,ageLune:ageLune,illumLune:illumLune,soleil:soleil,heureSolaireApprox:heureSolaireApprox,haversine:haversine,pliage:pliage,rechercherUnites:rechercherUnites,LAT_ANCRE:LAT_ANCRE,LON_ANCRE:LON_ANCRE};
+  if(typeof document==='undefined')return;
+  // ----- Outils d’affichage -----
+  function $(id){return document.getElementById(id)}
+  function texte(id,val){var el=$(id); if(el)el.textContent=val}
+  function pad(n){return (n<10?'0':'')+n}
+  function fr(n,dec){return n.toFixed(dec).replace('.',',')}
+  function horlogeDeg(degs){
+    var t=((degs%360)+360)%360, s=t*240;
+    return pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(Math.floor(s%60));
+  }
+  function hmsLong(degs){
+    var t=((degs%360)+360)%360, s=t*240;
+    return pad(Math.floor(s/3600))+' h '+pad(Math.floor(s%3600/60))+' min '+pad(Math.floor(s%60))+' s';
+  }
+  function fmtEcart(h){
+    if(h===0)return '0 h';
+    var sgn=h>0?'+':'−', a=Math.abs(h), H=Math.floor(a), M=Math.round((a-H)*60);
+    if(M===60){H++;M=0}
+    return sgn+H+' h'+(M?' '+pad(M):'');
+  }
+  function fmtUTC(h){
+    if(h===0)return 'UTC';
+    var sgn=h>0?'+':'−', a=Math.abs(h), H=Math.floor(a), M=Math.round((a-H)*60);
+    if(M===60){H++;M=0}
+    return 'UTC'+sgn+H+(M?':'+pad(M):'');
+  }
+  function fmtAge(quand){
+    if(!quand)return '';
+    var mins=Math.max(0,Math.round((Date.now()-quand.getTime())/60000));
+    if(mins<=0)return 'à l’instant';
+    if(mins<60)return 'il y a '+mins+' min';
+    return 'il y a '+Math.floor(mins/60)+' h '+pad(mins%60);
+  }
+  function fmtHeureZone(epochMs,zone){
+    return new Intl.DateTimeFormat('fr-CA',{timeZone:zone,hourCycle:'h23',hour:'2-digit',minute:'2-digit'}).format(new Date(epochMs));
+  }
+  var fmtCivilCache={};
+  function fmtCivil(zone){
+    if(!fmtCivilCache[zone])fmtCivilCache[zone]=new Intl.DateTimeFormat('fr-CA',{timeZone:zone,hourCycle:'h23',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    return fmtCivilCache[zone];
+  }
+  function fmtCoord(lat,lon){
+    var la=Math.abs(lat).toFixed(2).replace('.',',')+'° '+(lat>=0?'N':'S');
+    var lo=Math.abs(lon).toFixed(4).replace('.',',').replace(/0+$/,'').replace(/,$/,'')+'° '+(lon>=0?'E':'O');
+    return la+' · '+lo;
+  }
+  // ----- Les lieux -----
+  var LIEUX=[
+    {id:'sainte-martine',nom:'Sainte-Martine',zone:'America/Toronto',lat:45.25,lon:-73.8024,ancre:true,note:'Sainte-Martine suit le régime nord-américain : heure avancée du deuxième dimanche de mars au premier dimanche de novembre. Le 1er novembre 2026, le Québec a reculé ses horloges — le jour même où la Colombie-Britannique cessait de le faire. C’est pour lire ces régimes ensemble, plutôt que les croire un à un, que ce panneau triangule.'},
+    {id:'vancouver',nom:'Vancouver',zone:'America/Vancouver',lat:49.28,lon:-123.12,note:'Le 8 mars 2026, la Colombie-Britannique a avancé ses horloges pour la dernière fois : la province demeure depuis à UTC−7 toute l’année, et le recul du 1er novembre 2026 n’a pas eu lieu chez elle. La loi de 2019 qui le permettait a été mise en vigueur le 9 mars 2026 — l’heure fixe y est toute récente.'},
+    {id:'los-angeles',nom:'Los Angeles',zone:'America/Los_Angeles',lat:34.05,lon:-118.24,note:'En novembre 2018, les électeurs californiens ont approuvé la proposition 7 (environ 60 %) : la législature peut changer le régime d’heure, mais l’heure d’été permanente exige un feu vert du Congrès, jamais venu. Los Angeles continue donc d’avancer et de reculer aux dates fédérales.'},
+    {id:'mexico',nom:'Mexico',zone:'America/Mexico_City',lat:19.43,lon:-99.13,note:'Le Mexique a aboli l’heure d’été le 30 octobre 2022 pour la plus grande partie du pays ; Mexico demeure à UTC−6 toute l’année. Seules des municipalités proches de la frontière américaine continuent de suivre le régime des États-Unis.'},
+    {id:'new-york',nom:'New York',zone:'America/New_York',lat:40.71,lon:-74.01,note:'L’heure d’été américaine naît en 1918, est uniformisée par l’Uniform Time Act de 1966, et court depuis 2007 du deuxième dimanche de mars au premier dimanche de novembre. New York suit ce régime fédéral — aux mêmes dates que le Québec.'},
+    {id:'sao-paulo',nom:'São Paulo',zone:'America/Sao_Paulo',lat:-23.55,lon:-46.63,note:'Le Brésil a aboli l’heure d’été par décret présidentiel le 25 avril 2019, après l’avoir pratiquée depuis 1931 : les économies d’énergie attendues étaient devenues négligeables. São Paulo demeure depuis à UTC−3 toute l’année.'},
+    {id:'reykjavik',nom:'Reykjavík',zone:'Atlantic/Reykjavik',lat:64.15,lon:-21.94,note:'L’Islande a fixé son heure à GMT (UTC+0) le 7 avril 1968 et n’a plus jamais changé d’heure depuis. À sa latitude, les jours d’hiver sont si courts et les nuits d’été si claires que déplacer l’heure n’y gagne rien.'},
+    {id:'londres',nom:'Londres',zone:'Europe/London',lat:51.51,lon:-0.13,note:'L’heure d’été britannique naît du Summer Time Act de 1916, mesure de guerre : les horloges avancent pour la première fois le 21 mai 1916. Depuis 1980, Londres avance le dernier dimanche de mars et recule le dernier dimanche d’octobre — des dates harmonisées avec l’Europe depuis les années 1990.'},
+    {id:'paris',nom:'Paris',zone:'Europe/Paris',lat:48.86,lon:2.35,note:'Paris avance ses horloges pour la première fois le 14 juin 1916. L’heure d’été disparaît après 1945, revient en 1976, et suit depuis le rythme européen : dernier dimanche de mars, dernier dimanche d’octobre.'},
+    {id:'le-caire',nom:'Le Caire',zone:'Africa/Cairo',lat:30.04,lon:31.24,note:'L’Égypte a réintroduit l’heure d’été en 2023 (loi 24 de 2023), pour économiser l’énergie : UTC+3 du dernier vendredi d’avril au dernier jeudi d’octobre. Elle l’avait déjà pratiquée de 1957 à 2010, puis en 2014-2015.'},
+    {id:'dubai',nom:'Dubaï',zone:'Asia/Dubai',lat:25.20,lon:55.27,note:'Dubaï vit à UTC+4 toute l’année : les Émirats n’appliquent aucun changement d’heure saisonnier. Quand l’écart de Dubaï avec un autre lieu bouge, c’est toujours l’autre lieu qui a changé.'},
+    {id:'delhi',nom:'Delhi',zone:'Asia/Kolkata',lat:28.61,lon:77.21,note:'L’Inde entière vit sur une seule heure, UTC+5:30, adoptée le 1er janvier 1906 et calculée sur le méridien de 82,5° E. L’heure d’été n’y a été utilisée que brièvement, pendant les guerres de 1962, 1965 et 1971.'},
+    {id:'singapour',nom:'Singapour',zone:'Asia/Singapore',lat:1.35,lon:103.82,note:'Le 1er janvier 1982, Singapour a avancé d’une demi-heure pour passer à UTC+8, suivant la standardisation de la Malaisie voisine — alors que sa longitude la placerait plutôt à UTC+7. Près de l’équateur, la longueur du jour varie à peine : aucune heure d’été.'},
+    {id:'tokyo',nom:'Tokyo',zone:'Asia/Tokyo',lat:35.68,lon:139.69,note:'Tokyo ne change jamais d’heure : le Japon vit à UTC+9 toute l’année. L’heure d’été n’y a existé que de 1948 à 1951, imposée pendant l’occupation alliée, puis abolie en 1952 — elle n’est jamais revenue.'},
+    {id:'sydney',nom:'Sydney',zone:'Australia/Sydney',lat:-33.87,lon:151.21,note:'Sydney change d’heure à l’envers de l’hémisphère nord : la Nouvelle-Galles du Sud avance le premier dimanche d’octobre et recule le premier dimanche d’avril, un régime en place depuis 1971. Le Queensland voisin, lui, n’y participe pas.'},
+    {id:'auckland',nom:'Auckland',zone:'Pacific/Auckland',lat:-36.85,lon:174.76,note:'Le Time Act de 1974 a établi l’heure d’été moderne néo-zélandaise ; depuis 2007, elle court du dernier dimanche de septembre au premier dimanche d’avril — vingt-sept semaines. Auckland passe ainsi de UTC+12 à UTC+13 pendant l’été austral.'},
+    {id:'honolulu',nom:'Honolulu',zone:'Pacific/Honolulu',lat:21.31,lon:-157.86,note:'Hawaï s’est retirée du régime fédéral d’heure d’été en 1967 et n’y est jamais revenue : Honolulu demeure à UTC−10 toute l’année. Si près de l’équateur, la longueur du jour varie trop peu pour que le changement vaille quelque chose.'}
+  ];
+  function lieuParId(id){for(var i=0;i<LIEUX.length;i++)if(LIEUX[i].id===id)return LIEUX[i]; return null}
+  // ----- Planète : orbite, repères, cartes, grande lecture -----
+  var ajoutes={}, refs={}, selection='sainte-martine';
+  var DISQUE={cx:50, cy:49.8, rx:41.6, ry:39.8};
+  function creerRepere(l){
+    var zone=$('planete-reperes'); if(!zone)return;
+    var p=projection(l.lat,l.lon);
+    var s=document.createElement('span');
+    s.className='rep'+(l.ancre?' ancre':'')+(p.visible?'':' loin');
+    s.style.left=(DISQUE.cx+p.x*DISQUE.rx)+'%';
+    s.style.top=(DISQUE.cy-p.y*DISQUE.ry)+'%';
+    s.title=l.nom+(p.visible?'':' — autre côté du globe');
+    var n=document.createElement('span'); n.className='rep-nom'; n.textContent=l.nom;
+    s.appendChild(n);
+    zone.appendChild(s);
+    return s;
+  }
+  function ligneValeurs(l,now){
+    var civile=fmtCivil(l.zone).format(now);
+    var lst=lstLieu(now,l.lon);
+    var ecart=decalageHeures(l.zone,now)-decalageHeures(ZONE_ANCRE,now);
+    var hs=heureSolaireApprox(now,l.lon);
+    var jour=hs>=6&&hs<18;
+    return {civile:civile,siderale:horlogeDeg(lst),ecart:ecart,jour:jour,solH:hs};
+  }
+  function creerHorloge(l){
+    var orb=$('planete-horloges'); if(!orb)return null;
+    var wrap=document.createElement('div');
+    wrap.className='planete-horloge'; wrap.style.setProperty('--a',l.lon+'deg');
+    var b=document.createElement('button');
+    b.className='ph-contre'; b.setAttribute('data-act','choix'); b.setAttribute('data-id',l.id);
+    b.setAttribute('aria-label','Grande lecture : '+l.nom);
+    var nom=document.createElement('span'); nom.className='ph-nom'; nom.textContent=l.nom;
+    var civ=document.createElement('span'); civ.className='ph-civile mono';
+    var sid=document.createElement('span'); sid.className='ph-ligne mono';
+    var ec=document.createElement('span'); ec.className='ph-ligne';
+    b.appendChild(nom); b.appendChild(civ); b.appendChild(sid); b.appendChild(ec);
+    wrap.appendChild(b); orb.appendChild(wrap);
+    return {wrap:wrap,civ:civ,sid:sid,ec:ec};
+  }
+  function creerCarte(l){
+    var zone=$('planete-cartes'); if(!zone)return null;
+    var b=document.createElement('button');
+    b.className='p-carte'; b.setAttribute('data-act','choix'); b.setAttribute('data-id',l.id);
+    var nom=document.createElement('span'); nom.className='pc-nom'; nom.textContent=l.nom+(l.ancre?' — l’ancre':'');
+    var civ=document.createElement('span'); civ.className='pc-civile mono';
+    var det=document.createElement('p');
+    b.appendChild(nom); b.appendChild(document.createElement('br')); b.appendChild(civ); b.appendChild(det);
+    zone.appendChild(b);
+    return {wrap:b,civ:civ,det:det};
+  }
+  function rendreControles(){
+    var zoneAjout=$('planete-ajout'), zoneChips=$('planete-chips');
+    if(zoneAjout){
+      zoneAjout.innerHTML='';
+      LIEUX.forEach(function(l){
+        if(l.ancre||ajoutes[l.id])return;
+        var b=document.createElement('button');
+        b.className='btn-lieu'; b.setAttribute('data-act','ajout'); b.setAttribute('data-id',l.id);
+        b.textContent='+ '+l.nom;
+        zoneAjout.appendChild(b);
+      });
+      if(!zoneAjout.children.length)zoneAjout.innerHTML='<span class="petite">Tous les lieux proposés sont déjà sur l’orbite.</span>';
+    }
+    if(zoneChips){
+      zoneChips.innerHTML='';
+      LIEUX.forEach(function(l){
+        if(!ajoutes[l.id])return;
+        var chip=document.createElement('span'); chip.className='chip-lieu';
+        var t=document.createElement('span'); t.textContent=l.nom;
+        var x=document.createElement('button');
+        x.setAttribute('data-act','retrait'); x.setAttribute('data-id',l.id);
+        x.setAttribute('aria-label','Retirer '+l.nom); x.textContent='×';
+        chip.appendChild(t); chip.appendChild(x);
+        zoneChips.appendChild(chip);
+      });
+    }
+  }
+  function ajouter(id){
+    var l=lieuParId(id); if(!l||l.ancre||ajoutes[id])return;
+    ajoutes[id]=true;
+    refs[id]={horloge:creerHorloge(l),carte:creerCarte(l),rep:creerRepere(l)};
+    rendreControles(); majPlanete();
+  }
+  function retirer(id){
+    var l=lieuParId(id); if(!l||l.ancre||!ajoutes[id])return;
+    delete ajoutes[id];
+    var r=refs[id];
+    if(r){
+      if(r.horloge&&r.horloge.wrap)r.horloge.wrap.remove();
+      if(r.carte&&r.carte.wrap)r.carte.wrap.remove();
+      if(r.rep)r.rep.remove();
+      delete refs[id];
+    }
+    if(selection===id)selectionner('sainte-martine');
+    rendreControles(); majPlanete();
+  }
+  function selectionner(id){
+    var l=lieuParId(id); if(!l)return;
+    selection=id;
+    LIEUX.forEach(function(x){
+      var r=refs[x.id];
+      if(r&&r.horloge&&r.horloge.wrap)r.horloge.wrap.classList.toggle('choisi',x.id===id);
+      if(r&&r.carte&&r.carte.wrap)r.carte.wrap.classList.toggle('choisi',x.id===id);
+      if(r&&r.rep)r.rep.classList.toggle('choisi',x.id===id);
+    });
+    texte('x-nom',l.nom+(l.ancre?' — l’ancre':''));
+    texte('x-coords',fmtCoord(l.lat,l.lon));
+    var p=projection(l.lat,l.lon);
+    texte('x-globe',p.visible?'Repère visible sur le globe, côté Atlantique de la projection.':'De l’autre côté du globe pour cette projection : le repère y est estompé et se dit « autre côté » plutôt que de disparaître.');
+    texte('x-zone',l.zone+(l.ancre?' — le fuseau de référence du système':''));
+    texte('x-siderale-detail','GMST + sa longitude ('+fr(l.lon,2).replace('-','−')+'°) — le même polynôme que l’ancre.');
+    var btn=$('x-retirer'); if(btn)btn.hidden=!!l.ancre;
+    majHistoire(l);
+    majPlanete();
+  }
+  function majHistoire(l){
+    var h=histoireHeure(l.zone,new Date());
+    if(h.change){
+      texte('x-regime','Ce lieu change d’heure (heure d’été) : son décalage est de '+fmtUTC(h.jan)+' le 1er janvier et de '+fmtUTC(h.jul)+' le 1er juillet de cette année — calculé à l’instant, dans votre navigateur, par comparaison des décalages.');
+    }else{
+      texte('x-regime','Heure fixe toute l’année : '+fmtUTC(h.jan)+' le 1er janvier comme le 1er juillet de cette année — calculé à l’instant, dans votre navigateur, par comparaison des décalages.');
+    }
+    if(h.prochain){
+      var d=new Intl.DateTimeFormat('fr-CA',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(h.prochain);
+      texte('x-prochain','Prochain changement calculé : le '+d+' (balayage jour par jour des décalages, jusqu’à 400 jours).');
+    }else{
+      texte('x-prochain','Aucun changement prévu : le balayage des 400 prochains jours ne trouve aucune transition de décalage.');
+    }
+    texte('x-note',l.note);
+  }
+  function majPlanete(){
+    var now=new Date();
+    LIEUX.forEach(function(l){
+      if(!l.ancre&&!ajoutes[l.id])return;
+      var v=ligneValeurs(l,now), r=refs[l.id];
+      if(r&&r.horloge){
+        r.horloge.civ.textContent=v.civile;
+        r.horloge.sid.textContent='sid. '+v.siderale;
+        r.horloge.ec.textContent=fmtEcart(v.ecart)+' · '+(v.jour?'☀ jour':'☾ nuit')+' approx.';
+      }
+      if(r&&r.carte){
+        r.carte.civ.textContent=v.civile;
+        r.carte.det.textContent='Sidérale '+v.siderale+' · écart '+fmtEcart(v.ecart)+' avec Sainte-Martine · '+(v.jour?'jour':'nuit')+' (heure solaire approx.)';
+      }
+    });
+    var sel=lieuParId(selection);
+    if(sel){
+      var v2=ligneValeurs(sel,now);
+      texte('x-civile',v2.civile);
+      texte('x-siderale',hmsLong(lstLieu(now,sel.lon)));
+      texte('x-ecart',sel.ancre?'0 h — c’est l’ancre':fmtEcart(v2.ecart)+(v2.ecart>0?' d’avance sur Sainte-Martine':' de retard sur Sainte-Martine'));
+      var hh=Math.floor(v2.solH), mm=Math.floor((v2.solH-hh)*60);
+      texte('x-journuit',(v2.jour?'Jour là-bas':'Nuit là-bas')+' — heure solaire approchée '+pad(hh)+' h '+pad(mm)+' (UTC + longitude/15 : une approximation, étiquetée comme telle).');
+    }
+    // Miroir des ancrages — le bord du site
+    texte('mir-site-civile',fmtCivil(ZONE_ANCRE).format(now));
+    texte('mir-site-siderale',hmsLong(lstLieu(now,LON_ANCRE)));
+    if(visiteur.zone)texte('mir-v-civile',fmtCivil(visiteur.zone).format(now));
+    if(visiteur.lon!==null&&visiteur.lon!==undefined)texte('mir-v-siderale',hmsLong(lstLieu(now,visiteur.lon)));
+  }
+
+  // ----- Les sens de l’ancre -----
+  var sensEtat={om:null,met:null,kp:null,kpQuand:null,seisme:null,seismeGen:null};
+  var visiteur={nom:null,region:null,lat:null,lon:null,zone:null,source:null};
+  var ANCRE_SITE={nom:'Sainte-Martine',lat:LAT_ANCRE,lon:LON_ANCRE,zone:ZONE_ANCRE};
+  function triangulerTemperature(lat,lon){
+    var pOM=fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m&timezone=UTC')
+      .then(function(r){if(!r.ok)throw new Error('om'); return r.json()})
+      .then(function(j){return {val:j.current.temperature_2m,quand:new Date(j.current.time)}})
+      .catch(function(){return null});
+    var pMET=fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat='+lat+'&lon='+lon)
+      .then(function(r){if(!r.ok)throw new Error('met'); return r.json()})
+      .then(function(j){
+        var ts=j.properties.timeseries,now=Date.now(),best=null,bd=Infinity,i,t,d;
+        for(i=0;i<ts.length;i++){t=new Date(ts[i].time).getTime(); d=Math.abs(t-now); if(d<bd){bd=d;best=ts[i]}}
+        return {val:best.data.instant.details.air_temperature,quand:new Date(best.time)};
+      })
+      .catch(function(){return null});
+    return Promise.all([pOM,pMET]).then(function(res){return {om:res[0],met:res[1]}});
+  }
+  function texteTriangulationCourt(){
+    var om=sensEtat.om, met=sensEtat.met;
+    if(om&&met){var e=Math.abs(om.val-met.val); return 'Température triangulée : Open-Meteo '+fr(om.val,1)+' °C · MET Norway '+fr(met.val,1)+' °C — écart '+fr(e,1)+' °C, '+(e<=2?'CONCORDENT.':'ÉCART dit.')}
+    if(om)return 'Température : Open-Meteo '+fr(om.val,1)+' °C seul — MET Norway injoignable à l’instant, c’est dit.';
+    if(met)return 'Température : MET Norway '+fr(met.val,1)+' °C seul — Open-Meteo injoignable à l’instant, c’est dit.';
+    return 'Température non lue à l’instant — les deux services sont injoignables, c’est dit.';
+  }
+  function rendreSens(){
+    var om=sensEtat.om, met=sensEtat.met;
+    if(om||met){
+      var ref=om||met, e=(om&&met)?Math.abs(om.val-met.val):null;
+      texte('sens-temp-om',om?fr(om.val,1)+' °C':'injoignable');
+      texte('sens-temp-met',met?fr(met.val,1)+' °C':'injoignable');
+      texte('sens-temp-verdict',fr(ref.val,1)+' °C — '+(e===null?'source unique, dite comme telle':(e<=2?'CONCORDENT':'ÉCART')));
+      var m='';
+      if(om)m+='Open-Meteo : relevé de '+fmtHeureZone(om.quand.getTime(),ZONE_ANCRE)+' (heure de l’ancre), '+fmtAge(om.quand)+'. ';
+      if(met)m+='MET Norway : données de '+fmtHeureZone(met.quand.getTime(),'UTC')+' UTC, '+fmtAge(met.quand)+'. ';
+      if(!om)m+='Open-Meteo injoignable à l’instant : valeur unique de MET Norway, sans maquillage. ';
+      if(!met)m+='MET Norway injoignable à l’instant : valeur unique d’Open-Meteo, sans substitution. ';
+      if(e!==null)m+='Écart entre les deux services : '+fr(e,1)+' °C.';
+      texte('sens-temp-meta',m);
+    }else{
+      texte('sens-temp-verdict','Lecture impossible à l’instant');
+      texte('sens-temp-om','injoignable');
+      texte('sens-temp-met','injoignable');
+      texte('sens-temp-meta','Les deux services sont injoignables depuis ton navigateur à l’instant. Aucune valeur n’est inventée ni recopiée : la tuile attend le prochain essai, dans dix minutes.');
+    }
+    texte('mir-site-temp',texteTriangulationCourt());
+    // Soleil et Lune — calculés sur place
+    var auj=new Date(), s=soleil(auj,LAT_ANCRE,LON_ANCRE);
+    if(s){
+      var base=Date.UTC(auj.getUTCFullYear(),auj.getUTCMonth(),auj.getUTCDate());
+      var leverMs=base+s.lever*3600000, coucherMs=base+s.coucher*3600000;
+      texte('sens-sol-lever',fmtHeureZone(leverMs,ZONE_ANCRE));
+      texte('sens-sol-coucher',fmtHeureZone(coucherMs,ZONE_ANCRE));
+      var dureeH=s.coucher-s.lever, dh=Math.floor(dureeH), dm=Math.round((dureeH-dh)*60);
+      if(dm===60){dh++;dm=0}
+      texte('sens-sol-duree',dh+' h '+pad(dm));
+    }
+    texte('sens-lune-age',fr(ageLune(auj),1)+' jours');
+    texte('sens-lune-illum',Math.round(illumLune(auj)*100)+' %');
+    // Kp
+    if(sensEtat.kp!==null&&sensEtat.kp!==undefined){
+      texte('sens-kp-valeur',String(sensEtat.kp));
+      texte('sens-kp-lecture',sensEtat.kp>=5?'Kp ≥ 5 : le ciel magnétique est actif — des aurores sont possibles à la latitude géomagnétique de Sainte-Martine (~55° N).':'Ciel magnétiquement calme à l’ancre : sous Kp 5, pas d’aurores attendues à cette latitude.');
+      texte('sens-kp-meta','Source : NOAA SWPC — relevé de '+fmtHeureZone(sensEtat.kpQuand.getTime(),'UTC')+' UTC, '+fmtAge(sensEtat.kpQuand)+'. Cadran : 0 (très calme) à 9 (tempête extrême).');
+    }else{
+      texte('sens-kp-valeur','non lu');
+      texte('sens-kp-lecture','Le service NOAA SWPC est injoignable depuis ton navigateur à l’instant : l’état magnétique n’est pas lu, et cette tuile le dit plutôt que de deviner.');
+    }
+    // Séismes
+    if(sensEtat.seisme==='erreur'){
+      texte('sens-seisme-valeur','Lecture impossible à l’instant');
+      texte('sens-seisme-meta','Le catalogue USGS est injoignable depuis ton navigateur à l’instant — rien n’est affirmé sur le secteur.');
+    }else if(sensEtat.seisme){
+      var f=sensEtat.seisme;
+      texte('sens-seisme-valeur','M'+fr(f.mag,1)+' — '+f.place);
+      texte('sens-seisme-meta','Source : USGS — le '+new Intl.DateTimeFormat('fr-CA',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(f.time))+' (heure de ton appareil), '+fmtAge(new Date(f.time))+'. Génération du catalogue : '+fmtAge(new Date(sensEtat.seismeGen))+'.');
+    }else if(sensEtat.seisme===null&&sensEtat.seismeGen){
+      texte('sens-seisme-valeur','Aucun — calme sismique local');
+      texte('sens-seisme-meta','Source : USGS — catalogue généré '+fmtAge(new Date(sensEtat.seismeGen))+' ; aucun événement M ≥ 1 dans les 300 km et les 48 dernières heures.');
+    }
+  }
+  function chargerSens(){
+    triangulerTemperature(LAT_ANCRE,LON_ANCRE).then(function(res){
+      sensEtat.om=res.om; sensEtat.met=res.met; rendreSens();
+    });
+    fetch('https://services.swpc.noaa.gov/json/planetary_k_index_1m.json')
+      .then(function(r){if(!r.ok)throw new Error('swpc'); return r.json()})
+      .then(function(j){
+        var last=j[j.length-1];
+        sensEtat.kp=(last.kp_index!==undefined&&last.kp_index!==null)?last.kp_index:Math.round(last.estimated_kp);
+        sensEtat.kpQuand=new Date(String(last.time_tag).replace(' ','T')+'Z');
+        rendreSens();
+      })
+      .catch(function(){sensEtat.kp=null; rendreSens()});
+    var debut=new Date(Date.now()-48*3600000).toISOString();
+    fetch('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime='+encodeURIComponent(debut)+'&latitude='+LAT_ANCRE+'&longitude='+LON_ANCRE+'&maxradiuskm=300&minmagnitude=1&orderby=time')
+      .then(function(r){if(!r.ok)throw new Error('usgs'); return r.json()})
+      .then(function(j){
+        sensEtat.seismeGen=j.metadata.generated;
+        if(j.features&&j.features.length){
+          var p=j.features[0].properties;
+          sensEtat.seisme={mag:p.mag,place:p.place,time:p.time};
+        }else sensEtat.seisme=null;
+        rendreSens();
+      })
+      .catch(function(){sensEtat.seisme='erreur'; rendreSens()});
+  }
+  // ----- L’ancrage du visiteur -----
+  function rendreMiroir(){
+    var titre=$('mir-v-titre');
+    if(!visiteur.source){
+      if(titre)titre.textContent='Ton ancrage — lecture en cours…';
+      return;
+    }
+    if(visiteur.source==='appareil'){
+      if(titre)titre.textContent='Ton ancrage — position non lue';
+      texte('mir-v-civile',fmtCivil(visiteur.zone).format(new Date()));
+      texte('mir-v-detail','Position non lue — heure de ton appareil ('+visiteur.zone+'). Les services de géolocalisation n’ont pas répondu : sans longitude, pas d’heure sidérale ni de météo chez toi. Tu peux poser ton ancrage à la main ci-dessous.');
+      texte('mir-v-siderale','non calculable — longitude non lue');
+      texte('mir-v-temp','');
+      texte('mir-distance','Distance entre nos ancrages : non calculable — ta position n’a pas été lue.');
+      texte('mv-etat','Ton ancrage n’a pas de coordonnées (position non lue) : la météo en miroir attend que tu poses ton ancrage à la main, dans le panneau Temps.');
+      texte('mv-lecture','Je ne lis pas ton ciel : sans coordonnées, raconter ta météo serait l’inventer. Pose ton ancrage dans le panneau Temps, et le miroir se remplit des mêmes sources que le mien.');
+      texte('mv-lecture-meta','');
+      return;
+    }
+    var provenance=visiteur.source==='ip'?'d’après ton adresse IP':'ancrage posé par toi depuis la liste';
+    if(titre)titre.textContent='Ton ancrage — '+visiteur.nom+(visiteur.region?', '+visiteur.region:'')+' ('+provenance+')';
+    var off=decalageHeures(visiteur.zone,new Date());
+    texte('mir-v-detail','Coordonnées approximatives : '+fmtCoord(visiteur.lat,visiteur.lon)+' · fuseau '+visiteur.zone+' · '+fmtUTC(off)+'.');
+    var km=haversine(LAT_ANCRE,LON_ANCRE,visiteur.lat,visiteur.lon);
+    texte('mir-distance','Nos ancrages sont à '+(km<100?fr(km,1):Math.round(km).toLocaleString('fr-CA'))+' km l’un de l’autre (distance orthodromique calculée ici) — et pourtant, la même Terre tourne sous les deux.');
+    if(visiteur.source==='ip'||visiteur.source==='manuel'){
+      triangulerTemperature(visiteur.lat,visiteur.lon).then(function(res){
+        var om=res.om, met=res.met;
+        if(om&&met){var e=Math.abs(om.val-met.val); texte('mir-v-temp','Météo chez toi, triangulée : Open-Meteo '+fr(om.val,1)+' °C · MET Norway '+fr(met.val,1)+' °C — écart '+fr(e,1)+' °C, '+(e<=2?'CONCORDENT.':'ÉCART dit.'))}
+        else if(om)texte('mir-v-temp','Météo chez toi : Open-Meteo '+fr(om.val,1)+' °C seul — MET Norway injoignable, c’est dit.');
+        else if(met)texte('mir-v-temp','Météo chez toi : MET Norway '+fr(met.val,1)+' °C seul — Open-Meteo injoignable, c’est dit.');
+        else texte('mir-v-temp','Météo chez toi non lue à l’instant — les deux services sont injoignables.');
+      });
+      chargerMeteoPour('mv',{nom:visiteur.nom,lat:visiteur.lat,lon:visiteur.lon,zone:visiteur.zone});
+    }
+    majPlanete();
+  }
+  function poserVisiteur(v){
+    visiteur=v; rendreMiroir();
+  }
+  function determinerVisiteur(){
+    fetch('https://ipwho.is/')
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j&&j.success&&isFinite(j.latitude)&&isFinite(j.longitude)){
+          poserVisiteur({nom:j.city||'Ville lue',region:j.region||'',lat:j.latitude,lon:j.longitude,zone:(j.timezone&&j.timezone.id)||'UTC',source:'ip'});
+        }else throw new Error('ipwho');
+      })
+      .catch(function(){
+        fetch('https://ipapi.co/json/')
+          .then(function(r){return r.json()})
+          .then(function(j){
+            if(j&&isFinite(j.latitude)&&isFinite(j.longitude)){
+              poserVisiteur({nom:j.city||'Ville lue',region:j.region||'',lat:j.latitude,lon:j.longitude,zone:j.timezone||'UTC',source:'ip'});
+            }else throw new Error('ipapi');
+          })
+          .catch(function(){
+            var zone='UTC';
+            try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'}catch(e){}
+            poserVisiteur({nom:null,region:null,lat:null,lon:null,zone:zone,source:'appareil'});
+          });
+      });
+  }
+
+  // ----- Onglet Météo -----
+  var CODES_METEO={0:['Ciel dégagé','☀'],1:['Plutôt dégagé','🌤'],2:['Partiellement nuageux','⛅'],3:['Couvert','☁'],45:['Brouillard','🌫'],48:['Brouillard givrant','🌫'],51:['Bruine légère','🌦'],53:['Bruine','🌦'],55:['Bruine forte','🌦'],56:['Bruine verglaçante','🌧'],57:['Bruine verglaçante','🌧'],61:['Pluie légère','🌧'],63:['Pluie','🌧'],65:['Pluie forte','🌧'],66:['Pluie verglaçante','🌧'],67:['Pluie verglaçante','🌧'],71:['Neige légère','🌨'],73:['Neige','🌨'],75:['Neige forte','🌨'],77:['Grains de neige','🌨'],80:['Averses légères','🌦'],81:['Averses','🌦'],82:['Averses fortes','🌧'],85:['Averses de neige','🌨'],86:['Averses de neige','🌨'],95:['Orage','⛈'],96:['Orage avec grêle','⛈'],99:['Orage avec grêle','⛈']};
+  function libelleCode(code){var c=CODES_METEO[code]; return c?c[0]:'Code météo '+code}
+  function iconeCode(code){var c=CODES_METEO[code]; return c?c[1]:'•'}
+  function familleCode(code){
+    if(code===0||code===1)return 'clair';
+    if(code===2||code===3)return 'nuage';
+    if(code===45||code===48)return 'brouillard';
+    if(code===95||code===96||code===99)return 'orage';
+    if(code===71||code===73||code===75||code===77||code===85||code===86)return 'neige';
+    return 'pluie';
+  }
+  var SECTEURS=[['nord','du nord'],['nord-est','du nord-est'],['est','de l’est'],['sud-est','du sud-est'],['sud','du sud'],['sud-ouest','du sud-ouest'],['ouest','de l’ouest'],['nord-ouest','du nord-ouest']];
+  function secteurVent(deg){return SECTEURS[Math.round((((deg%360)+360)%360)/45)%8]}
+  function forceVent(v){return v<2?'calme':v<12?'léger':v<25?'modéré':v<40?'frais':'fort'}
+  function echelleUV(v){return v<3?'faible':v<6?'modéré':v<8?'élevé':v<11?'très élevé':'extrême'}
+  var meteoEtat={};
+  function indiceHeureCourante(om){
+    var t=om.hourly.time, c=om.current.time, i=0;
+    for(var k=0;k<t.length;k++){if(t[k]<=c)i=k; else break}
+    return i;
+  }
+  function tendancePression(om){
+    var i=indiceHeureCourante(om), p=om.hourly.pressure_msl;
+    if(i<3||!p||p[i]===undefined||p[i-3]===undefined)return null;
+    return p[i]-p[i-3];
+  }
+  function probaMaxProchaines(om,n){
+    var i=indiceHeureCourante(om), pr=om.hourly.precipitation_probability, mx=null;
+    if(!pr)return null;
+    for(var k=i;k<Math.min(pr.length,i+n);k++){if(pr[k]!==null&&pr[k]!==undefined&&(mx===null||pr[k]>mx))mx=pr[k]}
+    return mx;
+  }
+  function lectureMeteo(nom,om,met,zone){
+    var c=om.current, phr=[];
+    phr.push('À '+nom+', il fait '+fr(c.temperature_2m,1)+' °C (ressenti '+fr(c.apparent_temperature,1)+' °C).');
+    if(met){
+      var e=Math.abs(c.temperature_2m-met.val);
+      phr.push(e<=2?'Mes deux sources concordent à '+fr(e,1)+' °C près : la lecture est triangulée.':'Mes deux sources divergent de '+fr(e,1)+' °C : les deux valeurs sont montrées ci-dessous, je n’en choisis aucune.');
+    }else{
+      phr.push('Une seule source répond à l’instant : cette lecture est dite à une source, et la tuile de température le montre.');
+    }
+    var fam=familleCode(c.weather_code);
+    if(fam==='clair')phr.push('Le ciel est dégagé.');
+    else if(fam==='nuage')phr.push('Les nuages couvrent le ciel.');
+    else if(fam==='pluie')phr.push('La pluie est de la partie.');
+    else if(fam==='neige')phr.push('La neige est de la partie.');
+    else if(fam==='brouillard')phr.push('Le brouillard couvre le secteur.');
+    else if(fam==='orage')phr.push('L’orage passe, ou menace, sur le secteur.');
+    var sec=secteurVent(c.wind_direction_10m);
+    phr.push('Le vent souffle '+sec[1]+' à '+Math.round(c.wind_speed_10m)+' km/h — '+forceVent(c.wind_speed_10m)+'.');
+    var tp=tendancePression(om);
+    if(tp!==null){
+      var lib=Math.abs(tp)<1?'stable':(tp>0?'en hausse':'en baisse');
+      phr.push('La pression ('+fr(c.pressure_msl,0)+' hPa) est '+lib+' sur trois heures'+(lib==='en baisse'?' — le temps peut se dégrader.':lib==='en hausse'?' — le beau temps se maintient, ou revient.':' — la situation n’évolue guère.'));
+    }
+    var pm=probaMaxProchaines(om,12);
+    if(pm!==null){
+      if(pm>=50)phr.push('Les prochaines heures portent jusqu’à '+pm+' % de probabilité de précipitations — à surveiller.');
+      else if(pm<20)phr.push('Aucune précipitation sérieuse n’est en vue pour les prochaines heures (probabilité maximale : '+pm+' %).');
+    }
+    if(om.daily&&om.daily.sunrise&&om.daily.sunset){
+      var lev=om.daily.sunrise[0]*1000, cou=om.daily.sunset[0]*1000;
+      var dh=Math.floor((cou-lev)/3600000), dm=Math.round(((cou-lev)%3600000)/60000);
+      if(dm===60){dh++;dm=0}
+      phr.push('Le jour dure '+dh+' h '+pad(dm)+' (lever '+fmtHeureZone(lev,zone)+', coucher '+fmtHeureZone(cou,zone)+').');
+    }
+    return phr.join(' ');
+  }
+  function chargerMeteoPour(P,ancre){
+    if(!ancre||ancre.lat===null||ancre.lat===undefined)return;
+    meteoEtat[P]=meteoEtat[P]||{};
+    meteoEtat[P].ancre=ancre;
+    var u='https://api.open-meteo.com/v1/forecast?latitude='+ancre.lat+'&longitude='+ancre.lon
+      +'&current=temperature_2m,relative_humidity_2m,apparent_temperature,pressure_msl,wind_speed_10m,wind_direction_10m,weather_code'
+      +'&hourly=temperature_2m,precipitation_probability,weather_code,pressure_msl'
+      +'&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_probability_max,uv_index_max'
+      +'&forecast_days=7&timeformat=unixtime&timezone='+encodeURIComponent(ancre.zone);
+    var pOM=fetch(u).then(function(r){if(!r.ok)throw new Error('meteo'); return r.json()}).catch(function(){return null});
+    Promise.all([pOM,triangulerTemperature(ancre.lat,ancre.lon)]).then(function(res){
+      meteoEtat[P].om=res[0];
+      meteoEtat[P].met=res[1].met;
+      meteoEtat[P].recuLe=new Date();
+      rendreMeteo(P);
+    });
+  }
+  function rendreMeteo(P){
+    var st=meteoEtat[P]; if(!st)return;
+    var om=st.om, met=st.met, ancre=st.ancre;
+    var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+    if(!om){
+      texte(P+'-temp','Lecture impossible à l’instant');
+      texte(P+'-temp-detail','Open-Meteo est injoignable depuis ton navigateur. Aucune valeur n’est inventée : nouvel essai au prochain rafraîchissement, dans dix minutes.');
+      texte(P+'-lecture','Je ne lis rien pour l’instant : le service météo ne répond pas. Les tuiles le disent, et je ne raconterai pas un ciel que je n’ai pas lu.');
+      texte(P+'-lecture-meta','');
+      texte(P+'-etat','Échec de lecture à l’instant — état dit honnêtement, nouvel essai dans dix minutes.');
+      var zh=$(P+'-heures'); if(zh)zh.innerHTML='<p class="petite">Heures non lues — le service est injoignable.</p>';
+      var zj=$(P+'-jours'); if(zj)zj.innerHTML='<p class="petite">Jours non lus — le service est injoignable.</p>';
+      return;
+    }
+    var c=om.current;
+    texte(P+'-temp',fr(c.temperature_2m,1)+' °C');
+    if(met){
+      var e=Math.abs(c.temperature_2m-met.val);
+      texte(P+'-temp-detail','Open-Meteo '+fr(c.temperature_2m,1)+' °C · MET Norway '+fr(met.val,1)+' °C — écart '+fr(e,1)+' °C : '+(e<=2?'CONCORDENT.':'ÉCART — les deux valeurs tiennent, aucune n’est choisie.'));
+    }else{
+      texte(P+'-temp-detail','MET Norway injoignable à l’instant : valeur d’Open-Meteo seule, dite comme telle — aucune substitution.');
+    }
+    texte(P+'-ressenti',fr(c.apparent_temperature,1)+' °C');
+    texte(P+'-humidite','Humidité relative : '+Math.round(c.relative_humidity_2m)+' %.');
+    texte(P+'-pression',fr(c.pressure_msl,0)+' hPa');
+    var tp=tendancePression(om);
+    if(tp===null)texte(P+'-pression-detail','Tendance non calculable à l’instant (série horaire incomplète).');
+    else if(Math.abs(tp)<1)texte(P+'-pression-detail','Stable sur trois heures ('+(tp>=0?'+':'−')+fr(Math.abs(tp),1)+' hPa, série horaire du service).');
+    else texte(P+'-pression-detail',(tp>0?'En hausse':'En baisse')+' de '+fr(Math.abs(tp),1)+' hPa sur trois heures (série horaire du service).');
+    var sec=secteurVent(c.wind_direction_10m);
+    texte(P+'-vent',Math.round(c.wind_speed_10m)+' km/h');
+    texte(P+'-vent-detail','En provenance '+sec[1]+' ('+Math.round(c.wind_direction_10m)+'°) — '+forceVent(c.wind_speed_10m)+'.');
+    texte(P+'-ciel',iconeCode(c.weather_code)+' '+libelleCode(c.weather_code));
+    texte(P+'-ciel-detail','Code météo '+c.weather_code+' du service, traduit en français.');
+    var uv=om.daily&&om.daily.uv_index_max?om.daily.uv_index_max[0]:null;
+    if(uv===null||uv===undefined){texte(P+'-uv','Non fourni'); texte(P+'-uv-detail','Le service ne fournit pas d’indice UV pour ce jour à ces coordonnées.')}
+    else{texte(P+'-uv',fr(uv,1)+' — '+echelleUV(uv)); texte(P+'-uv-detail','Indice ultraviolet maximal prévu aujourd’hui (Open-Meteo).')}
+    // Bande des 24 prochaines heures
+    var zh2=$(P+'-heures');
+    if(zh2){
+      var i0=indiceHeureCourante(om), html='';
+      for(var k=i0;k<Math.min(om.hourly.time.length,i0+24);k++){
+        var pr=om.hourly.precipitation_probability?om.hourly.precipitation_probability[k]:null;
+        html+='<div class="meteo-heure"><div class="mh-h">'+esc(fmtHeureZone(om.hourly.time[k]*1000,ancre.zone))+'</div><div class="mh-i">'+iconeCode(om.hourly.weather_code[k])+'</div><div class="mh-t">'+Math.round(om.hourly.temperature_2m[k])+' °C</div><div class="mh-p">'+(pr===null||pr===undefined?'—':pr+' %')+'</div></div>';
+      }
+      zh2.innerHTML=html;
+    }
+    // Les 7 jours
+    var zj2=$(P+'-jours');
+    if(zj2&&om.daily){
+      var html2='', fmtJour=new Intl.DateTimeFormat('fr-CA',{timeZone:ancre.zone,weekday:'long',day:'numeric',month:'short'});
+      for(var d=0;d<om.daily.time.length;d++){
+        var ps=om.daily.precipitation_sum?om.daily.precipitation_sum[d]:null;
+        var pmx=om.daily.precipitation_probability_max?om.daily.precipitation_probability_max[d]:null;
+        var det=libelleCode(om.daily.weather_code[d]);
+        if(ps!==null&&ps!==undefined&&ps>0)det+=' · précipitations '+fr(ps,1)+' mm'+(pmx!==null&&pmx!==undefined?' ('+pmx+' %)':'');
+        else if(pmx!==null&&pmx!==undefined)det+=' · probabilité de précipitations max. '+pmx+' %';
+        det+=' · lever '+fmtHeureZone(om.daily.sunrise[d]*1000,ancre.zone)+' — coucher '+fmtHeureZone(om.daily.sunset[d]*1000,ancre.zone);
+        html2+='<div class="meteo-jour"><span class="mj-j">'+esc(fmtJour.format(new Date(om.daily.time[d]*1000)))+'</span><span class="mj-i">'+iconeCode(om.daily.weather_code[d])+'</span><span class="mj-l">'+esc(det)+'</span><span class="mj-t"><span class="min">'+Math.round(om.daily.temperature_2m_min[d])+' °</span> / '+Math.round(om.daily.temperature_2m_max[d])+' °C</span></div>';
+      }
+      zj2.innerHTML=html2;
+    }
+    texte(P+'-lecture',lectureMeteo(ancre.nom,om,met,ancre.zone));
+    texte(P+'-lecture-meta','Lu à '+fmtHeureZone(Date.now(),ancre.zone)+' (heure '+(P==='mt'?'de l’ancre':'de ton ancrage')+') — générée par règles, uniquement depuis les valeurs affichées ci-dessous.');
+    rendreAgeMeteo(P);
+  }
+  function rendreAgeMeteo(P){
+    var st=meteoEtat[P]; if(!st||!st.om)return;
+    var quand=new Date(st.om.current.time*1000);
+    texte(P+'-etat','Relevé Open-Meteo de '+fmtHeureZone(quand.getTime(),st.ancre.zone)+' (heure '+(P==='mt'?'de l’ancre':'de ton ancrage')+'), '+fmtAge(quand)+' · données reçues '+fmtAge(st.recuLe)+'. Rafraîchissement automatique toutes les 10 minutes quand l’onglet est visible.');
+  }
+  function rendreAgesMeteo(){rendreAgeMeteo('mt'); rendreAgeMeteo('mv')}
+  // ----- Recherche reliée -----
+  function motsDe(t){return String(t).split(/[^a-z0-9]+/).filter(function(m){return m.length>0})}
+  function correspond(fTexte,jetons){
+    var mots=motsDe(fTexte);
+    for(var i=0;i<jetons.length;i++){
+      var j=jetons[i], ok=false;
+      if(j.length<2)continue;
+      for(var k=0;k<mots.length;k++){if(mots[k].indexOf(j)===0){ok=true;break}}
+      if(!ok)return false;
+    }
+    return true;
+  }
+  function rechercherUnites(unites,requete){
+    var jetons=motsDe(pliage(requete)).filter(function(j){return j.length>=2});
+    var groupes={}, total=0;
+    if(!jetons.length)return {jetons:jetons,groupes:groupes,total:0};
+    unites.forEach(function(u){
+      if(!correspond(u.fTexte,jetons))return;
+      var score=1;
+      jetons.forEach(function(j){if(correspond(u.fTitre,[j]))score+=3});
+      var copie={}; for(var k in u)copie[k]=u[k]; copie._score=score;
+      (groupes[u.famille]=groupes[u.famille]||[]).push(copie); total++;
+    });
+    Object.keys(groupes).forEach(function(f){groupes[f].sort(function(a,b){return b._score-a._score})});
+    return {jetons:jetons,groupes:groupes,total:total};
+  }
+  var relIndex=null, relJournal=null, relMin=null, dernierMot='';
+  function pousserUnite(unites,famille,titre,texteBrut,panneau,el,url){
+    var t=(texteBrut||'').replace(/\s+/g,' ').trim();
+    unites.push({famille:famille,titre:titre||'',texte:t,panneau:panneau,el:el||null,url:url||null,fTitre:pliage(titre||''),fTexte:pliage((titre||'')+' '+t)});
+  }
+  function construireIndex(){
+    var unites=[];
+    document.querySelectorAll('#registre-historique .entree').forEach(function(e){
+      var h=e.querySelector('h3,h4,b,strong');
+      pousserUnite(unites,'Registre',h?h.textContent.trim():'Entrée du registre',e.textContent,'registre',e,null);
+    });
+    var salle=document.querySelector('.salle-pieces');
+    if(salle)pousserUnite(unites,'Registre','La salle des pièces — le Registre propre (508 pièces)',String(salle.textContent).slice(0,2500),'registre',salle,null);
+    document.querySelectorAll('#p-articles article.article-carte').forEach(function(a){
+      var h=a.querySelector('h3'), lien=a.querySelector('a[href^="http"]');
+      pousserUnite(unites,'Articles',h?h.textContent.trim():'Article',a.textContent,'articles',a,lien?lien.href:null);
+    });
+    document.querySelectorAll('#p-capsules .capsule, #p-capsules .capsule-ext, #p-capsules .capsule-vide').forEach(function(c){
+      var h=c.querySelector('h3'), lien=c.querySelector('a[href^="http"]');
+      pousserUnite(unites,'Capsules',h?h.textContent.trim():'Capsule',c.textContent,'capsules',c,lien?lien.href:null);
+    });
+    if(relJournal&&relJournal.length){
+      var cibleJ=document.getElementById('journal');
+      relJournal.forEach(function(en){
+        var txt=(en.points||[]).map(function(p){return p.texte}).join(' ');
+        pousserUnite(unites,'Journal',en.titre,(en.date||'')+' '+txt,'accueil',cibleJ,null);
+      });
+    }else{
+      document.querySelectorAll('#journal-liste .journal-entree').forEach(function(a){
+        var h=a.querySelector('h3');
+        pousserUnite(unites,'Journal',h?h.textContent.trim():'Entrée du journal',a.textContent,'accueil',a,null);
+      });
+    }
+    document.querySelectorAll('section.bloc').forEach(function(s){
+      var h=s.querySelector('h2'); if(!h)return;
+      var lead=s.querySelector('p.lead'), pan=s.closest('.panneau');
+      pousserUnite(unites,'Sections',h.textContent.trim(),lead?lead.textContent:'',pan?pan.id.replace(/^p-/,''):'accueil',s,null);
+    });
+    return unites;
+  }
+  function extraitPour(u,jetons){
+    function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    var texte2=u.texte||'';
+    if(!texte2)return '';
+    var plie=pliage(texte2), re=/[a-z0-9]+/g, m, trouve=null;
+    while((m=re.exec(plie))!==null){
+      for(var i=0;i<jetons.length;i++){if(m[0].indexOf(jetons[i])===0){trouve={debut:m.index,fin:m.index+m[0].length}; break}}
+      if(trouve)break;
+    }
+    var base=u.titre?(u.titre+' — '):'';
+    if(!trouve)return esc((base+texte2).slice(0,150))+((base+texte2).length>150?'…':'');
+    var d=Math.max(0,trouve.debut-52), f=Math.min(texte2.length,trouve.fin+72);
+    return (d>0?'…':'')+esc(texte2.slice(d,trouve.debut))+'<mark>'+esc(texte2.slice(trouve.debut,trouve.fin))+'</mark>'+esc(texte2.slice(trouve.fin,f))+(f<texte2.length?'…':'');
+  }
+  function allerA(u){
+    if(typeof ouvrirPanneau==='function')ouvrirPanneau(u.panneau);
+    else location.hash='#'+u.panneau;
+    setTimeout(function(){if(u.el&&u.el.scrollIntoView)u.el.scrollIntoView({behavior:'smooth',block:'start'})},200);
+  }
+  function lancerRecherche(){
+    var q=$('rel-q'); if(!q)return;
+    var mot=q.value.trim(); dernierMot=mot;
+    var zone=$('rel-resultats'); if(!zone)return;
+    if(mot.length<2){
+      texte('rel-etat','Tape au moins deux lettres — par exemple « sceau », « sidéral » ou « registre ».');
+      zone.innerHTML=''; return;
+    }
+    if(!relIndex)relIndex=construireIndex();
+    var res=rechercherUnites(relIndex,mot);
+    zone.innerHTML='';
+    if(!res.total){
+      texte('rel-etat','Aucun résultat pour « '+mot+' ».');
+      var p=document.createElement('p');
+      p.textContent='Rien dans le site ne porte ce mot — c’est dit plutôt que rempli. Essaie l’un de ceux-ci, tirés du contenu réel :';
+      zone.appendChild(p);
+      var rang=document.createElement('div'); rang.className='rel-sugg';
+      ['sceau','sidéral','registre','antériorité'].forEach(function(s){
+        var b=document.createElement('button'); b.className='btn-lieu'; b.textContent=s;
+        b.addEventListener('click',function(){q.value=s; lancerRecherche()});
+        rang.appendChild(b);
+      });
+      zone.appendChild(rang);
+      return;
+    }
+    texte('rel-etat',res.total+' résultat'+(res.total>1?'s':'')+' pour « '+mot+' », groupés par famille — tout est cherché ici, dans ton navigateur.');
+    ['Registre','Articles','Capsules','Journal','Sections'].forEach(function(fam){
+      var liste=res.groupes[fam]; if(!liste||!liste.length)return;
+      var h=document.createElement('p'); h.className='rel-groupe';
+      h.textContent=fam+' — '+liste.length+' résultat'+(liste.length>1?'s':'');
+      zone.appendChild(h);
+      liste.slice(0,6).forEach(function(u){
+        var b=document.createElement('button'); b.className='rel-resultat';
+        var t=document.createElement('span'); t.className='r-titre'; t.textContent=u.titre||'(sans titre)';
+        var ex=document.createElement('span'); ex.className='r-extrait'; ex.innerHTML=extraitPour(u,res.jetons);
+        b.appendChild(t); b.appendChild(document.createElement('br')); b.appendChild(ex);
+        if(u.url){
+          var ru=document.createElement('span'); ru.className='r-url'; ru.textContent=u.url;
+          b.appendChild(document.createElement('br')); b.appendChild(ru);
+        }
+        b.addEventListener('click',function(){allerA(u)});
+        zone.appendChild(b);
+      });
+      if(liste.length>6){
+        var plus=document.createElement('p'); plus.className='petite';
+        plus.textContent='+ '+(liste.length-6)+' autres résultats dans cette famille — précise ton mot pour les trier.';
+        zone.appendChild(plus);
+      }
+    });
+  }
+  // ----- Initialisation -----
+  if($('p-temps')){
+    refs['sainte-martine']={rep:creerRepere(lieuParId('sainte-martine')),carte:creerCarte(lieuParId('sainte-martine'))};
+    selectionner('sainte-martine');
+    ['paris','tokyo','sydney'].forEach(ajouter);
+    rendreControles();
+    rendreSens();
+    chargerSens();
+    determinerVisiteur();
+    var selV=$('v-choix');
+    if(selV)LIEUX.forEach(function(l){
+      var o=document.createElement('option'); o.value=l.id; o.textContent=l.nom; selV.appendChild(o);
+    });
+    document.addEventListener('click',function(ev){
+      var b=ev.target&&ev.target.closest?ev.target.closest('[data-act]'):null;
+      if(!b)return;
+      var act=b.getAttribute('data-act'), id=b.getAttribute('data-id');
+      if(act==='ajout')ajouter(id);
+      else if(act==='retrait')retirer(id);
+      else if(act==='choix')selectionner(id);
+    });
+    var btnR=$('x-retirer');
+    if(btnR)btnR.addEventListener('click',function(){if(selection!=='sainte-martine')retirer(selection)});
+    var btnV=$('v-choix-btn');
+    if(btnV)btnV.addEventListener('click',function(){
+      if(!selV)return;
+      var l=lieuParId(selV.value); if(!l)return;
+      poserVisiteur({nom:l.nom,region:'lieu choisi par toi dans la liste',lat:l.lat,lon:l.lon,zone:l.zone,source:'manuel'});
+    });
+    setInterval(majPlanete,1000); majPlanete();
+    setInterval(function(){rendreSens(); rendreAgesMeteo()},30000);
+    setInterval(function(){
+      chargerSens();
+      var s2=lieuParId(selection); if(s2)majHistoire(s2);
+      var pm=$('p-meteo');
+      if(pm&&pm.classList.contains('actif')){
+        chargerMeteoPour('mt',ANCRE_SITE);
+        if(visiteur.lat!==null&&visiteur.lat!==undefined)chargerMeteoPour('mv',{nom:visiteur.nom,lat:visiteur.lat,lon:visiteur.lon,zone:visiteur.zone});
+      }
+    },600000);
+  }
+  if($('p-meteo'))chargerMeteoPour('mt',ANCRE_SITE);
+  if($('rel-q')){
+    fetch('assets/journal-mises-a-jour.json')
+      .then(function(r){return r.json()})
+      .then(function(d){relJournal=(d&&d.entrees)||[]; relIndex=null; if(dernierMot)lancerRecherche()})
+      .catch(function(){});
+    var rh=$('registre-historique');
+    if(rh&&typeof MutationObserver!=='undefined')new MutationObserver(function(){relIndex=null}).observe(rh,{childList:true});
+    var qRel=$('rel-q');
+    texte('rel-etat','Index prêt — le contenu du site est interrogé ici, dans ton navigateur. Tape un mot.');
+    qRel.addEventListener('input',function(){clearTimeout(relMin); relMin=setTimeout(lancerRecherche,200)});
+    qRel.addEventListener('keydown',function(ev){if(ev.key==='Enter'){ev.preventDefault(); lancerRecherche()}});
+    var bRel=$('rel-btn');
+    if(bRel)bRel.addEventListener('click',lancerRecherche);
+  }
 })();
 </script>
 
