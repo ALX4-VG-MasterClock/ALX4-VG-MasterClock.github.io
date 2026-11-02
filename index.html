@@ -9,6 +9,12 @@
 <meta property="og:title" content="AUDIT UNISSON — Preuve d'Antériorité V-G">
 <meta property="og:description" content="La somme des précédents, scellée. Une mémoire qui se recalcule au lieu de se déclarer.">
 <meta property="og:image" content="assets/sophia.webp">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SoPHIa">
 <link rel="icon" href="assets/sophia.webp">
 <link rel="preload" as="image" href="assets/sophia.webp">
 <style>
@@ -559,6 +565,23 @@ button.at-bloc{cursor:pointer}
   .planete-cartes{display:none}
 }
 
+/* ===== v19 — Onglet Application (PWA), correctif des grandes pastilles, étiquette de l’ancre, météo du lieu ===== */
+.planete-horloge .ph-nom{line-height:1.15}
+.planete-horloge .ph-civile{line-height:1.15}
+.planete-horloge .ph-secondes{display:none}
+.planete-scene.compacte .planete-horloge .ph-contre{padding-top:.14rem;padding-bottom:.16rem}
+.planete-scene.compacte .planete-horloge.ancre .ph-nom{font-size:.72rem}
+.rep .rep-nom{line-height:1.25}
+.rep .rep-ancrage{display:block;font-size:.56rem;font-weight:400;color:var(--texte-doux);letter-spacing:.02em;margin-top:.12rem;white-space:nowrap}
+.meteo-lieu{margin-top:1rem;border-top:1px solid var(--ligne);padding-top:.8rem}
+.app-install-btn{background:linear-gradient(160deg,#e8c95c,#c9a227);border:1px solid #f2d675;color:#08130e;font:inherit;font-weight:700;border-radius:999px;padding:.6rem 1.3rem;cursor:pointer;box-shadow:0 6px 18px rgba(212,175,55,.35)}
+.app-install-btn:hover{filter:brightness(1.06)}
+.app-etapes{margin:.4rem 0 .6rem 1.1rem}
+.app-etapes li{margin:.3rem 0}
+.rep.ancre{z-index:6}
+.planete-scene.compacte .rep.ancre .rep-nom{left:-8px;top:20px}
+.derive-bloc{margin-top:1rem;border-top:1px solid var(--ligne);padding-top:.8rem}
+
 /* ===== v16 (suite) — miroir des ancrages, onglet Météo, recherche reliée ===== */
 .miroir-grille{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
@@ -608,6 +631,7 @@ button.at-bloc{cursor:pointer}
     <button data-panneau="ancrage">Ancrage</button>
     <button data-panneau="sceller">Sceller</button>
     <button data-panneau="verifier">Vérifier</button>
+    <button data-panneau="application">Application</button>
     <button data-panneau="registre">Registre</button>
     <button data-panneau="preuves">Preuves</button>
     <button data-panneau="capsules">Capsules</button>
@@ -708,10 +732,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v18 (2 novembre 2026 — les heures autour du globe : des pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée)</p>
-    <span class="sceau-long" id="sceau-version-affiche">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v19 (2 novembre 2026 — l’onglet Application : le site s’installe comme une application ; la météo du lieu dans la grande lecture, l’ancre nommée sur le globe, et le correctif des grandes pastilles)</p>
+    <span class="sceau-long" id="sceau-version-affiche">d4c8e9faa11a2fd34f5a887f2deaf1cb50ae56d58b401a9b37be607e338f9097</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -785,6 +809,7 @@ button.at-bloc{cursor:pointer}
         <li>La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit.</li>
         <li>Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision.</li>
         <li>Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px).</li>
+        <li>Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images.</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -913,11 +938,21 @@ button.at-bloc{cursor:pointer}
         <p id="x-globe">—</p>
       </div>
     </div>
+    <div class="derive-bloc">
+      <span class="pastille-direct">La dérive de temps — son horloge sidérale contre son horloge solaire moyenne</span>
+      <p class="valeur mono" id="x-derive">—</p>
+      <p class="petite">Pourquoi cette avance ? La Terre fait un tour de plus par année par rapport aux étoiles que par rapport au Soleil : l’horloge sidérale d’un lieu gagne donc, chaque jour solaire moyen, (1,00273790935 − 1) × 24 h = <span id="x-derive-jour">3 min 56,6 s</span> sur son horloge solaire moyenne — le facteur sidéral que ce panneau utilise déjà pour son GMST. Le panneau compte ses rotations depuis le pivot — l’équinoxe du printemps 2026, le 20 mars à 14 h 46 UTC — et la dérive ci-dessus, recalculée chaque seconde et ramenée entre −12 h et +12 h, se referme à 24 h : en un an, elle fait le tour complet du cadran.</p>
+    </div>
     <div class="histoire-heure">
       <p class="etiquette">L’histoire de son heure</p>
       <p id="x-regime">Régime en cours de calcul…</p>
       <p id="x-prochain"></p>
       <p id="x-note"></p>
+    </div>
+    <div class="meteo-lieu">
+      <p class="etiquette">Son environnement — la météo du lieu</p>
+      <p id="x-meteo">Météo du lieu : lecture en cours…</p>
+      <p class="petite" id="x-meteo-source"></p>
     </div>
     <div class="rangee" style="margin-top:.6rem">
       <button class="secondaire" id="x-retirer" hidden>Retirer cette horloge de l’orbite</button>
@@ -1463,6 +1498,42 @@ button.at-bloc{cursor:pointer}
     <p class="petite" id="te-message" style="margin-top:.6rem">Un seul caractère changé, et l'empreinte ne correspond plus — c'est ce que détecte le recalcul.</p>
   </div>
   <p class="petite">Aucune valeur de hachage n'est écrite d'avance dans cette page : le sceau d'origine est le résultat du premier calcul, affiché tel quel, et la comparaison se fait entre deux calculs faits chez vous, au moment où vous les demandez. C'est le geste de la revérification de la chaîne entière — en dix secondes, sur une phrase.</p>
+</section>
+</div>
+<div class="panneau" id="p-application">
+<section class="bloc" id="application">
+  <div class="entete-sec"><span class="num">▣</span><h2>Le site, en application</h2></div>
+  <p class="lead">Ce site s’installe sur votre appareil comme une application — depuis votre navigateur, sans magasin, sans compte. Il reste le même site, avec les mêmes sceaux ; il gagne une place sur votre écran d’accueil et un fonctionnement hors ligne pour ce qui se calcule sur place.</p>
+  <div class="carte">
+    <p class="etiquette">Ce que l’installation donne</p>
+    <p>Une <b>icône à l’écran d’accueil</b> — le visage de SoPHIa — qui ouvre le site directement.</p>
+    <p>Le <b>plein écran</b> : la barre du navigateur disparaît, le site tient comme une application.</p>
+    <p>Le <b>panneau Temps, hors ligne</b> : la triangulation de l’heure, le globe et ses horloges se calculent entièrement dans votre appareil — ils marchent sans réseau.</p>
+    <p class="petite">Et ce qu’elle ne fait pas : aucun compte, aucune donnée de plus, rien de collecté. Installer n’envoie rien, n’ouvre rien, ne suit rien — c’est un raccourci posé par votre navigateur, sous votre contrôle, qui se retire comme n’importe quelle application. Borne Loi 25, tenue comme partout sur ce site.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Installer</p>
+    <p id="app-etat">Lecture de votre navigateur en cours…</p>
+    <p id="app-bouton-ligne" hidden><button class="app-install-btn" id="app-installer" type="button">Installer l’application</button></p>
+    <div id="app-etapes-ios" hidden>
+      <p>Sur iPhone et iPad, Apple ne permet aucun bouton d’installation : le geste se fait dans Safari, en trois touchers —</p>
+      <ol class="app-etapes">
+        <li>Touchez <b>Partager</b> — le carré avec une flèche vers le haut, dans la barre de Safari.</li>
+        <li>Faites défiler, puis touchez <b>« Sur l’écran d’accueil »</b>.</li>
+        <li>Touchez <b>Ajouter</b>, en haut à droite. L’icône de SoPHIa paraît sur votre écran d’accueil.</li>
+      </ol>
+      <p class="petite">À faire dans <b>Safari</b> : le navigateur intégré d’une autre application ne propose pas ce geste.</p>
+    </div>
+    <div id="app-etapes-android" hidden>
+      <p>Sur Android (Chrome) et sur ordinateur (Chrome ou Edge), si le bouton d’installation ne paraît pas :</p>
+      <ol class="app-etapes">
+        <li>Ouvrez le menu du navigateur (⋮ sur Android ; l’icône d’installation dans la barre d’adresse, ou le menu ⋯, sur ordinateur).</li>
+        <li>Choisissez <b>« Installer l’application »</b> ou <b>« Ajouter à l’écran d’accueil »</b>.</li>
+        <li>Confirmez par <b>Installer</b>.</li>
+      </ol>
+    </div>
+    <p class="petite">Borne écrite : installée, l’application ouvre même sans réseau ; le Temps se calcule sur place. La Météo, l’ancrage du visiteur et l’Instance exigent le réseau — l’application le dit alors, comme le site le dit déjà, plutôt que de montrer une vieille valeur sans sa date. Et la page elle-même se relit toujours du réseau d’abord : jamais une ancienne copie présentée comme la version courante — la fraîcheur du sceau prime sur le hors ligne.</p>
+  </div>
 </section>
 </div>
 <div class="panneau" id="p-registre">
@@ -3226,7 +3297,16 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     var s=document.createElement('span');
     s.className='rep'+(l.ancre?' ancre':'');
     s.setAttribute('data-act','choix'); s.setAttribute('data-id',l.id);
-    var n=document.createElement('span'); n.className='rep-nom'; n.textContent=l.nom;
+    var n=document.createElement('span'); n.className='rep-nom';
+    if(l.ancre){
+      // v19 — l’ancre se nomme au complet sur le globe, dans les mots d’Alex.
+      n.textContent='Sainte-Martine — Québec, Canada';
+      var so=document.createElement('span'); so.className='rep-ancrage';
+      so.textContent='ancrage : '+fmtCoord(l.lat,l.lon);
+      n.appendChild(so);
+    }else{
+      n.textContent=l.nom;
+    }
     s.appendChild(n);
     zone.appendChild(s);
     placerRepere(s,l);
@@ -3790,6 +3870,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     texte('x-siderale-detail','GMST + sa longitude ('+fr(l.lon,2).replace('-','−')+'°) — le même polynôme que l’ancre.');
     var btn=$('x-retirer'); if(btn)btn.hidden=!!l.ancre;
     majHistoire(l);
+    majMeteoLieu();
     majPlanete();
   }
   function majHistoire(l){
@@ -3813,8 +3894,11 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       if(!l.ancre&&!ajoutes[l.id])return;
       var v=ligneValeurs(l,now), r=refs[l.id];
       if(r&&r.horloge){
-        r.horloge.civ.textContent=v.civile.slice(0,5);
-        if(r.horloge.sec)r.horloge.sec.textContent=v.civile.slice(5);
+        // v19 — correctif : une seule ligne numérique compacte (« 15:32:12 »,
+        // comme les mini-pastilles), jamais la ligne « min » rognée de la v18.
+        var mc=v.civile.match(/(\d{1,2})\D+(\d{2})\D+(\d{2})/);
+        r.horloge.civ.textContent=mc?pad(+mc[1])+':'+mc[2]+':'+mc[3]:v.civile;
+        if(r.horloge.sec)r.horloge.sec.textContent='';
       }
       if(r&&r.carte){
         r.carte.civ.textContent=v.civile;
@@ -3830,14 +3914,82 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       var elev=elevationSoleil(now,sel.lat,sel.lon);
       var etatExpo=elev>=6?'Plein jour là-bas':(elev>=0?'Soleil bas là-bas':(elev>=-6?'Crépuscule là-bas — le Soleil est sous l’horizon, à moins de 6°':'Nuit là-bas'));
       var couchSel=prochainCoucher(now,sel.lat,sel.lon);
+      // v19 — la dérive de temps du lieu : sidérale locale − solaire moyenne
+      // locale (la même heureSolaireApprox que le panneau), ramenée dans
+      // (−12 h, +12 h]. Recalculée à chaque seconde, comme tout le panneau.
+      var dH=lstLieu(now,sel.lon)/15-heureSolaireApprox(now,sel.lon);
+      while(dH<=-12)dH+=24; while(dH>12)dH-=24;
+      texte('x-derive',fmtDerive(dH));
+      var avJ=(FACTEUR_SIDERAL-1)*86400;
+      texte('x-derive-jour',Math.floor(avJ/60)+' min '+fr(avJ%60,1)+' s');
       texte('x-journuit',etatExpo+' — élévation solaire calculée : '+(elev<0?'−':'+')+fr(Math.abs(elev),1)+'°.'+(couchSel?' Coucher du Soleil calculé : '+fmtHeureZone(couchSel,sel.zone)+' (heure du lieu, dans les prochaines 24 h).':' Aucun coucher du Soleil dans les prochaines 24 h (jour ou nuit polaire, ou période sans transition).'));
     }
+    // v19 — météo du lieu sélectionné : relue si le relevé a 10 minutes ou plus.
+    var cm=meteoLieuCache[selection];
+    if(!cm||(Date.now()-cm.quand)>=600000)majMeteoLieu();
     // Miroir des ancrages — le bord du site
     texte('mir-site-civile',fmtCivil(ZONE_ANCRE).format(now));
     texte('mir-site-siderale',hmsLong(lstLieu(now,LON_ANCRE)));
     if(visiteur.zone)texte('mir-v-civile',fmtCivil(visiteur.zone).format(now));
     if(visiteur.lon!==null&&visiteur.lon!==undefined)texte('mir-v-siderale',hmsLong(lstLieu(now,visiteur.lon)));
     rendreNuit(); rendreExpo();
+  }
+
+  // ----- v19 — La météo du lieu sélectionné (grande lecture) -----
+  // Source unique : Open-Meteo, interrogé aux coordonnées du lieu (les mêmes
+  // que le panneau porte déjà). Relevé sourcé et daté ; cache mémoire de
+  // dix minutes par lieu ; échec dit, jamais de valeur inventée ni d’ancienne
+  // valeur montrée sans sa date. L’ancre garde sa triangulation complète :
+  // l’onglet Météo et la section des sens restent inchangés.
+  var meteoLieuCache={}, meteoLieuEnCours=null;
+  function majMeteoLieu(){
+    var l=lieuParId(selection); if(!l)return;
+    if(!isFinite(l.lat)||!isFinite(l.lon)){
+      texte('x-meteo','Coordonnées insuffisantes pour sa météo.');
+      texte('x-meteo-source','Aucune valeur n’est inventée : ce lieu n’a pas de latitude ni de longitude exploitables dans les données du panneau.');
+      return;
+    }
+    var c=meteoLieuCache[l.id];
+    if(c&&(Date.now()-c.quand)<600000){ecrireMeteoLieu(l,c); return}
+    if(meteoLieuEnCours===l.id)return;
+    meteoLieuEnCours=l.id;
+    texte('x-meteo','Météo du lieu : lecture en cours…');
+    texte('x-meteo-source','');
+    var u='https://api.open-meteo.com/v1/forecast?latitude='+l.lat+'&longitude='+l.lon
+      +'&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code'
+      +'&daily=sunrise,sunset&forecast_days=1&timeformat=unixtime&timezone='+encodeURIComponent(l.zone);
+    fetch(u).then(function(r){if(!r.ok)throw new Error('meteo-lieu'); return r.json()})
+    .then(function(d){
+      meteoLieuEnCours=null;
+      meteoLieuCache[l.id]={quand:Date.now(),d:d};
+      if(selection===l.id)ecrireMeteoLieu(l,meteoLieuCache[l.id]);
+    })
+    .catch(function(){
+      meteoLieuEnCours=null;
+      delete meteoLieuCache[l.id];
+      if(selection===l.id){
+        texte('x-meteo','Météo du lieu non rejointe à l’instant.');
+        texte('x-meteo-source','Open-Meteo n’a pas répondu depuis votre navigateur : aucune valeur n’est affichée plutôt qu’une valeur inventée. Nouvel essai à la prochaine sélection ou dans dix minutes.');
+      }
+    });
+  }
+  function ecrireMeteoLieu(l,c){
+    var cur=c.d.current; if(!cur)return;
+    var lever='—', coucher='—';
+    if(c.d.daily&&c.d.daily.sunrise&&c.d.daily.sunrise[0]!==undefined&&c.d.daily.sunset){
+      lever=fmtHeureZone(c.d.daily.sunrise[0]*1000,l.zone);
+      coucher=fmtHeureZone(c.d.daily.sunset[0]*1000,l.zone);
+    }
+    texte('x-meteo',libelleCode(cur.weather_code)+' — '+fr(cur.temperature_2m,1)+' °C (ressenti '+fr(cur.apparent_temperature,1)+' °C) · vent '+Math.round(cur.wind_speed_10m)+' km/h · humidité '+Math.round(cur.relative_humidity_2m)+' % · Soleil du lieu : lever '+lever+', coucher '+coucher+'.');
+    texte('x-meteo-source','Source unique : Open-Meteo, relevé de '+fmtHeureZone(cur.time*1000,l.zone)+' (heure du lieu). Pour les lieux de comparaison, cette lecture tient à une seule source ; l’ancre Sainte-Martine garde sa triangulation complète — onglet Météo et section des sens.');
+  }
+  // ----- v19 — La dérive de temps : facteur et format -----
+  // Le facteur est celui du panneau (module de triangulation, exposé sur
+  // window) ; la constante en repli est la même valeur, écrite.
+  var FACTEUR_SIDERAL=(typeof window!=='undefined'&&window.TRIANGULATION_TEMPS&&window.TRIANGULATION_TEMPS.FACTEUR)||1.00273790935;
+  function fmtDerive(h){
+    var s=Math.round(Math.abs(h)*3600);
+    return (h<0?'−':'+')+Math.floor(s/3600)+' h '+pad(Math.floor(s%3600/60))+' min '+pad(s%60)+' s';
   }
 
   // ----- v18 — Rendu de l’ombre de nuit, exposition de l’ancre, rotation -----
@@ -4509,6 +4661,68 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     recalcEl.textContent='— pas encore recalculé —'; attente();
     msgEl.textContent='Texte d’origine rétabli. Recalculez : le verdict doit revenir à MATCH.';
   });
+})();
+</script>
+<script>
+// ---------- v19 — Onglet Application : installation (PWA) et travailleur de service ----------
+(function(){
+  var etat=document.getElementById('app-etat');
+  var ligneBtn=document.getElementById('app-bouton-ligne');
+  var btn=document.getElementById('app-installer');
+  var ios=document.getElementById('app-etapes-ios');
+  var and=document.getElementById('app-etapes-android');
+  function installee(){
+    return (window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone===true;
+  }
+  var estIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var inviteDifferee=null;
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    inviteDifferee=e;
+    if(installee())return;
+    if(etat)etat.textContent='Votre navigateur peut installer ce site comme une application :';
+    if(ligneBtn)ligneBtn.hidden=false;
+    if(ios)ios.hidden=true;
+    if(and)and.hidden=true;
+  });
+  if(btn)btn.addEventListener('click',function(){
+    if(!inviteDifferee)return;
+    inviteDifferee.prompt();
+    inviteDifferee.userChoice.then(function(choix){
+      if(choix&&choix.outcome==='accepted'){
+        if(etat)etat.textContent='Installation acceptée — l’icône de SoPHIa paraît sur votre écran d’accueil.';
+        if(ligneBtn)ligneBtn.hidden=true;
+      }else{
+        if(etat)etat.textContent='Installation reportée — le bouton reste disponible ici, et la marche manuelle est ci-dessous.';
+        if(and)and.hidden=false;
+      }
+      inviteDifferee=null;
+    });
+  });
+  window.addEventListener('appinstalled',function(){
+    if(etat)etat.textContent='Vous utilisez la version application. Elle ouvre désormais depuis votre écran d’accueil.';
+    if(ligneBtn)ligneBtn.hidden=true;
+    if(ios)ios.hidden=true;
+    if(and)and.hidden=true;
+  });
+  if(installee()){
+    if(etat)etat.textContent='Vous utilisez déjà la version application.';
+    if(ligneBtn)ligneBtn.hidden=true;
+  }else if(estIOS){
+    if(etat)etat.textContent='Sur cet appareil, l’installation se fait par le geste Partager de Safari :';
+    if(ios)ios.hidden=false;
+  }else{
+    if(etat)etat.textContent='Si votre navigateur propose l’installation, son bouton paraît ici même ; sinon, la marche manuelle :';
+    if(and)and.hidden=false;
+  }
+  // Enregistrement du travailleur de service : contexte sécurisé seulement,
+  // échec silencieux et sans conséquence si le navigateur refuse — le site
+  // reste entier, simplement sans le hors ligne.
+  if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'||location.hostname==='127.0.0.1')){
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('sw.js').catch(function(){});
+    });
+  }
 })();
 </script>
 </body>
