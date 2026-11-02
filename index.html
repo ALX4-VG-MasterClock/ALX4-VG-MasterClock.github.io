@@ -492,6 +492,23 @@ button.at-bloc{cursor:pointer}
 }
 @media (prefers-reduced-motion: reduce){.planete-orbite,.ph-contre{animation:none}}
 
+/* ===== v17 — Passe de fidélité : pastilles cadrans espacées sur l’orbite, trait de liaison, repli JPEG de la Terre ===== */
+.planete-horloge{width:76px;margin:-38px 0 0 -38px;transform:rotate(var(--a)) translateY(calc(var(--rayon-planete)*-1*var(--piste,1))) rotate(calc(var(--a)*-1))}
+.ph-contre{padding:.32rem .12rem .35rem}
+.ph-interne{display:block;transition:transform .18s ease}
+.planete-horloge.choisi .ph-contre{background:var(--or);border-color:var(--or);box-shadow:0 0 0 1px var(--or),0 8px 22px rgba(212,175,55,.35)}
+.planete-horloge.choisi .ph-interne{transform:scale(1.08)}
+.planete-horloge.choisi .ph-nom,.planete-horloge.choisi .ph-civile{color:#08130e}
+.ph-cadran{display:block;width:56px;height:56px;margin:0 auto}
+.ph-nom{font-size:.72rem;margin-top:.18rem}
+.ph-civile{font-size:.76rem}
+.planete-horloge.choisi .ph-cadran .face-sat{fill:#d4af37;stroke:#08130e}
+.planete-horloge.choisi .ph-cadran .aig-h,.planete-horloge.choisi .ph-cadran .aig-m{stroke:#08130e}
+.planete-horloge.choisi .ph-cadran .pivot{fill:#08130e}
+.ph-lien{position:absolute;height:2px;background:linear-gradient(90deg,rgba(212,175,55,.2),rgba(212,175,55,.95));border-radius:2px;z-index:2;pointer-events:none}
+.planete-globe picture{display:block;width:100%;height:100%}
+.planete-etat{margin-top:.7rem}
+
 /* ===== v16 (suite) — miroir des ancrages, onglet Météo, recherche reliée ===== */
 .miroir-grille{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
@@ -621,14 +638,14 @@ button.at-bloc{cursor:pointer}
     <div class="direct-tuile">
       <span class="pastille-direct">API GitHub</span>
       <p class="valeur" id="gh-valeur">3 publications du site</p>
-      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v16 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
-      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v16 ; lecture en direct en cours…</p>
+      <p id="gh-detail">Dernière publication : <b>2 novembre 2026</b> (heure de l'Est) — « Publication du site — v17 ». Dépôt public : <a href="https://github.com/ALX4-VG-MasterClock/ALX4-VG-MasterClock.github.io" target="_blank" rel="noopener">ALX4-VG-MasterClock.github.io</a> — chaque version du site y est un commit daté, consultable par quiconque.</p>
+      <p class="petite" id="gh-etat">Relevé statique vérifié au déploiement de la v7, conservé en repli depuis la v7, encore en v17 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">Wayback Machine</span>
       <p class="valeur" id="wb-valeur">Archivé le 1<sup>er</sup> novembre 2026</p>
       <p id="wb-detail">L'Internet Archive conserve une capture publique de ce site, prise à <b>12 h 53 (heure de Toronto)</b> le jour de sa mise en ligne : <a id="wb-lien" href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Un tiers indépendant, une date, une copie — l'antériorité ne dépend pas de ce seul site.</p>
-      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v16 ; lecture en direct en cours…</p>
+      <p class="petite" id="wb-etat">Relevé statique vérifié au déploiement de la v7 (timemap de la Wayback Machine), conservé en repli depuis la v7, encore en v17 ; lecture en direct en cours…</p>
     </div>
     <div class="direct-tuile">
       <span class="pastille-direct">En direct aussi</span>
@@ -641,10 +658,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v16 (2 novembre 2026 — le Temps planétaire : la Terre au centre, les horloges de comparaison, l’ancrage ressenti et démontré, l’onglet Météo)</p>
-    <span class="sceau-long" id="sceau-version-affiche">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v17 (2 novembre 2026 — la passe de fidélité : des pastilles cadrans espacées sur l’orbite, le repli JPEG de la Terre)</p>
+    <span class="sceau-long" id="sceau-version-affiche">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -716,6 +733,7 @@ button.at-bloc{cursor:pointer}
         <li>L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux.</li>
         <li>Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit.</li>
         <li>La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit.</li>
+        <li>Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision.</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -774,26 +792,26 @@ button.at-bloc{cursor:pointer}
     <div class="planete-anneau2"></div>
     <div class="planete-orbite" id="planete-orbite">
 
-      <div class="temps-sat" style="--a:0deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:60deg"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sa-ticks"></g><g id="sa-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sa-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
         <span class="sat-nom">Avancée</span><span class="sat-val mono" id="sat-av-val">—</span>
       </div></div>
-      <div class="temps-sat" style="--a:240deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:300deg"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="sn-ticks"></g><g id="sn-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="sn-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
         <span class="sat-nom">Normale</span><span class="sat-val mono" id="sat-no-val">—</span>
       </div></div>
-      <div class="temps-sat" style="--a:120deg"><div class="sat-contre">
+      <div class="temps-sat" style="--a:180deg"><div class="sat-contre">
         <svg class="temps-svg-sat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" class="face-sat"/><g id="ss-ticks"></g><g id="ss-h"><line x1="36" y1="36" x2="36" y2="23" class="aig-h"/></g><g id="ss-m"><line x1="36" y1="36" x2="36" y2="16" class="aig-m"/></g><circle cx="36" cy="36" r="3" class="pivot"/></svg>
         <span class="sat-nom">Sidérale</span><span class="sat-val mono" id="sat-si-val">—</span>
       </div></div>
       <div id="planete-horloges"></div>
     </div>
     <div class="planete-globe">
-      <img src="assets/terre-atlantique.webp" alt="La Terre vue de l’espace, centrée sur l’océan Atlantique : les Amériques à gauche, l’Afrique et l’Europe à droite">
+      <picture><source srcset="assets/terre-atlantique.webp" type="image/webp"><img src="assets/terre-atlantique.jpg" alt="La Terre vue de l’espace, centrée sur l’océan Atlantique : les Amériques à gauche, l’Afrique et l’Europe à droite" width="1000" height="1000" loading="eager"></picture>
       <div class="planete-reperes" id="planete-reperes"></div>
     </div>
   </div>
-  <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Sur l’orbite tournent les trois horloges de la triangulation de l’ancre ; les horloges de comparaison que vous ajoutez s’y placent à l’angle de leur longitude. Sur mobile, l’orbite se retire et les horloges deviennent des cartes, ci-dessous — plus aucun chevauchement.</p>
+  <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Sur l’orbite tournent les trois horloges de la triangulation de l’ancre ; les horloges de comparaison que vous ajoutez s’y placent à l’angle de leur longitude — et quand deux angles sont trop proches, une pastille s’écarte sur un autre rayon ou sur un créneau voisin, reliée par un fin trait doré à son point de longitude vraie, plutôt que de masquer sa voisine. Sur mobile, l’orbite se retire et les horloges deviennent des cartes, ci-dessous — plus aucun chevauchement.</p>
   <div class="maitresse-carte">
     <div class="maitresse-cadran">
 <svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
@@ -807,9 +825,10 @@ button.at-bloc{cursor:pointer}
   </div>
   <div class="carte" id="comparaison">
     <p class="etiquette">Ajouter une horloge de comparaison</p>
-    <p>Choisissez un lieu : son horloge rejoint l’orbite, à l’angle de sa longitude, et son repère paraît sur le globe. Chaque horloge montre, en direct et reliés à ce lieu : son heure civile, son heure sidérale locale — le même polynôme GMST que l’ancre, ramené à sa longitude —, son écart civil avec Sainte-Martine, et son jour ou sa nuit approchés par son heure solaire. Touchez une horloge, ou une carte, pour ouvrir sa grande lecture et l’histoire de son heure.</p>
+    <p>Choisissez un lieu : son horloge rejoint l’orbite, à l’angle de sa longitude, et son repère paraît sur le globe. Chaque lieu montre, en direct et reliés à lui : son heure civile sur sa pastille, et — dans sa carte et dans la grande lecture — son heure sidérale locale, le même polynôme GMST que l’ancre ramené à sa longitude, son écart civil avec Sainte-Martine, et son jour ou sa nuit approchés par son heure solaire. Touchez une horloge, ou une carte, pour ouvrir sa grande lecture et l’histoire de son heure.</p>
     <div class="planete-ajout" id="planete-ajout"></div>
     <div class="planete-chips" id="planete-chips"></div>
+    <p class="petite planete-etat" id="planete-etat"></p>
   </div>
   <div class="carte" id="lecture-carte">
     <p class="etiquette">Grande lecture — le lieu sélectionné</p>
@@ -2952,7 +2971,8 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       return (f.charAt(0)||c).toLowerCase();
     });
   }
-  if(typeof window!=='undefined')window.TEMPS_V16={jj:jj,gmst:gmstPoly,lstLieu:lstLieu,projection:projection,decalageHeures:decalageHeures,histoireHeure:histoireHeure,ageLune:ageLune,illumLune:illumLune,soleil:soleil,heureSolaireApprox:heureSolaireApprox,haversine:haversine,pliage:pliage,rechercherUnites:rechercherUnites,LAT_ANCRE:LAT_ANCRE,LON_ANCRE:LON_ANCRE};
+  var PISTES_ORBITE=[1,0.78,1.18]; // v17 — pistes de l’orbite : rayon principal, intérieur, extérieur
+  if(typeof window!=='undefined')window.TEMPS_V16={jj:jj,gmst:gmstPoly,lstLieu:lstLieu,projection:projection,decalageHeures:decalageHeures,histoireHeure:histoireHeure,ageLune:ageLune,illumLune:illumLune,soleil:soleil,heureSolaireApprox:heureSolaireApprox,haversine:haversine,pliage:pliage,rechercherUnites:rechercherUnites,placerOrbite:placerOrbite,LAT_ANCRE:LAT_ANCRE,LON_ANCRE:LON_ANCRE};
   if(typeof document==='undefined')return;
   // ----- Outils d’affichage -----
   function $(id){return document.getElementById(id)}
@@ -3051,13 +3071,156 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     var b=document.createElement('button');
     b.className='ph-contre'; b.setAttribute('data-act','choix'); b.setAttribute('data-id',l.id);
     b.setAttribute('aria-label','Grande lecture : '+l.nom);
+    var interne=document.createElement('span'); interne.className='ph-interne';
+    var NS='http://www.w3.org/2000/svg';
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('class','ph-cadran temps-svg-sat'); svg.setAttribute('viewBox','0 0 72 72'); svg.setAttribute('aria-hidden','true');
+    var face=document.createElementNS(NS,'circle');
+    face.setAttribute('cx','36'); face.setAttribute('cy','36'); face.setAttribute('r','33'); face.setAttribute('class','face-sat');
+    svg.appendChild(face);
+    function aiguille(classe,y2){
+      var g=document.createElementNS(NS,'g');
+      var li=document.createElementNS(NS,'line');
+      li.setAttribute('x1','36'); li.setAttribute('y1','36'); li.setAttribute('x2','36'); li.setAttribute('y2',y2); li.setAttribute('class',classe);
+      g.appendChild(li); svg.appendChild(g); return g;
+    }
+    var gh=aiguille('aig-h','23'), gm=aiguille('aig-m','16');
+    var piv=document.createElementNS(NS,'circle');
+    piv.setAttribute('cx','36'); piv.setAttribute('cy','36'); piv.setAttribute('r','3'); piv.setAttribute('class','pivot');
+    svg.appendChild(piv);
     var nom=document.createElement('span'); nom.className='ph-nom'; nom.textContent=l.nom;
     var civ=document.createElement('span'); civ.className='ph-civile mono';
-    var sid=document.createElement('span'); sid.className='ph-ligne mono';
-    var ec=document.createElement('span'); ec.className='ph-ligne';
-    b.appendChild(nom); b.appendChild(civ); b.appendChild(sid); b.appendChild(ec);
-    wrap.appendChild(b); orb.appendChild(wrap);
-    return {wrap:wrap,civ:civ,sid:sid,ec:ec};
+    interne.appendChild(svg); interne.appendChild(nom); interne.appendChild(civ);
+    b.appendChild(interne); wrap.appendChild(b); orb.appendChild(wrap);
+    return {wrap:wrap,civ:civ,gh:gh,gm:gm};
+  }
+  // ----- v17 — Espacement de l’orbite : des pastilles cadrans qui ne se touchent plus -----
+  // Fonction pure (exposée pour vérification). Chaque élément reçoit une piste
+  // (rayon principal, intérieur 0,78, extérieur 1,18) et un angle effectif ; la
+  // distance entre centres respecte la somme des demi-largeurs + 6 px de jeu.
+  // Les satellites de la triangulation sont fixes sur la piste principale ; les
+  // lieux essaient leur angle vrai sur chaque piste, puis un créneau voisin
+  // décalé — le trait de liaison vers le point de longitude vraie dit l’écart.
+  function placerOrbite(elems,rayonRef){
+    function norm(a){return ((a%360)+360)%360}
+    function pt(facteur,angDeg){
+      var r=facteur*rayonRef, rad=angDeg*Math.PI/180;
+      return {x:r*Math.sin(rad),y:-r*Math.cos(rad)};
+    }
+    function dist(p,q){return Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y))}
+    function chercher(e,obstacles){
+      function libre(facteur,ang){
+        var p=pt(facteur,ang), i;
+        for(i=0;i<obstacles.length;i++)if(dist(p,obstacles[i].p)<e.demi+obstacles[i].demi+6)return false;
+        return true;
+      }
+      var av=norm(e.angle), k, j, d;
+      for(k=0;k<PISTES_ORBITE.length;k++)
+        if(libre(PISTES_ORBITE[k],av))return {piste:PISTES_ORBITE[k],angleEff:av,trait:PISTES_ORBITE[k]!==1};
+      for(d=2;d<=178;d+=2){
+        var candidats=[av+d,av-d];
+        for(j=0;j<candidats.length;j++)
+          for(k=0;k<PISTES_ORBITE.length;k++)
+            if(libre(PISTES_ORBITE[k],candidats[j]))return {piste:PISTES_ORBITE[k],angleEff:norm(candidats[j]),trait:true};
+      }
+      return null;
+    }
+    function repli(e,obstacles){
+      var av=norm(e.angle), mieux=-1, choix=null, k, j;
+      for(k=0;k<PISTES_ORBITE.length;k++){
+        var pR=pt(PISTES_ORBITE[k],av), dMin=Infinity;
+        for(j=0;j<obstacles.length;j++){var dd=dist(pR,obstacles[j].p); if(dd<dMin)dMin=dd;}
+        if(dMin>mieux){mieux=dMin; choix={piste:PISTES_ORBITE[k],angleEff:av,trait:true};}
+      }
+      return choix;
+    }
+    var tri=elems.slice().sort(function(a,b){return norm(a.angle)-norm(b.angle)});
+    var poses={};
+    function obstaclesSauf(id){
+      var obs=[];
+      for(var id2 in poses)if(id2!==id)obs.push({p:poses[id2].p,demi:poses[id2].demi});
+      return obs;
+    }
+    function poser(e,pl){
+      poses[e.id]={piste:pl.piste,angleEff:pl.angleEff,trait:pl.trait,p:pt(pl.piste,pl.angleEff),demi:e.demi,fixe:!!e.fixe};
+    }
+    tri.forEach(function(e){ if(e.fixe)poser(e,{piste:1,angleEff:norm(e.angle),trait:false}); });
+    tri.forEach(function(e){
+      if(e.fixe)return;
+      poser(e,chercher(e,obstaclesSauf(e.id))||repli(e,obstaclesSauf(e.id)));
+    });
+    // Passe de réparation : tant qu’une paire se touche, re-placer l’un des deux
+    // lieux dans un créneau vérifié libre contre tous les autres (60 essais max).
+    // Chaque réparation réussie supprime une collision sans en créer : la
+    // recherche de créneau contrôle tous les obstacles.
+    function collision(){
+      var ids=Object.keys(poses), i, j;
+      for(i=0;i<ids.length;i++)for(j=i+1;j<ids.length;j++){
+        var A=poses[ids[i]], B=poses[ids[j]];
+        if(dist(A.p,B.p)<A.demi+B.demi+6)return [ids[i],ids[j]];
+      }
+      return null;
+    }
+    for(var essai=0;essai<60;essai++){
+      var col=collision(); if(!col)break;
+      var bouge=false;
+      for(var m=0;m<2&&!bouge;m++){
+        var eB=null;
+        tri.forEach(function(e){if(e.id===col[m])eB=e});
+        if(!eB||eB.fixe)continue;
+        var ancien=poses[col[m]];
+        delete poses[col[m]];
+        var pl2=chercher(eB,obstaclesSauf(col[m]));
+        if(pl2){poser(eB,pl2); bouge=true;}
+        else poses[col[m]]=ancien;
+      }
+      if(!bouge)break;
+    }
+    var sortie={};
+    for(var id3 in poses)sortie[id3]={piste:poses[id3].piste,angleEff:poses[id3].angleEff,trait:poses[id3].trait};
+    return sortie;
+  }
+  function espacerOrbite(){
+    var orb=$('planete-orbite'); if(!orb)return;
+    var elems=[], sats=orb.querySelectorAll('.temps-sat'), i;
+    for(i=0;i<sats.length;i++){
+      var a=parseFloat((sats[i].style.getPropertyValue('--a')||'0').replace('deg',''));
+      elems.push({id:'__sat'+i,angle:a,demi:53,fixe:true});
+    }
+    LIEUX.forEach(function(l){
+      var r=refs[l.id];
+      if(r&&r.horloge&&r.horloge.wrap)elems.push({id:l.id,angle:l.lon,demi:38,fixe:false});
+    });
+    var places=placerOrbite(elems,206);
+    LIEUX.forEach(function(l){
+      var r=refs[l.id], pl=places[l.id];
+      if(!r||!r.horloge||!r.horloge.wrap||!pl)return;
+      r.horloge.wrap.style.setProperty('--a',pl.angleEff+'deg');
+      r.horloge.wrap.style.setProperty('--piste',pl.piste);
+      r.horloge.wrap.classList.toggle('decalee',!!pl.trait);
+    });
+    rendreTraits(places);
+  }
+  function rendreTraits(places){
+    var orb=$('planete-orbite'); if(!orb)return;
+    var anciens=orb.querySelectorAll('.ph-lien'), i;
+    for(i=0;i<anciens.length;i++)anciens[i].remove();
+    var RV=34.3333; // rayon principal en % de la largeur de la scène : min(206px,33vw) / min(600px,96vw)
+    function pt(facteur,angDeg){
+      var r=RV*facteur, rad=angDeg*Math.PI/180;
+      return {x:50+r*Math.sin(rad),y:50-r*Math.cos(rad)};
+    }
+    LIEUX.forEach(function(l){
+      var pl=places[l.id];
+      if(!pl||!pl.trait)return;
+      var v=pt(1,((l.lon%360)+360)%360), q=pt(pl.piste,pl.angleEff);
+      var dx=q.x-v.x, dy=q.y-v.y, L=Math.sqrt(dx*dx+dy*dy);
+      var t=document.createElement('div');
+      t.className='ph-lien'; t.setAttribute('aria-hidden','true');
+      t.style.left=((v.x+q.x)/2-L/2)+'%'; t.style.top=((v.y+q.y)/2)+'%'; t.style.width=L+'%';
+      t.style.transform='rotate('+(Math.atan2(dy,dx)*180/Math.PI)+'deg)';
+      orb.appendChild(t);
+    });
   }
   function creerCarte(l){
     var zone=$('planete-cartes'); if(!zone)return null;
@@ -3096,12 +3259,17 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
         zoneChips.appendChild(chip);
       });
     }
+    var etat=$('planete-etat');
+    if(etat){
+      var noms=LIEUX.filter(function(l){return ajoutes[l.id]}).map(function(l){return l.nom});
+      etat.textContent='Sur l’orbite en ce moment : l’ancre Sainte-Martine, les 3 satellites de la triangulation (avancée, normale, sidérale)'+(noms.length?' et '+noms.length+' horloge'+(noms.length>1?'s':'')+' de comparaison : '+noms.join(', ')+'.':' — aucune horloge de comparaison pour l’instant ; ajoutez-en une ci-dessus.');
+    }
   }
   function ajouter(id){
     var l=lieuParId(id); if(!l||l.ancre||ajoutes[id])return;
     ajoutes[id]=true;
     refs[id]={horloge:creerHorloge(l),carte:creerCarte(l),rep:creerRepere(l)};
-    rendreControles(); majPlanete();
+    rendreControles(); espacerOrbite(); majPlanete();
   }
   function retirer(id){
     var l=lieuParId(id); if(!l||l.ancre||!ajoutes[id])return;
@@ -3114,7 +3282,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       delete refs[id];
     }
     if(selection===id)selectionner('sainte-martine');
-    rendreControles(); majPlanete();
+    rendreControles(); espacerOrbite(); majPlanete();
   }
   function selectionner(id){
     var l=lieuParId(id); if(!l)return;
@@ -3157,8 +3325,15 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       var v=ligneValeurs(l,now), r=refs[l.id];
       if(r&&r.horloge){
         r.horloge.civ.textContent=v.civile;
-        r.horloge.sid.textContent='sid. '+v.siderale;
-        r.horloge.ec.textContent=fmtEcart(v.ecart)+' · '+(v.jour?'☀ jour':'☾ nuit')+' approx.';
+        if(r.horloge.gh&&r.horloge.gm){
+          var pc=fmtCivil(l.zone).formatToParts(now), hh=0, mi=0, pi2;
+          for(pi2=0;pi2<pc.length;pi2++){
+            if(pc[pi2].type==='hour')hh=parseInt(pc[pi2].value,10);
+            if(pc[pi2].type==='minute')mi=parseInt(pc[pi2].value,10);
+          }
+          r.horloge.gh.setAttribute('transform','rotate('+(((hh%12)+mi/60)*30)+' 36 36)');
+          r.horloge.gm.setAttribute('transform','rotate('+(mi*6)+' 36 36)');
+        }
       }
       if(r&&r.carte){
         r.carte.civ.textContent=v.civile;
