@@ -4,7 +4,7 @@
       "date": "2026-11-02",
       "points": [
         {
-          "texte": "L'onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
+          "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
         },
         {
           "texte": "Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran."
@@ -53,6 +53,9 @@
         },
         {
           "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
+        },
+        {
+          "texte": "Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision."
         }
       ],
       "sceau_du_jour": "à la clôture du jour (23 h 59)",
