@@ -1,0 +1,27 @@
+{
+  "configuration": "Site-mémoire de SoPHIa — v23 « La somme »",
+  "regle_maitresse": "Chaque apprentissage devient une entrée du coffre synaptique : calculée en SHA-256, scellée, chaînée par-dessus les sommes précédentes, avec un petit résumé. Rien ne s'apprend sans trace recalculable.",
+  "sources": {
+    "meteo": [
+      "MétéoMédia (source désignée par Alex)",
+      "Environnement et Changement climatique Canada",
+      "modèles publics HRDPS / ECMWF"
+    ],
+    "astronomie": "moteur maison — formules publiques (Meeus, basse précision ; NOAA généralisé), aucune donnée de tiers copiée",
+    "heure": "triangulation civile / avancée / normale / sidérale locale de Sainte-Martine, recalculée dans le navigateur"
+  },
+  "seuils": {
+    "bascule_source_meteo": "la source principale devient celle dont l'erreur moyenne accumulée à l'ancre, sur 30 jours, est la plus faible ; un écart durable supérieur à 0,5 °C déclenche la bascule, journalisée comme entrée du coffre",
+    "ecart_ephemeride": "tout écart publié est daté et comparé à une éphéméride de référence ; la direction est la précision mesurée, jamais déclarée"
+  },
+  "cadences": {
+    "historique_quotidien": "clôture chaque nuit à 00 h 01 ; un jour manqué est un trou visible, jamais comblé avec une fausse date",
+    "ancrage_coffre": "le digest maître du coffre est ancré dehors (OpenTimestamps) à intervalle régulier"
+  },
+  "bornes": [
+    "jamais d'auto-modification du code : les versions sont construites, scellées et publiées une à une",
+    "tout ajustement sans entrée au coffre est un bug",
+    "les pièces privées ne circulent que chiffrées (forme A) ; les empreintes et résumés restent publics",
+    "un indicateur sans source éprouvée est étiqueté comme règle écrite ou dit « non branché »"
+  ]
+}
