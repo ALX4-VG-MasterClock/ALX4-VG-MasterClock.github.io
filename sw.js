@@ -1,14 +1,20 @@
-/* Audit Unisson — travailleur de service (v19).
+/* Audit Unisson — travailleur de service (v20).
    Stratégies, dans l'ordre :
-   1) La page (HTML) et le journal des mises à jour (JSON) : RÉSEAU D'ABORD.
-      La fraîcheur du fichier scellé prime sur le hors ligne — jamais une
-      vieille page présentée comme la version courante. Le cache ne sert
-      qu'en repli, quand le réseau échoue.
+   1) La page (HTML), le journal des mises à jour (JSON) et TOUS les fichiers
+      de données JSON sous assets/ (coffre, coffre privé, état de la chaîne,
+      historique, Merkle) : RÉSEAU D'ABORD. La fraîcheur prime sur le hors
+      ligne — jamais un état périmé présenté comme l'état courant.
    2) Images et actifs statiques : cache d'abord, réseau en remplissage.
    3) AUCUNE interception des appels externes (autres origines : météo,
       géolocalisation, relais de l'Instance) ni des requêtes non-GET.
-   Aucune donnée collectée, aucun suivi : ce fichier ne fait que servir. */
-var CACHE = 'sophia-site-v19';
+   Aucune donnée collectée, aucun suivi : ce fichier ne fait que servir.
+   Correctif v20 (3 nov. 2026) : la v19 mémorisait la première réponse reçue
+   pour assets/coffre-prive.json — y compris un 404 d'avant le premier
+   dépôt — et la reservait indéfiniment : la zone Mémoire verrouillée
+   restait « en attente » sur les appareils déjà visiteurs alors que le
+   paquet était en ligne. Désormais : réseau d'abord pour les données, et
+   une réponse non-OK n'entre jamais au cache. */
+var CACHE = 'sophia-site-v20';
 var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png'];
@@ -38,16 +44,22 @@ self.addEventListener('fetch', function (e) {
   if (url.origin !== self.location.origin) return; // externe : aucune interception
   var estDocument = req.mode === 'navigate' || url.pathname.endsWith('/') || url.pathname.endsWith('index.html');
   var estJournal = url.pathname.endsWith('assets/journal-mises-a-jour.json');
-  if (estDocument || estJournal) {
-    // Réseau d'abord ; le cache n'est qu'un repli hors ligne.
+  var estDonnees = url.pathname.indexOf('/assets/') !== -1 && url.pathname.endsWith('.json');
+  if (estDocument || estJournal || estDonnees) {
+    // Réseau d'abord ; le cache n'est qu'un repli hors ligne, et seulement
+    // pour une réponse OK — une absence (404) ne se mémorise jamais.
     e.respondWith(
       fetch(req).then(function (res) {
-        var copie = res.clone();
-        caches.open(CACHE).then(function (c) { c.put(req, copie); }).catch(function () {});
+        if (res && res.ok) {
+          var copie = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(req, copie); }).catch(function () {});
+        }
         return res;
       }).catch(function () {
         return caches.match(req, { ignoreSearch: true }).then(function (m) {
-          return m || caches.match('index.html');
+          if (m) return m;
+          if (estDonnees) return new Response('', { status: 504, statusText: 'hors ligne' });
+          return caches.match('index.html');
         });
       })
     );
@@ -58,8 +70,10 @@ self.addEventListener('fetch', function (e) {
     caches.match(req).then(function (m) {
       if (m) return m;
       return fetch(req).then(function (res) {
-        var copie = res.clone();
-        caches.open(CACHE).then(function (c) { c.put(req, copie); }).catch(function () {});
+        if (res && res.ok) {
+          var copie = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(req, copie); }).catch(function () {});
+        }
         return res;
       });
     })
