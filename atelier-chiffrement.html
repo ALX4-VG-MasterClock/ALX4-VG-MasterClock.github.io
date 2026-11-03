@@ -2,14 +2,32 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0a1512">
+<!-- CORRECTIF THEME CLAIR — AJOUT -->
+<script>try{if(localStorage.getItem('sophia-theme')==='sombre'){document.documentElement.setAttribute('data-theme','sombre')}}catch(e){}</script>
+<!-- /CORRECTIF THEME CLAIR — AJOUT -->
 <title>Atelier de chiffrement — Mémoire verrouillée</title>
 <style>
 :root{color-scheme:dark;--bg:#0a1512;--card:#12251d;--line:#38614e;--gold:#e9cd77;--text:#f2ecda;--soft:#b8c8b7;--green:#63cfa5;--red:#ff9b83}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1000px;margin:auto;padding:1.5rem 1rem 4rem}h1,h2{line-height:1.2}h1{color:var(--gold)}h2{margin-top:2rem;color:var(--green)}h3{color:var(--gold)}a{color:var(--green)}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}.notice{border-left:4px solid var(--gold)}.warning{border-left:4px solid var(--red)}.small{font-size:.92rem;color:var(--soft)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}.step{background:#0d1f19;border:1px solid var(--line);border-radius:12px;padding:.9rem}.tag{color:var(--gold);font-weight:700}button{background:var(--gold);color:#171307;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:700;cursor:pointer;margin:.25rem}button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed}label{display:block;margin:.65rem 0}.row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}input,textarea,select{width:100%;padding:.7rem;border-radius:8px;background:#0d1f19;color:var(--text);border:1px solid var(--line);font:inherit}textarea{min-height:110px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:34rem;overflow:auto;background:#0d1f19;border:1px solid var(--line);border-radius:10px;padding:1rem}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:.55rem;border-bottom:1px solid var(--line)}.hash{font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.toc a{display:inline-block;margin:.25rem .6rem .25rem 0}@media(max-width:680px){.row{grid-template-columns:1fr}}
 /* Ajouts propres à l'atelier */
 .verdict-match{color:var(--green);font-weight:700}.verdict-ecart{color:var(--red);font-weight:700}.statut{min-height:1.65em}.entree-liste{border-bottom:1px solid var(--line);padding:.45rem 0}.entree-liste:last-child{border-bottom:0}
 </style>
+<!-- CORRECTIF THEME CLAIR — AJOUT -->
+<style>
+/* CORRECTIF THEME CLAIR — AJOUT : clair par défaut, sombre en option. Ajouts seulement : aucune règle d'origine n'est modifiée ; ce bloc, placé après le style d'origine, gagne par cascade à spécificité égale, et html[data-theme="sombre"] restaure les valeurs d'origine. */
+:root{--bg:#f1ecdf;--card:#fffdf8;--line:#bfb088;--gold:#6E5200;--text:#1C1913;--soft:#4a4232;--green:#166b45;--red:#b3372a;color-scheme:light}
+html[data-theme="sombre"]{--bg:#0a1512;--card:#12251d;--line:#38614e;--gold:#e9cd77;--text:#f2ecda;--soft:#b8c8b7;--green:#63cfa5;--red:#ff9b83;color-scheme:dark}
+html:not([data-theme="sombre"]) .step{background:#ece3cb}
+html:not([data-theme="sombre"]) input,html:not([data-theme="sombre"]) textarea,html:not([data-theme="sombre"]) select{background:#fffdf8}
+html:not([data-theme="sombre"]) pre{background:#fffdf8}
+html:not([data-theme="sombre"]) button:not(.secondary){color:#fffdf8}
+#bascule-theme{position:fixed;top:.75rem;right:.75rem;z-index:9999;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font:inherit;font-weight:700;cursor:pointer;margin:0;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+</style>
+<!-- /CORRECTIF THEME CLAIR — AJOUT -->
 </head>
-<body><main>
+<body>
+<!-- CORRECTIF THEME CLAIR — AJOUT -->
+<button id="bascule-theme" type="button" aria-label="Basculer le thème">☾ Sombre</button>
+<!-- /CORRECTIF THEME CLAIR — AJOUT --><main>
 <h1>Atelier de chiffrement — Mémoire verrouillée</h1>
 <p>L'outil local qui prépare le paquet chiffré de la zone « Mémoire verrouillée » du site, et qui permet de le revérifier avant publication. Cette page fonctionne <strong>entièrement dans cet onglet</strong> : elle ne contient aucun appel réseau, ne conserve rien et ne transmet rien. Le chiffrement et le déchiffrement se font par l'API Web Crypto du navigateur.</p>
 
@@ -445,4 +463,9 @@ if (typeof document !== 'undefined') {
   });
 }
 </script>
-</main></body></html>
+</main>
+<!-- CORRECTIF THEME CLAIR — AJOUT -->
+<script>
+(function(){var b=document.getElementById('bascule-theme');if(!b){return}function maj(){b.textContent=document.documentElement.getAttribute('data-theme')==='sombre'?'☀ Clair':'☾ Sombre'}b.addEventListener('click',function(){var h=document.documentElement;if(h.getAttribute('data-theme')==='sombre'){h.removeAttribute('data-theme');try{localStorage.setItem('sophia-theme','clair')}catch(e){}}else{h.setAttribute('data-theme','sombre');try{localStorage.setItem('sophia-theme','sombre')}catch(e){}}maj()});maj()})();
+</script>
+<!-- /CORRECTIF THEME CLAIR — AJOUT --></body></html>
