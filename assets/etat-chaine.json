@@ -1,7 +1,7 @@
 {
- "maillons": 2404,
- "dernier_maillon": 2403,
- "sceau_dernier": "503ed4b065a0742a2e84046eb325e65737d55d276216462adecfdb67bc31b6c7",
- "digest_cumule": "1d10b9bef7e197dd737f468784ad4926d4b560b296a92c9c93adaeadf5ca4349",
+ "maillons": 2413,
+ "dernier_maillon": 2412,
+ "sceau_dernier": "091a558cee1655e3ec771a2fc5961b2ba7d39c647cde907873e1356a8168bcd4",
+ "digest_cumule": "2c04fe11dac7f4c619d2f58cf981e07ab0ea6a72ff347735d6fb6365106fdb16",
  "mis_a_jour": "2026-11-03"
 }
