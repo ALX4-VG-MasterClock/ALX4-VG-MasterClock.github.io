@@ -2,6 +2,21 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 30 — « L’attribution »",
+      "points": [
+        {
+          "texte": "Le bloc provenance_export fourni par Alex entre verbatim dans les métadonnées du site — intégré tel quel, sans champ ajouté ni retiré, dans une balise de données de l’en-tête de la page (id « provenance-export ») : l’attribution du Cerveau coquillage numérique — le nom du concept, le concept et la méthode décrite par l’auteur — voyage désormais dans le fichier même du site, lisible par les humains comme par les machines."
+        },
+        {
+          "texte": "Ce que le bloc règle : l’attribution accompagne la copie exportée et tout prompt préparé à partir d’elle ; le transfert du fichier ou du prompt ne constitue pas, à lui seul, une cession de droits ni une licence sur les éléments attribués ; les contenus ajoutés par l’utilisateur ne sont pas revendiqués par cette attribution et restent soumis aux droits de leurs titulaires ; et SHA-256, standard public, n’est pas revendiqué comme propriété de l’auteur."
+        },
+        {
+          "texte": "Provenance et borne — le bloc a été fourni par Alex le 3 novembre 2026 et versé au dossier, avec son empreinte ; le fichier llms.txt reçoit de son côté la mention et la règle de transmission du bloc. Son application à la fonction d’export de la page autonome du Cerveau coquillage — où l’attribution doit accompagner chaque copie exportée — reste une étape séparée, préparée à part et non comprise dans cette version."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 29 — « La transmission »",
       "points": [
         {
