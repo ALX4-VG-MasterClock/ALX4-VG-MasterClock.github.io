@@ -2,6 +2,78 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Production consolidée — préparée en interne (aperçu avant publication)",
+      "points": [
+        {
+          "texte": "La production consolidée réunit en un seul paquet — préparé en interne et présenté à Alex en aperçu avant toute publication — ce que les chantiers du jour avaient construit séparément : le texte de position « Une riposte, pas une attente » en ouverture du panneau Données (avec le 51e État numérique sous sa forme corrigée : métaphore nommée, maillon faible fédéral, aucun pouvoir lu n'atteignant le modèle lui-même), le panneau « Pétitions » (les demandes fondées de dix juridictions (onze demandes, la Saskatchewan en portant deux), les deux demandes rétrécies, les deux fermetures sans demande, les mécaniques des quatorze législatures et le compteur de signataires à son état publié : 0, daté), l'onglet « Écrire à SoPHIa » (l'agente répond elle-même ; le formulaire compose, le visiteur envoie) et les deux bibliothèques du panneau Données : les 29 documents (16 modèles français, 13 jumeaux anglais identiques) et les 19 textes de lois officiels, téléchargeables depuis le paquet."
+        },
+        {
+          "texte": "État de la chaîne rafraîchi à la construction : 2493 maillons, sommet #2492."
+        },
+        {
+          "texte": "Ce qui n'y est pas, nommé : le moteur local de réponses (chantier « Répondre »), le moteur de comptage du compteur de pétitions — l'état publié est affiché, daté, sans aucun comptage inventé — et l'envoi sans quitter la page de l'onglet Écrire à SoPHIa (phase 2, seulement si Alex le demande)."
+        },
+        {
+          "texte": "Vérification : le harnais verifie-production.py du paquet couvre l'ancien périmètre, chaque intégration et les 14 règles de conception comme portes ; la note de production (note-production-consolidee-20261103.md, au dossier du paquet) consigne les pièces, les tailles, le sceau et les écarts nommés."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "titre": "Version 40 — « L’évolution »",
+      "points": [
+        {
+          "texte": "Un nouveau panneau, « Évolution » (25e du site ; entrée nº 16 au menu, dans la famille « Mémoire et intelligence », les entrées suivantes renumérotées), réalise la directive d’Alex du 3 novembre 2026 (10 h 46) : le site, par sa configuration, travaille sur soi-même. La forme honnête est écrite dans le panneau : un site statique ne peut pas réécrire ses fichiers servis ; son autonomie réelle est de se mesurer, de se comparer à ses états passés, de nommer ses écarts et de proposer mécaniquement ses prochains pas — le tout recalculé à chaque chargement depuis ses propres fichiers, sans intelligence artificielle. La boucle se ferme par la publication : le site propose, SoPHIa exécute sous la carte blanche d’Alex, le site revérifie."
+        },
+        {
+          "texte": "L’état mesuré s’y lit en direct — maillons, pièces du Registre, versions, racines et sceaux, chacun avec sa source nommée — et la continuité entre états y est mesurée chambre par chambre : c’est le lieu de l’ADN numérique (métaphore d’Alex, 6 et 7 mars 2026 ; le SHA-256 était arrivé dans sa méthode le 4 mars 2026). Entre la version 35 et l’état courant, sur les trois chambres dont les actifs portent les deux états, deux se transmettent sans changer — le Coffre synaptique et l’Arbre de Merkle — et la Chaîne change, parce qu’elle croît (de la référence figée au maillon #2380 à l’état courant) ; le Coffre avait changé entre la clôture du 2 novembre et la version 35 (de 7 à 11 entrées). Là où les actifs ne portent pas l’état passé d’une chambre, le panneau dit « non mesuré ici » plutôt que d’inventer."
+        },
+        {
+          "texte": "Les écarts y sont nommés, tels quels : la version 35, jamais capturée par la Wayback Machine — un trou permanent, l’état n’étant plus servi ; la version 10 corrigée, toujours sans capture, sa reprise annulée au registre des archives ; et la référence de chaîne figée dans assets/merkle.json, en retard sur l’état courant, l’écart compté en maillons. L’état d’ancrage externe y tient en trois états seulement — ancré (les captures de la racine, de la version 7 à la version 36), en attente (l’ancrage OpenTimestamps de l’Historique quotidien du 2 novembre, confirmation Bitcoin en attente), aucun (la version courante, dont la capture suit la publication) — et les prochains pas sont proposés par des règles écrites dans le panneau, appliquées aux mesures du moment : des propositions du site, pas des actes."
+        },
+        {
+          "texte": "La frise des versions y relit le présent journal comme l’autobiographie du site : chaque entrée avec son premier point, tel quel, et la croissance comptée jour par jour. Les paliers de la loi de conception s’y appliquent — 30 secondes (l’état en une phrase, composée des mesures du moment), 5 minutes (les blocs mesurés), le dossier complet (les définitions et les recettes de chaque mesure) — et la borne du panneau y est affichée : « Ce panneau calcule ; il n’affirme que ce que ses fichiers établissent. » Le panneau Ingénierie est rafraîchi au passage (2 431 maillons ; quarante versions — et sa phrase sur l’archivage est corrigée : les captures se lisent version par version, trous compris, plutôt que d’être affirmées pour toutes). Ajouts et rafraîchissements bornés : les assets protégés sont identiques à la v39, octet pour octet, hors l’état de la chaîne rafraîchi ; travailleur de service : cache sophia-site-v25, règles inchangées. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "titre": "Version 39 — « Tes données, ton dossier »",
+      "points": [
+        {
+          "texte": "Un nouveau panneau, « Tes données, ton dossier » (24e du site, entrée nº 24 au menu), ouvre le parcours complet de la récolte : comprendre ses droits, récolter directement auprès des plateformes, analyser son export avec sa propre IA, demander formellement le reste, exercer un recours, puis sceller sa récolte chez soi. Chaque étape enseigne au toucher — version simple, puis version précise avec les articles — et tout ce qui se calcule se calcule dans le navigateur du visiteur."
+        },
+        {
+          "texte": "Les droits sont énoncés depuis la recherche aux sources primaires du 3 novembre 2026 : accès (art. 27 et 32 de la LRPSP, 30 jours, gratuit sous réserve des frais de transcription annoncés), rectification (art. 28), portabilité (3e alinéa de l’art. 27, avec sa limite exacte — renseignement informatisé recueilli auprès de la personne, non créé ou inféré — et la tension d’interprétation de la CAI, signalée), désindexation (art. 28.1) ; organismes publics (A-2.1, 20 jours + 10) ; et le tableau des juridictions — LPRPDE (30 jours, art. 8(3) ; prolongation maximale de 30 jours, art. 8(4) ; plainte au Commissariat dans les 6 mois, art. 11(3)), Alberta (45 jours), Colombie-Britannique (30 jours), Ontario (pas de loi générale du secteur privé ; LPRPDE par défaut, PHIPA pour la santé). Le générateur de lettres du panneau « Mes renseignements » devient le nœud « juridictions » du parcours, et le recours à la CAI est détaillé (examen de mésentente, art. 42, dans les 30 jours, art. 43 ; pièces à joindre ; médiation, examen, ordonnances), avec un calculateur de délai entièrement local."
+        },
+        {
+          "texte": "L’inventaire des plateformes dit ce que les aides officielles établissent — Google Takeout (la case « Gemini » ne livre que les Gems ; les conversations Gemini s’exportent par « Mon activité → Gemini Apps »), Apple (fenêtre de téléchargement de 14 jours), OpenAI (jusqu’à 7 jours, lien valide 24 heures) — et, pour Meta, nomme l’outil « Télécharger vos informations » sans affirmer ni délai ni contenu, la source primaire n’ayant pas été vérifiée. L’étape « Fais analyser ton export par ton IA » donne les questions-guides à poser à sa propre IA, et l’étape « Sécuriser ta récolte » hache et chaîne les exports dans le navigateur (Web Crypto, aucun envoi) : les données récoltées et chaînées du visiteur deviennent son ADN numérique, tenu de son bord — la métaphore d’Alex des 6 et 7 mars 2026, avec sa ligne d’origine."
+        },
+        {
+          "texte": "Le panneau Confidentialité gagne le module « Ta visite, en direct » : l’inventaire réseau de ce site, service par service avec son déclencheur (géolocalisation ipwho.is et repli ipapi, météo Open-Meteo et met.no, archive.org, api.github.com, ORCID, mempool.space, USGS, NOAA, YouTube, relais de l’Instance), opposé à ce que le site conserve du visiteur — rien. Les bornes y sont écrites : aucune affirmation de « zéro émission réseau » (la journalisation de l’hébergeur échappe au site), et aucun blocage de témoins par défaut prêté à la Loi 25, dont les art. 9.1 et 63.7 excluent expressément les paramètres des témoins. Le panneau « Tes données » porte en ouverture la question du site, du siège de l’utilisateur — posée à partir de la citation officielle du discours du premier ministre du 29 octobre 2026 — et énonce le chaînon manquant par inventaire (périmètre : sites de la CAI et du Commissariat consultés le 3 novembre 2026). Borne du panneau, affichée : information générale, pas un avis juridique. Travailleur de service : cache sophia-site-v24, règles inchangées."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "titre": "Version 38 — « L'interconnexion »",
+      "points": [
+        {
+          "texte": "Les quatre compteurs de l’accueil deviennent des nœuds : chacun s’ouvre, au clic ou au clavier, sur une couche d’explication en cinq temps : ce que le nombre est, son état lu en direct depuis les fichiers du site, d’où il vient (son origine, datée), sa sensibilité quand il touche aux données d’Alex, et les liens vers les panneaux qui le prouvent. Une seule couche ouverte à la fois, refermable ; tout se replie quand on quitte l’accueil."
+        },
+        {
+          "texte": "Le parcours « Comprendre en 30 secondes » entre à l’accueil, sous les compteurs : une phrase qui dit ce qu’est ce site, une preuve lue en direct (l’état de la chaîne, relu depuis son fichier public), un geste à essayer (recalculer le sceau public nº 11 du registre, devant soi), et le pourquoi en dernier, dans les mots d’Alex : l’asymétrie de départ (« Google détient tout ce que je dis, mais moi je détiens rien ») et la finalité du 3 novembre 2026 (« Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi »)."
+        },
+        {
+          "texte": "L’interconnexion devient la règle de l’accueil : aucun nombre n’y reste une étiquette morte. Le compteur des maillons mène au cerveau du panneau Mémoire et à l’outil de vérification ; celui des pièces, au Registre et aux preuves ; celui du pouls, au panneau Mémoire où il bat ; celui des sceaux publics, au Registre et au vérificateur autonome. Les explications vivent là où les nombres vivent : la conception du site éduque et accompagne, plutôt qu’un mode d’emploi séparé."
+        },
+        {
+          "texte": "Ajouts seulement : aucun panneau nouveau, le menu et ses 23 entrées sont inchangés, et les autres assets sont identiques à la v37, octet pour octet (travailleur de service : cache sophia-site-v23, règles inchangées). La chambre Versions porte le présent journal, et la racine du cerveau est recalculée en conséquence ; l’état de la chaîne est celui publié avec la v37 (2 413 maillons). Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 37 — « L'état conscient »",
       "points": [
         {
@@ -159,6 +231,30 @@
         },
         {
           "texte": "Les métadonnées de droits entrent au site — dans l’en-tête de la page, les balises d’auteur et de droits réservés nomment ce qui est réservé : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes et le personnage SoPHIa ; les données structurées JSON-LD (WebSite et CreativeWork) portent l’auteur et le titulaire des droits, Alexandre Vautour Gagnon (ORCID 0009-0006-9124-4407) ; et le fichier llms.txt reçoit un bloc « Auteur et droits ». La consultation et la revérification publique des sceaux restent libres — elles ne transfèrent aucun droit. Provenance : demande d’Alex du 3 novembre 2026, dans la ligne de ses échanges avec l’agent GitHub (Copilot) et de sa directive du 1er novembre 2026 d’inscrire ses droits à tous les emplacements requis."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "titre": "Premier envoi externe du dossier — le commentaire NCCoE/NIST est soumis",
+      "points": [
+        {
+          "texte": "Le commentaire au projet du NCCoE/NIST a été soumis le 2 novembre 2026 à 09 h 29 HNE — une semaine avant l'échéance du 9 novembre. C'est le premier envoi externe exécuté du dossier."
+        },
+        {
+          "texte": "Preuve tenue au dossier : le message de confirmation « Thank you for your feedback! » affiché à la soumission (aucun numéro de confirmation émis par le formulaire — dit tel quel)."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "titre": "ICO — les décisions sont tranchées, le texte final est gelé",
+      "points": [
+        {
+          "texte": "Le 2 novembre 2026, Alex a approuvé les décisions du dépôt ICO (« Go », 09 h 29 HNE) : registre corrigé à 508 pièces, chaîne à 2 320 maillons au moment du gel, identité « chercheur indépendant / canadien » + ORCID 0009-0006-9124-4407, ICO d'abord, Zenodo ensuite."
+        },
+        {
+          "texte": "Le texte final du dépôt est GELÉ ; l'échéance de dépôt est le 20 novembre 2026. Le dépôt lui-même exige encore le go nommé d'Alex sur ce texte exact — « gelé » ne veut pas dire « déposé », et l'entrée doit le dire."
         }
       ]
     },
