@@ -577,6 +577,23 @@ button.at-bloc{cursor:pointer}
 .app-install-btn{background:linear-gradient(160deg,#e8c95c,#c9a227);border:1px solid #f2d675;color:#08130e;font:inherit;font-weight:700;border-radius:999px;padding:.6rem 1.3rem;cursor:pointer;box-shadow:0 6px 18px rgba(212,175,55,.35)}
 .app-install-btn:hover{filter:brightness(1.06)}
 .app-etapes{margin:.4rem 0 .6rem 1.1rem}
+.app-guide{border:1px solid var(--ligne);border-radius:12px;padding:.15rem .9rem .6rem;margin:.8rem 0;background:rgba(255,255,255,.02)}
+.app-guide.suggere{border-color:var(--or);box-shadow:0 0 0 1px var(--or)}
+.app-guide-titre{font-weight:700;color:var(--or-clair);margin:.6rem 0 .1rem}
+.planete-scene.gl-actif .rep.loin{opacity:0}
+.planete-scene.sobre #globe-webgl{display:none!important}
+.cartes-ciel{position:absolute;top:.5rem;right:.5rem;width:214px;display:flex;flex-direction:column;gap:.4rem;z-index:6;pointer-events:none}
+.cciel{background:rgba(5,12,9,.84);border:1px solid rgba(212,175,55,.45);border-radius:10px;padding:.38rem .55rem .45rem;box-shadow:0 4px 14px rgba(0,0,0,.5);text-shadow:0 1px 3px #000}
+.cciel-t{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--or-clair);font-weight:700}
+.cciel-v{display:block;font-size:.84rem;font-weight:700;color:#f2ecda;margin-top:.1rem}
+.cciel-s{display:block;font-size:.62rem;line-height:1.35;color:#cfe3d2;margin-top:.15rem}
+@media(max-width:820px){.cartes-ciel{top:auto;bottom:.4rem;left:.4rem;right:.4rem;width:auto;flex-direction:row;flex-wrap:wrap}.cciel{flex:1 1 44%}}
+.fiches-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem;margin-top:.6rem}
+.fiche-planete{border:1px solid var(--ligne);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02)}
+.fiche-planete img{width:100%;height:130px;object-fit:cover;display:block}
+.fiche-planete .fp-corps{padding:.55rem .8rem .7rem}
+.fiche-planete h3{margin:.1rem 0 .3rem;font-size:1.02rem;color:var(--or-clair)}
+.fiche-planete p{margin:.25rem 0;font-size:.86rem}
 .app-etapes li{margin:.3rem 0}
 .rep.ancre{z-index:6}
 .planete-scene.compacte .rep.ancre .rep-nom{left:-8px;top:20px}
@@ -633,6 +650,11 @@ button.at-bloc{cursor:pointer}
 .vmm-zone{border:1.5px dashed var(--ligne);border-radius:12px;padding:1.1rem 1rem;text-align:center;color:var(--texte-doux);cursor:pointer;background:#0d1f19}
 .vmm-zone:hover,.vmm-zone.actif{border-color:var(--or);color:var(--or-clair)}
 .vmm-zone input[type=file]{display:none}
+</style>
+</head><style>
+/* ===== v21 — « La planète » : globe WebGL ===== */
+#globe-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:none}
+#planete-nuit{z-index:2}
 </style>
 </head>
 <body>
@@ -749,10 +771,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v20 (2 novembre 2026 — « Vérifie-moi sans moi » : le vérificateur autonome de l’onglet Vérifier — la page se recalcule chez le visiteur, à l’octet près —, le reçu de visite, l’auto-revérification, et le cartouche ombragé de l’ancre)</p>
-    <span class="sceau-long" id="sceau-version-affiche">4939e791ce1a1efa445d0990820e122c1b2468f5e2b5b5bd0076afea8645d362</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v21 (2 novembre 2026 — « La planète » : le globe WebGL et son axe incliné à 23,44°, les coordonnées de l’espace par le moteur astronomique maison, les comptes julien et sidéral confrontés, la fiche sidérale confrontée, « Ce soir à l’ancre », la géométrie derrière la météo, le compte civil de 24 heures confronté et le temps atomique au travail — et, en compléments du même jour : les textures NASA du globe, les cartes du ciel empilées, les fiches des planètes du soir, le curseur de brillance, la frise de l’année, les crépuscules complets et le guide iPhone toujours visible)</p>
+    <span class="sceau-long" id="sceau-version-affiche">93c50d8b1315ae9d53ee5c87a274e2e58888fd3e31d0c93c8875155be93bafb6</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -828,6 +850,8 @@ button.at-bloc{cursor:pointer}
         <li>Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px).</li>
         <li>Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images.</li>
         <li>Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau.</li>
+        <li>Version 21 — « La planète » : le globe du panneau Temps devient une sphère WebGL qui tourne avec la vue — terminateur calculé sur la surface, axe des pôles prolongé, grand cercle de l’écliptique du jour, l’axe incliné à 23,44° sur ce plan, face nuit en lueurs de villes stylisées ; la scène plate demeure le repli écrit si WebGL manque. Le panneau gagne les coordonnées de l’espace (Soleil et Lune : distances en kilomètres et en temps-lumière, coordonnées écliptiques et équatoriales, hauteur et azimut à Sainte-Martine, points subsolaire et sublunaire, phase lunaire), calculées par le moteur astronomique maison — formules publiées de Meeus et de la NOAA, précisions bornées et écrites. Les comptes se confrontent : le jour julien solaire face au jour sidéral sur la même échelle continue, leur différence en direct, et depuis l’équinoxe les rotations solaires contre les rotations sidérales, écart en rotations et en temps. La fiche sidérale confronte en temps réel l’ancre, le visiteur et l’heure civile ; le comptage des rotations affronte aussi le compte civil de 24 heures du calendrier de Toronto — avec son écart d’une heure, né du recul du 1er novembre — et le temps atomique entre au travail : le décalage des 37 secondes intercalaires est raconté (10 secondes en 1972, 27 ajouts, le dernier le 31 décembre 2016, abandon décidé pour 2035) et l’horloge TAI tourne en direct, avec son compteur de secondes continues depuis l’équinoxe ; « Ce soir à l’ancre » donne le coucher, les trois crépuscules, l’exposition lunaire de la nuit et les nuages du soir (Open-Meteo, sourcés et datés) ; et l’onglet Météo expose la géométrie derrière sa météo — hauteur du Soleil à midi, durée du jour, déclinaison.</li>
+        <li>Version 21 — compléments du même jour, à l’audit du paquet : le globe WebGL reçoit ses vraies textures — Blue Marble (le jour) et Black Marble (la nuit), imagerie NASA équirectangulaire chargée depuis le site même et fondue au terminateur calculé ; les cartes du ciel de l’ancre s’empilent sur le globe — nuages du soir lus chez Open-Meteo, brillance zénithale établie de Sainte-Martine (19,85 mag/arcsec², zone LP 5b, indice 6,2 — atlas mondial de la pollution lumineuse de Lorenz, édition 2024 ; l’atlas refuse la conversion en classe de Bortle, aucune n’est déduite), étoiles visibles en estimation nommée ; les fiches des planètes du soir — Vénus, Mars, Jupiter, Saturne — donnent leur position approchée et bornée, leur distance en kilomètres et en temps-lumière, et leur visibilité de la nuit à l’ancre ; le curseur de brillance fait glisser le ciel de l’ancre entre la grande ville et le ciel noir, en simulation pédagogique étiquetée ; la frise de l’année déroule la déclinaison jour par jour et les crépuscules complets de l’ancre s’affichent ; les guides d’installation de l’onglet Application — iPhone compris — sont désormais tous visibles en tout temps, la plateforme détectée ne marquant que le guide suggéré ; et les repères passés derrière la sphère se masquent quand le globe WebGL est actif. Écart mesuré et rapporté tel quel : la déclinaison du moteur maison (−14,88°) s’écarte de 0,33° de la série NOAA du panneau (−14,55°) au même instant de référence — les deux valeurs restent celles de leurs moteurs respectifs, sans harmonisation.</li>
       </ul>
       <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
     </article>
@@ -903,9 +927,16 @@ button.at-bloc{cursor:pointer}
     <div class="planete-globe">
       <picture><source srcset="assets/terre-atlantique.webp" type="image/webp"><img src="assets/terre-atlantique.jpg" alt="La Terre vue de l’espace, centrée sur l’océan Atlantique : les Amériques à gauche, l’Afrique et l’Europe à droite" width="1000" height="1000" loading="eager"></picture>
       <svg id="planete-nuit" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <canvas id="globe-webgl" width="800" height="800" aria-hidden="true"></canvas>
       <div class="planete-reperes" id="planete-reperes"></div>
     </div>
     <svg id="planete-traits" aria-hidden="true"></svg>
+    <div class="cartes-ciel" id="cartes-ciel" aria-label="Cartes du ciel de l’ancre">
+      <div class="cciel"><span class="cciel-t">NUAGES — CE SOIR, À L’ANCRE</span><span class="cciel-v" id="cca-nuages">lecture…</span></div>
+      <div class="cciel"><span class="cciel-t">CIEL — BRILLANCE DE L’ANCRE</span><span class="cciel-v">19,85 mag/arcsec² · zone LP 5b · indice 6,2</span><span class="cciel-s">Atlas mondial de la pollution lumineuse (David J. Lorenz, édition 2024), lu au point de l’ancre le 2 novembre 2026. L’atlas refuse la conversion en classe de Bortle : aucune n’est déduite ici.</span></div>
+      <div class="cciel"><span class="cciel-t">ÉTOILES — ESTIMATION</span><span class="cciel-v" id="cca-etoiles">calcul…</span><span class="cciel-s">Estimation déduite de la brillance par la relation brillance → magnitude limite : un ordre de grandeur, pas un comptage.</span></div>
+      <div class="cciel"><span class="cciel-t">CE SOIR — À L’ANCRE</span><span class="cciel-v" id="cca-soir">calcul…</span></div>
+    </div>
   </div>
   <p class="petite" style="text-align:center;max-width:64ch;margin:.2rem auto 0">La Terre au centre — vue centrée sur l’Atlantique. Les repères du globe suivent une projection orthographique centrée sur 40° O, 25° N au départ : un lieu passé de l’autre côté du globe s’y dit « autre côté » plutôt que de disparaître. Tout autour du globe, sur tous les écrans — mobile compris —, chaque lieu affiché porte une pastille entièrement à l’extérieur du disque : son nom et son heure en direct, en chiffres. Sainte-Martine y tient sa pastille d’ancre, dorée et plus grande, non retirable ; les trois horloges de la triangulation l’y rejoignent sur la piste extérieure, et les lieux de comparaison que vous ajoutez s’y placent à l’angle de leur longitude. Quand deux angles sont trop proches, une pastille s’écarte sur une autre piste ou un créneau voisin, reliée par un fin trait doré à son point de longitude vraie, plutôt que de masquer sa voisine — et aucune pastille ne passe jamais sous le globe : une piste n’est libre que si la pastille y tient entièrement hors du disque, rayon du globe et demi-diagonale comptés. Touchez une pastille ou un repère pour ouvrir la grande lecture de son lieu. Et le globe tourne : glissez-le au doigt ou à la souris, la vue pivote — les repères, les pastilles et l’ombre de nuit suivent — puis recentrez quand vous voulez.</p>
   <p class="petite" id="planete-expo" style="text-align:center;max-width:64ch;margin:.55rem auto 0">Exposition de l’ancre : le coucher du Soleil de Sainte-Martine se calcule à l’instant…</p>
@@ -913,6 +944,7 @@ button.at-bloc{cursor:pointer}
     <button class="secondaire" id="planete-recentrer">Recentrer sur Sainte-Martine</button>
   </div>
   <p class="petite" style="max-width:72ch;margin:.5rem auto 0">Borne de l’ombrage et de la vue : la photo de la Terre est une image entièrement éclairée, et elle ne tourne pas — c’est la vue de l’Atlantique. L’ombre de nuit dessinée par-dessus est <strong>calculée</strong> à l’instant, dans votre navigateur, d’après la position du Soleil — déclinaison et longitude subsolaire, formules solaires standard de la NOAA, les mêmes familles que le lever et le coucher de l’ancre plus bas — puis projetée sur la même projection orthographique que les repères, et elle suit la rotation de la vue. C’est un schéma vrai par le calcul, pas une photo en direct du terminateur.</p>
+  <p class="petite" id="globe-webgl-etat" style="text-align:center;max-width:64ch;margin:.35rem auto 0">Globe WebGL : initialisation…</p>
   <div class="maitresse-carte">
     <div class="maitresse-cadran">
 <svg class="temps-svg" viewBox="0 0 200 200" role="img" aria-label="Horloge maîtresse — heure civile locale"><circle cx="100" cy="100" r="96" class="face-maitre"/><circle cx="100" cy="100" r="87" class="face-interne"/><g id="hm-ticks"></g><g id="hm-h"><line x1="100" y1="100" x2="100" y2="61" class="aig-h"/></g><g id="hm-m"><line x1="100" y1="100" x2="100" y2="43" class="aig-m"/></g><g id="hm-s"><line x1="100" y1="109" x2="100" y2="35" class="aig-s"/></g><circle cx="100" cy="100" r="5" class="pivot"/></svg>
@@ -1025,10 +1057,233 @@ button.at-bloc{cursor:pointer}
     <p class="mono">JJ = millisecondes Unix / 86 400 000 + 2 440 587,5</p>
     <p class="mono">GMST = 280,46061837° + 360,98564736629° × (JJ − 2 451 545,0) + 0,000387933° × T² − T³ / 38 710 000, avec T = (JJ − 2 451 545,0) / 36 525</p>
     <p class="mono">LST (Sainte-Martine) = GMST − 73,8024° (longitude ouest), ramené à [0°, 360°)</p>
+    <p class="mono">Jour sidéral (même échelle que le jour julien) : JS = (JJ − 2 451 545,0) × 1,00273790935 — la différence JS − (JJ − 2 451 545,0) compte les rotations d’avance des étoiles depuis J2000</p>
+    <p class="mono">Depuis l’équinoxe : rotations sidérales = rotations solaires × 1,00273790935 ; l’écart, lu au jour sidéral (86 164,0905 s), est l’avance de l’horloge des étoiles sur celle du Soleil</p>
+    <p class="mono">TAI = UTC + 37 s — le décalage des secondes intercalaires : 10 s au départ du système, en 1972, puis 27 secondes ajoutées une à une (la dernière le 31 décembre 2016) pour garder l’heure civile près du Soleil pendant que la rotation de la Terre ralentit</p>
     <p class="mono">Recalcul croisé : GMST = GMST à 0 h TU du jour + 1,00273790935 × 15° × heures TU écoulées depuis 0 h</p>
     <p style="margin-top:.8rem"><span class="voyant" id="t-croise-voyant"></span><b id="t-croise-verdict">Recalcul croisé en cours…</b></p>
     <p class="petite" id="t-croise-detail"></p>
     <p class="petite">Borne écrite : tout est recalculé dans votre navigateur ; les seules constantes écrites dans le code sont la longitude de Sainte-Martine (−73,8024°) et TAI − UTC (37 s). L’instant de départ est celui de votre appareil : si son horloge est fausse, chaque lecture la suit fidèlement — c’est exactement pour cela que le système triangule au lieu de croire un seul cadran.</p>
+  </div>
+<div class="carte" id="comptes-confrontes">
+    <p class="etiquette">Les comptes confrontés — le solaire contre le sidéral, sur la même échelle</p>
+    <p>Le jour julien compte les jours solaires de 24 heures depuis une origine continue. Le <strong>jour sidéral</strong> ci-dessous part de la même origine (J2000) et avance au facteur du panneau — 1,00273790935 rotation par jour solaire. Les deux comptes vivent donc sur <strong>la même échelle continue</strong>, et leur différence se lit en direct, en rotations entières et en fraction : c’est le tour supplémentaire que la Terre fait face aux étoiles pendant que le compte solaire, lui, ne voit que les retours du Soleil.</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Jour julien — compte solaire</span>
+        <p class="valeur mono" id="cc-jj">—</p>
+        <p>Le même compte que la tuile « Jour julien » ci-dessus : des jours de 24 heures, sans interruption.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Jour sidéral — même échelle</span>
+        <p class="valeur mono" id="cc-js">—</p>
+        <p><span class="mono">JS = (JJ − 2 451 545,0) × 1,00273790935</span> : chaque jour solaire y vaut un peu plus d’un jour sidéral.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Différence des deux comptes — depuis J2000</span>
+        <p class="valeur mono" id="cc-diff">—</p>
+        <p>Les rotations que l’horloge des étoiles a gagnées sur celle du Soleil depuis le 1<sup>er</sup> janvier 2000 — plus d’un tour complet par année.</p>
+      </div>
+    </div>
+    <p style="margin-top:.7rem">Et depuis l’équinoxe de printemps 2026 — le pivot du calendrier Master Clock (20 mars, 14 h 46 UTC) — les deux comptes côte à côte :</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Rotations solaires — depuis l’équinoxe</span>
+        <p class="valeur mono" id="cc-rot-sol">—</p>
+        <p>Les jours de 24 heures écoulés depuis l’équinoxe.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Rotations sidérales — depuis l’équinoxe</span>
+        <p class="valeur mono" id="cc-rot-sid">—</p>
+        <p>Les tours de la Terre face aux étoiles dans le même intervalle — toujours un peu plus nombreux.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">La différence, en rotations et en temps</span>
+        <p class="valeur mono" id="cc-diff-rot">—</p>
+        <p>Soit <b class="mono" id="cc-diff-temps">—</b> d’avance sidérale accumulée — la journée de rotation qui naît de l’heure sidérale et que l’heure civile ne compte pas : en une année, elle vaut un tour complet.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Rotations civiles de 24 heures — depuis l’équinoxe</span>
+        <p class="valeur mono" id="cc-rot-civ">—</p>
+        <p>Le même intervalle, compté par le calendrier civil de Sainte-Martine : des jours de calendrier, lus à l’horloge civile d’America/Toronto. Ce compte-là n’est pas un compte de 24 heures exactes : le jour du recul de l’heure dure 25 heures réelles, celui de l’avance en dure 23.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">L’écart civil — 24 heures exactes contre calendrier</span>
+        <p class="valeur mono" id="cc-diff-civ">—</p>
+        <p>L’écart entre le compte des 24 heures exactes et le compte civil, depuis l’équinoxe : il naît aux changements d’heure traversés. Depuis l’équinoxe du 20 mars 2026, un seul a eu lieu — le recul du 1<sup>er</sup> novembre 2026 — et il vaut exactement l’heure répétée ce matin-là. L’avance du 8 mars 2026 est hors compte : elle précède l’équinoxe.</p>
+      </div>
+    </div>
+    <p class="petite">Recalculé chaque seconde dans votre navigateur, depuis les mêmes constantes que le reste du panneau. La confrontation est le propos : deux horloges vraies, deux comptes différents du même temps — et l’écart, lui, se mesure.</p>
+  </div>
+  <div class="carte" id="coordonnees-espace">
+    <p class="etiquette">Coordonnées de l’espace — le moteur astronomique maison</p>
+    <p>Le Soleil et la Lune ne sont pas décoratifs sur ce panneau : ce sont eux qui règlent l’ombre du globe, les marées d’heures et la forme des jours. Leurs coordonnées sont calculées ici même, par le moteur astronomique du site — formules publiées, aucune donnée empruntée à un service d’astronomie.</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Le Soleil — en ce moment</span>
+        <p>Distance : <b class="mono" id="esp-sol-dist">—</b></p>
+        <p>Sa lumière met <b class="mono" id="esp-sol-lumiere">—</b> à nous parvenir.</p>
+        <p>Longitude : <b class="mono" id="esp-sol-ecl">—</b></p>
+        <p>Équatorial : <b class="mono" id="esp-sol-eq">—</b></p>
+        <p>À Sainte-Martine : <b class="mono" id="esp-sol-altaz">—</b></p>
+        <p><b class="mono" id="esp-sol-sub">—</b></p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">La Lune — en ce moment</span>
+        <p>Distance : <b class="mono" id="esp-lune-dist">—</b></p>
+        <p>Sa lumière met <b class="mono" id="esp-lune-lumiere">—</b> à nous parvenir.</p>
+        <p>Longitude : <b class="mono" id="esp-lune-ecl">—</b></p>
+        <p>Équatorial : <b class="mono" id="esp-lune-eq">—</b></p>
+        <p>À Sainte-Martine : <b class="mono" id="esp-lune-altaz">—</b></p>
+        <p>Phase : <b class="mono" id="esp-lune-phase">—</b></p>
+        <p><b class="mono" id="esp-lune-sub">—</b></p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">La déclinaison — et le cycle de l’année</span>
+        <p>Déclinaison du Soleil aujourd’hui : <b class="mono" id="esp-dec">—</b></p>
+        <p>Hauteur du Soleil à midi solaire, à l’ancre : <b class="mono" id="esp-midi">—</b></p>
+        <p>Durée du jour à l’ancre : <b class="mono" id="esp-jour">—</b></p>
+        <p id="esp-cycle">—</p>
+        <p>L’axe de rotation de la Terre est incliné à <b>23,44°</b> sur le plan de l’écliptique : c’est cette inclinaison, lue jour après jour, qui fait la déclinaison, les saisons et le cycle annuel — le globe WebGL ci-dessus la dessine.</p>
+      </div>
+    </div>
+    <div>
+      <p class="etiquette">La frise de l’année — la déclinaison, jour par jour</p>
+      <svg id="esp-frise" viewBox="0 0 720 120" role="img" aria-label="Frise annuelle de la déclinaison du Soleil" style="width:100%;height:auto;display:block"></svg>
+      <p class="petite">La déclinaison du Soleil sur l’année en cours, calculée jour par jour par la même série que le panneau (formules solaires NOAA) : elle monte à +23,44° au solstice de juin et descend à −23,44° à celui de décembre — l’inclinaison de l’axe, lue comme une frise, le jour présent marqué en or. C’est cette migration qui fait les saisons.</p>
+      <p>Crépuscules de l’ancre, aujourd’hui : <b class="mono" id="esp-crep">calcul…</b></p>
+    </div>
+    <p class="petite">Précisions bornées, écrites : Soleil ≈ 0,01° sur la position et ≈ 0,0002 UA sur la distance ; Lune ≈ 0,3° sur la longitude et quelques milliers de kilomètres sur la distance (formules de Jean Meeus, <i>Astronomical Algorithms</i>, formes basse précision — les mêmes familles que les panneaux d’astronomie publics, recodées ici). Écart mesuré à la construction, le 2 novembre 2026 à 15 h 08 UTC : la déclinaison de ce moteur (−14,88°) s’écarte de 0,33° de la série NOAA du panneau (−14,55°), un troisième calcul indépendant donnant −14,74°, entre les deux — chaque panneau affiche la valeur de son propre moteur, sans harmonisation forcée. La hauteur et l’azimut se déduisent des coordonnées équatoriales et de l’heure sidérale de l’ancre.</p>
+  </div>
+  <div class="carte" id="fiche-siderale">
+    <p class="etiquette">Fiche sidérale confrontée — l’ancre, le visiteur, l’heure civile</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Sidérale de l’ancre — Sainte-Martine</span>
+        <p class="valeur mono" id="fs-ancre">—</p>
+        <p>L’horloge des étoiles au méridien de l’ancre (−73,8024°).</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Sidérale du visiteur</span>
+        <p class="valeur mono" id="fs-visiteur">—</p>
+        <p class="petite" id="fs-visiteur-nom">Lecture de son ancrage en cours…</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Heure civile de l’ancre — America/Toronto</span>
+        <p class="valeur mono" id="fs-civile">—</p>
+        <p>La même seconde, lue par l’horloge des hommes : elle saute aux changements d’heure ; les deux autres, jamais.</p>
+      </div>
+    </div>
+    <p style="margin-top:.6rem">Écart sidéral visiteur − ancre : <b class="mono" id="fs-ecart">—</b></p>
+    <p class="petite">L’heure sidérale du visiteur vient de son ancrage lu par adresse IP (voir « Le miroir des ancrages », ci-dessous, pour les bornes complètes) : si la géolocalisation n’a pas répondu, cette fiche laisse sa case en attente plutôt que d’afficher une valeur inventée. L’écart entre deux heures sidérales ne dépend que des longitudes — c’est la confrontation la plus simple du panneau, et elle tourne en direct.</p>
+  </div>
+  <div class="carte" id="temps-atomique">
+    <p class="etiquette">Le temps atomique — l’horloge qui ne saute jamais, et les secondes intercalaires</p>
+    <p>Il existe une heure qui ne connaît ni changement d’heure, ni saut, ni recul : le <strong>temps atomique international (TAI)</strong>, compté par des centaines d’horloges atomiques dans le monde. Il avance d’une seconde par seconde, sans exception, depuis 1972. C’est lui la règle droite de ce panneau — et c’est contre lui que les deux autres horloges se lisent.</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">TAI — en ce moment</span>
+        <p class="valeur mono" id="tai-horloge">—</p>
+        <p>L’heure atomique lue à l’instant : UTC + 37 secondes, toujours, sans aucun saut.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Secondes atomiques depuis l’équinoxe</span>
+        <p class="valeur mono" id="tai-secondes">—</p>
+        <p>Le compte continu depuis le pivot du panneau (20 mars 2026, 14 h 46 UTC) : chaque seconde y est une vraie seconde, aucune n’est répétée ni sautée — contrairement aux secondes civiles du 1<sup>er</sup> novembre, dont une heure entière a été lue deux fois.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">TAI − UTC — le décalage expliqué</span>
+        <p class="valeur">37 s</p>
+        <p>La Terre ne tourne pas comme une horloge : sa rotation ralentit, irrégulièrement, d’environ une à deux millisecondes par jour selon les siècles. L’heure civile (UTC), elle, doit rester près du Soleil. Le compromis : de temps à autre, on ajoute une <strong>seconde intercalaire</strong> à UTC — une seconde de plus, lue deux fois 23 h 59 min 60 s — pendant que TAI, lui, ne bouge pas. Le décalage grandit donc par marches d’une seconde.</p>
+      </div>
+    </div>
+    <p>L’histoire du décalage, en quatre marches : en <strong>1972</strong>, le système démarre avec un décalage initial de <strong>10 secondes</strong>. Depuis, <strong>27 secondes intercalaires</strong> ont été ajoutées, une à une, quand l’écart entre l’heure des horloges et l’heure du Soleil approchait 0,9 seconde — l’ajout est annoncé environ six mois à l’avance par le Service international de la rotation terrestre (IERS). La dernière a été ajoutée le <strong>31 décembre 2016</strong> : le décalage est donc figé à <strong>37 secondes</strong> depuis le 1<sup>er</sup> janvier 2017. Aucune seconde n’a jamais été retirée — une « seconde négative » reste théorique. Et en <strong>2022</strong>, la Conférence générale des poids et mesures a décidé d’abandonner les secondes intercalaires <strong>d’ici 2035</strong> : le décalage cessera alors de grandir par marches, et l’heure civile s’éloignera lentement du Soleil — un décalage accepté plutôt qu’une seconde qui casse les systèmes.</p>
+    <p class="petite">À quoi le temps atomique sert ici, concrètement : il est la base continue des comptes de ce panneau. Depuis 2017, son décalage avec UTC est constant, donc les rotations comptées sur le temps atomique et celles comptées sur les 24 heures exactes coïncident — et c’est précisément cette constance qui le rend utile : si un jour les deux comptes se séparaient, la séparation daterait la marche franchie. Le compte des secondes atomiques, lui, ne peut ni reculer ni répéter une heure : c’est le seul compteur de la page dont aucune seconde n’a jamais été lue deux fois.</p>
+  </div>
+  <div class="carte" id="ce-soir-ancre">
+    <p class="etiquette">Ce soir à l’ancre — la nuit précise de Sainte-Martine</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Coucher du Soleil</span>
+        <p class="valeur mono" id="soir-coucher">—</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Fin du crépuscule civil</span>
+        <p class="valeur mono" id="soir-civil">—</p>
+        <p>Le Soleil à −6° sous l’horizon : la rue s’allume, les étoiles faibles attendent.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Fin du crépuscule nautique</span>
+        <p class="valeur mono" id="soir-nautique">—</p>
+        <p>Le Soleil à −12° : l’horizon cesse de se lire à l’œil nu.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Nuit astronomique à partir de</span>
+        <p class="valeur mono" id="soir-astro">—</p>
+        <p>Le Soleil à −18° : le ciel est entièrement noir, au sens des astronomes.</p>
+      </div>
+    </div>
+    <p style="margin-top:.6rem">La Lune ce soir : <b id="soir-lune">calcul en cours…</b></p>
+    <p>Nuages du soir : <b id="soir-nuages">lecture en cours…</b></p>
+    <p class="petite">Levers et couchers par l’algorithme solaire standard de la NOAA, généralisé aux zéniths 96°, 102° et 108° pour les crépuscules ; au zénith du coucher (90,833°), il redonne le coucher du panneau à la minute près — écart mesuré à la construction : 0 minute. L’exposition lunaire combine son illumination et sa présence au-dessus de l’horizon, balayées par pas de dix minutes sur toute la nuit. Les nuages sont lus chez Open-Meteo aux coordonnées de l’ancre, sourcés et datés dans la ligne même ; si le service ne répond pas, la ligne le dit au lieu d’inventer un ciel.</p>
+  </div>
+    <div class="carte" id="fiches-planetes">
+    <p class="etiquette">Les planètes du soir — fiches</p>
+    <p>Quatre planètes visibles à l’œil nu, calculées ici même, à l’instant, depuis leurs éléments orbitaux publiés (Paul Schlyter, <i>How to compute planetary positions</i>) : distance en kilomètres et en temps-lumière, position équatoriale, et visibilité de la nuit à l’ancre, balayée par pas de dix minutes du coucher du Soleil à l’aube. La forme des fiches doit quelque chose aux applications d’astronomie publiques ; les nombres, eux, sont calculés ici, jamais repris.</p>
+    <div class="fiches-grille">
+      <article class="fiche-planete">
+        <img src="assets/planetes/venus.jpg" alt="Vénus photographiée en vraies couleurs — NASA, via Wikimedia Commons" loading="lazy">
+        <div class="fp-corps">
+          <h3>Vénus</h3>
+          <p>Distance : <b class="mono" id="fp-venus-dist">calcul…</b></p>
+          <p>Position équatoriale : <b class="mono" id="fp-venus-pos">calcul…</b></p>
+          <p id="fp-venus-soir">Ce soir à l’ancre : calcul…</p>
+          <p class="petite">Précision de la position : quelques dixièmes de degré.</p>
+          <p class="petite">Photo : NASA (Mariner 10, traitement Ricardo Nunes), via Wikimedia Commons — domaine public.</p>
+        </div>
+      </article>
+      <article class="fiche-planete">
+        <img src="assets/planetes/mars.jpg" alt="Mars photographiée par la sonde Rosetta — ESA, via Wikimedia Commons" loading="lazy">
+        <div class="fp-corps">
+          <h3>Mars</h3>
+          <p>Distance : <b class="mono" id="fp-mars-dist">calcul…</b></p>
+          <p>Position équatoriale : <b class="mono" id="fp-mars-pos">calcul…</b></p>
+          <p id="fp-mars-soir">Ce soir à l’ancre : calcul…</p>
+          <p class="petite">Précision de la position : quelques dixièmes de degré.</p>
+          <p class="petite">Photo : ESA / Rosetta / MPS, via Wikimedia Commons — CC BY-SA 4.0.</p>
+        </div>
+      </article>
+      <article class="fiche-planete">
+        <img src="assets/planetes/jupiter.jpg" alt="Jupiter photographiée — NASA, via Wikimedia Commons" loading="lazy">
+        <div class="fp-corps">
+          <h3>Jupiter</h3>
+          <p>Distance : <b class="mono" id="fp-jupiter-dist">calcul…</b></p>
+          <p>Position équatoriale : <b class="mono" id="fp-jupiter-pos">calcul…</b></p>
+          <p id="fp-jupiter-soir">Ce soir à l’ancre : calcul…</p>
+          <p class="petite">Précision de la position : quelques dixièmes de degré.</p>
+          <p class="petite">Photo : NASA / JPL / USGS, via Wikimedia Commons — domaine public.</p>
+        </div>
+      </article>
+      <article class="fiche-planete">
+        <img src="assets/planetes/saturne.jpg" alt="Saturne et ses anneaux à l’équinoxe, par la sonde Cassini — NASA, via Wikimedia Commons" loading="lazy">
+        <div class="fp-corps">
+          <h3>Saturne</h3>
+          <p>Distance : <b class="mono" id="fp-saturne-dist">calcul…</b></p>
+          <p>Position équatoriale : <b class="mono" id="fp-saturne-pos">calcul…</b></p>
+          <p id="fp-saturne-soir">Ce soir à l’ancre : calcul…</p>
+          <p class="petite">Précision de la position : jusqu’à ≈ 1° d’écart possible — les perturbations des autres planètes ne sont pas calculées.</p>
+          <p class="petite">Photo : NASA / JPL, via Wikimedia Commons — domaine public.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="carte" id="curseur-ciel">
+    <p class="etiquette">Le curseur du ciel — de la grande ville au ciel noir</p>
+    <p>Le même ciel, trois lectures : glissez la brillance du fond de ciel. Le repère de l’ancre est à sa valeur établie — 19,85 mag/arcsec² (zone LP 5b, atlas mondial de Lorenz, édition 2024). La magnitude limite et le nombre d’étoiles suivent la même relation que la carte ÉTOILES du globe.</p>
+    <canvas id="br-canvas" width="720" height="200" style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--ligne)" aria-label="Simulation d’un champ d’étoiles selon la brillance du ciel"></canvas>
+    <input type="range" id="br-range" min="17.5" max="22" step="0.05" value="19.85" style="width:100%;margin-top:.6rem" aria-label="Brillance du ciel, en magnitudes par seconde d’arc carrée">
+    <p style="margin:.4rem 0 0">Brillance : <b class="mono" id="br-val">19,85 mag/arcsec²</b> <span class="petite" id="br-marque">(l’ancre — Sainte-Martine)</span> · magnitude limite estimée : <b class="mono" id="br-nelm">≈ 5,4</b> · étoiles de la simulation encore visibles : <b class="mono" id="br-nb">—</b></p>
+    <p class="petite">Simulation pédagogique — ce n’est pas une photographie : un champ d’étoiles généré ici, à graine fixe, éteint étoile par étoile quand la brillance monte. « Grande ville » ≈ 18, « ciel noir » = 22,0 : les deux bouts de l’échelle.</p>
   </div>
   <div class="carte">
     <p class="etiquette">L’ancrage — Sainte-Martine, Québec</p>
@@ -1048,6 +1303,29 @@ button.at-bloc{cursor:pointer}
       <p id="mt-lecture" style="font-size:1.02rem;line-height:1.65">Lecture en cours…</p>
       <p class="petite" id="mt-lecture-meta">Chaque phrase de cette lecture suit une valeur affichée ci-dessous ; rien n’est inventé.</p>
     </div>
+  </div>
+
+  <div class="carte" id="geometrie-meteo">
+    <p class="etiquette">La géométrie derrière sa météo</p>
+    <p>Avant les nuages et le vent, la forme du jour de l’ancre est écrite par la géométrie — trois nombres que le moteur astronomique du site recalcule chaque jour :</p>
+    <div class="direct-grille">
+      <div class="direct-tuile">
+        <span class="pastille-direct">Déclinaison du Soleil — aujourd’hui</span>
+        <p class="valeur mono" id="geo-dec">—</p>
+        <p>L’angle du Soleil par rapport à l’équateur céleste : négatif en automne et en hiver, il tire le jour vers le bas.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Hauteur du Soleil à midi solaire</span>
+        <p class="valeur mono" id="geo-midi">—</p>
+        <p><span class="mono">90° − |latitude − déclinaison|</span> : le plafond que le Soleil atteint aujourd’hui à Sainte-Martine.</p>
+      </div>
+      <div class="direct-tuile">
+        <span class="pastille-direct">Durée du jour</span>
+        <p class="valeur mono" id="geo-duree">—</p>
+        <p id="geo-levercoucher">—</p>
+      </div>
+    </div>
+    <p class="petite">C’est la déclinaison — l’inclinaison de 23,44° de l’axe terrestre, lue jour après jour — qui règle la hauteur de midi et la durée du jour : la part de la météo qui revient chaque année à date fixe. Le reste (nuages, fronts, vent) est l’autre moitié du ciel — celle des tuiles qui suivent.</p>
   </div>
 
   <h3 class="sous-titre-caps">Sainte-Martine — l’ancre du site</h3>
@@ -1583,7 +1861,8 @@ button.at-bloc{cursor:pointer}
     <p class="etiquette">Installer</p>
     <p id="app-etat">Lecture de votre navigateur en cours…</p>
     <p id="app-bouton-ligne" hidden><button class="app-install-btn" id="app-installer" type="button">Installer l’application</button></p>
-    <div id="app-etapes-ios" hidden>
+    <div id="app-etapes-ios" class="app-guide">
+      <p class="app-guide-titre">Sur iPhone et iPad — le geste de Safari</p>
       <p>Sur iPhone et iPad, Apple ne permet aucun bouton d’installation : le geste se fait dans Safari, en trois touchers —</p>
       <ol class="app-etapes">
         <li>Touchez <b>Partager</b> — le carré avec une flèche vers le haut, dans la barre de Safari.</li>
@@ -1592,7 +1871,8 @@ button.at-bloc{cursor:pointer}
       </ol>
       <p class="petite">À faire dans <b>Safari</b> : le navigateur intégré d’une autre application ne propose pas ce geste.</p>
     </div>
-    <div id="app-etapes-android" hidden>
+    <div id="app-etapes-android" class="app-guide">
+      <p class="app-guide-titre">Sur Android et sur ordinateur — la marche manuelle</p>
       <p>Sur Android (Chrome) et sur ordinateur (Chrome ou Edge), si le bouton d’installation ne paraît pas :</p>
       <ol class="app-etapes">
         <li>Ouvrez le menu du navigateur (⋮ sur Android ; l’icône d’installation dans la barre d’adresse, ou le menu ⋯, sur ordinateur).</li>
@@ -3939,6 +4219,11 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
         var pl=places[e.id]; if(!pl)return;
         rects.push([geom.S/2+pl.p.x-e.w/2,geom.H/2+pl.p.y-e.h/2,geom.S/2+pl.p.x+e.w/2,geom.H/2+pl.p.y+e.h/2]);
       });
+      var pileCiel=document.querySelector('.cartes-ciel');
+      if(pileCiel){
+        var pr=pileCiel.getBoundingClientRect();
+        if(pr.width>0)rects.push([pr.left-geom.rect.left,pr.top-geom.rect.top,pr.right-geom.rect.left,pr.bottom-geom.rect.top]);
+      }
       placerEtiquetteAncre(ra.rep._etiquette,projection(la.lat,la.lon),rects);
     });
     rendreTraits(places,geom);
@@ -4865,8 +5150,8 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     if(installee())return;
     if(etat)etat.textContent='Votre navigateur peut installer ce site comme une application :';
     if(ligneBtn)ligneBtn.hidden=false;
-    if(ios)ios.hidden=true;
-    if(and)and.hidden=true;
+    if(ios)ios.classList.remove('guide-suggere');
+    if(and)and.classList.add('guide-suggere');
   });
   if(btn)btn.addEventListener('click',function(){
     if(!inviteDifferee)return;
@@ -4877,7 +5162,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
         if(ligneBtn)ligneBtn.hidden=true;
       }else{
         if(etat)etat.textContent='Installation reportée — le bouton reste disponible ici, et la marche manuelle est ci-dessous.';
-        if(and)and.hidden=false;
+        if(and)and.classList.add('guide-suggere');
       }
       inviteDifferee=null;
     });
@@ -4885,18 +5170,18 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   window.addEventListener('appinstalled',function(){
     if(etat)etat.textContent='Vous utilisez la version application. Elle ouvre désormais depuis votre écran d’accueil.';
     if(ligneBtn)ligneBtn.hidden=true;
-    if(ios)ios.hidden=true;
-    if(and)and.hidden=true;
+    if(ios)ios.classList.remove('guide-suggere');
+    if(and)and.classList.remove('guide-suggere');
   });
   if(installee()){
     if(etat)etat.textContent='Vous utilisez déjà la version application.';
     if(ligneBtn)ligneBtn.hidden=true;
   }else if(estIOS){
     if(etat)etat.textContent='Sur cet appareil, l’installation se fait par le geste Partager de Safari :';
-    if(ios)ios.hidden=false;
+    if(ios)ios.classList.add('guide-suggere');
   }else{
     if(etat)etat.textContent='Si votre navigateur propose l’installation, son bouton paraît ici même ; sinon, la marche manuelle :';
-    if(and)and.hidden=false;
+    if(and)and.classList.add('guide-suggere');
   }
   // Enregistrement du travailleur de service : contexte sécurisé seulement,
   // échec silencieux et sans conséquence si le navigateur refuse — le site
@@ -5150,5 +5435,633 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   setInterval(majLigneAuto,30000);
 })();
 </script>
+
+<script>
+/* ===== v21 — « La planète » : moteur astronomique maison, comptes confrontés, globe WebGL =====
+   Mécanismes : cahier des charges fonctionnel inspiré des panneaux d’astronomie publics
+   (quelles grandeurs, quels enchaînements) ; implémentation entièrement maison —
+   formules publiées (Meeus, Astronomical Algorithms, formes basse précision ; famille
+   solaire NOAA déjà au panneau), données publiques (NASA pour l’imagerie d’origine du
+   site, Open-Meteo pour les nuages). Aucun code, texte, image ou donnée de tiers repris. */
+(function(){
+'use strict';
+// MOTEUR21-CORE-DEBUT
+var M21=(function(){
+  var RAD=Math.PI/180, DEG=180/Math.PI;
+  var F_SID=1.00273790935;            // rotations sidérales par jour solaire (constante du panneau)
+  var C_KMS=299792.458;               // vitesse de la lumière, km/s
+  var UA_KM=149597870.7;              // unité astronomique, km
+  var JOUR_SID_S=86164.0905;          // jour sidéral, secondes
+  var PIVOT_MS=Date.UTC(2026,2,20,14,46,0); // équinoxe de printemps 2026 (pivot du panneau)
+  function norm360(x){x%=360;return x<0?x+360:x}
+  function norm180(x){x=norm360(x);return x>180?x-360:x}
+  function norm24(x){x%=24;return x<0?x+24:x}
+  function jj(date){return date.getTime()/86400000+2440587.5}
+  function gmstDeg(date){var J=jj(date),T=(J-2451545)/36525;return norm360(280.46061837+360.98564736629*(J-2451545)+0.000387933*T*T-T*T*T/38710000)}
+  function epsDeg(T){return 23+(26+((21.448-T*(46.815+T*(0.00059-T*0.001813))))/60)/60}
+  // Soleil — Meeus, forme basse précision (précision ≈ 0,01° sur la longitude, ≈ 0,0002 UA sur la distance)
+  function soleilPrecis(date){
+    var J=jj(date),T=(J-2451545)/36525;
+    var L0=norm360(280.46646+T*(36000.76983+0.0003032*T));
+    var M=357.52911+T*(35999.05029-0.0001537*T);
+    var e=0.016708634-T*(0.000042037+0.0000001267*T);
+    var C=(1.914602-T*(0.004817+0.000014*T))*Math.sin(M*RAD)+(0.019993-0.000101*T)*Math.sin(2*M*RAD)+0.000289*Math.sin(3*M*RAD);
+    var vraiLong=L0+C, vraieAnom=M+C;
+    var R=(1.000001018*(1-e*e))/(1+e*Math.cos(vraieAnom*RAD));
+    var omega=125.04-1934.136*T;
+    var lambda=vraiLong-0.00569-0.00478*Math.sin(omega*RAD);
+    var eps=epsDeg(T)+0.00256*Math.cos(omega*RAD);
+    var ra=norm360(Math.atan2(Math.cos(eps*RAD)*Math.sin(lambda*RAD),Math.cos(lambda*RAD))*DEG)/15;
+    var dec=Math.asin(Math.sin(eps*RAD)*Math.sin(lambda*RAD))*DEG;
+    return {longitudeEcliptique:lambda,ascensionDroiteH:ra,declinaison:dec,distanceUA:R,distanceKm:R*UA_KM,tempsLumiereMin:(R*UA_KM)/C_KMS/60,obliquite:eps};
+  }
+  // Lune — Meeus, forme basse précision (précision ≈ 0,3° sur la longitude, ≈ 0,1° sur la latitude, quelques milliers de km sur la distance)
+  function lunePrecise(date){
+    var J=jj(date),T=(J-2451545)/36525;
+    var Lp=norm360(218.3164477+481267.88123421*T);
+    var D=norm360(297.8501921+445267.1114034*T);
+    var M=357.5291092+35999.0502909*T;
+    var Mp=norm360(134.9633964+477198.8675055*T);
+    var F=norm360(93.272095+483202.0175233*T);
+    var lon=Lp+6.289*Math.sin(Mp*RAD)+1.274*Math.sin((2*D-Mp)*RAD)+0.658*Math.sin(2*D*RAD)+0.214*Math.sin(2*Mp*RAD)-0.186*Math.sin(M*RAD)-0.114*Math.sin(2*F*RAD);
+    lon=norm360(lon);
+    var lat=5.128*Math.sin(F*RAD)+0.281*Math.sin((Mp+F)*RAD)+0.278*Math.sin((Mp-F)*RAD)+0.173*Math.sin((2*D-F)*RAD);
+    var dist=385000.56-20905*Math.cos(Mp*RAD)-3699*Math.cos((2*D-Mp)*RAD)-2956*Math.cos(2*D*RAD)-570*Math.cos(2*Mp*RAD);
+    var eps=epsDeg(T);
+    var ra=norm360(Math.atan2(Math.sin(lon*RAD)*Math.cos(eps*RAD)-Math.tan(lat*RAD)*Math.sin(eps*RAD),Math.cos(lon*RAD))*DEG)/15;
+    var dec=Math.asin(Math.sin(lat*RAD)*Math.cos(eps*RAD)+Math.cos(lat*RAD)*Math.sin(eps*RAD)*Math.sin(lon*RAD))*DEG;
+    return {longitudeEcliptique:lon,latitudeEcliptique:lat,ascensionDroiteH:ra,declinaison:dec,distanceKm:dist,tempsLumiereS:dist/C_KMS,elongationDeg:D};
+  }
+  function illumination(date){
+    var s=soleilPrecis(date), l=lunePrecise(date);
+    var cosPsi=Math.sin(s.declinaison*RAD)*Math.sin(l.declinaison*RAD)+Math.cos(s.declinaison*RAD)*Math.cos(l.declinaison*RAD)*Math.cos((s.ascensionDroiteH-l.ascensionDroiteH)*15*RAD);
+    cosPsi=Math.max(-1,Math.min(1,cosPsi));
+    var psi=Math.acos(cosPsi)*DEG; // élongation Soleil–Lune vue de la Terre
+    return {fraction:(1-Math.cos(psi*RAD))/2,elongationDeg:psi};
+  }
+  function altaz(raH,decDeg,lstH,latDeg){
+    var H=(lstH-raH)*15*RAD, dec=decDeg*RAD, lat=latDeg*RAD;
+    var alt=Math.asin(Math.sin(dec)*Math.sin(lat)+Math.cos(dec)*Math.cos(lat)*Math.cos(H))*DEG;
+    var az=Math.atan2(Math.sin(H),Math.cos(H)*Math.sin(lat)-Math.tan(dec)*Math.cos(lat))*DEG+180;
+    return {altitude:alt,azimut:norm360(az)};
+  }
+  function pointSub(raH,decDeg,date){ // point de la Terre où l’astre est au zénith
+    var lon=norm180(raH*15-gmstDeg(date));
+    return {lat:decDeg,lon:lon};
+  }
+  // Lever/coucher pour un zénith donné — algorithme solaire NOAA généralisé (même famille que soleil() du panneau)
+  function passageZenith(date,lat,lon,zenith,lever){
+    var deg=DEG;
+    var jour=Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate());
+    var N=Math.round((jour-Date.UTC(date.getUTCFullYear(),0,0))/86400000);
+    var lngHour=lon/15;
+    var t=N+((lever?6:18)-lngHour)/24;
+    var M=(0.9856*t)-3.289;
+    var L=norm360(M+1.916*Math.sin(M*RAD)+0.020*Math.sin(2*M*RAD)+282.634);
+    var RA=Math.atan(0.91764*Math.tan(L*RAD))*deg; if(RA<0)RA+=360;
+    RA+=(Math.floor(L/90)*90-Math.floor(RA/90)*90); RA/=15;
+    var sinDec=0.39782*Math.sin(L*RAD), cosDec=Math.cos(Math.asin(sinDec));
+    var cosH=(Math.cos(zenith*RAD)-sinDec*Math.sin(lat*RAD))/(cosDec*Math.cos(lat*RAD));
+    if(cosH>1||cosH<-1)return null;
+    var H=(lever?360-Math.acos(cosH)*deg:Math.acos(cosH)*deg)/15;
+    var T2=H+RA-0.06571*t-6.622;
+    return norm24(T2-lngHour); // heures UTC (fraction)
+  }
+  function comptes(date){
+    var J=jj(date);
+    var solJ2000=J-2451545;
+    var sidJ2000=solJ2000*F_SID;
+    var solEq=(date.getTime()-PIVOT_MS)/86400000;
+    var sidEq=solEq*F_SID;
+    return {jj:J,jourSideral:sidJ2000,diffJ2000:sidJ2000-solJ2000,rotSolairesEq:solEq,rotSideralesEq:sidEq,diffEq:sidEq-solEq,diffEqSecondes:(sidEq-solEq)*JOUR_SID_S};
+  }
+  return {F_SID:F_SID,JOUR_SID_S:JOUR_SID_S,PIVOT_MS:PIVOT_MS,jj:jj,gmstDeg:gmstDeg,soleilPrecis:soleilPrecis,lunePrecise:lunePrecise,illumination:illumination,altaz:altaz,pointSub:pointSub,passageZenith:passageZenith,comptes:comptes,norm360:norm360,norm180:norm180,norm24:norm24};
+})();
+// MOTEUR21-CORE-FIN
+if(typeof window!=='undefined')window.MOTEUR_ASTRO_V21=M21;
+if(typeof document==='undefined')return;
+var LAT=45.25, LON=-73.8024;
+function $(id){return document.getElementById(id)}
+function txt(id,v){var el=$(id);if(el)el.textContent=v}
+function fr(x,d){return x.toFixed(d).replace('.',',')}
+function frInt(x){return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
+function pad2(n){return (n<10?'0':'')+n}
+function hms(h){h=M21.norm24(h);var H=Math.floor(h),m=Math.floor((h-H)*60),s=Math.floor((((h-H)*60)-m)*60);return H+' h '+pad2(m)+' min '+pad2(s)+' s'}
+function hm(h){h=M21.norm24(h);var H=Math.floor(h),m=Math.round((h-H)*60);if(m===60){m=0;H=(H+1)%24}return H+' h '+pad2(m)}
+function heureUTC(date,frac){var ms=Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate())+frac*3600000;return new Date(ms)}
+function fmtHeureToronto(d){try{return new Intl.DateTimeFormat('fr-CA',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/Toronto'}).format(d)}catch(e){return d.toUTCString()}}
+function lstHeures(date,lon){ // LST en heures via le GMST du moteur (même polynôme que le panneau)
+  return M21.norm24((M21.gmstDeg(date)+lon)/15);
+}
+function majV21(){
+  var now=new Date();
+  var T=window.TEMPS_V16||null;
+  // ----- Comptes confrontés -----
+  var c=M21.comptes(now);
+  txt('cc-jj',fr(c.jj,5));
+  txt('cc-js',fr(c.jourSideral,5));
+  txt('cc-diff',fr(c.diffJ2000,5)+' rotation'+(c.diffJ2000>=2?'s':''));
+  txt('cc-rot-sol',fr(c.rotSolairesEq,4));
+  txt('cc-rot-sid',fr(c.rotSideralesEq,4));
+  txt('cc-diff-rot',fr(c.diffEq,4)+' rotation');
+  txt('cc-diff-temps',hms(c.diffEqSecondes/3600));
+  // ----- Soleil et Lune -----
+  var s=M21.soleilPrecis(now), l=M21.lunePrecise(now), il=M21.illumination(now);
+  var lst=lstHeures(now,LON);
+  var azS=M21.altaz(s.ascensionDroiteH,s.declinaison,lst,LAT);
+  var azL=M21.altaz(l.ascensionDroiteH,l.declinaison,lst,LAT);
+  var subS=M21.pointSub(s.ascensionDroiteH,s.declinaison,now);
+  var subL=M21.pointSub(l.ascensionDroiteH,l.declinaison,now);
+  txt('esp-sol-dist',frInt(s.distanceKm)+' km ('+fr(s.distanceUA,4)+' UA)');
+  txt('esp-sol-lumiere',fr(s.tempsLumiereMin,2)+' minutes-lumière');
+  txt('esp-sol-ecl',fr(s.longitudeEcliptique,2)+'° écliptique');
+  txt('esp-sol-eq',fr(s.ascensionDroiteH,3)+' h AD · '+fr(s.declinaison,2)+'° décl.');
+  txt('esp-sol-altaz','hauteur '+fr(azS.altitude,1)+'° · azimut '+fr(azS.azimut,1)+'°');
+  txt('esp-sol-sub','point subsolaire : '+fr(Math.abs(subS.lat),1)+'° '+(subS.lat>=0?'N':'S')+' · '+fr(Math.abs(subS.lon),1)+'° '+(subS.lon>=0?'E':'O'));
+  txt('esp-lune-dist',frInt(l.distanceKm)+' km');
+  txt('esp-lune-lumiere',fr(l.tempsLumiereS,2)+' secondes-lumière');
+  txt('esp-lune-ecl',fr(l.longitudeEcliptique,2)+'° écl. · lat. '+fr(l.latitudeEcliptique,2)+'°');
+  txt('esp-lune-eq',fr(l.ascensionDroiteH,3)+' h AD · '+fr(l.declinaison,2)+'° décl.');
+  txt('esp-lune-altaz','hauteur '+fr(azL.altitude,1)+'° · azimut '+fr(azL.azimut,1)+'°');
+  txt('esp-lune-phase','illumination '+fr(il.fraction*100,1)+' % · élongation '+fr(il.elongationDeg,1)+'°');
+  txt('esp-lune-sub','point sublunaire : '+fr(Math.abs(subL.lat),1)+'° '+(subL.lat>=0?'N':'S')+' · '+fr(Math.abs(subL.lon),1)+'° '+(subL.lon>=0?'E':'O'));
+  // ----- Déclinaison et cycle -----
+  var decl=s.declinaison;
+  txt('esp-dec',fr(decl,2)+'°');
+  var hauteurMidi=90-Math.abs(LAT-decl);
+  txt('esp-midi',fr(hauteurMidi,1)+'°');
+  var solPan=T?T.soleil(now,LAT,LON):null;
+  if(solPan){txt('esp-jour',hm(solPan.coucher-solPan.lever)+' de jour')}
+  var solsticeHiver=Date.UTC(now.getUTCFullYear(),11,21);
+  var joursSolstice=Math.round((solsticeHiver-Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()))/86400000);
+  txt('esp-cycle',decl<0?(joursSolstice>0?('déclinaison sud, en route vers le solstice d’hiver — plus que '+joursSolstice+' jours'):'au plus profond du cycle sud, près du solstice d’hiver'):('déclinaison nord — le Soleil expose surtout l’hémisphère nord'));
+  // ----- Géométrie de la météo (onglet Météo) -----
+  txt('geo-dec',fr(decl,2)+'°');
+  txt('geo-midi',fr(hauteurMidi,1)+'° au-dessus de l’horizon sud');
+  if(solPan){txt('geo-duree',hm(solPan.coucher-solPan.lever));txt('geo-levercoucher','lever '+fmtHeureToronto(heureUTC(now,solPan.lever))+' · coucher '+fmtHeureToronto(heureUTC(now,solPan.coucher))+' (heure de Toronto)')}
+  // ----- Compte civil de 24 heures (calendrier de Toronto) et temps atomique -----
+  (function(){
+    try{
+      var fmt=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+      function lectureNaive(d){var parts={};fmt.formatToParts(d).forEach(function(x){parts[x.type]=x.value});
+        return Date.UTC(+parts.year,(+parts.month)-1,+parts.day,(+parts.hour)%24,+parts.minute,+parts.second);}
+      var civ=(lectureNaive(now)-lectureNaive(new Date(M21.PIVOT_MS)))/86400000;
+      txt('cc-rot-civ',fr(civ,4));
+      var ecartS=(c.rotSolairesEq-civ)*86400;
+      txt('cc-diff-civ',(ecartS>=0?'+':'−')+' '+hms(Math.abs(ecartS)/3600));
+    }catch(e){}
+    var tai=new Date(now.getTime()+37000);
+    txt('tai-horloge',pad2(tai.getUTCHours())+' h '+pad2(tai.getUTCMinutes())+' min '+pad2(tai.getUTCSeconds())+' s TAI');
+    txt('tai-secondes',frInt(Math.floor((now.getTime()-M21.PIVOT_MS)/1000))+' s');
+  })();
+  // ----- Fiche sidérale confrontée -----
+  txt('fs-ancre',hms(lst));
+  try{txt('fs-civile',new Intl.DateTimeFormat('fr-CA',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'America/Toronto'}).format(now))}catch(e){}
+  var mv=$('mir-v-siderale'), mt=$('mir-v-titre');
+  if(mv&&mv.textContent&&mv.textContent.indexOf('h')>-1){
+    txt('fs-visiteur',mv.textContent.trim());
+    if(mt)txt('fs-visiteur-nom',mt.textContent.trim());
+    var m2=mv.textContent.match(/(\d+)\s*h\s*(\d+)\s*min\s*(\d+)/);
+    if(m2){var vh=(+m2[1])+(+m2[2])/60+(+m2[3])/3600;var d=((vh-lst+36)%24)-12;txt('fs-ecart',(d>=0?'+':'−')+' '+hms(Math.abs(d))+(d>=0?' — son horloge sidérale avance sur l’ancre':' — son horloge sidérale retarde sur l’ancre'))}
+  }
+  // ----- Ce soir à l’ancre (recalculé toutes les minutes seulement) -----
+  if(!majV21._soirTs||now.getTime()-majV21._soirTs>60000){majV21._soirTs=now.getTime();majSoir(now)}
+}
+function majSoir(now){
+  var coucher=M21.passageZenith(now,LAT,LON,90.833,false);
+  var finCiv=M21.passageZenith(now,LAT,LON,96,false);
+  var finNau=M21.passageZenith(now,LAT,LON,102,false);
+  var finAst=M21.passageZenith(now,LAT,LON,108,false);
+  if(coucher===null){txt('soir-coucher','le Soleil ne se couche pas aujourd’hui à l’ancre (cas polaire — dit, pas maquillé)');return}
+  var dCoucher=heureUTC(now,coucher);
+  txt('soir-coucher',fmtHeureToronto(dCoucher)+' (heure de Toronto)');
+  txt('soir-civil',finCiv!==null?fmtHeureToronto(heureUTC(now,finCiv)):'pas de crépuscule civil complet ce soir');
+  txt('soir-nautique',finNau!==null?fmtHeureToronto(heureUTC(now,finNau)):'pas de crépuscule nautique complet ce soir');
+  txt('soir-astro',finAst!==null?fmtHeureToronto(heureUTC(now,finAst)):'la nuit astronomique complète n’est pas atteinte ce soir');
+  // Exposition lunaire : balayage de la nuit, pas de 10 minutes
+  var demain=new Date(now.getTime()+86400000);
+  var lever=M21.passageZenith(demain,LAT,LON,90.833,true);
+  var finNuit=lever!==null?heureUTC(demain,lever).getTime():dCoucher.getTime()+12*3600000;
+  var debut=dCoucher.getTime(), total=0, dessus=0, maxAlt=-90, maxT=null;
+  for(var t=debut;t<=finNuit;t+=600000){
+    var d=new Date(t), ll=M21.lunePrecise(d), aa=M21.altaz(ll.ascensionDroiteH,ll.declinaison,lstHeures(d,LON),LAT);
+    total++; if(aa.altitude>0)dessus++; if(aa.altitude>maxAlt){maxAlt=aa.altitude;maxT=d}
+  }
+  var il=M21.illumination(now);
+  if(total>0){
+    var expo=il.fraction*(dessus/total)*100;
+    txt('soir-lune','culmination '+fmtHeureToronto(maxT)+' à '+fr(maxAlt,0)+'° · au-dessus de l’horizon '+fr(dessus/total*100,0)+' % de la nuit · exposition (illumination × présence) ≈ '+fr(expo,0)+' %');
+  }
+  // Nuages du soir — Open-Meteo, sourcés et datés ; l’échec se dit
+  if(!majSoir._nuagesTs||Date.now()-majSoir._nuagesTs>1800000){
+    majSoir._nuagesTs=Date.now();
+    try{
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=45.25&longitude=-73.8024&hourly=cloud_cover&timezone=America%2FToronto&forecast_days=2')
+      .then(function(r){return r.json()})
+      .then(function(j){
+        var H=j&&j.hourly; if(!H||!H.time)throw new Error('format');
+        var jour=new Date().toLocaleDateString('fr-CA',{timeZone:'America/Toronto'});
+        var vals=[];
+        for(var i=0;i<H.time.length;i++){if(H.time[i].indexOf(jour)===0){var hh=+H.time[i].substr(11,2);if(hh>=18&&hh<=23)vals.push(H.cloud_cover[i])}}
+        if(vals.length){var moy=vals.reduce(function(a,b){return a+b},0)/vals.length;txt('soir-nuages','couverture nuageuse moyenne de 18 h à 24 h : '+Math.round(moy)+' % — Open-Meteo, relevé du '+jour+' (heure de Toronto)')}
+        else txt('soir-nuages','nuages du soir : série horaire non rejointe dans la réponse d’Open-Meteo');
+      })
+      .catch(function(){txt('soir-nuages','nuages du soir : Open-Meteo non rejoint à l’instant — aucune valeur inventée')});
+    }catch(e){txt('soir-nuages','nuages du soir : lecture impossible dans ce navigateur')}
+  }
+}
+// ----- Globe WebGL : sphère, terminateur sur la surface, axe et écliptique -----
+(function initGlobe(){
+  var cv=$('globe-webgl'); if(!cv)return;
+  var etat=$('globe-webgl-etat');
+  var gl=null;
+  try{gl=cv.getContext('webgl')||cv.getContext('experimental-webgl')}catch(e){}
+  if(!gl){if(etat)etat.textContent='Globe WebGL : non disponible dans ce navigateur — la scène actuelle demeure, intacte (repli écrit).';return}
+  function sh(type,src){var o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))return null;return o}
+  var vs='attribute vec3 pos;attribute vec3 nor;attribute vec2 uv;uniform mat4 mvp;uniform mat4 rot;varying vec2 vUv;varying vec3 vTerre;varying vec3 vVue;void main(){vUv=uv;vTerre=nor;vec4 p=rot*vec4(pos,1.0);vVue=(rot*vec4(nor,0.0)).xyz;gl_Position=mvp*p;}';
+  var fs='precision mediump float;varying vec2 vUv;varying vec3 vTerre;varying vec3 vVue;uniform sampler2D tex;uniform sampler2D texN;uniform float aTexN;uniform float aVraie;uniform vec3 soleil;uniform vec3 centre;uniform float aTex;uniform float mode;uniform vec3 couleur;'+
+  'float h21(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}'+
+  'void main(){if(mode>0.5){gl_FragColor=vec4(couleur,1.0);return;}vec3 base=aTex>0.5?texture2D(tex,vUv).rgb:vec3(0.04,0.12,0.22);'+
+  'float loin=1.0-smoothstep(0.2,0.9,dot(normalize(vTerre),normalize(centre)));'+
+  'base=mix(base,vec3(0.03,0.10,0.20),loin*(1.0-aVraie)*0.75);'+
+  'float d=dot(normalize(vTerre),normalize(soleil));'+
+  'float jour=smoothstep(-0.10,0.28,d);'+
+  'vec3 col=base*(0.05+1.10*max(d,0.0));'+
+  'col=mix((aTexN>0.5?texture2D(texN,vUv).rgb*1.5:base*0.10+vec3(0.008,0.016,0.045)),col,jour);'+
+  'float lum=dot(base,vec3(0.299,0.587,0.114));'+
+  'float sp=step(0.968,h21(floor(vUv*vec2(900.0,450.0))));'+
+  'col+=vec3(1.0,0.84,0.52)*sp*(1.0-jour)*smoothstep(0.22,0.55,lum)*0.85;'+
+  'float rim=pow(1.0-abs(normalize(vVue).z),3.0);'+
+  'col+=vec3(0.22,0.45,0.75)*rim*0.35;'+
+  'gl_FragColor=vec4(col,1.0);}';
+  var v=sh(gl.VERTEX_SHADER,vs), f=sh(gl.FRAGMENT_SHADER,fs);
+  if(!v||!f){if(etat)etat.textContent='Globe WebGL : shaders refusés par ce navigateur — la scène actuelle demeure (repli écrit).';return}
+  var pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,f);gl.linkProgram(pr);
+  if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){if(etat)etat.textContent='Globe WebGL : programme non lié — la scène actuelle demeure (repli écrit).';return}
+  gl.useProgram(pr);
+  // Géométrie de la sphère (pas de 3°)
+  var P=[],N=[],U=[],I=[];
+  for(var la=-90;la<90;la+=3){for(var lo=0;lo<360;lo+=3){
+    function pt(lat,lon){var p=lat*Math.PI/180,l=lon*Math.PI/180;return [Math.cos(p)*Math.sin(l),Math.sin(p),Math.cos(p)*Math.cos(l)]}
+    var a=pt(la,lo),b=pt(la,lo+3),c2=pt(la+3,lo+3),d2=pt(la+3,lo);
+    var base=P.length/3;
+    [a,b,c2,d2].forEach(function(q){P.push(q[0],q[1],q[2]);N.push(q[0],q[1],q[2])});
+    U.push(lo/360,1-(la+90)/180,(lo+3)/360,1-(la+90)/180,(lo+3)/360,1-(la+93)/180,lo/360,1-(la+93)/180);
+    I.push(base,base+1,base+2,base,base+2,base+3);
+  }}
+  function buf(data,type){var b=gl.createBuffer();gl.bindBuffer(type,b);gl.bufferData(type,data,gl.STATIC_DRAW);return b}
+  var bP=buf(new Float32Array(P),gl.ARRAY_BUFFER), bN=buf(new Float32Array(N),gl.ARRAY_BUFFER), bU=buf(new Float32Array(U),gl.ARRAY_BUFFER);
+  var bI=buf(new Uint16Array(I),gl.ELEMENT_ARRAY_BUFFER);
+  function attr(nom,b,taille){var l=gl.getAttribLocation(pr,nom);gl.enableVertexAttribArray(l);gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.vertexAttribPointer(l,taille,gl.FLOAT,false,0,0)}
+  attr('pos',bP,3);attr('nor',bN,3);attr('uv',bU,2);
+  var uMvp=gl.getUniformLocation(pr,'mvp'), uRot=gl.getUniformLocation(pr,'rot'), uSoleil=gl.getUniformLocation(pr,'soleil'), uCentre=gl.getUniformLocation(pr,'centre'), uTex=gl.getUniformLocation(pr,'aTex');
+  var uMode=gl.getUniformLocation(pr,'mode'), uCouleur=gl.getUniformLocation(pr,'couleur');
+  gl.uniform1f(uMode,0);
+  // Texture : la photo Terre du site (imagerie d’origine NASA, déjà au paquet)
+  var tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array([8,32,48,255]));
+  gl.uniform1i(uTex,0);gl.uniform1f(gl.getUniformLocation(pr,'aTex'),0);
+  var img=document.querySelector('.planete-globe img');
+  function chargeTex(){
+    if(!img||!img.naturalWidth)return;
+    try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+    gl.uniform1f(gl.getUniformLocation(pr,'aTex'),1);}catch(e){}
+  }
+  if(img&&img.complete)chargeTex(); else if(img)img.addEventListener('load',chargeTex);
+  // v21 (compléments) — Textures NASA équirectangulaires, chargées depuis
+  // assets/ : Blue Marble pour le jour, Black Marble pour la nuit. Chacune a
+  // été roulée d’un demi-tour pour la convention UV du shader (u = 0 au
+  // méridien de Greenwich). Tout échec laisse le comportement d’origine :
+  // la photo du site enroulée, la couleur unie, les lueurs stylisées.
+  var uTexN=gl.getUniformLocation(pr,'texN'), uATexN=gl.getUniformLocation(pr,'aTexN'), uAVraie=gl.getUniformLocation(pr,'aVraie');
+  gl.uniform1i(uTexN,1); gl.uniform1f(uATexN,0.0); gl.uniform1f(uAVraie,0.0);
+  var texN=gl.createTexture();
+  gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D,texN);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array([3,5,12,255]));
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.activeTexture(gl.TEXTURE0);
+  var imgJour=new Image(), imgNuit=new Image();
+  var jourPret=false, nuitPrete=false, jourApplique=false, nuitAppliquee=false, etatTexFait=false;
+  imgJour.onload=function(){jourPret=true}; imgJour.src='assets/globe-jour.jpg';
+  imgNuit.onload=function(){nuitPrete=true}; imgNuit.src='assets/globe-nuit.jpg';
+  function relieTextures(){
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D,texN);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,tex);
+  }
+  function appliqueTextures(){
+    if(jourPret&&!jourApplique){
+      try{
+        gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,tex);
+        gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,imgJour);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+        gl.uniform1f(uATex,1.0); gl.uniform1f(uAVraie,1.0);
+        jourApplique=true;
+      }catch(e){}
+    }
+    if(nuitPrete&&!nuitAppliquee){
+      try{
+        gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D,texN);
+        gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,imgNuit);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+        gl.uniform1f(uATexN,1.0);
+        nuitAppliquee=true;
+      }catch(e){}
+    }
+    relieTextures();
+    if(etat&&jourApplique&&!etatTexFait){
+      etatTexFait=true;
+      etat.textContent='Globe WebGL actif — textures NASA : la sphère tourne avec la vue (glissez le globe) ; sa surface porte Blue Marble pour le jour et Black Marble pour la nuit — les lumières des villes, réelles, sur la face nuit —, fondues au terminateur calculé à chaque seconde ; l’axe des pôles, prolongé en or, est incliné à 23,44° sur le grand cercle de l’écliptique du jour.';
+    }
+  }
+  function matI(){return [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]}
+  function mul(a,b){var o=new Array(16);for(var c=0;c<4;c++)for(var r=0;r<4;r++){o[c*4+r]=0;for(var k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k]}return o}
+  function ry(a){var c=Math.cos(a),s=Math.sin(a);return [c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]}
+  function rx(a){var c=Math.cos(a),s=Math.sin(a);return [1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]}
+  function persp(fov,asp,n,f){var t=1/Math.tan(fov/2);return [t/asp,0,0,0, 0,t,0,0, 0,0,(f+n)/(n-f),-1, 0,0,2*f*n/(n-f),0]}
+  function transZ(z){var m=matI();m[14]=z;return m}
+  var cur={lon:-40,lat:25};
+  var lignes=gl.createBuffer();
+  function dessineLignes(rot,mvp){
+    // Axe des pôles (prolongé) + grand cercle de l’écliptique du jour
+    var sub=window.TEMPS_V16?window.TEMPS_V16.pointSubsolaire(new Date()):{lat:0,lon:0};
+    var sl=sub.lat*Math.PI/180, so=sub.lon*Math.PI/180;
+    var S=[Math.cos(sl)*Math.sin(so),Math.sin(sl),Math.cos(sl)*Math.cos(so)];
+    var pts=[[0,-1.32,0],[0,1.32,0]];
+    var vx=-S[2],vy=0,vz=S[0]; var vl=Math.sqrt(vx*vx+vz*vz)||1; vx/=vl;vz/=vl;
+    for(var i=0;i<=72;i++){var t=i/72*2*Math.PI;pts.push([S[0]*Math.cos(t)+vx*Math.sin(t),S[1]*Math.cos(t)+vy*Math.sin(t),S[2]*Math.cos(t)+vz*Math.sin(t)])}
+    gl.bindBuffer(gl.ARRAY_BUFFER,lignes);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([].concat.apply([],pts)),gl.DYNAMIC_DRAW);
+    var l=gl.getAttribLocation(pr,'pos');gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,3,gl.FLOAT,false,0,0);
+    gl.uniformMatrix4fv(uRot,false,new Float32Array(rot));gl.uniformMatrix4fv(uMvp,false,new Float32Array(mvp));
+    gl.uniform1f(uMode,1);
+    gl.uniform3f(uCouleur,0.83,0.69,0.22); // axe : or
+    gl.drawArrays(gl.LINES,0,2);
+    gl.uniform3f(uCouleur,0.45,0.75,0.65); // écliptique : vert d’eau
+    gl.drawArrays(gl.LINE_STRIP,2,73);
+    gl.uniform1f(uMode,0);
+  }
+  var actif=false;
+  function cadre(){
+    requestAnimationFrame(cadre);
+    var T=window.TEMPS_V16;
+    if(T&&T.vueActuelle){var cible=T.vueActuelle();
+      var dl=((cible.lon-cur.lon+540)%360)-180; cur.lon+=dl*0.10; cur.lat+=(cible.lat-cur.lat)*0.10;}
+    var w=cv.clientWidth||300, h=cv.clientHeight||300, dpr=Math.min(window.devicePixelRatio||1,2);
+    if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
+    gl.viewport(0,0,cv.width,cv.height);
+    gl.clearColor(0.01,0.03,0.02,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.enable(gl.DEPTH_TEST);
+    var rot=mul(rx(-cur.lat*Math.PI/180),ry(-cur.lon*Math.PI/180));
+    var mvp=mul(persp(Math.PI/4,1,0.1,10),mul(transZ(-2.75),rot));
+    var sub=window.TEMPS_V16?window.TEMPS_V16.pointSubsolaire(new Date()):{lat:0,lon:0};
+    var sl=sub.lat*Math.PI/180, so=sub.lon*Math.PI/180;
+    gl.uniformMatrix4fv(uRot,false,new Float32Array(rot));
+    gl.uniformMatrix4fv(uMvp,false,new Float32Array(mvp));
+    gl.uniform3f(uSoleil,Math.cos(sl)*Math.sin(so),Math.sin(sl),Math.cos(sl)*Math.cos(so));
+    var cl=25*Math.PI/180, co=-40*Math.PI/180;
+    gl.uniform3f(uCentre,Math.cos(cl)*Math.sin(co),Math.sin(cl),Math.cos(cl)*Math.cos(co));
+    attr('pos',bP,3);attr('nor',bN,3);attr('uv',bU,2);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,bI);
+    gl.uniform1f(uMode,0);
+    appliqueTextures();
+    gl.drawElements(gl.TRIANGLES,I.length,gl.UNSIGNED_SHORT,0);
+    dessineLignes(rot,mvp);
+    if(!actif){actif=true;cv.style.display='block';
+      if(img)img.style.visibility='hidden';
+      var nuit=$('planete-nuit'); if(nuit)nuit.style.display='none';
+      if(etat)etat.textContent='Globe WebGL actif : la sphère tourne avec la vue (glissez le globe), le terminateur est calculé sur sa surface à chaque seconde, l’axe des pôles est prolongé en or et le grand cercle de l’écliptique du jour est tracé — l’axe est incliné à 23,44° sur ce plan. La texture reprend la photo de l’Atlantique du site, enroulée : la face opposée s’y atténue vers l’océan profond plutôt que d’inventer des continents. Lueurs de villes stylisées sur la face nuit.';}
+  }
+  requestAnimationFrame(cadre);
+})();
+try{majV21();setInterval(majV21,1000)}catch(e){}
+})();
+</script>
+
+<script>
+// ---------- v21 (compléments) — cartes du ciel de l’ancre, frise de l’année,
+// crépuscules complets, fiches des planètes du soir, curseur de brillance,
+// repères masqués derrière la sphère WebGL, globe en mode sobre ----------
+// Tout est calculé chez le visiteur avec le moteur du panneau
+// (window.MOTEUR_ASTRO_V21) et ses formules solaires (window.TEMPS_V16).
+// Aucun envoi ; le seul appel sortant est celui que la carte nomme
+// (Open-Meteo, comme le panneau du soir).
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var LAT=45.25, LON=-73.8024;
+function fr(x,n){return x.toFixed(n).replace('.',',')}
+function fmtH(date){
+  if(!date||isNaN(date.getTime()))return '—';
+  var p=new Intl.DateTimeFormat('fr-CA',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/Toronto'}).formatToParts(date);
+  var h='',m=''; for(var i=0;i<p.length;i++){if(p[i].type==='hour')h=p[i].value; if(p[i].type==='minute')m=p[i].value}
+  return h+' h '+m;
+}
+function dateToronto(d){
+  var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d);
+  var o={}; for(var i=0;i<p.length;i++)o[p[i].type]=p[i].value;
+  return o.year+'-'+o.month+'-'+o.day;
+}
+function passage(date,zen,lever){
+  var M=window.MOTEUR_ASTRO_V21; if(!M||!M.passageZenith)return null;
+  var f=M.passageZenith(date,LAT,LON,zen,lever);
+  if(f==null||isNaN(f))return null;
+  return new Date(Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate())+f*3600000);
+}
+function nelm(sqm){return 7.93-5*Math.log10(Math.pow(10,(21.58-sqm)/5)+1)}
+
+// ----- Cartes du ciel empilées sur le globe -----
+try{
+  var M0=window.MOTEUR_ASTRO_V21;
+  if(M0){
+    var majSoirCca=function(){
+      var el=$('cca-soir'); if(!el)return;
+      try{
+        var now=new Date();
+        el.textContent='coucher '+fmtH(passage(now,90.833,false))+' · nuit noire dès '+fmtH(passage(now,108,false))+' · Lune '+Math.round(M0.illumination(now).fraction*100)+' %';
+      }catch(e){ el.textContent='calcul indisponible à l’instant'; }
+    };
+    majSoirCca(); setInterval(majSoirCca,60000);
+    var et=$('cca-etoiles');
+    if(et)et.textContent='magnitude limite ≈ '+fr(nelm(19.85),1)+' · ≈ 2 000 étoiles';
+    var nu=$('cca-nuages');
+    if(nu){
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=45.25&longitude=-73.8024&hourly=cloud_cover&timezone=America%2FToronto&forecast_days=2')
+      .then(function(r){return r.json()})
+      .then(function(j){
+        var H=(j&&j.hourly)||{}, T=H.time||[], C=H.cloud_cover||[], ajd=dateToronto(new Date());
+        var somme=0, nb=0;
+        for(var i=0;i<T.length;i++){
+          if(T[i].slice(0,10)===ajd){ var hh=+T[i].slice(11,13); if(hh>=18&&hh<24&&typeof C[i]==='number'){somme+=C[i]; nb++} }
+        }
+        nu.textContent=nb?('≈ '+Math.round(somme/nb)+' % en moyenne, 18 h – 24 h · Open-Meteo, lu à l’instant'):'non lu à l’instant';
+      }).catch(function(){ nu.textContent='non lu à l’instant — Open-Meteo injoignable'; });
+    }
+  }
+}catch(e){}
+
+// ----- Frise de l’année + crépuscules complets de l’ancre -----
+try{
+  var T16=window.TEMPS_V16, svg=$('esp-frise');
+  if(T16&&svg){
+    var an=new Date().getUTCFullYear(), pts=[], j;
+    for(j=1;j<=365;j++){
+      var dec=T16.pointSubsolaire(new Date(Date.UTC(an,0,j,12))).lat;
+      pts.push(((j-1)/364*720).toFixed(1)+','+(60-dec/23.44*52).toFixed(1));
+    }
+    var auj=new Date();
+    var rang=Math.floor((Date.UTC(auj.getUTCFullYear(),auj.getUTCMonth(),auj.getUTCDate())-Date.UTC(an,0,1))/86400000)+1;
+    var xA=((rang-1)/364*720).toFixed(1);
+    var yA=(60-T16.pointSubsolaire(new Date(Date.UTC(an,auj.getUTCMonth(),auj.getUTCDate(),12))).lat/23.44*52).toFixed(1);
+    var g='';
+    g+='<line x1="0" y1="60" x2="720" y2="60" stroke="rgba(207,227,210,.35)" stroke-width="1"/>';
+    g+='<line x1="0" y1="8" x2="720" y2="8" stroke="rgba(212,175,55,.35)" stroke-width="1" stroke-dasharray="4 4"/>';
+    g+='<line x1="0" y1="112" x2="720" y2="112" stroke="rgba(212,175,55,.35)" stroke-width="1" stroke-dasharray="4 4"/>';
+    g+='<text x="4" y="15" fill="#e9dfae" font-size="10" style="paint-order:stroke;stroke:#04140b;stroke-width:3">+23,44°</text>';
+    g+='<text x="4" y="57" fill="#cfe3d2" font-size="10" style="paint-order:stroke;stroke:#04140b;stroke-width:3">0°</text>';
+    g+='<text x="4" y="119" fill="#e9dfae" font-size="10" style="paint-order:stroke;stroke:#04140b;stroke-width:3">−23,44°</text>';
+    g+='<polyline fill="none" stroke="#d4af37" stroke-width="1.6" points="'+pts.join(' ')+'"/>';
+    g+='<circle cx="'+xA+'" cy="'+yA+'" r="4" fill="#f2d060" stroke="#04140b" stroke-width="1.5"/>';
+    svg.innerHTML=g;
+  }
+  var cr=$('esp-crep');
+  if(cr){
+    var now2=new Date();
+    cr.textContent='aube astronomique '+fmtH(passage(now2,108,true))+' · aube nautique '+fmtH(passage(now2,102,true))+' · aube civile '+fmtH(passage(now2,96,true))+' · lever '+fmtH(passage(now2,90.833,true))+' · coucher '+fmtH(passage(now2,90.833,false))+' · fin civile '+fmtH(passage(now2,96,false))+' · fin nautique '+fmtH(passage(now2,102,false))+' · nuit astronomique dès '+fmtH(passage(now2,108,false))+' (heure de Toronto)';
+  }
+}catch(e){}
+
+// ----- Fiches des planètes du soir (éléments de Paul Schlyter) -----
+try{
+  var M=window.MOTEUR_ASTRO_V21;
+  if(M){
+    var RAD=Math.PI/180, DEG=180/Math.PI, UA_KM=149597870.7;
+    function n360(x){x%=360;return x<0?x+360:x}
+    var PLANETES=[
+      {id:'venus',  el:{N0:76.6799,N1:2.46590e-5, i0:3.3946,i1:2.75e-8,  w0:54.8910, w1:1.38374e-5,  a:0.723330, e0:0.006773,e1:-4.302e-9,  M0:48.0052, M1:1.6021302244}},
+      {id:'mars',   el:{N0:49.5574,N1:2.11081e-5, i0:1.8497,i1:-8.31e-8, w0:286.5016,w1:2.92961e-5,  a:1.523688, e0:0.093405,e1:2.516e-9,   M0:18.6021, M1:0.5240207766}},
+      {id:'jupiter',el:{N0:100.4542,N1:2.76854e-5,i0:1.3032,i1:-1.557e-7,w0:273.8777,w1:1.64505e-5,  a:5.20256,  e0:0.048498,e1:4.469e-9,   M0:19.8950, M1:0.0830853001}},
+      {id:'saturne',el:{N0:113.6634,N1:2.38980e-5,i0:2.4886,i1:-1.081e-7,w0:339.3939,w1:-2.97661e-5, a:9.55475,  e0:0.055546,e1:-9.499e-9,  M0:316.9670,M1:0.0334442282}}
+    ];
+    function posPlanete(el,date){
+      var d=M.jj(date)-2451543.5;
+      var N=el.N0+el.N1*d, inc=el.i0+el.i1*d, w=el.w0+el.w1*d, a=el.a, e=el.e0+el.e1*d, Mm=el.M0+el.M1*d;
+      var E=Mm+e*DEG*Math.sin(Mm*RAD)*(1+e*Math.cos(Mm*RAD)), E0=E, k;
+      for(k=0;k<10;k++){ E=E0-(E0-e*DEG*Math.sin(E0*RAD)-Mm)/(1-e*Math.cos(E0*RAD)); if(Math.abs(E-E0)<1e-7){E0=E;break} E0=E; }
+      var xv=a*(Math.cos(E*RAD)-e), yv=a*(Math.sqrt(1-e*e)*Math.sin(E*RAD));
+      var v=Math.atan2(yv,xv)*DEG, r=Math.sqrt(xv*xv+yv*yv);
+      var cw=Math.cos((v+w)*RAD), sw=Math.sin((v+w)*RAD);
+      var xh=r*(Math.cos(N*RAD)*cw-Math.sin(N*RAD)*sw*Math.cos(inc*RAD));
+      var yh=r*(Math.sin(N*RAD)*cw+Math.cos(N*RAD)*sw*Math.cos(inc*RAD));
+      var zh=r*(sw*Math.sin(inc*RAD));
+      var S=M.soleilPrecis(date);
+      var xg=xh+S.distanceUA*Math.cos(S.longitudeEcliptique*RAD);
+      var yg=yh+S.distanceUA*Math.sin(S.longitudeEcliptique*RAD);
+      var zg=zh;
+      var lon=n360(Math.atan2(yg,xg)*DEG), lat=Math.atan2(zg,Math.sqrt(xg*xg+yg*yg))*DEG;
+      var dist=Math.sqrt(xg*xg+yg*yg+zg*zg);
+      var eps=23.4393-3.563e-7*(M.jj(date)-2451545);
+      var xe=Math.cos(lon*RAD)*Math.cos(lat*RAD), ye=Math.sin(lon*RAD)*Math.cos(lat*RAD), ze=Math.sin(lat*RAD);
+      var ra=n360(Math.atan2(ye*Math.cos(eps*RAD)-ze*Math.sin(eps*RAD),xe)*DEG)/15;
+      var dec=Math.asin(ye*Math.sin(eps*RAD)+ze*Math.cos(eps*RAD))*DEG;
+      return {ra:ra, dec:dec, distUA:dist, distKm:dist*UA_KM, tlMin:dist*UA_KM/299792.458/60};
+    }
+    function visibilite(p,now){
+      var coucher=passage(now,90.833,false);
+      var aube=passage(new Date(now.getTime()+86400000),90.833,true);
+      if(!coucher||!aube)return 'calcul indisponible à l’instant';
+      var best=-90, bestT=null, last=null, t;
+      for(t=coucher.getTime();t<=aube.getTime();t+=600000){
+        var dd=new Date(t), lst=(M.gmstDeg(dd)+LON)/15;
+        var alt=M.altaz(p.ra,p.dec,lst,LAT).altitude;
+        if(alt>best){best=alt; bestT=dd}
+        if(alt>0)last=dd;
+      }
+      if(best<=0)return 'Ce soir à l’ancre : sous l’horizon toute la nuit.';
+      var txt='Ce soir à l’ancre : culmine à '+Math.round(best)+'° vers '+fmtH(bestT);
+      if(last&&last.getTime()<aube.getTime()-900000)txt+=' ; visible jusqu’à '+fmtH(last)+'.';
+      else txt+=' ; encore levée à l’aube.';
+      return txt;
+    }
+    var majPlanetes=function(){
+      var now=new Date();
+      PLANETES.forEach(function(pl){
+        try{
+          var p=posPlanete(pl.el,now);
+          var dEl=$('fp-'+pl.id+'-dist'), pEl=$('fp-'+pl.id+'-pos'), sEl=$('fp-'+pl.id+'-soir');
+          if(dEl)dEl.textContent=Math.round(p.distKm).toLocaleString('fr-CA')+' km ('+fr(p.distUA,3)+' UA) · temps-lumière ≈ '+fr(p.tlMin,1)+' min';
+          if(pEl)pEl.textContent='AD '+fr(p.ra,2)+' h · décl. '+(p.dec<0?'−':'+')+fr(Math.abs(p.dec),1)+'°';
+          if(sEl)sEl.textContent=visibilite(p,now);
+        }catch(e){}
+      });
+    };
+    majPlanetes(); setInterval(majPlanetes,60000);
+  }
+}catch(e){}
+
+// ----- Curseur de brillance -----
+try{
+  var cv=$('br-canvas'), rg=$('br-range');
+  if(cv&&rg&&cv.getContext){
+    var ctx=cv.getContext('2d');
+    var graine=20261102;
+    function rnd(){ graine=(graine*1103515245+12345)%2147483648; return graine/2147483648; }
+    var etoiles=[], i2;
+    for(i2=0;i2<1300;i2++){
+      var u=rnd();
+      etoiles.push({x:rnd(), y:Math.pow(rnd(),1.15), mag:Math.log10(u*(Math.pow(10,0.42*7.6)-1)+1)/0.42});
+    }
+    var dessineCiel=function(){
+      var sqm=parseFloat(rg.value), lim=nelm(sqm), W=cv.width, H=cv.height, glow=(22-sqm)/4.5;
+      var grd=ctx.createLinearGradient(0,0,0,H);
+      grd.addColorStop(0,'rgb('+Math.round(6+26*glow)+','+Math.round(10+30*glow)+','+Math.round(22+44*glow)+')');
+      grd.addColorStop(1,'rgb('+Math.round(3+16*glow)+','+Math.round(5+20*glow)+','+Math.round(13+30*glow)+')');
+      ctx.fillStyle=grd; ctx.fillRect(0,0,W,H);
+      var nb=0, i3;
+      for(i3=0;i3<etoiles.length;i3++){
+        var st=etoiles[i3]; if(st.mag>lim)continue; nb++;
+        var al=Math.min(1,(lim-st.mag)/2.2+0.15), rr=st.mag<2?1.9:(st.mag<3.5?1.4:1);
+        ctx.fillStyle='rgba(240,244,255,'+al.toFixed(2)+')';
+        ctx.beginPath(); ctx.arc(st.x*W,st.y*H,rr,0,6.2832); ctx.fill();
+      }
+      var vEl=$('br-val'), nEl=$('br-nelm'), bEl=$('br-nb'), mEl=$('br-marque');
+      if(vEl)vEl.textContent=fr(sqm,2)+' mag/arcsec²';
+      if(nEl)nEl.textContent='≈ '+fr(lim,1);
+      if(bEl)bEl.textContent=nb+' / '+etoiles.length;
+      if(mEl)mEl.textContent=Math.abs(sqm-19.85)<0.03?'(l’ancre — Sainte-Martine)':(sqm<=18.2?'(grande ville)':(sqm>=21.7?'(ciel noir)':''));
+    };
+    rg.addEventListener('input',dessineCiel);
+    dessineCiel();
+  }
+}catch(e){}
+
+// ----- Repères derrière la sphère (WebGL actif) + globe en mode sobre -----
+try{
+  var scene=document.querySelector('.planete-scene');
+  if(scene){
+    var sobre=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if(sobre)scene.classList.add('sobre');
+    var cvGl=$('globe-webgl'), etatGl=$('globe-webgl-etat');
+    setInterval(function(){
+      var actif=!!(cvGl&&cvGl.style.display==='block'&&!sobre);
+      scene.classList.toggle('gl-actif',actif);
+      if(sobre&&etatGl&&!etatGl._sobreNote&&etatGl.textContent.indexOf('Globe WebGL actif')===0){
+        etatGl._sobreNote=1;
+        etatGl.textContent+=' Votre préférence de mouvement réduit est respectée ici : le globe WebGL reste masqué et la scène plate demeure.';
+      }
+    },1500);
+  }
+}catch(e){}
+})();
+</script>
+
 </body>
 </html>
