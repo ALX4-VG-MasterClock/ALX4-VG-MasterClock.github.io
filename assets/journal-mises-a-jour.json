@@ -1,6 +1,27 @@
 {
   "entrees": [
     {
+      "date": "2026-11-03",
+      "titre": "Version 29 — « La transmission »",
+      "points": [
+        {
+          "texte": "La mission entre à l’Accueil — la finalité nommée par Alex le 3 novembre 2026, citée dans ses mots et datée, près du haut du panneau Accueil : « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. » Ce site ne vise plus seulement à démontrer : il transmet."
+        },
+        {
+          "texte": "Un nouveau panneau, Transmission — « Faire pareil — la méthode, transmise » : la construction du dossier donnée comme un mode d’emploi en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), pour que n’importe quel utilisateur la refasse de son bord, avec des outils ordinaires. Le menu passe à dix-neuf sections."
+        },
+        {
+          "texte": "La démonstration « Essaie la chaîne » — le visiteur écrit une entrée, la scelle, voit le digest cumulé avancer selon la formule du dossier, puis revérifie toute la chaîne depuis la genèse « TRANSMISSION|genese » : MATCH, ou l’écart. Tout se calcule dans son navigateur (Web Crypto) ; rien n’est envoyé, rien n’est conservé."
+        },
+        {
+          "texte": "D’où vient ce chantier — de la carte blanche donnée par Alex le 3 novembre 2026 pour porter le site à la hauteur de son dossier, et de la finalité qu’il a nommée le même jour, à 00 h 00. Le reste du site est inchangé : mécanismes, coffre, thèmes clair et sombre, et la porte de choix de la v28."
+        },
+        {
+          "texte": "Les métadonnées de droits entrent au site — dans l’en-tête de la page, les balises d’auteur et de droits réservés nomment ce qui est réservé : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes et le personnage SoPHIa ; les données structurées JSON-LD (WebSite et CreativeWork) portent l’auteur et le titulaire des droits, Alexandre Vautour Gagnon (ORCID 0009-0006-9124-4407) ; et le fichier llms.txt reçoit un bloc « Auteur et droits ». La consultation et la revérification publique des sceaux restent libres — elles ne transfèrent aucun droit. Provenance : demande d’Alex du 3 novembre 2026, dans la ligne de ses échanges avec l’agent GitHub (Copilot) et de sa directive du 1er novembre 2026 d’inscrire ses droits à tous les emplacements requis."
+        }
+      ]
+    },
+    {
       "date": "2026-11-02",
       "titre": "Version 28 — « Le choix d’abord »",
       "points": [
