@@ -24,3 +24,5 @@ zone privée (chiffrée AES-256, clé détenue par Alex) sont présentes par
 leurs empreintes, jamais par leurs contenus.
 
 Version 24 « Comme il se doit » (2 novembre 2026) : le calendrier 13 × 28 (panneau Temps), l’Historique quotidien (panneau Mémoire, fichier assets/historique.json) et le module Plein air (panneau Météo) entrent au site, avec les quatre noms au panneau Méthode et le menu ☰.
+
+Version 25 « Le dossier en lumière » (2 novembre 2026) : esthétique éclaircie aux couleurs du dossier (palette en variables CSS), circuit du sensible écrit au panneau Mémoire, pouls du cerveau recalculé en direct et coffre synaptique v1 « double empreinte » (11 pièces) dans assets/coffre.json.

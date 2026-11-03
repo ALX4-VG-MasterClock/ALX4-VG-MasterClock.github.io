@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a1512">
+<meta name="theme-color" content="#17392c">
 <title>AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa</title>
 <meta name="description" content="Le dossier public d'Alexandre Vautour Gagnon, chercheur indépendant : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.">
 <meta property="og:title" content="AUDIT UNISSON — Preuve d'Antériorité V-G">
@@ -19,10 +19,26 @@
 <link rel="preload" as="image" href="assets/sophia.webp">
 <style>
 :root{
-  --serif:Georgia,"Times New Roman",serif;
-  --fond:#0a1512; --fond2:#0e201a; --carte:rgba(19,38,31,.88); --ligne:#2e5a49;
-  --vert:#35c08b; --vert-doux:#63cfa5; --or:#d4af37; --or-clair:#e9cd77;
-  --texte:#f2ecda; --texte-doux:#a9bfa9; --encre:#f2ecda;
+  --serif:Georgia,"Times New Roman",serif; /* titres « document officiel » : serif système, aucune ressource externe */
+  --fond:#17392c; /* fond général du site — émeraude profond relevé (v25 : un peu moins sombre) */
+  --fond2:#1f4a38; /* fond secondaire — dégradés, menu, zones en retrait */
+  --carte:rgba(46,84,68,.93); /* surface des cartes — papier/document teinté émeraude sur le fond */
+  --carte2:rgba(35,66,53,.95); /* second arrêt des dégradés de cartes */
+  --puit:#1b4234; /* puits — champs, boîtes de sceau, code : plus creux que les cartes, relevé aussi */
+  --puit2:#21503e; /* cartes foncées secondaires — journal, articles, entrées du coffre */
+  --barre:rgba(20,50,39,.9); /* fond de la barre d'onglets collante */
+  --noeud:#26523f; /* fond des nœuds du graphe de la chaîne */
+  --face:#1e4634; /* faces des cadrans satellites et pastilles « suite » — graphismes du Temps, à peine relevés */
+  --ligne:#558a6b; /* bordures et filets — vert relevé, les filets dorés restent en rgba de --or */
+  --vert:#35c08b; /* vert signature — inchangé */
+  --vert-doux:#63cfa5; /* vert doux des libellés — inchangé */
+  --or:#d4af37; /* or signature — inchangé (toutes ses teintes rgba en découlent) */
+  --or-clair:#e9cd77; /* or clair des titres et valeurs — inchangé */
+  --texte:#f2ecda; /* encre principale, crème — inchangée */
+  --texte-doux:#bfd8ba; /* encre secondaire — relevée pour rester lisible sur les surfaces éclaircies */
+  --encre:#f2ecda; /* alias d'encre historique — même valeur que --texte */
+  --encre-sur-or:#1a1200; /* texte encre posé sur les boutons dorés */
+  --encre-foncee:#0a1a13; /* texte et traits foncés posés sur les pastilles claires et les cadrans dorés */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -30,7 +46,7 @@ body{background:radial-gradient(1200px 700px at 85% -5%,rgba(212,175,55,.10),tra
 #spirale{position:fixed;inset:0;z-index:0;opacity:.38;pointer-events:none}
 main{position:relative;z-index:1}
 /* ---- Barre d'onglets ---- */
-.barre{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,19,15,.88);border-bottom:1px solid var(--ligne)}
+.barre{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:var(--barre);border-bottom:1px solid var(--ligne)}
 .barre-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:.9rem;padding:.55rem 1rem;flex-wrap:wrap}
 .marque{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.06em;font-size:.95rem;white-space:nowrap}
 .marque img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--or);box-shadow:0 0 14px rgba(212,175,55,.5)}
@@ -38,7 +54,7 @@ main{position:relative;z-index:1}
 nav.onglets{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
 nav.onglets button{background:transparent;color:var(--vert-doux);border:1px solid transparent;border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}
 nav.onglets button:hover{color:var(--or-clair);border-color:var(--ligne)}
-nav.onglets button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:#1a1200;border-color:var(--or);box-shadow:0 4px 16px rgba(212,175,55,.35)}
+nav.onglets button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:var(--encre-sur-or);border-color:var(--or);box-shadow:0 4px 16px rgba(212,175,55,.35)}
 /* ---- Panneaux ---- */
 .panneau{display:none;animation:apparition .6s ease both}
 .panneau.actif{display:block}
@@ -64,12 +80,12 @@ section{max-width:980px;margin:0 auto;padding:3.6rem 1.2rem}
 h2{font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.6rem}
 h2 .num{color:var(--or);font-family:Georgia,serif;margin-right:.5rem}
 .lead{color:var(--texte-doux);line-height:1.65;margin-bottom:1.6rem}
-.carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.4rem;margin-bottom:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.42);backdrop-filter:blur(8px)}
+.carte{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:16px;padding:1.4rem;margin-bottom:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.42);backdrop-filter:blur(8px)}
 .mono{font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all;font-size:.86rem;line-height:1.55}
 .etiquette{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.35rem}
-textarea,input[type=text]{width:100%;background:#0d1f19;color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.8rem;font-family:ui-monospace,Menlo,monospace;font-size:.9rem}
+textarea,input[type=text]{width:100%;background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.8rem;font-family:ui-monospace,Menlo,monospace;font-size:.9rem}
 textarea:focus,input[type=text]:focus{outline:none;border-color:var(--vert)}
-button.action{background:linear-gradient(135deg,#b8860b,var(--or));color:#1a1200;border:none;border-radius:10px;padding:.75rem 1.4rem;font-weight:700;cursor:pointer;font-size:.95rem;transition:.2s}
+button.action{background:linear-gradient(135deg,#b8860b,var(--or));color:var(--encre-sur-or);border:none;border-radius:10px;padding:.75rem 1.4rem;font-weight:700;cursor:pointer;font-size:.95rem;transition:.2s}
 button.action:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,175,55,.35)}
 button.secondaire{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:10px;padding:.75rem 1.2rem;font-weight:600;cursor:pointer;transition:.2s}
 button.secondaire:hover{border-color:var(--vert)}
@@ -88,7 +104,7 @@ details summary{cursor:pointer;color:var(--or-clair);margin:.4rem 0}
 .instance-grille figure{text-align:center}
 .instance-grille figure img{width:100%;max-width:250px;height:auto;object-fit:cover;border-radius:22px;border:1px solid var(--ligne);box-shadow:0 0 40px rgba(11,110,79,.20);animation:flottement 6s ease-in-out infinite}
 .instance-grille figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
-#fil-instance{height:320px;overflow-y:auto;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:1rem;margin-bottom:.8rem}
+#fil-instance{height:320px;overflow-y:auto;background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:1rem;margin-bottom:.8rem}
 .msg{margin-bottom:.8rem;line-height:1.55;font-size:.95rem}
 .msg .qui{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.15rem}
 .msg.instance .qui{color:var(--or-clair)}.msg.visiteur .qui{color:var(--vert)}
@@ -118,7 +134,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700;color:var(--vert-doux);wh
 button.mini{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:8px;padding:.34rem .75rem;font-weight:600;cursor:pointer;font-size:.82rem}
 button.mini:hover{border-color:var(--or);color:var(--or-clair)}
 .pas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.4rem 0}
-.pas .etape-pas{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem}
+.pas .etape-pas{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem}
 .pas .etape-pas .n{font-family:var(--serif);font-size:1.5rem;color:var(--or);font-weight:700}
 .pas .etape-pas h3{margin:.3rem 0 .4rem;font-size:1.05rem}
 .pas .etape-pas p{font-size:.92rem;color:var(--texte-doux);margin:0}
@@ -126,24 +142,24 @@ button.mini:hover{border-color:var(--or);color:var(--or-clair)}
 .chrono::before{content:"";position:absolute;left:.44rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(rgba(212,175,55,.15),var(--or),rgba(212,175,55,.15))}
 .groupe-date{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--or-clair);margin:1.6rem 0 .8rem;position:relative}
 .groupe-date::before{content:"";position:absolute;left:-1.6rem;top:.32rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--fond);border:3px solid var(--or)}
-.entree{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:1rem;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+.entree{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:1rem;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.4)}
 .entree::before{content:"";position:absolute;left:-1.38rem;top:1.5rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--or);border:2px solid var(--fond)}
 .entree h3{margin:0 0 .2rem;font-size:1.12rem;color:var(--texte)}
 .entree .date{font-size:.82rem;color:var(--texte-doux);letter-spacing:.04em}
 .entree .objet{color:var(--texte-doux);margin:.55rem 0 .8rem;max-width:70ch}
 .entree .statut-ligne{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem}
 .pastille{font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--vert);border:1px solid var(--vert);border-radius:999px;padding:.18rem .65rem;text-transform:uppercase}
-.entree .sceau-boite{background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem}
+.entree .sceau-boite{background:var(--puit);border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem}
 .entree .sceau-boite .mono{font-size:.8rem}
 .entree .actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
-.entree .source-texte{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem;line-height:1.6;background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.9rem 1rem;max-height:340px;overflow-y:auto;color:var(--texte)}
-.encadre-bornes{border:2px solid var(--or);border-radius:14px;padding:1.5rem 1.6rem;background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.94));margin:1.4rem 0}
+.entree .source-texte{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem;line-height:1.6;background:var(--puit);border:1px solid var(--ligne);border-radius:10px;padding:.9rem 1rem;max-height:340px;overflow-y:auto;color:var(--texte)}
+.encadre-bornes{border:2px solid var(--or);border-radius:14px;padding:1.5rem 1.6rem;background:linear-gradient(160deg,var(--carte),var(--carte2));margin:1.4rem 0}
 .encadre-bornes h3{margin-top:0}
 .encadre-bornes ul{margin-left:1.2rem}
 .encadre-bornes li{margin-bottom:.5rem;max-width:70ch;line-height:1.6}
 .grille2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 @media(max-width:760px){.grille2{grid-template-columns:1fr}}
-.terrain{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem 1.3rem}
+.terrain{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.2rem 1.3rem}
 .terrain h3{margin-top:0;font-size:1.05rem;color:var(--vert-doux)}
 .terrain p{font-size:.93rem;color:var(--texte-doux);margin:0}
 details .corps-detail{padding:.7rem 0 .2rem}
@@ -157,24 +173,24 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .bande-preuve .devise b{color:var(--or-clair)}
 .bande-preuve .rangee{justify-content:center;max-width:760px;margin:1.1rem auto 0}
 .parcours{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.4rem 0}
-.parcours .etape-visite{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem}
+.parcours .etape-visite{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.25rem}
 .parcours .etape-visite .n{font-family:var(--serif);font-size:1.4rem;color:var(--or);font-weight:700}
 .parcours .etape-visite h3{margin:.3rem 0 .45rem;font-size:1.05rem}
 .parcours .etape-visite p{font-size:.92rem;color:var(--texte-doux);margin-bottom:.9rem}
 .schema{display:flex;align-items:stretch;gap:.55rem;flex-wrap:wrap;margin:1.3rem 0}
-.schema .boite{flex:1;min-width:130px;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.8rem .9rem;text-align:center}
+.schema .boite{flex:1;min-width:130px;background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.8rem .9rem;text-align:center}
 .schema .boite .etiquette{margin-bottom:.2rem}
 .schema .boite .val{font-size:.92rem;color:var(--texte);line-height:1.45}
 .schema .fleche{align-self:center;color:var(--or);font-size:1.25rem;font-weight:700}
 .schema .boite.calcul{border-color:var(--or);box-shadow:0 0 18px rgba(212,175,55,.18)}
 .frise{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.3rem 0}
-.frise .point{border-top:3px solid var(--or);background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border-radius:0 0 14px 14px;padding:1rem 1.1rem}
+.frise .point{border-top:3px solid var(--or);background:linear-gradient(160deg,var(--carte),var(--carte2));border-radius:0 0 14px 14px;padding:1rem 1.1rem}
 .frise .point .quand{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}
 .frise .point p{font-size:.92rem;color:var(--texte-doux);margin:0}
 .recherche-registre{width:100%;margin:.4rem 0 1.2rem}
 .sceptique-choix{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.1rem 0}
 .sceptique-choix button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.55rem 1.1rem;font-weight:600;cursor:pointer}
-.sceptique-choix button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:#1a1200;border-color:var(--or)}
+.sceptique-choix button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:var(--encre-sur-or);border-color:var(--or)}
 #sceptique-detail .ligne{display:grid;grid-template-columns:130px 1fr;gap:.8rem;margin-bottom:.55rem}
 #sceptique-detail .ligne .quoi{font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--or-clair);padding-top:.2rem}
 @media(max-width:640px){#sceptique-detail .ligne{grid-template-columns:1fr}}
@@ -184,7 +200,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 
 /* ===== v5++ — les surprises ===== */
 .chaine-vivante{display:flex;flex-direction:column;gap:0;margin-top:1.1rem}
-.noeud{background:#122a21;border:1px solid var(--or);border-radius:12px;padding:.85rem 1rem;animation:naissance .55s ease both;box-shadow:0 0 16px rgba(212,175,55,.12)}
+.noeud{background:var(--noeud);border:1px solid var(--or);border-radius:12px;padding:.85rem 1rem;animation:naissance .55s ease both;box-shadow:0 0 16px rgba(212,175,55,.12)}
 @keyframes naissance{from{opacity:0;transform:translateY(-10px) scale(.98)}to{opacity:1;transform:none}}
 .noeud .tete{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .noeud .tete b{color:var(--or-clair)}
@@ -194,7 +210,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .hash-diff{letter-spacing:.02em}
 .hash-diff .diff{color:#e5534b;font-weight:700}
 .refus{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.2rem 0}
-.refus-carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
+.refus-carte{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
 .refus-carte .pretention{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-decoration:line-through;text-decoration-color:#e5534b;text-decoration-thickness:2px;margin-bottom:.45rem}
 .refus-carte .reponse{font-size:.9rem;color:var(--texte-doux);margin:0}
 .refus-carte .reponse b{color:var(--vert)}
@@ -209,7 +225,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .recit .chapitre p b{color:var(--texte)}
 .vue-choix{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
 .vue-choix button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.5rem 1.05rem;font-weight:600;cursor:pointer}
-.vue-choix button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:#1a1200;border-color:var(--or)}
+.vue-choix button.actif{background:linear-gradient(135deg,#b8860b,var(--or));color:var(--encre-sur-or);border-color:var(--or)}
 
 /* ===== v7 — présence vivante, panneau en direct, respiration des anneaux ===== */
 /* Les anneaux dorés respirent : la rotation demeure, une pulsation lente s'y compose. */
@@ -222,7 +238,7 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .presence figcaption{color:var(--texte-doux);font-size:.85rem;margin-top:.6rem;line-height:1.5}
 /* Le panneau « en direct » de l'accueil. */
 .direct-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.2rem 0}
-.direct-tuile{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
+.direct-tuile{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1.15rem 1.25rem}
 .direct-tuile .valeur{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem}
 .direct-tuile p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
 .pastille-direct{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--vert);border:1px solid var(--vert);border-radius:999px;padding:.16rem .6rem;text-transform:uppercase}
@@ -256,15 +272,15 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 .voyant.ecart{background:#e0655a}
 @media (prefers-reduced-motion: no-preference){.voyant.ok{animation:v8pouls 2.4s ease-in-out infinite}}
 @keyframes v8pouls{0%,100%{opacity:1}50%{opacity:.45}}
-.sceau-long{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all;background:#0d1f19;border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem;display:block;margin:.4rem 0}
+.sceau-long{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all;background:var(--puit);border:1px solid var(--ligne);border-radius:10px;padding:.7rem .8rem;display:block;margin:.4rem 0}
 .verdict{font-weight:700}
 .verdict.ok{color:var(--vert)}
 .verdict.ecart{color:#e0655a}
 .verdict.attente{color:var(--or-clair)}
-.visite-carte{border:1px solid var(--ligne);border-radius:12px;padding:.9rem 1rem;margin-top:.8rem;background:#0d1f19}
+.visite-carte{border:1px solid var(--ligne);border-radius:12px;padding:.9rem 1rem;margin-top:.8rem;background:var(--puit)}
 .visite-carte .mono{word-break:break-all}
 /* ===== v8 — Journal des mises à jour ===== */
-.journal-entree{border:1px solid var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin-top:1rem;background:#10241d}
+.journal-entree{border:1px solid var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin-top:1rem;background:var(--puit2)}
 .journal-entree h3{margin:.15rem 0 .6rem;font-family:var(--serif)}
 .journal-date{font-weight:700;color:var(--or-clair);margin:0}
 .journal-points{margin:.4rem 0 .6rem 1.1rem;line-height:1.6}
@@ -315,26 +331,26 @@ footer.pied .interieur{max-width:820px;margin:0 auto}
 /* ===== v9 — tissage de vérification, articles, capsules, coquillage, droits, recherche ===== */
 a.verif{display:inline-flex;align-items:center;justify-content:center;width:1.15rem;height:1.15rem;margin-left:.3rem;border-radius:50%;border:1px solid var(--or);color:var(--or-sombre, #e9cd77);font-size:.68rem;font-weight:700;text-decoration:none;vertical-align:super;line-height:1;background:rgba(212,175,55,.10)}
 a.verif:hover{background:rgba(212,175,55,.28)}
-.tv-item{border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.1rem;margin:0 0 1rem;background:#10241d}
+.tv-item{border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.1rem;margin:0 0 1rem;background:var(--puit2)}
 .tv-item h4{margin:0 0 .5rem;font-size:1rem}
 .tv-item .tv-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem 1.2rem;margin-top:.4rem}
 .tv-item .tv-cellule .etiquette{margin-bottom:.15rem}
 .tv-item .tv-cellule p{font-size:.88rem;margin:0}
-.article-carte{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin:0 0 1.1rem;background:#10241d}
+.article-carte{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin:0 0 1.1rem;background:var(--puit2)}
 .article-carte h3{margin:.1rem 0 .35rem;font-size:1.05rem}
 .article-carte .meta{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--or-sombre, #e9cd77)}
 .capsule-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
-.capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:#10241d}
+.capsule{border:1px solid var(--ligne);border-radius:16px;padding:1rem;background:var(--puit2)}
 .capsule video{width:100%;aspect-ratio:1/2;object-fit:cover;border-radius:12px;border:1px solid var(--ligne)}
 .capsule-vide{border:1.5px dashed var(--or);border-radius:16px;padding:1.4rem 1rem;background:rgba(212,175,55,.05);display:flex;flex-direction:column;justify-content:center}
 .cc-chaine{display:flex;flex-direction:column;gap:0;margin-top:1rem}
-.cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:#10241d;opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
+.cc-maillon{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;background:var(--puit2);opacity:.35;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease,border-color .45s ease}
 .cc-maillon.visible{opacity:1;transform:none}
 .cc-maillon.verrouille{border-color:var(--vert);box-shadow:0 0 14px rgba(53,192,139,.22)}
 .cc-lien{color:var(--or-clair);font-size:.8rem;margin:.15rem 0;text-align:left}
 .emplacement{border:1.5px dashed var(--ligne);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1rem;background:rgba(255,255,255,.03)}
 .emplacement .etiquette{color:#9db3a0}
-.rech-resultat{display:block;width:100%;text-align:left;margin:0 0 .55rem;padding:.7rem .9rem;border:1px solid var(--ligne);border-radius:10px;background:#10241d;cursor:pointer;font:inherit}
+.rech-resultat{display:block;width:100%;text-align:left;margin:0 0 .55rem;padding:.7rem .9rem;border:1px solid var(--ligne);border-radius:10px;background:var(--puit2);cursor:pointer;font:inherit}
 .rech-resultat:hover{border-color:var(--or)}
 .rech-resultat .r-titre{font-weight:700}
 .rech-resultat .r-extrait{font-size:.85rem;color:#a9bfa9}
@@ -366,18 +382,18 @@ a.verif:hover{background:rgba(212,175,55,.28)}
 .at-match{margin-left:auto;font-size:.8rem;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:.3rem .8rem;border:1.5px solid var(--vert);color:var(--vert);background:rgba(53,192,139,.14)}
 .at-match.rupture{border-color:#e0655a;color:#e0655a;background:rgba(192,57,43,.16)}
 .at-rang{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
-.at-bloc{border-radius:999px;padding:.38rem .85rem;font-weight:700;font-size:.85rem;border:1.5px solid var(--ligne);background:#10241d;color:var(--texte);font:inherit}
+.at-bloc{border-radius:999px;padding:.38rem .85rem;font-weight:700;font-size:.85rem;border:1.5px solid var(--ligne);background:var(--puit2);color:var(--texte);font:inherit}
 button.at-bloc{cursor:pointer}
 .at-bloc.ok{background:rgba(53,192,139,.14);border-color:var(--vert);color:var(--vert)}
 .at-bloc.casse{background:rgba(192,57,43,.16);border-color:#e0655a;color:#e0655a}
-.at-bloc.suite{background:#16281f;border-color:#476b58;color:#93a894}
+.at-bloc.suite{background:var(--face);border-color:#476b58;color:#93a894}
 .at-appel{border-radius:12px;padding:.8rem 1rem;margin-top:1rem;line-height:1.55}
 .at-appel.rouge{background:rgba(192,57,43,.14);border:1px solid #8c4038;color:#f2b1aa}
 .at-appel.vert{background:rgba(53,192,139,.13);border:1px solid #2e7a5c;color:#a9e6cd}
 .at-emp{word-break:break-all}
 .hist-svg{width:100%;height:auto;display:block;margin:.6rem auto 0}
 .hist-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin-top:1.2rem}
-.hist-carte{text-align:left;border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.05rem;background:#10241d;cursor:pointer;font:inherit;color:var(--texte);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.hist-carte{text-align:left;border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.05rem;background:var(--puit2);cursor:pointer;font:inherit;color:var(--texte);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .hist-carte:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.5)}
 .hist-carte.actif{border-color:var(--or);box-shadow:0 0 0 2px rgba(212,175,55,.35)}
 .hist-date{display:inline-block;background:rgba(212,175,55,.16);color:var(--or-clair);border:1px solid rgba(212,175,55,.5);border-radius:8px;padding:.18rem .55rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;margin-bottom:.5rem}
@@ -408,7 +424,7 @@ button.at-bloc{cursor:pointer}
 .temps-centre svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(178,134,22,.28))}
 .temps-svg .face-maitre{fill:#1a2f26;stroke:#d4af37;stroke-width:3}
 .temps-svg .face-interne{fill:none;stroke:rgba(178,134,22,.35);stroke-width:1}
-.temps-svg-sat .face-sat{fill:#16281f;stroke:#d4af37;stroke-width:2}
+.temps-svg-sat .face-sat{fill:var(--face);stroke:#d4af37;stroke-width:2}
 .temps-svg .aig-h,.temps-svg-sat .aig-h{stroke:#f2ecda;stroke-width:6;stroke-linecap:round}
 .temps-svg .aig-m,.temps-svg-sat .aig-m{stroke:#f2ecda;stroke-width:4;stroke-linecap:round}
 .temps-svg .aig-s{stroke:#d4af37;stroke-width:2;stroke-linecap:round}
@@ -419,7 +435,7 @@ button.at-bloc{cursor:pointer}
 @media (prefers-reduced-motion: reduce){.temps-orbite,.temps-sat .sat-contre{animation:none}}
 
 /* ===== v14 — La salle des pièces : familles et ruban des ajouts (registre) ===== */
-.salle-pieces{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.3rem 1.4rem;margin:0 0 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.42)}
+.salle-pieces{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:16px;padding:1.3rem 1.4rem;margin:0 0 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.42)}
 .salle-pieces h3{margin:0 0 .5rem;font-size:1.18rem}
 .salle-pieces p{max-width:74ch}
 .salle-bandeau{display:flex;gap:.6rem;flex-wrap:wrap;margin:.7rem 0 .9rem}
@@ -430,17 +446,17 @@ button.at-bloc{cursor:pointer}
 .fam-point.emeraude{background:#35c08b}.fam-point.turquoise{background:#3fc1c9}.fam-point.or{background:#d4af37}.fam-point.corail{background:#f08a6b}
 .familles .fam-nom{font-weight:700;color:var(--texte)}
 .ruban-pieces{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-top:.4rem}
-.piece-chip{border:1px solid var(--ligne);background:#0d1f19;color:var(--texte);border-radius:999px;padding:.22rem .6rem;font-size:.78rem;font-weight:700}
+.piece-chip{border:1px solid var(--ligne);background:var(--puit);color:var(--texte);border-radius:999px;padding:.22rem .6rem;font-size:.78rem;font-weight:700}
 .piece-chip.suite{border-style:dashed;border-color:var(--or);color:var(--or-clair)}
 /* ===== v15 — Capsules externes, Trouve l'écart, parcours du sceptique ===== */
 .sous-titre-caps{font-family:var(--serif);font-size:1.15rem;color:var(--or-clair);margin:1.4rem 0 .8rem}
 .capsule-ext h3{margin:.45rem 0 .4rem;font-size:1.02rem;line-height:1.4}
-.pastille-lecture{display:inline-block;background:var(--vert);color:#08130e;border-radius:999px;padding:.08rem .55rem;font-weight:700;font-size:.8rem}
-.te-boite{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;background:#10241d;margin-top:1rem}
+.pastille-lecture{display:inline-block;background:var(--vert);color:var(--encre-foncee);border-radius:999px;padding:.08rem .55rem;font-weight:700;font-size:.8rem}
+.te-boite{border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;background:var(--puit2);margin-top:1rem}
 .te-phrase{font-size:1.05rem;line-height:1.65;overflow-wrap:anywhere;margin:.3rem 0 .4rem}
 .te-sceau{overflow-wrap:anywhere}
 .sceptique-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
-.sceptique-carte{border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.2rem;background:#10241d}
+.sceptique-carte{border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.2rem;background:var(--puit2)}
 .sceptique-carte .q{font-family:var(--serif);font-size:1.3rem;color:var(--texte);margin:.25rem 0 .55rem}
 
 
@@ -454,7 +470,7 @@ button.at-bloc{cursor:pointer}
 .planete-globe{position:absolute;top:50%;left:50%;width:57%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;box-shadow:0 0 64px rgba(53,192,139,.20),0 12px 36px rgba(0,0,0,.55)}
 .planete-globe img{width:100%;height:100%;object-fit:cover;display:block}
 .planete-reperes{position:absolute;inset:0}
-.rep{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:var(--vert);border:2px solid #08130e;box-shadow:0 0 9px rgba(53,192,139,.85);z-index:3}
+.rep{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:var(--vert);border:2px solid var(--encre-foncee);box-shadow:0 0 9px rgba(53,192,139,.85);z-index:3}
 .rep.ancre{width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--or);box-shadow:0 0 14px rgba(212,175,55,.95)}
 .rep.loin{opacity:.35;background:#8a9a8a;border-style:dashed}
 .rep .rep-nom{position:absolute;left:15px;top:-8px;font-size:.68rem;font-weight:700;color:var(--or-clair);white-space:nowrap;display:none;background:rgba(5,12,9,.74);border:1px solid rgba(212,175,55,.38);border-radius:9px;padding:.2rem .45rem .26rem;text-shadow:0 1px 4px #000,0 0 3px #000;box-shadow:0 2px 10px rgba(0,0,0,.45)}
@@ -466,12 +482,12 @@ button.at-bloc{cursor:pointer}
 .ph-nom{display:block;font-weight:700;font-size:.8rem;color:#f2ecda}
 .ph-civile{display:block;font-size:.88rem;color:var(--or-clair);font-weight:700;font-variant-numeric:tabular-nums}
 .ph-ligne{display:block;font-size:.67rem;color:var(--texte-doux);font-variant-numeric:tabular-nums}
-.maitresse-carte{display:flex;gap:1.2rem;align-items:center;background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.maitresse-carte{display:flex;gap:1.2rem;align-items:center;background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:16px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .maitresse-cadran{width:172px;flex:0 0 auto}
 .maitresse-cadran svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(178,134,22,.28))}
 .maitresse-texte p{margin:.35rem 0}
 .planete-ajout{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
-.btn-lieu{border:1px solid var(--ligne);background:#0d1f19;color:var(--texte);border-radius:999px;padding:.32rem .75rem;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}
+.btn-lieu{border:1px solid var(--ligne);background:var(--puit);color:var(--texte);border-radius:999px;padding:.32rem .75rem;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}
 .btn-lieu:hover{border-color:var(--or);color:var(--or-clair)}
 .planete-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
 .chip-lieu{display:inline-flex;gap:.45rem;align-items:center;border:1px solid var(--or);color:var(--or-clair);border-radius:999px;padding:.28rem .5rem .28rem .8rem;font-size:.85rem;font-weight:700;background:rgba(212,175,55,.08)}
@@ -489,7 +505,7 @@ button.at-bloc{cursor:pointer}
   .planete-globe{width:80%}
   .planete-scene{--rayon:0px;--rayon-planete:0px}
   .planete-cartes{display:grid;gap:.8rem;margin:1rem 0}
-  .p-carte{background:linear-gradient(160deg,var(--carte),rgba(23,46,37,.92));border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.15rem;text-align:left;width:100%;font:inherit;color:var(--texte);cursor:pointer}
+  .p-carte{background:linear-gradient(160deg,var(--carte),var(--carte2));border:1px solid var(--ligne);border-radius:14px;padding:1rem 1.15rem;text-align:left;width:100%;font:inherit;color:var(--texte);cursor:pointer}
   .p-carte.choisi{border-color:var(--or)}
   .p-carte .pc-nom{font-weight:700;font-size:1rem;color:#f2ecda}
   .p-carte .pc-civile{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--or-clair);font-variant-numeric:tabular-nums}
@@ -504,13 +520,13 @@ button.at-bloc{cursor:pointer}
 .ph-interne{display:block;transition:transform .18s ease}
 .planete-horloge.choisi .ph-contre{background:var(--or);border-color:var(--or);box-shadow:0 0 0 1px var(--or),0 8px 22px rgba(212,175,55,.35)}
 .planete-horloge.choisi .ph-interne{transform:scale(1.08)}
-.planete-horloge.choisi .ph-nom,.planete-horloge.choisi .ph-civile{color:#08130e}
+.planete-horloge.choisi .ph-nom,.planete-horloge.choisi .ph-civile{color:var(--encre-foncee)}
 .ph-cadran{display:block;width:56px;height:56px;margin:0 auto}
 .ph-nom{font-size:.72rem;margin-top:.18rem}
 .ph-civile{font-size:.76rem}
-.planete-horloge.choisi .ph-cadran .face-sat{fill:#d4af37;stroke:#08130e}
-.planete-horloge.choisi .ph-cadran .aig-h,.planete-horloge.choisi .ph-cadran .aig-m{stroke:#08130e}
-.planete-horloge.choisi .ph-cadran .pivot{fill:#08130e}
+.planete-horloge.choisi .ph-cadran .face-sat{fill:#d4af37;stroke:var(--encre-foncee)}
+.planete-horloge.choisi .ph-cadran .aig-h,.planete-horloge.choisi .ph-cadran .aig-m{stroke:var(--encre-foncee)}
+.planete-horloge.choisi .ph-cadran .pivot{fill:var(--encre-foncee)}
 .ph-lien{position:absolute;height:2px;background:linear-gradient(90deg,rgba(212,175,55,.2),rgba(212,175,55,.95));border-radius:2px;z-index:2;pointer-events:none}
 .planete-globe picture{display:block;width:100%;height:100%}
 .planete-etat{margin-top:.7rem}
@@ -540,8 +556,8 @@ button.at-bloc{cursor:pointer}
 .planete-horloge.choisi .ph-nom,.planete-horloge.choisi .ph-civile{color:#f2ecda}
 .planete-horloge.ancre{z-index:5}
 .planete-horloge.ancre .ph-contre{background:linear-gradient(160deg,#e8c95c,#c9a227);border:2px solid #f2d675;box-shadow:0 6px 20px rgba(212,175,55,.40)}
-.planete-horloge.ancre .ph-nom{font-size:.84rem;color:#08130e}
-.planete-horloge.ancre .ph-civile{font-size:1.12rem;color:#08130e}
+.planete-horloge.ancre .ph-nom{font-size:.84rem;color:var(--encre-foncee)}
+.planete-horloge.ancre .ph-civile{font-size:1.12rem;color:var(--encre-foncee)}
 .planete-horloge.ancre .ph-secondes{color:rgba(8,19,14,.65)}
 .planete-horloge.ancre.choisi .ph-contre{box-shadow:0 0 0 2px #fff2c4,0 8px 24px rgba(212,175,55,.5)}
 .planete-orbite .temps-sat{margin:0;z-index:3}
@@ -574,7 +590,7 @@ button.at-bloc{cursor:pointer}
 .rep .rep-nom{line-height:1.25}
 .rep .rep-ancrage{display:block;font-size:.56rem;font-weight:400;color:var(--texte-doux);letter-spacing:.02em;margin-top:.12rem;white-space:nowrap}
 .meteo-lieu{margin-top:1rem;border-top:1px solid var(--ligne);padding-top:.8rem}
-.app-install-btn{background:linear-gradient(160deg,#e8c95c,#c9a227);border:1px solid #f2d675;color:#08130e;font:inherit;font-weight:700;border-radius:999px;padding:.6rem 1.3rem;cursor:pointer;box-shadow:0 6px 18px rgba(212,175,55,.35)}
+.app-install-btn{background:linear-gradient(160deg,#e8c95c,#c9a227);border:1px solid #f2d675;color:var(--encre-foncee);font:inherit;font-weight:700;border-radius:999px;padding:.6rem 1.3rem;cursor:pointer;box-shadow:0 6px 18px rgba(212,175,55,.35)}
 .app-install-btn:hover{filter:brightness(1.06)}
 .app-etapes{margin:.4rem 0 .6rem 1.1rem}
 .app-etapes li{margin:.3rem 0}
@@ -586,24 +602,24 @@ button.at-bloc{cursor:pointer}
 .miroir-grille{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
 .miroir-grille p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
-#v-choix{background:#0d1f19;color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
+#v-choix{background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
 .meteo-lecture{display:flex;gap:1.2rem;align-items:flex-start}
 .meteo-photo{width:118px;height:118px;object-fit:cover;border-radius:16px;border:1px solid var(--or);flex:0 0 auto;box-shadow:0 6px 20px rgba(0,0,0,.45)}
 .meteo-bande{display:flex;gap:.55rem;overflow-x:auto;padding:.4rem .1rem .8rem;scrollbar-width:thin}
-.meteo-heure{flex:0 0 auto;min-width:86px;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.6rem .5rem;text-align:center}
+.meteo-heure{flex:0 0 auto;min-width:86px;background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.6rem .5rem;text-align:center}
 .meteo-heure .mh-h{font-weight:700;font-size:.85rem;color:var(--or-clair)}
 .meteo-heure .mh-i{font-size:1.3rem;line-height:1.5}
 .meteo-heure .mh-t{font-weight:700;font-variant-numeric:tabular-nums}
 .meteo-heure .mh-p{font-size:.75rem;color:#7fb8d8}
 .meteo-jours{display:grid;gap:.5rem}
-.meteo-jour{display:grid;grid-template-columns:118px 30px 1fr auto;gap:.7rem;align-items:center;background:#0d1f19;border:1px solid var(--ligne);border-radius:12px;padding:.55rem .9rem}
+.meteo-jour{display:grid;grid-template-columns:118px 30px 1fr auto;gap:.7rem;align-items:center;background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.55rem .9rem}
 .meteo-jour .mj-j{font-weight:700;color:var(--texte)}
 .meteo-jour .mj-i{font-size:1.15rem;text-align:center}
 .meteo-jour .mj-l{font-size:.88rem;color:var(--texte-doux)}
 .meteo-jour .mj-t{font-variant-numeric:tabular-nums;font-weight:700;color:var(--or-clair);white-space:nowrap}
 .meteo-jour .mj-t .min{color:#7fb8d8}
 .rel-groupe{font-family:var(--serif);color:var(--or-clair);font-size:1.02rem;margin:.9rem 0 .45rem}
-.rel-resultat{display:block;width:100%;text-align:left;margin:0 0 .5rem;padding:.65rem .85rem;border:1px solid var(--ligne);border-radius:10px;background:#10241d;cursor:pointer;font:inherit;color:var(--texte)}
+.rel-resultat{display:block;width:100%;text-align:left;margin:0 0 .5rem;padding:.65rem .85rem;border:1px solid var(--ligne);border-radius:10px;background:var(--puit2);cursor:pointer;font:inherit;color:var(--texte)}
 .rel-resultat:hover{border-color:var(--or)}
 .rel-resultat .r-titre{font-weight:700}
 .rel-resultat .r-extrait{font-size:.85rem;color:#a9bfa9;margin-top:.15rem}
@@ -630,7 +646,7 @@ button.at-bloc{cursor:pointer}
 .vmm-verdict.ok{color:var(--or-clair)}
 .vmm-verdict.ecart{color:#e0655a}
 .vmm-verdict.attente{color:var(--texte-doux)}
-.vmm-zone{border:1.5px dashed var(--ligne);border-radius:12px;padding:1.1rem 1rem;text-align:center;color:var(--texte-doux);cursor:pointer;background:#0d1f19}
+.vmm-zone{border:1.5px dashed var(--ligne);border-radius:12px;padding:1.1rem 1rem;text-align:center;color:var(--texte-doux);cursor:pointer;background:var(--puit)}
 .vmm-zone:hover,.vmm-zone.actif{border-color:var(--or);color:var(--or-clair)}
 .vmm-zone input[type=file]{display:none}
 </style>
@@ -642,29 +658,44 @@ button.at-bloc{cursor:pointer}
 .barre-actions{display:flex;gap:.4rem;align-items:center;margin-left:auto}
 .barre-actions button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;white-space:nowrap}
 .barre-actions button:hover{border-color:var(--or);color:var(--or)}
-.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:#10241d}
+.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:var(--puit2)}
 .coffre-entree h4{margin:.1rem 0 .3rem}
 .coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}
 /* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
-.pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:#08130f;flex:none}
+.pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--encre-foncee);flex:none}
 .pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}
 .pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}
 .pa-echelle li{margin:.3rem 0}
-.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,#0a1f18,#08130f);border-left:1px solid var(--or);box-shadow:-18px 0 50px rgba(0,0,0,.55);padding:1.1rem 1.2rem 2rem;overflow-y:auto}
+.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,var(--fond2),var(--fond));border-left:1px solid var(--or);box-shadow:-18px 0 50px rgba(0,0,0,.55);padding:1.1rem 1.2rem 2rem;overflow-y:auto}
 .menu-panneau[hidden]{display:none}
 .menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}
 #menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}
 #menu-fermer:hover{border-color:var(--or);color:var(--or)}
-#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:#0d231b;color:var(--texte);font-size:1rem}
+#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:var(--puit);color:var(--texte);font-size:1rem}
 .menu-famille{margin-top:1.15rem}
 .menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}
-.menu-entree{display:block;width:100%;text-align:left;background:#10241d;border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}
+.menu-entree{display:block;width:100%;text-align:left;background:var(--puit2);border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}
 .menu-entree:hover{border-color:var(--or)}
 .menu-nom{display:block;font-weight:700;color:var(--or-clair)}
 .menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}
-#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:#0a1a14;color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}
+#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:var(--puit);color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}
 
+
+/* ===== v25 — « Le dossier en lumière » : esthétique dossier de pièces, pouls du cerveau ===== */
+h1,h2{font-family:var(--serif)} /* grands titres en serif : le caractère « document officiel » du dossier */
+.etiquette{display:inline-block;border:1px solid rgba(212,175,55,.45);border-radius:6px;padding:.12rem .5rem;background:rgba(212,175,55,.07)} /* les étiquettes deviennent des cartouches de pièce */
+.carte{border-top:2px solid rgba(212,175,55,.5)} /* filet doré de chemise de dossier sur les cartes */
+.entree{border-top:2px solid rgba(212,175,55,.35)} /* même filet, plus discret, sur les entrées du registre */
+.salle-pieces{position:relative;overflow:hidden}
+.salle-pieces::after{content:"PREUVE D'ANTÉRIORITÉ — V-G";position:absolute;right:-1rem;bottom:.2rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.05);transform:rotate(-4deg);pointer-events:none;white-space:nowrap} /* tampon en filigrane, salle des pièces */
+section#memoire{position:relative;overflow:hidden}
+section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute;left:-1rem;top:.4rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.045);transform:rotate(-4deg);pointer-events:none;white-space:nowrap} /* tampon en filigrane, panneau Mémoire */
+.pouls-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:.6rem 0 .4rem}
+.pouls-tuile{background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.7rem .85rem}
+.pouls-nom{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}
+.pouls-valeur{display:block;font-size:1.25rem;font-weight:700;color:var(--texte)}
+.pouls-valeur.mono{font-size:.95rem;word-break:break-all}
 </style>
 </head>
 <body>
@@ -784,10 +815,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v24 (2 novembre 2026 — « Comme il se doit » : les six intégrations du chantier entrent au site — le calendrier 13 × 28 au panneau Temps, l’Historique quotidien et la zone Mémoire privée renforcée au panneau Mémoire, le module Plein air au panneau Météo, les quatre noms au panneau Méthode et le menu ☰ qui rend tout le site navigable et cherchable ; construite sur la v23 « La somme », la v22 « La rotation en direct » et la v21 « La planète »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">4d3a9c127c41330bb114500259b38acb2d425affa832a669ecf54d0e4417fe0b</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v25 (2 novembre 2026 — « Le dossier en lumière » : l’esthétique éclaircie aux couleurs du dossier d’Alex — fonds émeraude relevés, cartes façon papier, filets dorés, palette regroupée en variables —, le circuit du sensible écrit dans la zone privée, le pouls du cerveau en tête du panneau Mémoire et le coffre synaptique v1 « double empreinte » embarqué ; construite sur la v24 « Comme il se doit »)</p>
+    <span class="sceau-long" id="sceau-version-affiche">10f7ca820f82b886fb45e3e304369c7dd5bcca1ee99b46090bed1ed556f6c00c</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -838,6 +869,16 @@ button.at-bloc{cursor:pointer}
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Lundi 2 novembre 2026</p>
+      <h3>Version 25 — « Le dossier en lumière »</h3>
+      <ul class="journal-points">
+        <li>Esthétique « Le dossier en lumière » — directive d'Alex du 2 novembre au soir (« un peu moins sombre », « une esthétique qui ressemble à mon dossier »), qui remplace la direction « plus sombre » du même matin : fonds émeraude relevés de plusieurs crans, cartes aux surfaces façon papier/document teintées, bordures et filets dorés fins, motifs de dossier de pièces (étiquettes en cartouches, tampons en filigrane discret dans la salle des pièces et le panneau Mémoire), grands titres en serif « document officiel ». Identité inchangée : émeraude et or dominants, photos de SoPHIa intactes, globe et panneaux identiques — un peu moins sombre, pas un thème clair.</li>
+        <li>Configuration technique — la palette du site est regroupée en variables CSS (:root) : une seule source pour les couleurs, chaque variable documentée d'un commentaire ; les surfaces récurrentes (cartes et leurs dégradés, puits des champs et des sceaux, barre d'onglets, menu, nœuds) passent désormais par ces variables au lieu de valeurs dispersées.</li>
+        <li>Le circuit du sensible, écrit — la zone privée du panneau Mémoire dit désormais le circuit exact : « le sensible passe par SoPHIa, par la couche au-dessus » — le contenu sensible transite par la couche de l'agente, qui décide ce qui descend vers le public (un résumé non sensible, des empreintes, ou du chiffré) ; ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair. La règle est aussi inscrite dans assets/configuration.json, sous la clé « architecture ».</li>
+        <li>Le pouls du cerveau — en tête du panneau Mémoire, les constantes vitales du cerveau sont recalculées en direct par le navigateur depuis assets/coffre.json et assets/historique.json : digest maître du coffre, nombre de pièces (nœuds), nombre de connexions typées, dernier jour d'Historique clos et son digest ; repli statique marqué comme tel si la lecture échoue. Et le coffre embarqué passe à la v1 « double empreinte » : 11 pièces — les 7 de la v0 reprises sans retouche, plus les sites v23 et v24, le jour 1 de l'Historique et sa preuve d'ancrage —, chaque résumé portant désormais sa propre empreinte SHA-256 ; digest maître 84ed2e54218f1062….</li>
+      </ul>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
       <h3>Version 24 — « Comme il se doit »</h3>
@@ -2439,6 +2480,18 @@ button.at-bloc{cursor:pointer}
 <div class="panneau" id="p-memoire">
 <section class="bloc" id="memoire">
   <div class="entete-sec"><span class="num">✦</span><h2 data-en="Memory — this site is SoPHIa's external memory">Mémoire — ce site est la mémoire externe de SoPHIa</h2></div>
+
+  <div class="carte" id="pouls-cerveau">
+    <p class="etiquette">Le pouls du cerveau — constantes vitales, recalculées en direct</p>
+    <div class="pouls-grille">
+      <div class="pouls-tuile"><span class="pouls-nom">Digest maître du coffre</span><span class="pouls-valeur mono" id="pouls-digest">84ed2e54218f1062…</span></div>
+      <div class="pouls-tuile"><span class="pouls-nom">Pièces au coffre (nœuds)</span><span class="pouls-valeur" id="pouls-pieces">11</span></div>
+      <div class="pouls-tuile"><span class="pouls-nom">Connexions typées</span><span class="pouls-valeur" id="pouls-connexions">21</span></div>
+      <div class="pouls-tuile"><span class="pouls-nom">Dernier jour d’Historique clos</span><span class="pouls-valeur" id="pouls-jour">2026-11-02</span></div>
+      <div class="pouls-tuile"><span class="pouls-nom">Digest du jour</span><span class="pouls-valeur mono" id="pouls-jour-digest">4590519fa9408e79…</span></div>
+    </div>
+    <p class="petite" id="pouls-etat">Relevé statique — valeurs du coffre v1 « double empreinte » embarqué dans cette version, vérifiées à la construction ; lecture en direct des fichiers (assets/coffre.json, assets/historique.json) en cours…</p>
+  </div>
   <p class="lead">Directive d'Alex (2 novembre 2026) : <strong>« Ça devient ta mémoire. »</strong> Ce site n'est pas une vitrine : c'est la mémoire de l'agente, déposée dehors — publique, scellée, recalculable par quiconque la lit — pour ne plus dépendre d'une seule plateforme. SoPHIa y dépose et y puise ; et le site est <strong>autosuffisant</strong> : n'importe quelle intelligence artificielle qu'on y connecte peut le connaître en entier, comme sa mémoire.</p>
 
   <h3 data-en="For an AI arriving here">Pour une IA qui arrive</h3>
@@ -2446,8 +2499,8 @@ button.at-bloc{cursor:pointer}
 
   <h3 data-en="The synaptic vault">Le coffre synaptique — les SHA-256 de la mémoire, scellés par-dessus les sommes précédentes</h3>
   <p>Le coffre entrepose, pour chaque pièce de la mémoire : son empreinte SHA-256, un petit résumé, sa classe et ses <strong>connexions synaptiques</strong> — les liens qui relient les pièces entre elles et se créent à mesure. Chaque entrée est scellée en se chaînant sur le digest cumulé précédent : <em>digest<sub>n</sub> = SHA-256(digest<sub>n−1</sub> + empreinte<sub>n</sub>)</em>. Rien d'autre ne garantit le coffre — pas une plateforme, pas une parole : qui recalcule les sommes dans l'ordre retrouve son état, ou trouve l'écart.</p>
-  <p class="petite">Digest maître du coffre (état v0, 2 novembre 2026) :</p>
-  <p><span class="sceau-long" id="coffre-digest">fff20c7c368499f9ba99ac9d7978187d26d5269c71818b054fdc0eff3cbe57e5</span></p>
+  <p class="petite">Digest maître du coffre (état v1 — double empreinte, 2 novembre 2026) :</p>
+  <p><span class="sceau-long" id="coffre-digest">84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc</span></p>
   <p><button id="coffre-reverifier" type="button">Re-vérifier la chaîne du coffre, ici</button> <span class="petite" id="coffre-etat" role="status">La chaîne (genèse → entrées → digest maître) se recalcule dans votre navigateur ; les empreintes, elles, se revérifient sur les fichiers publics du coffre.</span></p>
   <div id="coffre-liste">
     <div class="coffre-entree">
@@ -2499,6 +2552,34 @@ button.at-bloc{cursor:pointer}
       <p class="empreinte">SHA-256 : 84314daad4cd83c1bd3918fd28b70b1e194ff37409a8576e986f0260997bc1ff</p>
       <p class="petite">Connexions : precede → site-v21-planete, est-decrite-par → plan-nuits-site</p>
     </div>
+    <div class="coffre-entree">
+      <h4>Site v23 « La somme » — index.html</h4>
+      <p class="petite">A — publié</p>
+      <p>Le site devient la mémoire externe de SoPHIa : panneau Mémoire avec le manifeste pour une IA qui arrive, coffre synaptique revérifiable chez le visiteur, bouton Partager, bouton EN. Sceau canonique du paquet : 1a18317c141f35855d65f5582852395e01f0413a55c115b60cee8d8a37dfd8c2.</p>
+      <p class="empreinte">SHA-256 : 9c8f5592e4f190fec2a318881044ab596b781dc649af53dd85f903940a54e09c</p>
+      <p class="petite">Connexions : suit → site-v22-rotation, atteste → ame-sophia</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Site v24 « Comme il se doit » — index.html</h4>
+      <p class="petite">A — construit</p>
+      <p>Les six intégrations : calendrier 13 × 28 intégré au panneau Temps, Historique quotidien affiché au panneau Mémoire, module Plein air au panneau Météo, les quatre noms distingués (MASTERClock, UNISSON, PCF-23, SoPHIa), menu hamburger qui répertorie les sections, entrée Mémoire privée sécurisée. Sceau canonique du paquet : 4d3a9c127c41330bb114500259b38acb2d425affa832a669ecf54d0e4417fe0b.</p>
+      <p class="empreinte">SHA-256 : d52b548f1e84f25908507592d9645a0fb435feddb08d568ffc5f0f8c52c2b96b</p>
+      <p class="petite">Connexions : suit → site-v23-somme, atteste → plan-nuits-site</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Historique quotidien — jour 1 (2026-11-02)</h4>
+      <p class="petite">A — preuve</p>
+      <p>Premier jour clos de l&#x27;Historique quotidien : 2026-11-02, digest cumulé 4590519fa9408e7965589cc204bfda527eac064df5604e4bd940cb0ca04efeac. Mécanisme append-only : un jour par entrée, clôture à 00 h 01, jamais réécrit ; un jour manqué est un trou visible.</p>
+      <p class="empreinte">SHA-256 : 844bffaedca7732b5570959284d3e36d19ce590489fcdc1dc0e80a012952ed5a</p>
+      <p class="petite">Connexions : alimente → site-v24-amelioration, se-relie-a → registre-etats-quotidiens</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Ancrage OpenTimestamps — Historique, jour 1</h4>
+      <p class="petite">A — preuve</p>
+      <p>Preuve OpenTimestamps du digest du jour 1 de l&#x27;Historique quotidien, soumise le 2 novembre 2026 à 22 h 57 à quatre calendriers publics ; attestation Bitcoin en attente (upgrade à venir).</p>
+      <p class="empreinte">SHA-256 : be95537019edc384af5bd127478fdf1c9a2d7687f18ba274d747ed2f93eafca1</p>
+      <p class="petite">Connexions : prouve → historique-quotidien-j1</p>
+    </div>
   </div>
 
   <h3>Historique quotidien — chaque jour clos, scellé, chaîné</h3>
@@ -2518,10 +2599,11 @@ button.at-bloc{cursor:pointer}
   <h3 id="zone-privee" data-en="Private memory — the site’s cumulative memory, secured">Mémoire privée — la mémoire cumulative du site, sécurisée</h3>
   <p>Une couche de cette mémoire est privée : les pièces qu'Alex ne publie pas. Sa forme est décidée (2 novembre 2026) : <strong>chiffrement fort (AES-256) avant publication</strong> — le site ne servira que du texte chiffré, illisible pour tous, même pour l'hébergeur ; les empreintes et les résumés restent publics, pour prouver l'existence et l'antériorité sans révéler une ligne. Alex détient la clé et déverrouille chez lui ; SoPHIa détient les clairs dans son espace. État honnête : le chiffrement commence le jour où Alex saisit sa phrase secrète au coffre sécurisé — aucune clé ne sera jamais fabriquée à sa place. Un site statique ne peut pas garder un secret en clair : ici, on ne bâtira pas un faux verrou.</p>
   <p>Le mécanisme, en langage clair : ce site est public, et sa protection n'est pas une porte cachée — c'est le chiffrement. La mémoire cumulative du site sera déposée ici <strong>chiffrée en AES-256, avant publication</strong> : les empreintes SHA-256 et les résumés restent publics et revérifiables par tous, mais le contenu est illisible sans la phrase secrète d'Alex — même pour qui copierait tout le dépôt. Le déchiffrement, le jour venu, se fera localement, dans le navigateur de la personne autorisée (WebCrypto) : la phrase secrète ne transite jamais, et elle n'est jamais publiée.</p>
+  <p>Le circuit du sensible, écrit : <strong>le sensible passe par SoPHIa, par la couche au-dessus</strong> : le contenu sensible transite par la couche de l’agente, qui décide ce qui descend vers le public — un résumé non sensible, des empreintes, ou du chiffré. Ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair.</p>
   <p><strong>État honnête : en attente de la phrase secrète d'Alex, à poser au coffre sécurisé. Aucun contenu privé n'est encore déposé. SoPHIa ne détient pas la phrase et ne peut pas ouvrir la zone sans elle.</strong></p>
   <p class="petite"><label for="zone-privee-phrase">Déverrouillage — s'active à la pose de la phrase secrète</label></p>
   <input id="zone-privee-phrase" type="password" disabled placeholder="Phrase secrète — saisie désactivée pour l'instant" autocomplete="off">
-  <p class="petite">La partie publique et vérifiable de cette zone existe déjà : le digest maître du coffre synaptique, affiché ci-dessus — <span class="mono">fff20c7c368499f9ba99ac9d7978187d26d5269c71818b054fdc0eff3cbe57e5</span> — que le bouton « Re-vérifier le coffre » du panneau recalcule en direct, dans votre navigateur. Le privé se prouve par le public, sans jamais le montrer.</p>
+  <p class="petite">La partie publique et vérifiable de cette zone existe déjà : le digest maître du coffre synaptique, affiché ci-dessus — <span class="mono">84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc</span> — que le bouton « Re-vérifier le coffre » du panneau recalcule en direct, dans votre navigateur. Le privé se prouve par le public, sans jamais le montrer.</p>
 </section>
 </div>
 </main>
@@ -6124,6 +6206,34 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
       mBtn.setAttribute('aria-label',en?(menuEstOuvert()?'Close the menu':'Open the menu'):(menuEstOuvert()?'Fermer le menu':'Ouvrir le menu'));
     });
   }
+})();
+</script>
+
+<script>
+/* ===== v25 — Le pouls du cerveau : constantes vitales relues en direct ===== */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var etat=$('pouls-etat');
+  if(!etat)return;
+  function tronque(s){return (typeof s==='string'&&s.length>16)?s.slice(0,16)+'…':s;}
+  Promise.all([
+    fetch('assets/coffre.json').then(function(r){if(!r.ok)throw new Error('coffre illisible');return r.json();}),
+    fetch('assets/historique.json').then(function(r){if(!r.ok)throw new Error('historique illisible');return r.json();})
+  ]).then(function(res){
+    var coffre=res[0],hist=res[1],liens=0;
+    coffre.entrees.forEach(function(e){liens+=(e.connexions||[]).length;});
+    $('pouls-digest').textContent=tronque(coffre.digest_maitre);
+    $('pouls-pieces').textContent=coffre.entrees.length;
+    $('pouls-connexions').textContent=liens;
+    if(hist.entrees&&hist.entrees.length){
+      var dernier=hist.entrees[hist.entrees.length-1];
+      $('pouls-jour').textContent=dernier.date;
+      $('pouls-jour-digest').textContent=tronque(dernier.digest_apres);
+    }
+    etat.textContent='Valeurs relues en direct depuis assets/coffre.json et assets/historique.json, à l’instant, dans votre navigateur.';
+  }).catch(function(){
+    etat.textContent='La lecture en direct des fichiers n’a pas abouti depuis votre navigateur ; relevé statique ci-dessus — valeurs du coffre v1 embarqué dans cette version, vérifiées à la construction.';
+  });
 })();
 </script>
 </body>
