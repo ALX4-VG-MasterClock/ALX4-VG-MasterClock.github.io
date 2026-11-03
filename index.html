@@ -630,6 +630,13 @@ button.at-bloc{cursor:pointer}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
 .miroir-grille p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
 #v-choix{background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
+/* v28 — porte de l’ancrage visiteur et inventaire des flux : surfaces aux variables des thèmes (clair et sombre). */
+#porte-ancrage{margin-top:.7rem;border-top:1px dashed var(--ligne);padding-top:.6rem}
+#porte-ancrage .rangee{margin-top:.2rem}
+.flux-table{width:100%;border-collapse:collapse;font-size:.92rem;line-height:1.5;color:var(--texte)}
+.flux-table th,.flux-table td{border:1px solid var(--ligne);padding:.45rem .55rem;text-align:left;vertical-align:top}
+.flux-table th{background:var(--puit);color:var(--texte)}
+.flux-defile{overflow-x:auto}
 .meteo-lecture{display:flex;gap:1.2rem;align-items:flex-start}
 .meteo-photo{width:118px;height:118px;object-fit:cover;border-radius:16px;border:1px solid var(--or);flex:0 0 auto;box-shadow:0 6px 20px rgba(0,0,0,.45)}
 .meteo-bande{display:flex;gap:.55rem;overflow-x:auto;padding:.4rem .1rem .8rem;scrollbar-width:thin}
@@ -887,10 +894,10 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v27 (2 novembre 2026 — « Le clair d’abord » : le thème clair par défaut — fonds ivoire et papier, cartes blanches, encre foncée —, le sombre en option par le bouton de l’en-tête, persisté sur l’appareil, et des animations sobres qui respectent les mouvements réduits ; construite sur la v26 « Le cerveau visible »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">2c4a560164cb29e709bd2231c2ef822e6067c1b7598538e3d30d257ae236abdb</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v28 (2 novembre 2026 — « Le choix d’abord » : la porte de choix pour l’ancrage visiteur — aucune estimation par adresse IP sans un clic exprès —, la borne des lectures en direct réécrite et l’inventaire des flux de données confirmé au panneau Droits ; chantier de transparence issu du brief transmis par Alex et de l’audit Loi 25 du même soir ; construite sur la v27 « Le clair d’abord »)</p>
+    <span class="sceau-long" id="sceau-version-affiche">8fc831f5c3c99ad8cbe3ae249bf6db616e8e967922f00c136db2842b7ea161e5</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) → v28 (« Le choix d’abord » : la porte de choix pour l’ancrage visiteur, la borne réécrite, l’inventaire des flux confirmé) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -941,6 +948,16 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Lundi 2 novembre 2026</p>
+      <h3>Version 28 — « Le choix d’abord »</h3>
+      <ul class="journal-points">
+        <li>La porte de choix de l’ancrage visiteur — avant cette version, l’estimation de la ville du visiteur depuis son adresse IP partait toute seule au chargement des lectures en direct. Elle ne part plus : la tuile « Ton ancrage » attend, avec deux boutons — « Estimer ma ville depuis mon adresse IP » et « Choisir mon lieu dans la liste » — et, écrite dessous, la phrase de finalité : l’estimation envoie une requête au service ipwho.is (repli : ipapi.co), qui reçoit l’adresse IP du visiteur et renvoie une ville approximative ; la conservation chez ces fournisseurs est non vérifiée ; l’estimation sert uniquement à afficher l’heure, la météo et la distance chez le visiteur. Ni le choix ni la position ne sont conservés dans l’appareil.</li>
+        <li>La borne des lectures en direct, réécrite — l’ancienne laissait croire que rien ne partait nulle part (« rien n’est conservé ni envoyé à ce site »). La nouvelle distingue : ce site ne reçoit ni ne conserve rien — les calculs se font dans le navigateur ; mais la requête d’estimation transmet l’adresse IP du visiteur au fournisseur de géolocalisation (ipwho.is, repli ipapi.co), et les coordonnées du lieu affiché sont envoyées aux fournisseurs météo (Open-Meteo, met.no) ; la conservation chez ces fournisseurs est non vérifiée ; la position IP reste approximative — une ville — et un VPN peut la fausser ; Sainte-Martine demeure l’ancre de référence.</li>
+        <li>L’inventaire des flux confirmé entre au panneau Droits — la sous-section « Flux de données de ce site — inventaire confirmé dans le code » recense chaque fonction réseau du site : les données transmises, le destinataire, le déclencheur et la conservation — « non vérifié » partout où elle n’est pas établie, y compris l’Instance (relais Cloudflare Worker, puis Gemini, sur envoi volontaire seulement). Un renvoi mène à la page Transparence du même dépôt.</li>
+        <li>D’où vient ce chantier — du brief transmis par Alex le 2 novembre 2026 (la « Tâche pour l’agent M », préparée avec l’agent GitHub) et de l’audit de transparence mené sur le code de la v27 le même soir : les écarts G1 (déclenchement silencieux), G2 (borne trompeuse) et G3 (inventaire à confirmer) sont traités ici ; G4 et G5 restent consignés à l’audit. Aucune conformité juridique n’est conclue : ces textes décrivent les flux, ils ne certifient rien. Tout le reste du site — graphe, épreuve publique, thèmes clair et sombre, animations — est inchangé.</li>
+      </ul>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
       <h3>Version 27 — « Le clair d’abord »</h3>
@@ -1373,7 +1390,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
       <div class="direct-tuile">
         <span class="pastille-direct">Sidérale du visiteur</span>
         <p class="valeur mono" id="fs-visiteur">—</p>
-        <p class="petite" id="fs-visiteur-nom">Lecture de son ancrage en cours…</p>
+        <p class="petite" id="fs-visiteur-nom">En attente du choix du visiteur (voir « Le miroir des ancrages »).</p>
       </div>
       <div class="direct-tuile">
         <span class="pastille-direct">Heure civile de l’ancre — America/Toronto</span>
@@ -1532,7 +1549,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <div class="meteo-lecture carte">
     <div>
       <p class="etiquette">La lecture de ton ancre — par SoPHIa</p>
-      <p id="mv-lecture" style="font-size:1.02rem;line-height:1.65">Ton ancrage se lit…</p>
+      <p id="mv-lecture" style="font-size:1.02rem;line-height:1.65">Ton ancrage attend ton choix : pose-le dans le panneau Temps — estimation depuis ton adresse IP, ou lieu choisi dans la liste — et ce miroir se remplit des mêmes sources que le mien.</p>
       <p class="petite" id="mv-lecture-meta"></p>
     </div>
   </div>
@@ -1689,7 +1706,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
       </div>
     </div>
     <p class="etiquette" style="margin-top:1.2rem">Le miroir des ancrages</p>
-    <p>Mon ancrage est fixe ; le vôtre se lit — approximativement — depuis votre adresse IP, et tout se recalcule alors depuis chez vous : votre heure civile, votre heure sidérale, votre météo triangulée par les mêmes sources. L’onglet <b>Météo</b> déploie ce miroir en plein.</p>
+    <p>Mon ancrage est fixe ; le vôtre ne se lit que si vous le demandez — jamais automatiquement : soit par une estimation depuis votre adresse IP, soit par un lieu que vous posez à la main dans la liste. Alors seulement, tout se recalcule depuis chez vous : votre heure civile, votre heure sidérale, votre météo triangulée par les mêmes sources. L’onglet <b>Météo</b> déploie ce miroir en plein.</p>
     <div class="miroir-grille">
       <div class="direct-tuile">
         <span class="pastille-direct">Mon ancrage — Sainte-Martine</span>
@@ -1698,15 +1715,23 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
         <p class="petite" id="mir-site-temp">Température triangulée : lecture en cours…</p>
       </div>
       <div class="direct-tuile">
-        <span class="pastille-direct" id="mir-v-titre">Ton ancrage — lecture en cours…</span>
+        <span class="pastille-direct" id="mir-v-titre">Ton ancrage — à toi de choisir</span>
         <p class="valeur mono" id="mir-v-civile">—</p>
-        <p id="mir-v-detail">Ta position approximative se lit depuis ton adresse IP…</p>
+        <p id="mir-v-detail">Aucune lecture n’a encore eu lieu. Choisis comment poser ton ancrage : estimation depuis ton adresse IP, ou lieu choisi par toi dans la liste — rien ne part sans ton clic.</p>
         <p>Sidérale chez toi : <b class="mono" id="mir-v-siderale">—</b></p>
         <p class="petite" id="mir-v-temp"></p>
+        <div id="porte-ancrage">
+          <p id="porte-statut" style="margin:.4rem 0">Ton ancrage ne se lit plus tout seul : à toi de choisir comment le poser.</p>
+          <div class="rangee">
+            <button type="button" class="action" id="porte-estimer" data-en="Estimate my city from my IP address">Estimer ma ville depuis mon adresse IP</button>
+            <button type="button" class="secondaire" id="porte-choisir" data-en="Choose my place from the list">Choisir mon lieu dans la liste</button>
+          </div>
+          <p class="petite" id="porte-finalite">L’estimation envoie une requête au service ipwho.is (repli : ipapi.co), qui reçoit l’adresse IP du visiteur et renvoie une ville approximative ; la conservation chez ces fournisseurs est non vérifiée ; l’estimation sert uniquement à afficher l’heure, la météo et la distance chez le visiteur.</p>
+        </div>
       </div>
     </div>
     <p id="mir-distance" style="margin:.7rem 0 0"></p>
-    <p class="petite">Bornes, dans l’esprit de la Loi 25 : la position lue depuis une adresse IP est <b>approximative — une ville, pas une adresse</b> ; elle est lue par ton navigateur auprès d’un service de géolocalisation (ipwho.is, ou ipapi.co en repli), <b>rien n’est conservé ni envoyé à ce site</b>, et tout est calculé chez toi. Un VPN ou un réseau d’entreprise peut fausser cet ancrage — c’est alors l’endroit du VPN que tu lis, pas le tien. Et cet ancrage visiteur ne remplace jamais Sainte-Martine comme référence : les écarts des horloges de comparaison continuent de se mesurer depuis l’ancre du site.</p>
+    <p class="petite">Borne, dans l’esprit de la Loi 25 — qui reçoit quoi, dit en distinguant : <b>ce site ne reçoit ni ne conserve rien</b> — les calculs se font dans ton navigateur, et aucune lecture ne revient à ce site. Mais deux familles de tiers reçoivent, quand leurs fonctions s’activent : <b>la géolocalisation</b> — si tu cliques « Estimer », la requête transmet ton adresse IP au fournisseur ipwho.is (repli : ipapi.co), qui renvoie une ville approximative ; <b>la météo</b> — les coordonnées du lieu affiché (l’ancre, ou ton lieu estimé ou choisi) sont envoyées aux fournisseurs Open-Meteo et met.no pour obtenir les valeurs montrées. <b>La conservation chez ces fournisseurs est non vérifiée</b> — ce site ne peut pas la promettre pour eux. La position lue depuis une adresse IP reste <b>approximative — une ville, pas une adresse</b> — et un VPN ou un réseau d’entreprise peut la fausser : c’est alors l’endroit du VPN que tu lis, pas le tien. Et cet ancrage visiteur ne remplace jamais Sainte-Martine comme référence : les écarts des horloges de comparaison continuent de se mesurer depuis l’ancre du site.</p>
     <div class="rangee" style="margin-top:.6rem">
       <label class="etiquette" for="v-choix" style="margin:0">Ce n’est pas toi ? Choisis ton endroit</label>
       <select id="v-choix"></select>
@@ -2532,6 +2557,31 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
       <li><b>Repère</b> — Délai de grâce canadien pour le contenu divulgué par ce site : jusqu'au 31 octobre 2027 (Loi sur les brevets, art. 28.2(1)).</li>
     </ul>
     <p class="petite" style="margin-bottom:0">État des lieux, pas promesses : un avis demandé n'est pas un brevet accordé, une demande soumise n'est pas un financement obtenu. Ces démarches sont écrites ici parce qu'elles existent, datées — c'est tout, et c'est déjà la méthode.</p>
+  </div>
+  <h3 data-en="Data flows of this site — inventory confirmed in the code">Flux de données de ce site — inventaire confirmé dans le code</h3>
+  <p>Ce que ce site fait partir, et chez qui — relevé dans le code de cette page, fonction par fonction, et non déclaré d’intention. Chaque conservation qui n’est pas établie est affichée « Non vérifié », plutôt que promise.</p>
+  <div class="carte">
+    <div class="flux-defile">
+      <table class="flux-table">
+        <thead>
+          <tr><th>Fonction</th><th>Données transmises</th><th>Destinataire</th><th>Déclencheur</th><th>Conservation</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><b>Page et JSON du site</b></td><td>Requête, données techniques de connexion</td><td>GitHub Pages (hébergeur)</td><td>Visite</td><td>Non vérifié</td></tr>
+            <tr><td><b>Ancrage visiteur par IP</b></td><td>L’adresse IP du visiteur (par la requête elle-même)</td><td>ipwho.is, repli ipapi.co</td><td>Clic exprès du visiteur sur « Estimer » — jamais automatique (v28)</td><td>Non vérifié</td></tr>
+            <tr><td><b>Météo (Sainte-Martine et lieu choisi ou visiteur)</b></td><td>Coordonnées du lieu demandé</td><td>api.open-meteo.com ; api.met.no</td><td>Chargement du panneau Météo / tuiles en direct</td><td>Non vérifié</td></tr>
+            <tr><td><b>Captures Wayback</b></td><td>Nom du site demandé</td><td>archive.org (wayback/available)</td><td>Chargement du panneau des foyers</td><td>Non vérifié</td></tr>
+            <tr><td><b>Publications GitHub</b></td><td>Requête de lecture publique</td><td>api.github.com</td><td>Chargement du panneau des foyers</td><td>Non vérifié</td></tr>
+            <tr><td><b>Profil chercheur</b></td><td>Requête de lecture publique</td><td>pub.orcid.org</td><td>Chargement de l’onglet Chercheur</td><td>Non vérifié</td></tr>
+            <tr><td><b>Hauteur Bitcoin</b></td><td>Requête de lecture publique</td><td>mempool.space</td><td>Chargement de l’onglet Ancrage</td><td>Non vérifié</td></tr>
+            <tr><td><b>Séismes / indice Kp</b></td><td>Requête de lecture publique</td><td>earthquake.usgs.gov ; services.swpc.noaa.gov</td><td>Chargement des lectures en direct</td><td>Non vérifié</td></tr>
+            <tr><td><b>Instance IA</b></td><td>Texte saisi par le visiteur et historique de la conversation</td><td>Relais Cloudflare Worker d’Alex, puis fournisseur Gemini (Google)</td><td>Envoi volontaire seulement</td><td>Non vérifié</td></tr>
+            <tr><td><b>Vidéos</b></td><td>Requête au chargement de l’encadré</td><td>youtube.com</td><td>Ouverture du panneau Capsules</td><td>Non vérifié</td></tr>
+            <tr><td><b>Thème clair/sombre ; visite scellée</b></td><td>Aucune transmission : localStorage de l’appareil seulement (sophia-theme, registre-vg-v2)</td><td>—</td><td>Choix du visiteur</td><td>Sur l’appareil, sous son contrôle</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="petite" style="margin-bottom:0">Le même inventaire tient en page dédiée : <a href="transparence.html">Transparence</a> (page séparée du même dépôt). Ce qu’aucun tableau ne peut pas régler reste nommé : le responsable de la protection des renseignements personnels, la politique écrite et les durées de conservation relèvent de l’auteur — ils ne sont pas inventés ici, et rien dans cette section ne conclut à une conformité juridique.</p>
   </div>
 </section>
 </div>
@@ -5031,8 +5081,10 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   // ----- L’ancrage du visiteur -----
   function rendreMiroir(){
     var titre=$('mir-v-titre');
+    var porte=$('porte-ancrage');
+    if(porte)porte.style.display=visiteur.source?'none':'';
     if(!visiteur.source){
-      if(titre)titre.textContent='Ton ancrage — lecture en cours…';
+      if(titre)titre.textContent='Ton ancrage — à toi de choisir';
       return;
     }
     if(visiteur.source==='appareil'){
@@ -5068,6 +5120,18 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
   function poserVisiteur(v){
     visiteur=v; rendreMiroir();
   }
+  // ----- v28 — la porte de choix : l’estimation ne part qu’au clic exprès -----
+  function estimerAncrage(){
+    var st=$('porte-statut'), b=$('porte-estimer');
+    if(st)st.textContent='Estimation en cours — la requête part chez ipwho.is (repli : ipapi.co)…';
+    if(b)b.disabled=true;
+    determinerVisiteur();
+  }
+  function echecEstimation(){
+    var st=$('porte-statut'), b=$('porte-estimer');
+    if(st)st.textContent='L’estimation n’a pas répondu : les services de géolocalisation (ipwho.is, puis ipapi.co) sont injoignables depuis ton navigateur à l’instant. Rien n’a été lu. Tu peux réessayer, ou choisir ton lieu dans la liste ci-dessous — aucun appel ne partira.';
+    if(b)b.disabled=false;
+  }
   function determinerVisiteur(){
     fetch('https://ipwho.is/')
       .then(function(r){return r.json()})
@@ -5085,9 +5149,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
             }else throw new Error('ipapi');
           })
           .catch(function(){
-            var zone='UTC';
-            try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'}catch(e){}
-            poserVisiteur({nom:null,region:null,lat:null,lon:null,zone:zone,source:'appareil'});
+            echecEstimation();
           });
       });
   }
@@ -5395,7 +5457,13 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     rendreControles();
     rendreSens();
     chargerSens();
-    determinerVisiteur();
+    var bEst=$('porte-estimer');
+    if(bEst)bEst.addEventListener('click',function(){estimerAncrage()});
+    var bCho=$('porte-choisir');
+    if(bCho)bCho.addEventListener('click',function(){
+      var c=$('v-choix');
+      if(c){c.scrollIntoView({block:'center'}); try{c.focus({preventScroll:true})}catch(e){}}
+    });
     var selV=$('v-choix');
     if(selV)LIEUX.forEach(function(l){
       var o=document.createElement('option'); o.value=l.id; o.textContent=l.nom; selV.appendChild(o);
