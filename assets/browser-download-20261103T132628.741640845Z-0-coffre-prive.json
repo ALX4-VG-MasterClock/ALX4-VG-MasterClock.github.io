@@ -1,0 +1,23 @@
+{
+  "format": "memoire-verrouillee/v1",
+  "cree_le": "2026-11-03T13:26:26.593Z",
+  "kdf": {
+    "algo": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 600000,
+    "sel_b64": "jBbUk0HWPVZDSNNtVbRKdA=="
+  },
+  "chiffre": {
+    "algo": "AES-256-GCM"
+  },
+  "entrees": [
+    {
+      "id": "prive-0001",
+      "titre_public": "Note inaugurale de la Mémoire verrouillée",
+      "resume_public": "Constat technique d'ouverture de la zone privée du site : fonction, format memoire-verrouillee/v1, règle de la phrase. Aucun contenu sensible.",
+      "empreinte_clair_sha256": "40b514fb437d8dcb67fd2178ba15a74c4e0e7432667ce9abcfc7659bd58a8eea",
+      "iv_b64": "SYeQXr+z3C2Xez/5",
+      "texte_chiffre_b64": "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"
+    }
+  ]
+}
