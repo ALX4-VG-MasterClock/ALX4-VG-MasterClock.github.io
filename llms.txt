@@ -32,3 +32,12 @@ Version 26 « Le cerveau visible » (2 novembre 2026) : dans le panneau Mémoire
 Version 27 « Le clair d'abord » (2 novembre 2026) : le site s'ouvre en thème clair par défaut (fonds ivoire/papier, cartes blanches, encre foncée — palette en variables CSS, :root porte le clair) ; le thème sombre des versions précédentes devient une option, par le bouton de bascule de l'en-tête, conservée sur l'appareil du visiteur ; animations CSS sobres (apparition des panneaux, révélation des cartes, reflet doré du titre), désactivées par prefers-reduced-motion. Mécanismes de la v26 inchangés.
 
 Version 28 « Le choix d'abord » (2 novembre 2026) : l'estimation de la ville du visiteur par adresse IP ne part plus automatiquement — la tuile « Ton ancrage » (panneau Temps) attend un clic exprès sur « Estimer ma ville depuis mon adresse IP », avec sa phrase de finalité (requête à ipwho.is, repli ipapi.co ; conservation chez ces fournisseurs non vérifiée), ou le choix manuel dans la liste des lieux ; aucun appel de géolocalisation au chargement, aucun stockage de la position. La borne des lectures en direct est réécrite (ce site / géolocalisation / météo distingués) et le panneau Droits porte l'inventaire des flux confirmé dans le code. Chantier de transparence issu du brief transmis par Alex et de l'audit du 2 novembre 2026.
+
+Version 29 « La transmission » (3 novembre 2026) : la finalité d'Alex — « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi » — est citée à l'Accueil, et un nouveau panneau Transmission donne la méthode en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), avec la démonstration interactive « Essaie la chaîne » : le visiteur scelle ses propres entrées et revérifie la chaîne depuis la genèse « TRANSMISSION|genese », calculs faits dans son navigateur (Web Crypto) — rien n'est envoyé ni conservé.
+
+Auteur et droits
+
+Auteur et titulaire des droits : Alexandre Vautour Gagnon — ORCID 0009-0006-9124-4407.
+© 2026 Alexandre Vautour Gagnon — Tous droits réservés, sur la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), sur les textes de ce site et sur le registre.
+La citation courte est permise avec attribution à l'auteur.
+Le sceau prouve l'intégrité d'un contenu ; il ne transfère aucun droit et ne vaut pas licence. La revérification publique des empreintes reste libre.

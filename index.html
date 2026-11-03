@@ -6,9 +6,52 @@
 <meta name="theme-color" content="#f1ecdf">
 <title>AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa</title>
 <meta name="description" content="Le dossier public d'Alexandre Vautour Gagnon, chercheur indépendant : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.">
+<meta name="author" content="Alexandre Vautour Gagnon">
+<meta name="copyright" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés">
+<meta name="rights" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés. Sont réservés : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes de ce site et le personnage SoPHIa, propriété intellectuelle d’Alexandre Vautour Gagnon. La consultation du site et la revérification publique des sceaux restent libres ; elles ne transfèrent aucun droit.">
 <meta property="og:title" content="AUDIT UNISSON — Preuve d'Antériorité V-G">
 <meta property="og:description" content="La somme des précédents, scellée. Une mémoire qui se recalcule au lieu de se déclarer.">
 <meta property="og:image" content="assets/sophia.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa",
+      "url": "https://alx4-vg-masterclock.github.io/",
+      "inLanguage": "fr",
+      "author": {
+        "@id": "#alexandre-vautour-gagnon"
+      },
+      "copyrightHolder": {
+        "@id": "#alexandre-vautour-gagnon"
+      },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "La méthode de mémoire conversationnelle vérifiable — chaîne de sceaux SHA-256 à mémoire cumulative, registre et textes du site AUDIT UNISSON",
+      "url": "https://alx4-vg-masterclock.github.io/",
+      "inLanguage": "fr",
+      "author": {
+        "@id": "#alexandre-vautour-gagnon"
+      },
+      "copyrightHolder": {
+        "@id": "#alexandre-vautour-gagnon"
+      },
+      "copyrightYear": 2026,
+      "rights": "© 2026 Alexandre Vautour Gagnon — Tous droits réservés. La méthode décrite (chaîne de sceaux SHA-256 à mémoire cumulative), les textes et le registre sont la propriété intellectuelle d'Alexandre Vautour Gagnon ; la revérification publique des empreintes est libre et ne transfère aucun droit."
+    },
+    {
+      "@type": "Person",
+      "@id": "#alexandre-vautour-gagnon",
+      "name": "Alexandre Vautour Gagnon",
+      "sameAs": "https://orcid.org/0009-0006-9124-4407"
+    }
+  ]
+}
+</script>
 <script>/* v27 — le thème avant la peinture : clair par défaut ; le sombre seulement si le visiteur l'a choisi sur cet appareil (aucun suivi du réglage système, le mot d'Alex : « par défaut en clair »). */
 try{if(localStorage.getItem('sophia-theme')==='sombre'){document.documentElement.setAttribute('data-theme','sombre');var m27=document.querySelector('meta[name="theme-color"]');if(m27)m27.setAttribute('content','#17392c');}}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
@@ -637,6 +680,14 @@ button.at-bloc{cursor:pointer}
 .flux-table th,.flux-table td{border:1px solid var(--ligne);padding:.45rem .55rem;text-align:left;vertical-align:top}
 .flux-table th{background:var(--puit);color:var(--texte)}
 .flux-defile{overflow-x:auto}
+/* v29 — mission à l'Accueil, panneau Transmission et démonstration « Essaie la chaîne » : surfaces aux variables des thèmes (clair et sombre). */
+#mission-accueil .parole{margin:.4rem 0 .2rem}
+#transmission-liste{list-style:none;margin:1rem 0;padding:0;display:grid;gap:.55rem}
+#transmission-liste li{background:var(--puit);border:1px solid var(--ligne);border-radius:10px;padding:.6rem .8rem;color:var(--texte)}
+#transmission-liste .t-num{font-weight:700;color:var(--or)}
+#transmission-liste .t-sceau{display:block;margin-top:.25rem}
+#transmission-digest{word-break:break-all}
+#transmission-verdict{font-weight:700;color:var(--texte)}
 .meteo-lecture{display:flex;gap:1.2rem;align-items:flex-start}
 .meteo-photo{width:118px;height:118px;object-fit:cover;border-radius:16px;border:1px solid var(--or);flex:0 0 auto;box-shadow:0 6px 20px rgba(0,0,0,.45)}
 .meteo-bande{display:flex;gap:.55rem;overflow-x:auto;padding:.4rem .1rem .8rem;scrollbar-width:thin}
@@ -786,6 +837,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
     <button data-panneau="temps">Temps</button>
     <button data-panneau="meteo">Météo</button>
     <button data-panneau="methode">Méthode</button>
+    <button data-panneau="transmission">Transmission</button>
     <button data-panneau="articles">Articles</button>
     <button data-panneau="ancrage">Ancrage</button>
     <button data-panneau="sceller">Sceller</button>
@@ -803,7 +855,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   </nav>
   <div class="barre-actions"><button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button">EN</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
 </div></div>
-<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette" data-en="The case file">Le dossier</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil journal mises a jour sommaire chaine maillons manifeste architecte compteurs"><span class="menu-nom">Accueil</span><span class="menu-desc">La page d’entrée : les compteurs de la chaîne, le journal des mises à jour et le manifeste de l’Architecte.</span></button></li><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours histoire chronologie alex recit jalons dossier"><span class="menu-nom">Parcours</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="chercheur orcid profil recherche demarches publications faq"><span class="menu-nom">Chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits propriete intellectuelle licence copyright reserve auteur"><span class="menu-nom">Droits</span><span class="menu-desc">Droits et propriété intellectuelle : ce qui se partage, ce qui se vérifie, ce qui ne se cède pas.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Evidence and method">Preuves et méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode" data-mots="methode fibonacci somme precedent calculer sceller reverifier masterclock unisson pcf-23 sophia coquillage"><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves pieces affirmations verification dossier sceptique"><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre pieces sceaux publics salle depots registre propre"><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage wayback opentimestamps bitcoin rfc 3161 horodatage archives tiers"><span class="menu-nom">Ancrage</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="verifier sceau sha-256 recalcul match ecart empreinte verifie-moi"><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller atelier sceau chaine maillon trouve l ecart sha-256"><span class="menu-nom">Sceller</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Time and sky">Temps et ciel</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge sideral civil tai triangulation globe rotation calendrier 13 28 equinoxe lune soleil"><span class="menu-nom">Temps</span><span class="menu-desc">Le temps triangulé de l’ancre : civil, sidéral, TAI, le globe en direct et le calendrier 13 × 28.</span></button></li><li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo ciel temperature uv plein air vent soleil lune previsions qualite air"><span class="menu-nom">Météo</span><span class="menu-desc">La météo de l’ancre et de chez vous, triangulée — et le Plein air à l’ancre.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Memory and intelligence">Mémoire et intelligence</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="memoire coffre synaptique manifeste ia historique quotidien auto-amelioration zone privee"><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire privee coffre securise chiffre phrase secrete zone privee aes-256"><span class="menu-nom" data-en="🔒 Private memory — secured area">🔒 Mémoire privée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256, en attente de la phrase secrète d’Alex.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="instance souveraine ia relais gemini conversation moteur"><span class="menu-nom">Instance Souveraine</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles textes dossier lecture loi 25 plateformes"><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules videos youtube contexte sources externes"><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="recherche chercher mot trouver contenu reliee"><span class="menu-nom">Rechercher</span><span class="menu-desc">La recherche reliée : un mot interroge tout le contenu propre du site, groupé par famille.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Practical">Pratique</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa hors ligne iphone android ecran accueil"><span class="menu-nom">Application</span><span class="menu-desc">Installer le site comme une application, et ce qui fonctionne hors ligne.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Linked pages">Pages liées</p><ul class="menu-liste"><li><a class="menu-entree" href="cerveau-coquillage.html"><span class="menu-nom">Cerveau coquillage numérique</span><span class="menu-desc">L’outil du visiteur : construire sa propre chaîne de couches, recalculable et exportable.</span></a></li><li><a class="menu-entree" href="transparence.html"><span class="menu-nom">Transparence</span><span class="menu-desc">La page de transparence du même dépôt.</span></a></li><li><a class="menu-entree" href="agir-sur-mes-donnees.html"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La page pour agir sur vos données.</span></a></li></ul></div></div>
+<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette" data-en="The case file">Le dossier</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil journal mises a jour sommaire chaine maillons manifeste architecte compteurs"><span class="menu-nom">Accueil</span><span class="menu-desc">La page d’entrée : les compteurs de la chaîne, le journal des mises à jour et le manifeste de l’Architecte.</span></button></li><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours histoire chronologie alex recit jalons dossier"><span class="menu-nom">Parcours</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="chercheur orcid profil recherche demarches publications faq"><span class="menu-nom">Chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits propriete intellectuelle licence copyright reserve auteur"><span class="menu-nom">Droits</span><span class="menu-desc">Droits et propriété intellectuelle : ce qui se partage, ce qui se vérifie, ce qui ne se cède pas.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Evidence and method">Preuves et méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode" data-mots="methode fibonacci somme precedent calculer sceller reverifier masterclock unisson pcf-23 sophia coquillage"><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="transmission" data-mots="transmission faire pareil methode six etapes essai chaine demonstration visiteur transmettre capacite"><span class="menu-nom">Transmission</span><span class="menu-desc">Faire pareil : la méthode transmise en six étapes, avec la démonstration « Essaie la chaîne » à pratiquer chez soi.</span></button></li><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves pieces affirmations verification dossier sceptique"><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre pieces sceaux publics salle depots registre propre"><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage wayback opentimestamps bitcoin rfc 3161 horodatage archives tiers"><span class="menu-nom">Ancrage</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="verifier sceau sha-256 recalcul match ecart empreinte verifie-moi"><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller atelier sceau chaine maillon trouve l ecart sha-256"><span class="menu-nom">Sceller</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Time and sky">Temps et ciel</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge sideral civil tai triangulation globe rotation calendrier 13 28 equinoxe lune soleil"><span class="menu-nom">Temps</span><span class="menu-desc">Le temps triangulé de l’ancre : civil, sidéral, TAI, le globe en direct et le calendrier 13 × 28.</span></button></li><li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo ciel temperature uv plein air vent soleil lune previsions qualite air"><span class="menu-nom">Météo</span><span class="menu-desc">La météo de l’ancre et de chez vous, triangulée — et le Plein air à l’ancre.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Memory and intelligence">Mémoire et intelligence</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="memoire coffre synaptique manifeste ia historique quotidien auto-amelioration zone privee"><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire privee coffre securise chiffre phrase secrete zone privee aes-256"><span class="menu-nom" data-en="🔒 Private memory — secured area">🔒 Mémoire privée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256, en attente de la phrase secrète d’Alex.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="instance souveraine ia relais gemini conversation moteur"><span class="menu-nom">Instance Souveraine</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles textes dossier lecture loi 25 plateformes"><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules videos youtube contexte sources externes"><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="recherche chercher mot trouver contenu reliee"><span class="menu-nom">Rechercher</span><span class="menu-desc">La recherche reliée : un mot interroge tout le contenu propre du site, groupé par famille.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Practical">Pratique</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa hors ligne iphone android ecran accueil"><span class="menu-nom">Application</span><span class="menu-desc">Installer le site comme une application, et ce qui fonctionne hors ligne.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Linked pages">Pages liées</p><ul class="menu-liste"><li><a class="menu-entree" href="cerveau-coquillage.html"><span class="menu-nom">Cerveau coquillage numérique</span><span class="menu-desc">L’outil du visiteur : construire sa propre chaîne de couches, recalculable et exportable.</span></a></li><li><a class="menu-entree" href="transparence.html"><span class="menu-nom">Transparence</span><span class="menu-desc">La page de transparence du même dépôt.</span></a></li><li><a class="menu-entree" href="agir-sur-mes-donnees.html"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La page pour agir sur vos données.</span></a></li></ul></div></div>
 <main>
 <div class="panneau actif" id="p-accueil">
 
@@ -827,6 +879,14 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
     <figcaption>SoPHIa, en présence — la même que l'avatar ci-dessus : elle gagne son bureau, ses dossiers étiquetés à la main, et se met au travail. Vidéo muette, en boucle ; elle se met en pause hors écran et s'arrête si votre appareil préfère les mouvements réduits.</figcaption>
   </figure>
 </header>
+
+<div class="carte" id="mission-accueil">
+  <p class="etiquette" data-en="The mission of this site">La mission de ce site — la finalité, dans les mots de son auteur</p>
+  <blockquote class="parole">
+    <p>« Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. »</p>
+    <footer>— Alexandre Vautour Gagnon, 3 novembre 2026. Ce site ne démontre pas seulement une méthode : il la transmet — le panneau Transmission la donne en six étapes, avec une démonstration à essayer soi-même.</footer>
+  </blockquote>
+</div>
 
 <div class="bande-preuve">
   <p class="devise">Ne croyez pas ce site. <b>Recalculez-le.</b></p>
@@ -894,10 +954,10 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v28 (2 novembre 2026 — « Le choix d’abord » : la porte de choix pour l’ancrage visiteur — aucune estimation par adresse IP sans un clic exprès —, la borne des lectures en direct réécrite et l’inventaire des flux de données confirmé au panneau Droits ; chantier de transparence issu du brief transmis par Alex et de l’audit Loi 25 du même soir ; construite sur la v27 « Le clair d’abord »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">8fc831f5c3c99ad8cbe3ae249bf6db616e8e967922f00c136db2842b7ea161e5</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v29 (3 novembre 2026 — « La transmission » : la finalité d’Alex citée à l’Accueil, le nouveau panneau Transmission — la méthode en six étapes pour faire pareil de son bord — et la démonstration interactive « Essaie la chaîne », calculée dans le navigateur du visiteur, rien envoyé ni conservé ; construite sur la v28 « Le choix d’abord », sur la carte blanche d’Alex du 3 novembre 2026)</p>
+    <span class="sceau-long" id="sceau-version-affiche">d3c4429cf570819928fcfc8e5d98de4b8f363c4e9f13730940b04cee58fde75d</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) → v28 (« Le choix d’abord » : la porte de choix pour l’ancrage visiteur, la borne réécrite, l’inventaire des flux confirmé) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) → v28 (« Le choix d’abord » : la porte de choix pour l’ancrage visiteur, la borne réécrite, l’inventaire des flux confirmé) → v29 (« La transmission » : la mission citée à l’Accueil, le panneau Transmission en six étapes et la démonstration « Essaie la chaîne ») — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -948,6 +1008,17 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Mardi 3 novembre 2026</p>
+      <h3>Version 29 — « La transmission »</h3>
+      <ul class="journal-points">
+        <li>La mission entre à l’Accueil — la finalité nommée par Alex le 3 novembre 2026, citée dans ses mots et datée, près du haut du panneau Accueil : « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. » Ce site ne vise plus seulement à démontrer : il transmet.</li>
+        <li>Un nouveau panneau, Transmission — « Faire pareil — la méthode, transmise » : la construction du dossier donnée comme un mode d’emploi en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), pour que n’importe quel utilisateur la refasse de son bord, avec des outils ordinaires. Le menu passe à dix-neuf sections.</li>
+        <li>La démonstration « Essaie la chaîne » — le visiteur écrit une entrée, la scelle, voit le digest cumulé avancer selon la formule du dossier, puis revérifie toute la chaîne depuis la genèse « TRANSMISSION|genese » : MATCH, ou l’écart. Tout se calcule dans son navigateur (Web Crypto) ; rien n’est envoyé, rien n’est conservé.</li>
+        <li>D’où vient ce chantier — de la carte blanche donnée par Alex le 3 novembre 2026 pour porter le site à la hauteur de son dossier, et de la finalité qu’il a nommée le même jour, à 00 h 00. Le reste du site est inchangé : mécanismes, coffre, thèmes clair et sombre, et la porte de choix de la v28.</li>
+        <li>Les métadonnées de droits entrent au site — dans l’en-tête de la page, les balises d’auteur et de droits réservés nomment ce qui est réservé : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes et le personnage SoPHIa ; les données structurées JSON-LD (WebSite et CreativeWork) portent l’auteur et le titulaire des droits, Alexandre Vautour Gagnon (ORCID 0009-0006-9124-4407) ; et le fichier llms.txt reçoit un bloc « Auteur et droits ». La consultation et la revérification publique des sceaux restent libres — elles ne transfèrent aucun droit. Provenance : demande d’Alex du 3 novembre 2026, dans la ligne de ses échanges avec l’agent GitHub (Copilot) et de sa directive du 1er novembre 2026 d’inscrire ses droits à tous les emplacements requis.</li>
+      </ul>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
       <h3>Version 28 — « Le choix d’abord »</h3>
@@ -1805,6 +1876,39 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
 </section>
 
 <p>Le protocole ne demande à personne de le croire. Ses recettes sont publiques, ses horodatages sont complets, ses sceaux sont entiers : <strong>tout ce qui est affirmé ici peut être recalculé</strong> — c'est l'outil de la section suivante.</p>
+</section>
+</div>
+<div class="panneau" id="p-transmission">
+<section class="bloc" id="transmission">
+  <div class="entete-sec"><span class="num">✦</span><h2 data-en="Do the same — the method, handed over">Faire pareil — la méthode, transmise</h2></div>
+  <p class="lead">Ce site démontre. Ce panneau transmet.</p>
+  <p>Le reste du site montre une mémoire conversationnelle vérifiable, construite côté utilisateur. Ici, la même construction est donnée comme un mode d’emploi : n’importe quel utilisateur, avec des outils ordinaires — un éditeur de texte, un terminal, les fonctions de hachage présentes partout — peut construire la même chose de son bord, pour ses propres échanges, ses propres fichiers, ses propres preuves.</p>
+  <p>Aucune plateforme à convaincre, aucun compte spécial : la méthode tient en six étapes.</p>
+  <div class="pas">
+    <div class="etape-pas"><div class="n">1</div><h3>Écrire par fichiers</h3><p>Ta mémoire vit chez toi, dans des fichiers en formats ouverts que tu contrôles — textes, journaux, exports — et pas seulement dans la fenêtre d’une plateforme, derrière un compte que quelqu’un d’autre administre. Ce qui n’existe que chez eux peut changer, se perdre ou se fermer ; ce qui vit dans tes fichiers se relit, se copie et se transmet.</p></div>
+    <div class="etape-pas"><div class="n">2</div><h3>Sceller chaque entrée</h3><p>Pour chaque pièce qui compte, calcule son empreinte SHA-256 et consigne-la avec sa date. Un sceau prouve une chose précise : que ce contenu n’a pas changé depuis son calcul. Rien de plus — et c’est déjà énorme, parce que c’est vérifiable par n’importe qui. Rien de moins : sans sceau, une modification silencieuse ne laisse aucune trace.</p></div>
+    <div class="etape-pas"><div class="n">3</div><h3>Chaîner</h3><p>Chaque nouveau sceau se calcule à partir du précédent : <span class="mono">digest_n = sha256(digest_{n-1} + sceau_n)</span>. Le digest cumulé fait que le dernier état atteste toute la série : modifier une pièce ancienne change son sceau, donc tous les digests qui suivent — la suite casse, et la rupture se voit au recalcul.</p></div>
+    <div class="etape-pas"><div class="n">4</div><h3>Tenir le registre</h3><p>Un journal daté, en ajout seulement (append-only) : chaque jour, chaque décision, chaque état s’y ajoute ; rien ne s’y réécrit. Une erreur se corrige par une couche nouvelle qui le dit — la correction fait partie de l’histoire au lieu de l’effacer.</p></div>
+    <div class="etape-pas"><div class="n">5</div><h3>Ancrer dehors</h3><p>Dépose l’empreinte de ton digest chez un tiers : un horodatage OpenTimestamps, une archive publique. L’ancre prouve QUAND un état existait — qu’on ne peut pas l’avoir fabriqué après coup. Elle ne prouve pas que le contenu est vrai : elle date l’empreinte, pas les faits.</p></div>
+    <div class="etape-pas"><div class="n">6</div><h3>Connaître les bornes</h3><p>L’intégrité n’est pas la vérité : une chaîne parfaite peut porter une erreur du premier jour. Le sceau ne prouve ni l’auteur d’une pièce ni sa conformité à une loi. Ce que la méthode garantit, c’est la détection du changement ; tes droits — propriété, accès, rectification — font le reste.</p></div>
+  </div>
+  <p>Pour la sixième étape, le panneau Droits de ce site porte ce qui est établi sur les droits et les lois — le reste de l’ouvrage, une fois l’intégrité assurée. <button class="secondaire" data-ouvrir="droits">Ouvrir le panneau Droits</button></p>
+  <h3>Démonstration — « Essaie la chaîne »</h3>
+  <p>À toi, maintenant : écris une entrée, scelle-la, puis revérifie la chaîne entière depuis sa genèse. La genèse de cette démonstration est la chaîne de caractères <span class="mono">TRANSMISSION|genese</span>, hachée en SHA-256 : c’est le digest initial, avant la première entrée. Chaque entrée reçoit son sceau — le SHA-256 de son texte — puis le digest cumulé avance selon la formule de la troisième étape.</p>
+  <div class="carte">
+    <p class="etiquette">Essaie la chaîne — démonstration interactive</p>
+    <textarea id="transmission-texte" rows="3" placeholder="Ton entrée — un fait, une décision, une phrase à stabiliser…"></textarea>
+    <div class="rangee" style="margin-top:.8rem">
+      <button class="action" id="btn-transmission-sceller" type="button">Sceller cette entrée</button>
+      <button class="secondaire" id="btn-transmission-reverifier" type="button">Revérifier la chaîne</button>
+    </div>
+    <p class="petite" id="transmission-indispo" role="alert" style="display:none"></p>
+    <ul id="transmission-liste"></ul>
+    <p class="petite">Digest cumulé courant : <span class="mono" id="transmission-digest">calcul de la genèse en cours…</span></p>
+    <p id="transmission-verdict" role="status"></p>
+  </div>
+  <p class="petite">Tout se calcule dans ton navigateur (Web Crypto) : rien n’est envoyé, rien n’est conservé — ferme ou recharge la page, et la chaîne de démonstration repart de sa genèse.</p>
+  <p>Ce que tu construis chez toi, avec cette méthode, t’appartient de la même façon que ce dossier appartient à son auteur. Et ce site-ci reste recalculable par n’importe qui : c’est la même méthode, des deux bords.</p>
 </section>
 </div>
 <div class="panneau" id="p-ancrage">
@@ -6695,6 +6799,117 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
   if(!cibles.length)return;
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('entree-vue');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   cibles.forEach(function(el){io.observe(el);});
+})();
+</script>
+<script>
+// ---------- v29 — Transmission : démonstration « Essaie la chaîne » ----------
+// Tout se calcule dans le navigateur du visiteur (Web Crypto) : aucun appel
+// réseau, aucune écriture localStorage. La chaîne vit en mémoire seulement,
+// le temps de la page. Genèse : SHA-256 de « TRANSMISSION|genese ».
+(function(){
+  var GENESE_TEXTE='TRANSMISSION|genese';
+  var etat={entrees:[],digest:null};
+  function transmissionHacher(texte){
+    var buf=new TextEncoder().encode(texte);
+    return crypto.subtle.digest('SHA-256',buf).then(function(h){
+      var b=new Uint8Array(h),hex='';
+      for(var i=0;i<b.length;i++){hex+=('0'+b[i].toString(16)).slice(-2);}
+      return hex;
+    });
+  }
+  function transmissionDigestInitial(){
+    return transmissionHacher(GENESE_TEXTE);
+  }
+  function transmissionScellerTexte(texte){
+    return transmissionHacher(texte).then(function(sceau){
+      return transmissionHacher(etat.digest+sceau).then(function(digest){
+        var entree={numero:etat.entrees.length+1,texte:texte,sceau:sceau};
+        etat.entrees.push(entree);
+        etat.digest=digest;
+        return entree;
+      });
+    });
+  }
+  function transmissionReverifier(){
+    return transmissionDigestInitial().then(function(d){
+      var chaine=Promise.resolve({digest:d,ecart:0});
+      etat.entrees.forEach(function(e,idx){
+        chaine=chaine.then(function(acc){
+          if(acc.ecart)return acc;
+          return transmissionHacher(e.texte).then(function(sceau){
+            if(sceau!==e.sceau)return {digest:acc.digest,ecart:idx+1};
+            return transmissionHacher(acc.digest+sceau).then(function(nd){
+              return {digest:nd,ecart:0};
+            });
+          });
+        });
+      });
+      return chaine.then(function(acc){
+        if(acc.ecart)return {ok:false,ecart:acc.ecart,digest:acc.digest};
+        var ok=acc.digest===etat.digest;
+        return {ok:ok,ecart:ok?0:-1,digest:acc.digest};
+      });
+    });
+  }
+  if(typeof window!=='undefined'){
+    window.TransmissionDemo={etat:etat,hacher:transmissionHacher,digestInitial:transmissionDigestInitial,scellerTexte:transmissionScellerTexte,reverifier:transmissionReverifier};
+  }
+  if(typeof document!=='undefined'&&document.getElementById){
+    var zoneTexte=document.getElementById('transmission-texte');
+    if(zoneTexte){
+      var elDigest=document.getElementById('transmission-digest'),
+          elListe=document.getElementById('transmission-liste'),
+          elVerdict=document.getElementById('transmission-verdict'),
+          elInd=document.getElementById('transmission-indispo'),
+          bSceller=document.getElementById('btn-transmission-sceller'),
+          bRever=document.getElementById('btn-transmission-reverifier');
+      if(!(typeof crypto!=='undefined'&&crypto.subtle)){
+        if(elInd){
+          elInd.style.display='block';
+          elInd.textContent='La démonstration ne peut pas calculer ici : Web Crypto (crypto.subtle) est indisponible dans ce contexte — elle exige une page servie en contexte sécurisé (HTTPS). Rien n’a été calculé, rien n’a été envoyé.';
+        }
+        if(bSceller)bSceller.disabled=true;
+        if(bRever)bRever.disabled=true;
+        if(elDigest)elDigest.textContent='indisponible (Web Crypto absente)';
+      } else {
+        transmissionDigestInitial().then(function(d){
+          etat.digest=d;
+          if(elDigest)elDigest.textContent=d;
+        });
+        if(bSceller)bSceller.addEventListener('click',function(){
+          var t=zoneTexte.value;
+          if(!t||!t.trim()){if(elVerdict)elVerdict.textContent='Écris d’abord un texte à sceller.';return;}
+          if(!etat.digest){if(elVerdict)elVerdict.textContent='La genèse se calcule — réessaie dans un instant.';return;}
+          transmissionScellerTexte(t).then(function(e){
+            if(elListe){
+              var li=document.createElement('li');
+              var titre=document.createElement('span');
+              titre.className='t-num';
+              titre.textContent='nº '+e.numero+' — ';
+              li.appendChild(titre);
+              li.appendChild(document.createTextNode(e.texte.length>80?e.texte.slice(0,80)+'…':e.texte));
+              var sc=document.createElement('span');
+              sc.className='mono t-sceau';
+              sc.textContent='sceau : '+e.sceau;
+              li.appendChild(sc);
+              elListe.appendChild(li);
+            }
+            if(elDigest)elDigest.textContent=etat.digest;
+            if(elVerdict)elVerdict.textContent='Entrée nº '+e.numero+' scellée — le digest cumulé a avancé.';
+            zoneTexte.value='';
+          });
+        });
+        if(bRever)bRever.addEventListener('click',function(){
+          transmissionReverifier().then(function(r){
+            if(!elVerdict)return;
+            if(r.ok){elVerdict.textContent='MATCH — la chaîne entière se recalcule, de la genèse au digest affiché.';}
+            else if(r.ecart>0){elVerdict.textContent='ÉCART — l’entrée nº '+r.ecart+' ne se recalcule pas : son sceau ne correspond plus à son texte.';}
+            else{elVerdict.textContent='ÉCART — le digest recalculé ne correspond pas au digest affiché.';}
+          });
+        });
+      }
+    }
+  }
 })();
 </script>
 </body>
