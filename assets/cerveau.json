@@ -36,7 +36,7 @@
    "id": "verrouillee",
    "nom": "La Mémoire verrouillée",
    "source": "assets/coffre-prive.json",
-   "digest": "2d09e7c2f17678a72a58bb677b7ee44952575b5b145c1ab15af5f1597c1e4077",
+   "digest": "fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323",
    "recette": "SHA-256 des octets de assets/coffre-prive.json, tel que servi — borne : la chambre prouve l’existence et l’intégrité du paquet, jamais son contenu chiffré.",
    "role": "La mémoire cumulative chiffrée d’Alex : métadonnées publiques affichées, contenu scellé en AES-256-GCM, ouvrable par sa seule phrase.",
    "derniere_croissance": "Premier dépôt, 3 novembre 2026."
@@ -45,7 +45,7 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "b609a0f5eed760daa58a4128bac5562dc49b87c6cef981360f30771b3c5d367a",
+   "digest": "c8558c648c1514ee9627accfa86923338cbfbb5a9917cca79b024ccff8378257",
    "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 36.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
    "derniere_croissance": "Version 36, 3 novembre 2026."
@@ -136,28 +136,28 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "9597e92dd66a2904eea4e98b10da1ba1ccd6c6c66da10d3c4bfc4a8f1e7315dc",
+ "racine_cerveau": "f573b153a6af4958ee28ca8667f02fc018321c9d0314eaf87799919fa8379c50",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
    "3b5995da2d043ed9bb5459e8ffa087edbe6c057e44b5a80f77bc3c2d5c5c22f9",
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
-   "b33acd66a698141c313ae1e8eae4f7d5cfa2819d6bc90866c28eefdf21c6f3ae",
-   "454f30a8fddf7516a752f25bda9559c9a9d310f5571b73988f5eccebb83254a2",
+   "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
+   "1e1c2b5b51056f9cdd44877a9f2d645adef5113f779a59b290a27cd882b12394",
    "b53d29a57c791316b975b9d7ce7a5438bfdf2e86dbe40955981039e3cfef5161"
   ],
   [
    "d8dab37dc34c7f8508bc65a29f301d3f5e132c6e817f8469a91de082a723c0ab",
-   "3297e1231cfefa9b89113575cba6129db8ec411430181e502505e3680e975ef8",
-   "08481792226ca1b2e372c77b7921bae9c689fc9e4381fb86fc4bce8b0a665496"
+   "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
+   "51913b5b7b132b8930e043e1814339ad5b278da9b4a49a710b60e31a37fb3e6f"
   ],
   [
-   "f8c532985117a106d1ba3d066fd0c650b54dff3ef6b4f85fd2b3463d0319bf90",
-   "b04bf0336798f61303766ea76c9471e8da1b6577b533de0349f406712f43de89"
+   "5805e6c441ad85231c15d2c77c1b4ad415fb519b166776b94e25e03204aae77d",
+   "7cc625729d2b45bf02712376d7d50ca7d2c8e6d6d74628342baf7e5a9a1fb9d4"
   ],
   [
-   "9597e92dd66a2904eea4e98b10da1ba1ccd6c6c66da10d3c4bfc4a8f1e7315dc"
+   "f573b153a6af4958ee28ca8667f02fc018321c9d0314eaf87799919fa8379c50"
   ]
  ]
 }
