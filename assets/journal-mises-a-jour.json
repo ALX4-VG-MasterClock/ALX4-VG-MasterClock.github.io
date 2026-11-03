@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 35 — « L’arbre et l’archive »",
+      "points": [
+        {
+          "texte": "La racine de Merkle du coffre — au panneau Mémoire, les 11 empreintes du coffre synaptique portent désormais un arbre de Merkle : chaque empreinte est hachée en feuille, les feuilles s’apparient niveau par niveau jusqu’à une racine unique — 46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf. La page la recalcule dans votre navigateur depuis assets/coffre.json et offre l’épreuve d’appartenance : choisissez une pièce, son chemin d’inclusion se recalcule jusqu’à la racine — MATCH ou ÉCART, dit. Le fichier assets/merkle.json publie la recette, les feuilles et les niveaux. Borne écrite : la racine prouve l’appartenance et l’intégrité de l’ensemble des empreintes — pas la vérité des contenus."
+        },
+        {
+          "texte": "L’archive des états entre au panneau Mémoire — sous le coffre, la liste des états publics de cette mémoire : version, date, sceau canonique, et le lien de sa capture à la Wayback Machine quand elle existe (v7, v8, v9, v12, v15, v20, v27, v33, v34) ; les états sans capture le disent — « pas encore capturé » — plutôt que de le maquiller. La boucle y est écrite : accumuler → capturer → rouvrir → revérifier. C’est la couche externe du cerveau numérique, tenue et datée par un tiers."
+        },
+        {
+          "texte": "Le premier sceau de génération — SHA-512 de « sceau canonique de cette version | racine de Merkle du coffre | digest cumulé de la chaîne », calculé sur le dernier maillon au moment de la construction, le #2380 (digest 54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2). Il paraît au bloc de version, calculé dans votre navigateur, et sa valeur est consignée au fichier assets/merkle.json (champ « generation ») et au LISEZ-MOI du paquet : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets —, elle vit donc hors du fichier scellé et se recalcule par la recette. Il lie en un seul sceau la page, l’arbre du coffre et la chaîne des réponses. Borne : il atteste cette composition à ce maillon ; la chaîne continue d’avancer, les générations suivantes se scelleront aux jalons."
+        },
+        {
+          "texte": "Ajouts seulement : aucun des 22 panneaux n’est retiré ni réécrit dans son fond ; les assets protégés (coffre, configuration, historique, manifeste) sont identiques à la v34, octet pour octet ; les compteurs de la chaîne continuent de se relire en direct depuis assets/etat-chaine.json. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 34 — « L'ordre et la confiance »",
       "points": [
         {
