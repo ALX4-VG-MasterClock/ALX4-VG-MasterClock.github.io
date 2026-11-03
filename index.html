@@ -676,6 +676,10 @@ button.at-bloc{cursor:pointer}
 .miroir-grille .valeur{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair);line-height:1.3;margin-top:.45rem;font-variant-numeric:tabular-nums}
 .miroir-grille p{font-size:.92rem;color:var(--texte-doux);margin:.35rem 0 0}
 #v-choix{background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
+/* v32 — « Mes renseignements » : champs du parcours d’accès */
+.acces-ligne{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.5rem 0}
+.acces-ligne select{background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.5rem .6rem;font:inherit;max-width:100%}
+.acces-case{display:block;margin:.45rem 0;line-height:1.55;cursor:pointer}
 /* v28 — porte de l’ancrage visiteur et inventaire des flux : surfaces aux variables des thèmes (clair et sombre). */
 #porte-ancrage{margin-top:.7rem;border-top:1px dashed var(--ligne);padding-top:.6rem}
 #porte-ancrage .rangee{margin-top:.2rem}
@@ -841,6 +845,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
     <button data-panneau="meteo">Météo</button>
     <button data-panneau="methode">Méthode</button>
     <button data-panneau="transmission">Transmission</button>
+    <button data-panneau="acces">Mes renseignements</button>
     <button data-panneau="articles">Articles</button>
     <button data-panneau="ancrage">Ancrage</button>
     <button data-panneau="sceller">Sceller</button>
@@ -858,7 +863,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   </nav>
   <div class="barre-actions"><button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button">EN</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
 </div></div>
-<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette" data-en="The case file">Le dossier</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil journal mises a jour sommaire chaine maillons manifeste architecte compteurs"><span class="menu-nom">Accueil</span><span class="menu-desc">La page d’entrée : les compteurs de la chaîne, le journal des mises à jour et le manifeste de l’Architecte.</span></button></li><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours histoire chronologie alex recit jalons dossier"><span class="menu-nom">Parcours</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="chercheur orcid profil recherche demarches publications faq"><span class="menu-nom">Chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits propriete intellectuelle licence copyright reserve auteur"><span class="menu-nom">Droits</span><span class="menu-desc">Droits et propriété intellectuelle : ce qui se partage, ce qui se vérifie, ce qui ne se cède pas.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Evidence and method">Preuves et méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode" data-mots="methode fibonacci somme precedent calculer sceller reverifier masterclock unisson pcf-23 sophia coquillage"><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="transmission" data-mots="transmission faire pareil methode six etapes essai chaine demonstration visiteur transmettre capacite"><span class="menu-nom">Transmission</span><span class="menu-desc">Faire pareil : la méthode transmise en six étapes, avec la démonstration « Essaie la chaîne » à pratiquer chez soi.</span></button></li><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves pieces affirmations verification dossier sceptique"><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre pieces sceaux publics salle depots registre propre"><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage wayback opentimestamps bitcoin rfc 3161 horodatage archives tiers"><span class="menu-nom">Ancrage</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="verifier sceau sha-256 recalcul match ecart empreinte verifie-moi"><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller atelier sceau chaine maillon trouve l ecart sha-256"><span class="menu-nom">Sceller</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Time and sky">Temps et ciel</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge sideral civil tai triangulation globe rotation calendrier 13 28 equinoxe lune soleil"><span class="menu-nom">Temps</span><span class="menu-desc">Le temps triangulé de l’ancre : civil, sidéral, TAI, le globe en direct et le calendrier 13 × 28.</span></button></li><li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo ciel temperature uv plein air vent soleil lune previsions qualite air"><span class="menu-nom">Météo</span><span class="menu-desc">La météo de l’ancre et de chez vous, triangulée — et le Plein air à l’ancre.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Memory and intelligence">Mémoire et intelligence</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="memoire coffre synaptique manifeste ia historique quotidien auto-amelioration zone privee"><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire privee coffre securise chiffre phrase secrete zone privee aes-256"><span class="menu-nom" data-en="🔒 Private memory — secured area">🔒 Mémoire privée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256, en attente de la phrase secrète d’Alex.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="instance souveraine ia relais gemini conversation moteur"><span class="menu-nom">Instance Souveraine</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles textes dossier lecture loi 25 plateformes"><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules videos youtube contexte sources externes"><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="recherche chercher mot trouver contenu reliee"><span class="menu-nom">Rechercher</span><span class="menu-desc">La recherche reliée : un mot interroge tout le contenu propre du site, groupé par famille.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Practical">Pratique</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa hors ligne iphone android ecran accueil"><span class="menu-nom">Application</span><span class="menu-desc">Installer le site comme une application, et ce qui fonctionne hors ligne.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Linked pages">Pages liées</p><ul class="menu-liste"><li><a class="menu-entree" href="cerveau-coquillage.html"><span class="menu-nom">Cerveau coquillage numérique</span><span class="menu-desc">L’outil du visiteur : construire sa propre chaîne de couches, recalculable et exportable.</span></a></li><li><a class="menu-entree" href="transparence.html"><span class="menu-nom">Transparence</span><span class="menu-desc">La page de transparence du même dépôt.</span></a></li><li><a class="menu-entree" href="agir-sur-mes-donnees.html"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La page pour agir sur vos données.</span></a></li></ul></div></div>
+<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette" data-en="The case file">Le dossier</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil journal mises a jour sommaire chaine maillons manifeste architecte compteurs"><span class="menu-nom">Accueil</span><span class="menu-desc">La page d’entrée : les compteurs de la chaîne, le journal des mises à jour et le manifeste de l’Architecte.</span></button></li><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours histoire chronologie alex recit jalons dossier"><span class="menu-nom">Parcours</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="chercheur orcid profil recherche demarches publications faq"><span class="menu-nom">Chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits propriete intellectuelle licence copyright reserve auteur"><span class="menu-nom">Droits</span><span class="menu-desc">Droits et propriété intellectuelle : ce qui se partage, ce qui se vérifie, ce qui ne se cède pas.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Evidence and method">Preuves et méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode" data-mots="methode fibonacci somme precedent calculer sceller reverifier masterclock unisson pcf-23 sophia coquillage"><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="transmission" data-mots="transmission faire pareil methode six etapes essai chaine demonstration visiteur transmettre capacite"><span class="menu-nom">Transmission</span><span class="menu-desc">Faire pareil : la méthode transmise en six étapes, avec la démonstration « Essaie la chaîne » à pratiquer chez soi.</span></button></li><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves pieces affirmations verification dossier sceptique"><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre pieces sceaux publics salle depots registre propre"><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage wayback opentimestamps bitcoin rfc 3161 horodatage archives tiers"><span class="menu-nom">Ancrage</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="verifier sceau sha-256 recalcul match ecart empreinte verifie-moi"><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller atelier sceau chaine maillon trouve l ecart sha-256"><span class="menu-nom">Sceller</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Time and sky">Temps et ciel</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge sideral civil tai triangulation globe rotation calendrier 13 28 equinoxe lune soleil"><span class="menu-nom">Temps</span><span class="menu-desc">Le temps triangulé de l’ancre : civil, sidéral, TAI, le globe en direct et le calendrier 13 × 28.</span></button></li><li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo ciel temperature uv plein air vent soleil lune previsions qualite air"><span class="menu-nom">Météo</span><span class="menu-desc">La météo de l’ancre et de chez vous, triangulée — et le Plein air à l’ancre.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Memory and intelligence">Mémoire et intelligence</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="memoire coffre synaptique manifeste ia historique quotidien auto-amelioration zone privee"><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="instance souveraine ia relais gemini conversation moteur"><span class="menu-nom">Instance Souveraine</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles textes dossier lecture loi 25 plateformes"><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules videos youtube contexte sources externes"><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="recherche chercher mot trouver contenu reliee"><span class="menu-nom">Rechercher</span><span class="menu-desc">La recherche reliée : un mot interroge tout le contenu propre du site, groupé par famille.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Practical">Pratique</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa hors ligne iphone android ecran accueil"><span class="menu-nom">Application</span><span class="menu-desc">Installer le site comme une application, et ce qui fonctionne hors ligne.</span></button></li><li><button type="button" class="menu-entree" data-cible="acces" data-mots="acces renseignements personnels demande loi privee lprpde cai cpvp commissariat lettre recours pipeda"><span class="menu-nom">Mes renseignements</span><span class="menu-desc">Préparer une demande d’accès à vos renseignements personnels : la loi qui s’applique, ses délais vérifiés, la lettre produite chez vous — le site ne reçoit ni ne conserve rien.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Linked pages">Pages liées</p><ul class="menu-liste"><li><a class="menu-entree" href="cerveau-coquillage.html"><span class="menu-nom">Cerveau coquillage numérique</span><span class="menu-desc">L’outil du visiteur : construire sa propre chaîne de couches, recalculable et exportable.</span></a></li><li><a class="menu-entree" href="transparence.html"><span class="menu-nom">Transparence</span><span class="menu-desc">La page de transparence du même dépôt.</span></a></li><li><a class="menu-entree" href="agir-sur-mes-donnees.html"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La page pour agir sur vos données.</span></a></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Locked area">Zone verrouillée</p><ul class="menu-liste"><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire verrouillee coffre securise chiffre phrase secrete zone verrouillee aes-256"><span class="menu-nom" data-en="🔒 Locked memory — secured area">🔒 Mémoire verrouillée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire, tout en bas de ce menu : la mémoire cumulative chiffrée en AES-256, en attente de la phrase secrète d’Alex.</span></button></li></ul></div></div>
 <main>
 <div class="panneau actif" id="p-accueil">
 
@@ -957,10 +962,10 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v31 (3 novembre 2026 — « La nuit porte » : le vérificateur d’export du Cerveau coquillage au panneau Transmission, le passage-vérification d’Alex inséré au panneau Méthode comme formulation de référence, et l’anglais du panneau Transmission complété ; construite sur la v30 « L’attribution »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">33ce5470c178fcf6df2f73b1a140a4c155723299c69c96182c340a0f1b3ccbae</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v32 (3 novembre 2026 — « Le parcours d’accès » : le panneau « Mes renseignements — préparer une demande d’accès », vingtième panneau du site — la loi applicable déterminée province par province, le générateur de lettre local qui ne conserve rien, les recours officiels vérifiés —, et « Mémoire privée » devenue « Mémoire verrouillée », tout en bas du menu ; construite sur la v31 « La nuit porte »)</p>
+    <span class="sceau-long" id="sceau-version-affiche">80b29f1d4f173f7a605b6cb9a8bbce0ef2bbefa0405334fd9f203b6c53612cc5</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) → v28 (« Le choix d’abord » : la porte de choix pour l’ancrage visiteur, la borne réécrite, l’inventaire des flux confirmé) → v29 (« La transmission » : la mission citée à l’Accueil, le panneau Transmission en six étapes et la démonstration « Essaie la chaîne ») → v30 (« L’attribution » : le bloc provenance_export embarqué verbatim dans les métadonnées du site) → v31 (« La nuit porte » : le vérificateur d’export du Cerveau coquillage, le passage-vérification inséré comme formulation de référence et l’anglais du panneau Transmission complété) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) → v27 (« Le clair d’abord » : thème clair par défaut, sombre en option, animations) → v28 (« Le choix d’abord » : la porte de choix pour l’ancrage visiteur, la borne réécrite, l’inventaire des flux confirmé) → v29 (« La transmission » : la mission citée à l’Accueil, le panneau Transmission en six étapes et la démonstration « Essaie la chaîne ») → v30 (« L’attribution » : le bloc provenance_export embarqué verbatim dans les métadonnées du site) → v31 (« La nuit porte » : le vérificateur d’export du Cerveau coquillage, le passage-vérification inséré comme formulation de référence et l’anglais du panneau Transmission complété) — <span class="mono">33ce5470c178fcf6df2f73b1a140a4c155723299c69c96182c340a0f1b3ccbae</span> → v32 (« Le parcours d’accès » : le panneau « Mes renseignements — préparer une demande d’accès » — la loi déterminée province par province, le générateur de lettre local, les recours officiels vérifiés ; et « Mémoire privée » devient « Mémoire verrouillée », reléguée tout en bas du menu) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -1011,6 +1016,16 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Mardi 3 novembre 2026</p>
+      <h3>Version 32 — « Le parcours d’accès »</h3>
+      <ul class="journal-points">
+        <li>Un vingtième panneau entre au site — « Mes renseignements — préparer une demande d’accès », dans le groupe Pratique du menu, juste après Transmission dans les onglets : le visiteur indique où est l’organisation et de quel type elle est (province ou territoire, entreprise fédérale, secteur santé), et le panneau détermine la loi qui s’applique — Loi sur le privé au Québec, LPRPDE pour les entreprises fédérales, dans les territoires et dans les provinces sans loi essentiellement similaire, PIPA en Alberta et en Colombie-Britannique, loi provinciale de santé pour les renseignements de santé — avec, pour chaque loi, son délai de réponse, son destinataire et son recours.</li>
+        <li>Le générateur de lettre est entièrement local : les champs saisis produisent la lettre dans le navigateur — affichée, copiable, téléchargeable en texte, imprimable seule — et le site ne reçoit ni ne conserve rien, pas même dans le stockage local. La lettre porte visiblement, dès sa première ligne : « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique ». Aucune donnée excessive n’est demandée : ni mot de passe, ni numéro d’assurance sociale.</li>
+        <li>Les faits du panneau ont été vérifiés un à un sur les pages officielles des commissariats le 3 novembre 2026 (CAI, CPVP, OIPC de l’Alberta, OIPC de la Colombie-Britannique) — et le résumé de départ en sort corrigé sur deux points : des lettres types officielles existent (la lettre type de la CAI, l’exemple du CPVP), que le panneau relie au lieu de les remplacer ; et le délai fédéral de la LPRPDE est de 30 jours civils, prorogeable jusqu’à 30 jours de plus avec avis motivé. La mention de fraîcheur figure dans le panneau, et aucune conformité juridique n’y est affirmée.</li>
+        <li>Provenance du chantier : le brief transmis par Alex le 3 novembre 2026 et la nuit de carte blanche — le site ne démontre plus seulement la méthode : il arme le visiteur de ses propres droits d’accès, province par province. Et à la demande d’Alex, pendant la construction même : « Mémoire privée » devient « Mémoire verrouillée » — l’entrée du menu, avec son cadenas, quitte le groupe « Mémoire et intelligence » pour la toute dernière position du menu, et le titre de la zone dans le panneau Mémoire suit le nouveau nom ; l’ancre de la zone et son fonctionnement ne changent pas, et les entrées historiques du journal gardent le nom d’époque.</li>
+      </ul>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Mardi 3 novembre 2026</p>
       <h3>Version 31 — « La nuit porte »</h3>
@@ -1951,6 +1966,82 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   </div>
   <p class="petite" data-en="Everything is recomputed in your browser (Web Crypto): the dropped or pasted file never leaves your device, nothing is sent, nothing is kept. What this module proves: that the records’ fingerprints match, recomputed by the “cerveau-coquillage/v1” recipe. What it does not prove: the export’s provenance block is declarative — it is read and summarized, but it is not part of the chain computation; its presence is noted, its integrity is not proven here.">Tout se recalcule dans ton navigateur (Web Crypto) : le fichier déposé ou collé ne quitte pas ton appareil, rien n’est envoyé, rien n’est conservé. Ce que ce module prouve : la correspondance des empreintes des enregistrements, recalculées selon la recette « cerveau-coquillage/v1 ». Ce qu’il ne prouve pas : le bloc de provenance de l’export est déclaratif — il est lu et résumé, mais il n’entre pas dans le calcul de la chaîne ; sa présence est constatée, son intégrité n’est pas prouvée ici.</p>
   <p data-en="What you build at home with this method belongs to you the same way this case file belongs to its author. And this site remains recomputable by anyone: the same method, on both sides.">Ce que tu construis chez toi, avec cette méthode, t’appartient de la même façon que ce dossier appartient à son auteur. Et ce site-ci reste recalculable par n’importe qui : c’est la même méthode, des deux bords.</p>
+</section>
+</div>
+<div class="panneau" id="p-acces">
+<section class="bloc" id="acces">
+  <div class="entete-sec"><span class="num">✦</span><h2 data-en="My information — preparing an access request">Mes renseignements — préparer une demande d’accès</h2></div>
+  <p class="lead" data-en="Your personal information sits with organizations, platforms and institutions. Quebec and Canadian law gives you a right of access to it — and this panel helps you exercise it: it works out which law applies to your request, with its deadline and its recourse, then generates the letter, right here, in your browser.">Tes renseignements personnels dorment chez des entreprises, des plateformes, des institutions. Le droit québécois et canadien te donne un droit d’accès à ces renseignements — et ce panneau t’aide à l’exercer : il détermine la loi qui s’applique à ta demande, avec son délai et son recours, puis il produit la lettre, ici même, dans ton navigateur.</p>
+  <p data-en="This panel states its freshness: Facts checked against the privacy commissioners’ official pages on 3 November 2026. Laws change; the official links in this panel remain the reference. Nothing here is a legal opinion, and no compliance is claimed.">La fraîcheur de ce panneau, dite : Faits vérifiés sur les pages officielles des commissariats le 3 novembre 2026. Les lois changent ; les liens officiels de ce panneau restent la référence. Rien ici n’est un avis juridique, et aucune conformité n’est affirmée.</p>
+  <p>La règle de ce panneau, dans la lignée de la porte de choix de la v28 : <strong>ce site ne reçoit ni ne conserve rien</strong> — aucun envoi, aucune conservation, pas même dans le stockage local de ton navigateur. Tout ce que tu écris ci-dessous reste dans cet onglet et disparaît à sa fermeture. Ne saisis jamais de mot de passe, de numéro d’assurance sociale ni d’identifiants excessifs : une demande d’accès n’en a pas besoin.</p>
+  <h3 data-en="Step 1 — Which law applies to your request?">Étape 1 — Quelle loi s’applique à ta demande ?</h3>
+  <p data-en="The first request is always made in writing, directly to the organization that holds your information; the commissioner’s office only steps in afterwards, as recourse. What changes from one organization to the next is the law — and with it, the deadline and the recourse. Three questions settle it:">La première demande se fait toujours par écrit, directement à l’organisation qui détient tes renseignements ; le commissariat n’intervient qu’après, en recours. Ce qui change d’une organisation à l’autre, c’est la loi — et avec elle le délai et le recours. Trois questions la déterminent :</p>
+  <div class="carte">
+    <p class="etiquette" data-en="Determine the applicable law">Déterminer la loi applicable</p>
+    <div class="acces-ligne">
+      <label class="etiquette" for="acces-lieu" style="margin:0" data-en="Where is the organization?">Où est l’organisation ?</label>
+      <select id="acces-lieu">
+        <option value="qc" data-en="Quebec">Québec</option>
+        <option value="on" data-en="Ontario">Ontario</option>
+        <option value="ab" data-en="Alberta">Alberta</option>
+        <option value="bc" data-en="British Columbia">Colombie-Britannique</option>
+        <option value="mb" data-en="Manitoba">Manitoba</option>
+        <option value="nb" data-en="New Brunswick">Nouveau-Brunswick</option>
+        <option value="ns" data-en="Nova Scotia">Nouvelle-Écosse</option>
+        <option value="pe" data-en="Prince Edward Island">Île-du-Prince-Édouard</option>
+        <option value="nl" data-en="Newfoundland and Labrador">Terre-Neuve-et-Labrador</option>
+        <option value="sk" data-en="Saskatchewan">Saskatchewan</option>
+        <option value="yt" data-en="Yukon (territory)">Yukon (territoire)</option>
+        <option value="nt" data-en="Northwest Territories">Territoires du Nord-Ouest</option>
+        <option value="nu" data-en="Nunavut (territory)">Nunavut (territoire)</option>
+      </select>
+    </div>
+    <label class="acces-case"><input type="checkbox" id="acces-federale"> <span data-en="It is a federal work, undertaking or business (bank, telecommunications, interprovincial or international transport…) — PIPEDA then applies even in Quebec, Alberta and British Columbia.">C’est une entreprise fédérale (banque, télécommunications, transport interprovincial ou international…) — la LPRPDE s’applique alors même au Québec, en Alberta et en Colombie-Britannique.</span></label>
+    <label class="acces-case"><input type="checkbox" id="acces-sante"> <span data-en="These are health information (hospital, clinic, medical record…) — the province’s health regime then applies.">Ce sont des renseignements de santé (hôpital, clinique, dossier médical…) — le régime provincial de la santé s’applique alors.</span></label>
+    <div class="rangee" style="margin-top:.8rem">
+      <button class="action" id="btn-acces-determiner" type="button" data-en="Determine the law">Déterminer la loi</button>
+    </div>
+    <div id="acces-resultat" role="status"></div>
+  </div>
+  <h3 data-en="Step 2 — Generate your letter, locally">Étape 2 — Produire ta lettre, en local</h3>
+  <p data-en="No form is mandatory: a written request is enough. Fill in what applies — only what is needed to identify you and to describe the information requested — then generate. The letter appears below: copy it, download it as text, or print it alone (or save it as a PDF through printing). It visibly carries its drafting-aid notice.">Aucun formulaire n’est obligatoire : une demande écrite suffit. Remplis ce qui s’applique — seulement ce qu’il faut pour t’identifier et décrire les renseignements demandés — puis produis la lettre. Elle paraît ci-dessous : copie-la, télécharge-la en texte, ou imprime-la seule (ou enregistre-la en PDF par l’impression). Elle porte visiblement sa mention de modèle d’aide.</p>
+  <div class="carte">
+    <p class="etiquette" data-en="Letter generator — nothing leaves this tab">Générateur de lettre — rien ne quitte cet onglet</p>
+    <label class="etiquette" for="acces-nom" data-en="Your name">Ton nom</label>
+    <input type="text" id="acces-nom" autocomplete="off">
+    <label class="etiquette" for="acces-adresse" style="margin-top:.7rem" data-en="Your address">Ton adresse</label>
+    <input type="text" id="acces-adresse" autocomplete="off">
+    <label class="etiquette" for="acces-courriel" style="margin-top:.7rem" data-en="Your email (optional)">Ton courriel (facultatif)</label>
+    <input type="text" id="acces-courriel" autocomplete="off">
+    <label class="etiquette" for="acces-telephone" style="margin-top:.7rem" data-en="Your phone (optional)">Ton téléphone (facultatif)</label>
+    <input type="text" id="acces-telephone" autocomplete="off">
+    <label class="etiquette" for="acces-organisation" style="margin-top:.7rem" data-en="The organization holding your information">L’organisation qui détient tes renseignements</label>
+    <input type="text" id="acces-organisation" autocomplete="off">
+    <label class="etiquette" for="acces-responsable" style="margin-top:.7rem" data-en="Privacy officer’s name, if you know it (optional)">Le nom du responsable de la protection des renseignements personnels, si tu le connais (facultatif)</label>
+    <input type="text" id="acces-responsable" autocomplete="off">
+    <label class="etiquette" for="acces-compte" style="margin-top:.7rem" data-en="Account or file number, if relevant (optional)">Numéro de compte ou de dossier, si c’est pertinent (facultatif)</label>
+    <input type="text" id="acces-compte" autocomplete="off">
+    <label class="etiquette" for="acces-date" style="margin-top:.7rem" data-en="Date of the letter">Date de la lettre</label>
+    <input type="text" id="acces-date" autocomplete="off">
+    <label class="etiquette" for="acces-description" style="margin-top:.7rem" data-en="The information you are requesting (describe it precisely enough to be identified)">Les renseignements demandés (décris-les assez précisément pour qu’on puisse les identifier)</label>
+    <textarea id="acces-description" rows="3" placeholder="Par exemple : l’ensemble des renseignements de mon dossier client, les notes et l’historique de mes demandes…"></textarea>
+    <div class="rangee" style="margin-top:.8rem">
+      <button class="action" id="btn-acces-lettre" type="button" data-en="Generate the letter">Produire la lettre</button>
+    </div>
+    <label class="etiquette" for="acces-lettre" style="margin-top:1rem" data-en="Your letter">Ta lettre</label>
+    <textarea id="acces-lettre" rows="18" readonly placeholder="Ta lettre paraîtra ici…"></textarea>
+    <div class="rangee" style="margin-top:.8rem">
+      <button class="secondaire" id="btn-acces-copier" type="button" data-en="Copy the letter">Copier la lettre</button>
+      <button class="secondaire" id="btn-acces-telecharger" type="button" data-en="Download (.txt)">Télécharger (.txt)</button>
+      <button class="secondaire" id="btn-acces-imprimer" type="button" data-en="Print / save as PDF">Imprimer / enregistrer en PDF</button>
+    </div>
+    <p class="petite" id="acces-lettre-etat" role="status"></p>
+    <p class="petite">La lettre produite porte, en première ligne : « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique ». Des lettres types officielles existent — ce générateur ne les remplace pas : la <a href="https://www.cai.gouv.qc.ca/commission-acces-information/formulaires-lettres-types?pour-les-citoyens/" target="_blank" rel="noopener">lettre type de la CAI</a> (« Demande d’accès à vos renseignements personnels dans une entreprise privée », PDF/DOCX) et l’<a href="https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/acces-aux-renseignements-personnels/api_bus" target="_blank" rel="noopener">exemple de lettre du CPVP</a>, sur sa page d’accès.</p>
+  </div>
+  <h3 data-en="Step 3 — If it stalls: the recourse">Étape 3 — Si ça bloque : le recours</h3>
+  <p>Le panneau affiche le recours de la loi déterminée à l’étape 1 — l’instance, le véhicule et, quand il est établi, son délai. La mécanique est la même partout : <strong>la demande initiale va à l’organisation</strong> ; le commissariat n’intervient qu’en recours, après un refus, une réponse insatisfaisante ou une absence de réponse. Au Québec, l’absence de réponse à l’expiration des 30 jours équivaut à un refus — c’est alors que la demande de révision à la CAI s’ouvre.</p>
+  <p class="petite">Sources officielles de ce panneau : <a href="https://www.cai.gouv.qc.ca/protection-renseignements-personnels/citoyens-protection-renseignements-personnels/acces-et-protection-renseignements-personnels" target="_blank" rel="noopener">Commission d’accès à l’information (Québec)</a> ; <a href="https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/acces-aux-renseignements-personnels/api_bus" target="_blank" rel="noopener">Commissariat à la protection de la vie privée du Canada</a> et sa page sur les <a href="https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/lois-sur-la-protection-des-renseignements-personnels-au-canada/la-loi-sur-la-protection-des-renseignements-personnels-et-les-documents-electroniques-lprpde/r_o_p/prov-lprpde/" target="_blank" rel="noopener">lois provinciales essentiellement similaires</a> ; <a href="https://oipc.ab.ca/information-access-review/" target="_blank" rel="noopener">OIPC de l’Alberta</a> ; <a href="https://www.oipc.bc.ca/for-the-public/how-do-i-request-records/" target="_blank" rel="noopener">OIPC de la Colombie-Britannique</a>. Faits vérifiés sur les pages officielles des commissariats le 3 novembre 2026.</p>
+  <p data-en="This panel is the site’s method turned toward the visitor: know your rights, write them down, keep your copy. For the method itself — sealing, chaining, anchoring — the Transmission panel gives it in six steps.">Ce panneau, c’est la méthode du site tournée vers le visiteur : connaître ses droits, les écrire, garder sa copie. Pour la méthode elle-même — sceller, chaîner, ancrer — le panneau Transmission la donne en six étapes.</p>
 </section>
 </div>
 <div class="panneau" id="p-ancrage">
@@ -2953,7 +3044,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <h3 data-en="Self-improvement, under seal">L'auto-amélioration, apprise et calculée sous sceau</h3>
   <p>La mémoire de ce site s'auto-apprend — et chaque chose qu'elle apprend se calcule par les SHA-256 : un écart mesuré entre le vu et l'annoncé, une source qui devient meilleure qu'une autre, une nouvelle connexion entre deux pièces deviennent des <strong>entrées du coffre</strong>, scellées et chaînées, avec leur résumé. L'auto-amélioration ne se déclare jamais ; elle se recalcule, entrée par entrée. Les règles sont écrites dans <a href="assets/configuration.json">assets/configuration.json</a>, lues à chaque chargement. Borne : apprendre veut dire accumuler des données et appliquer des règles écrites — jamais réécrire le code en cachette ; les versions du code restent construites et scellées une à une.</p>
 
-  <h3 id="zone-privee" data-en="Private memory — the site’s cumulative memory, secured">Mémoire privée — la mémoire cumulative du site, sécurisée</h3>
+  <h3 id="zone-privee" data-en="Locked memory — the site’s cumulative memory, secured">Mémoire verrouillée — la mémoire cumulative du site, sécurisée</h3>
   <p>Une couche de cette mémoire est privée : les pièces qu'Alex ne publie pas. Sa forme est décidée (2 novembre 2026) : <strong>chiffrement fort (AES-256) avant publication</strong> — le site ne servira que du texte chiffré, illisible pour tous, même pour l'hébergeur ; les empreintes et les résumés restent publics, pour prouver l'existence et l'antériorité sans révéler une ligne. Alex détient la clé et déverrouille chez lui ; SoPHIa détient les clairs dans son espace. État honnête : le chiffrement commence le jour où Alex saisit sa phrase secrète au coffre sécurisé — aucune clé ne sera jamais fabriquée à sa place. Un site statique ne peut pas garder un secret en clair : ici, on ne bâtira pas un faux verrou.</p>
   <p>Le mécanisme, en langage clair : ce site est public, et sa protection n'est pas une porte cachée — c'est le chiffrement. La mémoire cumulative du site sera déposée ici <strong>chiffrée en AES-256, avant publication</strong> : les empreintes SHA-256 et les résumés restent publics et revérifiables par tous, mais le contenu est illisible sans la phrase secrète d'Alex — même pour qui copierait tout le dépôt. Le déchiffrement, le jour venu, se fera localement, dans le navigateur de la personne autorisée (WebCrypto) : la phrase secrète ne transite jamais, et elle n'est jamais publiée.</p>
   <p>Le circuit du sensible, écrit : <strong>le sensible passe par SoPHIa, par la couche au-dessus</strong> : le contenu sensible transite par la couche de l’agente, qui décide ce qui descend vers le public — un résumé non sensible, des empreintes, ou du chiffré. Ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair.</p>
@@ -6440,7 +6531,7 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
     else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(data.url).then(function(){etatP.textContent='Lien copié.';},function(){etatP.textContent='Copie refusée par le navigateur.';});}
     else{etatP.textContent='Copiez l\'adresse de la page pour la partager.';}
   });}
-  var NAV_EN={accueil:'Home',temps:'Time',meteo:'Weather',methode:'Method',articles:'Articles',ancrage:'Anchoring',sceller:'Seal',verifier:'Verify',application:'App',registre:'Registry',preuves:'Evidence',capsules:'Capsules',parcours:'Journey',chercheur:'Researcher',droits:'Rights',recherche:'Search',instance:'Sovereign Instance',memoire:'Memory'};
+  var NAV_EN={accueil:'Home',temps:'Time',meteo:'Weather',methode:'Method',articles:'Articles',acces:'My information',ancrage:'Anchoring',sceller:'Seal',verifier:'Verify',application:'App',registre:'Registry',preuves:'Evidence',capsules:'Capsules',parcours:'Journey',chercheur:'Researcher',droits:'Rights',recherche:'Search',instance:'Sovereign Instance',memoire:'Memory'};
   var boutonL=document.getElementById('btn-langue'),anglais=false;
   if(boutonL){boutonL.addEventListener('click',function(){
     anglais=!anglais;
@@ -7113,6 +7204,257 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
           });
         }
       }
+    }
+  }
+})();
+</script>
+<script>
+// ---------- v32 — « Mes renseignements » : parcours d’aide à la demande d’accès ----------
+// Faits vérifiés sur les pages officielles des commissariats le 3 novembre 2026
+// (CAI, CPVP, OIPC de l’Alberta, OIPC de la Colombie-Britannique) — seuls ces
+// faits entrent ici. La détermination de la loi est une fonction pure ; le
+// générateur de lettre est une fonction pure. Tout reste dans l’onglet :
+// aucun envoi réseau, aucune écriture dans le stockage local du navigateur.
+(function(){
+  var MENTION='Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique';
+  var LIEN_CPvp='https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/acces-aux-renseignements-personnels/api_bus';
+  var LIEN_CPvp_PROV='https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/lois-sur-la-protection-des-renseignements-personnels-au-canada/la-loi-sur-la-protection-des-renseignements-personnels-et-les-documents-electroniques-lprpde/r_o_p/prov-lprpde/';
+  var LIEN_CAI='https://www.cai.gouv.qc.ca/protection-renseignements-personnels/citoyens-protection-renseignements-personnels/acces-et-protection-renseignements-personnels';
+  var LIEN_CAI_LETTRES='https://www.cai.gouv.qc.ca/commission-acces-information/formulaires-lettres-types?pour-les-citoyens/';
+  var LIEN_OIPC_AB='https://oipc.ab.ca/information-access-review/';
+  var LIEN_OIPC_BC='https://www.oipc.bc.ca/for-the-public/how-do-i-request-records/';
+  var NOMS_LIEUX={qc:'Québec',on:'Ontario',ab:'Alberta',bc:'Colombie-Britannique',mb:'Manitoba',nb:'Nouveau-Brunswick',ns:'Nouvelle-Écosse',pe:'Île-du-Prince-Édouard',nl:'Terre-Neuve-et-Labrador',sk:'Saskatchewan',yt:'Yukon',nt:'Territoires du Nord-Ouest',nu:'Nunavut'};
+  function detLprpde(note){
+    return {regime:'lprpde',
+      loi:'Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE)',
+      delai:'30 jours civils',
+      delaiNote:'30 jours civils à compter de la réception. L’organisation peut proroger le délai jusqu’à 30 jours de plus dans des cas particuliers, en vous avisant avec motifs dans les 30 premiers jours.',
+      destinataire:'L’organisation elle-même, par écrit — idéalement son responsable de la protection des renseignements personnels, si elle en désigne un.',
+      frais:'L’accès est gratuit ou à coût minime.',
+      silence:'',
+      note:note||'',
+      recours:{instance:'Commissariat à la protection de la vie privée du Canada (CPVP)',vehicule:'Plainte au CPVP — après avoir d’abord tenté de régler la question avec l’organisation',delai:'',lien:LIEN_CPvp},
+      lettreType:{label:'Exemple de lettre du CPVP, sur sa page d’accès',lien:LIEN_CPvp},
+      lienOfficiel:{label:'Page d’accès du CPVP',lien:LIEN_CPvp}};
+  }
+  function accesDeterminerLoi(entree){
+    var lieu=(entree&&entree.lieu)||'qc';
+    var fed=!!(entree&&entree.entrepriseFederale);
+    var sante=!!(entree&&entree.secteurSante);
+    var nomLieu=NOMS_LIEUX[lieu]||lieu;
+    if(sante){
+      return {regime:'sante',
+        loi:'Loi provinciale sur les renseignements de santé ('+nomLieu+')',
+        delai:null,
+        delaiNote:'Aucun délai unique n’est affirmé ici : les renseignements de santé suivent le régime provincial de la santé, dont les règles propres s’appliquent. La page du CPVP sur les lois provinciales signale quelles lois de santé sont réputées essentiellement similaires à la LPRPDE (Ontario, Nouveau-Brunswick, Nouvelle-Écosse, Terre-Neuve-et-Labrador) ; des lois de santé existent aussi ailleurs, par exemple au Manitoba.',
+        destinataire:'L’établissement ou l’organisation de santé qui détient le dossier, par écrit.',
+        frais:'',
+        silence:'',
+        note:'Le secteur santé suit son régime provincial : la loi déterminée ici est la loi de santé de la province, pas la loi générale du secteur privé ni la LPRPDE.',
+        recours:{instance:'Commissariat provincial compétent (protection de la vie privée / accès à l’information)',vehicule:'Plainte ou demande de révision selon la loi de santé provinciale',delai:'',lien:LIEN_CPvp_PROV},
+        lettreType:null,
+        lienOfficiel:{label:'Page du CPVP — lois provinciales et LPRPDE',lien:LIEN_CPvp_PROV}};
+    }
+    if(fed){
+      return detLprpde('Entreprise fédérale : la LPRPDE s’applique même au Québec, en Alberta et en Colombie-Britannique — la détermination se fait au cas par cas (banques, télécommunications, transport, transferts transfrontaliers).');
+    }
+    if(lieu==='qc'){
+      return {regime:'qc',
+        loi:'Loi sur la protection des renseignements personnels dans le secteur privé (Québec)',
+        delai:'30 jours',
+        delaiNote:'30 jours à compter de la réception de la demande. L’absence de réponse à l’expiration du délai équivaut à un refus.',
+        destinataire:'Le responsable de la protection des renseignements personnels de l’entreprise — par défaut, la personne ayant la plus haute autorité (par exemple le dirigeant) ; la fonction peut être déléguée par écrit, et le titre et les coordonnées du responsable sont publiés sur le site Web de l’entreprise. Vous devez vous identifier.',
+        frais:'L’accès est gratuit en principe ; des frais peuvent être exigés, plafonnés au coût de transcription, de reproduction ou de transmission, et annoncés d’avance avec un montant approximatif.',
+        silence:'L’absence de réponse à l’expiration des 30 jours équivaut à un refus.',
+        note:'',
+        recours:{instance:'Commission d’accès à l’information (CAI)',vehicule:'Demande de révision (en cas de refus d’accès) ; examen de mésentente pour les autres différends avec une entreprise privée — formulaire « Demande de révision et d’examen de mésentente »',delai:'',lien:LIEN_CAI},
+        lettreType:{label:'Lettre type de la CAI — « Demande d’accès à vos renseignements personnels dans une entreprise privée » (PDF/DOCX)',lien:LIEN_CAI_LETTRES},
+        lienOfficiel:{label:'Page d’accès de la CAI',lien:LIEN_CAI}};
+    }
+    if(lieu==='ab'){
+      return {regime:'ab',
+        loi:'Personal Information Protection Act (PIPA) de l’Alberta',
+        delai:'45 jours',
+        delaiNote:'45 jours (art. 28(1) de la PIPA) ; une prorogation est possible (art. 31).',
+        destinataire:'L’organisation elle-même, par écrit.',
+        frais:'',
+        silence:'',
+        note:'La PIPA de l’Alberta est une loi provinciale générale de secteur privé réputée essentiellement similaire à la LPRPDE.',
+        recours:{instance:'OIPC de l’Alberta (Office of the Information and Privacy Commissioner)',vehicule:'Request for review (demande de révision)',delai:'À demander dans les 30 jours civils de l’avis de décision de l’organisation',lien:LIEN_OIPC_AB},
+        lettreType:null,
+        lienOfficiel:{label:'Page de révision de l’OIPC de l’Alberta',lien:LIEN_OIPC_AB}};
+    }
+    if(lieu==='bc'){
+      return {regime:'bc',
+        loi:'Personal Information Protection Act (PIPA) de la Colombie-Britannique',
+        delai:'30 jours ouvrables',
+        delaiNote:'30 jours ouvrables — la loi compte 30 jours en excluant les samedis et les jours fériés ; prorogation possible jusqu’à 30 jours de plus.',
+        destinataire:'L’organisation elle-même, par écrit — la demande doit être assez détaillée pour identifier les renseignements demandés.',
+        frais:'',
+        silence:'',
+        note:'La PIPA de la Colombie-Britannique est une loi provinciale générale de secteur privé réputée essentiellement similaire à la LPRPDE.',
+        recours:{instance:'OIPC de la Colombie-Britannique',vehicule:'Demande de révision',delai:'À demander dans les 30 jours de l’avis (art. 46-47)',lien:LIEN_OIPC_BC},
+        lettreType:null,
+        lienOfficiel:{label:'Page de l’OIPC de la Colombie-Britannique',lien:LIEN_OIPC_BC}};
+    }
+    if(lieu==='yt'||lieu==='nt'||lieu==='nu'){
+      return detLprpde('Dans les territoires, les entreprises relèvent de la réglementation fédérale : c’est la LPRPDE qui s’applique.');
+    }
+    return detLprpde('Seules les lois générales de secteur privé du Québec, de l’Alberta et de la Colombie-Britannique sont réputées essentiellement similaires à la LPRPDE ; partout ailleurs au Canada, c’est la LPRPDE qui s’applique aux entreprises.');
+  }
+  function accesGenererLettre(champs,det){
+    champs=champs||{};
+    function v(x){return (typeof x==='string')?x.trim():'';}
+    var nom=v(champs.nom),adresse=v(champs.adresse),courriel=v(champs.courriel),tel=v(champs.telephone),
+        org=v(champs.organisation),resp=v(champs.responsable),compte=v(champs.compte),
+        date=v(champs.date),desc=v(champs.description);
+    var L=[];
+    L.push(MENTION);
+    L.push('');
+    if(date)L.push(date);
+    L.push(nom||'[Votre nom]');
+    if(adresse)L.push(adresse);
+    if(courriel)L.push(courriel);
+    if(tel)L.push(tel);
+    L.push('');
+    L.push(org||'[Nom de l’organisation]');
+    L.push('À l’attention de : '+(resp?resp:'Responsable de la protection des renseignements personnels'));
+    L.push('');
+    L.push('Objet : Demande d’accès à mes renseignements personnels'+(det&&det.loi?(' — '+det.loi):''));
+    L.push('');
+    L.push('Madame, Monsieur,');
+    L.push('');
+    L.push('Je vous écris pour demander l’accès aux renseignements personnels que vous détenez à mon sujet, afin de pouvoir les consulter et, au besoin, en demander la rectification. Pour m’identifier : '+(nom||'[votre nom]')+(adresse?(', '+adresse):'')+(compte?('. Mon numéro de compte ou de dossier est le '+compte+'.'):'.'));
+    L.push('');
+    L.push('Renseignements demandés : '+(desc||'[décrivez ici les renseignements demandés, assez précisément pour qu’on puisse les identifier]'));
+    if(det&&det.delai){
+      L.push('');
+      L.push('Selon les faits vérifiés pour la loi qui s’applique à cette demande, le délai de réponse est de '+det.delai+' à compter de la réception de la présente demande.');
+    }
+    L.push('');
+    L.push('Je vous remercie de me confirmer la réception de cette demande et de m’informer à l’avance de tout frais applicable.');
+    L.push('');
+    L.push('Veuillez agréer, Madame, Monsieur, l’expression de mes salutations distinguées.');
+    L.push('');
+    L.push(nom||'[Votre nom]');
+    return L.join('\n');
+  }
+  if(typeof window!=='undefined'){
+    window.ParcoursAcces={determinerLoi:accesDeterminerLoi,genererLettre:accesGenererLettre,mention:MENTION,nomsLieux:NOMS_LIEUX};
+  }
+  if(typeof document!=='undefined'&&document.getElementById){
+    var selLieu=document.getElementById('acces-lieu');
+    if(selLieu){
+      var caseFed=document.getElementById('acces-federale'),
+          caseSante=document.getElementById('acces-sante'),
+          btnDet=document.getElementById('btn-acces-determiner'),
+          res=document.getElementById('acces-resultat'),
+          detCourante=null;
+      function el(tag,cls,texte){
+        var e=document.createElement(tag);
+        if(cls)e.className=cls;
+        if(texte!=null)e.textContent=texte;
+        return e;
+      }
+      function lienOfficiel(label,href){
+        var p=el('p','petite');
+        var a=document.createElement('a');
+        a.href=href;a.target='_blank';a.rel='noopener';a.textContent=label;
+        p.appendChild(a);
+        return p;
+      }
+      function rendreDetermination(){
+        var det=accesDeterminerLoi({lieu:selLieu.value,entrepriseFederale:!!(caseFed&&caseFed.checked),secteurSante:!!(caseSante&&caseSante.checked)});
+        detCourante=det;
+        if(!res)return det;
+        res.replaceChildren();
+        var boite=el('div',null);boite.style.marginTop='1rem';
+        boite.appendChild(el('p','etiquette','Loi qui s’applique'));
+        var h=el('h4',null,det.loi);h.style.margin='.1rem 0 .5rem';boite.appendChild(h);
+        if(det.delai){
+          boite.appendChild(el('p',null,'Délai de réponse : '+det.delai+'.'));
+          boite.appendChild(el('p','petite',det.delaiNote));
+        }else{
+          boite.appendChild(el('p',null,'Délai de réponse : aucun délai unique n’est affirmé ici.'));
+          boite.appendChild(el('p','petite',det.delaiNote));
+        }
+        boite.appendChild(el('p',null,'À qui adresser la demande : '+det.destinataire));
+        if(det.frais)boite.appendChild(el('p',null,'Frais : '+det.frais));
+        if(det.note)boite.appendChild(el('p','petite',det.note));
+        boite.appendChild(el('p','etiquette','Le recours, si ça bloque'));
+        boite.appendChild(el('p',null,det.recours.vehicule+' — '+det.recours.instance+(det.recours.delai?(' ('+det.recours.delai+')'):'')+'.'));
+        if(det.recours.lien)boite.appendChild(lienOfficiel('Page officielle du recours',det.recours.lien));
+        if(det.lettreType)boite.appendChild(lienOfficiel(det.lettreType.label,det.lettreType.lien));
+        if(det.lienOfficiel)boite.appendChild(lienOfficiel(det.lienOfficiel.label,det.lienOfficiel.lien));
+        boite.appendChild(el('p','petite','Faits vérifiés sur les pages officielles des commissariats le 3 novembre 2026. La lettre de l’étape 2 reprend la loi déterminée ici.'));
+        res.appendChild(boite);
+        return det;
+      }
+      if(btnDet)btnDet.addEventListener('click',rendreDetermination);
+      var champsIds={nom:'acces-nom',adresse:'acces-adresse',courriel:'acces-courriel',telephone:'acces-telephone',organisation:'acces-organisation',responsable:'acces-responsable',compte:'acces-compte',date:'acces-date',description:'acces-description'};
+      function lireChamps(){
+        var c={};
+        Object.keys(champsIds).forEach(function(k){
+          var n=document.getElementById(champsIds[k]);
+          c[k]=n?n.value:'';
+        });
+        return c;
+      }
+      var zoneLettre=document.getElementById('acces-lettre'),
+          etatLettre=document.getElementById('acces-lettre-etat'),
+          btnLettre=document.getElementById('btn-acces-lettre'),
+          btnCopier=document.getElementById('btn-acces-copier'),
+          btnTel=document.getElementById('btn-acces-telecharger'),
+          btnImp=document.getElementById('btn-acces-imprimer'),
+          champDate=document.getElementById('acces-date');
+      if(champDate&&!champDate.value){
+        try{champDate.value=new Date().toLocaleDateString('fr-CA',{day:'numeric',month:'long',year:'numeric'});}catch(e){}
+      }
+      function lettreCourante(){
+        if(zoneLettre&&zoneLettre.value)return zoneLettre.value;
+        return accesGenererLettre(lireChamps(),detCourante);
+      }
+      if(btnLettre)btnLettre.addEventListener('click',function(){
+        if(!detCourante)rendreDetermination();
+        var lettre=accesGenererLettre(lireChamps(),detCourante);
+        if(zoneLettre)zoneLettre.value=lettre;
+        if(etatLettre)etatLettre.textContent='Lettre produite — elle ne vit que dans cet onglet. Copie-la, télécharge-la ou imprime-la avant de fermer la page.';
+      });
+      if(btnCopier)btnCopier.addEventListener('click',function(){
+        var lettre=lettreCourante();
+        function ok(){if(etatLettre)etatLettre.textContent='Lettre copiée.';}
+        function repli(){
+          if(zoneLettre){zoneLettre.value=lettre;zoneLettre.focus();zoneLettre.select();try{document.execCommand('copy');ok();}catch(e){if(etatLettre)etatLettre.textContent='La copie automatique a échoué — sélectionne la lettre et copie-la à la main.';}}
+        }
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(lettre).then(ok,repli);}
+        else repli();
+      });
+      if(btnTel)btnTel.addEventListener('click',function(){
+        var lettre=lettreCourante();
+        var blob=new Blob([lettre],{type:'text/plain;charset=utf-8'});
+        var url=URL.createObjectURL(blob);
+        var a=document.createElement('a');
+        a.href=url;a.download='demande-acces-renseignements.txt';
+        document.body.appendChild(a);a.click();document.body.removeChild(a);
+        setTimeout(function(){URL.revokeObjectURL(url);},2000);
+        if(etatLettre)etatLettre.textContent='Lettre téléchargée en texte (.txt) — produite ici, rien n’a été envoyé.';
+      });
+      if(btnImp)btnImp.addEventListener('click',function(){
+        var lettre=lettreCourante();
+        var ifr=document.createElement('iframe');
+        ifr.style.position='fixed';ifr.style.right='0';ifr.style.bottom='0';ifr.style.width='0';ifr.style.height='0';ifr.style.border='0';
+        document.body.appendChild(ifr);
+        var doc=ifr.contentWindow.document;
+        var echappe=lettre.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        doc.open();
+        doc.write('<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Demande d’accès à mes renseignements personnels</title><style>body{font-family:Georgia,serif;margin:2.2cm;color:#111}pre{white-space:pre-wrap;font:inherit;line-height:1.55}</style></head><body><pre>'+echappe+'</pre></body></html>');
+        doc.close();
+        setTimeout(function(){
+          try{ifr.contentWindow.focus();ifr.contentWindow.print();}catch(e){if(etatLettre)etatLettre.textContent='L’impression de la lettre seule a échoué dans ce navigateur — copie la lettre et imprime-la depuis ton traitement de texte.';}
+          setTimeout(function(){document.body.removeChild(ifr);},1000);
+        },250);
+        if(etatLettre)etatLettre.textContent='Impression de la lettre seule — choisis « Enregistrer au format PDF » dans la fenêtre d’impression pour obtenir un PDF.';
+      });
     }
   }
 })();
