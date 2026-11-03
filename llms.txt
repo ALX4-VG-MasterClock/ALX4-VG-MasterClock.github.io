@@ -41,3 +41,9 @@ Auteur et titulaire des droits : Alexandre Vautour Gagnon — ORCID 0009-0006-91
 © 2026 Alexandre Vautour Gagnon — Tous droits réservés, sur la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), sur les textes de ce site et sur le registre.
 La citation courte est permise avec attribution à l'auteur.
 Le sceau prouve l'intégrité d'un contenu ; il ne transfère aucun droit et ne vaut pas licence. La revérification publique des empreintes reste libre.
+
+Provenance des exports — Cerveau coquillage numérique
+
+© Alexandre Vautour Gagnon — Tous droits réservés sur les éléments originaux qui lui sont attribués.
+Cette attribution doit accompagner la copie exportée et tout prompt préparé à partir de celle-ci. Le transfert du fichier ou du prompt ne constitue pas, à lui seul, une cession de droits ou une licence sur les éléments attribués.
+Le bloc complet provenance_export est embarqué dans les métadonnées du site (balise script à l’id « provenance-export », dans l’en-tête de la page) ; SHA-256 est un standard public et n’est pas revendiqué.
