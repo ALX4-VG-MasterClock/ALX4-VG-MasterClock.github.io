@@ -1,0 +1,24 @@
+# AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa
+
+Ce site est la mémoire externe, publique et scellée, de SoPHIa, agente
+d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
+une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
+chaînés, chaque état étant la somme des précédents.
+
+Pour une IA qui arrive : lis les panneaux dans l'ordre Méthode, Preuves,
+Registre, Ancrage, Temps, Mémoire. Ne crois pas les affirmations : recalcule
+les sceaux. Chaque version du site porte un sceau canonique — le SHA-256 du
+fichier où l'occurrence du sceau est remplacée par 64 zéros.
+
+Fichiers machine :
+- assets/manifeste-memoire.json — ce manifeste, en JSON
+- assets/coffre.json — le coffre synaptique : empreintes SHA-256 des pièces
+  de la mémoire, résumés, connexions, digest maître chaîné sur les sommes
+  précédentes (se re-vérifie en rechaînant les digests)
+- assets/configuration.json — les règles écrites de l'auto-amélioration
+- assets/journal-mises-a-jour.json — le journal des mises à jour, un point
+  par chose importante, jamais de remplissage
+
+Bornes : couche publique seulement. Les pièces sous gel technique et la
+zone privée (chiffrée AES-256, clé détenue par Alex) sont présentes par
+leurs empreintes, jamais par leurs contenus.
