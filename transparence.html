@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1512">
+  <title>Transparence des données — Audit Unisson</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a1512;--card:#12251d;--line:#38614e;--gold:#e9cd77;--text:#f2ecda;--soft:#b8c8b7;--green:#63cfa5}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,sans-serif}
+    main{max-width:900px;margin:auto;padding:2rem 1.1rem 4rem}h1,h2{line-height:1.2}h1{color:var(--gold)}h2{margin-top:2rem;color:var(--green)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0}
+    .notice{border-left:4px solid var(--gold)}.small{font-size:.92rem;color:var(--soft)}code,pre{overflow-wrap:anywhere;white-space:pre-wrap}
+    button{background:var(--gold);color:#171307;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:700;cursor:pointer;margin:.25rem}
+    button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}a{color:var(--green)}ul{padding-left:1.4rem}#receipt{min-height:3rem}
+    table{width:100%;border-collapse:collapse}td,th{text-align:left;vertical-align:top;padding:.55rem;border-bottom:1px solid var(--line)}
+  </style>
+</head>
+<body><main>
+  <p><a href="./">← Retour au site</a></p>
+  <h1>Transparence des données de visite</h1>
+  <p class="small">Document d’information et outil local de reçu — version de préparation. Il ne remplace pas l’audit des requêtes réellement émises ni un avis juridique.</p>
+
+  <section class="card notice">
+    <h2>À savoir avant de continuer</h2>
+    <p>Pour afficher ce site, votre navigateur échange des requêtes avec son hébergeur. L’hébergeur peut recevoir l’adresse IP et des données techniques de connexion. Le JavaScript de cette page ne lit pas directement votre adresse IP et ce document ne tente pas de la rechercher.</p>
+    <p>Quand le site ou votre navigateur contacte un service tiers, ce service reçoit la requête et peut recevoir l’adresse IP ainsi que les données incluses dans celle-ci. Le site ne peut pas vérifier depuis votre navigateur les journaux internes, l’usage ultérieur ni la durée de conservation de ces fournisseurs.</p>
+    <p><strong>Le reçu ci-dessous est facultatif et calculé dans votre navigateur.</strong> Le générer ne transmet pas le reçu ni son empreinte. Il n’inclut pas l’adresse IP, la géolocalisation précise, les champs de formulaire, les cookies, ni le contenu des requêtes réseau.</p>
+  </section>
+
+  <h2>Ce que le dépôt indique déjà</h2>
+  <section class="card">
+    <p>Les éléments consultés du dépôt indiquent des lectures en direct ou des fonctions associées à des sources externes. La liste suivante est un <strong>inventaire indicatif, non exhaustif et à confirmer par inspection réseau de la version publiée</strong>. La présence d’un lien ou d’une mention ne prouve pas qu’une requête automatique est faite à chaque visite.</p>
+    <table><thead><tr><th>Service / catégorie mentionné(e)</th><th>Ce qui peut être transmis lors d’une requête</th><th>État de vérification</th></tr></thead><tbody>
+      <tr><td>GitHub API</td><td>Requête de lecture publique; l’adresse IP et les données techniques habituelles de la requête peuvent être visibles au fournisseur.</td><td>Lecture en direct annoncée dans le contenu du site; endpoint exact et déclenchement à confirmer.</td></tr>
+      <tr><td>Internet Archive / Wayback Machine</td><td>Requête de lecture d’une archive; le fournisseur reçoit les données techniques de connexion.</td><td>Lecture en direct annoncée; endpoint exact et déclenchement à confirmer.</td></tr>
+      <tr><td>ORCID</td><td>Consultation d’un profil public; le fournisseur reçoit les données techniques de connexion.</td><td>Lecture de profil public annoncée; endpoint exact et déclenchement à confirmer.</td></tr>
+      <tr><td>Bitcoin / mempool.space</td><td>Requête de données publiques; le fournisseur reçoit les données techniques de connexion.</td><td>Source mentionnée au journal du dépôt; fonctionnement présent à confirmer.</td></tr>
+      <tr><td>Météo (dont Open‑Meteo, selon le journal du dépôt)</td><td>Une requête météo peut inclure les coordonnées du lieu demandé; le fournisseur reçoit aussi les données techniques de connexion. Si une position est estimée par IP via un tiers, ce tiers reçoit la requête et peut en déduire une région approximative.</td><td>Le site décrit des données météo triangulées et un ancrage visiteur par IP; fournisseur(s), appels et consentement effectif à vérifier dans le code publié.</td></tr>
+      <tr><td>Relais de l’Instance (Netlify, selon le journal du dépôt)</td><td>Si la fonction est utilisée, le texte de conversation transmis au relais et au fournisseur du moteur peut être communiqué avec les données techniques de connexion.</td><td>Le journal indique un relais serveur; vérifier le code, le fournisseur, les données transmises et les conditions de conservation.</td></tr>
+      <tr><td>Autres ressources externes (images, vidéos, liens)</td><td>Le chargement ou l’ouverture d’une ressource externe peut révéler au domaine ciblé une requête et des données techniques de connexion.</td><td>À inventorier dans l’onglet Réseau du navigateur sur la version réellement publiée.</td></tr>
+    </tbody></table>
+    <p class="small">Le service worker consulté ne met en cache que les requêtes GET de même origine et laisse les requêtes externes hors de son interception. Cela n’empêche pas le navigateur de contacter ces services.</p>
+  </section>
+
+  <h2>Votre reçu local de visite</h2>
+  <section class="card">
+    <p>Vous pouvez choisir les champs techniques du navigateur à inclure. Les valeurs sont assemblées localement; rien n’est envoyé par cette page. La liste des ressources peut être incomplète selon le navigateur et ne révèle pas ce que les serveurs conservent. Les données de performance indiquent des URL demandées par cette page, pas le contenu complet des requêtes ni les en-têtes reçus par les serveurs.</p>
+    <label><input id="includeBrowser" type="checkbox" checked> Inclure langue, fuseau horaire et caractéristiques générales du navigateur</label><br>
+    <label><input id="includeResources" type="checkbox" checked> Inclure les domaines de ressources réseau observés dans cette page</label><br>
+    <label><input id="includeScreen" type="checkbox"> Inclure la taille de l’écran et de la fenêtre</label><br>
+    <p><strong>Non recueillis par cet outil :</strong> adresse IP, géolocalisation, identifiant persistant, empreinte unique, cookies, texte saisi dans le site, contenu des requêtes, historique d’autres onglets.</p>
+    <button id="build">Préparer mon reçu et son SHA‑256</button>
+    <button class="secondary" id="download" disabled>Télécharger JSON</button>
+    <button class="secondary" id="clear">Effacer l’aperçu</button>
+    <div id="receipt" class="card" aria-live="polite">Aucun reçu préparé.</div>
+  </section>
+
+  <h2>Comment lire le reçu</h2>
+  <section class="card">
+    <ul>
+      <li><strong>« Ressource observée »</strong> signifie que le navigateur rapporte une requête de ressource associée à cette page. Cela ne prouve pas qu’un humain a consulté cette ressource ni que le serveur a conservé les données.</li>
+      <li>Le SHA‑256 est une empreinte d’intégrité du JSON préparé. Il ne certifie ni l’exhaustivité de l’inventaire, ni l’identité, ni la localisation, ni le traitement réel chez un tiers.</li>
+      <li>L’heure locale et le fuseau horaire proviennent de l’appareil. Une heure sidérale affichée ailleurs peut être recalculée seulement si l’instant, l’ancre géographique et la méthode sont connus. Ce reçu n’affirme pas que l’horloge de l’appareil est certifiée.</li>
+      <li>Le reçu est exportable par vous. Il reste sur l’appareil tant que vous ne choisissez pas de le télécharger, le partager ou l’envoyer.</li>
+    </ul>
+  </section>
+
+  <h2>Vos choix et vos droits</h2>
+  <section class="card">
+    <p>Vous pouvez refuser la génération du reçu et désactiver les fonctions facultatives lorsque le site le permet. Avant publication de toute fonction de consentement, le site doit indiquer son fournisseur, sa finalité, les catégories de données communiquées, les transferts éventuels et les modalités de conservation connues.</p>
+    <p>Au Québec, la Loi 25 modifie le cadre de protection des renseignements personnels. Les droits et obligations applicables dépendent de l’organisation responsable et des traitements réels. Une clause ou un reçu ne remplace pas les obligations légales et ne constitue pas, à lui seul, une garantie de conformité.</p>
+    <p>Pour une mise en œuvre complète, compléter et publier les coordonnées de la personne responsable de la protection des renseignements personnels, la politique de confidentialité, les finalités, les fournisseurs, les durées de conservation et les modalités de demande d’accès ou de rectification.</p>
+    <p>Ressources officielles : <a href="https://www.cai.gouv.qc.ca/entreprises-et-organismes/loi-25/" target="_blank" rel="noopener noreferrer">Commission d’accès à l’information du Québec — Loi 25</a>.</p>
+  </section>
+  <p class="small">Dernière préparation : 3 novembre 2026. Cette page ne prétend pas prouver ce que l’hébergeur ou un tiers collecte. Faites vérifier l’inventaire sur la version déployée avant de la présenter comme politique officielle.</p>
+</main>
+<script>
+(() => {
+  'use strict';
+  let latest = null;
+  const $ = id => document.getElementById(id);
+  function resourceDomains() {
+    const found = new Set();
+    try {
+      performance.getEntriesByType('resource').forEach(entry => {
+        try {
+          const u = new URL(entry.name, location.href);
+          if (u.origin !== location.origin) found.add(u.origin);
+        } catch (_) {}
+      });
+    } catch (_) {}
+    return [...found].sort();
+  }
+  async function sha256(text) {
+    if (!crypto.subtle) throw new Error('SHA‑256 Web Crypto indisponible; utilisez HTTPS ou localhost.');
+    const bytes = new TextEncoder().encode(text);
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    return [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, '0')).join('');
+  }
+  $('build').addEventListener('click', async () => {
+    const data = {
+      format: 'recu-visite-local-v1',
+      generatedAtUTC: new Date().toISOString(),
+      pageOrigin: location.origin,
+      notice: 'Reçu local. Ne prouve ni l’exhaustivité des traitements ni les journaux des serveurs.',
+      fieldsIncluded: {
+        browser: $('includeBrowser').checked,
+        observedExternalResourceDomains: $('includeResources').checked,
+        screenSize: $('includeScreen').checked
+      },
+      explicitExclusions: ['adresse IP', 'géolocalisation', 'cookies', 'identifiant persistant', 'empreinte unique', 'contenu de formulaire', 'corps et en-têtes complets des requêtes']
+    };
+    if (data.fieldsIncluded.browser) {
+      data.browser = {
+        language: navigator.language || null,
+        languages: Array.isArray(navigator.languages) ? navigator.languages : [],
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+        userAgent: navigator.userAgent || null,
+        platform: navigator.platform || null
+      };
+    }
+    if (data.fieldsIncluded.observedExternalResourceDomains) data.observedExternalResourceDomains = resourceDomains();
+    if (data.fieldsIncluded.screenSize) data.screen = {
+      screenWidth: screen.width, screenHeight: screen.height,
+      viewportWidth: innerWidth, viewportHeight: innerHeight,
+      devicePixelRatio: devicePixelRatio
+    };
+    const canonical = JSON.stringify(data, null, 2);
+    try {
+      const digest = await sha256(canonical);
+      latest = {...data, sha256: digest, hashScope: 'SHA-256 du JSON canonique sans le champ sha256.'};
+      const output = JSON.stringify(latest, null, 2);
+      $('receipt').textContent = output;
+      $('download').disabled = false;
+    } catch (error) {
+      $('receipt').textContent = error.message;
+      latest = null; $('download').disabled = true;
+    }
+  });
+  $('download').addEventListener('click', () => {
+    if (!latest) return;
+    const blob = new Blob([JSON.stringify(latest, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'recu-visite-local.json'; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+  $('clear').addEventListener('click', () => {
+    latest = null; $('receipt').textContent = 'Aucun reçu préparé.'; $('download').disabled = true;
+  });
+})();
+</script>
+</body>
+</html>
