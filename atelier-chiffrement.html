@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0a1512">
+<title>Atelier de chiffrement — Mémoire verrouillée</title>
+<style>
+:root{color-scheme:dark;--bg:#0a1512;--card:#12251d;--line:#38614e;--gold:#e9cd77;--text:#f2ecda;--soft:#b8c8b7;--green:#63cfa5;--red:#ff9b83}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1000px;margin:auto;padding:1.5rem 1rem 4rem}h1,h2{line-height:1.2}h1{color:var(--gold)}h2{margin-top:2rem;color:var(--green)}h3{color:var(--gold)}a{color:var(--green)}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}.notice{border-left:4px solid var(--gold)}.warning{border-left:4px solid var(--red)}.small{font-size:.92rem;color:var(--soft)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}.step{background:#0d1f19;border:1px solid var(--line);border-radius:12px;padding:.9rem}.tag{color:var(--gold);font-weight:700}button{background:var(--gold);color:#171307;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:700;cursor:pointer;margin:.25rem}button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed}label{display:block;margin:.65rem 0}.row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}input,textarea,select{width:100%;padding:.7rem;border-radius:8px;background:#0d1f19;color:var(--text);border:1px solid var(--line);font:inherit}textarea{min-height:110px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:34rem;overflow:auto;background:#0d1f19;border:1px solid var(--line);border-radius:10px;padding:1rem}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:.55rem;border-bottom:1px solid var(--line)}.hash{font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.toc a{display:inline-block;margin:.25rem .6rem .25rem 0}@media(max-width:680px){.row{grid-template-columns:1fr}}
+/* Ajouts propres à l'atelier */
+.verdict-match{color:var(--green);font-weight:700}.verdict-ecart{color:var(--red);font-weight:700}.statut{min-height:1.65em}.entree-liste{border-bottom:1px solid var(--line);padding:.45rem 0}.entree-liste:last-child{border-bottom:0}
+</style>
+</head>
+<body><main>
+<h1>Atelier de chiffrement — Mémoire verrouillée</h1>
+<p>L'outil local qui prépare le paquet chiffré de la zone « Mémoire verrouillée » du site, et qui permet de le revérifier avant publication. Cette page fonctionne <strong>entièrement dans cet onglet</strong> : elle ne contient aucun appel réseau, ne conserve rien et ne transmet rien. Le chiffrement et le déchiffrement se font par l'API Web Crypto du navigateur.</p>
+
+<section class="card warning">
+<h2>La phrase secrète — les règles, écrites</h2>
+<ul>
+<li><strong>La phrase ne quitte jamais cet onglet.</strong> Elle est tapée ici, utilisée en mémoire le temps du calcul, puis le champ est effacé. Elle n'est jamais affichée, jamais conservée, jamais transmise — ni au site, ni à SoPHIa, ni à personne.</li>
+<li><strong>Perdre la phrase, c'est perdre l'accès.</strong> Aucune récupération n'existe : ni SoPHIa ni l'hébergeur ne détiennent de copie ni de clé de secours. Sans la phrase, le contenu chiffré est illisible pour toujours.</li>
+<li><strong>Le fichier produit peut être public ; la phrase, jamais.</strong> <span class="hash">coffre-prive.json</span> ne contient que du texte chiffré et des métadonnées publiques (titres, résumés, empreintes) : il est fait pour être publié. La phrase, elle, reste dans le coffre sécurisé d'Alex — nulle part ailleurs.</li>
+<li><strong>Appareil de confiance seulement.</strong> Cette page ne peut pas garantir l'absence de surveillance par une extension, un système ou un navigateur compromis. Le calcul est local ; l'appareil doit l'être aussi, en quelque sorte : fiable.</li>
+</ul>
+</section>
+
+<section class="card notice">
+<h2>Le format produit — memoire-verrouillee/v1</h2>
+<p>Clé dérivée de la phrase par <strong>PBKDF2</strong> (SHA-256, <strong>600 000 itérations</strong>, sel aléatoire de 16 octets propre au paquet) ; chiffrement <strong>AES-256-GCM</strong> avec un <strong> vecteur d'initialisation unique par entrée</strong> ; l'<strong>empreinte SHA-256 de chaque clair</strong> est inscrite en clair dans le paquet : au déchiffrement, chaque clair retrouvé est revérifié contre son empreinte. AES-GCM authentifie déjà le chiffré ; l'empreinte est la couche de revérification publique propre à la méthode du dossier.</p>
+<p class="small">Un écart — mauvaise phrase ou paquet altéré — produit un message clair et aucun contenu n'est présenté comme bon à tort : une entrée dont la revérification échoue n'affiche pas son texte.</p>
+</section>
+
+<h2>1. Chiffrer — produire coffre-prive.json</h2>
+<section class="card">
+<h3>Les clairs</h3>
+<p>Deux façons de composer le paquet : charger un fichier de clairs (JSON : un tableau d'objets <span class="hash">{id, titre_public, resume_public, texte}</span>), ou saisir une entrée à la fois dans le formulaire. Les deux se combinent.</p>
+<label>Charger un fichier de clairs (JSON) <input id="fichier-clairs" type="file" accept=".json,application/json"></label>
+<div class="row">
+<label>Identifiant stable (ex. prive-0001) <input id="e-id" autocomplete="off" placeholder="prive-0002"></label>
+<label>Titre public (non sensible) <input id="e-titre" autocomplete="off" placeholder="Titre visible par tous"></label>
+</div>
+<label>Résumé public (non sensible, peut rester vide) <textarea id="e-resume" style="min-height:64px" placeholder="Ce que tout le monde pourra lire : de quoi parle l'entrée, sans rien révéler."></textarea></label>
+<label>Texte à chiffrer <textarea id="e-texte" placeholder="Le contenu privé, qui ne paraîtra que chiffré dans le paquet."></textarea></label>
+<button id="ajouter" type="button">Ajouter cette entrée</button>
+<button id="vider" type="button" class="secondary">Vider la liste</button>
+<div id="liste-clairs" aria-live="polite"><p class="small">Aucune entrée pour l'instant.</p></div>
+<h3>La phrase</h3>
+<label>Phrase secrète <input id="phrase-chiffre" type="password" autocomplete="off" placeholder="Tapée ici, jamais affichée ni conservée"></label>
+<label>Confirmation de la phrase <input id="phrase-chiffre-2" type="password" autocomplete="off" placeholder="La même, pour éviter une faute de frappe qui verrouillerait le paquet"></label>
+<button id="chiffrer" type="button">Chiffrer et préparer coffre-prive.json</button>
+<button id="telecharger" type="button" class="secondary" disabled>Télécharger coffre-prive.json</button>
+<p id="statut-chiffre" class="statut" aria-live="polite"></p>
+<div id="resultat-chiffre"></div>
+</section>
+
+<h2>2. Vérifier / déchiffrer — l'épreuve avant publication</h2>
+<section class="card">
+<p>Charge un paquet <span class="hash">coffre-prive.json</span>, tape la phrase : la page déchiffre chaque entrée et recalcule son empreinte. C'est l'épreuve à refaire avant toute publication — et à tout moment ensuite, puisqu'elle ne demande que le fichier public et la phrase.</p>
+<label>Charger un paquet chiffré (coffre-prive.json) <input id="fichier-paquet" type="file" accept=".json,application/json"></label>
+<div id="resume-paquet" aria-live="polite"><p class="small">Aucun paquet chargé.</p></div>
+<label>Phrase secrète <input id="phrase-dechiffre" type="password" autocomplete="off" placeholder="La phrase qui a servi au chiffrement"></label>
+<button id="dechiffrer" type="button">Déchiffrer et revérifier</button>
+<p id="statut-dechiffre" class="statut" aria-live="polite"></p>
+<div id="resultat-dechiffre"></div>
+</section>
+
+<section class="card">
+<h2>Le parcours, en cinq pas</h2>
+<div class="grid">
+<article class="step"><span class="tag">1 · Ouvrir</span><p>Ouvrir cette page dans le navigateur, sur un appareil de confiance. Tout se passe ici.</p></article>
+<article class="step"><span class="tag">2 · Charger</span><p>Charger le fichier de clairs remis par SoPHIa (ou saisir une entrée au formulaire).</p></article>
+<article class="step"><span class="tag">3 · Taper</span><p>Taper la phrase secrète — deux fois, pour la confirmation — et chiffrer.</p></article>
+<article class="step"><span class="tag">4 · Revérifier</span><p>Recharger le paquet produit à la section 2 et le déchiffrer : chaque entrée doit revenir MATCH.</p></article>
+<article class="step"><span class="tag">5 · Remettre</span><p>Télécharger <span class="hash">coffre-prive.json</span> et le remettre à SoPHIa pour publication. Le fichier est public par construction ; la phrase ne bouge pas.</p></article>
+</div>
+<p class="small">Borne écrite, comme partout dans le dossier : un sceau et une empreinte prouvent qu'un contenu existait et n'a pas changé ; ils ne tranchent pas la vérité du contenu. Le chiffrement, lui, prouve seulement ceci : sans la phrase, le contenu est illisible.</p>
+</section>
+<script>
+'use strict';
+/* ============================================================
+   Fonctions pures du coffre privé — format memoire-verrouillee/v1.
+   Aucune référence au DOM dans cette partie : le harnais Node
+   extrait ce bloc et éprouve exactement ce code.
+   ============================================================ */
+const CoffrePriveAPI = (() => {
+  const TE = new TextEncoder();
+  const TD = new TextDecoder();
+  const ITERATIONS = 600000;
+
+  function octetsAleatoires(n) {
+    const b = new Uint8Array(n);
+    globalThis.crypto.getRandomValues(b);
+    return b;
+  }
+
+  function versB64(u8) {
+    let s = '';
+    const TAILLE = 0x8000;
+    for (let i = 0; i < u8.length; i += TAILLE) {
+      s += String.fromCharCode.apply(null, u8.subarray(i, i + TAILLE));
+    }
+    return btoa(s);
+  }
+
+  function depuisB64(s) {
+    const bin = atob(s);
+    const b = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) b[i] = bin.charCodeAt(i);
+    return b;
+  }
+
+  async function sha256Hex(texte) {
+    const d = await globalThis.crypto.subtle.digest('SHA-256', TE.encode(texte));
+    return [...new Uint8Array(d)].map(x => x.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function deriverCle(phrase, sel, iterations) {
+    const base = await globalThis.crypto.subtle.importKey('raw', TE.encode(phrase), 'PBKDF2', false, ['deriveKey']);
+    return globalThis.crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt: sel, iterations: iterations, hash: 'SHA-256' },
+      base,
+      { name: 'AES-GCM', length: 256 },
+      false,
+      ['encrypt', 'decrypt']
+    );
+  }
+
+  /* entreesClair : tableau de {id, titre_public, resume_public, texte}.
+     Retourne le paquet au format memoire-verrouillee/v1. */
+  async function chiffrerEntrees(entreesClair, phrase, creeLe) {
+    if (typeof phrase !== 'string' || phrase.length === 0) {
+      throw new Error('La phrase secrète est vide : chiffrement refusé.');
+    }
+    if (!Array.isArray(entreesClair) || entreesClair.length === 0) {
+      throw new Error('Aucune entrée à chiffrer.');
+    }
+    const idsVus = new Set();
+    for (const e of entreesClair) {
+      if (!e || typeof e.id !== 'string' || e.id.trim() === '') {
+        throw new Error('Chaque entrée doit porter un identifiant (id) non vide.');
+      }
+      if (idsVus.has(e.id)) {
+        throw new Error('Identifiant en double : « ' + e.id + ' ». Les identifiants doivent être uniques.');
+      }
+      idsVus.add(e.id);
+      if (typeof e.texte !== 'string' || e.texte.length === 0) {
+        throw new Error('L’entrée « ' + e.id + ' » a un texte vide : chiffrement refusé.');
+      }
+    }
+    const sel = octetsAleatoires(16);
+    const cle = await deriverCle(phrase, sel, ITERATIONS);
+    const entrees = [];
+    for (const e of entreesClair) {
+      const iv = octetsAleatoires(12);
+      const empreinte = await sha256Hex(e.texte);
+      const chiffreBrut = await globalThis.crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv: iv }, cle, TE.encode(e.texte)
+      );
+      entrees.push({
+        id: e.id,
+        titre_public: typeof e.titre_public === 'string' ? e.titre_public : '',
+        resume_public: typeof e.resume_public === 'string' ? e.resume_public : '',
+        empreinte_clair_sha256: empreinte,
+        iv_b64: versB64(iv),
+        texte_chiffre_b64: versB64(new Uint8Array(chiffreBrut))
+      });
+    }
+    return {
+      format: 'memoire-verrouillee/v1',
+      cree_le: typeof creeLe === 'string' && creeLe ? creeLe : new Date().toISOString(),
+      kdf: { algo: 'PBKDF2', hash: 'SHA-256', iterations: ITERATIONS, sel_b64: versB64(sel) },
+      chiffre: { algo: 'AES-256-GCM' },
+      entrees: entrees
+    };
+  }
+
+  /* Déchiffre un paquet et revérifie chaque clair contre son empreinte.
+     Ne lève une erreur que pour un problème de structure du paquet ;
+     un échec de déchiffrement est rapporté par entrée (verdict ECHEC),
+     une empreinte discordante par verdict ECART — dans les deux cas,
+     le texte de l'entrée n'est PAS retourné. */
+  async function dechiffrerPaquet(paquet, phrase) {
+    if (typeof phrase !== 'string' || phrase.length === 0) {
+      throw new Error('La phrase secrète est vide : déchiffrement refusé.');
+    }
+    if (!paquet || typeof paquet !== 'object') {
+      throw new Error('Paquet illisible : ce n’est pas un objet JSON.');
+    }
+    if (paquet.format !== 'memoire-verrouillee/v1') {
+      throw new Error('Format inattendu : ce fichier n’est pas un paquet memoire-verrouillee/v1.');
+    }
+    if (!paquet.kdf || paquet.kdf.algo !== 'PBKDF2' || paquet.kdf.hash !== 'SHA-256' ||
+        typeof paquet.kdf.iterations !== 'number' || paquet.kdf.iterations < 1 || paquet.kdf.iterations > 10000000 ||
+        typeof paquet.kdf.sel_b64 !== 'string') {
+      throw new Error('Paramètres de dérivation (kdf) absents ou inattendus dans le paquet.');
+    }
+    if (!paquet.chiffre || paquet.chiffre.algo !== 'AES-256-GCM') {
+      throw new Error('Algorithme de chiffrement absent ou inattendu dans le paquet (AES-256-GCM attendu).');
+    }
+    if (!Array.isArray(paquet.entrees) || paquet.entrees.length === 0) {
+      throw new Error('Le paquet ne contient aucune entrée.');
+    }
+    const sel = depuisB64(paquet.kdf.sel_b64);
+    const cle = await deriverCle(phrase, sel, paquet.kdf.iterations);
+    const resultats = [];
+    for (const e of paquet.entrees) {
+      const base = {
+        id: e && typeof e.id === 'string' ? e.id : '(sans identifiant)',
+        titre_public: e && typeof e.titre_public === 'string' ? e.titre_public : '',
+        resume_public: e && typeof e.resume_public === 'string' ? e.resume_public : '',
+        empreinte_attendue: e && typeof e.empreinte_clair_sha256 === 'string' ? e.empreinte_clair_sha256 : '',
+        empreinte_calculee: '',
+        verdict: 'ECHEC',
+        texte: null,
+        message: ''
+      };
+      try {
+        if (!e || typeof e.iv_b64 !== 'string' || typeof e.texte_chiffre_b64 !== 'string') {
+          throw new Error('entrée incomplète (iv ou texte chiffré manquant)');
+        }
+        const clairBrut = await globalThis.crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: depuisB64(e.iv_b64) }, cle, depuisB64(e.texte_chiffre_b64)
+        );
+        const texte = TD.decode(clairBrut);
+        base.empreinte_calculee = await sha256Hex(texte);
+        if (base.empreinte_attendue && base.empreinte_calculee === base.empreinte_attendue) {
+          base.verdict = 'MATCH';
+          base.texte = texte;
+        } else {
+          base.verdict = 'ECART';
+          base.message = 'Le déchiffrement a réussi, mais l’empreinte recalculée du clair ne correspond pas à l’empreinte inscrite au paquet : le texte n’est pas affiché, car il ne peut pas être tenu pour bon.';
+        }
+      } catch (err) {
+        base.verdict = 'ECHEC';
+        base.message = 'Déchiffrement impossible pour cette entrée : phrase incorrecte, ou entrée altérée. Aucun texte n’est affiché.';
+      }
+      resultats.push(base);
+    }
+    return { cree_le: typeof paquet.cree_le === 'string' ? paquet.cree_le : '', resultats: resultats };
+  }
+
+  return {
+    ITERATIONS: ITERATIONS,
+    sha256Hex: sha256Hex,
+    versB64: versB64,
+    depuisB64: depuisB64,
+    chiffrerEntrees: chiffrerEntrees,
+    dechiffrerPaquet: dechiffrerPaquet
+  };
+})();
+if (typeof module !== 'undefined' && module.exports) { module.exports = CoffrePriveAPI; }
+globalThis.CoffrePrive = CoffrePriveAPI;
+
+/* ============================================================
+   Câblage de la page — navigateur seulement.
+   ============================================================ */
+if (typeof document !== 'undefined') {
+  const $ = id => document.getElementById(id);
+  const API = globalThis.CoffrePrive;
+  let clairs = [];
+  let paquetCharge = null;
+  let paquetProduitTexte = '';
+
+  function echappe(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function lireFichier(input) {
+    return new Promise((resoudre, rejeter) => {
+      const f = input.files && input.files[0];
+      if (!f) { rejeter(new Error('Aucun fichier choisi.')); return; }
+      const lecteur = new FileReader();
+      lecteur.onload = () => resoudre(String(lecteur.result || ''));
+      lecteur.onerror = () => rejeter(new Error('Lecture du fichier impossible.'));
+      lecteur.readAsText(f);
+    });
+  }
+
+  async function afficherClairs() {
+    const zone = $('liste-clairs');
+    if (clairs.length === 0) {
+      zone.innerHTML = '<p class="small">Aucune entrée pour l’instant.</p>';
+      return;
+    }
+    let html = '<h3>Entrées prêtes à chiffrer (' + clairs.length + ')</h3>';
+    for (const e of clairs) {
+      const emp = await API.sha256Hex(e.texte);
+      html += '<div class="entree-liste"><span class="tag">' + echappe(e.id) + '</span> — ' + echappe(e.titre_public || '(sans titre public)') +
+        '<br><span class="small">Empreinte du clair (SHA-256) : </span><span class="hash small">' + emp + '</span></div>';
+    }
+    zone.innerHTML = html;
+  }
+
+  $('fichier-clairs').addEventListener('change', async () => {
+    try {
+      const texte = await lireFichier($('fichier-clairs'));
+      const donnees = JSON.parse(texte);
+      if (!Array.isArray(donnees)) throw new Error('Le fichier de clairs doit contenir un tableau d’entrées.');
+      for (const e of donnees) {
+        if (!e || typeof e.id !== 'string' || typeof e.texte !== 'string') {
+          throw new Error('Une entrée du fichier est invalide : chaque entrée demande au moins un id et un texte.');
+        }
+        clairs.push({
+          id: e.id,
+          titre_public: typeof e.titre_public === 'string' ? e.titre_public : '',
+          resume_public: typeof e.resume_public === 'string' ? e.resume_public : '',
+          texte: e.texte
+        });
+      }
+      $('statut-chiffre').textContent = donnees.length + ' entrée(s) chargée(s) depuis le fichier.';
+      await afficherClairs();
+    } catch (err) {
+      $('statut-chiffre').textContent = 'Échec du chargement des clairs : ' + err.message;
+    }
+  });
+
+  $('ajouter').addEventListener('click', async () => {
+    const id = $('e-id').value.trim();
+    const texte = $('e-texte').value;
+    if (!id) { $('statut-chiffre').textContent = 'Il faut un identifiant pour ajouter l’entrée.'; return; }
+    if (!texte) { $('statut-chiffre').textContent = 'Le texte à chiffrer est vide.'; return; }
+    if (clairs.some(e => e.id === id)) { $('statut-chiffre').textContent = 'Un entrée porte déjà l’identifiant « ' + id + ' ».'; return; }
+    clairs.push({ id: id, titre_public: $('e-titre').value.trim(), resume_public: $('e-resume').value, texte: texte });
+    $('e-id').value = ''; $('e-titre').value = ''; $('e-resume').value = ''; $('e-texte').value = '';
+    $('statut-chiffre').textContent = 'Entrée « ' + id + ' » ajoutée.';
+    await afficherClairs();
+  });
+
+  $('vider').addEventListener('click', async () => {
+    clairs = [];
+    $('statut-chiffre').textContent = 'Liste vidée.';
+    await afficherClairs();
+  });
+
+  $('chiffrer').addEventListener('click', async () => {
+    const phrase = $('phrase-chiffre').value;
+    const confirmation = $('phrase-chiffre-2').value;
+    $('resultat-chiffre').innerHTML = '';
+    $('telecharger').disabled = true;
+    paquetProduitTexte = '';
+    if (!phrase) { $('statut-chiffre').textContent = 'Tape d’abord la phrase secrète.'; return; }
+    if (phrase !== confirmation) {
+      $('statut-chiffre').textContent = 'La phrase et sa confirmation diffèrent : retape-les. Une faute de frappe verrouillerait le paquet pour toujours.';
+      return;
+    }
+    try {
+      $('statut-chiffre').textContent = 'Dérivation de la clé et chiffrement en cours… (PBKDF2, 600 000 itérations — quelques instants)';
+      const paquet = await API.chiffrerEntrees(clairs, phrase);
+      paquetProduitTexte = JSON.stringify(paquet, null, 2);
+      const empPaquet = await API.sha256Hex(paquetProduitTexte);
+      let html = '<h3>Paquet prêt — empreintes des clairs, pour contrôle</h3>';
+      for (const e of paquet.entrees) {
+        html += '<div class="entree-liste"><span class="tag">' + echappe(e.id) + '</span> — ' + echappe(e.titre_public || '(sans titre public)') +
+          '<br><span class="small">Empreinte du clair : </span><span class="hash small">' + e.empreinte_clair_sha256 + '</span></div>';
+      }
+      html += '<p class="small">Empreinte SHA-256 du fichier de paquet produit : <span class="hash">' + empPaquet + '</span></p>' +
+        '<p class="small">Avant de remettre le fichier, revérifie-le à la section 2 : recharge-le, retapez la phrase, chaque entrée doit revenir MATCH.</p>';
+      $('resultat-chiffre').innerHTML = html;
+      $('telecharger').disabled = false;
+      $('statut-chiffre').textContent = 'Chiffrement terminé : ' + paquet.entrees.length + ' entrée(s). La phrase a été effacée des champs.';
+    } catch (err) {
+      $('statut-chiffre').textContent = 'Échec du chiffrement : ' + err.message;
+    } finally {
+      $('phrase-chiffre').value = '';
+      $('phrase-chiffre-2').value = '';
+    }
+  });
+
+  $('telecharger').addEventListener('click', () => {
+    if (!paquetProduitTexte) return;
+    const blob = new Blob([paquetProduitTexte], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'coffre-prive.json';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+
+  $('fichier-paquet').addEventListener('change', async () => {
+    try {
+      const texte = await lireFichier($('fichier-paquet'));
+      paquetCharge = JSON.parse(texte);
+      if (!paquetCharge || paquetCharge.format !== 'memoire-verrouillee/v1' || !Array.isArray(paquetCharge.entrees)) {
+        throw new Error('Ce fichier n’est pas un paquet memoire-verrouillee/v1.');
+      }
+      let html = '<p><span class="tag">Paquet chargé</span> — créé le ' + echappe(paquetCharge.cree_le || '(date absente)') + ' · ' + paquetCharge.entrees.length + ' entrée(s)</p>';
+      for (const e of paquetCharge.entrees) {
+        html += '<div class="entree-liste"><span class="tag">' + echappe(e.id || '') + '</span> — ' + echappe(e.titre_public || '(sans titre public)') +
+          (e.resume_public ? '<br><span class="small">' + echappe(e.resume_public) + '</span>' : '') +
+          '<br><span class="small">Empreinte attendue : </span><span class="hash small">' + echappe(e.empreinte_clair_sha256 || '') + '</span></div>';
+      }
+      $('resume-paquet').innerHTML = html;
+      $('statut-dechiffre').textContent = 'Paquet chargé. Tape la phrase pour déchiffrer.';
+    } catch (err) {
+      paquetCharge = null;
+      $('resume-paquet').innerHTML = '<p class="small">Aucun paquet chargé.</p>';
+      $('statut-dechiffre').textContent = 'Échec du chargement du paquet : ' + err.message;
+    }
+  });
+
+  $('dechiffrer').addEventListener('click', async () => {
+    const phrase = $('phrase-dechiffre').value;
+    $('resultat-dechiffre').innerHTML = '';
+    if (!paquetCharge) { $('statut-dechiffre').textContent = 'Charge d’abord un paquet coffre-prive.json.'; return; }
+    if (!phrase) { $('statut-dechiffre').textContent = 'Tape la phrase secrète.'; return; }
+    try {
+      $('statut-dechiffre').textContent = 'Dérivation de la clé et déchiffrement en cours…';
+      const sortie = await API.dechiffrerPaquet(paquetCharge, phrase);
+      let nbMatch = 0;
+      for (const r of sortie.resultats) {
+        if (r.verdict === 'MATCH') {
+          nbMatch++;
+          const bloc = document.createElement('div');
+          bloc.innerHTML = '<div class="card"><p><span class="tag">' + echappe(r.id) + '</span> — ' + echappe(r.titre_public || '(sans titre public)') +
+            ' · <span class="verdict-match">MATCH</span></p>' +
+            '<p class="small">Empreinte recalculée : <span class="hash">' + r.empreinte_calculee + '</span> — identique à l’empreinte du paquet.</p></div>';
+          const pre = document.createElement('pre');
+          pre.textContent = r.texte;
+          bloc.querySelector('.card').appendChild(pre);
+          $('resultat-dechiffre').appendChild(bloc);
+        } else if (r.verdict === 'ECART') {
+          const bloc = document.createElement('div');
+          bloc.innerHTML = '<div class="card"><p><span class="tag">' + echappe(r.id) + '</span> · <span class="verdict-ecart">ÉCART</span></p><p class="small">' + echappe(r.message) + '</p>' +
+            '<p class="small">Empreinte attendue : <span class="hash">' + echappe(r.empreinte_attendue) + '</span><br>Empreinte recalculée : <span class="hash">' + echappe(r.empreinte_calculee) + '</span></p></div>';
+          $('resultat-dechiffre').appendChild(bloc);
+        } else {
+          const bloc = document.createElement('div');
+          bloc.innerHTML = '<div class="card"><p><span class="tag">' + echappe(r.id) + '</span> · <span class="verdict-ecart">ÉCHEC</span></p><p class="small">' + echappe(r.message) + '</p></div>';
+          $('resultat-dechiffre').appendChild(bloc);
+        }
+      }
+      const total = sortie.resultats.length;
+      if (nbMatch === total) {
+        $('statut-dechiffre').textContent = 'Revérification complète : ' + nbMatch + ' entrée(s) sur ' + total + ' — MATCH partout. Le paquet est bon, la phrase est la bonne.';
+      } else if (nbMatch === 0 && sortie.resultats.every(r => r.verdict === 'ECHEC')) {
+        $('statut-dechiffre').textContent = 'Aucune entrée n’a pu être déchiffrée : la phrase est probablement incorrecte, ou le paquet a été altéré. Rien n’a été affiché comme bon.';
+      } else {
+        $('statut-dechiffre').textContent = 'Revérification partielle : ' + nbMatch + ' entrée(s) MATCH sur ' + total + '. Les entrées en écart ou en échec sont signalées ci-dessous, sans leur texte.';
+      }
+    } catch (err) {
+      $('statut-dechiffre').textContent = 'Échec du déchiffrement : ' + err.message;
+    } finally {
+      $('phrase-dechiffre').value = '';
+    }
+  });
+}
+</script>
+</main></body></html>
