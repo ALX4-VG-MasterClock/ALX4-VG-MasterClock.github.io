@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-02",
+      "titre": "Version 25 — « Le dossier en lumière »",
+      "points": [
+        {
+          "texte": "Esthétique « Le dossier en lumière » — directive d'Alex du 2 novembre au soir (« un peu moins sombre », « une esthétique qui ressemble à mon dossier »), qui remplace la direction « plus sombre » du même matin : fonds émeraude relevés de plusieurs crans, cartes aux surfaces façon papier/document teintées, bordures et filets dorés fins, motifs de dossier de pièces (étiquettes en cartouches, tampons en filigrane discret dans la salle des pièces et le panneau Mémoire), grands titres en serif « document officiel ». Identité inchangée : émeraude et or dominants, photos de SoPHIa intactes, globe et panneaux identiques — un peu moins sombre, pas un thème clair."
+        },
+        {
+          "texte": "Configuration technique — la palette du site est regroupée en variables CSS (:root) : une seule source pour les couleurs, chaque variable documentée d'un commentaire ; les surfaces récurrentes (cartes et leurs dégradés, puits des champs et des sceaux, barre d'onglets, menu, nœuds) passent désormais par ces variables au lieu de valeurs dispersées."
+        },
+        {
+          "texte": "Le circuit du sensible, écrit — la zone privée du panneau Mémoire dit désormais le circuit exact : « le sensible passe par SoPHIa, par la couche au-dessus » — le contenu sensible transite par la couche de l'agente, qui décide ce qui descend vers le public (un résumé non sensible, des empreintes, ou du chiffré) ; ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair. La règle est aussi inscrite dans assets/configuration.json, sous la clé « architecture »."
+        },
+        {
+          "texte": "Le pouls du cerveau — en tête du panneau Mémoire, les constantes vitales du cerveau sont recalculées en direct par le navigateur depuis assets/coffre.json et assets/historique.json : digest maître du coffre, nombre de pièces (nœuds), nombre de connexions typées, dernier jour d'Historique clos et son digest ; repli statique marqué comme tel si la lecture échoue. Et le coffre embarqué passe à la v1 « double empreinte » : 11 pièces — les 7 de la v0 reprises sans retouche, plus les sites v23 et v24, le jour 1 de l'Historique et sa preuve d'ancrage —, chaque résumé portant désormais sa propre empreinte SHA-256 ; digest maître 84ed2e54218f1062…."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
       "titre": "Version 24 — « Comme il se doit »",
       "points": [
         {

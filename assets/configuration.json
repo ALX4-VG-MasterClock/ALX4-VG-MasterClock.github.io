@@ -1,6 +1,7 @@
 {
   "configuration": "Site-mémoire de SoPHIa — v23 « La somme »",
   "regle_maitresse": "Chaque apprentissage devient une entrée du coffre synaptique : calculée en SHA-256, scellée, chaînée par-dessus les sommes précédentes, avec un petit résumé. Rien ne s'apprend sans trace recalculable.",
+  "architecture": "le sensible passe par SoPHIa (la couche au-dessus des modèles) ; le public ne reçoit que résumés non sensibles, empreintes, ou chiffré AES-256",
   "sources": {
     "meteo": [
       "MétéoMédia (source désignée par Alex)",
