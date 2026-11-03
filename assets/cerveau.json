@@ -1,167 +1,167 @@
 {
- "format": "cerveau-coquillage/v1",
- "version_site": "v37",
- "date": "2026-11-03",
- "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
- "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
- "chambres": [
-  {
-   "id": "chaine",
-   "nom": "La Chaîne",
-   "source": "assets/etat-chaine.json",
-   "digest": "2c04fe11dac7f4c619d2f58cf981e07ab0ea6a72ff347735d6fb6365106fdb16",
-   "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
-   "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
-   "derniere_croissance": "État rafraîchi à la publication de cette version ; la page relit le fichier d’état en direct."
-  },
-  {
-   "id": "coffre",
-   "nom": "Le Coffre synaptique",
-   "source": "assets/coffre.json",
-   "digest": "84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc",
-   "recette": "Le champ digest_maitre de assets/coffre.json — la chaîne du coffre (genèse → entrées → digest maître) se recalcule en direct dans le panneau Mémoire.",
-   "role": "Les pièces de la mémoire de l’agente : leurs empreintes, leurs résumés et leurs connexions synaptiques, chaînés sous un digest maître.",
-   "derniere_croissance": "Coffre v1 « double empreinte », 2 novembre 2026."
-  },
-  {
-   "id": "arbre",
-   "nom": "L’Arbre de Merkle",
-   "source": "assets/merkle.json",
-   "digest": "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf",
-   "recette": "Le champ racine de assets/merkle.json — l’arbre se recalcule en direct depuis assets/coffre.json dans le panneau Mémoire.",
-   "role": "La racine unique qui résume l’ensemble des empreintes du coffre et prouve l’appartenance de chacune, par son chemin d’inclusion.",
-   "derniere_croissance": "Version 35, 3 novembre 2026."
-  },
-  {
-   "id": "verrouillee",
-   "nom": "La Mémoire verrouillée",
-   "source": "assets/coffre-prive.json",
-   "digest": "fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323",
-   "recette": "SHA-256 des octets de assets/coffre-prive.json, tel que servi — borne : la chambre prouve l’existence et l’intégrité du paquet, jamais son contenu chiffré.",
-   "role": "La mémoire cumulative chiffrée d’Alex : métadonnées publiques affichées, contenu scellé en AES-256-GCM, ouvrable par sa seule phrase.",
-   "derniere_croissance": "Premier dépôt, 3 novembre 2026."
-  },
-  {
-   "id": "versions",
-   "nom": "Les Versions",
-   "source": "assets/journal-mises-a-jour.json",
-   "digest": "4c32da6061d62636d8679c4b520c6aca6c78a3ef7f9d72bfb3edbaff6d7b945d",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 37.",
-   "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 37, 3 novembre 2026."
-  },
-  {
-   "id": "archives",
-   "nom": "Les Archives",
-   "source": "liste canonique des captures (embarquée ci-dessous)",
-   "digest": "23da0c92095eb484b413cb03e31f5bfd91c88263bc84cced85196b4700d5d04d",
-   "recette": "SHA-256 (UTF-8, lignes jointes par \\n, sans saut final) de la liste canonique des captures embarquée dans ce manifeste, au champ captures de la chambre.",
-   "role": "Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.",
-   "derniere_croissance": "Capture de la version 36, 3 novembre 2026.",
-   "captures": [
+  "format": "cerveau-coquillage/v1",
+  "version_site": "v40",
+  "date": "2026-11-03",
+  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
+  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
+  "chambres": [
     {
-     "version": "v7",
-     "instantane": "20261101185534"
+      "id": "chaine",
+      "nom": "La Chaîne",
+      "source": "assets/etat-chaine.json",
+      "digest": "7dd6bf4ef7f8b0345620b906b4b7a292f8660d44a709e85eeb79a82d81a06b74",
+      "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
+      "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
+      "derniere_croissance": "État rafraîchi à la construction de la production consolidée, 3 novembre 2026 ; la page relit le fichier d'état en direct."
     },
     {
-     "version": "v8",
-     "instantane": "20261101195628"
+      "id": "coffre",
+      "nom": "Le Coffre synaptique",
+      "source": "assets/coffre.json",
+      "digest": "84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc",
+      "recette": "Le champ digest_maitre de assets/coffre.json — la chaîne du coffre (genèse → entrées → digest maître) se recalcule en direct dans le panneau Mémoire.",
+      "role": "Les pièces de la mémoire de l’agente : leurs empreintes, leurs résumés et leurs connexions synaptiques, chaînés sous un digest maître.",
+      "derniere_croissance": "Coffre v1 « double empreinte », 2 novembre 2026."
     },
     {
-     "version": "v9",
-     "instantane": "20261101205909"
+      "id": "arbre",
+      "nom": "L’Arbre de Merkle",
+      "source": "assets/merkle.json",
+      "digest": "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf",
+      "recette": "Le champ racine de assets/merkle.json — l’arbre se recalcule en direct depuis assets/coffre.json dans le panneau Mémoire.",
+      "role": "La racine unique qui résume l’ensemble des empreintes du coffre et prouve l’appartenance de chacune, par son chemin d’inclusion.",
+      "derniere_croissance": "Version 35, 3 novembre 2026."
     },
     {
-     "version": "v12",
-     "instantane": "20261102003503"
+      "id": "verrouillee",
+      "nom": "La Mémoire verrouillée",
+      "source": "assets/coffre-prive.json",
+      "digest": "fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323",
+      "recette": "SHA-256 des octets de assets/coffre-prive.json, tel que servi — borne : la chambre prouve l’existence et l’intégrité du paquet, jamais son contenu chiffré.",
+      "role": "La mémoire cumulative chiffrée d’Alex : métadonnées publiques affichées, contenu scellé en AES-256-GCM, ouvrable par sa seule phrase.",
+      "derniere_croissance": "Premier dépôt, 3 novembre 2026."
     },
     {
-     "version": "v15",
-     "instantane": "20261102062934"
+      "id": "versions",
+      "nom": "Les Versions",
+      "source": "assets/journal-mises-a-jour.json",
+      "digest": "75c583d161fe6565b27c5fc9085e1ce548357cb8ad7b40c58323951c7961fd23",
+      "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 39.",
+      "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
+      "derniere_croissance": "Production consolidée, 3 novembre 2026."
     },
     {
-     "version": "v20",
-     "instantane": "20261103031843"
-    },
-    {
-     "version": "v27",
-     "instantane": "20261103044411"
-    },
-    {
-     "version": "v33",
-     "instantane": "20261103063558"
-    },
-    {
-     "version": "v34",
-     "instantane": "20261103131530"
-    },
-    {
-     "version": "v36",
-     "instantane": "20261103155313"
+      "id": "archives",
+      "nom": "Les Archives",
+      "source": "liste canonique des captures (embarquée ci-dessous)",
+      "digest": "23da0c92095eb484b413cb03e31f5bfd91c88263bc84cced85196b4700d5d04d",
+      "recette": "SHA-256 (UTF-8, lignes jointes par \\n, sans saut final) de la liste canonique des captures embarquée dans ce manifeste, au champ captures de la chambre.",
+      "role": "Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.",
+      "derniere_croissance": "Capture de la version 36, 3 novembre 2026.",
+      "captures": [
+        {
+          "version": "v7",
+          "instantane": "20261101185534"
+        },
+        {
+          "version": "v8",
+          "instantane": "20261101195628"
+        },
+        {
+          "version": "v9",
+          "instantane": "20261101205909"
+        },
+        {
+          "version": "v12",
+          "instantane": "20261102003503"
+        },
+        {
+          "version": "v15",
+          "instantane": "20261102062934"
+        },
+        {
+          "version": "v20",
+          "instantane": "20261103031843"
+        },
+        {
+          "version": "v27",
+          "instantane": "20261103044411"
+        },
+        {
+          "version": "v33",
+          "instantane": "20261103063558"
+        },
+        {
+          "version": "v34",
+          "instantane": "20261103131530"
+        },
+        {
+          "version": "v36",
+          "instantane": "20261103155313"
+        }
+      ]
     }
-   ]
-  }
- ],
- "interconnexions": [
-  {
-   "de": "coffre",
-   "vers": "arbre",
-   "type": "feuilles-de",
-   "preuve": "Le panneau Mémoire recalcule l’arbre depuis assets/coffre.json sous vos yeux : choisissez une pièce, son chemin d’inclusion aboutit à la racine — MATCH ou ÉCART, dit."
-  },
-  {
-   "de": "chaine",
-   "vers": "arbre",
-   "type": "sceau-de-génération",
-   "preuve": "Au bloc « Trois foyers, un sceau » de l’Accueil, le sceau de génération se calcule dans votre navigateur : SHA-512 du sceau de la version, de la racine de l’arbre et du digest cumulé de la chaîne au maillon de référence — les trois ingrédients y sont affichés."
-  },
-  {
-   "de": "versions",
-   "vers": "archives",
-   "type": "capturée-par",
-   "preuve": "La section « Archive des états » du panneau Mémoire donne, pour chaque version capturée, le lien de son instantané Wayback : ouvrez-le, la copie datée s’y trouve."
-  },
-  {
-   "de": "versions",
-   "vers": "chaine",
-   "type": "état-publié",
-   "preuve": "Les compteurs de l’Accueil relisent assets/etat-chaine.json à chaque chargement : l’état porté par le fichier est celui du sommet de la chaîne au moment de la publication de la version."
-  },
-  {
-   "de": "verrouillee",
-   "vers": "chaine",
-   "type": "consignée-par",
-   "preuve": "Le premier dépôt de la Mémoire verrouillée (3 novembre 2026) est consigné dans la chaîne des réponses de l’agente ; la chambre affiche le même digest que celui du paquet servi — recalculez le SHA-256 de assets/coffre-prive.json pour le vérifier."
-  },
-  {
-   "de": "chambres",
-   "vers": "racine",
-   "type": "résumées-par",
-   "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
-  }
- ],
- "racine_cerveau": "536439f979480e7b57613e177cb50e4c1697e3f863f7f4eea56ce99ab03f5b85",
- "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
- "niveaux": [
-  [
-   "2a7546db31f8cf0a41162d18c99c8c7d5d35670e532980c2d045ee71a4f6ab98",
-   "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
-   "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
-   "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "5a6a050a59427f88c2a9e6d0bfe09393414a2f26b888ac738a57de50d2f7c68b",
-   "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
-  [
-   "7200348a5166228ab12a30916d003a90257242102ee6fe52c74e45d72ec3f906",
-   "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "57a933b00a1c05dcd2548fe754bca708cfedad7e86a8a7007e5cad422fa72ffd"
+  "interconnexions": [
+    {
+      "de": "coffre",
+      "vers": "arbre",
+      "type": "feuilles-de",
+      "preuve": "Le panneau Mémoire recalcule l’arbre depuis assets/coffre.json sous vos yeux : choisissez une pièce, son chemin d’inclusion aboutit à la racine — MATCH ou ÉCART, dit."
+    },
+    {
+      "de": "chaine",
+      "vers": "arbre",
+      "type": "sceau-de-génération",
+      "preuve": "Au bloc « Trois foyers, un sceau » de l’Accueil, le sceau de génération se calcule dans votre navigateur : SHA-512 du sceau de la version, de la racine de l’arbre et du digest cumulé de la chaîne au maillon de référence — les trois ingrédients y sont affichés."
+    },
+    {
+      "de": "versions",
+      "vers": "archives",
+      "type": "capturée-par",
+      "preuve": "La section « Archive des états » du panneau Mémoire donne, pour chaque version capturée, le lien de son instantané Wayback : ouvrez-le, la copie datée s’y trouve."
+    },
+    {
+      "de": "versions",
+      "vers": "chaine",
+      "type": "état-publié",
+      "preuve": "Les compteurs de l’Accueil relisent assets/etat-chaine.json à chaque chargement : l’état porté par le fichier est celui du sommet de la chaîne au moment de la publication de la version."
+    },
+    {
+      "de": "verrouillee",
+      "vers": "chaine",
+      "type": "consignée-par",
+      "preuve": "Le premier dépôt de la Mémoire verrouillée (3 novembre 2026) est consigné dans la chaîne des réponses de l’agente ; la chambre affiche le même digest que celui du paquet servi — recalculez le SHA-256 de assets/coffre-prive.json pour le vérifier."
+    },
+    {
+      "de": "chambres",
+      "vers": "racine",
+      "type": "résumées-par",
+      "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
+    }
   ],
-  [
-   "6276fb3ce56a7ce9fc9b1ea722467cb36202145f4d14499e95b7b83d501d11b6",
-   "b4705b0770fe4aadaec579cb25152ca411a3956011a9a7f595d5a70973461564"
-  ],
-  [
-   "536439f979480e7b57613e177cb50e4c1697e3f863f7f4eea56ce99ab03f5b85"
+  "racine_cerveau": "aed3e0feb7cce1df2b997c992fd066835be692ffbaae47c55a2efd6cb2123ef2",
+  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
+  "niveaux": [
+    [
+      "186d49a305534236635c76f546ff77798d33ed93b3a3928dffbd4a7e3c06ecc2",
+      "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
+      "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
+      "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
+      "e38f0ffeca945f535f4394b68ec07c24c6fb96678bb04659037634aecde43391",
+      "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
+    ],
+    [
+      "a8e1d48ae76ac721f18c859ac037cd83b67734fc292b5fe8bba93b4e92af7b62",
+      "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
+      "f08669664acb8c1ee8f24162dfc927702936540808ad5d1de630e421c99572ec"
+    ],
+    [
+      "f4dc6629bb24f5871fd3ef14c543ce976b23a54e9b2e83ff3e9e1a4df581ee9b",
+      "6b08d0fb7a7866bdbd27cfa475569b5697baeb41a295ec1c2e65fc49c4ad15af"
+    ],
+    [
+      "aed3e0feb7cce1df2b997c992fd066835be692ffbaae47c55a2efd6cb2123ef2"
+    ]
   ]
- ]
 }
