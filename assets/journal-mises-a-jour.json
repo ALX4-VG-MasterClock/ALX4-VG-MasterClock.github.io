@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-02",
+      "titre": "Version 26 — « Le cerveau visible »",
+      "points": [
+        {
+          "texte": "Le graphe du cerveau — dans le panneau Mémoire, les 11 pièces du coffre synaptique et leurs 21 connexions typées sont dessinées en direct, en SVG, depuis assets/coffre.json : chaque type de lien a sa couleur et sa légende, et le cartouche d’un nœud, au clic, donne son titre, son résumé, ses deux empreintes — celle de la pièce et celle du résumé — et ses connexions dans les deux sens. Repli honnête : si le fichier ne se charge pas, la liste des pièces paraît, dite comme repli."
+        },
+        {
+          "texte": "Demande au cerveau — la recherche par connexions : un champ distinct de celui du menu cherche dans les pièces du coffre (identifiant, titre, résumé) et répond par les pièces trouvées ET leurs voisins directs, liens sortants et entrants typés. Tout se calcule dans le navigateur, depuis le même fichier que le graphe — une seule lecture pour les deux mécanismes, rien ne part vers un serveur."
+        },
+        {
+          "texte": "La mémoire des désaccords — la vue qui rassemble les tensions consignées du coffre : connexions de type « contredit » et pièces marquées « contesté » (la fonction dérive : un écart entre le récit et les faits se consigne comme « contesté », sans réécrire l’original). Au jour de cette version, le coffre v1 n’en contient aucune — 0 lien « contredit », 0 pièce « contesté » — et la vue le dit en toutes lettres : elle existe pour le jour où une pièce en contredira une autre, et la tension paraîtra, consignée, jamais lissée."
+        },
+        {
+          "texte": "L’épreuve publique de reconstruction — trois questions dont les réponses se recalculent chez le visiteur, jamais par confiance : le digest maître du coffre et le nombre de ses pièces, relus à l’instant depuis assets/coffre.json, et le sceau canonique de la version lue, repris du bloc d’affichage. Score sur 3, juste ou écart question par question, bonnes réponses montrées après l’essai — elles sont publiques par construction. Aucune donnée ne quitte le navigateur."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
       "titre": "Version 25 — « Le dossier en lumière »",
       "points": [
         {
