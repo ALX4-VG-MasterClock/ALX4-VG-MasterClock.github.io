@@ -2,6 +2,30 @@
   "entrees": [
     {
       "date": "2026-11-02",
+      "titre": "Version 24 — « Comme il se doit »",
+      "points": [
+        {
+          "texte": "Calendrier 13 × 28 — le compte sidéral entre au panneau Temps : treize mois de vingt-huit jours comptés en rotations réelles de la Terre, depuis l'origine nommée du 1er janvier 2026 à Sainte-Martine — mois et jour courants, rotations écoulées, avance et prochain tour de surplus, recalculés en direct dans le navigateur, formules et constantes écrites dessous (le calcul donne 293,0 secondes après la fin du 364e jour ; la spec initiale disait environ 4 minutes 55 secondes — le calcul prime)."
+        },
+        {
+          "texte": "Historique quotidien — le panneau Mémoire liste désormais les jours clos : chaque nuit à 00 h 01, le jour écoulé est fermé, scellé et chaîné sur les sommes précédentes, puis son digest est ancré dehors (OpenTimestamps) ; le premier jour, le 2 novembre 2026, est clos avec le digest 4590519fa9408e79…, ancrage soumis le jour même, confirmation Bitcoin en attente. La règle est écrite dans la section : un jour manqué est un trou visible, jamais comblé avec une fausse date."
+        },
+        {
+          "texte": "Plein air à l'ancre — le panneau Météo gagne ses deux premières fiches-bulletins complètes, au patron demandé par Alex : l'UV (2, Bas, maximum 2 à 11 h, échelle complète en cinq niveaux expliqués, source KNMI) et la qualité de l'air (AQI 16, Bon, polluant principal l'ozone décrit, échelle québécoise en trois niveaux, source MELCC) ; pollen, moustiques et santé paraissent en pastilles honnêtes, étiquetées règles et observations. Chaque fiche porte sa borne : observations d'Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché."
+        },
+        {
+          "texte": "Quatre noms, quatre rôles — le panneau Méthode nomme enfin ce que le site porte : MASTERClock, l'infrastructure temporelle ; UNISSON, la mémoire, les relations et la provenance ; PCF-23, un protocole expérimental d'Alex dont les paramètres ne sont pas exposés ; SoPHIa, la couche d'assistance, de mémoire et de vérification qui opère le tout."
+        },
+        {
+          "texte": "Menu ☰ — un bouton hamburger dans l'en-tête ouvre le répertoire complet du site : les dix-huit sections regroupées en cinq familles, chacune avec sa description, un champ de recherche qui filtre en direct, et le groupe séparé des pages liées (Cerveau coquillage, Transparence, Agir sur mes données). Le site entier devient navigable et cherchable d'un seul endroit, sur mobile comme sur ordinateur."
+        },
+        {
+          "texte": "Mémoire privée au menu — l'entrée « 🔒 Mémoire privée » du menu mène à la zone sécurisée du panneau Mémoire, renforcée dans cette version : le mécanisme y est expliqué en langage clair (le site est public ; la protection n'est pas une porte cachée, c'est le chiffrement AES-256 avant publication, empreintes et résumés publics, déchiffrement local par WebCrypto), l'état honnête y est écrit en toutes lettres — en attente de la phrase secrète d'Alex, aucun contenu privé déposé, SoPHIa ne détient pas la phrase — et le champ de déverrouillage y figure, désactivé, sans simuler aucune fonction."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
       "points": [
         {
           "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."

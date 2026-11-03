@@ -1,0 +1,37 @@
+{
+  "historique": "Historique quotidien — site-mémoire de SoPHIa",
+  "version": 1,
+  "mecanisme": "digest_n = sha256(digest_{n-1} + sha256(entree_n canonique)) ; genese = sha256(chaine de genese)",
+  "digest_genese": "ac238749264b1e09e8164d9caf48b4f8e0e99f57136840b61628279e0a0d8545",
+  "entrees": [
+    {
+      "ancrage": {
+        "note": "Premier jour de l'Historique : le mécanisme est né aujourd'hui ; ce jour est clos à la main, les suivants le seront par le rituel de 00 h 01.",
+        "statut": "digest du jour calculé à la clôture ; soumission OpenTimestamps à faire au rituel — non encore soumis au moment de la construction du mécanisme"
+      },
+      "coffre_synaptique": {
+        "digest_maitre": "fff20c7c368499f9ba99ac9d7978187d26d5269c71818b054fdc0eff3cbe57e5",
+        "entrees": 7,
+        "verification": "MATCH — Python, Node, mécanisme du panneau"
+      },
+      "date": "2026-11-02",
+      "evenements": [
+        "Mandat d'évolution du site reçu d'Alex (recommandations ChatGPT, 22 h 19) ; diagnostic v23 et architecture v24 en 5 couches déposés.",
+        "Module Calendrier 13 × 28 construit et testé : au 2 nov. 22 h 23, Mois 11 jour 26 ; tour de surplus du cycle 1 le 30 déc. 2026 à 00 h 08 min 49 s HNE ; correction : 293 s après la fin du 364e jour (la spec disait ≈ 4 min 55 s).",
+        "Panne de plateforme Muse toute la journée : redémarrages, messages retardés (~4 h), moteur mémoire non initialisé — état de fait, cause inconnue."
+      ],
+      "lieu": "Sainte-Martine, Québec",
+      "oeil_contre_annonce": {
+        "meteo_annoncee": "MétéoMédia (captures d'Alex, 13 h) : Qualité de l'air Bon (AQI 16, ozone), UV Bas (max 2 à 11 h), Pollen Faible, Moustiques Hors saison, visibilité 22 km ; après-midi ~16–17 °C plutôt nuageux (weather.com + ECCC, 17 h 45)",
+        "oeil": "Aucune observation caméra consignée pour ce champ aujourd'hui — dit, non comblé."
+      },
+      "site": {
+        "sceau_v23": "1a18317c141f35855d65f5582852395e01f0413a55c115b60cee8d8a37dfd8c2",
+        "version_construite": "v23 « La somme » — construite et vérifiée en local, publication en attente du mot d'Alex",
+        "version_en_ligne": "v20"
+      },
+      "empreinte": "05beb221d9a1531969370b256e90b0540ffbec3cf6db825fcd37f1eea92c3af1",
+      "digest_apres": "4590519fa9408e7965589cc204bfda527eac064df5604e4bd940cb0ca04efeac"
+    }
+  ]
+}
