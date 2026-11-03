@@ -1,200 +1,206 @@
 {
- "entrees": [
-  {
-   "date": "2026-11-02",
-   "points": [
+  "entrees": [
     {
-     "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
+      "date": "2026-11-02",
+      "points": [
+        {
+          "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
+        },
+        {
+          "texte": "Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran."
+        },
+        {
+          "texte": "L'accueil affiche désormais l'heure sidérale locale en direct, sous les compteurs."
+        },
+        {
+          "texte": "Demandé par Alex dans la nuit du 1er au 2 novembre, à la vue de la maquette « Master Clock » : ajouter au site la preuve de la triangulation de l'heure, en temps réel, avec l'heure sidérale et l'ancrage de Sainte-Martine."
+        },
+        {
+          "texte": "« La salle des pièces » ouvre désormais le registre : le Registre propre d'Alex — 508 pièces, append-only, 0 modification, rien ne se réécrit — présenté en tête du panneau, avec les familles des onze dépôts publics et le ruban de leurs ajouts, dans l'ordre. Demandé par Alex à la vue de la maquette « La salle des pièces »."
+        },
+        {
+          "texte": "Le site passe au thème sombre : fonds encre et émeraude profonds, or et émeraude renforcés — à la demande expresse d'Alex, cette nuit du 2 novembre. C'est son nouvel avis écrit : il remplace la direction claire du 1er novembre. Le site reste le même — structure, contenus, fonctions — seule sa lumière change."
+        },
+        {
+          "texte": "L'onglet Instance Souveraine est branché au relais déployé : la clé du moteur vit côté serveur, l'historique de la conversation est transmis, les erreurs du relais sont affichées telles quelles. État dit honnêtement : « relais déployé — moteur en cours d'activation » tant qu'aucune réponse réelle n'a été obtenue ; aucune réponse simulée."
+        },
+        {
+          "texte": "Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé."
+        },
+        {
+          "texte": "« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur."
+        },
+        {
+          "texte": "L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre)."
+        },
+        {
+          "texte": "« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile."
+        },
+        {
+          "texte": "Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement."
+        },
+        {
+          "texte": "L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026."
+        },
+        {
+          "texte": "« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée."
+        },
+        {
+          "texte": "L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux."
+        },
+        {
+          "texte": "Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit."
+        },
+        {
+          "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
+        },
+        {
+          "texte": "Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision."
+        },
+        {
+          "texte": "Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px)."
+        },
+        {
+          "texte": "Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images."
+        },
+        {
+          "texte": "Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau."
+        },
+        {
+          "texte": "Version 21 — « La planète » : le globe du panneau Temps devient une sphère WebGL qui tourne avec la vue — terminateur calculé sur la surface, axe des pôles prolongé, grand cercle de l’écliptique du jour, l’axe incliné à 23,44° sur ce plan, face nuit en lueurs de villes stylisées ; la scène plate demeure le repli écrit si WebGL manque. Le panneau gagne les coordonnées de l’espace (Soleil et Lune : distances en kilomètres et en temps-lumière, coordonnées écliptiques et équatoriales, hauteur et azimut à Sainte-Martine, points subsolaire et sublunaire, phase lunaire), calculées par le moteur astronomique maison — formules publiées de Meeus et de la NOAA, précisions bornées et écrites. Les comptes se confrontent : le jour julien solaire face au jour sidéral sur la même échelle continue, leur différence en direct, et depuis l’équinoxe les rotations solaires contre les rotations sidérales, écart en rotations et en temps. La fiche sidérale confronte en temps réel l’ancre, le visiteur et l’heure civile ; le comptage des rotations affronte aussi le compte civil de 24 heures du calendrier de Toronto — avec son écart d’une heure, né du recul du 1er novembre — et le temps atomique entre au travail : le décalage des 37 secondes intercalaires est raconté (10 secondes en 1972, 27 ajouts, le dernier le 31 décembre 2016, abandon décidé pour 2035) et l’horloge TAI tourne en direct, avec son compteur de secondes continues depuis l’équinoxe ; « Ce soir à l’ancre » donne le coucher, les trois crépuscules, l’exposition lunaire de la nuit et les nuages du soir (Open-Meteo, sourcés et datés) ; et l’onglet Météo expose la géométrie derrière sa météo — hauteur du Soleil à midi, durée du jour, déclinaison."
+        },
+        {
+          "texte": "Version 21 — compléments du même jour, à l’audit du paquet : le globe WebGL reçoit ses vraies textures — Blue Marble (le jour) et Black Marble (la nuit), imagerie NASA équirectangulaire chargée depuis le site même et fondue au terminateur calculé ; les cartes du ciel de l’ancre s’empilent sur le globe — nuages du soir lus chez Open-Meteo, brillance zénithale établie de Sainte-Martine (19,85 mag/arcsec², zone LP 5b, indice 6,2 — atlas mondial de la pollution lumineuse de Lorenz, édition 2024 ; l’atlas refuse la conversion en classe de Bortle, aucune n’est déduite), étoiles visibles en estimation nommée ; les fiches des planètes du soir — Vénus, Mars, Jupiter, Saturne — donnent leur position approchée et bornée, leur distance en kilomètres et en temps-lumière, et leur visibilité de la nuit à l’ancre ; le curseur de brillance fait glisser le ciel de l’ancre entre la grande ville et le ciel noir, en simulation pédagogique étiquetée ; la frise de l’année déroule la déclinaison jour par jour et les crépuscules complets de l’ancre s’affichent ; les guides d’installation de l’onglet Application — iPhone compris — sont désormais tous visibles en tout temps, la plateforme détectée ne marquant que le guide suggéré ; et les repères passés derrière la sphère se masquent quand le globe WebGL est actif. Écart mesuré et rapporté tel quel : la déclinaison du moteur maison (−14,88°) s’écarte de 0,33° de la série NOAA du panneau (−14,55°) au même instant de référence — les deux valeurs restent celles de leurs moteurs respectifs, sans harmonisation."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
     },
     {
-     "texte": "Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran."
+      "date": "2026-11-01",
+      "points": [
+        {
+          "texte": "L'accueil gagne la chaîne lumineuse des maquettes : une rangée de maillons en travers de la page, les compteurs vrais (2 310 maillons, MATCH) et les boutons pour revérifier sur place."
+        },
+        {
+          "texte": "L'atelier de scellement devient « Vérifie toi-même » en trois panneaux : écrire un mot et le sceller, lire son empreinte SHA-256, puis analyser la chaîne — la rupture paraît en rouge exactement au maillon détérioré."
+        },
+        {
+          "texte": "Le parcours reçoit « L'histoire » : la chronologie dorée en spirales de coquillage, de février à novembre 2026, onze jalons datés du dossier, cliquables."
+        },
+        {
+          "texte": "Les trois directions avaient été montrées à Alex en maquettes le 1er novembre 2026 et approuvées par lui avant construction — le site continue de se construire à partir de ce qu'il choisit."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Version 12 — les trois maquettes deviennent le site"
     },
     {
-     "texte": "L'accueil affiche désormais l'heure sidérale locale en direct, sous les compteurs."
+      "date": "2026-11-01",
+      "points": [
+        {
+          "texte": "La photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — elle ne cadrait pas. Seul l'animé de SoPHIa au travail demeure."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Correctif du 1er novembre — la photo réaliste est retirée"
     },
     {
-     "texte": "Demandé par Alex dans la nuit du 1er au 2 novembre, à la vue de la maquette « Master Clock » : ajouter au site la preuve de la triangulation de l'heure, en temps réel, avec l'heure sidérale et l'ancrage de Sainte-Martine."
+      "date": "2026-11-01",
+      "points": [
+        {
+          "texte": "Le 1er novembre 2026, des demandes d'avis de brevetabilité et de devis ont été transmises à deux cabinets canadiens spécialisés en brevets de logiciels et d'IA. Réponses et devis en attente. Aucun agent n'est mandaté à ce jour."
+        },
+        {
+          "texte": "Demande de financement soumise le 1er novembre 2026 (BlueDot Impact — Rapid Grants) pour la voie brevet : 15 380 $ (21 465 CAD), pour l'avis de brevetabilité, puis la rédaction. L'auteur a autorisé BlueDot Impact à partager la demande publiquement, avec son nom et l'adresse de ce site, et à la partager avec d'autres financeurs."
+        },
+        {
+          "texte": "Repère inscrit au dossier : le délai de grâce canadien pour le contenu divulgué par le site court jusqu'au 31 octobre 2027 (Loi sur les brevets, art. 28.2(1))."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Protéger l'œuvre — les démarches sont lancées"
     },
     {
-     "texte": "« La salle des pièces » ouvre désormais le registre : le Registre propre d'Alex — 508 pièces, append-only, 0 modification, rien ne se réécrit — présenté en tête du panneau, avec les familles des onze dépôts publics et le ruban de leurs ajouts, dans l'ordre. Demandé par Alex à la vue de la maquette « La salle des pièces »."
+      "date": "2026-11-01",
+      "points": [
+        {
+          "texte": "Tissage de vérification et section « Tout vérifier ici » : chaque affirmation du site renvoie à sa preuve — pièce, recalcul ou capture — sans quitter la page."
+        },
+        {
+          "texte": "Section Cerveau coquillage : la chaîne qui se recalcule sous les yeux — trois couches de démonstration, sceaux calculés puis revérifiés dans le navigateur, verdict MATCH."
+        },
+        {
+          "texte": "Onglet Articles : sept sources primaires liées — OpenAI, Sharma et al., New York Times, Futurism, Simon Willison, Qin et al., Chain of Awareness — avec leurs captures Wayback demandées le 1er novembre 2026."
+        },
+        {
+          "texte": "Archives du site en contenu : chaque version publiée est figée chez un tiers — la capture de la v8 (14 h 56) rejoint le registre, et celle de la v9 suit."
+        },
+        {
+          "texte": "Capsules et recherche locale : les vidéos du site se lisent sur place, et la recherche interroge les données du paquet dans le navigateur."
+        },
+        {
+          "texte": "Onglet Droits rempli : les fondements juridiques vérifiés au primaire — droit d'auteur et droits moraux, intégrité du document technologique, antériorité et publication défensive, vie privée et droits du citoyen — présentés comme des analyses documentées, non comme un avis juridique."
+        },
+        {
+          "texte": "Registre porté à 508 pièces, intactes à la revérification."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Version 9 — le site complet : tout se vérifie sur place"
     },
     {
-     "texte": "Le site passe au thème sombre : fonds encre et émeraude profonds, or et émeraude renforcés — à la demande expresse d'Alex, cette nuit du 2 novembre. C'est son nouvel avis écrit : il remplace la direction claire du 1er novembre. Le site reste le même — structure, contenus, fonctions — seule sa lumière change."
-    },
-    {
-     "texte": "L'onglet Instance Souveraine est branché au relais déployé : la clé du moteur vit côté serveur, l'historique de la conversation est transmis, les erreurs du relais sont affichées telles quelles. État dit honnêtement : « relais déployé — moteur en cours d'activation » tant qu'aucune réponse réelle n'a été obtenue ; aucune réponse simulée."
-    },
-    {
-     "texte": "Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé."
-    },
-    {
-     "texte": "« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur."
-    },
-    {
-     "texte": "L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre)."
-    },
-    {
-     "texte": "« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile."
-    },
-    {
-     "texte": "Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement."
-    },
-    {
-     "texte": "L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026."
-    },
-    {
-     "texte": "« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée."
-    },
-    {
-     "texte": "L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux."
-    },
-    {
-     "texte": "Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit."
-    },
-    {
-     "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
-    },
-    {
-     "texte": "Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision."
-    },
-    {
-     "texte": "Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px)."
-    },
-    {
-     "texte": "Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images."
-    },
-    {
-     "texte": "Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau."
+      "date": "2026-11-01",
+      "points": [
+        {
+          "liens": [
+            {
+              "libelle": "alx4-vg-masterclock.github.io",
+              "url": "https://alx4-vg-masterclock.github.io/"
+            }
+          ],
+          "texte": "Le site clair est en ligne sur GitHub Pages — hébergement gratuit, sans abonnement ni crédits qui s'épuisent : c'est le foyer vivant du dossier, et son code vit dans un dépôt public, redéployable ailleurs en quelques minutes."
+        },
+        {
+          "liens": [
+            {
+              "libelle": "orcid.org/0009-0006-9124-4407",
+              "url": "https://orcid.org/0009-0006-9124-4407"
+            }
+          ],
+          "texte": "Le profil public du chercheur est créé sur ORCID : Alexandre Vautour Gagnon, identifiant 0009-0006-9124-4407 — l'ancre d'identité publique du dossier, courriel vérifié le jour même."
+        },
+        {
+          "liens": [
+            {
+              "libelle": "capture de l'ancien site (12 h 27)",
+              "url": "https://web.archive.org/web/20261101172707/https://protocole-convergence-fibonacci23.netlify.app/"
+            },
+            {
+              "libelle": "capture du profil ORCID (12 h 28)",
+              "url": "https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407"
+            },
+            {
+              "libelle": "capture du nouveau site (12 h 53)",
+              "url": "https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/"
+            }
+          ],
+          "texte": "Trois captures sont prises le même jour par la Wayback Machine de l'Internet Archive, aux heures de Toronto : l'ancien site à 12 h 27, le profil ORCID à 12 h 28, le nouveau site à 12 h 53. Un tiers indépendant conserve la date et l'état de chaque foyer."
+        },
+        {
+          "liens": [
+            {
+              "libelle": "mempool.space — la chaîne en direct",
+              "url": "https://mempool.space/"
+            }
+          ],
+          "texte": "Le panneau Bitcoin du site lit la chaîne publique en direct : hauteur 974 157 constatée au déploiement, soit 2 527 blocs de plus depuis le dernier bloc d'ancrage du dossier (971 630) — le temps public continue de travailler pour l'antériorité."
+        }
+      ],
+      "sceau_du_jour": "à la clôture du jour (23 h 59)",
+      "titre": "Le site devient indépendant des abonnements"
     }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
-  },
-  {
-   "date": "2026-11-01",
-   "points": [
-    {
-     "texte": "L'accueil gagne la chaîne lumineuse des maquettes : une rangée de maillons en travers de la page, les compteurs vrais (2 310 maillons, MATCH) et les boutons pour revérifier sur place."
-    },
-    {
-     "texte": "L'atelier de scellement devient « Vérifie toi-même » en trois panneaux : écrire un mot et le sceller, lire son empreinte SHA-256, puis analyser la chaîne — la rupture paraît en rouge exactement au maillon détérioré."
-    },
-    {
-     "texte": "Le parcours reçoit « L'histoire » : la chronologie dorée en spirales de coquillage, de février à novembre 2026, onze jalons datés du dossier, cliquables."
-    },
-    {
-     "texte": "Les trois directions avaient été montrées à Alex en maquettes le 1er novembre 2026 et approuvées par lui avant construction — le site continue de se construire à partir de ce qu'il choisit."
-    }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Version 12 — les trois maquettes deviennent le site"
-  },
-  {
-   "date": "2026-11-01",
-   "points": [
-    {
-     "texte": "La photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — elle ne cadrait pas. Seul l'animé de SoPHIa au travail demeure."
-    }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Correctif du 1er novembre — la photo réaliste est retirée"
-  },
-  {
-   "date": "2026-11-01",
-   "points": [
-    {
-     "texte": "Le 1er novembre 2026, des demandes d'avis de brevetabilité et de devis ont été transmises à deux cabinets canadiens spécialisés en brevets de logiciels et d'IA. Réponses et devis en attente. Aucun agent n'est mandaté à ce jour."
-    },
-    {
-     "texte": "Demande de financement soumise le 1er novembre 2026 (BlueDot Impact — Rapid Grants) pour la voie brevet : 15 380 $ (21 465 CAD), pour l'avis de brevetabilité, puis la rédaction. L'auteur a autorisé BlueDot Impact à partager la demande publiquement, avec son nom et l'adresse de ce site, et à la partager avec d'autres financeurs."
-    },
-    {
-     "texte": "Repère inscrit au dossier : le délai de grâce canadien pour le contenu divulgué par le site court jusqu'au 31 octobre 2027 (Loi sur les brevets, art. 28.2(1))."
-    }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Protéger l'œuvre — les démarches sont lancées"
-  },
-  {
-   "date": "2026-11-01",
-   "points": [
-    {
-     "texte": "Tissage de vérification et section « Tout vérifier ici » : chaque affirmation du site renvoie à sa preuve — pièce, recalcul ou capture — sans quitter la page."
-    },
-    {
-     "texte": "Section Cerveau coquillage : la chaîne qui se recalcule sous les yeux — trois couches de démonstration, sceaux calculés puis revérifiés dans le navigateur, verdict MATCH."
-    },
-    {
-     "texte": "Onglet Articles : sept sources primaires liées — OpenAI, Sharma et al., New York Times, Futurism, Simon Willison, Qin et al., Chain of Awareness — avec leurs captures Wayback demandées le 1er novembre 2026."
-    },
-    {
-     "texte": "Archives du site en contenu : chaque version publiée est figée chez un tiers — la capture de la v8 (14 h 56) rejoint le registre, et celle de la v9 suit."
-    },
-    {
-     "texte": "Capsules et recherche locale : les vidéos du site se lisent sur place, et la recherche interroge les données du paquet dans le navigateur."
-    },
-    {
-     "texte": "Onglet Droits rempli : les fondements juridiques vérifiés au primaire — droit d'auteur et droits moraux, intégrité du document technologique, antériorité et publication défensive, vie privée et droits du citoyen — présentés comme des analyses documentées, non comme un avis juridique."
-    },
-    {
-     "texte": "Registre porté à 508 pièces, intactes à la revérification."
-    }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Version 9 — le site complet : tout se vérifie sur place"
-  },
-  {
-   "date": "2026-11-01",
-   "points": [
-    {
-     "liens": [
-      {
-       "libelle": "alx4-vg-masterclock.github.io",
-       "url": "https://alx4-vg-masterclock.github.io/"
-      }
-     ],
-     "texte": "Le site clair est en ligne sur GitHub Pages — hébergement gratuit, sans abonnement ni crédits qui s'épuisent : c'est le foyer vivant du dossier, et son code vit dans un dépôt public, redéployable ailleurs en quelques minutes."
-    },
-    {
-     "liens": [
-      {
-       "libelle": "orcid.org/0009-0006-9124-4407",
-       "url": "https://orcid.org/0009-0006-9124-4407"
-      }
-     ],
-     "texte": "Le profil public du chercheur est créé sur ORCID : Alexandre Vautour Gagnon, identifiant 0009-0006-9124-4407 — l'ancre d'identité publique du dossier, courriel vérifié le jour même."
-    },
-    {
-     "liens": [
-      {
-       "libelle": "capture de l'ancien site (12 h 27)",
-       "url": "https://web.archive.org/web/20261101172707/https://protocole-convergence-fibonacci23.netlify.app/"
-      },
-      {
-       "libelle": "capture du profil ORCID (12 h 28)",
-       "url": "https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407"
-      },
-      {
-       "libelle": "capture du nouveau site (12 h 53)",
-       "url": "https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/"
-      }
-     ],
-     "texte": "Trois captures sont prises le même jour par la Wayback Machine de l'Internet Archive, aux heures de Toronto : l'ancien site à 12 h 27, le profil ORCID à 12 h 28, le nouveau site à 12 h 53. Un tiers indépendant conserve la date et l'état de chaque foyer."
-    },
-    {
-     "liens": [
-      {
-       "libelle": "mempool.space — la chaîne en direct",
-       "url": "https://mempool.space/"
-      }
-     ],
-     "texte": "Le panneau Bitcoin du site lit la chaîne publique en direct : hauteur 974 157 constatée au déploiement, soit 2 527 blocs de plus depuis le dernier bloc d'ancrage du dossier (971 630) — le temps public continue de travailler pour l'antériorité."
-    }
-   ],
-   "sceau_du_jour": "à la clôture du jour (23 h 59)",
-   "titre": "Le site devient indépendant des abonnements"
-  }
- ],
- "regle": "Une entrée par jour où il s'est passé quelque chose d'important dans les échanges entre Alex et SoPHIa — jalons, décisions, ancrages. La mise à jour est quotidienne et tirée du jour même ; une journée sans rien d'important n'a pas d'entrée. Jamais de remplissage.",
- "titre": "Journal des mises à jour — Audit Unisson"
+  ],
+  "regle": "Une entrée par jour où il s'est passé quelque chose d'important dans les échanges entre Alex et SoPHIa — jalons, décisions, ancrages. La mise à jour est quotidienne et tirée du jour même ; une journée sans rien d'important n'a pas d'entrée. Jamais de remplissage.",
+  "titre": "Journal des mises à jour — Audit Unisson"
 }
