@@ -1,6 +1,6 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v36",
+ "version_site": "v37",
  "date": "2026-11-03",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
@@ -9,7 +9,7 @@
    "id": "chaine",
    "nom": "La Chaîne",
    "source": "assets/etat-chaine.json",
-   "digest": "1d10b9bef7e197dd737f468784ad4926d4b560b296a92c9c93adaeadf5ca4349",
+   "digest": "2c04fe11dac7f4c619d2f58cf981e07ab0ea6a72ff347735d6fb6365106fdb16",
    "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
    "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
    "derniere_croissance": "État rafraîchi à la publication de cette version ; la page relit le fichier d’état en direct."
@@ -45,19 +45,19 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "c8558c648c1514ee9627accfa86923338cbfbb5a9917cca79b024ccff8378257",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 36.",
+   "digest": "4c32da6061d62636d8679c4b520c6aca6c78a3ef7f9d72bfb3edbaff6d7b945d",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 37.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 36, 3 novembre 2026."
+   "derniere_croissance": "Version 37, 3 novembre 2026."
   },
   {
    "id": "archives",
    "nom": "Les Archives",
    "source": "liste canonique des captures (embarquée ci-dessous)",
-   "digest": "5924c32bb2087bcd84ce3d5d1c455f0124a806fd6948620b48879c84e6d1b973",
+   "digest": "23da0c92095eb484b413cb03e31f5bfd91c88263bc84cced85196b4700d5d04d",
    "recette": "SHA-256 (UTF-8, lignes jointes par \\n, sans saut final) de la liste canonique des captures embarquée dans ce manifeste, au champ captures de la chambre.",
    "role": "Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.",
-   "derniere_croissance": "Capture de la version 34, 3 novembre 2026.",
+   "derniere_croissance": "Capture de la version 36, 3 novembre 2026.",
    "captures": [
     {
      "version": "v7",
@@ -94,6 +94,10 @@
     {
      "version": "v34",
      "instantane": "20261103131530"
+    },
+    {
+     "version": "v36",
+     "instantane": "20261103155313"
     }
    ]
   }
@@ -136,28 +140,28 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "f573b153a6af4958ee28ca8667f02fc018321c9d0314eaf87799919fa8379c50",
+ "racine_cerveau": "536439f979480e7b57613e177cb50e4c1697e3f863f7f4eea56ce99ab03f5b85",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
-   "3b5995da2d043ed9bb5459e8ffa087edbe6c057e44b5a80f77bc3c2d5c5c22f9",
+   "2a7546db31f8cf0a41162d18c99c8c7d5d35670e532980c2d045ee71a4f6ab98",
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "1e1c2b5b51056f9cdd44877a9f2d645adef5113f779a59b290a27cd882b12394",
-   "b53d29a57c791316b975b9d7ce7a5438bfdf2e86dbe40955981039e3cfef5161"
+   "5a6a050a59427f88c2a9e6d0bfe09393414a2f26b888ac738a57de50d2f7c68b",
+   "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
   [
-   "d8dab37dc34c7f8508bc65a29f301d3f5e132c6e817f8469a91de082a723c0ab",
+   "7200348a5166228ab12a30916d003a90257242102ee6fe52c74e45d72ec3f906",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "51913b5b7b132b8930e043e1814339ad5b278da9b4a49a710b60e31a37fb3e6f"
+   "57a933b00a1c05dcd2548fe754bca708cfedad7e86a8a7007e5cad422fa72ffd"
   ],
   [
-   "5805e6c441ad85231c15d2c77c1b4ad415fb519b166776b94e25e03204aae77d",
-   "7cc625729d2b45bf02712376d7d50ca7d2c8e6d6d74628342baf7e5a9a1fb9d4"
+   "6276fb3ce56a7ce9fc9b1ea722467cb36202145f4d14499e95b7b83d501d11b6",
+   "b4705b0770fe4aadaec579cb25152ca411a3956011a9a7f595d5a70973461564"
   ],
   [
-   "f573b153a6af4958ee28ca8667f02fc018321c9d0314eaf87799919fa8379c50"
+   "536439f979480e7b57613e177cb50e4c1697e3f863f7f4eea56ce99ab03f5b85"
   ]
  ]
 }
