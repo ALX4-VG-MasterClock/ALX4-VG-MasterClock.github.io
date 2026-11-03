@@ -35,6 +35,8 @@ Version 28 « Le choix d'abord » (2 novembre 2026) : l'estimation de la ville d
 
 Version 29 « La transmission » (3 novembre 2026) : la finalité d'Alex — « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi » — est citée à l'Accueil, et un nouveau panneau Transmission donne la méthode en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), avec la démonstration interactive « Essaie la chaîne » : le visiteur scelle ses propres entrées et revérifie la chaîne depuis la genèse « TRANSMISSION|genese », calculs faits dans son navigateur (Web Crypto) — rien n'est envoyé ni conservé.
 
+Version 31 « La nuit porte » (3 novembre 2026) : le panneau Transmission gagne un vérificateur d’export du Cerveau coquillage — le visiteur dépose ou colle un fichier d’export JSON de l’outil autonome et la page recalcule sa chaîne selon la recette « cerveau-coquillage/v1 » (MATCH ou premier écart nommé, par maillon ; le bloc de provenance, déclaratif et hors chaîne, est lu et résumé sous sa borne écrite) ; le panneau Méthode reçoit le passage-vérification d’Alex comme formulation de référence de la thèse du site, verbatim et daté ; l’anglais du panneau Transmission est complété dans la bascule EN.
+
 Auteur et droits
 
 Auteur et titulaire des droits : Alexandre Vautour Gagnon — ORCID 0009-0006-9124-4407.
