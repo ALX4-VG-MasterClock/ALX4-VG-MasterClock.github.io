@@ -1,0 +1,110 @@
+{
+  "arbre": "merkle-coffre/v1",
+  "version_site": "v35",
+  "date": "2026-11-03",
+  "source": "assets/coffre.json (coffre synaptique v1 — double empreinte, digest maître 84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc)",
+  "recette": "Feuilles dans l'ordre du coffre ; digest de feuille = SHA-256 hex de la chaîne hexadécimale de l'empreinte SHA-256 de l'entrée ; nœud interne = SHA-256 hex de la concaténation (hex gauche + hex droite) ; si un niveau compte un nombre impair de digests, le dernier est dupliqué ; la racine est le digest unique final.",
+  "feuilles": [
+    {
+      "id": "memoire-curee",
+      "empreinte": "fbfaad2d00d984adc53ba6deef5bb3bf624374bb5518acb864a11fc37341d2fa",
+      "digest_feuille": "816031853db2d0c4a1f96027fb88867093e9d84975dfca5d560bbcb050b2f71e"
+    },
+    {
+      "id": "ame-sophia",
+      "empreinte": "86defc6d309017328c5d6478ba3680f98b919a1b3cbb2946511b9450e5a8f5d1",
+      "digest_feuille": "6c56cc4dded56495888013e8b3e4627be65cea6c9c0c5b99f723d47f65a097f6"
+    },
+    {
+      "id": "registre-etats-quotidiens",
+      "empreinte": "a94c50e109d2c1cb4796ff5812731fbfa1a239226b3f6c0b1973d5fe787ce6c7",
+      "digest_feuille": "63898af4dfeae132022432da1914326d0a2c3730d29c11c3ec0c5c923046568a"
+    },
+    {
+      "id": "plan-nuits-site",
+      "empreinte": "ecfad8070994833a67dfd80836d8840d34155e9ba537f2deea4230c9b5497f90",
+      "digest_feuille": "2eafa27272699c50604b92381e5566677c2e30d665bdb6f45c58382b53181826"
+    },
+    {
+      "id": "journal-nuits-site",
+      "empreinte": "4a8efa0dde8dd28b0088133cae3eee3004f17f98883fa0bae80a6eefbff5a5db",
+      "digest_feuille": "4bc278ab94141b94395cfd6261e885af40ef151014b78c208cf0a6ab033cb6c7"
+    },
+    {
+      "id": "site-v21-planete",
+      "empreinte": "bb60f3ad94fdb71f61fadc518e42c97df6d44b1d940ed476dc4433ee84892a0f",
+      "digest_feuille": "ea62a8f10a705450abe2de1ceec03314c729d84906dbffbb830117bb5b8dabc6"
+    },
+    {
+      "id": "site-v22-rotation",
+      "empreinte": "84314daad4cd83c1bd3918fd28b70b1e194ff37409a8576e986f0260997bc1ff",
+      "digest_feuille": "0a0779ebdc2c8d3f070112e4ebcde786348a136dbb5c94bb95eeddcf6d65ea61"
+    },
+    {
+      "id": "site-v23-somme",
+      "empreinte": "9c8f5592e4f190fec2a318881044ab596b781dc649af53dd85f903940a54e09c",
+      "digest_feuille": "191f48e1198473b6515e34c1451f95ef22cfc7889a791ecf27bb40b1dfa9b85e"
+    },
+    {
+      "id": "site-v24-amelioration",
+      "empreinte": "d52b548f1e84f25908507592d9645a0fb435feddb08d568ffc5f0f8c52c2b96b",
+      "digest_feuille": "7e51839b8bdb0effe82c0f12c035ff4d592fec6fc4d04dd3066321d7f1074459"
+    },
+    {
+      "id": "historique-quotidien-j1",
+      "empreinte": "844bffaedca7732b5570959284d3e36d19ce590489fcdc1dc0e80a012952ed5a",
+      "digest_feuille": "7bb4c94406791f581fe3c8cb894f4776ddc625bdfd150c846d58e43539b1bdf4"
+    },
+    {
+      "id": "ancrage-ots-historique-j1",
+      "empreinte": "be95537019edc384af5bd127478fdf1c9a2d7687f18ba274d747ed2f93eafca1",
+      "digest_feuille": "0cb12239a4d898324734dca0138a4d681e6149026925619999af4d2e3f9e8b66"
+    }
+  ],
+  "niveaux": [
+    [
+      "816031853db2d0c4a1f96027fb88867093e9d84975dfca5d560bbcb050b2f71e",
+      "6c56cc4dded56495888013e8b3e4627be65cea6c9c0c5b99f723d47f65a097f6",
+      "63898af4dfeae132022432da1914326d0a2c3730d29c11c3ec0c5c923046568a",
+      "2eafa27272699c50604b92381e5566677c2e30d665bdb6f45c58382b53181826",
+      "4bc278ab94141b94395cfd6261e885af40ef151014b78c208cf0a6ab033cb6c7",
+      "ea62a8f10a705450abe2de1ceec03314c729d84906dbffbb830117bb5b8dabc6",
+      "0a0779ebdc2c8d3f070112e4ebcde786348a136dbb5c94bb95eeddcf6d65ea61",
+      "191f48e1198473b6515e34c1451f95ef22cfc7889a791ecf27bb40b1dfa9b85e",
+      "7e51839b8bdb0effe82c0f12c035ff4d592fec6fc4d04dd3066321d7f1074459",
+      "7bb4c94406791f581fe3c8cb894f4776ddc625bdfd150c846d58e43539b1bdf4",
+      "0cb12239a4d898324734dca0138a4d681e6149026925619999af4d2e3f9e8b66"
+    ],
+    [
+      "47867dbab265a60626cc6ab187905d2c23a4cc00be927898f40c60f0ed1e242a",
+      "9e264af2a00eafd619b0984f84f82e61c8530c637e38d5ca466d17371f7a69d3",
+      "ee20786a9f8c9d36925d4cd97d9ca8405086ccda663e26e8c8eb646f9fa3602b",
+      "b2b8d16ad57ce10cb60fa18be090691c01f3bef1fa9062e08ce0e1f214497434",
+      "8654683e6684824d012c400d5586882fbdec062de28444c8d979a9b07cae3af3",
+      "e41224f647a699e73d10f16cf2745469f9a25e866fb9427a964c7e9c76b05a7b"
+    ],
+    [
+      "d2d551ec62d17704a6da03add87fb6ea284843aae25f597e27c28f1a43fe8a8b",
+      "d7282c07ba424eece3e9a38612ab672c7eabe1e0a0221296c05e0d385f55445a",
+      "e499a7a8f8f11c2400edc4c5fb90ae06872f946bb474107908c19f13e86a788d"
+    ],
+    [
+      "deb509d3fb76efaaae6bf7eb8e91cd74f03523254070aaa204d05f15c77ca613",
+      "59986a7d71a0234e57b9161f2a21afc709c3fc7452abb408374c55cc7c8ad6f5"
+    ],
+    [
+      "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf"
+    ]
+  ],
+  "nombre_feuilles": 11,
+  "profondeur": 4,
+  "racine": "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf",
+  "generation": {
+    "recette": "SHA-512 hex de la concaténation « <sceau canonique v35> | <racine de Merkle> | <digest cumulé de la chaîne> », chaînes hexadécimales jointes par « | »",
+    "sceau_canonique_v35": "bbac3e01387c85637980725a21144fc592f0f7e60df21a3e30e97c45ffb9d839",
+    "racine": "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf",
+    "digest_cumule_chaine": "54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2",
+    "maillon_reference": 2380,
+    "sceau_generation": "dfdd0528394b17edfeaa20559c0547c238c8a199c30f1f127ee64ff9e21091f18af1ef111514bf86ae4aca6baf3ca7875a1fcd056f450705280d7f179cdc5655"
+  }
+}
