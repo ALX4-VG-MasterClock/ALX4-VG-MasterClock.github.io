@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-02",
+      "titre": "Version 28 — « Le choix d’abord »",
+      "points": [
+        {
+          "texte": "La porte de choix de l’ancrage visiteur — avant cette version, l’estimation de la ville du visiteur depuis son adresse IP partait toute seule au chargement des lectures en direct. Elle ne part plus : la tuile « Ton ancrage » attend, avec deux boutons — « Estimer ma ville depuis mon adresse IP » et « Choisir mon lieu dans la liste » — et, écrite dessous, la phrase de finalité : l’estimation envoie une requête au service ipwho.is (repli : ipapi.co), qui reçoit l’adresse IP du visiteur et renvoie une ville approximative ; la conservation chez ces fournisseurs est non vérifiée ; l’estimation sert uniquement à afficher l’heure, la météo et la distance chez le visiteur. Ni le choix ni la position ne sont conservés dans l’appareil."
+        },
+        {
+          "texte": "La borne des lectures en direct, réécrite — l’ancienne laissait croire que rien ne partait nulle part (« rien n’est conservé ni envoyé à ce site »). La nouvelle distingue : ce site ne reçoit ni ne conserve rien — les calculs se font dans le navigateur ; mais la requête d’estimation transmet l’adresse IP du visiteur au fournisseur de géolocalisation (ipwho.is, repli ipapi.co), et les coordonnées du lieu affiché sont envoyées aux fournisseurs météo (Open-Meteo, met.no) ; la conservation chez ces fournisseurs est non vérifiée ; la position IP reste approximative — une ville — et un VPN peut la fausser ; Sainte-Martine demeure l’ancre de référence."
+        },
+        {
+          "texte": "L’inventaire des flux confirmé entre au panneau Droits — la sous-section « Flux de données de ce site — inventaire confirmé dans le code » recense chaque fonction réseau du site : les données transmises, le destinataire, le déclencheur et la conservation — « non vérifié » partout où elle n’est pas établie, y compris l’Instance (relais Cloudflare Worker, puis Gemini, sur envoi volontaire seulement). Un renvoi mène à la page Transparence du même dépôt."
+        },
+        {
+          "texte": "D’où vient ce chantier — du brief transmis par Alex le 2 novembre 2026 (la « Tâche pour l’agent M », préparée avec l’agent GitHub) et de l’audit de transparence mené sur le code de la v27 le même soir : les écarts G1 (déclenchement silencieux), G2 (borne trompeuse) et G3 (inventaire à confirmer) sont traités ici ; G4 et G5 restent consignés à l’audit. Aucune conformité juridique n’est conclue : ces textes décrivent les flux, ils ne certifient rien. Tout le reste du site — graphe, épreuve publique, thèmes clair et sombre, animations — est inchangé."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
       "titre": "Version 27 — « Le clair d’abord »",
       "points": [
         {
