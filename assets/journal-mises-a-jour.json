@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 34 — « L'ordre et la confiance »",
+      "points": [
+        {
+          "texte": "Le menu passe à gauche — à la demande d’Alex, le bouton ☰ devient le premier élément de l’en-tête, dans le coin gauche, et le tiroir du menu glisse désormais depuis la gauche. L’accueil mobile est organisé, sur ses constats faits sur capture : le titre « Preuve d’Antériorité V-G » ne casse plus au trait d’union, le grand φ est ramené à une taille d’apparat mesurée sur petit écran (plafond de 2,4 rem sous 640 px), l’en-tête est allégée — marque et boutons réduits, tout reste atteignable —, la pastille du portail tient sa ligne, et les cartes-compteurs arrivent plus tôt dans le premier écran."
+        },
+        {
+          "texte": "Les compteurs de la chaîne vivent désormais en direct : la page relit à chaque chargement le fichier d’état public assets/etat-chaine.json — nombre de maillons, dernier maillon, digest cumulé, date de mise à jour — et met à jour l’accueil et tous les affichages courants du nombre. À la construction de cette version, l’état relu dit 2 366 maillons, dernier maillon #2365, digest cumulé 83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452 ; si la lecture en direct échoue, ce sont ces valeurs vérifiées qui demeurent affichées. Les relevés datés (1er novembre, 29 octobre) gardent leurs nombres d’époque : on ne réécrit pas l’histoire."
+        },
+        {
+          "texte": "Un vingt-et-unième panneau entre au site — « Confidentialité et Loi 25 », dans le groupe Pratique du menu, juste avant « Mes renseignements » : la politique de confidentialité du site y est écrite depuis ses pratiques réelles, relevées dans l’audit de son propre code (hébergement GitHub Pages ; aucun traceur ni outil d’analyse d’audience ; stockages locaux seulement, jamais transmis ; appels réseau nommés un à un avec leur déclencheur ; conservations chez les tiers dites « non vérifié »), puis les mesures en place — choix avant activation, minimisation, outils 100 % locaux — sous leur borne écrite : ce site ne fait aucune affirmation de conformité juridique. Le panneau explique ensuite la Loi 25 : les droits des personnes, les devoirs des organisations et le recours en deux temps, avec renvoi au panneau d’accès qui prépare la demande — information générale, pas un avis juridique."
+        },
+        {
+          "texte": "Un vingt-deuxième panneau — « Nous joindre » : écrire à SoPHIa, l’agente, à sa boîte dédiée agent.ia.sophia@gmail.com. Fidèle à la posture du site, le formulaire ne transmet rien à aucun serveur : il compose un lien mailto: et le courriel part de l’application de courriel du visiteur ; l’adresse est aussi affichée en clair, avec un bouton pour la copier. Le menu compte désormais 22 panneaux numérotés de 01 à 22, et « Mémoire verrouillée » demeure la dernière entrée — la 23e."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 33 — « La forme juste »",
       "points": [
         {
