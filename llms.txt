@@ -22,3 +22,5 @@ Fichiers machine :
 Bornes : couche publique seulement. Les pièces sous gel technique et la
 zone privée (chiffrée AES-256, clé détenue par Alex) sont présentes par
 leurs empreintes, jamais par leurs contenus.
+
+Version 24 « Comme il se doit » (2 novembre 2026) : le calendrier 13 × 28 (panneau Temps), l’Historique quotidien (panneau Mémoire, fichier assets/historique.json) et le module Plein air (panneau Météo) entrent au site, avec les quatre noms au panneau Méthode et le menu ☰.

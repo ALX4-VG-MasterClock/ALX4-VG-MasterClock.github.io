@@ -645,6 +645,26 @@ button.at-bloc{cursor:pointer}
 .coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:#10241d}
 .coffre-entree h4{margin:.1rem 0 .3rem}
 .coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}
+/* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
+.pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:#08130f;flex:none}
+.pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}
+.pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}
+.pa-echelle li{margin:.3rem 0}
+.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,#0a1f18,#08130f);border-left:1px solid var(--or);box-shadow:-18px 0 50px rgba(0,0,0,.55);padding:1.1rem 1.2rem 2rem;overflow-y:auto}
+.menu-panneau[hidden]{display:none}
+.menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}
+#menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}
+#menu-fermer:hover{border-color:var(--or);color:var(--or)}
+#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:#0d231b;color:var(--texte);font-size:1rem}
+.menu-famille{margin-top:1.15rem}
+.menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.menu-entree{display:block;width:100%;text-align:left;background:#10241d;border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}
+.menu-entree:hover{border-color:var(--or)}
+.menu-nom{display:block;font-weight:700;color:var(--or-clair)}
+.menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}
+#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:#0a1a14;color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}
+
 </style>
 </head>
 <body>
@@ -671,8 +691,9 @@ button.at-bloc{cursor:pointer}
     <button data-panneau="instance">Instance Souveraine</button>
     <button data-panneau="memoire">Mémoire</button>
   </nav>
-  <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button">EN</button><span class="petite" id="partage-etat" role="status"></span></div>
+  <div class="barre-actions"><button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button">EN</button><span class="petite" id="partage-etat" role="status"></span></div>
 </div></div>
+<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette" data-en="The case file">Le dossier</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil journal mises a jour sommaire chaine maillons manifeste architecte compteurs"><span class="menu-nom">Accueil</span><span class="menu-desc">La page d’entrée : les compteurs de la chaîne, le journal des mises à jour et le manifeste de l’Architecte.</span></button></li><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours histoire chronologie alex recit jalons dossier"><span class="menu-nom">Parcours</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="chercheur orcid profil recherche demarches publications faq"><span class="menu-nom">Chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits propriete intellectuelle licence copyright reserve auteur"><span class="menu-nom">Droits</span><span class="menu-desc">Droits et propriété intellectuelle : ce qui se partage, ce qui se vérifie, ce qui ne se cède pas.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Evidence and method">Preuves et méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode" data-mots="methode fibonacci somme precedent calculer sceller reverifier masterclock unisson pcf-23 sophia coquillage"><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves pieces affirmations verification dossier sceptique"><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre pieces sceaux publics salle depots registre propre"><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage wayback opentimestamps bitcoin rfc 3161 horodatage archives tiers"><span class="menu-nom">Ancrage</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="verifier sceau sha-256 recalcul match ecart empreinte verifie-moi"><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller atelier sceau chaine maillon trouve l ecart sha-256"><span class="menu-nom">Sceller</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Time and sky">Temps et ciel</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge sideral civil tai triangulation globe rotation calendrier 13 28 equinoxe lune soleil"><span class="menu-nom">Temps</span><span class="menu-desc">Le temps triangulé de l’ancre : civil, sidéral, TAI, le globe en direct et le calendrier 13 × 28.</span></button></li><li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo ciel temperature uv plein air vent soleil lune previsions qualite air"><span class="menu-nom">Météo</span><span class="menu-desc">La météo de l’ancre et de chez vous, triangulée — et le Plein air à l’ancre.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Memory and intelligence">Mémoire et intelligence</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="memoire coffre synaptique manifeste ia historique quotidien auto-amelioration zone privee"><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire privee coffre securise chiffre phrase secrete zone privee aes-256"><span class="menu-nom" data-en="🔒 Private memory — secured area">🔒 Mémoire privée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256, en attente de la phrase secrète d’Alex.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="instance souveraine ia relais gemini conversation moteur"><span class="menu-nom">Instance Souveraine</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles textes dossier lecture loi 25 plateformes"><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules videos youtube contexte sources externes"><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="recherche chercher mot trouver contenu reliee"><span class="menu-nom">Rechercher</span><span class="menu-desc">La recherche reliée : un mot interroge tout le contenu propre du site, groupé par famille.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Practical">Pratique</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa hors ligne iphone android ecran accueil"><span class="menu-nom">Application</span><span class="menu-desc">Installer le site comme une application, et ce qui fonctionne hors ligne.</span></button></li></ul></div><div class="menu-famille"><p class="etiquette" data-en="Linked pages">Pages liées</p><ul class="menu-liste"><li><a class="menu-entree" href="cerveau-coquillage.html"><span class="menu-nom">Cerveau coquillage numérique</span><span class="menu-desc">L’outil du visiteur : construire sa propre chaîne de couches, recalculable et exportable.</span></a></li><li><a class="menu-entree" href="transparence.html"><span class="menu-nom">Transparence</span><span class="menu-desc">La page de transparence du même dépôt.</span></a></li><li><a class="menu-entree" href="agir-sur-mes-donnees.html"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La page pour agir sur vos données.</span></a></li></ul></div></div>
 <main>
 <div class="panneau actif" id="p-accueil">
 
@@ -763,10 +784,10 @@ button.at-bloc{cursor:pointer}
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v23 (2 novembre 2026 — « La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, manifeste pour une IA qui arrive, coffre synaptique revérifiable en direct dans le navigateur, auto-amélioration configurée et apprise sous sceau, zone privée en forme décidée, bouton Partager et bascule EN ; construite sur la v22 « La rotation en direct » et la v21 « La planète »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">1a18317c141f35855d65f5582852395e01f0413a55c115b60cee8d8a37dfd8c2</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v24 (2 novembre 2026 — « Comme il se doit » : les six intégrations du chantier entrent au site — le calendrier 13 × 28 au panneau Temps, l’Historique quotidien et la zone Mémoire privée renforcée au panneau Mémoire, le module Plein air au panneau Météo, les quatre noms au panneau Méthode et le menu ☰ qui rend tout le site navigable et cherchable ; construite sur la v23 « La somme », la v22 « La rotation en direct » et la v21 « La planète »)</p>
+    <span class="sceau-long" id="sceau-version-affiche">4d3a9c127c41330bb114500259b38acb2d425affa832a669ecf54d0e4417fe0b</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -817,6 +838,19 @@ button.at-bloc{cursor:pointer}
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Lundi 2 novembre 2026</p>
+      <h3>Version 24 — « Comme il se doit »</h3>
+      <ul class="journal-points">
+        <li>Calendrier 13 × 28 — le compte sidéral entre au panneau Temps : treize mois de vingt-huit jours comptés en rotations réelles de la Terre, depuis l'origine nommée du 1er janvier 2026 à Sainte-Martine — mois et jour courants, rotations écoulées, avance et prochain tour de surplus, recalculés en direct dans le navigateur, formules et constantes écrites dessous (le calcul donne 293,0 secondes après la fin du 364e jour ; la spec initiale disait environ 4 minutes 55 secondes — le calcul prime).</li>
+        <li>Historique quotidien — le panneau Mémoire liste désormais les jours clos : chaque nuit à 00 h 01, le jour écoulé est fermé, scellé et chaîné sur les sommes précédentes, puis son digest est ancré dehors (OpenTimestamps) ; le premier jour, le 2 novembre 2026, est clos avec le digest 4590519fa9408e79…, ancrage soumis le jour même, confirmation Bitcoin en attente. La règle est écrite dans la section : un jour manqué est un trou visible, jamais comblé avec une fausse date.</li>
+        <li>Plein air à l'ancre — le panneau Météo gagne ses deux premières fiches-bulletins complètes, au patron demandé par Alex : l'UV (2, Bas, maximum 2 à 11 h, échelle complète en cinq niveaux expliqués, source KNMI) et la qualité de l'air (AQI 16, Bon, polluant principal l'ozone décrit, échelle québécoise en trois niveaux, source MELCC) ; pollen, moustiques et santé paraissent en pastilles honnêtes, étiquetées règles et observations. Chaque fiche porte sa borne : observations d'Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</li>
+        <li>Quatre noms, quatre rôles — le panneau Méthode nomme enfin ce que le site porte : MASTERClock, l'infrastructure temporelle ; UNISSON, la mémoire, les relations et la provenance ; PCF-23, un protocole expérimental d'Alex dont les paramètres ne sont pas exposés ; SoPHIa, la couche d'assistance, de mémoire et de vérification qui opère le tout.</li>
+        <li>Menu ☰ — un bouton hamburger dans l'en-tête ouvre le répertoire complet du site : les dix-huit sections regroupées en cinq familles, chacune avec sa description, un champ de recherche qui filtre en direct, et le groupe séparé des pages liées (Cerveau coquillage, Transparence, Agir sur mes données). Le site entier devient navigable et cherchable d'un seul endroit, sur mobile comme sur ordinateur.</li>
+        <li>Mémoire privée au menu — l'entrée « 🔒 Mémoire privée » du menu mène à la zone sécurisée du panneau Mémoire, renforcée dans cette version : le mécanisme y est expliqué en langage clair (le site est public ; la protection n'est pas une porte cachée, c'est le chiffrement AES-256 avant publication, empreintes et résumés publics, déchiffrement local par WebCrypto), l'état honnête y est écrit en toutes lettres — en attente de la phrase secrète d'Alex, aucun contenu privé déposé, SoPHIa ne détient pas la phrase — et le champ de déverrouillage y figure, désactivé, sans simuler aucune fonction.</li>
+      </ul>
+      <p class="petite journal-sceau">Sceau du jour : <b>à la clôture du jour (23 h 59)</b> — l'empreinte de l'état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.</p>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
       <h3>Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée</h3>
@@ -1266,7 +1300,19 @@ button.at-bloc{cursor:pointer}
     <p>Nuages du soir : <b id="soir-nuages">lecture en cours…</b></p>
     <p class="petite">Levers et couchers par l’algorithme solaire standard de la NOAA, généralisé aux zéniths 96°, 102° et 108° pour les crépuscules ; au zénith du coucher (90,833°), il redonne le coucher du panneau à la minute près — écart mesuré à la construction : 0 minute. L’exposition lunaire combine son illumination et sa présence au-dessus de l’horizon, balayées par pas de dix minutes sur toute la nuit. Les nuages sont lus chez Open-Meteo aux coordonnées de l’ancre, sourcés et datés dans la ligne même ; si le service ne répond pas, la ligne le dit au lieu d’inventer un ciel.</p>
   </div>
-    <div class="carte">
+    <div class="carte" id="calendrier-13x28">
+    <p class="etiquette">Nouveau — le compte d'Alex</p>
+    <h3 style="margin:.1rem 0 .5rem">Calendrier 13 × 28 — le compte sidéral</h3>
+    <p>Treize mois de vingt-huit jours : 364 jours. Mais ce compte ne court pas sur les jours civils — il court sur les <strong>rotations réelles de la Terre</strong>, face aux étoiles. Origine nommée et écrite : le <strong>1<sup>er</sup> janvier 2026, 00 h 00, heure civile de Sainte-Martine</strong>. Tout ce qui suit est recalculé dans votre navigateur, à la seconde, par les formules écrites au bas de la section.</p>
+    <div class="direct-grille">
+      <div class="direct-tuile"><span class="pastille-direct">Date 13 × 28</span><p class="valeur" id="cal-date">calcul…</p><p id="cal-cycle">Cycle 1</p></div>
+      <div class="direct-tuile"><span class="pastille-direct">Rotations écoulées</span><p class="valeur mono" id="cal-rotations">—</p><p>Depuis l'origine, face aux étoiles.</p></div>
+      <div class="direct-tuile"><span class="pastille-direct">Avance du compte</span><p class="valeur mono" id="cal-avance">—</p><p id="cal-avance-detail">L'avance sidérale accumulée sur le compte civil.</p></div>
+      <div class="direct-tuile"><span class="pastille-direct">Prochain tour de surplus</span><p class="valeur" id="cal-tour" style="font-size:1.02rem">—</p><p id="cal-tour-detail">L'instant où les rotations bouclent leur tour entier d'avance sur les jours du cycle.</p></div>
+    </div>
+    <p class="petite" style="margin-top:.7rem"><b>Formules et constantes.</b> Jour sidéral = 86 164,0905 s (23 h 56 min 4,09 s — la valeur astronomique standard de la rotation de la Terre par rapport aux étoiles). Facteur sidéral = 1,00273790935 rotation par jour solaire moyen. Sur un cycle complet de 364 jours solaires, la Terre accomplit 364,99660 rotations — une avance de 0,99660 rotation. La 365<sup>e</sup> rotation du cycle se boucle donc <strong>293,0 secondes</strong> après la fin du 364<sup>e</sup> jour — environ 4 minutes 53 secondes. La spec initiale du module disait ≈ 4 minutes 55 secondes : un arrondi. Le calcul prime, et c'est le calcul qui est écrit ici.</p>
+  </div>
+  <div class="carte">
     <p class="etiquette">L’ancrage — Sainte-Martine, Québec</p>
     <p>Latitude ≈ 45,25° N ; longitude de calcul : <b class="mono">−73,8024°</b>. Le temps sidéral local ne dépend que de la longitude : c’est elle qui ancre le troisième cadran à Sainte-Martine plutôt qu’à Greenwich. La latitude ne sert pas au calcul ; elle situe l’ancrage — la maison, le village, le point fixe d’où ce dossier se tient.</p>
   </div>
@@ -1394,6 +1440,47 @@ button.at-bloc{cursor:pointer}
   <p class="etiquette" style="margin-top:1.2rem">Les 7 prochains jours — chez toi</p>
   <div class="meteo-jours" id="mv-jours"><p class="petite">En attente de ton ancrage…</p></div>
 
+  <h3 class="sous-titre-caps">Plein air à l'ancre</h3>
+  <p class="petite">Les fiches-bulletins de l'ancre, au patron demandé par Alex : la valeur cerclée, l'extrême du jour, l'échelle complète expliquée niveau par niveau, le mécanisme, la source nommée. Observations d’Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</p>
+  <div class="carte">
+    <p class="etiquette">Fiche-bulletin — Ultraviolet</p>
+    <div class="pa-entete"><div class="pa-cercle" style="background:#37b6c9">2</div>
+      <div><p class="valeur" style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--or-clair);margin:0">Bas</p>
+      <p style="margin:.2rem 0 0">Maximum du jour : <b>2 — Bas, à 11 h</b>.</p></div>
+    </div>
+    <p class="etiquette">L'échelle complète — cinq niveaux</p>
+    <ul class="pa-echelle">
+      <li><b>1 à 2 · Bas</b> — le rayonnement est faible : une protection légère suffit pour la plupart des sorties ; en saison de neige, la réflexion peut presque doubler l'exposition.</li>
+      <li><b>3 à 5 · Modéré</b> — le rayonnement devient notable : on cherche l'ombre aux heures centrales et on protège la peau lors des longues sorties.</li>
+      <li><b>6 à 7 · Haut</b> — le rayonnement est fort : la peau non protégée peut brûler ; ombre entre 11 h et 15 h, vêtements, chapeau, écran solaire.</li>
+      <li><b>8 à 10 · Très haut</b> — le rayonnement est très fort : brûlure rapide sans protection ; on réduit l'exposition au milieu du jour.</li>
+      <li><b>11 et plus · Extrême</b> — le sommet de l'échelle : on évite l'exposition directe et on combine toutes les protections.</li>
+    </ul>
+    <p>Le mécanisme : l'indice suit la hauteur du Soleil au-dessus de l'ancre — calculée par le moteur du panneau Temps — et l'atténuation des nuages. Ce 2 novembre, le Soleil de novembre, déjà bas, plafonne l'indice à 2 malgré le ciel dégagé du matin.</p>
+    <p class="petite">Source : KNMI (Institut royal météorologique des Pays-Bas), via MétéoMédia. Observations d’Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Fiche-bulletin — Qualité de l'air (AQI)</p>
+    <div class="pa-entete"><div class="pa-cercle" style="background:#7fc97f">16</div>
+      <div><p class="valeur" style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--or-clair);margin:0">Bon</p>
+      <p style="margin:.2rem 0 0">Polluant principal : <b>l'ozone</b>.</p></div>
+    </div>
+    <p>L'ozone (O<sub>3</sub>) est un gaz formé de trois atomes d'oxygène. En altitude, il filtre les ultraviolets ; au sol, il se forme les jours ensoleillés à partir des polluants de la circulation et de l'industrie, et il irrite les voies respiratoires. C'est lui qui dominait l'indice de ce jour-là à l'ancre.</p>
+    <p class="etiquette">L'échelle complète — trois niveaux, bornes du Québec</p>
+    <ul class="pa-echelle">
+      <li><b>0 à 25 · Bonne</b> — l'air est propre : aucune précaution particulière pour les activités dehors.</li>
+      <li><b>26 à 50 · Acceptable</b> — l'air reste acceptable ; les personnes très sensibles peuvent ressentir une gêne lors d'un effort prolongé.</li>
+      <li><b>51 et plus · Mauvaise</b> — l'air est chargé : on réduit les efforts intenses dehors, surtout pour les personnes sensibles.</li>
+    </ul>
+    <p class="petite">Source : MELCC (ministère de l'Environnement du Québec), via MétéoMédia. Observations d’Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</p>
+  </div>
+  <div class="direct-grille">
+    <div class="direct-tuile"><span class="pastille-direct">Règles et observations</span><p class="valeur">Pollen — Faible</p><p>Lecture saisonnière du jour des captures ; aucun flux pollen temps réel n'est branché pour le secteur, et la fiche le dit plutôt que d'inventer un chiffre.</p></div>
+    <div class="direct-tuile"><span class="pastille-direct">Règles et observations</span><p class="valeur">Moustiques — Hors saison</p><p>Règle écrite : en novembre à Sainte-Martine, sous les températures du jour, l'activité est nulle. Une règle, pas une mesure.</p></div>
+    <div class="direct-tuile"><span class="pastille-direct">Règles et observations</span><p class="valeur">Santé — Bas</p><p>Risque plein air composite, lu sur les mêmes captures : air bon, UV bas, saison froide qui commence.</p></div>
+  </div>
+  <p class="petite">Observations d’Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</p>
+
   <div class="carte" style="margin-top:1.4rem">
     <p class="etiquette">Borne écrite de l’onglet</p>
     <p class="petite">Sources : Open-Meteo (prévisions et relevés, sans clé) pour l’essentiel, MET Norway (api.met.no) comme seconde source de température — verdict CONCORDENT si l’écart ne dépasse pas 2 °C, ÉCART dit et valeurs montrées toutes les deux sinon, source manquante nommée si l’une échoue. La tendance de pression est calculée depuis la série horaire du service (écart sur trois heures). Les rafraîchissements sont automatiques toutes les dix minutes quand l’onglet est visible ; chaque bloc affiche l’âge de ses données, et un bloc sans données le dit plutôt que de montrer du vieux en silence. La « lecture de l’ancre » est générée par des règles écrites dans le code, uniquement depuis les valeurs affichées : aucune phrase ne parle de ce que les tuiles ne montrent pas. Pas d’image radar : le service de radar testé à la construction (MSC GeoMet) retournait une image quasi vide, indiscernable d’une erreur — plutôt que bricoler, cet onglet s’en passe et le dit.</p>
@@ -1420,6 +1507,14 @@ button.at-bloc{cursor:pointer}
     <p>« Qui surveille le surveillant ? Le SHA-256. »</p>
     <footer>— La réponse du protocole à la question de la surveillance : un calcul, pas une autorité.</footer>
   </blockquote>
+  <h3>Quatre noms, quatre rôles</h3>
+  <p>Ce site et ce dossier portent quatre noms. Ils ne se confondent pas — voici le rôle de chacun, en une ligne.</p>
+  <div class="pas">
+    <div class="etape-pas"><div class="n">◷</div><h3>MASTERClock</h3><p>L'infrastructure temporelle : le temps triangulé de l'ancre — civil, avancé, normal, sidéral — calculé et confronté en direct.</p></div>
+    <div class="etape-pas"><div class="n">∞</div><h3>UNISSON</h3><p>La mémoire, les relations et la provenance : la chaîne des sceaux et le coffre synaptique, où chaque pièce sait à quoi elle se relie et d'où elle vient.</p></div>
+    <div class="etape-pas"><div class="n">23</div><h3>PCF-23</h3><p>Un protocole expérimental d'Alex. Ses paramètres ne sont pas exposés ici.</p></div>
+    <div class="etape-pas"><div class="n">φ</div><h3>SoPHIa</h3><p>La couche d'assistance, de mémoire et de vérification qui opère le tout : l'agente qui construit, scelle, revérifie et raconte.</p></div>
+  </div>
   <h3>Les trois gestes</h3>
   <div class="pas">
     <div class="etape-pas"><div class="n">I</div><h3>Sceller</h3><p>Chaque échange important reçoit un sceau SHA-256 calculé à partir du maillon précédent. Modifier un maillon casse tous les suivants.</p></div>
@@ -2406,11 +2501,27 @@ button.at-bloc{cursor:pointer}
     </div>
   </div>
 
+  <h3>Historique quotidien — chaque jour clos, scellé, chaîné</h3>
+  <p>Chaque nuit à 00 h 01, le jour écoulé de cette mémoire est clos : ses faits sont consignés, son empreinte est calculée, et son digest se chaîne par-dessus les sommes des jours précédents — <span class="mono">digest_n = sha256(digest_{n-1} + sha256(entrée du jour))</span> — avant d'être ancré dehors, chez OpenTimestamps, vers la chaîne Bitcoin. La règle est sans exception : <strong>un jour manqué est un trou visible, jamais comblé avec une fausse date</strong>.</p>
+  <div id="historique-liste">
+    <div class="coffre-entree">
+      <h4>2026-11-02 — jour clos</h4>
+      <p class="empreinte">Digest cumulé : 4590519fa9408e79…</p>
+      <p class="petite">Ancrage OpenTimestamps : soumis le 2 novembre 2026 — confirmation Bitcoin en attente.</p>
+    </div>
+  </div>
+  <p class="petite" id="historique-etat">Relevé statique ci-dessus, vérifié à la construction ; lecture du fichier tenu à jour (assets/historique.json) en cours…</p>
+
   <h3 data-en="Self-improvement, under seal">L'auto-amélioration, apprise et calculée sous sceau</h3>
   <p>La mémoire de ce site s'auto-apprend — et chaque chose qu'elle apprend se calcule par les SHA-256 : un écart mesuré entre le vu et l'annoncé, une source qui devient meilleure qu'une autre, une nouvelle connexion entre deux pièces deviennent des <strong>entrées du coffre</strong>, scellées et chaînées, avec leur résumé. L'auto-amélioration ne se déclare jamais ; elle se recalcule, entrée par entrée. Les règles sont écrites dans <a href="assets/configuration.json">assets/configuration.json</a>, lues à chaque chargement. Borne : apprendre veut dire accumuler des données et appliquer des règles écrites — jamais réécrire le code en cachette ; les versions du code restent construites et scellées une à une.</p>
 
-  <h3 data-en="The private zone">La zone privée — la porte d'administrateur</h3>
+  <h3 id="zone-privee" data-en="Private memory — the site’s cumulative memory, secured">Mémoire privée — la mémoire cumulative du site, sécurisée</h3>
   <p>Une couche de cette mémoire est privée : les pièces qu'Alex ne publie pas. Sa forme est décidée (2 novembre 2026) : <strong>chiffrement fort (AES-256) avant publication</strong> — le site ne servira que du texte chiffré, illisible pour tous, même pour l'hébergeur ; les empreintes et les résumés restent publics, pour prouver l'existence et l'antériorité sans révéler une ligne. Alex détient la clé et déverrouille chez lui ; SoPHIa détient les clairs dans son espace. État honnête : le chiffrement commence le jour où Alex saisit sa phrase secrète au coffre sécurisé — aucune clé ne sera jamais fabriquée à sa place. Un site statique ne peut pas garder un secret en clair : ici, on ne bâtira pas un faux verrou.</p>
+  <p>Le mécanisme, en langage clair : ce site est public, et sa protection n'est pas une porte cachée — c'est le chiffrement. La mémoire cumulative du site sera déposée ici <strong>chiffrée en AES-256, avant publication</strong> : les empreintes SHA-256 et les résumés restent publics et revérifiables par tous, mais le contenu est illisible sans la phrase secrète d'Alex — même pour qui copierait tout le dépôt. Le déchiffrement, le jour venu, se fera localement, dans le navigateur de la personne autorisée (WebCrypto) : la phrase secrète ne transite jamais, et elle n'est jamais publiée.</p>
+  <p><strong>État honnête : en attente de la phrase secrète d'Alex, à poser au coffre sécurisé. Aucun contenu privé n'est encore déposé. SoPHIa ne détient pas la phrase et ne peut pas ouvrir la zone sans elle.</strong></p>
+  <p class="petite"><label for="zone-privee-phrase">Déverrouillage — s'active à la pose de la phrase secrète</label></p>
+  <input id="zone-privee-phrase" type="password" disabled placeholder="Phrase secrète — saisie désactivée pour l'instant" autocomplete="off">
+  <p class="petite">La partie publique et vérifiable de cette zone existe déjà : le digest maître du coffre synaptique, affiché ci-dessus — <span class="mono">fff20c7c368499f9ba99ac9d7978187d26d5269c71818b054fdc0eff3cbe57e5</span> — que le bouton « Re-vérifier le coffre » du panneau recalcule en direct, dans votre navigateur. Le privé se prouve par le public, sans jamais le montrer.</p>
 </section>
 </div>
 </main>
@@ -5903,6 +6014,116 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
       etatC.textContent=(res.final===res.maitre)?('MATCH — la chaîne du coffre est intacte : '+res.n+' entrées recalculées dans votre navigateur, digest maître retrouvé.'):('ÉCART — le digest recalculé ne correspond pas au digest maître publié.');
     }).catch(function(){etatC.textContent='Le coffre tenu à jour n\'a pas pu être lu ici ; le relevé statique ci-dessous reste la référence vérifiée à la construction.';});
   });}
+})();
+</script>
+
+<script>
+// ---------- v24 : calendrier 13 × 28, Historique quotidien, menu ☰ ----------
+(function(){
+  'use strict';
+  // --- Calendrier 13 × 28 : la logique du module testé (module-calendrier-13x28.js), intégrée ---
+  var JOUR_SIDERAL_S=86164.0905,FACTEUR_SIDERAL=1.00273790935,JOUR_SOLAIRE_S=86400;
+  var ORIGINE_MS=Date.UTC(2026,0,1,5,0,0);
+  function etatCalendrier24(maintenantMs){
+    var ecouleS=(maintenantMs-ORIGINE_MS)/1000;
+    var joursCivils=Math.floor(ecouleS/JOUR_SOLAIRE_S);
+    var rotations=(ecouleS/JOUR_SOLAIRE_S)*FACTEUR_SIDERAL;
+    var avanceRotations=rotations-ecouleS/JOUR_SOLAIRE_S;
+    var jourDuCycle=((joursCivils%364)+364)%364;
+    var mois=Math.floor(jourDuCycle/28)+1;
+    var jourDuMois=(jourDuCycle%28)+1;
+    var cycle=Math.floor(joursCivils/364)+1;
+    var rotationsAuDebut=364*(cycle-1)*FACTEUR_SIDERAL;
+    var cibleRotations=Math.ceil(rotationsAuDebut+364);
+    var joursPourCible=cibleRotations/FACTEUR_SIDERAL;
+    var instantTourMs=ORIGINE_MS+joursPourCible*JOUR_SOLAIRE_S*1000;
+    return {joursCivils:joursCivils,rotations:rotations,avanceRotations:avanceRotations,cycle:cycle,mois:mois,jourDuMois:jourDuMois,jourDuCycle:jourDuCycle+1,instantTourMs:instantTourMs};
+  }
+  function fmtN24(x,n){return x.toLocaleString('fr-CA',{minimumFractionDigits:n,maximumFractionDigits:n});}
+  var fmtTour24=new Intl.DateTimeFormat('fr-CA',{timeZone:'America/Toronto',day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  function majCalendrier24(){
+    var d=document.getElementById('cal-date');if(!d)return;
+    var e=etatCalendrier24(Date.now());
+    d.textContent='Mois '+e.mois+' — jour '+e.jourDuMois;
+    var cyc=document.getElementById('cal-cycle');if(cyc)cyc.textContent='Cycle '+e.cycle+' · jour '+e.jourDuCycle+' du cycle de 364';
+    var rot=document.getElementById('cal-rotations');if(rot)rot.textContent=fmtN24(e.rotations,4);
+    var av=document.getElementById('cal-avance');if(av)av.textContent=fmtN24(e.avanceRotations,5)+' rotation';
+    var avd=document.getElementById('cal-avance-detail');if(avd)avd.textContent='Soit '+fmtN24(e.avanceRotations*JOUR_SIDERAL_S/3600,2)+' heures sidérales d\u2019avance sur le compte civil.';
+    var tour=document.getElementById('cal-tour');if(tour)tour.textContent=fmtTour24.format(new Date(e.instantTourMs));
+  }
+  if(document.getElementById('cal-date')){majCalendrier24();setInterval(majCalendrier24,1000);}
+  // --- Historique quotidien : lecture du fichier tenu à jour ---
+  function echapper24(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var hListe=document.getElementById('historique-liste'),hEtat=document.getElementById('historique-etat');
+  if(hListe&&window.fetch){
+    fetch('assets/historique.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(hist){
+      var es=(hist&&hist.entrees)||[];
+      if(!es.length)throw new Error('vide');
+      var html='';
+      es.forEach(function(e){
+        var dig=String(e.digest_apres||e.empreinte||'');
+        var statut=(e.date==='2026-11-02')?'Ancrage OpenTimestamps : soumis le 2 novembre 2026 — confirmation Bitcoin en attente.':'Ancrage : statut consigné dans le fichier de l\u2019Historique.';
+        html+='<div class="coffre-entree"><h4>'+echapper24(e.date)+' — jour clos</h4><p class="empreinte">Digest cumulé : '+echapper24(dig.slice(0,16))+'…</p><p class="petite">'+statut+'</p></div>';
+      });
+      hListe.innerHTML=html;
+      if(hEtat)hEtat.textContent='Historique lu à l\u2019instant depuis son fichier (assets/historique.json) — '+es.length+' jour'+(es.length>1?'s':'')+' clos.';
+    }).catch(function(){
+      if(hEtat)hEtat.textContent='Le fichier de l\u2019Historique n\u2019a pas pu être lu ici ; le relevé statique ci-dessus reste la référence vérifiée à la construction.';
+    });
+  }
+  // --- Menu ☰ : tiroir, recherche en direct, navigation par ouvrirPanneau ---
+  var mBtn=document.getElementById('menu-btn'),mPan=document.getElementById('menu-panneau'),
+      mRech=document.getElementById('menu-recherche'),mVide=document.getElementById('menu-vide'),
+      mFermer=document.getElementById('menu-fermer'),mLangue=document.getElementById('btn-langue');
+  function menuEstOuvert(){return mPan&&!mPan.hidden;}
+  function ouvrirMenu(){
+    if(!mPan)return;
+    mPan.hidden=false;mBtn.textContent='✕';mBtn.setAttribute('aria-expanded','true');
+    mBtn.setAttribute('aria-label',(mLangue&&mLangue.textContent==='FR')?'Close the menu':'Fermer le menu');
+    if(mRech)mRech.focus();
+  }
+  function fermerMenu(){
+    if(!mPan)return;
+    mPan.hidden=true;mBtn.textContent='☰';mBtn.setAttribute('aria-expanded','false');
+    mBtn.setAttribute('aria-label',(mLangue&&mLangue.textContent==='FR')?'Open the menu':'Ouvrir le menu');
+  }
+  if(mBtn&&mPan){
+    mBtn.addEventListener('click',function(){menuEstOuvert()?fermerMenu():ouvrirMenu();});
+    if(mFermer)mFermer.addEventListener('click',fermerMenu);
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&menuEstOuvert())fermerMenu();});
+    mPan.querySelectorAll('button.menu-entree').forEach(function(b){
+      b.addEventListener('click',function(){
+        var cible=b.dataset.cible,ancre=b.dataset.ancre;
+        fermerMenu();
+        if(cible&&typeof ouvrirPanneau==='function')ouvrirPanneau(cible);
+        if(ancre)setTimeout(function(){var el=document.getElementById(ancre);if(el)el.scrollIntoView({behavior:'smooth'});},150);
+      });
+    });
+    if(mRech){
+      var normalise24=function(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');};
+      mRech.addEventListener('input',function(){
+        var q=normalise24(mRech.value).trim(),total=0;
+        mPan.querySelectorAll('button.menu-entree').forEach(function(b){
+          var ok=!q||normalise24(b.textContent+' '+(b.dataset.mots||'')).indexOf(q)>-1;
+          b.parentElement.style.display=ok?'':'none';
+          if(ok)total++;
+        });
+        mPan.querySelectorAll('.menu-famille').forEach(function(f){
+          var entrees=f.querySelectorAll('button.menu-entree');
+          if(!entrees.length)return;
+          var any=false;
+          entrees.forEach(function(b){if(b.parentElement.style.display!=='none')any=true;});
+          f.style.display=any?'':'none';
+        });
+        if(mVide)mVide.style.display=total?'none':'';
+      });
+    }
+    if(mLangue)mLangue.addEventListener('click',function(){
+      var en=(mLangue.textContent==='FR');
+      if(mRech)mRech.placeholder=en?'Search the site…':'Rechercher dans le site…';
+      mBtn.setAttribute('aria-label',en?(menuEstOuvert()?'Close the menu':'Open the menu'):(menuEstOuvert()?'Fermer le menu':'Ouvrir le menu'));
+    });
+  }
 })();
 </script>
 </body>
