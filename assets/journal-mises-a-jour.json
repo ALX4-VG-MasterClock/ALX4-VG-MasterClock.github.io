@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 33 — « La forme juste »",
+      "points": [
+        {
+          "texte": "La passe esthétique issue de la recherche — Alex a demandé comment se font les plus beaux sites web, et le site reçoit la forme que la recherche a conclue pour lui : une double échelle typographique (φ pour les sauts d’apparat — le titre d’accueil, le grand φ, les chiffres des compteurs —, un ratio dense de 1,25 pour le texte), un corps de 17 px à l’interlignage de 1,65 dans une colonne d’environ 65 caractères, deux familles de polices système et une monospace — aucune police téléchargée, 0 Ko ajouté —, et les cartes-preuves comme la zone du sceau traitées en fiches d’objet : cartouche numéroté, double filet réservé au sceau, cadre du sceau en proportion d’or."
+        },
+        {
+          "texte": "La palette passe en jetons mesurés : chaque couple texte/fond réellement utilisé, dans le thème clair comme dans le thème sombre, a été calculé par la formule de luminance du WCAG et tient son seuil — 4,5:1 pour le texte, 3:1 pour le grand texte et les éléments graphiques porteurs. L’or brillant reste décoratif (filets, sceaux, grands symboles) et n’écrit jamais le texte : l’or de texte est sa variante assombrie, mesurée elle aussi. La table complète des ratios et la méthode de calcul sont consignées au LISEZ-MOI de la version ; le menu est numéroté de 01 à 20, « Mémoire verrouillée » toujours en dernière entrée."
+        },
+        {
+          "texte": "Le mouvement est ramené au catalogue fermé des six animations permises par la recherche : micro-retours de 120 ms, révélations de panneaux de 320 ms en fondu et léger glissement, fondu de thème de 200 ms — et rien d’autre. Les boucles infinies sont retirées (anneaux et flottement de l’avatar, reflet animé du titre, pouls des voyants, lueur de la chaîne, rotations orbitales), les survols ne déplacent plus les cartes, et sous prefers-reduced-motion tout retombe en fondus et en états finaux, comme avant."
+        },
+        {
+          "texte": "Le déverrouillage de la Mémoire verrouillée est branché : la zone lit le paquet chiffré assets/coffre-prive.json quand il existe — ses entrées publiques s’affichent (titre, résumé, empreinte du clair) et la phrase saisie localement, jamais conservée ni envoyée, dérive la clé par PBKDF2 et déchiffre chaque entrée en AES-256-GCM, revérifiée par l’empreinte de son clair : MATCH, le texte s’affiche ; ÉCART ou ÉCHEC, il est retenu et le verdict est dit. L’atelier de chiffrement devient une page du site, reliée depuis la zone. À la publication, aucun paquet n’est encore déposé : la zone garde son état d’attente, sans erreur — Alex produira le premier paquet chez lui, avec l’atelier. Provenance du chantier : la recherche design sourcée commandée par Alex le 3 novembre 2026 — « le site web esthétiquement beau », dans la vision de ce qu’il représente —, nuit de carte blanche."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 32 — « Le parcours d’accès »",
       "points": [
         {
