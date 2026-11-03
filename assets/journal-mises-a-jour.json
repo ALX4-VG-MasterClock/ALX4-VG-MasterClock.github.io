@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 31 — « La nuit porte »",
+      "points": [
+        {
+          "texte": "Un vérificateur d’export du Cerveau coquillage entre au panneau Transmission : le visiteur dépose ou colle le fichier JSON exporté par l’outil autonome, et la page recalcule sa chaîne selon la recette « cerveau-coquillage/v1 » — MATCH, avec le compte des entrées et des connexions, ou le premier écart, nommé par son maillon. Tout se fait dans le navigateur : rien n’est envoyé, rien n’est conservé. Sa borne est écrite dans le module : le bloc de provenance de l’export est lu et résumé (auteur attribué, mention de droits), mais il est déclaratif et n’est pas couvert par la chaîne recalculée — sa présence est constatée, son intégrité n’est pas prouvée par ce calcul ; si le bloc est absent, le module le dit aussi."
+        },
+        {
+          "texte": "Le passage-vérification d’Alex entre au panneau Méthode, dans ses mots exacts et sous son attribution datée : « Ce site ne se contente pas de citer un mécanisme : il en rend les opérations vérifiables. » — avec sa borne, qu’intégrité et antériorité ne prouvent ni la vérité du contenu, ni son auteur, ni son exhaustivité. Il y figure comme la formulation de référence de la thèse de vérification du site."
+        },
+        {
+          "texte": "L’anglais du panneau Transmission est complété : les six étapes, la démonstration « Essaie la chaîne » et le vérificateur d’export portent désormais leurs textes anglais dans la bascule EN, comme le reste du site — là où le mécanisme d’échange de texte le permet ; les paragraphes à formule ou à bouton en ligne et les messages calculés en direct restent en français, limite dite."
+        },
+        {
+          "texte": "Provenance du chantier : la nuit de carte blanche du 3 novembre 2026 — pendant qu’Alex dort, le site est porté plus loin, au-delà de ce qui était demandé, sur la base de son dossier : la méthode transmise devient vérifiable sur les exports réels de l’outil qu’il a créé."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 30 — « L’attribution »",
       "points": [
         {
