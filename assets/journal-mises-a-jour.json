@@ -2,6 +2,27 @@
   "entrees": [
     {
       "date": "2026-11-02",
+      "titre": "Version 27 — « Le clair d’abord »",
+      "points": [
+        {
+          "texte": "La directive d’Alex, en ses mots (2 novembre 2026, 23 h 34) : « Le site web doit être clair et avoir de l’animation, il doit être attrayant et non sombre ; peut-être offrir la fonctionnalité sombre par un onglet, mais la faire par défaut en clair. » Son mot prime : il remplace le défaut sombre décidé le même matin, comme le sombre avait remplacé le clair de la veille — la direction suit sa parole du moment, consignée."
+        },
+        {
+          "texte": "Thème clair par défaut — le site s’ouvre en clair pour tout nouveau visiteur : fonds ivoire et papier, cartes blanches à ombres douces, encre foncée, émeraude profond et or assombri choisi pour rester lisible sur clair (contrastes calculés à la construction). Toute la palette passe par les variables CSS : :root porte le clair, une seule source pour les deux thèmes."
+        },
+        {
+          "texte": "Le sombre devient une option — le bouton « ☾ Sombre » de l’en-tête bascule vers la palette sombre des versions précédentes, conservée sous [data-theme=\"sombre\"] ; le choix est gardé sur l’appareil (localStorage) et réappliqué avant même la peinture de la page. Sans choix conservé : le clair, toujours — le site ne suit pas le réglage sombre du système."
+        },
+        {
+          "texte": "Animations — apparition des panneaux à l’ouverture et au changement d’onglet, révélation douce des cartes à leur arrivée dans le champ, reflet doré lent sur le titre principal, micro-transitions au survol des cartes et des nœuds du graphe. CSS seulement (transform et opacity), aucune librairie ; la règle @media (prefers-reduced-motion: reduce) les désactive toutes, et aucun contenu n’est masqué si le script échoue."
+        },
+        {
+          "texte": "Rien d’autre ne change — les mécanismes de la v26 (pouls du cerveau, graphe du coffre, Demande au cerveau, mémoire des désaccords, épreuve publique), le calendrier 13 × 28, le globe, le menu à 18 sections, Partager, la bascule EN et la zone privée gardent leur fonctionnement ; le coffre embarqué reste la v1 « double empreinte », digest maître 84ed2e54218f1062…. Seul le sceau de la page change, comme à chaque version."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
       "titre": "Version 26 — « Le cerveau visible »",
       "points": [
         {
