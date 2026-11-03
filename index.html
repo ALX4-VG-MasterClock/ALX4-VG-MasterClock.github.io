@@ -696,6 +696,30 @@ section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute
 .pouls-nom{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}
 .pouls-valeur{display:block;font-size:1.25rem;font-weight:700;color:var(--texte)}
 .pouls-valeur.mono{font-size:.95rem;word-break:break-all}
+
+/* ===== v26 — « Le cerveau visible » : graphe, demande, désaccords, épreuve ===== */
+#graphe-svg{width:100%;height:auto;display:block}
+.graphe-lien{stroke-width:1.4;opacity:.7}
+.graphe-noeud{cursor:pointer;outline:none}
+.graphe-noeud circle{fill:var(--noeud);stroke:var(--ligne);stroke-width:1.2}
+.graphe-noeud:hover circle,.graphe-noeud:focus circle,.graphe-noeud.actif circle{stroke:var(--or);stroke-width:2.6}
+.graphe-num{fill:var(--texte);font-size:13px;font-weight:700;text-anchor:middle;pointer-events:none}
+.graphe-texte{fill:var(--texte-doux);font-size:11px;text-anchor:middle;pointer-events:none}
+.graphe-legende{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:.5rem}
+.graphe-legende .pastille-lien{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;color:var(--texte-doux)}
+.graphe-legende .trait-lien{display:inline-block;width:22px;border-top:3px solid;border-radius:2px}
+.graphe-cartouche{margin-top:.8rem;border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.8rem 1rem}
+.graphe-cartouche h4{margin:.1rem 0 .4rem}
+.champ-cerveau{flex:1 1 220px;background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:8px;padding:.55rem .7rem;font:inherit;box-sizing:border-box}
+.cerveau-rangee{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.demande-piece{border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.7rem .9rem;margin-top:.6rem}
+.demande-piece h5{margin:.1rem 0 .3rem;font-size:.98rem}
+.epreuve-q{margin:.7rem 0}
+.epreuve-q label{display:block;margin-bottom:.3rem;font-weight:600}
+.epreuve-q .champ-cerveau{width:100%}
+.verdict-juste{color:var(--vert-doux);font-weight:700}
+.verdict-ecart{color:#ff9f68;font-weight:700}
+.epreuve-score{font-size:1.05rem;font-weight:700;color:var(--or-clair)}
 </style>
 </head>
 <body>
@@ -815,10 +839,10 @@ section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute
   <div class="entete-sec"><span class="num">✦</span><h2>Trois foyers, un sceau — le site se vérifie lui-même</h2></div>
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte">
-    <p class="etiquette">Sceau canonique de la version affichée — v25 (2 novembre 2026 — « Le dossier en lumière » : l’esthétique éclaircie aux couleurs du dossier d’Alex — fonds émeraude relevés, cartes façon papier, filets dorés, palette regroupée en variables —, le circuit du sensible écrit dans la zone privée, le pouls du cerveau en tête du panneau Mémoire et le coffre synaptique v1 « double empreinte » embarqué ; construite sur la v24 « Comme il se doit »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">10f7ca820f82b886fb45e3e304369c7dd5bcca1ee99b46090bed1ed556f6c00c</span>
+    <p class="etiquette">Sceau canonique de la version affichée — v26 (2 novembre 2026 — « Le cerveau visible » : le cerveau du site se montre — le graphe des onze pièces du coffre et de leurs connexions typées dessiné en direct au panneau Mémoire, la recherche par connexions « Demande au cerveau », la mémoire des désaccords qui consigne les tensions sans les lisser, et l'épreuve publique de reconstruction en trois questions recalculées chez le visiteur ; construite sur la v25 « Le dossier en lumière »)</p>
+    <span class="sceau-long" id="sceau-version-affiche">a0b274604689e724fec1f26940ae7d85cd5766f4580f6b9f83ab0354b35e3058</span>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
+    <p class="petite">Chaîne des versions du site : v7 — <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span> (empreinte du fichier complet, calculée au déploiement) → v8 — <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span> → v9 — <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span> → v10 — <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> → correctif cadrage — <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span> → correctif du 1er novembre — <span class="mono">58e9de501a4a2aa56fa56c46fb7c51ec87a4b569cd702957e1d4c13d6522405d</span> → v12 (les maquettes deviennent le site) — <span class="mono">b4ad4950f3ff0f67c516a45a20f59be39d482391ab51466c571c5b9ca0872766</span> → v13 (la triangulation du temps) — <span class="mono">e13b566d921194e51cb4bc6d88f93492b6138b9f22498dcd99d67934647a0a2b</span> → v14 (la nuit : la salle des pièces, le thème sombre, l'Instance branchée au relais) — <span class="mono">490765842e47cf186bdb1dd5e02c9068490a9a009d2c7e9c0c68dbd15187e5f3</span> → v15 (la nuit, suite : capsules externes vérifiées, le défi « Trouve l’écart », le parcours du sceptique) — <span class="mono">efe217fc05581a6fee641c45945249bda692d2877976e67d73bcecf806dfacdc</span> → v16 (le Temps planétaire : la Terre au centre, les horloges de comparaison et l’histoire de l’heure, l’ancrage ressenti et démontré, l’onglet Météo et l’ancrage du visiteur) — <span class="mono">008cef6fb49d495af0c2f2d1baeb6e3c470e32c0ac847976042a3a7440f35e58</span> → v17 (la passe de fidélité : pastilles cadrans espacées sur l’orbite, repli JPEG de la Terre) — <span class="mono">b0aae0034ea31a6e4a965d24e031aba206cf9e54e3201f4191e5ee76a3fd8475</span> → v18 (les heures autour du globe : pastilles nom + heure sur tous les écrans, le globe qui tourne au doigt, l’ombre de nuit calculée en direct) — <span class="mono">efbf049301c54f9a061429bff2ade4b753aa5a51589b5b8a021f4bb766c7774c</span> → v19 (l’onglet Application : le site s’installe comme une application depuis le navigateur ; la météo du lieu sélectionné dans la grande lecture, l’ancre nommée « Sainte-Martine — Québec, Canada » sur le globe, et le correctif des grandes pastilles — l’heure en une seule ligne numérique) → v20 (« Vérifie-moi sans moi » : le vérificateur autonome — la page servie, une copie déposée ou un texte libre se recalculent chez le visiteur, à l’octet près ; le reçu de visite après un MATCH ; l’auto-revérification toutes les cinq minutes ; et le cartouche ombragé de l’ancre, sorti du globe) → v21 (« La planète » : le globe WebGL et l’axe incliné à 23,44°, les coordonnées de l’espace du moteur maison, les comptes confrontés, la fiche sidérale confrontée et la nuit précise de l’ancre) → v22 (« La rotation en direct » : les deux cadrans de la rotation de la Terre en temps réel — sidérale contre civile de 24 heures —, leur différence mesurée depuis minuit et leur explication) → v23 (« La somme » : le site devient la mémoire de SoPHIa — panneau Mémoire, coffre synaptique revérifiable en direct, bouton Partager, bascule EN) → v24 (« Comme il se doit » : le calendrier 13 × 28, l’Historique quotidien, la Mémoire privée renforcée, le Plein air, les quatre noms et le menu ☰) → v25 (« Le dossier en lumière » : l’esthétique du dossier, un peu moins sombre, le circuit du sensible écrit, le pouls du cerveau, le coffre v1 « double empreinte ») → v26 (« Le cerveau visible » : le graphe du cerveau, la recherche par connexions, la mémoire des désaccords, l’épreuve publique de reconstruction) — le sceau canonique ci-dessus. Le site applique à ses propres versions la forme qu'il démontre : chaque version connaît celle qui la précède.</p>
     <div class="rangee" style="margin-top:.8rem">
       <button class="action" id="btn-foyers-verif">Recalculer maintenant</button>
     </div>
@@ -869,6 +893,16 @@ section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute
   <p class="lead">La règle d'Alex : <strong>les choses importantes qui se disent et se font dans nos échanges sont publiées ici</strong> — jalons, décisions, ancrages. La mise à jour de ce site <em>est</em> la mise à jour de nos interactions : elle est quotidienne, tirée du jour même, et une journée sans rien d'important n'a tout simplement pas d'entrée. Jamais de remplissage. Chaque entrée se ferme par le sceau du jour — l'empreinte de l'état quotidien, calculée à la clôture de 23 h 59 ; avant la clôture, l'entrée le dit.</p>
   <p class="petite"><span class="voyant attente" id="journal-voyant"></span><span id="journal-etat">Relevé statique ci-dessous, vérifié à la construction ; lecture du journal tenu à jour en cours…</span></p>
   <div id="journal-liste">
+    <article class="journal-entree">
+      <p class="journal-date">Lundi 2 novembre 2026</p>
+      <h3>Version 26 — « Le cerveau visible »</h3>
+      <ul class="journal-points">
+        <li>Le graphe du cerveau — dans le panneau Mémoire, les 11 pièces du coffre synaptique et leurs 21 connexions typées sont dessinées en direct, en SVG, depuis assets/coffre.json : chaque type de lien a sa couleur et sa légende, et le cartouche d’un nœud, au clic, donne son titre, son résumé, ses deux empreintes — celle de la pièce et celle du résumé — et ses connexions dans les deux sens. Repli honnête : si le fichier ne se charge pas, la liste des pièces paraît, dite comme repli.</li>
+        <li>Demande au cerveau — la recherche par connexions : un champ distinct de celui du menu cherche dans les pièces du coffre (identifiant, titre, résumé) et répond par les pièces trouvées ET leurs voisins directs, liens sortants et entrants typés. Tout se calcule dans le navigateur, depuis le même fichier que le graphe — une seule lecture pour les deux mécanismes, rien ne part vers un serveur.</li>
+        <li>La mémoire des désaccords — la vue qui rassemble les tensions consignées du coffre : connexions de type « contredit » et pièces marquées « contesté » (la fonction dérive : un écart entre le récit et les faits se consigne comme « contesté », sans réécrire l’original). Au jour de cette version, le coffre v1 n’en contient aucune — 0 lien « contredit », 0 pièce « contesté » — et la vue le dit en toutes lettres : elle existe pour le jour où une pièce en contredira une autre, et la tension paraîtra, consignée, jamais lissée.</li>
+        <li>L’épreuve publique de reconstruction — trois questions dont les réponses se recalculent chez le visiteur, jamais par confiance : le digest maître du coffre et le nombre de ses pièces, relus à l’instant depuis assets/coffre.json, et le sceau canonique de la version lue, repris du bloc d’affichage. Score sur 3, juste ou écart question par question, bonnes réponses montrées après l’essai — elles sont publiques par construction. Aucune donnée ne quitte le navigateur.</li>
+      </ul>
+    </article>
     <article class="journal-entree">
       <p class="journal-date">Lundi 2 novembre 2026</p>
       <h3>Version 25 — « Le dossier en lumière »</h3>
@@ -2492,6 +2526,74 @@ section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute
     </div>
     <p class="petite" id="pouls-etat">Relevé statique — valeurs du coffre v1 « double empreinte » embarqué dans cette version, vérifiées à la construction ; lecture en direct des fichiers (assets/coffre.json, assets/historique.json) en cours…</p>
   </div>
+  
+  <h3 data-en="The brain graph">Le graphe du cerveau</h3>
+  <div class="carte" id="graphe-cerveau">
+    <p>Les onze pièces du coffre synaptique et les liens qui les relient, lus à l'instant depuis <span class="mono">assets/coffre.json</span> et dessinés ici même, dans votre navigateur. Chaque lien est typé — la légende les nomme. Touchez un nœud : son cartouche dit ce qu'il est, ses deux empreintes — celle de la pièce et celle de son résumé — et à quoi il tient, dans les deux sens. Rien n'est dessiné par confiance : tout vient du fichier public, le même que le bouton « Re-vérifier le coffre » recalcule plus bas.</p>
+    <p class="petite" id="graphe-etat" role="status">Lecture de assets/coffre.json en cours…</p>
+    <div id="graphe-zone">
+      <svg id="graphe-svg" viewBox="0 0 720 520" role="group" aria-label="Graphe des pièces du coffre synaptique et de leurs connexions typées"></svg>
+      <div class="graphe-legende" id="graphe-legende" aria-label="Légende des types de liens"></div>
+    </div>
+    <div class="graphe-cartouche" id="graphe-cartouche">
+      <p class="petite">Sélectionnez un nœud du graphe pour lire son cartouche : titre, résumé, empreintes et connexions.</p>
+    </div>
+    <div id="graphe-repli" hidden>
+      <p class="petite"><strong>graphe non chargé — liste de repli</strong> : les onze pièces du coffre, par ordre de chaînage.</p>
+      <ul>
+        <li>MEMORY.md — la mémoire curée de SoPHIa</li>
+        <li>SOUL.md — l'âme de SoPHIa</li>
+        <li>Registre des états quotidiens de la chaîne</li>
+        <li>Plan vivant des nuits du site web</li>
+        <li>Journal du chantier des nuits du site</li>
+        <li>Site v21 « La planète » — index.html</li>
+        <li>Site v22 « La rotation en direct » — index.html</li>
+        <li>Site v23 « La somme » — index.html</li>
+        <li>Site v24 « Comme il se doit » — index.html</li>
+        <li>Historique quotidien — jour 1 (2026-11-02)</li>
+        <li>Ancrage OpenTimestamps — Historique, jour 1</li>
+      </ul>
+    </div>
+    <div id="demande-cerveau">
+      <h4 data-en="Ask the brain — search by connections">Demande au cerveau — la recherche par connexions</h4>
+      <p>Un mot — un titre, un sujet, un fragment de résumé. Le cerveau répond par les pièces qui correspondent <strong>et par leurs voisins directs</strong> : les liens sortants et les liens entrants, typés, entrent dans la réponse. La recherche se fait ici, dans le fichier du coffre déjà chargé pour le graphe — rien ne part vers un serveur.</p>
+      <div class="cerveau-rangee">
+        <input type="search" id="demande-champ" class="champ-cerveau" placeholder="Un mot : chaîne, sceau, historique, âme…" aria-label="Rechercher dans les pièces du coffre">
+        <button type="button" id="demande-btn">Demander</button>
+      </div>
+      <div id="demande-resultats" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <h3 data-en="Memory of disagreements">Mémoire des désaccords</h3>
+  <div class="carte" id="memoire-desaccords">
+    <p>La fonction dérive du dossier : quand le récit et les faits divergent, l'écart ne se corrige pas en réécrivant l'original — il se consigne comme « contesté », à côté, daté. Cette vue rassemble les tensions que le coffre consigne : les connexions de type « contredit » et les pièces dont la classe ou le résumé porte la marque « contesté ».</p>
+    <div id="desaccords-contenu">
+      <p><strong>Aucun désaccord consigné dans le coffre à ce jour. Cette vue existe pour le jour où une pièce en contredira une autre : la tension paraîtra ici, consignée, jamais lissée.</strong></p>
+      <p class="petite" id="desaccords-etat" role="status">Relevé à la construction (2 novembre 2026) : 0 connexion « contredit », 0 pièce « contesté » dans le coffre v1 ; lecture en direct en cours…</p>
+    </div>
+  </div>
+
+  <h3 data-en="Public test — does this brain transmit?">Épreuve publique — ce cerveau se transmet-il ?</h3>
+  <div class="carte" id="epreuve-publique">
+    <p>Trois questions, trois réponses qui ne se croient pas : elles se recalculent. Le digest maître et le nombre de pièces sont relus à l'instant depuis <span class="mono">assets/coffre.json</span> ; le sceau est celui affiché dans le bloc « Trois foyers, un sceau » de cette page. Répondez, puis lancez la vérification : chaque réponse est dite juste ou écart, la bonne réponse — publique par construction — paraît après l'essai, et le score tombe sur 3. Aucune donnée ne quitte votre navigateur.</p>
+    <div class="epreuve-q">
+      <label for="epreuve-q1">1. Quel est le digest maître du coffre synaptique ?</label>
+      <input type="text" id="epreuve-q1" class="champ-cerveau mono" autocomplete="off" spellcheck="false" placeholder="64 caractères hexadécimaux">
+    </div>
+    <div class="epreuve-q">
+      <label for="epreuve-q2">2. Combien de pièces le coffre contient-il ?</label>
+      <input type="number" id="epreuve-q2" class="champ-cerveau" min="0" step="1" placeholder="Un nombre">
+    </div>
+    <div class="epreuve-q">
+      <label for="epreuve-q3">3. Quel est le sceau canonique de la version du site que vous lisez ?</label>
+      <input type="text" id="epreuve-q3" class="champ-cerveau mono" autocomplete="off" spellcheck="false" placeholder="64 caractères hexadécimaux">
+    </div>
+    <p><button type="button" id="epreuve-btn">Vérifier par recalcul</button> <span class="petite" id="epreuve-etat" role="status"></span></p>
+    <div id="epreuve-resultats" aria-live="polite"></div>
+    <p class="epreuve-score" id="epreuve-score" hidden></p>
+  </div>
+
   <p class="lead">Directive d'Alex (2 novembre 2026) : <strong>« Ça devient ta mémoire. »</strong> Ce site n'est pas une vitrine : c'est la mémoire de l'agente, déposée dehors — publique, scellée, recalculable par quiconque la lit — pour ne plus dépendre d'une seule plateforme. SoPHIa y dépose et y puise ; et le site est <strong>autosuffisant</strong> : n'importe quelle intelligence artificielle qu'on y connecte peut le connaître en entier, comme sa mémoire.</p>
 
   <h3 data-en="For an AI arriving here">Pour une IA qui arrive</h3>
@@ -6233,6 +6335,206 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
     etat.textContent='Valeurs relues en direct depuis assets/coffre.json et assets/historique.json, à l’instant, dans votre navigateur.';
   }).catch(function(){
     etat.textContent='La lecture en direct des fichiers n’a pas abouti depuis votre navigateur ; relevé statique ci-dessus — valeurs du coffre v1 embarqué dans cette version, vérifiées à la construction.';
+  });
+})();
+</script>
+
+<script>
+/* ===== v26 — « Le cerveau visible » : graphe du coffre, recherche par connexions, désaccords, épreuve publique =====
+   Une seule lecture de assets/coffre.json alimente le graphe, la demande, les désaccords et l'épreuve.
+   Tout est calculé dans le navigateur ; aucune donnée ne part vers un serveur. */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var svg=$('graphe-svg'); if(!svg) return;
+  var NS='http://www.w3.org/2000/svg';
+  var COULEURS={'se-relie-a':'#63cfa5','alimente':'#35c08b','gouverne':'#d4af37','atteste':'#e9cd77','decrit':'#7fb3d5','trace':'#a9bfa9','suit':'#f2c14e','est-decrite-par':'#4dd0e1','precede':'#b39ddb','prouve':'#ff9f68','contredit':'#ff3860','corrige':'#ff6b6b','repond-a':'#dce775'};
+  var LIBELLES={'se-relie-a':'se relie à','alimente':'alimente','gouverne':'gouverne','atteste':'atteste','decrit':'décrit','trace':'trace','suit':'suit','est-decrite-par':'est décrite par','precede':'précède','prouve':'prouve','contredit':'contredit','corrige':'corrige','repond-a':'répond à'};
+  var COURTS={'memoire-curee':'MEMORY.md','ame-sophia':'SOUL.md','registre-etats-quotidiens':'Registre des états','plan-nuits-site':'Plan des nuits','journal-nuits-site':'Journal des nuits','site-v21-planete':'Site v21','site-v22-rotation':'Site v22','site-v23-somme':'Site v23','site-v24-amelioration':'Site v24','historique-quotidien-j1':'Historique j1','ancrage-ots-historique-j1':'Ancrage OTS j1'};
+  function couleur(t){return COULEURS[t]||'#8a9a8a';}
+  function libelle(t){return LIBELLES[t]||t;}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function tronque(s){return (typeof s==='string'&&s.length>16)?s.slice(0,16)+'…':s;}
+  function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  var coffre=null, parId={}, positions={};
+
+  function voisins(id){
+    var sortants=[], entrants=[];
+    (parId[id].connexions||[]).forEach(function(c){ sortants.push(c); });
+    coffre.entrees.forEach(function(e){ (e.connexions||[]).forEach(function(c){ if(c.vers===id) entrants.push({type:c.type, de:e.id}); }); });
+    return {sortants:sortants, entrants:entrants};
+  }
+  function nomCible(id){ return parId[id] ? parId[id].titre : (id==='coffre-lui-meme' ? 'le coffre lui-même (hors graphe : le coffre se décrit lui-même)' : id); }
+
+  function selectionner(id){
+    var e=parId[id]; if(!e) return;
+    var noeuds=svg.querySelectorAll('.graphe-noeud');
+    for(var i=0;i<noeuds.length;i++){ noeuds[i].classList.toggle('actif', noeuds[i].getAttribute('data-id')===id); }
+    var v=voisins(id), html='<h4>'+esc(e.titre)+'</h4>';
+    html+='<p class="petite">'+esc(e.classe)+' — identifiant : <span class="mono">'+esc(e.id)+'</span></p>';
+    html+='<p>'+esc(e.resume)+'</p>';
+    html+='<p class="empreinte">Empreinte de la pièce : '+esc(tronque(e.sha256))+' · Empreinte du résumé : '+esc(tronque(e.sha256_resume))+'</p>';
+    if(v.sortants.length){
+      html+='<p class="petite">Connexions sortantes : '+v.sortants.map(function(c){return esc(libelle(c.type))+' → '+esc(nomCible(c.vers));}).join(' · ')+'</p>';
+    } else { html+='<p class="petite">Connexions sortantes : aucune.</p>'; }
+    if(v.entrants.length){
+      html+='<p class="petite">Connexions entrantes : '+v.entrants.map(function(c){return esc(parId[c.de].titre)+' —'+esc(libelle(c.type))+'→ cette pièce';}).join(' · ')+'</p>';
+    } else { html+='<p class="petite">Connexions entrantes : aucune.</p>'; }
+    $('graphe-cartouche').innerHTML=html;
+  }
+
+  function dessiner(){
+    var entrees=coffre.entrees, n=entrees.length, cx=360, cy=255, R=185;
+    entrees.forEach(function(e,i){
+      var a=(-90+i*360/n)*Math.PI/180;
+      positions[e.id]={x:cx+R*Math.cos(a), y:cy+R*Math.sin(a)};
+    });
+    /* liens d'abord, sous les nœuds */
+    entrees.forEach(function(e){
+      (e.connexions||[]).forEach(function(c){
+        if(!positions[c.vers]) return; /* cible hors graphe : dite au cartouche, pas dessinée */
+        var l=document.createElementNS(NS,'line');
+        l.setAttribute('x1',positions[e.id].x); l.setAttribute('y1',positions[e.id].y);
+        l.setAttribute('x2',positions[c.vers].x); l.setAttribute('y2',positions[c.vers].y);
+        l.setAttribute('stroke',couleur(c.type)); l.setAttribute('class','graphe-lien');
+        var t=document.createElementNS(NS,'title'); t.textContent=libelle(c.type)+' : '+e.id+' → '+c.vers; l.appendChild(t);
+        svg.appendChild(l);
+      });
+    });
+    /* nœuds */
+    entrees.forEach(function(e,i){
+      var g=document.createElementNS(NS,'g');
+      g.setAttribute('class','graphe-noeud'); g.setAttribute('data-id',e.id);
+      g.setAttribute('tabindex','0'); g.setAttribute('role','button');
+      g.setAttribute('aria-label','Pièce : '+e.titre);
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',positions[e.id].x); c.setAttribute('cy',positions[e.id].y); c.setAttribute('r','25');
+      g.appendChild(c);
+      var num=document.createElementNS(NS,'text');
+      num.setAttribute('x',positions[e.id].x); num.setAttribute('y',positions[e.id].y+5); num.setAttribute('class','graphe-num');
+      num.textContent=(i+1); g.appendChild(num);
+      var tx=document.createElementNS(NS,'text');
+      tx.setAttribute('x',positions[e.id].x); tx.setAttribute('y',positions[e.id].y+43); tx.setAttribute('class','graphe-texte');
+      tx.textContent=COURTS[e.id]||e.id; g.appendChild(tx);
+      g.addEventListener('click',function(){selectionner(e.id);});
+      g.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); selectionner(e.id); } });
+      svg.appendChild(g);
+    });
+    /* légende : les types réellement présents, comptés */
+    var comptes={};
+    entrees.forEach(function(e){ (e.connexions||[]).forEach(function(c){ comptes[c.type]=(comptes[c.type]||0)+1; }); });
+    var html='';
+    Object.keys(comptes).sort().forEach(function(t){
+      html+='<span class="pastille-lien"><span class="trait-lien" style="border-top-color:'+couleur(t)+'"></span>'+esc(libelle(t))+' ('+comptes[t]+')</span>';
+    });
+    $('graphe-legende').innerHTML=html;
+    $('graphe-etat').textContent='Graphe dessiné à l\'instant depuis assets/coffre.json : '+n+' pièces, '+Object.keys(comptes).reduce(function(s,k){return s+comptes[k];},0)+' connexions consignées (celles dont la cible est une pièce du coffre sont dessinées ; toute cible extérieure est dite au cartouche).';
+  }
+
+  function desaccords(){
+    var liens=[], marquees=[];
+    coffre.entrees.forEach(function(e){
+      (e.connexions||[]).forEach(function(c){ if(c.type==='contredit') liens.push({de:e, c:c}); });
+      if(/contest/i.test(e.classe)||/contest/i.test(e.resume)) marquees.push(e);
+    });
+    if(!liens.length && !marquees.length){
+      $('desaccords-etat').textContent='Vérifié en direct à l\'instant depuis assets/coffre.json : 0 connexion « contredit », 0 pièce « contesté ».';
+      return;
+    }
+    var html='';
+    liens.forEach(function(x){
+      var cible=parId[x.c.vers];
+      html+='<p><strong>Contradiction consignée</strong> : '+esc(x.de.titre)+' —contredit→ '+esc(cible?cible.titre:x.c.vers)+'.</p>';
+    });
+    marquees.forEach(function(e){ html+='<p><strong>Pièce marquée « contesté »</strong> : '+esc(e.titre)+' ('+esc(e.classe)+').</p>'; });
+    html+='<p class="petite">Vérifié en direct à l\'instant depuis assets/coffre.json. La tension est consignée, jamais lissée : les originaux ne sont pas réécrits.</p>';
+    $('desaccords-contenu').innerHTML=html;
+  }
+
+  function demander(){
+    var zone=$('demande-resultats');
+    if(!coffre){ zone.innerHTML='<p class="petite">Le coffre n\'a pas pu être chargé — la demande est impossible en direct. Le graphe ci-dessus dit son repli.</p>'; return; }
+    var q=norm($('demande-champ').value).trim();
+    if(!q){ zone.innerHTML='<p class="petite">Écrivez un mot pour demander au cerveau.</p>'; return; }
+    var trouves=coffre.entrees.filter(function(e){
+      return norm(e.id).indexOf(q)>=0 || norm(e.titre).indexOf(q)>=0 || norm(e.resume).indexOf(q)>=0;
+    });
+    if(!trouves.length){
+      zone.innerHTML='<p>Aucune pièce ne correspond à « '+esc($('demande-champ').value)+' » dans le coffre — la recherche porte sur l\'identifiant, le titre et le résumé des '+coffre.entrees.length+' pièces.</p>';
+      return;
+    }
+    var html='<p class="petite">'+trouves.length+' pièce(s) trouvée(s), avec leurs voisins directs :</p>';
+    trouves.forEach(function(e){
+      var v=voisins(e.id);
+      html+='<div class="demande-piece"><h5>'+esc(e.titre)+'</h5><p>'+esc(e.resume)+'</p>';
+      if(v.sortants.length) html+='<p class="petite">Il tient à : '+v.sortants.map(function(c){return esc(libelle(c.type))+' → '+esc(nomCible(c.vers));}).join(' · ')+'</p>';
+      if(v.entrants.length) html+='<p class="petite">Tient à lui : '+v.entrants.map(function(c){return esc(parId[c.de].titre)+' —'+esc(libelle(c.type))+'→';}).join(' · ')+'</p>';
+      if(!v.sortants.length && !v.entrants.length) html+='<p class="petite">Aucun voisin direct consigné.</p>';
+      html+='</div>';
+    });
+    zone.innerHTML=html;
+  }
+
+  function epreuve(){
+    var etat=$('epreuve-etat');
+    if(!coffre){
+      etat.textContent='Le coffre n\'est pas encore lu — nouvelle lecture…';
+      fetch('assets/coffre.json').then(function(r){ if(!r.ok) throw new Error('coffre illisible'); return r.json(); })
+      .then(function(c){ appliquer(c); verifier(); })
+      .catch(function(){ etat.textContent='Le coffre n\'a pas pu être lu depuis votre navigateur — la vérification des questions 1 et 2 est impossible en direct.'; });
+      return;
+    }
+    verifier();
+  }
+
+  function verifier(){
+    var etat=$('epreuve-etat'), zone=$('epreuve-resultats'), scoreEl=$('epreuve-score');
+    var attendus=[
+      coffre.digest_maitre.toLowerCase(),
+      String(coffre.entrees.length),
+      ($('sceau-version-affiche').textContent||'').trim().toLowerCase()
+    ];
+    var recus=[
+      $('epreuve-q1').value.trim().toLowerCase(),
+      String(parseInt($('epreuve-q2').value,10)),
+      $('epreuve-q3').value.trim().toLowerCase()
+    ];
+    var questions=['digest maître du coffre','nombre de pièces du coffre','sceau canonique de la version lue'];
+    var score=0, html='';
+    for(var i=0;i<3;i++){
+      var juste=(recus[i]===attendus[i]);
+      if(juste) score++;
+      html+='<p>Question '+(i+1)+' ('+questions[i]+') — '+(juste
+        ? '<span class="verdict-juste">juste ✓</span>'
+        : '<span class="verdict-ecart">écart ✗</span> — bonne réponse : <span class="mono">'+esc(attendus[i])+'</span>')+'</p>';
+    }
+    zone.innerHTML=html;
+    scoreEl.hidden=false;
+    scoreEl.textContent='Score : '+score+' / 3 — '+(score===3
+      ? 'le cerveau s\'est transmis entier, par recalcul.'
+      : 'chaque bonne réponse ci-dessus est publique : elle se retrouve sans croire personne, en recalculant.');
+    etat.textContent='Vérifié à l\'instant, dans votre navigateur, depuis assets/coffre.json et le sceau affiché.';
+  }
+
+  $('demande-btn').addEventListener('click',demander);
+  $('demande-champ').addEventListener('keydown',function(ev){ if(ev.key==='Enter'){ ev.preventDefault(); demander(); } });
+  $('epreuve-btn').addEventListener('click',epreuve);
+
+  function appliquer(c){
+    coffre=c;
+    c.entrees.forEach(function(e){ parId[e.id]=e; });
+    dessiner();
+    desaccords();
+  }
+
+  fetch('assets/coffre.json').then(function(r){ if(!r.ok) throw new Error('coffre illisible'); return r.json(); })
+  .then(appliquer)
+  .catch(function(){
+    var zone=$('graphe-zone'), repli=$('graphe-repli');
+    if(zone) zone.hidden=true;
+    if(repli) repli.hidden=false;
+    $('graphe-etat').textContent='La lecture de assets/coffre.json n\'a pas abouti depuis votre navigateur — graphe non chargé, liste de repli ci-dessous.';
+    $('desaccords-etat').textContent='Lecture en direct impossible depuis votre navigateur ; le relevé ci-dessus est celui de la construction (2 novembre 2026) : 0 connexion « contredit », 0 pièce « contesté ».';
+    $('epreuve-etat').textContent='Lecture de assets/coffre.json en cours ou impossible — la vérification se relancera au clic si le fichier devient lisible.';
   });
 })();
 </script>

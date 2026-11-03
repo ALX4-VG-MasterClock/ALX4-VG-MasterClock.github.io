@@ -26,3 +26,5 @@ leurs empreintes, jamais par leurs contenus.
 Version 24 « Comme il se doit » (2 novembre 2026) : le calendrier 13 × 28 (panneau Temps), l’Historique quotidien (panneau Mémoire, fichier assets/historique.json) et le module Plein air (panneau Météo) entrent au site, avec les quatre noms au panneau Méthode et le menu ☰.
 
 Version 25 « Le dossier en lumière » (2 novembre 2026) : esthétique éclaircie aux couleurs du dossier (palette en variables CSS), circuit du sensible écrit au panneau Mémoire, pouls du cerveau recalculé en direct et coffre synaptique v1 « double empreinte » (11 pièces) dans assets/coffre.json.
+
+Version 26 « Le cerveau visible » (2 novembre 2026) : dans le panneau Mémoire, le graphe des 11 pièces du coffre et de leurs connexions typées (dessiné en direct depuis assets/coffre.json), la recherche par connexions « Demande au cerveau », la mémoire des désaccords et l’épreuve publique de reconstruction — trois questions recalculées chez le visiteur, depuis le fichier du coffre et le sceau affiché.
