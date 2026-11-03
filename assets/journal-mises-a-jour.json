@@ -2,6 +2,24 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 32 — « Le parcours d’accès »",
+      "points": [
+        {
+          "texte": "Un vingtième panneau entre au site — « Mes renseignements — préparer une demande d’accès », dans le groupe Pratique du menu, juste après Transmission dans les onglets : le visiteur indique où est l’organisation et de quel type elle est (province ou territoire, entreprise fédérale, secteur santé), et le panneau détermine la loi qui s’applique — Loi sur le privé au Québec, LPRPDE pour les entreprises fédérales, dans les territoires et dans les provinces sans loi essentiellement similaire, PIPA en Alberta et en Colombie-Britannique, loi provinciale de santé pour les renseignements de santé — avec, pour chaque loi, son délai de réponse, son destinataire et son recours."
+        },
+        {
+          "texte": "Le générateur de lettre est entièrement local : les champs saisis produisent la lettre dans le navigateur — affichée, copiable, téléchargeable en texte, imprimable seule — et le site ne reçoit ni ne conserve rien, pas même dans le stockage local. La lettre porte visiblement, dès sa première ligne : « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique ». Aucune donnée excessive n’est demandée : ni mot de passe, ni numéro d’assurance sociale."
+        },
+        {
+          "texte": "Les faits du panneau ont été vérifiés un à un sur les pages officielles des commissariats le 3 novembre 2026 (CAI, CPVP, OIPC de l’Alberta, OIPC de la Colombie-Britannique) — et le résumé de départ en sort corrigé sur deux points : des lettres types officielles existent (la lettre type de la CAI, l’exemple du CPVP), que le panneau relie au lieu de les remplacer ; et le délai fédéral de la LPRPDE est de 30 jours civils, prorogeable jusqu’à 30 jours de plus avec avis motivé. La mention de fraîcheur figure dans le panneau, et aucune conformité juridique n’y est affirmée."
+        },
+        {
+          "texte": "Provenance du chantier : le brief transmis par Alex le 3 novembre 2026 et la nuit de carte blanche — le site ne démontre plus seulement la méthode : il arme le visiteur de ses propres droits d’accès, province par province. Et à la demande d’Alex, pendant la construction même : « Mémoire privée » devient « Mémoire verrouillée » — l’entrée du menu, avec son cadenas, quitte le groupe « Mémoire et intelligence » pour la toute dernière position du menu, et le titre de la zone dans le panneau Mémoire suit le nouveau nom ; l’ancre de la zone et son fonctionnement ne changent pas, et les entrées historiques du journal gardent le nom d’époque."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Version 31 — « La nuit porte »",
       "points": [
         {
