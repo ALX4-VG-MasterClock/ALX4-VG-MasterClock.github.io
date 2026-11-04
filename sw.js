@@ -1,4 +1,4 @@
-/* Audit Unisson — travailleur de service (v29).
+/* Audit Unisson — travailleur de service (v30).
    Stratégies, dans l'ordre :
    1) La page (HTML), le journal des mises à jour (JSON) et TOUS les fichiers
       de données JSON sous assets/ (coffre, coffre privé, état de la chaîne,
