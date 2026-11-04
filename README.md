@@ -52,3 +52,4 @@ hébergeur de fichiers statiques (Netlify par glisser-déposer, GitHub Pages,
 ou autre) : aucun verrouillage à une plateforme.
 <!-- Redéclenchement du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
 <!-- Redéclenchement nº 2 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
+<!-- Redéclenchement nº 3 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
