@@ -2,6 +2,21 @@
  "entrees": [
   {
    "date": "2026-11-04",
+   "titre": "Version 46 — « Les textes du site »",
+   "points": [
+    {
+     "texte": "Deux panneaux nouveaux au menu Comprendre, juste après le registre des conditions des plateformes : « Conditions d’utilisation du site » et « Politique du site » — les textes propres de ce site, rédigés depuis ses pratiques réelles et vérifiées, jamais depuis un gabarit générique. Le site qui lit les conditions des autres en entier, de A à Z, porte désormais les siennes."
+    },
+    {
+     "texte": "Chaque engagement y est rattaché, dans le corps même, à l’article auquel il se conforme — la LRPSP, la loi du Québec issue de la Loi 25, d’abord ; la couche fédérale (la LPRPDE et son annexe 1) là où elle pose le même geste — et chaque texte se ferme par sa table de conformité : l’article, ce qu’il exige, ce que le site fait. La Politique nomme l’évaluation des facteurs relatifs à la vie privée du trajet de la messagerie (art. 3.3 et 17), le registre des incidents de confidentialité (art. 3.8) et le responsable de la protection des renseignements personnels (art. 3.1 — la désignation par défaut : l’opérateur). Les Conditions adoptent la clause de loi applicable et de for — les lois du Québec et les lois du Canada qui s’y appliquent, les tribunaux du Québec — bornée par la sauvegarde des protections impératives de l’utilisateur."
+    },
+    {
+     "texte": "État de chaîne rafraîchi au gel de la version : 2 783 maillons, sommet #2782, digest cumulé d189c13ac3ad653e3f8c0be9c5c5a74e82ec0399ee910a4be1d94bcac54512a0 — revérifié au complet par le vérificateur du dossier (MATCH)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
    "titre": "Version 45 — « Faites un don »",
    "points": [
     {
