@@ -7,7 +7,10 @@ d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 43 — « Profondeur » (3 novembre 2026). La navigation est un
+Version 45 — « Faites un don » (4 novembre 2026). L’accueil
+retrouve ses quatre compteurs en surface première — maillons de la
+chaîne, pièces du registre, pouls de vérification, sceaux publics —
+relus en direct. La navigation est un
 arbre de six menus, dans l'ordre voulu par l'auteur — les fonctions pour
 l'utilisateur d'abord :
 
