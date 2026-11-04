@@ -1,14 +1,14 @@
 {
-  "maillons": 2565,
-  "dernier_maillon": 2564,
-  "sceau_dernier": "54ddf9e7dfb7e4d2579acc5ea7b704b7efa14defa3b82eb13e98bd4e104efcd0",
-  "digest_cumule": "8f58e7727ccb0aa75a5bca7bc741f30f08cc0b9eeb662466957ce4aa6a781be8",
-  "mis_a_jour": "2026-11-03",
-  "propriete": {
-    "createur": "Alexandre Vautour Gagnon",
-    "qualite": "chercheur indépendant",
-    "orcid": "0009-0006-9124-4407",
-    "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
-    "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
-  }
+ "maillons": 2578,
+ "dernier_maillon": 2577,
+ "sceau_dernier": "be595881a7e318cb556c4fe71764285723abddb9ed722b794ec13d874cd5716f",
+ "digest_cumule": "1bfd209fc3ec6d8442a0f2d55d1e7567f32555cfa893fa5e75a0189588f3cc7f",
+ "mis_a_jour": "2026-11-03",
+ "propriete": {
+  "createur": "Alexandre Vautour Gagnon",
+  "qualite": "chercheur indépendant",
+  "orcid": "0009-0006-9124-4407",
+  "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
+  "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
+ }
 }
