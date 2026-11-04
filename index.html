@@ -3833,47 +3833,48 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
       <p>La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.</p>
       <p class="petite">Source : <span class="mono">assets/etat-chaine.json</span> — dernière croissance : État rafraîchi à la construction de la version 40 ; la page relit le fichier d’état en direct.</p>
       <p class="empreinte">Digest : <span class="mono">1bfd209fc3ec6d84…</span> <button type="button" class="secondaire cerveau-copier" data-copie="1bfd209fc3ec6d8442a0f2d55d1e7567f32555cfa893fa5e75a0189588f3cc7f">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="chaine">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="chaine">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="coffre">
       <h4>Le Coffre synaptique</h4>
       <p>Les pièces de la mémoire de l’agente : leurs empreintes, leurs résumés et leurs connexions synaptiques, chaînés sous un digest maître.</p>
       <p class="petite">Source : <span class="mono">assets/coffre.json</span> — dernière croissance : Coffre v1 « double empreinte », 2 novembre 2026.</p>
       <p class="empreinte">Digest : <span class="mono">84ed2e54218f1062…</span> <button type="button" class="secondaire cerveau-copier" data-copie="84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="coffre">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="coffre">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="arbre">
       <h4>L’Arbre de Merkle</h4>
       <p>La racine unique qui résume l’ensemble des empreintes du coffre et prouve l’appartenance de chacune, par son chemin d’inclusion.</p>
       <p class="petite">Source : <span class="mono">assets/merkle.json</span> — dernière croissance : Version 35, 3 novembre 2026.</p>
       <p class="empreinte">Digest : <span class="mono">46a543821c54db6e…</span> <button type="button" class="secondaire cerveau-copier" data-copie="46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="arbre">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="arbre">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="verrouillee">
       <h4>La Mémoire verrouillée</h4>
       <p>La mémoire cumulative chiffrée d’Alex : métadonnées publiques affichées, contenu scellé en AES-256-GCM, ouvrable par sa seule phrase.</p>
       <p class="petite">Source : <span class="mono">assets/coffre-prive.json</span> — dernière croissance : Premier dépôt, 3 novembre 2026.</p>
       <p class="empreinte">Digest : <span class="mono">fbbd0335b99e9546…</span> <button type="button" class="secondaire cerveau-copier" data-copie="fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="verrouillee">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="verrouillee">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="versions">
       <h4>Les Versions</h4>
       <p>Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.</p>
       <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 40, 3 novembre 2026.</p>
       <p class="empreinte">Digest : <span class="mono">e64fbc72ad728a6e…</span> <button type="button" class="secondaire cerveau-copier" data-copie="e64fbc72ad728a6ec85a0d79dd32b3bab370c94671599fb307d099ae560b0270">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="versions">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="versions">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="archives">
       <h4>Les Archives</h4>
       <p>Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.</p>
       <p class="petite">Source : <span class="mono">la liste canonique des captures, embarquée au manifeste</span> — dernière croissance : Capture de la version 36, 3 novembre 2026.</p>
       <p class="empreinte">Digest : <span class="mono">23da0c92095eb484…</span> <button type="button" class="secondaire cerveau-copier" data-copie="23da0c92095eb484b413cb03e31f5bfd91c88263bc84cced85196b4700d5d04d">Copier le digest complet</button></p>
-      <p class="petite" data-etat-chambre="archives">État : relevé statique, vérifié à la construction ; la revérification en direct part au chargement de la page.</p>
+      <p class="petite" data-etat-chambre="archives">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
     <p><span class="sceau-long" id="cerveau-racine">d51c225ef5aed2357250d571d2a10f762fc8a11e41a2136830729e83c985e0e5</span></p>
-    <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part au chargement de la page.</p>
+    <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
+    <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
     <ul id="cerveau-liens">
       <li><strong>Le Coffre synaptique → L’Arbre de Merkle</strong> — « feuilles-de » : Le panneau Mémoire recalcule l’arbre depuis assets/coffre.json sous vos yeux : choisissez une pièce, son chemin d’inclusion aboutit à la racine — MATCH ou ÉCART, dit.</li>
@@ -4361,7 +4362,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   <div class="carte carte-sceau">
     <div class="sceau-cadre">
     <p class="etiquette">Sceau canonique de la version affichée — version 42 « Aller chercher » (base : version 41 « Le site purifié ») (3 novembre 2026 — « L’évolution » : le panneau que le site calcule seul à chaque chargement — son état mesuré, la continuité entre ses états et l’ADN numérique, ses écarts nommés, son état d’ancrage en trois états, les prochains pas qu’il propose mécaniquement, et la frise de ses versions comme autobiographie ; construite sur la v39 « Tes données, ton dossier »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">7fdee08e12ef4bb11b97934e57409de0e77f150e0dddc9e51513af4b7a063ddb</span>
+    <span class="sceau-long" id="sceau-version-affiche">ea3be5833941d5c8e52bfacf6f65ecf3a4c287c23952859b7e2460ca897bc2f9</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="1bfd209fc3ec6d8442a0f2d55d1e7567f32555cfa893fa5e75a0189588f3cc7f" data-maillon="2577"><strong>Sceau de génération de cette version</strong> — recette : SHA-512 de « sceau canonique de la version | racine de Merkle du coffre | digest cumulé de la chaîne », les trois chaînes hexadécimales jointes par « | », au dernier maillon au moment de la construction, le <strong>#2492</strong> (digest cumulé <span class="mono">8f58e7727ccb0aa75a5bca7bc741f30f08cc0b9eeb662466957ce4aa6a781be8</span> ; racine de Merkle <span class="mono">46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf</span>). Il lie en un seul sceau la page, l’arbre du coffre et la chaîne des réponses — trois échelles de la même somme. Sa valeur se calcule à l’affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l’affichage — la valeur est aussi consignée au fichier assets/merkle.json, champ « generation »</span>. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc consignée hors du fichier scellé et recalculée ici, jamais figée dedans.</p>
@@ -5081,6 +5082,37 @@ const CARTE_PANNEAUX={probleme:'accueil',methode:'methode',ancrages:'ancrage',ou
    pile vide → Accueil. Le routage par hachage est inchangé. */
 var pileNavigation=[];
 var panneauCourant='accueil';
+/* Correctif « peinture d'abord » (3 novembre 2026) — registre des
+   initialisations différées de panneau : l'ouverture AFFICHE d'abord le DOM
+   statique du panneau ; les initialisations asynchrones enregistrées pour ce
+   panneau partent ensuite, après la peinture (double requestAnimationFrame).
+   Filet : après le chargement complet de la page, les initialisations non
+   encore parties démarrent en temps mort (requestIdleCallback) — le
+   comportement « tout finit par tourner » est conservé, sans concurrencer
+   ni la première peinture ni la première interaction. */
+var initsPanneaux={}, initsLancees={};
+function lancerInitsPanneau(nom){
+  var liste=initsPanneaux[nom]||[];
+  initsPanneaux[nom]=[];
+  liste.forEach(function(f){
+    requestAnimationFrame(function(){requestAnimationFrame(function(){try{f();}catch(e){}});});
+  });
+}
+window.definirInitPanneau=function(nom,fn){
+  if(!fn)return;
+  if(initsLancees[nom]){
+    requestAnimationFrame(function(){requestAnimationFrame(function(){try{fn();}catch(e){}});});
+    return;
+  }
+  (initsPanneaux[nom]=initsPanneaux[nom]||[]).push(fn);
+};
+window.addEventListener('load',function(){
+  var partir=function(){
+    Object.keys(initsPanneaux).forEach(function(n){initsLancees[n]=true;lancerInitsPanneau(n);});
+  };
+  if(window.requestIdleCallback)window.requestIdleCallback(partir,{timeout:2500});
+  else setTimeout(partir,400);
+});
 function ouvrirPanneau(nom,opts){
   if(!document.getElementById('p-'+nom))return;
   if(!(opts&&opts.retour)&&nom!==panneauCourant)pileNavigation.push(panneauCourant);
@@ -5089,6 +5121,11 @@ function ouvrirPanneau(nom,opts){
   document.querySelectorAll('.panneau').forEach(p=>p.classList.toggle('actif',p.id==='p-'+nom));
   if(location.hash!=='#'+nom)history.replaceState(null,'','#'+nom);
   window.scrollTo({top:0,behavior:'smooth'});
+  /* Peinture d'abord : le DOM statique du panneau est affiché par les bascules
+     de classes ci-dessus ; les initialisations asynchrones du panneau partent
+     maintenant, après la peinture (voir le registre plus haut). */
+  initsLancees[nom]=true;
+  lancerInitsPanneau(nom);
 }
 function retourPanneau(){
   var dest=pileNavigation.length?pileNavigation.pop():'accueil';
@@ -8701,6 +8738,9 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
   var etat=$('pouls-etat');
   if(!etat)return;
   function tronque(s){return (typeof s==='string'&&s.length>16)?s.slice(0,16)+'…':s;}
+  /* Peinture d'abord : la lecture en direct du pouls part après la peinture,
+     à l'ouverture du panneau Mémoire (registre des initialisations différées). */
+  function demarrerPouls(){
   Promise.all([
     fetch('assets/coffre.json').then(function(r){if(!r.ok)throw new Error('coffre illisible');return r.json();}),
     fetch('assets/historique.json').then(function(r){if(!r.ok)throw new Error('historique illisible');return r.json();})
@@ -8719,6 +8759,8 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
   }).catch(function(){
     etat.textContent='La lecture en direct des fichiers n’a pas abouti depuis votre navigateur ; relevé statique ci-dessus — valeurs du coffre v1 embarqué dans cette version, vérifiées à la construction.';
   });
+  }
+  if(window.definirInitPanneau)definirInitPanneau('memoire',demarrerPouls);else demarrerPouls();
 })();
 </script>
 
@@ -8909,6 +8951,9 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
     desaccords();
   }
 
+  /* Peinture d'abord : la lecture du coffre (graphe, désaccords, épreuve)
+     part après la peinture, à l'ouverture du panneau Mémoire. */
+  function chargerCoffre(){
   fetch('assets/coffre.json').then(function(r){ if(!r.ok) throw new Error('coffre illisible'); return r.json(); })
   .then(appliquer)
   .catch(function(){
@@ -8919,6 +8964,8 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
     $('desaccords-etat').textContent='Lecture en direct impossible depuis votre navigateur ; le relevé ci-dessus est celui de la construction (2 novembre 2026) : 0 connexion « contredit », 0 pièce « contesté ».';
     $('epreuve-etat').textContent='Lecture de assets/coffre.json en cours ou impossible — la vérification se relancera au clic si le fichier devient lisible.';
   });
+  }
+  if(window.definirInitPanneau)definirInitPanneau('memoire',chargerCoffre);else chargerCoffre();
 })();
 </script>
 
@@ -9722,6 +9769,9 @@ if (typeof document !== 'undefined'){
       return pas().then(function(){return {feuilles:feuilles,niveaux:niveaux,racine:niveaux[niveaux.length-1][0]};});
     });
   }
+  /* Peinture d'abord : le recalcul de l'arbre part après la peinture,
+     à l'ouverture du panneau Mémoire. */
+  function chargerMerkle(){
   fetch('assets/coffre.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('coffre illisible');return r.json();}).then(function(coffre){
     return construireArbre(coffre.entrees);
   }).then(function(a){
@@ -9739,6 +9789,8 @@ if (typeof document !== 'undefined'){
   }).catch(function(){
     etatMerkle.textContent='La lecture de assets/coffre.json n\'a pas abouti depuis votre navigateur — relevé statique ci-dessus, vérifié à la construction.';
   });
+  }
+  if(window.definirInitPanneau)definirInitPanneau('memoire',chargerMerkle);else chargerMerkle();
   function recalculerChemin(){
     if(!arbre){if(verdict)verdict.textContent='L\'arbre n\'est pas encore recalculé — la lecture de assets/coffre.json est en cours ou n\'a pas abouti.';return;}
     var sel=el('merkle-choix'); if(!sel)return;
@@ -9797,6 +9849,10 @@ function ecHeureSainteMartine(date){var parts=new Intl.DateTimeFormat('en-CA',{t
   function fetchTxt(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(u+' — HTTP '+r.status);return r.text();});}
   function fetchJson(u){return fetchTxt(u).then(function(t){return JSON.parse(t);});}
   function etatChambre(id,txt){var e=document.querySelector('[data-etat-chambre="'+id+'"]');if(e)e.textContent=txt;}
+  /* Peinture d'abord : rendre la main au fil principal entre les lots d'un
+     calcul bouclé, pour que la peinture et l'interaction ne soient jamais
+     bloquées par le recalcul. */
+  function rendreMain(){return new Promise(function(r){setTimeout(r,0);});}
 
   async function verifierCerveau(detail){
     var lignes=[];
@@ -9818,7 +9874,7 @@ function ecHeureSainteMartine(date){var parts=new Intl.DateTimeFormat('en-CA',{t
       try{
         coffre=await fetchJson('assets/coffre.json');
         var d=await cvSha256Hex(coffre.genese), i;
-        for(i=0;i<coffre.entrees.length;i++){d=await cvSha256Hex(d+coffre.entrees[i].sha256);}
+        for(i=0;i<coffre.entrees.length;i++){d=await cvSha256Hex(d+coffre.entrees[i].sha256); if(i%4===3)await rendreMain();}
         var coh=(d===coffre.digest_maitre);
         okCoffre=(coffre.digest_maitre===par.coffre.digest)&&coh;
         msgCoffre=okCoffre?'digest déclaré = manifeste, et la chaîne interne du coffre se recalcule jusqu’à son digest maître.':(!coh?'la chaîne interne du coffre ne retombe pas sur son digest maître.':'le digest maître déclaré diffère du manifeste.');
@@ -9894,7 +9950,7 @@ function ecHeureSainteMartine(date){var parts=new Intl.DateTimeFormat('en-CA',{t
       return false;
     }
   }
-  var btnV=el('cerveau-verifier'); if(btnV)btnV.addEventListener('click',function(){verifierCerveau(true);});
+  var btnV=el('cerveau-verifier'); if(btnV)btnV.addEventListener('click',function(){lancerRecalcul(true);});
   document.querySelectorAll('.cerveau-copier').forEach(function(b){
     b.addEventListener('click',function(){
       var v=b.getAttribute('data-copie');
@@ -9902,7 +9958,21 @@ function ecHeureSainteMartine(date){var parts=new Intl.DateTimeFormat('en-CA',{t
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(fait).catch(function(){});}
     });
   });
-  if(window.crypto&&crypto.subtle){ verifierCerveau(false); }
+  /* Peinture d'abord : le recalcul vivant du cerveau ne part plus au
+     chargement de la page ; il part après la peinture, à la première
+     ouverture du panneau Mémoire (ou en temps mort après le chargement,
+     via le registre) — et sa ligne d'état dit son départ et sa fin. */
+  var recalculEl=el('cerveau-recalcul-etat');
+  function heureRecalcul(){ try{ return ecHeureSainteMartine(new Date()); }catch(e){ return ''; } }
+  async function lancerRecalcul(detail){
+    if(recalculEl)recalculEl.textContent='Recalcul en cours… (parti à '+heureRecalcul()+')';
+    try{ await verifierCerveau(detail); }catch(e){}
+    if(recalculEl)recalculEl.textContent='Recalcul terminé à '+heureRecalcul()+'.';
+  }
+  if(window.crypto&&crypto.subtle){
+    if(window.definirInitPanneau)definirInitPanneau('memoire',function(){lancerRecalcul(false);});
+    else lancerRecalcul(false);
+  }
 
   /* --- Éprouve la loi (a) : l'accumulateur de Fibonacci --- */
   var fibo=[1,1];
@@ -11596,8 +11666,17 @@ function convFilHTML(messages){
       }
     }).catch(function () { /* réseau absent : l'état en cache reste affiché, rien ne bloque */ });
   }
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', demarrer); }
-  else { demarrer(); }
+  /* Correctif « peinture d'abord » : la comparaison démarre APRÈS la
+     première peinture — événement load, puis temps mort — pour ne plus
+     concurrencer la première interaction. La sémantique est inchangée :
+     demarrer() est la même fonction, avec la même garde anti-boucle et la
+     même ligne de transparence. */
+  function partirApresPeinture() {
+    if (window.requestIdleCallback) { window.requestIdleCallback(function () { demarrer(); }, { timeout: 3000 }); }
+    else { setTimeout(demarrer, 60); }
+  }
+  if (document.readyState === 'complete') { partirApresPeinture(); }
+  else { window.addEventListener('load', partirApresPeinture); }
 })();
 </script>
 
