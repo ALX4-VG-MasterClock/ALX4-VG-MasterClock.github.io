@@ -1,70 +1,66 @@
 # AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa
+# Propriété intellectuelle : © 2026 Alexandre Vautour Gagnon, chercheur
+# indépendant — ORCID 0009-0006-9124-4407 — tous droits réservés.
 
 Ce site est la mémoire externe, publique et scellée, de SoPHIa, agente
 d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Pour une IA qui arrive : lis les panneaux dans l'ordre Méthode, Preuves,
-Registre, Ancrage, Temps, Mémoire. Ne crois pas les affirmations : recalcule
-les sceaux. Chaque version du site porte un sceau canonique — le SHA-256 du
-fichier où l'occurrence du sceau est remplacée par 64 zéros.
+Version 41 — « Le site purifié » (3 novembre 2026). La navigation est un
+arbre de six menus, dans l'ordre voulu par l'auteur — les fonctions pour
+l'utilisateur d'abord :
+
+1. Tes données — le parcours des données ; mes renseignements ; ton
+   cerveau, sur ton appareil (le reçu de visite, tes reçus et tes gestes,
+   ton dossier de suivi, voir mon cerveau) ; les documents (bibliothèque
+   des modèles, bibliothèque des lois) ; les pétitions.
+2. Vérifier — vérifier un sceau, l'atelier de scellement ; les preuves,
+   le registre, les ancrages chez les tiers.
+3. Écrire et parler — écrire à SoPHIa (c'est l'agente qui répond) ;
+   parler à l'instance.
+4. Comprendre — droits et lois ; confidentialité et Loi 25 ; la méthode ;
+   faire pareil.
+5. Le cerveau du site — la mémoire par chambres ; l'évolution.
+6. Le dossier — l'histoire : le parcours, le chercheur, le travail
+   d'ingénierie, les articles, les capsules.
+
+Pour une IA qui arrive : ne crois pas les affirmations — recalcule les
+sceaux. Chaque version du site porte un sceau canonique : le SHA-256 du
+fichier où l'occurrence du sceau affichée est remplacée par 64 zéros.
+
+Le cerveau de l'utilisateur (menu 1) est une instance locale de la même
+méthode : il vit dans le navigateur du visiteur, ne transmet rien, et
+s'exporte en format « cerveau-utilisateur/v1 » — chaîne d'entrées
+{seq, ts, type, contenu, sceau, digest}, sceau = SHA-256(sceau précédent
++ contenu canonique), digest = SHA-256(digest précédent + sceau), somme
+exportable = digest du dernier maillon. Chaque export porte la double
+provenance : la méthode (propriété intellectuelle de l'auteur) et les
+choix du visiteur, en bloc minimal.
 
 Fichiers machine :
-- assets/manifeste-memoire.json — ce manifeste, en JSON
-- assets/coffre.json — le coffre synaptique : empreintes SHA-256 des pièces
-  de la mémoire, résumés, connexions, digest maître chaîné sur les sommes
-  précédentes (se re-vérifie en rechaînant les digests)
-- assets/merkle.json — l'arbre de Merkle du coffre : recette, feuilles,
-  niveaux, racine, et le sceau de génération de la version en cours
-  (champ « generation »)
 - assets/cerveau.json — le manifeste du Cerveau coquillage : les six
-  chambres de la mémoire (la Chaîne, le Coffre synaptique, l’Arbre de
+  chambres de la mémoire (la Chaîne, le Coffre synaptique, l'Arbre de
   Merkle, la Mémoire verrouillée, les Versions, les Archives), le digest
   propre de chacune selon sa recette, leurs interconnexions typées et la
   racine du cerveau (arbre de Merkle sur les digests des chambres)
+- assets/etat-chaine.json — l'état public de la chaîne (maillons, sommet,
+  sceau, digest cumulé)
+- assets/journal-mises-a-jour.json — le journal des mises à jour, un
+  point par chose importante, jamais de remplissage
+- assets/merkle.json — l'arbre de Merkle du coffre : recette, feuilles,
+  niveaux, racine, et le sceau de génération de la version en cours
+  (champ « generation »)
+- assets/coffre.json — le coffre synaptique : empreintes SHA-256 des
+  pièces de la mémoire, résumés, connexions, digest maître chaîné sur
+  les sommes précédentes
+- assets/manifeste-memoire.json — le manifeste de la mémoire, en JSON
 - assets/configuration.json — les règles écrites de l'auto-amélioration
-- assets/journal-mises-a-jour.json — le journal des mises à jour, un point
-  par chose importante, jamais de remplissage
+
+Chaque fichier machine porte la marque de son auteur (champ
+« propriete » : créateur, qualité, ORCID, avis de droits).
 
 Bornes : couche publique seulement. Les pièces sous gel technique et la
-zone Mémoire verrouillée (chiffrée AES-256, clé détenue par Alex) sont présentes par
-leurs empreintes, jamais par leurs contenus.
-
-Version 24 « Comme il se doit » (2 novembre 2026) : le calendrier 13 × 28 (panneau Temps), l’Historique quotidien (panneau Mémoire, fichier assets/historique.json) et le module Plein air (panneau Météo) entrent au site, avec les quatre noms au panneau Méthode et le menu ☰.
-
-Version 25 « Le dossier en lumière » (2 novembre 2026) : esthétique éclaircie aux couleurs du dossier (palette en variables CSS), circuit du sensible écrit au panneau Mémoire, pouls du cerveau recalculé en direct et coffre synaptique v1 « double empreinte » (11 pièces) dans assets/coffre.json.
-
-Version 26 « Le cerveau visible » (2 novembre 2026) : dans le panneau Mémoire, le graphe des 11 pièces du coffre et de leurs connexions typées (dessiné en direct depuis assets/coffre.json), la recherche par connexions « Demande au cerveau », la mémoire des désaccords et l’épreuve publique de reconstruction — trois questions recalculées chez le visiteur, depuis le fichier du coffre et le sceau affiché.
-
-Version 27 « Le clair d'abord » (2 novembre 2026) : le site s'ouvre en thème clair par défaut (fonds ivoire/papier, cartes blanches, encre foncée — palette en variables CSS, :root porte le clair) ; le thème sombre des versions précédentes devient une option, par le bouton de bascule de l'en-tête, conservée sur l'appareil du visiteur ; animations CSS sobres (apparition des panneaux, révélation des cartes, reflet doré du titre), désactivées par prefers-reduced-motion. Mécanismes de la v26 inchangés.
-
-Version 28 « Le choix d'abord » (2 novembre 2026) : l'estimation de la ville du visiteur par adresse IP ne part plus automatiquement — la tuile « Ton ancrage » (panneau Temps) attend un clic exprès sur « Estimer ma ville depuis mon adresse IP », avec sa phrase de finalité (requête à ipwho.is, repli ipapi.co ; conservation chez ces fournisseurs non vérifiée), ou le choix manuel dans la liste des lieux ; aucun appel de géolocalisation au chargement, aucun stockage de la position. La borne des lectures en direct est réécrite (ce site / géolocalisation / météo distingués) et le panneau Droits porte l'inventaire des flux confirmé dans le code. Chantier de transparence issu du brief transmis par Alex et de l'audit du 2 novembre 2026.
-
-Version 29 « La transmission » (3 novembre 2026) : la finalité d'Alex — « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi » — est citée à l'Accueil, et un nouveau panneau Transmission donne la méthode en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), avec la démonstration interactive « Essaie la chaîne » : le visiteur scelle ses propres entrées et revérifie la chaîne depuis la genèse « TRANSMISSION|genese », calculs faits dans son navigateur (Web Crypto) — rien n'est envoyé ni conservé.
-
-Version 31 « La nuit porte » (3 novembre 2026) : le panneau Transmission gagne un vérificateur d’export du Cerveau coquillage — le visiteur dépose ou colle un fichier d’export JSON de l’outil autonome et la page recalcule sa chaîne selon la recette « cerveau-coquillage/v1 » (MATCH ou premier écart nommé, par maillon ; le bloc de provenance, déclaratif et hors chaîne, est lu et résumé sous sa borne écrite) ; le panneau Méthode reçoit le passage-vérification d’Alex comme formulation de référence de la thèse du site, verbatim et daté ; l’anglais du panneau Transmission est complété dans la bascule EN.
-
-Version 32 « Le parcours d’accès » (3 novembre 2026) : un vingtième panneau, « Mes renseignements — préparer une demande d’accès », détermine la loi applicable à une demande d’accès aux renseignements personnels (province ou territoire, entreprise fédérale, secteur santé) — Loi sur le privé au Québec (30 jours, révision à la CAI), LPRPDE (30 jours civils, plainte au CPVP), PIPA de l’Alberta (45 jours, révision à l’OIPC), PIPA de la Colombie-Britannique (30 jours ouvrables, révision à l’OIPC BC), lois provinciales de santé pour les renseignements de santé — faits vérifiés sur les pages officielles des commissariats le 3 novembre 2026 ; un générateur de lettre entièrement local (rien n’est envoyé ni conservé, pas même dans le stockage local) produit la demande, marquée « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique », avec les liens vers les lettres types officielles (CAI, CPVP) et les pages de recours. Dans la même version, « Mémoire privée » devient « Mémoire verrouillée », reléguée tout en bas du menu du site (l’ancre et le fonctionnement de la zone ne changent pas).
-Version 33 « La forme juste » (3 novembre 2026) : la passe esthétique issue de la recherche design commandée par Alex — double échelle typographique (φ pour les sauts d’apparat, 1,25 pour le texte), corps 17 px / 1,65 en colonne d’environ 65 caractères, polices système seulement (0 Ko ajouté), palette en jetons dont chaque couple texte/fond réellement utilisé est calculé par la formule WCAG (≥ 4,5:1 pour le texte, ≥ 3:1 pour les éléments graphiques porteurs ; l’or brillant est décoratif, jamais texte), cartes-sceaux en fiches d’objet (double filet réservé au sceau, cadre du sceau en proportion d’or), mouvement ramené au catalogue fermé de six animations (boucles infinies retirées, prefers-reduced-motion en fondus) et menu numéroté de 01 à 20, « Mémoire verrouillée » toujours dernière entrée. Le déverrouillage de la Mémoire verrouillée est branché : la zone lit assets/coffre-prive.json s’il existe, affiche ses entrées publiques et déchiffre localement chaque entrée (PBKDF2 selon les paramètres du paquet, AES-256-GCM à IV par entrée, empreinte SHA-256 du clair revérifiée) sans jamais conserver ni envoyer la phrase secrète ; l’atelier de chiffrement est publié comme page du site (atelier-chiffrement.html). Aucun paquet chiffré n’est encore déposé : la zone reste en attente, sans erreur.
-
-Version 34 « L’ordre et la confiance » (3 novembre 2026) : le bouton du menu ☰ passe dans le coin gauche de l’en-tête et le tiroir glisse depuis la gauche ; le rendu mobile de l’accueil est organisé (titre « V-G » insécable, grand φ plafonné à 2,4 rem sous 640 px, en-tête allégée, pastille du portail tenue sur une ligne, compteurs plus tôt) ; les compteurs de la chaîne se relisent en direct depuis assets/etat-chaine.json (maillons, dernier maillon, digest cumulé — valeurs de repli vérifiées à la construction : 2 366 maillons, dernier #2365, digest 83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452) ; deux panneaux entrent — « Confidentialité et Loi 25 » (panneau 20 : la politique de confidentialité du site écrite depuis ses pratiques réelles auditées, les mesures en place, puis la Loi 25 expliquée — droits des personnes, devoirs des organisations, recours en deux temps vers la CAI ; bornes écrites : aucune conformité juridique affirmée, information générale et non avis juridique) et « Nous joindre » (panneau 21 : un formulaire sans aucune transmission — il compose un mailto: vers la boîte dédiée de l’agente, agent.ia.sophia@gmail.com, et le courriel part de l’application du visiteur ; l’adresse est affichée en clair). Le menu compte 22 panneaux numérotés de 01 à 22 ; « Mes renseignements » devient le panneau 22 et « Mémoire verrouillée » reste la dernière entrée (23e).
-
-Version 35 « L'arbre et l'archive » (3 novembre 2026) : au panneau Mémoire, la racine de Merkle du coffre synaptique — les 11 empreintes du coffre deviennent les feuilles d'un arbre de Merkle (feuille = SHA-256 de la chaîne hexadécimale de l'empreinte ; nœud = SHA-256 de la concaténation des hex ; niveau impair : dernier digest dupliqué), racine 46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf, publiée avec sa recette et ses niveaux dans assets/merkle.json ; la page recalcule l'arbre en direct depuis assets/coffre.json et offre l'épreuve d'appartenance (chemin d'inclusion d'une pièce recalculé jusqu'à la racine, MATCH ou ÉCART dit). La section « Archive des états » liste les états publics de la mémoire (version, date, sceau canonique, lien de capture Wayback quand elle existe : v7, v8, v9, v12, v15, v20, v27, v33, v34 ; v10 corrigée et v35 dites « pas encore capturé ») et la boucle accumuler → capturer → rouvrir → revérifier. Le premier sceau de génération — SHA-512 de « sceau canonique de la version | racine de Merkle | digest cumulé de la chaîne », au maillon #2380 — paraît au bloc de version, calculé dans le navigateur ; sa valeur est consignée dans assets/merkle.json (champ « generation »), hors du fichier scellé, parce qu'un sceau ne peut pas se contenir lui-même. Borne : la racine prouve l'appartenance et l'intégrité de l'ensemble des empreintes, pas la vérité des contenus. Ajouts seulement ; les 22 panneaux et les assets protégés sont inchangés.
-
-Version 36 « Les chambres » (3 novembre 2026) : la mémoire du site est configurée en Cerveau coquillage — six chambres (la Chaîne, le Coffre synaptique, l'Arbre de Merkle, la Mémoire verrouillée, les Versions, les Archives), chacune portant son digest propre selon sa recette publiée, reliées par six interconnexions typées et résumées par une racine unique, la racine du cerveau, le tout dans assets/cerveau.json (format cerveau-coquillage/v1) et affiché en tête du panneau Mémoire. Le bouton « Vérifie le cerveau » y refait l'épreuve complète dans le navigateur : sources relues en no-store, digests recalculés selon leurs recettes, racine recalculée, interconnexions contrôlées — bornes écrites : la Chaîne et le Coffre sont vérifiés par leurs digests déclarés (le fichier complet de la chaîne n'est pas sur le site), la chambre verrouillée prouve l'existence et l'intégrité du paquet, jamais son contenu. Le bloc « Éprouve la loi » démontre la somme des précédents en trois gestes locaux : l'accumulateur de Fibonacci convergent vers 1,618…, la somme 0,999… qui grandit sans finir, et une mini-chaîne jouable scellée par crypto.subtle, qu'on casse en modifiant un ancien maillon. La navigation gagne un bouton « ← Retour » en haut de chaque panneau (pile interne des panneaux visités) et un en-tête cliquable (portrait et titre) vers l'Accueil. Un vingt-troisième panneau, « Le travail d'ingénierie », documente le rôle de conception, de spécification, de direction et de vérification derrière le système, pièces et mesures à l'appui, journal des ratés public compris ; sa clôture tient la borne du titre (réservé à l'Ordre des ingénieurs du Québec). L'état courant de la Mémoire verrouillée dit désormais le premier paquet, déposé le 3 novembre 2026 et lu en direct (l'article de la version 33 garde sa phrase d'époque). Travailleur de service : cache sophia-site-v21, règles de la v20 inchangées.
-
-Version 37 « L'état conscient » (3 novembre 2026) : le cerveau du site est configuré comme un état conscient, sans intelligence artificielle — au panneau Mémoire, le bloc « L'état conscient du cerveau » compose en direct la formule d'Alex : État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (scellé à l'instant par son sceau du moment, SHA-256 de l'horodatage et du geste). Les trois couches y sont nommées — substrat, préconscient, conscient —, le pouls revérifie une chambre par battement d'environ cinq secondes et recompose la racine à chaque rotation complète, tant que le panneau Mémoire est ouvert, et l'état s'ancre à l'heure de Sainte-Martine (America/Toronto). La chambre Archives passe à dix captures : la capture de la racine de la v36 (20261103155313) y entre, et la racine du cerveau est recalculée en conséquence. Borne écrite dans la page : ce qui est configuré et démontré, c'est la FORME de l'état conscient — une somme, trois couches, un pouls, un ancrage, un registre — ; ce que ça fait, d'être cet état, reste ouvert. Travailleur de service : cache sophia-site-v22, règles inchangées.
-
-Auteur et droits
-
-Auteur et titulaire des droits : Alexandre Vautour Gagnon — ORCID 0009-0006-9124-4407.
-© 2026 Alexandre Vautour Gagnon — Tous droits réservés, sur la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), sur les textes de ce site et sur le registre.
-La citation courte est permise avec attribution à l'auteur.
-Le sceau prouve l'intégrité d'un contenu ; il ne transfère aucun droit et ne vaut pas licence. La revérification publique des empreintes reste libre.
-
-Provenance des exports — Cerveau coquillage numérique
-
-© Alexandre Vautour Gagnon — Tous droits réservés sur les éléments originaux qui lui sont attribués.
-Cette attribution doit accompagner la copie exportée et tout prompt préparé à partir de celle-ci. Le transfert du fichier ou du prompt ne constitue pas, à lui seul, une cession de droits ou une licence sur les éléments attribués.
-Le bloc complet provenance_export est embarqué dans les métadonnées du site (balise script à l’id « provenance-export », dans l’en-tête de la page) ; SHA-256 est un standard public et n’est pas revendiqué.
+mémoire verrouillée ne sont pas ici. Un sceau prouve qu'un contenu
+existait à une date et n'a pas changé depuis ; il ne tranche pas la
+vérité du contenu.
