@@ -54,3 +54,4 @@ ou autre) : aucun verrouillage à une plateforme.
 <!-- Redéclenchement nº 2 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
 <!-- Redéclenchement nº 3 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
 <!-- Redéclenchement nº 4 du déploiement Pages le 2026-11-04, après bascule de la source Pages (sans effet sur le site servi). -->
+<!-- Redéclenchement nº 5 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
