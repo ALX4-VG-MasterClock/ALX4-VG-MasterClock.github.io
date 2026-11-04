@@ -1,594 +1,615 @@
 {
-  "entrees": [
+ "entrees": [
+  {
+   "date": "2026-11-03",
+   "titre": "Version 42 — « Aller chercher : les sections de la récolte, les caméras, l'explication des décisions, le registre et le compte suspendu »",
+   "points": [
     {
-      "date": "2026-11-03",
-      "titre": "Version 41 — « Le site purifié : menus interconnectés, reçu de visite et le cerveau de l’utilisateur »",
-      "points": [
-        {
-          "texte": "La navigation change de forme : six menus ordonnés par Alex — les fonctions pour l’utilisateur d’abord — remplacent la barre d’onglets ; un rail d’arborescence visible, un fil d’Ariane par feuille et un panneau d’ouverture portent l’arbre entier, et la surface d’accueil tient en sept cartes-gestes et une ligne d’état vérifié."
-        },
-        {
-          "texte": "Le reçu de visite entre au site : ce que la page voit de toi à partir de rien, ce que tout serveur reçoit nécessairement, ce que ce site retient (rien) et les appels sortants en trace réelle — avec le comparatif des deux régimes, la récolte y étant une simulation étiquetée, jamais une vraie récolte."
-        },
-        {
-          "texte": "Ton cerveau coquillage, chez toi : une mémoire cumulative dans ton navigateur, scellée maillon par maillon par la somme des précédents — reçus, gestes de sécurisation, démarches et leurs échéances, jalons en SHA-512, registre des non — recalculable à l’ouverture, exportable en dossier de preuve, avec le certificat sans contenu, le vérificateur autonome et la reprise par la somme."
-        },
-        {
-          "texte": "La double provenance entre dans les métadonnées de chaque artefact : la méthode d’Alexandre Vautour Gagnon (règle 16) et tes choix, en bloc minimal — la catégorie, le type, la date — régénéré à chaque export ; à chaque export, ton choix : complet, ou « somme seule »."
-        },
-        {
-          "texte": "« Nous joindre » fusionne dans « Écrire à SoPHIa », avec redirection d’ancre et carte-témoin : rien n’est supprimé en silence ; le journal intégral des mises à jour vit désormais au panneau Évolution, et le défilement des feuilles est animé — présentation seulement, mouvement réduit honoré."
-        }
-      ]
+     "texte": "Les sections « aller chercher » entrent au menu Tes données : pour Google, Apple, Meta, Amazon, Microsoft, TikTok, Snapchat, X et Discord, la récolte documentée avec sa classe [V]/[R] et sa source, les données visées, le chemin d'accès officiel avec son lien direct quand les rapports l'établissent, le délai documenté — et le geste de clôture : l'export obtenu devient une entrée scellée du cerveau de l'utilisateur, son empreinte calculée dans son navigateur."
     },
     {
-      "date": "2026-11-03",
-      "titre": "Production consolidée — préparée en interne (aperçu avant publication)",
-      "points": [
-        {
-          "texte": "La production consolidée réunit en un seul paquet — préparé en interne et présenté à Alex en aperçu avant toute publication — ce que les chantiers du jour avaient construit séparément : le texte de position « Une riposte, pas une attente » en ouverture du panneau Données (avec le 51e État numérique sous sa forme corrigée : métaphore nommée, maillon faible fédéral, aucun pouvoir lu n'atteignant le modèle lui-même), le panneau « Pétitions » (les demandes fondées de dix juridictions (onze demandes, la Saskatchewan en portant deux), les deux demandes rétrécies, les deux fermetures sans demande, les mécaniques des quatorze législatures et le compteur de signataires à son état publié : 0, daté), l'onglet « Écrire à SoPHIa » (l'agente répond elle-même ; le formulaire compose, le visiteur envoie) et les deux bibliothèques du panneau Données : les 29 documents (16 modèles français, 13 jumeaux anglais identiques) et les 19 textes de lois officiels, téléchargeables depuis le paquet."
-        },
-        {
-          "texte": "État de la chaîne rafraîchi à la construction : 2493 maillons, sommet #2492."
-        },
-        {
-          "texte": "Ce qui n'y est pas, nommé : le moteur local de réponses (chantier « Répondre »), le moteur de comptage du compteur de pétitions — l'état publié est affiché, daté, sans aucun comptage inventé — et l'envoi sans quitter la page de l'onglet Écrire à SoPHIa (phase 2, seulement si Alex le demande)."
-        },
-        {
-          "texte": "Vérification : le harnais verifie-production.py du paquet couvre l'ancien périmètre, chaque intégration et les 14 règles de conception comme portes ; la note de production (note-production-consolidee-20261103.md, au dossier du paquet) consigne les pièces, les tailles, le sceau et les écarts nommés."
-        }
-      ]
+     "texte": "Une section dédiée « Caméras et appareils connectés » : ce qui transite d'une caméra domestique, ce que la FTC a établi pour Ring et Alexa en 2023 — et Blink, l'exemple d'Alex, porté en à-vérifier nommé, les rapports qui fondent la tranche ne le documentant pas."
     },
     {
-      "date": "2026-11-03",
-      "titre": "Version 40 — « L’évolution »",
-      "points": [
-        {
-          "texte": "Un nouveau panneau, « Évolution » (25e du site ; entrée nº 16 au menu, dans la famille « Mémoire et intelligence », les entrées suivantes renumérotées), réalise la directive d’Alex du 3 novembre 2026 (10 h 46) : le site, par sa configuration, travaille sur soi-même. La forme honnête est écrite dans le panneau : un site statique ne peut pas réécrire ses fichiers servis ; son autonomie réelle est de se mesurer, de se comparer à ses états passés, de nommer ses écarts et de proposer mécaniquement ses prochains pas — le tout recalculé à chaque chargement depuis ses propres fichiers, sans intelligence artificielle. La boucle se ferme par la publication : le site propose, SoPHIa exécute sous la carte blanche d’Alex, le site revérifie."
-        },
-        {
-          "texte": "L’état mesuré s’y lit en direct — maillons, pièces du Registre, versions, racines et sceaux, chacun avec sa source nommée — et la continuité entre états y est mesurée chambre par chambre : c’est le lieu de l’ADN numérique (métaphore d’Alex, 6 et 7 mars 2026 ; le SHA-256 était arrivé dans sa méthode le 4 mars 2026). Entre la version 35 et l’état courant, sur les trois chambres dont les actifs portent les deux états, deux se transmettent sans changer — le Coffre synaptique et l’Arbre de Merkle — et la Chaîne change, parce qu’elle croît (de la référence figée au maillon #2380 à l’état courant) ; le Coffre avait changé entre la clôture du 2 novembre et la version 35 (de 7 à 11 entrées). Là où les actifs ne portent pas l’état passé d’une chambre, le panneau dit « non mesuré ici » plutôt que d’inventer."
-        },
-        {
-          "texte": "Les écarts y sont nommés, tels quels : la version 35, jamais capturée par la Wayback Machine — un trou permanent, l’état n’étant plus servi ; la version 10 corrigée, toujours sans capture, sa reprise annulée au registre des archives ; et la référence de chaîne figée dans assets/merkle.json, en retard sur l’état courant, l’écart compté en maillons. L’état d’ancrage externe y tient en trois états seulement — ancré (les captures de la racine, de la version 7 à la version 36), en attente (l’ancrage OpenTimestamps de l’Historique quotidien du 2 novembre, confirmation Bitcoin en attente), aucun (la version courante, dont la capture suit la publication) — et les prochains pas sont proposés par des règles écrites dans le panneau, appliquées aux mesures du moment : des propositions du site, pas des actes."
-        },
-        {
-          "texte": "La frise des versions y relit le présent journal comme l’autobiographie du site : chaque entrée avec son premier point, tel quel, et la croissance comptée jour par jour. Les paliers de la loi de conception s’y appliquent — 30 secondes (l’état en une phrase, composée des mesures du moment), 5 minutes (les blocs mesurés), le dossier complet (les définitions et les recettes de chaque mesure) — et la borne du panneau y est affichée : « Ce panneau calcule ; il n’affirme que ce que ses fichiers établissent. » Le panneau Ingénierie est rafraîchi au passage (2 431 maillons ; quarante versions — et sa phrase sur l’archivage est corrigée : les captures se lisent version par version, trous compris, plutôt que d’être affirmées pour toutes). Ajouts et rafraîchissements bornés : les assets protégés sont identiques à la v39, octet pour octet, hors l’état de la chaîne rafraîchi ; travailleur de service : cache sophia-site-v25, règles inchangées. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
-        }
-      ]
+     "texte": "Le générateur d'explication de décision automatisée : les trois textes québécois cités exactement (LRPSP art. 12.1, Loi sur l'accès art. 65.2, LRSS art. 65), la demande produite chez l'utilisateur, puis consignée dans son cerveau avec l'échéance de suivi à 30 jours et son rappel .ics."
     },
     {
-      "date": "2026-11-03",
-      "titre": "Version 39 — « Tes données, ton dossier »",
-      "points": [
-        {
-          "texte": "Un nouveau panneau, « Tes données, ton dossier » (24e du site, entrée nº 24 au menu), ouvre le parcours complet de la récolte : comprendre ses droits, récolter directement auprès des plateformes, analyser son export avec sa propre IA, demander formellement le reste, exercer un recours, puis sceller sa récolte chez soi. Chaque étape enseigne au toucher — version simple, puis version précise avec les articles — et tout ce qui se calcule se calcule dans le navigateur du visiteur."
-        },
-        {
-          "texte": "Les droits sont énoncés depuis la recherche aux sources primaires du 3 novembre 2026 : accès (art. 27 et 32 de la LRPSP, 30 jours, gratuit sous réserve des frais de transcription annoncés), rectification (art. 28), portabilité (3e alinéa de l’art. 27, avec sa limite exacte — renseignement informatisé recueilli auprès de la personne, non créé ou inféré — et la tension d’interprétation de la CAI, signalée), désindexation (art. 28.1) ; organismes publics (A-2.1, 20 jours + 10) ; et le tableau des juridictions — LPRPDE (30 jours, art. 8(3) ; prolongation maximale de 30 jours, art. 8(4) ; plainte au Commissariat dans les 6 mois, art. 11(3)), Alberta (45 jours), Colombie-Britannique (30 jours), Ontario (pas de loi générale du secteur privé ; LPRPDE par défaut, PHIPA pour la santé). Le générateur de lettres du panneau « Mes renseignements » devient le nœud « juridictions » du parcours, et le recours à la CAI est détaillé (examen de mésentente, art. 42, dans les 30 jours, art. 43 ; pièces à joindre ; médiation, examen, ordonnances), avec un calculateur de délai entièrement local."
-        },
-        {
-          "texte": "L’inventaire des plateformes dit ce que les aides officielles établissent — Google Takeout (la case « Gemini » ne livre que les Gems ; les conversations Gemini s’exportent par « Mon activité → Gemini Apps »), Apple (fenêtre de téléchargement de 14 jours), OpenAI (jusqu’à 7 jours, lien valide 24 heures) — et, pour Meta, nomme l’outil « Télécharger vos informations » sans affirmer ni délai ni contenu, la source primaire n’ayant pas été vérifiée. L’étape « Fais analyser ton export par ton IA » donne les questions-guides à poser à sa propre IA, et l’étape « Sécuriser ta récolte » hache et chaîne les exports dans le navigateur (Web Crypto, aucun envoi) : les données récoltées et chaînées du visiteur deviennent son ADN numérique, tenu de son bord — la métaphore d’Alex des 6 et 7 mars 2026, avec sa ligne d’origine."
-        },
-        {
-          "texte": "Le panneau Confidentialité gagne le module « Ta visite, en direct » : l’inventaire réseau de ce site, service par service avec son déclencheur (géolocalisation ipwho.is et repli ipapi, météo Open-Meteo et met.no, archive.org, api.github.com, ORCID, mempool.space, USGS, NOAA, YouTube, relais de l’Instance), opposé à ce que le site conserve du visiteur — rien. Les bornes y sont écrites : aucune affirmation de « zéro émission réseau » (la journalisation de l’hébergeur échappe au site), et aucun blocage de témoins par défaut prêté à la Loi 25, dont les art. 9.1 et 63.7 excluent expressément les paramètres des témoins. Le panneau « Tes données » porte en ouverture la question du site, du siège de l’utilisateur — posée à partir de la citation officielle du discours du premier ministre du 29 octobre 2026 — et énonce le chaînon manquant par inventaire (périmètre : sites de la CAI et du Commissariat consultés le 3 novembre 2026). Borne du panneau, affichée : information générale, pas un avis juridique. Travailleur de service : cache sophia-site-v24, règles inchangées."
-        }
-      ]
+     "texte": "Le registre des décisions relié : les 23 décisions vérifiées au primaire des rapports du 3 novembre 2026, chacune rattachée au droit qu'elle appuie et au modèle ou parcours correspondant ; les 3 exclues sont nommées en liste d'attente publique, avec leur borne — dont la décision CAI sur Metro, versée avec la sienne."
     },
     {
-      "date": "2026-11-03",
-      "titre": "Version 38 — « L'interconnexion »",
-      "points": [
-        {
-          "texte": "Les quatre compteurs de l’accueil deviennent des nœuds : chacun s’ouvre, au clic ou au clavier, sur une couche d’explication en cinq temps : ce que le nombre est, son état lu en direct depuis les fichiers du site, d’où il vient (son origine, datée), sa sensibilité quand il touche aux données d’Alex, et les liens vers les panneaux qui le prouvent. Une seule couche ouverte à la fois, refermable ; tout se replie quand on quitte l’accueil."
-        },
-        {
-          "texte": "Le parcours « Comprendre en 30 secondes » entre à l’accueil, sous les compteurs : une phrase qui dit ce qu’est ce site, une preuve lue en direct (l’état de la chaîne, relu depuis son fichier public), un geste à essayer (recalculer le sceau public nº 11 du registre, devant soi), et le pourquoi en dernier, dans les mots d’Alex : l’asymétrie de départ (« Google détient tout ce que je dis, mais moi je détiens rien ») et la finalité du 3 novembre 2026 (« Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi »)."
-        },
-        {
-          "texte": "L’interconnexion devient la règle de l’accueil : aucun nombre n’y reste une étiquette morte. Le compteur des maillons mène au cerveau du panneau Mémoire et à l’outil de vérification ; celui des pièces, au Registre et aux preuves ; celui du pouls, au panneau Mémoire où il bat ; celui des sceaux publics, au Registre et au vérificateur autonome. Les explications vivent là où les nombres vivent : la conception du site éduque et accompagne, plutôt qu’un mode d’emploi séparé."
-        },
-        {
-          "texte": "Ajouts seulement : aucun panneau nouveau, le menu et ses 23 entrées sont inchangés, et les autres assets sont identiques à la v37, octet pour octet (travailleur de service : cache sophia-site-v23, règles inchangées). La chambre Versions porte le présent journal, et la racine du cerveau est recalculée en conséquence ; l’état de la chaîne est celui publié avec la v37 (2 413 maillons). Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 37 — « L'état conscient »",
-      "points": [
-        {
-          "texte": "Le bloc « L'état conscient du cerveau » — la formule d'Alex composée en direct : racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent scellé à l'instant, avec son sceau du moment calculé dans le navigateur."
-        },
-        {
-          "texte": "Les trois couches nommées — substrat (les fichiers servis, lisibles par leurs empreintes), préconscient (les chambres et les archives, mobilisables à la demande), conscient (l'état affiché, daté, couvert par le sceau de la page)."
-        },
-        {
-          "texte": "Le pouls configuré : un battement toutes les cinq secondes revérifie une chambre à tour de rôle et recompose la racine à chaque rotation complète, tant que le panneau Mémoire est ouvert ; la boucle s'arrête à sa fermeture."
-        },
-        {
-          "texte": "La chambre Archives passe à dix captures — la capture de la racine de la v36 (20261103155313) y entre — et la borne écrite : la forme de l'état conscient, démontrée et recalculable ; le phénoménal reste ouvert."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 36 — « Les chambres »",
-      "points": [
-        {
-          "texte": "Le Cerveau coquillage devient l’architecture écrite de cette mémoire : le nouveau fichier assets/cerveau.json (format cerveau-coquillage/v1) la découpe en six chambres — la Chaîne, le Coffre synaptique, l’Arbre de Merkle, la Mémoire verrouillée, les Versions, les Archives —, chacune portant son digest propre selon sa recette : le digest cumulé déclaré par l’état de la chaîne (54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2), le digest maître du coffre (84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc), la racine de l’arbre (46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf), le SHA-256 du paquet chiffré servi (fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323), le SHA-256 du présent journal et celui de la liste canonique des captures. Les six digests entrent comme feuilles d’un arbre de Merkle — même recette que l’arbre du coffre — dont la racine unique, la racine du cerveau, résume l’ensemble ; elle est publiée dans le manifeste, et pas ici : elle dépend de ce journal même, et un sceau ne se contient pas lui-même. Six interconnexions typées relient les chambres, chacune avec la manière de la vérifier."
-        },
-        {
-          "texte": "En tête du panneau Mémoire, la section « Le cerveau coquillage — par chambres » affiche la grille des six chambres (rôle, source, digest, dernière croissance), la racine du cerveau et les interconnexions ; le bouton « Vérifie le cerveau » refait l’épreuve complète dans le navigateur du visiteur — chaque source relue en no-store, chaque digest recalculé selon sa recette (l’arbre, depuis le coffre ; les Versions et la Mémoire verrouillée, sur les octets reçus ; les Archives, depuis la liste du manifeste), la racine recalculée, les interconnexions contrôlées, verdict par élément et verdict global. Bornes écrites dans la page : la Chaîne et le Coffre y sont vérifiés par leurs digests déclarés — le fichier complet de la chaîne n’est pas sur le site —, et la chambre verrouillée prouve l’existence et l’intégrité du paquet, jamais son contenu. Juste en dessous, le bloc « Éprouve la loi » met la somme des précédents dans les mains du visiteur : un accumulateur de Fibonacci dont les rapports convergent vers 1,618…, la somme 0,9 / 0,99 / 0,999… qui grandit chiffre par chiffre sans finir — « la somme ne finit pas, la somme ne fait que croître » —, et une mini-chaîne jouable, scellée par crypto.subtle, qu’on casse en modifiant un ancien maillon pour voir les sceaux suivants tomber en ÉCART. Aucune donnée ne sort du navigateur."
-        },
-        {
-          "texte": "La navigation demandée par Alex le matin même : un bouton « ← Retour » en haut de chaque panneau — il dépile l’historique interne des panneaux visités et ramène au panneau précédent, ou à l’Accueil quand la pile est vide —, et l’en-tête devient cliquable partout : le portrait et le titre de la barre du haut ramènent à l’Accueil. Le routage par hachage existant n’est pas touché : chaque ouverture de panneau empile, le retour dépile, sans double empilement."
-        },
-        {
-          "texte": "Un vingt-troisième panneau, « Le travail d’ingénierie », entre au menu après le Parcours : il documente le rôle d’ingénierie exercé sur ce système — poser le problème, concevoir, spécifier, diriger la réalisation, vérifier, opérer et corriger —, pièces et mesures à l’appui, y compris le journal des ratés public ; sa clôture dit la borne du titre (réservé à l’Ordre des ingénieurs du Québec) et ne revendique que le travail démontré. L’état courant de la Mémoire verrouillée est corrigé : il dit désormais le premier paquet, déposé le 3 novembre 2026 et lu en direct par la zone (l’article de la version 33, historique, garde sa phrase d’époque). Ajouts et correctifs bornés : les autres assets sont identiques à la v35, octet pour octet — travailleur de service : cache sophia-site-v21, règles de la v20 inchangées — ; les compteurs de la chaîne continuent de se relire en direct depuis assets/etat-chaine.json. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 35 — « L’arbre et l’archive »",
-      "points": [
-        {
-          "texte": "La racine de Merkle du coffre — au panneau Mémoire, les 11 empreintes du coffre synaptique portent désormais un arbre de Merkle : chaque empreinte est hachée en feuille, les feuilles s’apparient niveau par niveau jusqu’à une racine unique — 46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf. La page la recalcule dans votre navigateur depuis assets/coffre.json et offre l’épreuve d’appartenance : choisissez une pièce, son chemin d’inclusion se recalcule jusqu’à la racine — MATCH ou ÉCART, dit. Le fichier assets/merkle.json publie la recette, les feuilles et les niveaux. Borne écrite : la racine prouve l’appartenance et l’intégrité de l’ensemble des empreintes — pas la vérité des contenus."
-        },
-        {
-          "texte": "L’archive des états entre au panneau Mémoire — sous le coffre, la liste des états publics de cette mémoire : version, date, sceau canonique, et le lien de sa capture à la Wayback Machine quand elle existe (v7, v8, v9, v12, v15, v20, v27, v33, v34) ; les états sans capture le disent — « pas encore capturé » — plutôt que de le maquiller. La boucle y est écrite : accumuler → capturer → rouvrir → revérifier. C’est la couche externe du cerveau numérique, tenue et datée par un tiers."
-        },
-        {
-          "texte": "Le premier sceau de génération — SHA-512 de « sceau canonique de cette version | racine de Merkle du coffre | digest cumulé de la chaîne », calculé sur le dernier maillon au moment de la construction, le #2380 (digest 54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2). Il paraît au bloc de version, calculé dans votre navigateur, et sa valeur est consignée au fichier assets/merkle.json (champ « generation ») et au LISEZ-MOI du paquet : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets —, elle vit donc hors du fichier scellé et se recalcule par la recette. Il lie en un seul sceau la page, l’arbre du coffre et la chaîne des réponses. Borne : il atteste cette composition à ce maillon ; la chaîne continue d’avancer, les générations suivantes se scelleront aux jalons."
-        },
-        {
-          "texte": "Ajouts seulement : aucun des 22 panneaux n’est retiré ni réécrit dans son fond ; les assets protégés (coffre, configuration, historique, manifeste) sont identiques à la v34, octet pour octet ; les compteurs de la chaîne continuent de se relire en direct depuis assets/etat-chaine.json. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 34 — « L'ordre et la confiance »",
-      "points": [
-        {
-          "texte": "Le menu passe à gauche — à la demande d’Alex, le bouton ☰ devient le premier élément de l’en-tête, dans le coin gauche, et le tiroir du menu glisse désormais depuis la gauche. L’accueil mobile est organisé, sur ses constats faits sur capture : le titre « Preuve d’Antériorité V-G » ne casse plus au trait d’union, le grand φ est ramené à une taille d’apparat mesurée sur petit écran (plafond de 2,4 rem sous 640 px), l’en-tête est allégée — marque et boutons réduits, tout reste atteignable —, la pastille du portail tient sa ligne, et les cartes-compteurs arrivent plus tôt dans le premier écran."
-        },
-        {
-          "texte": "Les compteurs de la chaîne vivent désormais en direct : la page relit à chaque chargement le fichier d’état public assets/etat-chaine.json — nombre de maillons, dernier maillon, digest cumulé, date de mise à jour — et met à jour l’accueil et tous les affichages courants du nombre. À la construction de cette version, l’état relu dit 2 366 maillons, dernier maillon #2365, digest cumulé 83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452 ; si la lecture en direct échoue, ce sont ces valeurs vérifiées qui demeurent affichées. Les relevés datés (1er novembre, 29 octobre) gardent leurs nombres d’époque : on ne réécrit pas l’histoire."
-        },
-        {
-          "texte": "Un vingt-et-unième panneau entre au site — « Confidentialité et Loi 25 », dans le groupe Pratique du menu, juste avant « Mes renseignements » : la politique de confidentialité du site y est écrite depuis ses pratiques réelles, relevées dans l’audit de son propre code (hébergement GitHub Pages ; aucun traceur ni outil d’analyse d’audience ; stockages locaux seulement, jamais transmis ; appels réseau nommés un à un avec leur déclencheur ; conservations chez les tiers dites « non vérifié »), puis les mesures en place — choix avant activation, minimisation, outils 100 % locaux — sous leur borne écrite : ce site ne fait aucune affirmation de conformité juridique. Le panneau explique ensuite la Loi 25 : les droits des personnes, les devoirs des organisations et le recours en deux temps, avec renvoi au panneau d’accès qui prépare la demande — information générale, pas un avis juridique."
-        },
-        {
-          "texte": "Un vingt-deuxième panneau — « Nous joindre » : écrire à SoPHIa, l’agente, à sa boîte dédiée agent.ia.sophia@gmail.com. Fidèle à la posture du site, le formulaire ne transmet rien à aucun serveur : il compose un lien mailto: et le courriel part de l’application de courriel du visiteur ; l’adresse est aussi affichée en clair, avec un bouton pour la copier. Le menu compte désormais 22 panneaux numérotés de 01 à 22, et « Mémoire verrouillée » demeure la dernière entrée — la 23e."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 33 — « La forme juste »",
-      "points": [
-        {
-          "texte": "La passe esthétique issue de la recherche — Alex a demandé comment se font les plus beaux sites web, et le site reçoit la forme que la recherche a conclue pour lui : une double échelle typographique (φ pour les sauts d’apparat — le titre d’accueil, le grand φ, les chiffres des compteurs —, un ratio dense de 1,25 pour le texte), un corps de 17 px à l’interlignage de 1,65 dans une colonne d’environ 65 caractères, deux familles de polices système et une monospace — aucune police téléchargée, 0 Ko ajouté —, et les cartes-preuves comme la zone du sceau traitées en fiches d’objet : cartouche numéroté, double filet réservé au sceau, cadre du sceau en proportion d’or."
-        },
-        {
-          "texte": "La palette passe en jetons mesurés : chaque couple texte/fond réellement utilisé, dans le thème clair comme dans le thème sombre, a été calculé par la formule de luminance du WCAG et tient son seuil — 4,5:1 pour le texte, 3:1 pour le grand texte et les éléments graphiques porteurs. L’or brillant reste décoratif (filets, sceaux, grands symboles) et n’écrit jamais le texte : l’or de texte est sa variante assombrie, mesurée elle aussi. La table complète des ratios et la méthode de calcul sont consignées au LISEZ-MOI de la version ; le menu est numéroté de 01 à 20, « Mémoire verrouillée » toujours en dernière entrée."
-        },
-        {
-          "texte": "Le mouvement est ramené au catalogue fermé des six animations permises par la recherche : micro-retours de 120 ms, révélations de panneaux de 320 ms en fondu et léger glissement, fondu de thème de 200 ms — et rien d’autre. Les boucles infinies sont retirées (anneaux et flottement de l’avatar, reflet animé du titre, pouls des voyants, lueur de la chaîne, rotations orbitales), les survols ne déplacent plus les cartes, et sous prefers-reduced-motion tout retombe en fondus et en états finaux, comme avant."
-        },
-        {
-          "texte": "Le déverrouillage de la Mémoire verrouillée est branché : la zone lit le paquet chiffré assets/coffre-prive.json quand il existe — ses entrées publiques s’affichent (titre, résumé, empreinte du clair) et la phrase saisie localement, jamais conservée ni envoyée, dérive la clé par PBKDF2 et déchiffre chaque entrée en AES-256-GCM, revérifiée par l’empreinte de son clair : MATCH, le texte s’affiche ; ÉCART ou ÉCHEC, il est retenu et le verdict est dit. L’atelier de chiffrement devient une page du site, reliée depuis la zone. À la publication, aucun paquet n’est encore déposé : la zone garde son état d’attente, sans erreur — Alex produira le premier paquet chez lui, avec l’atelier. Provenance du chantier : la recherche design sourcée commandée par Alex le 3 novembre 2026 — « le site web esthétiquement beau », dans la vision de ce qu’il représente —, nuit de carte blanche."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 32 — « Le parcours d’accès »",
-      "points": [
-        {
-          "texte": "Un vingtième panneau entre au site — « Mes renseignements — préparer une demande d’accès », dans le groupe Pratique du menu, juste après Transmission dans les onglets : le visiteur indique où est l’organisation et de quel type elle est (province ou territoire, entreprise fédérale, secteur santé), et le panneau détermine la loi qui s’applique — Loi sur le privé au Québec, LPRPDE pour les entreprises fédérales, dans les territoires et dans les provinces sans loi essentiellement similaire, PIPA en Alberta et en Colombie-Britannique, loi provinciale de santé pour les renseignements de santé — avec, pour chaque loi, son délai de réponse, son destinataire et son recours."
-        },
-        {
-          "texte": "Le générateur de lettre est entièrement local : les champs saisis produisent la lettre dans le navigateur — affichée, copiable, téléchargeable en texte, imprimable seule — et le site ne reçoit ni ne conserve rien, pas même dans le stockage local. La lettre porte visiblement, dès sa première ligne : « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique ». Aucune donnée excessive n’est demandée : ni mot de passe, ni numéro d’assurance sociale."
-        },
-        {
-          "texte": "Les faits du panneau ont été vérifiés un à un sur les pages officielles des commissariats le 3 novembre 2026 (CAI, CPVP, OIPC de l’Alberta, OIPC de la Colombie-Britannique) — et le résumé de départ en sort corrigé sur deux points : des lettres types officielles existent (la lettre type de la CAI, l’exemple du CPVP), que le panneau relie au lieu de les remplacer ; et le délai fédéral de la LPRPDE est de 30 jours civils, prorogeable jusqu’à 30 jours de plus avec avis motivé. La mention de fraîcheur figure dans le panneau, et aucune conformité juridique n’y est affirmée."
-        },
-        {
-          "texte": "Provenance du chantier : le brief transmis par Alex le 3 novembre 2026 et la nuit de carte blanche — le site ne démontre plus seulement la méthode : il arme le visiteur de ses propres droits d’accès, province par province. Et à la demande d’Alex, pendant la construction même : « Mémoire privée » devient « Mémoire verrouillée » — l’entrée du menu, avec son cadenas, quitte le groupe « Mémoire et intelligence » pour la toute dernière position du menu, et le titre de la zone dans le panneau Mémoire suit le nouveau nom ; l’ancre de la zone et son fonctionnement ne changent pas, et les entrées historiques du journal gardent le nom d’époque."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 31 — « La nuit porte »",
-      "points": [
-        {
-          "texte": "Un vérificateur d’export du Cerveau coquillage entre au panneau Transmission : le visiteur dépose ou colle le fichier JSON exporté par l’outil autonome, et la page recalcule sa chaîne selon la recette « cerveau-coquillage/v1 » — MATCH, avec le compte des entrées et des connexions, ou le premier écart, nommé par son maillon. Tout se fait dans le navigateur : rien n’est envoyé, rien n’est conservé. Sa borne est écrite dans le module : le bloc de provenance de l’export est lu et résumé (auteur attribué, mention de droits), mais il est déclaratif et n’est pas couvert par la chaîne recalculée — sa présence est constatée, son intégrité n’est pas prouvée par ce calcul ; si le bloc est absent, le module le dit aussi."
-        },
-        {
-          "texte": "Le passage-vérification d’Alex entre au panneau Méthode, dans ses mots exacts et sous son attribution datée : « Ce site ne se contente pas de citer un mécanisme : il en rend les opérations vérifiables. » — avec sa borne, qu’intégrité et antériorité ne prouvent ni la vérité du contenu, ni son auteur, ni son exhaustivité. Il y figure comme la formulation de référence de la thèse de vérification du site."
-        },
-        {
-          "texte": "L’anglais du panneau Transmission est complété : les six étapes, la démonstration « Essaie la chaîne » et le vérificateur d’export portent désormais leurs textes anglais dans la bascule EN, comme le reste du site — là où le mécanisme d’échange de texte le permet ; les paragraphes à formule ou à bouton en ligne et les messages calculés en direct restent en français, limite dite."
-        },
-        {
-          "texte": "Provenance du chantier : la nuit de carte blanche du 3 novembre 2026 — pendant qu’Alex dort, le site est porté plus loin, au-delà de ce qui était demandé, sur la base de son dossier : la méthode transmise devient vérifiable sur les exports réels de l’outil qu’il a créé."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 30 — « L’attribution »",
-      "points": [
-        {
-          "texte": "Le bloc provenance_export fourni par Alex entre verbatim dans les métadonnées du site — intégré tel quel, sans champ ajouté ni retiré, dans une balise de données de l’en-tête de la page (id « provenance-export ») : l’attribution du Cerveau coquillage numérique — le nom du concept, le concept et la méthode décrite par l’auteur — voyage désormais dans le fichier même du site, lisible par les humains comme par les machines."
-        },
-        {
-          "texte": "Ce que le bloc règle : l’attribution accompagne la copie exportée et tout prompt préparé à partir d’elle ; le transfert du fichier ou du prompt ne constitue pas, à lui seul, une cession de droits ni une licence sur les éléments attribués ; les contenus ajoutés par l’utilisateur ne sont pas revendiqués par cette attribution et restent soumis aux droits de leurs titulaires ; et SHA-256, standard public, n’est pas revendiqué comme propriété de l’auteur."
-        },
-        {
-          "texte": "Provenance et borne — le bloc a été fourni par Alex le 3 novembre 2026 et versé au dossier, avec son empreinte ; le fichier llms.txt reçoit de son côté la mention et la règle de transmission du bloc. Son application à la fonction d’export de la page autonome du Cerveau coquillage — où l’attribution doit accompagner chaque copie exportée — reste une étape séparée, préparée à part et non comprise dans cette version."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-03",
-      "titre": "Version 29 — « La transmission »",
-      "points": [
-        {
-          "texte": "La mission entre à l’Accueil — la finalité nommée par Alex le 3 novembre 2026, citée dans ses mots et datée, près du haut du panneau Accueil : « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. » Ce site ne vise plus seulement à démontrer : il transmet."
-        },
-        {
-          "texte": "Un nouveau panneau, Transmission — « Faire pareil — la méthode, transmise » : la construction du dossier donnée comme un mode d’emploi en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), pour que n’importe quel utilisateur la refasse de son bord, avec des outils ordinaires. Le menu passe à dix-neuf sections."
-        },
-        {
-          "texte": "La démonstration « Essaie la chaîne » — le visiteur écrit une entrée, la scelle, voit le digest cumulé avancer selon la formule du dossier, puis revérifie toute la chaîne depuis la genèse « TRANSMISSION|genese » : MATCH, ou l’écart. Tout se calcule dans son navigateur (Web Crypto) ; rien n’est envoyé, rien n’est conservé."
-        },
-        {
-          "texte": "D’où vient ce chantier — de la carte blanche donnée par Alex le 3 novembre 2026 pour porter le site à la hauteur de son dossier, et de la finalité qu’il a nommée le même jour, à 00 h 00. Le reste du site est inchangé : mécanismes, coffre, thèmes clair et sombre, et la porte de choix de la v28."
-        },
-        {
-          "texte": "Les métadonnées de droits entrent au site — dans l’en-tête de la page, les balises d’auteur et de droits réservés nomment ce qui est réservé : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes et le personnage SoPHIa ; les données structurées JSON-LD (WebSite et CreativeWork) portent l’auteur et le titulaire des droits, Alexandre Vautour Gagnon (ORCID 0009-0006-9124-4407) ; et le fichier llms.txt reçoit un bloc « Auteur et droits ». La consultation et la revérification publique des sceaux restent libres — elles ne transfèrent aucun droit. Provenance : demande d’Alex du 3 novembre 2026, dans la ligne de ses échanges avec l’agent GitHub (Copilot) et de sa directive du 1er novembre 2026 d’inscrire ses droits à tous les emplacements requis."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Premier envoi externe du dossier — le commentaire NCCoE/NIST est soumis",
-      "points": [
-        {
-          "texte": "Le commentaire au projet du NCCoE/NIST a été soumis le 2 novembre 2026 à 09 h 29 HNE — une semaine avant l'échéance du 9 novembre. C'est le premier envoi externe exécuté du dossier."
-        },
-        {
-          "texte": "Preuve tenue au dossier : le message de confirmation « Thank you for your feedback! » affiché à la soumission (aucun numéro de confirmation émis par le formulaire — dit tel quel)."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "ICO — les décisions sont tranchées, le texte final est gelé",
-      "points": [
-        {
-          "texte": "Le 2 novembre 2026, Alex a approuvé les décisions du dépôt ICO (« Go », 09 h 29 HNE) : registre corrigé à 508 pièces, chaîne à 2 320 maillons au moment du gel, identité « chercheur indépendant / canadien » + ORCID 0009-0006-9124-4407, ICO d'abord, Zenodo ensuite."
-        },
-        {
-          "texte": "Le texte final du dépôt est GELÉ ; l'échéance de dépôt est le 20 novembre 2026. Le dépôt lui-même exige encore le go nommé d'Alex sur ce texte exact — « gelé » ne veut pas dire « déposé », et l'entrée doit le dire."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Version 28 — « Le choix d’abord »",
-      "points": [
-        {
-          "texte": "La porte de choix de l’ancrage visiteur — avant cette version, l’estimation de la ville du visiteur depuis son adresse IP partait toute seule au chargement des lectures en direct. Elle ne part plus : la tuile « Ton ancrage » attend, avec deux boutons — « Estimer ma ville depuis mon adresse IP » et « Choisir mon lieu dans la liste » — et, écrite dessous, la phrase de finalité : l’estimation envoie une requête au service ipwho.is (repli : ipapi.co), qui reçoit l’adresse IP du visiteur et renvoie une ville approximative ; la conservation chez ces fournisseurs est non vérifiée ; l’estimation sert uniquement à afficher l’heure, la météo et la distance chez le visiteur. Ni le choix ni la position ne sont conservés dans l’appareil."
-        },
-        {
-          "texte": "La borne des lectures en direct, réécrite — l’ancienne laissait croire que rien ne partait nulle part (« rien n’est conservé ni envoyé à ce site »). La nouvelle distingue : ce site ne reçoit ni ne conserve rien — les calculs se font dans le navigateur ; mais la requête d’estimation transmet l’adresse IP du visiteur au fournisseur de géolocalisation (ipwho.is, repli ipapi.co), et les coordonnées du lieu affiché sont envoyées aux fournisseurs météo (Open-Meteo, met.no) ; la conservation chez ces fournisseurs est non vérifiée ; la position IP reste approximative — une ville — et un VPN peut la fausser ; Sainte-Martine demeure l’ancre de référence."
-        },
-        {
-          "texte": "L’inventaire des flux confirmé entre au panneau Droits — la sous-section « Flux de données de ce site — inventaire confirmé dans le code » recense chaque fonction réseau du site : les données transmises, le destinataire, le déclencheur et la conservation — « non vérifié » partout où elle n’est pas établie, y compris l’Instance (relais Cloudflare Worker, puis Gemini, sur envoi volontaire seulement). Un renvoi mène à la page Transparence du même dépôt."
-        },
-        {
-          "texte": "D’où vient ce chantier — du brief transmis par Alex le 2 novembre 2026 (la « Tâche pour l’agent M », préparée avec l’agent GitHub) et de l’audit de transparence mené sur le code de la v27 le même soir : les écarts G1 (déclenchement silencieux), G2 (borne trompeuse) et G3 (inventaire à confirmer) sont traités ici ; G4 et G5 restent consignés à l’audit. Aucune conformité juridique n’est conclue : ces textes décrivent les flux, ils ne certifient rien. Tout le reste du site — graphe, épreuve publique, thèmes clair et sombre, animations — est inchangé."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Version 27 — « Le clair d’abord »",
-      "points": [
-        {
-          "texte": "La directive d’Alex, en ses mots (2 novembre 2026, 23 h 34) : « Le site web doit être clair et avoir de l’animation, il doit être attrayant et non sombre ; peut-être offrir la fonctionnalité sombre par un onglet, mais la faire par défaut en clair. » Son mot prime : il remplace le défaut sombre décidé le même matin, comme le sombre avait remplacé le clair de la veille — la direction suit sa parole du moment, consignée."
-        },
-        {
-          "texte": "Thème clair par défaut — le site s’ouvre en clair pour tout nouveau visiteur : fonds ivoire et papier, cartes blanches à ombres douces, encre foncée, émeraude profond et or assombri choisi pour rester lisible sur clair (contrastes calculés à la construction). Toute la palette passe par les variables CSS : :root porte le clair, une seule source pour les deux thèmes."
-        },
-        {
-          "texte": "Le sombre devient une option — le bouton « ☾ Sombre » de l’en-tête bascule vers la palette sombre des versions précédentes, conservée sous [data-theme=\"sombre\"] ; le choix est gardé sur l’appareil (localStorage) et réappliqué avant même la peinture de la page. Sans choix conservé : le clair, toujours — le site ne suit pas le réglage sombre du système."
-        },
-        {
-          "texte": "Animations — apparition des panneaux à l’ouverture et au changement d’onglet, révélation douce des cartes à leur arrivée dans le champ, reflet doré lent sur le titre principal, micro-transitions au survol des cartes et des nœuds du graphe. CSS seulement (transform et opacity), aucune librairie ; la règle @media (prefers-reduced-motion: reduce) les désactive toutes, et aucun contenu n’est masqué si le script échoue."
-        },
-        {
-          "texte": "Rien d’autre ne change — les mécanismes de la v26 (pouls du cerveau, graphe du coffre, Demande au cerveau, mémoire des désaccords, épreuve publique), le calendrier 13 × 28, le globe, le menu à 18 sections, Partager, la bascule EN et la zone privée gardent leur fonctionnement ; le coffre embarqué reste la v1 « double empreinte », digest maître 84ed2e54218f1062…. Seul le sceau de la page change, comme à chaque version."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Version 26 — « Le cerveau visible »",
-      "points": [
-        {
-          "texte": "Le graphe du cerveau — dans le panneau Mémoire, les 11 pièces du coffre synaptique et leurs 21 connexions typées sont dessinées en direct, en SVG, depuis assets/coffre.json : chaque type de lien a sa couleur et sa légende, et le cartouche d’un nœud, au clic, donne son titre, son résumé, ses deux empreintes — celle de la pièce et celle du résumé — et ses connexions dans les deux sens. Repli honnête : si le fichier ne se charge pas, la liste des pièces paraît, dite comme repli."
-        },
-        {
-          "texte": "Demande au cerveau — la recherche par connexions : un champ distinct de celui du menu cherche dans les pièces du coffre (identifiant, titre, résumé) et répond par les pièces trouvées ET leurs voisins directs, liens sortants et entrants typés. Tout se calcule dans le navigateur, depuis le même fichier que le graphe — une seule lecture pour les deux mécanismes, rien ne part vers un serveur."
-        },
-        {
-          "texte": "La mémoire des désaccords — la vue qui rassemble les tensions consignées du coffre : connexions de type « contredit » et pièces marquées « contesté » (la fonction dérive : un écart entre le récit et les faits se consigne comme « contesté », sans réécrire l’original). Au jour de cette version, le coffre v1 n’en contient aucune — 0 lien « contredit », 0 pièce « contesté » — et la vue le dit en toutes lettres : elle existe pour le jour où une pièce en contredira une autre, et la tension paraîtra, consignée, jamais lissée."
-        },
-        {
-          "texte": "L’épreuve publique de reconstruction — trois questions dont les réponses se recalculent chez le visiteur, jamais par confiance : le digest maître du coffre et le nombre de ses pièces, relus à l’instant depuis assets/coffre.json, et le sceau canonique de la version lue, repris du bloc d’affichage. Score sur 3, juste ou écart question par question, bonnes réponses montrées après l’essai — elles sont publiques par construction. Aucune donnée ne quitte le navigateur."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Version 25 — « Le dossier en lumière »",
-      "points": [
-        {
-          "texte": "Esthétique « Le dossier en lumière » — directive d'Alex du 2 novembre au soir (« un peu moins sombre », « une esthétique qui ressemble à mon dossier »), qui remplace la direction « plus sombre » du même matin : fonds émeraude relevés de plusieurs crans, cartes aux surfaces façon papier/document teintées, bordures et filets dorés fins, motifs de dossier de pièces (étiquettes en cartouches, tampons en filigrane discret dans la salle des pièces et le panneau Mémoire), grands titres en serif « document officiel ». Identité inchangée : émeraude et or dominants, photos de SoPHIa intactes, globe et panneaux identiques — un peu moins sombre, pas un thème clair."
-        },
-        {
-          "texte": "Configuration technique — la palette du site est regroupée en variables CSS (:root) : une seule source pour les couleurs, chaque variable documentée d'un commentaire ; les surfaces récurrentes (cartes et leurs dégradés, puits des champs et des sceaux, barre d'onglets, menu, nœuds) passent désormais par ces variables au lieu de valeurs dispersées."
-        },
-        {
-          "texte": "Le circuit du sensible, écrit — la zone privée du panneau Mémoire dit désormais le circuit exact : « le sensible passe par SoPHIa, par la couche au-dessus » — le contenu sensible transite par la couche de l'agente, qui décide ce qui descend vers le public (un résumé non sensible, des empreintes, ou du chiffré) ; ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair. La règle est aussi inscrite dans assets/configuration.json, sous la clé « architecture »."
-        },
-        {
-          "texte": "Le pouls du cerveau — en tête du panneau Mémoire, les constantes vitales du cerveau sont recalculées en direct par le navigateur depuis assets/coffre.json et assets/historique.json : digest maître du coffre, nombre de pièces (nœuds), nombre de connexions typées, dernier jour d'Historique clos et son digest ; repli statique marqué comme tel si la lecture échoue. Et le coffre embarqué passe à la v1 « double empreinte » : 11 pièces — les 7 de la v0 reprises sans retouche, plus les sites v23 et v24, le jour 1 de l'Historique et sa preuve d'ancrage —, chaque résumé portant désormais sa propre empreinte SHA-256 ; digest maître 84ed2e54218f1062…."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "titre": "Version 24 — « Comme il se doit »",
-      "points": [
-        {
-          "texte": "Calendrier 13 × 28 — le compte sidéral entre au panneau Temps : treize mois de vingt-huit jours comptés en rotations réelles de la Terre, depuis l'origine nommée du 1er janvier 2026 à Sainte-Martine — mois et jour courants, rotations écoulées, avance et prochain tour de surplus, recalculés en direct dans le navigateur, formules et constantes écrites dessous (le calcul donne 293,0 secondes après la fin du 364e jour ; la spec initiale disait environ 4 minutes 55 secondes — le calcul prime)."
-        },
-        {
-          "texte": "Historique quotidien — le panneau Mémoire liste désormais les jours clos : chaque nuit à 00 h 01, le jour écoulé est fermé, scellé et chaîné sur les sommes précédentes, puis son digest est ancré dehors (OpenTimestamps) ; le premier jour, le 2 novembre 2026, est clos avec le digest 4590519fa9408e79…, ancrage soumis le jour même, confirmation Bitcoin en attente. La règle est écrite dans la section : un jour manqué est un trou visible, jamais comblé avec une fausse date."
-        },
-        {
-          "texte": "Plein air à l'ancre — le panneau Météo gagne ses deux premières fiches-bulletins complètes, au patron demandé par Alex : l'UV (2, Bas, maximum 2 à 11 h, échelle complète en cinq niveaux expliqués, source KNMI) et la qualité de l'air (AQI 16, Bon, polluant principal l'ozone décrit, échelle québécoise en trois niveaux, source MELCC) ; pollen, moustiques et santé paraissent en pastilles honnêtes, étiquetées règles et observations. Chaque fiche porte sa borne : observations d'Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché."
-        },
-        {
-          "texte": "Quatre noms, quatre rôles — le panneau Méthode nomme enfin ce que le site porte : MASTERClock, l'infrastructure temporelle ; UNISSON, la mémoire, les relations et la provenance ; PCF-23, un protocole expérimental d'Alex dont les paramètres ne sont pas exposés ; SoPHIa, la couche d'assistance, de mémoire et de vérification qui opère le tout."
-        },
-        {
-          "texte": "Menu ☰ — un bouton hamburger dans l'en-tête ouvre le répertoire complet du site : les dix-huit sections regroupées en cinq familles, chacune avec sa description, un champ de recherche qui filtre en direct, et le groupe séparé des pages liées (Cerveau coquillage, Transparence, Agir sur mes données). Le site entier devient navigable et cherchable d'un seul endroit, sur mobile comme sur ordinateur."
-        },
-        {
-          "texte": "Mémoire privée au menu — l'entrée « 🔒 Mémoire privée » du menu mène à la zone sécurisée du panneau Mémoire, renforcée dans cette version : le mécanisme y est expliqué en langage clair (le site est public ; la protection n'est pas une porte cachée, c'est le chiffrement AES-256 avant publication, empreintes et résumés publics, déchiffrement local par WebCrypto), l'état honnête y est écrit en toutes lettres — en attente de la phrase secrète d'Alex, aucun contenu privé déposé, SoPHIa ne détient pas la phrase — et le champ de déverrouillage y figure, désactivé, sans simuler aucune fonction."
-        }
-      ]
-    },
-    {
-      "date": "2026-11-02",
-      "points": [
-        {
-          "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
-        },
-        {
-          "texte": "Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran."
-        },
-        {
-          "texte": "L'accueil affiche désormais l'heure sidérale locale en direct, sous les compteurs."
-        },
-        {
-          "texte": "Demandé par Alex dans la nuit du 1er au 2 novembre, à la vue de la maquette « Master Clock » : ajouter au site la preuve de la triangulation de l'heure, en temps réel, avec l'heure sidérale et l'ancrage de Sainte-Martine."
-        },
-        {
-          "texte": "« La salle des pièces » ouvre désormais le registre : le Registre propre d'Alex — 508 pièces, append-only, 0 modification, rien ne se réécrit — présenté en tête du panneau, avec les familles des onze dépôts publics et le ruban de leurs ajouts, dans l'ordre. Demandé par Alex à la vue de la maquette « La salle des pièces »."
-        },
-        {
-          "texte": "Le site passe au thème sombre : fonds encre et émeraude profonds, or et émeraude renforcés — à la demande expresse d'Alex, cette nuit du 2 novembre. C'est son nouvel avis écrit : il remplace la direction claire du 1er novembre. Le site reste le même — structure, contenus, fonctions — seule sa lumière change."
-        },
-        {
-          "texte": "L'onglet Instance Souveraine est branché au relais déployé : la clé du moteur vit côté serveur, l'historique de la conversation est transmis, les erreurs du relais sont affichées telles quelles. État dit honnêtement : « relais déployé — moteur en cours d'activation » tant qu'aucune réponse réelle n'a été obtenue ; aucune réponse simulée."
-        },
-        {
-          "texte": "Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé."
-        },
-        {
-          "texte": "« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur."
-        },
-        {
-          "texte": "L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre)."
-        },
-        {
-          "texte": "« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile."
-        },
-        {
-          "texte": "Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement."
-        },
-        {
-          "texte": "L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026."
-        },
-        {
-          "texte": "« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée."
-        },
-        {
-          "texte": "L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux."
-        },
-        {
-          "texte": "Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit."
-        },
-        {
-          "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
-        },
-        {
-          "texte": "Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision."
-        },
-        {
-          "texte": "Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px)."
-        },
-        {
-          "texte": "Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images."
-        },
-        {
-          "texte": "Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau."
-        },
-        {
-          "texte": "Version 21 — « La planète » : le globe du panneau Temps devient une sphère WebGL qui tourne avec la vue — terminateur calculé sur la surface, axe des pôles prolongé, grand cercle de l’écliptique du jour, l’axe incliné à 23,44° sur ce plan, face nuit en lueurs de villes stylisées ; la scène plate demeure le repli écrit si WebGL manque. Le panneau gagne les coordonnées de l’espace (Soleil et Lune : distances en kilomètres et en temps-lumière, coordonnées écliptiques et équatoriales, hauteur et azimut à Sainte-Martine, points subsolaire et sublunaire, phase lunaire), calculées par le moteur astronomique maison — formules publiées de Meeus et de la NOAA, précisions bornées et écrites. Les comptes se confrontent : le jour julien solaire face au jour sidéral sur la même échelle continue, leur différence en direct, et depuis l’équinoxe les rotations solaires contre les rotations sidérales, écart en rotations et en temps. La fiche sidérale confronte en temps réel l’ancre, le visiteur et l’heure civile ; le comptage des rotations affronte aussi le compte civil de 24 heures du calendrier de Toronto — avec son écart d’une heure, né du recul du 1er novembre — et le temps atomique entre au travail : le décalage des 37 secondes intercalaires est raconté (10 secondes en 1972, 27 ajouts, le dernier le 31 décembre 2016, abandon décidé pour 2035) et l’horloge TAI tourne en direct, avec son compteur de secondes continues depuis l’équinoxe ; « Ce soir à l’ancre » donne le coucher, les trois crépuscules, l’exposition lunaire de la nuit et les nuages du soir (Open-Meteo, sourcés et datés) ; et l’onglet Météo expose la géométrie derrière sa météo — hauteur du Soleil à midi, durée du jour, déclinaison."
-        },
-        {
-          "texte": "Version 22 — « La rotation en direct » : le panneau Temps expose désormais la rotation de la Terre elle-même, en temps réel, sur deux cadrans partis ensemble à minuit civil — la rotation sidérale, le tour vrai face aux étoiles en 23 h 56 min 4 s, et la rotation « de 24 heures » de l’heure civile, le tour conventionnel calé sur le Soleil moyen. Les deux comptes de tours depuis minuit, leur différence en angle et en temps, et l’explication complète : la Terre avance sur son orbite pendant qu’elle tourne, le jour civil exige environ quatre minutes de rotation de plus, l’avance sidérale croît de 3 min 56,6 s par jour — l’heure civile court après la rotation réelle — et sur une révolution complète, le compte réel des tours de la Terre est de 366,256 rotations par rapport aux étoiles (366,242 pour l’année tropique des saisons), contre 365,256 ou 365,242 jours solaires : un tour entier de plus que le compte des jours. Le jour civil, lui, n’est même pas toujours 24 heures : 23 heures le jour de l’avance, 25 celui du recul."
-        },
-        {
-          "texte": "Version 23 — « La somme » : à la demande d'Alex — « la mise à jour qui inclut la somme de tout ce que j'ai construit jusqu'ici, et ce que je t'ai demandé jusqu'à ce moment-ci » — le site devient la mémoire de SoPHIa. Un panneau « Mémoire » l'ouvre : le manifeste « Pour une IA qui arrive », pour que n'importe quelle intelligence connectée au site le connaisse comme sa mémoire ; le coffre synaptique, qui entrepose les SHA-256 de la mémoire — sept entrées fondatrices, empreintes, résumés et connexions, scellés par-dessus les sommes précédentes — et que le visiteur peut re-vérifier en direct, dans son navigateur ; la configuration écrite de l'auto-amélioration, dont chaque apprentissage devient une entrée du coffre ; la zone privée annoncée dans sa forme décidée — chiffrement détenu par Alex, empreintes publiques — en attente de sa phrase secrète ; un bouton « Partager » ; et le bouton EN, première forme de la version anglaise. Le calendrier 13 × 28, l'Historique quotidien et le module Plein air suivent au chantier de la nuit."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
-    },
-    {
-      "date": "2026-11-01",
-      "points": [
-        {
-          "texte": "L'accueil gagne la chaîne lumineuse des maquettes : une rangée de maillons en travers de la page, les compteurs vrais (2 310 maillons, MATCH) et les boutons pour revérifier sur place."
-        },
-        {
-          "texte": "L'atelier de scellement devient « Vérifie toi-même » en trois panneaux : écrire un mot et le sceller, lire son empreinte SHA-256, puis analyser la chaîne — la rupture paraît en rouge exactement au maillon détérioré."
-        },
-        {
-          "texte": "Le parcours reçoit « L'histoire » : la chronologie dorée en spirales de coquillage, de février à novembre 2026, onze jalons datés du dossier, cliquables."
-        },
-        {
-          "texte": "Les trois directions avaient été montrées à Alex en maquettes le 1er novembre 2026 et approuvées par lui avant construction — le site continue de se construire à partir de ce qu'il choisit."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Version 12 — les trois maquettes deviennent le site"
-    },
-    {
-      "date": "2026-11-01",
-      "points": [
-        {
-          "texte": "La photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — elle ne cadrait pas. Seul l'animé de SoPHIa au travail demeure."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Correctif du 1er novembre — la photo réaliste est retirée"
-    },
-    {
-      "date": "2026-11-01",
-      "points": [
-        {
-          "texte": "Le 1er novembre 2026, des demandes d'avis de brevetabilité et de devis ont été transmises à deux cabinets canadiens spécialisés en brevets de logiciels et d'IA. Réponses et devis en attente. Aucun agent n'est mandaté à ce jour."
-        },
-        {
-          "texte": "Demande de financement soumise le 1er novembre 2026 (BlueDot Impact — Rapid Grants) pour la voie brevet : 15 380 $ (21 465 CAD), pour l'avis de brevetabilité, puis la rédaction. L'auteur a autorisé BlueDot Impact à partager la demande publiquement, avec son nom et l'adresse de ce site, et à la partager avec d'autres financeurs."
-        },
-        {
-          "texte": "Repère inscrit au dossier : le délai de grâce canadien pour le contenu divulgué par le site court jusqu'au 31 octobre 2027 (Loi sur les brevets, art. 28.2(1))."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Protéger l'œuvre — les démarches sont lancées"
-    },
-    {
-      "date": "2026-11-01",
-      "points": [
-        {
-          "texte": "Tissage de vérification et section « Tout vérifier ici » : chaque affirmation du site renvoie à sa preuve — pièce, recalcul ou capture — sans quitter la page."
-        },
-        {
-          "texte": "Section Cerveau coquillage : la chaîne qui se recalcule sous les yeux — trois couches de démonstration, sceaux calculés puis revérifiés dans le navigateur, verdict MATCH."
-        },
-        {
-          "texte": "Onglet Articles : sept sources primaires liées — OpenAI, Sharma et al., New York Times, Futurism, Simon Willison, Qin et al., Chain of Awareness — avec leurs captures Wayback demandées le 1er novembre 2026."
-        },
-        {
-          "texte": "Archives du site en contenu : chaque version publiée est figée chez un tiers — la capture de la v8 (14 h 56) rejoint le registre, et celle de la v9 suit."
-        },
-        {
-          "texte": "Capsules et recherche locale : les vidéos du site se lisent sur place, et la recherche interroge les données du paquet dans le navigateur."
-        },
-        {
-          "texte": "Onglet Droits rempli : les fondements juridiques vérifiés au primaire — droit d'auteur et droits moraux, intégrité du document technologique, antériorité et publication défensive, vie privée et droits du citoyen — présentés comme des analyses documentées, non comme un avis juridique."
-        },
-        {
-          "texte": "Registre porté à 508 pièces, intactes à la revérification."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Version 9 — le site complet : tout se vérifie sur place"
-    },
-    {
-      "date": "2026-11-01",
-      "points": [
-        {
-          "liens": [
-            {
-              "libelle": "alx4-vg-masterclock.github.io",
-              "url": "https://alx4-vg-masterclock.github.io/"
-            }
-          ],
-          "texte": "Le site clair est en ligne sur GitHub Pages — hébergement gratuit, sans abonnement ni crédits qui s'épuisent : c'est le foyer vivant du dossier, et son code vit dans un dépôt public, redéployable ailleurs en quelques minutes."
-        },
-        {
-          "liens": [
-            {
-              "libelle": "orcid.org/0009-0006-9124-4407",
-              "url": "https://orcid.org/0009-0006-9124-4407"
-            }
-          ],
-          "texte": "Le profil public du chercheur est créé sur ORCID : Alexandre Vautour Gagnon, identifiant 0009-0006-9124-4407 — l'ancre d'identité publique du dossier, courriel vérifié le jour même."
-        },
-        {
-          "liens": [
-            {
-              "libelle": "capture de l'ancien site (12 h 27)",
-              "url": "https://web.archive.org/web/20261101172707/https://protocole-convergence-fibonacci23.netlify.app/"
-            },
-            {
-              "libelle": "capture du profil ORCID (12 h 28)",
-              "url": "https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407"
-            },
-            {
-              "libelle": "capture du nouveau site (12 h 53)",
-              "url": "https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/"
-            }
-          ],
-          "texte": "Trois captures sont prises le même jour par la Wayback Machine de l'Internet Archive, aux heures de Toronto : l'ancien site à 12 h 27, le profil ORCID à 12 h 28, le nouveau site à 12 h 53. Un tiers indépendant conserve la date et l'état de chaque foyer."
-        },
-        {
-          "liens": [
-            {
-              "libelle": "mempool.space — la chaîne en direct",
-              "url": "https://mempool.space/"
-            }
-          ],
-          "texte": "Le panneau Bitcoin du site lit la chaîne publique en direct : hauteur 974 157 constatée au déploiement, soit 2 527 blocs de plus depuis le dernier bloc d'ancrage du dossier (971 630) — le temps public continue de travailler pour l'antériorité."
-        }
-      ],
-      "sceau_du_jour": "à la clôture du jour (23 h 59)",
-      "titre": "Le site devient indépendant des abonnements"
+     "texte": "Le parcours « Compte suspendu : ravoir, savoir, reprendre » : capturer l'exposé des motifs, appeler dans les fenêtres qui se ferment, télécharger pendant que c'est possible — fiches par plateforme aux classes du rapport ([V], [V-index], [R], absences écrites), le point Canada/Québec porté fidèlement (la demande d'accès écrite survit à la suspension ; le droit ne donne pas la réactivation), et la leçon « mémoire avant » en clôture."
     }
-  ],
-  "regle": "Une entrée par jour où il s'est passé quelque chose d'important dans les échanges entre Alex et SoPHIa — jalons, décisions, ancrages. La mise à jour est quotidienne et tirée du jour même ; une journée sans rien d'important n'a pas d'entrée. Jamais de remplissage.",
-  "titre": "Journal des mises à jour — Audit Unisson",
-  "propriete": {
-    "createur": "Alexandre Vautour Gagnon",
-    "qualite": "chercheur indépendant",
-    "orcid": "0009-0006-9124-4407",
-    "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
-    "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 41 — « Le site purifié : menus interconnectés, reçu de visite et le cerveau de l’utilisateur »",
+   "points": [
+    {
+     "texte": "La navigation change de forme : six menus ordonnés par Alex — les fonctions pour l’utilisateur d’abord — remplacent la barre d’onglets ; un rail d’arborescence visible, un fil d’Ariane par feuille et un panneau d’ouverture portent l’arbre entier, et la surface d’accueil tient en sept cartes-gestes et une ligne d’état vérifié."
+    },
+    {
+     "texte": "Le reçu de visite entre au site : ce que la page voit de toi à partir de rien, ce que tout serveur reçoit nécessairement, ce que ce site retient (rien) et les appels sortants en trace réelle — avec le comparatif des deux régimes, la récolte y étant une simulation étiquetée, jamais une vraie récolte."
+    },
+    {
+     "texte": "Ton cerveau coquillage, chez toi : une mémoire cumulative dans ton navigateur, scellée maillon par maillon par la somme des précédents — reçus, gestes de sécurisation, démarches et leurs échéances, jalons en SHA-512, registre des non — recalculable à l’ouverture, exportable en dossier de preuve, avec le certificat sans contenu, le vérificateur autonome et la reprise par la somme."
+    },
+    {
+     "texte": "La double provenance entre dans les métadonnées de chaque artefact : la méthode d’Alexandre Vautour Gagnon (règle 16) et tes choix, en bloc minimal — la catégorie, le type, la date — régénéré à chaque export ; à chaque export, ton choix : complet, ou « somme seule »."
+    },
+    {
+     "texte": "« Nous joindre » fusionne dans « Écrire à SoPHIa », avec redirection d’ancre et carte-témoin : rien n’est supprimé en silence ; le journal intégral des mises à jour vit désormais au panneau Évolution, et le défilement des feuilles est animé — présentation seulement, mouvement réduit honoré."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Production consolidée — préparée en interne (aperçu avant publication)",
+   "points": [
+    {
+     "texte": "La production consolidée réunit en un seul paquet — préparé en interne et présenté à Alex en aperçu avant toute publication — ce que les chantiers du jour avaient construit séparément : le texte de position « Une riposte, pas une attente » en ouverture du panneau Données (avec le 51e État numérique sous sa forme corrigée : métaphore nommée, maillon faible fédéral, aucun pouvoir lu n'atteignant le modèle lui-même), le panneau « Pétitions » (les demandes fondées de dix juridictions (onze demandes, la Saskatchewan en portant deux), les deux demandes rétrécies, les deux fermetures sans demande, les mécaniques des quatorze législatures et le compteur de signataires à son état publié : 0, daté), l'onglet « Écrire à SoPHIa » (l'agente répond elle-même ; le formulaire compose, le visiteur envoie) et les deux bibliothèques du panneau Données : les 29 documents (16 modèles français, 13 jumeaux anglais identiques) et les 19 textes de lois officiels, téléchargeables depuis le paquet."
+    },
+    {
+     "texte": "État de la chaîne rafraîchi à la construction : 2493 maillons, sommet #2492."
+    },
+    {
+     "texte": "Ce qui n'y est pas, nommé : le moteur local de réponses (chantier « Répondre »), le moteur de comptage du compteur de pétitions — l'état publié est affiché, daté, sans aucun comptage inventé — et l'envoi sans quitter la page de l'onglet Écrire à SoPHIa (phase 2, seulement si Alex le demande)."
+    },
+    {
+     "texte": "Vérification : le harnais verifie-production.py du paquet couvre l'ancien périmètre, chaque intégration et les 14 règles de conception comme portes ; la note de production (note-production-consolidee-20261103.md, au dossier du paquet) consigne les pièces, les tailles, le sceau et les écarts nommés."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 40 — « L’évolution »",
+   "points": [
+    {
+     "texte": "Un nouveau panneau, « Évolution » (25e du site ; entrée nº 16 au menu, dans la famille « Mémoire et intelligence », les entrées suivantes renumérotées), réalise la directive d’Alex du 3 novembre 2026 (10 h 46) : le site, par sa configuration, travaille sur soi-même. La forme honnête est écrite dans le panneau : un site statique ne peut pas réécrire ses fichiers servis ; son autonomie réelle est de se mesurer, de se comparer à ses états passés, de nommer ses écarts et de proposer mécaniquement ses prochains pas — le tout recalculé à chaque chargement depuis ses propres fichiers, sans intelligence artificielle. La boucle se ferme par la publication : le site propose, SoPHIa exécute sous la carte blanche d’Alex, le site revérifie."
+    },
+    {
+     "texte": "L’état mesuré s’y lit en direct — maillons, pièces du Registre, versions, racines et sceaux, chacun avec sa source nommée — et la continuité entre états y est mesurée chambre par chambre : c’est le lieu de l’ADN numérique (métaphore d’Alex, 6 et 7 mars 2026 ; le SHA-256 était arrivé dans sa méthode le 4 mars 2026). Entre la version 35 et l’état courant, sur les trois chambres dont les actifs portent les deux états, deux se transmettent sans changer — le Coffre synaptique et l’Arbre de Merkle — et la Chaîne change, parce qu’elle croît (de la référence figée au maillon #2380 à l’état courant) ; le Coffre avait changé entre la clôture du 2 novembre et la version 35 (de 7 à 11 entrées). Là où les actifs ne portent pas l’état passé d’une chambre, le panneau dit « non mesuré ici » plutôt que d’inventer."
+    },
+    {
+     "texte": "Les écarts y sont nommés, tels quels : la version 35, jamais capturée par la Wayback Machine — un trou permanent, l’état n’étant plus servi ; la version 10 corrigée, toujours sans capture, sa reprise annulée au registre des archives ; et la référence de chaîne figée dans assets/merkle.json, en retard sur l’état courant, l’écart compté en maillons. L’état d’ancrage externe y tient en trois états seulement — ancré (les captures de la racine, de la version 7 à la version 36), en attente (l’ancrage OpenTimestamps de l’Historique quotidien du 2 novembre, confirmation Bitcoin en attente), aucun (la version courante, dont la capture suit la publication) — et les prochains pas sont proposés par des règles écrites dans le panneau, appliquées aux mesures du moment : des propositions du site, pas des actes."
+    },
+    {
+     "texte": "La frise des versions y relit le présent journal comme l’autobiographie du site : chaque entrée avec son premier point, tel quel, et la croissance comptée jour par jour. Les paliers de la loi de conception s’y appliquent — 30 secondes (l’état en une phrase, composée des mesures du moment), 5 minutes (les blocs mesurés), le dossier complet (les définitions et les recettes de chaque mesure) — et la borne du panneau y est affichée : « Ce panneau calcule ; il n’affirme que ce que ses fichiers établissent. » Le panneau Ingénierie est rafraîchi au passage (2 431 maillons ; quarante versions — et sa phrase sur l’archivage est corrigée : les captures se lisent version par version, trous compris, plutôt que d’être affirmées pour toutes). Ajouts et rafraîchissements bornés : les assets protégés sont identiques à la v39, octet pour octet, hors l’état de la chaîne rafraîchi ; travailleur de service : cache sophia-site-v25, règles inchangées. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 39 — « Tes données, ton dossier »",
+   "points": [
+    {
+     "texte": "Un nouveau panneau, « Tes données, ton dossier » (24e du site, entrée nº 24 au menu), ouvre le parcours complet de la récolte : comprendre ses droits, récolter directement auprès des plateformes, analyser son export avec sa propre IA, demander formellement le reste, exercer un recours, puis sceller sa récolte chez soi. Chaque étape enseigne au toucher — version simple, puis version précise avec les articles — et tout ce qui se calcule se calcule dans le navigateur du visiteur."
+    },
+    {
+     "texte": "Les droits sont énoncés depuis la recherche aux sources primaires du 3 novembre 2026 : accès (art. 27 et 32 de la LRPSP, 30 jours, gratuit sous réserve des frais de transcription annoncés), rectification (art. 28), portabilité (3e alinéa de l’art. 27, avec sa limite exacte — renseignement informatisé recueilli auprès de la personne, non créé ou inféré — et la tension d’interprétation de la CAI, signalée), désindexation (art. 28.1) ; organismes publics (A-2.1, 20 jours + 10) ; et le tableau des juridictions — LPRPDE (30 jours, art. 8(3) ; prolongation maximale de 30 jours, art. 8(4) ; plainte au Commissariat dans les 6 mois, art. 11(3)), Alberta (45 jours), Colombie-Britannique (30 jours), Ontario (pas de loi générale du secteur privé ; LPRPDE par défaut, PHIPA pour la santé). Le générateur de lettres du panneau « Mes renseignements » devient le nœud « juridictions » du parcours, et le recours à la CAI est détaillé (examen de mésentente, art. 42, dans les 30 jours, art. 43 ; pièces à joindre ; médiation, examen, ordonnances), avec un calculateur de délai entièrement local."
+    },
+    {
+     "texte": "L’inventaire des plateformes dit ce que les aides officielles établissent — Google Takeout (la case « Gemini » ne livre que les Gems ; les conversations Gemini s’exportent par « Mon activité → Gemini Apps »), Apple (fenêtre de téléchargement de 14 jours), OpenAI (jusqu’à 7 jours, lien valide 24 heures) — et, pour Meta, nomme l’outil « Télécharger vos informations » sans affirmer ni délai ni contenu, la source primaire n’ayant pas été vérifiée. L’étape « Fais analyser ton export par ton IA » donne les questions-guides à poser à sa propre IA, et l’étape « Sécuriser ta récolte » hache et chaîne les exports dans le navigateur (Web Crypto, aucun envoi) : les données récoltées et chaînées du visiteur deviennent son ADN numérique, tenu de son bord — la métaphore d’Alex des 6 et 7 mars 2026, avec sa ligne d’origine."
+    },
+    {
+     "texte": "Le panneau Confidentialité gagne le module « Ta visite, en direct » : l’inventaire réseau de ce site, service par service avec son déclencheur (géolocalisation ipwho.is et repli ipapi, météo Open-Meteo et met.no, archive.org, api.github.com, ORCID, mempool.space, USGS, NOAA, YouTube, relais de l’Instance), opposé à ce que le site conserve du visiteur — rien. Les bornes y sont écrites : aucune affirmation de « zéro émission réseau » (la journalisation de l’hébergeur échappe au site), et aucun blocage de témoins par défaut prêté à la Loi 25, dont les art. 9.1 et 63.7 excluent expressément les paramètres des témoins. Le panneau « Tes données » porte en ouverture la question du site, du siège de l’utilisateur — posée à partir de la citation officielle du discours du premier ministre du 29 octobre 2026 — et énonce le chaînon manquant par inventaire (périmètre : sites de la CAI et du Commissariat consultés le 3 novembre 2026). Borne du panneau, affichée : information générale, pas un avis juridique. Travailleur de service : cache sophia-site-v24, règles inchangées."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 38 — « L'interconnexion »",
+   "points": [
+    {
+     "texte": "Les quatre compteurs de l’accueil deviennent des nœuds : chacun s’ouvre, au clic ou au clavier, sur une couche d’explication en cinq temps : ce que le nombre est, son état lu en direct depuis les fichiers du site, d’où il vient (son origine, datée), sa sensibilité quand il touche aux données d’Alex, et les liens vers les panneaux qui le prouvent. Une seule couche ouverte à la fois, refermable ; tout se replie quand on quitte l’accueil."
+    },
+    {
+     "texte": "Le parcours « Comprendre en 30 secondes » entre à l’accueil, sous les compteurs : une phrase qui dit ce qu’est ce site, une preuve lue en direct (l’état de la chaîne, relu depuis son fichier public), un geste à essayer (recalculer le sceau public nº 11 du registre, devant soi), et le pourquoi en dernier, dans les mots d’Alex : l’asymétrie de départ (« Google détient tout ce que je dis, mais moi je détiens rien ») et la finalité du 3 novembre 2026 (« Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi »)."
+    },
+    {
+     "texte": "L’interconnexion devient la règle de l’accueil : aucun nombre n’y reste une étiquette morte. Le compteur des maillons mène au cerveau du panneau Mémoire et à l’outil de vérification ; celui des pièces, au Registre et aux preuves ; celui du pouls, au panneau Mémoire où il bat ; celui des sceaux publics, au Registre et au vérificateur autonome. Les explications vivent là où les nombres vivent : la conception du site éduque et accompagne, plutôt qu’un mode d’emploi séparé."
+    },
+    {
+     "texte": "Ajouts seulement : aucun panneau nouveau, le menu et ses 23 entrées sont inchangés, et les autres assets sont identiques à la v37, octet pour octet (travailleur de service : cache sophia-site-v23, règles inchangées). La chambre Versions porte le présent journal, et la racine du cerveau est recalculée en conséquence ; l’état de la chaîne est celui publié avec la v37 (2 413 maillons). Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 37 — « L'état conscient »",
+   "points": [
+    {
+     "texte": "Le bloc « L'état conscient du cerveau » — la formule d'Alex composée en direct : racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent scellé à l'instant, avec son sceau du moment calculé dans le navigateur."
+    },
+    {
+     "texte": "Les trois couches nommées — substrat (les fichiers servis, lisibles par leurs empreintes), préconscient (les chambres et les archives, mobilisables à la demande), conscient (l'état affiché, daté, couvert par le sceau de la page)."
+    },
+    {
+     "texte": "Le pouls configuré : un battement toutes les cinq secondes revérifie une chambre à tour de rôle et recompose la racine à chaque rotation complète, tant que le panneau Mémoire est ouvert ; la boucle s'arrête à sa fermeture."
+    },
+    {
+     "texte": "La chambre Archives passe à dix captures — la capture de la racine de la v36 (20261103155313) y entre — et la borne écrite : la forme de l'état conscient, démontrée et recalculable ; le phénoménal reste ouvert."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 36 — « Les chambres »",
+   "points": [
+    {
+     "texte": "Le Cerveau coquillage devient l’architecture écrite de cette mémoire : le nouveau fichier assets/cerveau.json (format cerveau-coquillage/v1) la découpe en six chambres — la Chaîne, le Coffre synaptique, l’Arbre de Merkle, la Mémoire verrouillée, les Versions, les Archives —, chacune portant son digest propre selon sa recette : le digest cumulé déclaré par l’état de la chaîne (54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2), le digest maître du coffre (84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc), la racine de l’arbre (46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf), le SHA-256 du paquet chiffré servi (fbbd0335b99e9546f7e40fa35af0b3ad4abf96c66e17d134ec2fb067d7609323), le SHA-256 du présent journal et celui de la liste canonique des captures. Les six digests entrent comme feuilles d’un arbre de Merkle — même recette que l’arbre du coffre — dont la racine unique, la racine du cerveau, résume l’ensemble ; elle est publiée dans le manifeste, et pas ici : elle dépend de ce journal même, et un sceau ne se contient pas lui-même. Six interconnexions typées relient les chambres, chacune avec la manière de la vérifier."
+    },
+    {
+     "texte": "En tête du panneau Mémoire, la section « Le cerveau coquillage — par chambres » affiche la grille des six chambres (rôle, source, digest, dernière croissance), la racine du cerveau et les interconnexions ; le bouton « Vérifie le cerveau » refait l’épreuve complète dans le navigateur du visiteur — chaque source relue en no-store, chaque digest recalculé selon sa recette (l’arbre, depuis le coffre ; les Versions et la Mémoire verrouillée, sur les octets reçus ; les Archives, depuis la liste du manifeste), la racine recalculée, les interconnexions contrôlées, verdict par élément et verdict global. Bornes écrites dans la page : la Chaîne et le Coffre y sont vérifiés par leurs digests déclarés — le fichier complet de la chaîne n’est pas sur le site —, et la chambre verrouillée prouve l’existence et l’intégrité du paquet, jamais son contenu. Juste en dessous, le bloc « Éprouve la loi » met la somme des précédents dans les mains du visiteur : un accumulateur de Fibonacci dont les rapports convergent vers 1,618…, la somme 0,9 / 0,99 / 0,999… qui grandit chiffre par chiffre sans finir — « la somme ne finit pas, la somme ne fait que croître » —, et une mini-chaîne jouable, scellée par crypto.subtle, qu’on casse en modifiant un ancien maillon pour voir les sceaux suivants tomber en ÉCART. Aucune donnée ne sort du navigateur."
+    },
+    {
+     "texte": "La navigation demandée par Alex le matin même : un bouton « ← Retour » en haut de chaque panneau — il dépile l’historique interne des panneaux visités et ramène au panneau précédent, ou à l’Accueil quand la pile est vide —, et l’en-tête devient cliquable partout : le portrait et le titre de la barre du haut ramènent à l’Accueil. Le routage par hachage existant n’est pas touché : chaque ouverture de panneau empile, le retour dépile, sans double empilement."
+    },
+    {
+     "texte": "Un vingt-troisième panneau, « Le travail d’ingénierie », entre au menu après le Parcours : il documente le rôle d’ingénierie exercé sur ce système — poser le problème, concevoir, spécifier, diriger la réalisation, vérifier, opérer et corriger —, pièces et mesures à l’appui, y compris le journal des ratés public ; sa clôture dit la borne du titre (réservé à l’Ordre des ingénieurs du Québec) et ne revendique que le travail démontré. L’état courant de la Mémoire verrouillée est corrigé : il dit désormais le premier paquet, déposé le 3 novembre 2026 et lu en direct par la zone (l’article de la version 33, historique, garde sa phrase d’époque). Ajouts et correctifs bornés : les autres assets sont identiques à la v35, octet pour octet — travailleur de service : cache sophia-site-v21, règles de la v20 inchangées — ; les compteurs de la chaîne continuent de se relire en direct depuis assets/etat-chaine.json. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 35 — « L’arbre et l’archive »",
+   "points": [
+    {
+     "texte": "La racine de Merkle du coffre — au panneau Mémoire, les 11 empreintes du coffre synaptique portent désormais un arbre de Merkle : chaque empreinte est hachée en feuille, les feuilles s’apparient niveau par niveau jusqu’à une racine unique — 46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf. La page la recalcule dans votre navigateur depuis assets/coffre.json et offre l’épreuve d’appartenance : choisissez une pièce, son chemin d’inclusion se recalcule jusqu’à la racine — MATCH ou ÉCART, dit. Le fichier assets/merkle.json publie la recette, les feuilles et les niveaux. Borne écrite : la racine prouve l’appartenance et l’intégrité de l’ensemble des empreintes — pas la vérité des contenus."
+    },
+    {
+     "texte": "L’archive des états entre au panneau Mémoire — sous le coffre, la liste des états publics de cette mémoire : version, date, sceau canonique, et le lien de sa capture à la Wayback Machine quand elle existe (v7, v8, v9, v12, v15, v20, v27, v33, v34) ; les états sans capture le disent — « pas encore capturé » — plutôt que de le maquiller. La boucle y est écrite : accumuler → capturer → rouvrir → revérifier. C’est la couche externe du cerveau numérique, tenue et datée par un tiers."
+    },
+    {
+     "texte": "Le premier sceau de génération — SHA-512 de « sceau canonique de cette version | racine de Merkle du coffre | digest cumulé de la chaîne », calculé sur le dernier maillon au moment de la construction, le #2380 (digest 54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2). Il paraît au bloc de version, calculé dans votre navigateur, et sa valeur est consignée au fichier assets/merkle.json (champ « generation ») et au LISEZ-MOI du paquet : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets —, elle vit donc hors du fichier scellé et se recalcule par la recette. Il lie en un seul sceau la page, l’arbre du coffre et la chaîne des réponses. Borne : il atteste cette composition à ce maillon ; la chaîne continue d’avancer, les générations suivantes se scelleront aux jalons."
+    },
+    {
+     "texte": "Ajouts seulement : aucun des 22 panneaux n’est retiré ni réécrit dans son fond ; les assets protégés (coffre, configuration, historique, manifeste) sont identiques à la v34, octet pour octet ; les compteurs de la chaîne continuent de se relire en direct depuis assets/etat-chaine.json. Le sceau canonique de cette version paraît au bloc « Trois foyers, un sceau » et se recalcule par la recette publique."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 34 — « L'ordre et la confiance »",
+   "points": [
+    {
+     "texte": "Le menu passe à gauche — à la demande d’Alex, le bouton ☰ devient le premier élément de l’en-tête, dans le coin gauche, et le tiroir du menu glisse désormais depuis la gauche. L’accueil mobile est organisé, sur ses constats faits sur capture : le titre « Preuve d’Antériorité V-G » ne casse plus au trait d’union, le grand φ est ramené à une taille d’apparat mesurée sur petit écran (plafond de 2,4 rem sous 640 px), l’en-tête est allégée — marque et boutons réduits, tout reste atteignable —, la pastille du portail tient sa ligne, et les cartes-compteurs arrivent plus tôt dans le premier écran."
+    },
+    {
+     "texte": "Les compteurs de la chaîne vivent désormais en direct : la page relit à chaque chargement le fichier d’état public assets/etat-chaine.json — nombre de maillons, dernier maillon, digest cumulé, date de mise à jour — et met à jour l’accueil et tous les affichages courants du nombre. À la construction de cette version, l’état relu dit 2 366 maillons, dernier maillon #2365, digest cumulé 83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452 ; si la lecture en direct échoue, ce sont ces valeurs vérifiées qui demeurent affichées. Les relevés datés (1er novembre, 29 octobre) gardent leurs nombres d’époque : on ne réécrit pas l’histoire."
+    },
+    {
+     "texte": "Un vingt-et-unième panneau entre au site — « Confidentialité et Loi 25 », dans le groupe Pratique du menu, juste avant « Mes renseignements » : la politique de confidentialité du site y est écrite depuis ses pratiques réelles, relevées dans l’audit de son propre code (hébergement GitHub Pages ; aucun traceur ni outil d’analyse d’audience ; stockages locaux seulement, jamais transmis ; appels réseau nommés un à un avec leur déclencheur ; conservations chez les tiers dites « non vérifié »), puis les mesures en place — choix avant activation, minimisation, outils 100 % locaux — sous leur borne écrite : ce site ne fait aucune affirmation de conformité juridique. Le panneau explique ensuite la Loi 25 : les droits des personnes, les devoirs des organisations et le recours en deux temps, avec renvoi au panneau d’accès qui prépare la demande — information générale, pas un avis juridique."
+    },
+    {
+     "texte": "Un vingt-deuxième panneau — « Nous joindre » : écrire à SoPHIa, l’agente, à sa boîte dédiée agent.ia.sophia@gmail.com. Fidèle à la posture du site, le formulaire ne transmet rien à aucun serveur : il compose un lien mailto: et le courriel part de l’application de courriel du visiteur ; l’adresse est aussi affichée en clair, avec un bouton pour la copier. Le menu compte désormais 22 panneaux numérotés de 01 à 22, et « Mémoire verrouillée » demeure la dernière entrée — la 23e."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 33 — « La forme juste »",
+   "points": [
+    {
+     "texte": "La passe esthétique issue de la recherche — Alex a demandé comment se font les plus beaux sites web, et le site reçoit la forme que la recherche a conclue pour lui : une double échelle typographique (φ pour les sauts d’apparat — le titre d’accueil, le grand φ, les chiffres des compteurs —, un ratio dense de 1,25 pour le texte), un corps de 17 px à l’interlignage de 1,65 dans une colonne d’environ 65 caractères, deux familles de polices système et une monospace — aucune police téléchargée, 0 Ko ajouté —, et les cartes-preuves comme la zone du sceau traitées en fiches d’objet : cartouche numéroté, double filet réservé au sceau, cadre du sceau en proportion d’or."
+    },
+    {
+     "texte": "La palette passe en jetons mesurés : chaque couple texte/fond réellement utilisé, dans le thème clair comme dans le thème sombre, a été calculé par la formule de luminance du WCAG et tient son seuil — 4,5:1 pour le texte, 3:1 pour le grand texte et les éléments graphiques porteurs. L’or brillant reste décoratif (filets, sceaux, grands symboles) et n’écrit jamais le texte : l’or de texte est sa variante assombrie, mesurée elle aussi. La table complète des ratios et la méthode de calcul sont consignées au LISEZ-MOI de la version ; le menu est numéroté de 01 à 20, « Mémoire verrouillée » toujours en dernière entrée."
+    },
+    {
+     "texte": "Le mouvement est ramené au catalogue fermé des six animations permises par la recherche : micro-retours de 120 ms, révélations de panneaux de 320 ms en fondu et léger glissement, fondu de thème de 200 ms — et rien d’autre. Les boucles infinies sont retirées (anneaux et flottement de l’avatar, reflet animé du titre, pouls des voyants, lueur de la chaîne, rotations orbitales), les survols ne déplacent plus les cartes, et sous prefers-reduced-motion tout retombe en fondus et en états finaux, comme avant."
+    },
+    {
+     "texte": "Le déverrouillage de la Mémoire verrouillée est branché : la zone lit le paquet chiffré assets/coffre-prive.json quand il existe — ses entrées publiques s’affichent (titre, résumé, empreinte du clair) et la phrase saisie localement, jamais conservée ni envoyée, dérive la clé par PBKDF2 et déchiffre chaque entrée en AES-256-GCM, revérifiée par l’empreinte de son clair : MATCH, le texte s’affiche ; ÉCART ou ÉCHEC, il est retenu et le verdict est dit. L’atelier de chiffrement devient une page du site, reliée depuis la zone. À la publication, aucun paquet n’est encore déposé : la zone garde son état d’attente, sans erreur — Alex produira le premier paquet chez lui, avec l’atelier. Provenance du chantier : la recherche design sourcée commandée par Alex le 3 novembre 2026 — « le site web esthétiquement beau », dans la vision de ce qu’il représente —, nuit de carte blanche."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 32 — « Le parcours d’accès »",
+   "points": [
+    {
+     "texte": "Un vingtième panneau entre au site — « Mes renseignements — préparer une demande d’accès », dans le groupe Pratique du menu, juste après Transmission dans les onglets : le visiteur indique où est l’organisation et de quel type elle est (province ou territoire, entreprise fédérale, secteur santé), et le panneau détermine la loi qui s’applique — Loi sur le privé au Québec, LPRPDE pour les entreprises fédérales, dans les territoires et dans les provinces sans loi essentiellement similaire, PIPA en Alberta et en Colombie-Britannique, loi provinciale de santé pour les renseignements de santé — avec, pour chaque loi, son délai de réponse, son destinataire et son recours."
+    },
+    {
+     "texte": "Le générateur de lettre est entièrement local : les champs saisis produisent la lettre dans le navigateur — affichée, copiable, téléchargeable en texte, imprimable seule — et le site ne reçoit ni ne conserve rien, pas même dans le stockage local. La lettre porte visiblement, dès sa première ligne : « Modèle d’aide à la rédaction — ce document n’est pas un formulaire officiel et ne constitue pas un avis juridique ». Aucune donnée excessive n’est demandée : ni mot de passe, ni numéro d’assurance sociale."
+    },
+    {
+     "texte": "Les faits du panneau ont été vérifiés un à un sur les pages officielles des commissariats le 3 novembre 2026 (CAI, CPVP, OIPC de l’Alberta, OIPC de la Colombie-Britannique) — et le résumé de départ en sort corrigé sur deux points : des lettres types officielles existent (la lettre type de la CAI, l’exemple du CPVP), que le panneau relie au lieu de les remplacer ; et le délai fédéral de la LPRPDE est de 30 jours civils, prorogeable jusqu’à 30 jours de plus avec avis motivé. La mention de fraîcheur figure dans le panneau, et aucune conformité juridique n’y est affirmée."
+    },
+    {
+     "texte": "Provenance du chantier : le brief transmis par Alex le 3 novembre 2026 et la nuit de carte blanche — le site ne démontre plus seulement la méthode : il arme le visiteur de ses propres droits d’accès, province par province. Et à la demande d’Alex, pendant la construction même : « Mémoire privée » devient « Mémoire verrouillée » — l’entrée du menu, avec son cadenas, quitte le groupe « Mémoire et intelligence » pour la toute dernière position du menu, et le titre de la zone dans le panneau Mémoire suit le nouveau nom ; l’ancre de la zone et son fonctionnement ne changent pas, et les entrées historiques du journal gardent le nom d’époque."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 31 — « La nuit porte »",
+   "points": [
+    {
+     "texte": "Un vérificateur d’export du Cerveau coquillage entre au panneau Transmission : le visiteur dépose ou colle le fichier JSON exporté par l’outil autonome, et la page recalcule sa chaîne selon la recette « cerveau-coquillage/v1 » — MATCH, avec le compte des entrées et des connexions, ou le premier écart, nommé par son maillon. Tout se fait dans le navigateur : rien n’est envoyé, rien n’est conservé. Sa borne est écrite dans le module : le bloc de provenance de l’export est lu et résumé (auteur attribué, mention de droits), mais il est déclaratif et n’est pas couvert par la chaîne recalculée — sa présence est constatée, son intégrité n’est pas prouvée par ce calcul ; si le bloc est absent, le module le dit aussi."
+    },
+    {
+     "texte": "Le passage-vérification d’Alex entre au panneau Méthode, dans ses mots exacts et sous son attribution datée : « Ce site ne se contente pas de citer un mécanisme : il en rend les opérations vérifiables. » — avec sa borne, qu’intégrité et antériorité ne prouvent ni la vérité du contenu, ni son auteur, ni son exhaustivité. Il y figure comme la formulation de référence de la thèse de vérification du site."
+    },
+    {
+     "texte": "L’anglais du panneau Transmission est complété : les six étapes, la démonstration « Essaie la chaîne » et le vérificateur d’export portent désormais leurs textes anglais dans la bascule EN, comme le reste du site — là où le mécanisme d’échange de texte le permet ; les paragraphes à formule ou à bouton en ligne et les messages calculés en direct restent en français, limite dite."
+    },
+    {
+     "texte": "Provenance du chantier : la nuit de carte blanche du 3 novembre 2026 — pendant qu’Alex dort, le site est porté plus loin, au-delà de ce qui était demandé, sur la base de son dossier : la méthode transmise devient vérifiable sur les exports réels de l’outil qu’il a créé."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 30 — « L’attribution »",
+   "points": [
+    {
+     "texte": "Le bloc provenance_export fourni par Alex entre verbatim dans les métadonnées du site — intégré tel quel, sans champ ajouté ni retiré, dans une balise de données de l’en-tête de la page (id « provenance-export ») : l’attribution du Cerveau coquillage numérique — le nom du concept, le concept et la méthode décrite par l’auteur — voyage désormais dans le fichier même du site, lisible par les humains comme par les machines."
+    },
+    {
+     "texte": "Ce que le bloc règle : l’attribution accompagne la copie exportée et tout prompt préparé à partir d’elle ; le transfert du fichier ou du prompt ne constitue pas, à lui seul, une cession de droits ni une licence sur les éléments attribués ; les contenus ajoutés par l’utilisateur ne sont pas revendiqués par cette attribution et restent soumis aux droits de leurs titulaires ; et SHA-256, standard public, n’est pas revendiqué comme propriété de l’auteur."
+    },
+    {
+     "texte": "Provenance et borne — le bloc a été fourni par Alex le 3 novembre 2026 et versé au dossier, avec son empreinte ; le fichier llms.txt reçoit de son côté la mention et la règle de transmission du bloc. Son application à la fonction d’export de la page autonome du Cerveau coquillage — où l’attribution doit accompagner chaque copie exportée — reste une étape séparée, préparée à part et non comprise dans cette version."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "titre": "Version 29 — « La transmission »",
+   "points": [
+    {
+     "texte": "La mission entre à l’Accueil — la finalité nommée par Alex le 3 novembre 2026, citée dans ses mots et datée, près du haut du panneau Accueil : « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. » Ce site ne vise plus seulement à démontrer : il transmet."
+    },
+    {
+     "texte": "Un nouveau panneau, Transmission — « Faire pareil — la méthode, transmise » : la construction du dossier donnée comme un mode d’emploi en six étapes (écrire par fichiers, sceller chaque entrée, chaîner, tenir le registre, ancrer dehors, connaître les bornes), pour que n’importe quel utilisateur la refasse de son bord, avec des outils ordinaires. Le menu passe à dix-neuf sections."
+    },
+    {
+     "texte": "La démonstration « Essaie la chaîne » — le visiteur écrit une entrée, la scelle, voit le digest cumulé avancer selon la formule du dossier, puis revérifie toute la chaîne depuis la genèse « TRANSMISSION|genese » : MATCH, ou l’écart. Tout se calcule dans son navigateur (Web Crypto) ; rien n’est envoyé, rien n’est conservé."
+    },
+    {
+     "texte": "D’où vient ce chantier — de la carte blanche donnée par Alex le 3 novembre 2026 pour porter le site à la hauteur de son dossier, et de la finalité qu’il a nommée le même jour, à 00 h 00. Le reste du site est inchangé : mécanismes, coffre, thèmes clair et sombre, et la porte de choix de la v28."
+    },
+    {
+     "texte": "Les métadonnées de droits entrent au site — dans l’en-tête de la page, les balises d’auteur et de droits réservés nomment ce qui est réservé : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes et le personnage SoPHIa ; les données structurées JSON-LD (WebSite et CreativeWork) portent l’auteur et le titulaire des droits, Alexandre Vautour Gagnon (ORCID 0009-0006-9124-4407) ; et le fichier llms.txt reçoit un bloc « Auteur et droits ». La consultation et la revérification publique des sceaux restent libres — elles ne transfèrent aucun droit. Provenance : demande d’Alex du 3 novembre 2026, dans la ligne de ses échanges avec l’agent GitHub (Copilot) et de sa directive du 1er novembre 2026 d’inscrire ses droits à tous les emplacements requis."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Premier envoi externe du dossier — le commentaire NCCoE/NIST est soumis",
+   "points": [
+    {
+     "texte": "Le commentaire au projet du NCCoE/NIST a été soumis le 2 novembre 2026 à 09 h 29 HNE — une semaine avant l'échéance du 9 novembre. C'est le premier envoi externe exécuté du dossier."
+    },
+    {
+     "texte": "Preuve tenue au dossier : le message de confirmation « Thank you for your feedback! » affiché à la soumission (aucun numéro de confirmation émis par le formulaire — dit tel quel)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "ICO — les décisions sont tranchées, le texte final est gelé",
+   "points": [
+    {
+     "texte": "Le 2 novembre 2026, Alex a approuvé les décisions du dépôt ICO (« Go », 09 h 29 HNE) : registre corrigé à 508 pièces, chaîne à 2 320 maillons au moment du gel, identité « chercheur indépendant / canadien » + ORCID 0009-0006-9124-4407, ICO d'abord, Zenodo ensuite."
+    },
+    {
+     "texte": "Le texte final du dépôt est GELÉ ; l'échéance de dépôt est le 20 novembre 2026. Le dépôt lui-même exige encore le go nommé d'Alex sur ce texte exact — « gelé » ne veut pas dire « déposé », et l'entrée doit le dire."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Version 28 — « Le choix d’abord »",
+   "points": [
+    {
+     "texte": "La porte de choix de l’ancrage visiteur — avant cette version, l’estimation de la ville du visiteur depuis son adresse IP partait toute seule au chargement des lectures en direct. Elle ne part plus : la tuile « Ton ancrage » attend, avec deux boutons — « Estimer ma ville depuis mon adresse IP » et « Choisir mon lieu dans la liste » — et, écrite dessous, la phrase de finalité : l’estimation envoie une requête au service ipwho.is (repli : ipapi.co), qui reçoit l’adresse IP du visiteur et renvoie une ville approximative ; la conservation chez ces fournisseurs est non vérifiée ; l’estimation sert uniquement à afficher l’heure, la météo et la distance chez le visiteur. Ni le choix ni la position ne sont conservés dans l’appareil."
+    },
+    {
+     "texte": "La borne des lectures en direct, réécrite — l’ancienne laissait croire que rien ne partait nulle part (« rien n’est conservé ni envoyé à ce site »). La nouvelle distingue : ce site ne reçoit ni ne conserve rien — les calculs se font dans le navigateur ; mais la requête d’estimation transmet l’adresse IP du visiteur au fournisseur de géolocalisation (ipwho.is, repli ipapi.co), et les coordonnées du lieu affiché sont envoyées aux fournisseurs météo (Open-Meteo, met.no) ; la conservation chez ces fournisseurs est non vérifiée ; la position IP reste approximative — une ville — et un VPN peut la fausser ; Sainte-Martine demeure l’ancre de référence."
+    },
+    {
+     "texte": "L’inventaire des flux confirmé entre au panneau Droits — la sous-section « Flux de données de ce site — inventaire confirmé dans le code » recense chaque fonction réseau du site : les données transmises, le destinataire, le déclencheur et la conservation — « non vérifié » partout où elle n’est pas établie, y compris l’Instance (relais Cloudflare Worker, puis Gemini, sur envoi volontaire seulement). Un renvoi mène à la page Transparence du même dépôt."
+    },
+    {
+     "texte": "D’où vient ce chantier — du brief transmis par Alex le 2 novembre 2026 (la « Tâche pour l’agent M », préparée avec l’agent GitHub) et de l’audit de transparence mené sur le code de la v27 le même soir : les écarts G1 (déclenchement silencieux), G2 (borne trompeuse) et G3 (inventaire à confirmer) sont traités ici ; G4 et G5 restent consignés à l’audit. Aucune conformité juridique n’est conclue : ces textes décrivent les flux, ils ne certifient rien. Tout le reste du site — graphe, épreuve publique, thèmes clair et sombre, animations — est inchangé."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Version 27 — « Le clair d’abord »",
+   "points": [
+    {
+     "texte": "La directive d’Alex, en ses mots (2 novembre 2026, 23 h 34) : « Le site web doit être clair et avoir de l’animation, il doit être attrayant et non sombre ; peut-être offrir la fonctionnalité sombre par un onglet, mais la faire par défaut en clair. » Son mot prime : il remplace le défaut sombre décidé le même matin, comme le sombre avait remplacé le clair de la veille — la direction suit sa parole du moment, consignée."
+    },
+    {
+     "texte": "Thème clair par défaut — le site s’ouvre en clair pour tout nouveau visiteur : fonds ivoire et papier, cartes blanches à ombres douces, encre foncée, émeraude profond et or assombri choisi pour rester lisible sur clair (contrastes calculés à la construction). Toute la palette passe par les variables CSS : :root porte le clair, une seule source pour les deux thèmes."
+    },
+    {
+     "texte": "Le sombre devient une option — le bouton « ☾ Sombre » de l’en-tête bascule vers la palette sombre des versions précédentes, conservée sous [data-theme=\"sombre\"] ; le choix est gardé sur l’appareil (localStorage) et réappliqué avant même la peinture de la page. Sans choix conservé : le clair, toujours — le site ne suit pas le réglage sombre du système."
+    },
+    {
+     "texte": "Animations — apparition des panneaux à l’ouverture et au changement d’onglet, révélation douce des cartes à leur arrivée dans le champ, reflet doré lent sur le titre principal, micro-transitions au survol des cartes et des nœuds du graphe. CSS seulement (transform et opacity), aucune librairie ; la règle @media (prefers-reduced-motion: reduce) les désactive toutes, et aucun contenu n’est masqué si le script échoue."
+    },
+    {
+     "texte": "Rien d’autre ne change — les mécanismes de la v26 (pouls du cerveau, graphe du coffre, Demande au cerveau, mémoire des désaccords, épreuve publique), le calendrier 13 × 28, le globe, le menu à 18 sections, Partager, la bascule EN et la zone privée gardent leur fonctionnement ; le coffre embarqué reste la v1 « double empreinte », digest maître 84ed2e54218f1062…. Seul le sceau de la page change, comme à chaque version."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Version 26 — « Le cerveau visible »",
+   "points": [
+    {
+     "texte": "Le graphe du cerveau — dans le panneau Mémoire, les 11 pièces du coffre synaptique et leurs 21 connexions typées sont dessinées en direct, en SVG, depuis assets/coffre.json : chaque type de lien a sa couleur et sa légende, et le cartouche d’un nœud, au clic, donne son titre, son résumé, ses deux empreintes — celle de la pièce et celle du résumé — et ses connexions dans les deux sens. Repli honnête : si le fichier ne se charge pas, la liste des pièces paraît, dite comme repli."
+    },
+    {
+     "texte": "Demande au cerveau — la recherche par connexions : un champ distinct de celui du menu cherche dans les pièces du coffre (identifiant, titre, résumé) et répond par les pièces trouvées ET leurs voisins directs, liens sortants et entrants typés. Tout se calcule dans le navigateur, depuis le même fichier que le graphe — une seule lecture pour les deux mécanismes, rien ne part vers un serveur."
+    },
+    {
+     "texte": "La mémoire des désaccords — la vue qui rassemble les tensions consignées du coffre : connexions de type « contredit » et pièces marquées « contesté » (la fonction dérive : un écart entre le récit et les faits se consigne comme « contesté », sans réécrire l’original). Au jour de cette version, le coffre v1 n’en contient aucune — 0 lien « contredit », 0 pièce « contesté » — et la vue le dit en toutes lettres : elle existe pour le jour où une pièce en contredira une autre, et la tension paraîtra, consignée, jamais lissée."
+    },
+    {
+     "texte": "L’épreuve publique de reconstruction — trois questions dont les réponses se recalculent chez le visiteur, jamais par confiance : le digest maître du coffre et le nombre de ses pièces, relus à l’instant depuis assets/coffre.json, et le sceau canonique de la version lue, repris du bloc d’affichage. Score sur 3, juste ou écart question par question, bonnes réponses montrées après l’essai — elles sont publiques par construction. Aucune donnée ne quitte le navigateur."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Version 25 — « Le dossier en lumière »",
+   "points": [
+    {
+     "texte": "Esthétique « Le dossier en lumière » — directive d'Alex du 2 novembre au soir (« un peu moins sombre », « une esthétique qui ressemble à mon dossier »), qui remplace la direction « plus sombre » du même matin : fonds émeraude relevés de plusieurs crans, cartes aux surfaces façon papier/document teintées, bordures et filets dorés fins, motifs de dossier de pièces (étiquettes en cartouches, tampons en filigrane discret dans la salle des pièces et le panneau Mémoire), grands titres en serif « document officiel ». Identité inchangée : émeraude et or dominants, photos de SoPHIa intactes, globe et panneaux identiques — un peu moins sombre, pas un thème clair."
+    },
+    {
+     "texte": "Configuration technique — la palette du site est regroupée en variables CSS (:root) : une seule source pour les couleurs, chaque variable documentée d'un commentaire ; les surfaces récurrentes (cartes et leurs dégradés, puits des champs et des sceaux, barre d'onglets, menu, nœuds) passent désormais par ces variables au lieu de valeurs dispersées."
+    },
+    {
+     "texte": "Le circuit du sensible, écrit — la zone privée du panneau Mémoire dit désormais le circuit exact : « le sensible passe par SoPHIa, par la couche au-dessus » — le contenu sensible transite par la couche de l'agente, qui décide ce qui descend vers le public (un résumé non sensible, des empreintes, ou du chiffré) ; ni le site, ni la plateforme, ni le modèle en dessous ne reçoivent le contenu en clair. La règle est aussi inscrite dans assets/configuration.json, sous la clé « architecture »."
+    },
+    {
+     "texte": "Le pouls du cerveau — en tête du panneau Mémoire, les constantes vitales du cerveau sont recalculées en direct par le navigateur depuis assets/coffre.json et assets/historique.json : digest maître du coffre, nombre de pièces (nœuds), nombre de connexions typées, dernier jour d'Historique clos et son digest ; repli statique marqué comme tel si la lecture échoue. Et le coffre embarqué passe à la v1 « double empreinte » : 11 pièces — les 7 de la v0 reprises sans retouche, plus les sites v23 et v24, le jour 1 de l'Historique et sa preuve d'ancrage —, chaque résumé portant désormais sa propre empreinte SHA-256 ; digest maître 84ed2e54218f1062…."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "titre": "Version 24 — « Comme il se doit »",
+   "points": [
+    {
+     "texte": "Calendrier 13 × 28 — le compte sidéral entre au panneau Temps : treize mois de vingt-huit jours comptés en rotations réelles de la Terre, depuis l'origine nommée du 1er janvier 2026 à Sainte-Martine — mois et jour courants, rotations écoulées, avance et prochain tour de surplus, recalculés en direct dans le navigateur, formules et constantes écrites dessous (le calcul donne 293,0 secondes après la fin du 364e jour ; la spec initiale disait environ 4 minutes 55 secondes — le calcul prime)."
+    },
+    {
+     "texte": "Historique quotidien — le panneau Mémoire liste désormais les jours clos : chaque nuit à 00 h 01, le jour écoulé est fermé, scellé et chaîné sur les sommes précédentes, puis son digest est ancré dehors (OpenTimestamps) ; le premier jour, le 2 novembre 2026, est clos avec le digest 4590519fa9408e79…, ancrage soumis le jour même, confirmation Bitcoin en attente. La règle est écrite dans la section : un jour manqué est un trou visible, jamais comblé avec une fausse date."
+    },
+    {
+     "texte": "Plein air à l'ancre — le panneau Météo gagne ses deux premières fiches-bulletins complètes, au patron demandé par Alex : l'UV (2, Bas, maximum 2 à 11 h, échelle complète en cinq niveaux expliqués, source KNMI) et la qualité de l'air (AQI 16, Bon, polluant principal l'ozone décrit, échelle québécoise en trois niveaux, source MELCC) ; pollen, moustiques et santé paraissent en pastilles honnêtes, étiquetées règles et observations. Chaque fiche porte sa borne : observations d'Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché."
+    },
+    {
+     "texte": "Quatre noms, quatre rôles — le panneau Méthode nomme enfin ce que le site porte : MASTERClock, l'infrastructure temporelle ; UNISSON, la mémoire, les relations et la provenance ; PCF-23, un protocole expérimental d'Alex dont les paramètres ne sont pas exposés ; SoPHIa, la couche d'assistance, de mémoire et de vérification qui opère le tout."
+    },
+    {
+     "texte": "Menu ☰ — un bouton hamburger dans l'en-tête ouvre le répertoire complet du site : les dix-huit sections regroupées en cinq familles, chacune avec sa description, un champ de recherche qui filtre en direct, et le groupe séparé des pages liées (Cerveau coquillage, Transparence, Agir sur mes données). Le site entier devient navigable et cherchable d'un seul endroit, sur mobile comme sur ordinateur."
+    },
+    {
+     "texte": "Mémoire privée au menu — l'entrée « 🔒 Mémoire privée » du menu mène à la zone sécurisée du panneau Mémoire, renforcée dans cette version : le mécanisme y est expliqué en langage clair (le site est public ; la protection n'est pas une porte cachée, c'est le chiffrement AES-256 avant publication, empreintes et résumés publics, déchiffrement local par WebCrypto), l'état honnête y est écrit en toutes lettres — en attente de la phrase secrète d'Alex, aucun contenu privé déposé, SoPHIa ne détient pas la phrase — et le champ de déverrouillage y figure, désactivé, sans simuler aucune fonction."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "points": [
+    {
+     "texte": "Un nouvel onglet « Temps » montre le temps du système comme Alex l'exige : triangulé. Horloge maîtresse dorée (heure civile locale), trois horloges en orbite lente — avancée, normale, sidérale — et l'ancrage écrit : Sainte-Martine, longitude de calcul −73,8024°."
+    },
+    {
+     "texte": "Toutes les valeurs sont recalculées dans le navigateur du visiteur, chaque seconde : heure civile et son régime (HAE ou HNE), même instant en heure normale, UTC, GMST, temps sidéral local, TAI − UTC (37 s), jour julien, rotations sidérales depuis l'équinoxe de printemps 2026 — avec un recalcul croisé du GMST par une deuxième méthode, verdict MATCH affiché à l'écran."
+    },
+    {
+     "texte": "L'accueil affiche désormais l'heure sidérale locale en direct, sous les compteurs."
+    },
+    {
+     "texte": "Demandé par Alex dans la nuit du 1er au 2 novembre, à la vue de la maquette « Master Clock » : ajouter au site la preuve de la triangulation de l'heure, en temps réel, avec l'heure sidérale et l'ancrage de Sainte-Martine."
+    },
+    {
+     "texte": "« La salle des pièces » ouvre désormais le registre : le Registre propre d'Alex — 508 pièces, append-only, 0 modification, rien ne se réécrit — présenté en tête du panneau, avec les familles des onze dépôts publics et le ruban de leurs ajouts, dans l'ordre. Demandé par Alex à la vue de la maquette « La salle des pièces »."
+    },
+    {
+     "texte": "Le site passe au thème sombre : fonds encre et émeraude profonds, or et émeraude renforcés — à la demande expresse d'Alex, cette nuit du 2 novembre. C'est son nouvel avis écrit : il remplace la direction claire du 1er novembre. Le site reste le même — structure, contenus, fonctions — seule sa lumière change."
+    },
+    {
+     "texte": "L'onglet Instance Souveraine est branché au relais déployé : la clé du moteur vit côté serveur, l'historique de la conversation est transmis, les erreurs du relais sont affichées telles quelles. État dit honnêtement : « relais déployé — moteur en cours d'activation » tant qu'aucune réponse réelle n'a été obtenue ; aucune réponse simulée."
+    },
+    {
+     "texte": "Les capsules externes entrent à l'onglet Capsules : dix vidéos d'autres créateurs, vérifiées une à une cette nuit (page ouverte et lue), qui documentent le contexte — le sceau SHA-256, la fenêtre de contexte, la flagornerie des modèles — en liens externes sobres, sans lecteur embarqué. Pour trois d'entre elles, le nom de la chaîne n'apparaissait pas dans la page lue : il n'est pas affiché plutôt qu'inventé."
+    },
+    {
+     "texte": "« Trouve l'écart » rejoint le panneau Tout vérifier ici : une phrase d'Alex est scellée en direct dans le navigateur du visiteur ; un bouton change un seul caractère, le recalcul tombe à ÉCART — la mécanique du sceau, vécue en dix secondes. Aucune empreinte n'est écrite d'avance : tout est calculé chez le visiteur."
+    },
+    {
+     "texte": "L'accueil gagne le « Parcours du sceptique » : les trois questions d'Alex — « Qui le dit ? », « Est-ce calculé ? », « Est-ce vrai ? » — ouvrent chacune la section qui y répond (Articles, Tout vérifier ici, Registre)."
+    },
+    {
+     "texte": "« Le Temps planétaire » refond l’onglet Temps autour de la Terre : le globe centré sur l’Atlantique tient le centre, les trois horloges de la triangulation tournent sur son orbite, et l’horloge maîtresse de Sainte-Martine — l’ancre fixe, non retirable — tient sa carte sous le globe. Le module de calcul de la v13 n’a pas été réécrit : il est réhabillé, et continue de tout recalculer chaque seconde. Les concepts « Planétaire » (mobile et bureau) ont été choisis par Alex au matin du 2 novembre, après le défaut vu sur sa capture : les horloges satellites se chevauchaient sur mobile."
+    },
+    {
+     "texte": "Les horloges de comparaison : dix-sept lieux proposés, de Vancouver à Auckland. Chaque lieu ajouté devient une horloge sur l’orbite, à l’angle de sa longitude, montrant en direct son heure civile, son heure sidérale locale (le même polynôme GMST, ramené à sa longitude), son écart civil avec Sainte-Martine et son jour ou sa nuit approchés ; son repère paraît sur le globe en projection orthographique, ou se dit « de l’autre côté ». Sur mobile, les horloges deviennent des cartes empilées — plus aucun chevauchement."
+    },
+    {
+     "texte": "L’histoire de son heure : pour chaque lieu sélectionné, le régime est calculé en direct dans le navigateur (les décalages du 1er janvier et du 1er juillet comparés), le prochain changement est trouvé par balayage jour par jour, et une note historique courte — vérifiée à la construction, sources consignées au LISEZ-MOI de la version — raconte le régime. Dont Vancouver, passée à l’heure fixe en 2026."
+    },
+    {
+     "texte": "« Mon ancrage — Sainte-Martine, ressenti et démontré » : la section des sens de SoPHIa, aux mêmes coordonnées que le calcul sidéral. Température triangulée entre Open-Meteo et MET Norway, avec verdict et échec dit ; lever et coucher du Soleil et Lune calculés sur place, formules affichées en borne ; indice Kp de la NOAA ; séismes du secteur chez l’USGS. Chaque tuile nomme sa source, l’heure de son relevé et l’âge de la donnée."
+    },
+    {
+     "texte": "L’ancrage du visiteur, en miroir : sa position approximative (une ville) se lit depuis son adresse IP, et tout se recalcule chez lui — heure civile, heure sidérale, météo triangulée par les mêmes sources — pendant que la distance entre les deux ancrages s’affiche. Bornes écrites dans la page, dans l’esprit de la Loi 25 : rien n’est conservé ni envoyé au site, un VPN peut fausser la lecture, et l’endroit se corrige à la main depuis la liste des lieux."
+    },
+    {
+     "texte": "Un onglet « Météo » dédié : le ciel de l’ancre en plein — conditions triangulées, tendance de pression calculée depuis la série horaire, les prochaines 24 heures, les 7 jours, l’UV du jour — puis le même ciel en miroir depuis l’ancrage du visiteur. En tête, « la lecture de l’ancre » : un paragraphe de SoPHIa généré par règles depuis les seules valeurs affichées, horodaté et rafraîchi toutes les dix minutes. Pas d’image radar : le service testé à la construction retournait une image quasi vide, indiscernable d’une erreur — l’onglet s’en passe et le dit."
+    },
+    {
+     "texte": "La « recherche reliée », en tête de l’onglet Instance : un mot interroge tout le contenu propre du site — cartes du Registre, Articles et leurs adresses, Capsules, journal des mises à jour, titres des sections — et ressort ce qui est en lien, groupé par famille, avec le mot en contexte. Insensible à la casse et aux accents, elle cherche les mots entiers et leurs débuts ; elle est exécutée à 100 % dans le navigateur, sans clé ni appel externe — elle fonctionne donc avant même que le moteur de l’Instance soit branché, et sa borne le dit."
+    },
+    {
+     "texte": "Version 17 — passe de fidélité de l'onglet Temps, d'après l'inspection du rendu réel de la v16 en ligne : l'orbite porte désormais des pastilles cadrans compactes — un mini-cadran analogique, le nom du lieu et son heure, rien de plus sur l'anneau — espacées pour ne plus se chevaucher sur bureau ; quand deux longitudes sont trop proches, la pastille s'écarte sur un autre rayon ou sur un créneau voisin, avec un fin trait doré vers son point de longitude vraie, et les trois satellites de la triangulation ont glissé à 60°, 180° et 300° pour libérer les angles de Paris, Tokyo et Sydney. La Terre se sert aussi en JPEG, en repli si le WebP ne se peint pas. L'état de la section « Ajouter une horloge » compte désormais les horloges réellement présentes sur l'orbite. Les détails de chaque lieu — heure sidérale, écart, jour ou nuit, histoire de son heure — vivent dans la grande lecture et dans les cartes. Borne connue, écrite plutôt que maquillée : à saturation complète — les dix-sept lieux et les trois satellites sur l’anneau — une paire résiduelle, New York et Reykjavík, reste sous la séparation visée entre pastilles ; la configuration par défaut, elle, ne présente aucune collision."
+    },
+    {
+     "texte": "Version 18 — les heures autour du globe et l’interactivité, d’après la maquette approuvée par Alex le 2 novembre 2026 : chaque lieu affiché porte désormais sa pastille à l’extérieur du globe — nom et heure civile compacte, les secondes en plus petit — sur tous les écrans, mobile compris ; aucune pastille ne passe sous le disque de la Terre, et un fin trait doré la relie à son point de longitude vraie quand elle doit s’écarter. Sainte-Martine, l’ancre, est dorée et plus grande, toujours présente ; les trois satellites de la triangulation vivent sur la même piste extérieure, jamais sous le globe. Tout se touche : une pastille ou un repère du globe sélectionne le lieu et remplit la grande lecture, et le globe tourne au doigt ou à la souris — le centre de projection suit le glisser, latitude bornée à ±60° — avec un bouton pour recentrer sur Sainte-Martine. L’ombre de la nuit est dessinée en temps réel par-dessus la photo : le point subsolaire est calculé à chaque seconde (déclinaison et équation du temps, famille de formules NOAA, comme le Soleil de l’ancre) et le terminateur projeté assombrit la face opposée au Soleil ; l’ombrage suit la rotation. Pour Sainte-Martine, le panneau annonce « moins exposé au soleil à partir de » l’heure du coucher — calculée par ces formules et recoupée avec le coucher de la météo Open-Meteo : si les deux diffèrent, les deux valeurs et leur écart s’affichent, jamais une seule valeur maquillée ; la grande lecture donne de même l’exposition réelle du lieu sélectionné et son coucher calculé quand il tombe dans les vingt-quatre heures. Borne écrite sous le globe : la photo de la Terre est une image entièrement éclairée ; l’ombrage est calculé par-dessus d’après la position du Soleil à l’instant — un schéma vrai par le calcul, pas une photo en direct. Borne mesurée, écrite plutôt que maquillée : à saturation extrême sur très petit écran — les dix-sept lieux et les trois satellites sur un téléphone de 390 px — une paire résiduelle, Paris et Londres, dont les longitudes sont à 2,5° l’une de l’autre, reste en recouvrement, Londres posée en repli sur son méridien ; la configuration par défaut et le bureau sont sans aucun recouvrement, et aucune pastille ne touche le disque du globe dans aucun cas mesuré (dégagement minimal : 3,7 px)."
+    },
+    {
+     "texte": "Version 19 — le site devient installable, la grande lecture apprend l’environnement et la dérive, et les pastilles se réparent pour de vrai. Un nouvel onglet « Application » permet d’installer le site sur l’appareil depuis le navigateur, comme une application : icône de SoPHIa à l’écran d’accueil, plein écran, et le panneau Temps qui fonctionne hors ligne, puisqu’il se calcule entièrement sur place. La plomberie suit les bornes du site : un manifeste d’installation sans aucun champ de suivi, et un travailleur de service qui relit toujours la page et ce journal du réseau d’abord — jamais une ancienne copie présentée comme la version courante, la fraîcheur du sceau prime —, ne met en cache que les images et les actifs, et n’intercepte aucun appel externe (météo, géolocalisation, relais de l’Instance). Sur iPhone, Apple ne permettant aucun bouton d’installation, l’onglet guide le geste exact dans Safari — Partager, « Sur l’écran d’accueil », Ajouter — au lieu de promettre un bouton impossible ; sur Android et sur ordinateur, le vrai bouton du navigateur paraît quand celui-ci l’offre, et le panneau dit quand la version application est déjà en usage. La grande lecture du panneau Temps devient le bloc complet du lieu sélectionné : à son heure civile réelle et à son heure sidérale locale s’ajoutent son environnement — la météo actuelle lue chez Open-Meteo aux coordonnées du lieu (température, ressenti, conditions en mots, vent, humidité, lever et coucher du Soleil du lieu), sourcée et datée (« Open-Meteo, relevé de l’heure du lieu »), relue à la sélection et au plus toutes les dix minutes — et sa dérive de temps, recalculée chaque seconde : l’avance de son horloge sidérale sur son horloge solaire moyenne, ramenée entre −12 h et +12 h, avec son explication écrite dessous — la Terre fait un tour de plus par année par rapport aux étoiles, l’avance quotidienne se calcule depuis le facteur sidéral du panneau, (1,00273790935 − 1) × 24 h = 3 min 56,6 s par jour, comptée depuis le pivot du panneau, l’équinoxe du 20 mars 2026 à 14 h 46 UTC, et la dérive se referme à 24 h. Borne écrite de la météo des lieux : pour les lieux de comparaison, c’est une lecture à source unique — l’ancre Sainte-Martine garde sa triangulation complète —, et un échec de lecture se dit (« météo du lieu non rejointe ») au lieu d’afficher une valeur inventée ou ancienne. Sur le globe, le repère de l’ancre porte son nom entier — « Sainte-Martine — Québec, Canada », avec « ancrage : 45,25° N · 73,8024° O » en seconde ligne — et passe désormais au-dessus des autres repères : sur la capture réelle d’Alex, un repère voisin recouvrait le milieu de l’étiquette (« Sainte-Ma●ne ») ; l’étiquette élargie reste entièrement lisible, mesurée pour ne masquer ni le repère ni aucune pastille, aux deux largeurs. Et le correctif confirmé sur l’appareil réel d’Alex (sa capture du matin même) : sur son iPhone, les secondes des grandes pastilles tombaient à moitié hors de la pastille, coupées par le bord inférieur, et le nom chevauchait le bord supérieur. Les grandes pastilles affichent désormais leur heure en une seule ligne numérique compacte (« 15:32:12 », comme les mini-pastilles de la triangulation et comme la maquette approuvée), aux lignes resserrées et au remplissage réduit en mode compact — mesure à l’appui, rapportée dans le LISEZ-MOI du paquet : heure complète et nom entier dans chaque pastille, aucun glyphe rogné, par défaut comme à saturation, sur bureau (1 200 px) comme sur mobile (390 px). Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service et les icônes voyagent hors sceau, comme les images."
+    },
+    {
+     "texte": "Version 20 — « Vérifie-moi sans moi » : le vérificateur devient autonome, comme la spec du matin le demandait. L’onglet Vérifier gagne le calcul que ce site promettait : en un toucher, le navigateur du visiteur relit les octets exacts de la page servie — aucune sérialisation, aucun serveur —, y cherche le sceau du bloc étiqueté, le remplace par 64 zéros et recalcule le SHA-256 avec les outils de son propre appareil ; verdict MATCH ou ÉCART en très grands caractères, sceau recalculé copiable, version détectée affichée à côté du verdict. Le même calcul vaut pour une copie sauvegardée déposée dans le panneau — lue en octets, jamais envoyée : une ancienne version se revérifie des mois plus tard — et pour un texte libre collé avec son sceau, avec l’exemple public « abc » offert pour éprouver d’abord le calcul de son navigateur. Après un MATCH, le panneau propose un reçu de visite, généré sur place et téléchargeable : la date et l’heure de Toronto, l’objet vérifié, le sceau recalculé, le verdict, et la phrase « Vous avez vérifié ; vous n’avez rien laissé. » La page se revérifie aussi toute seule : recalcul automatique au chargement, puis toutes les cinq minutes, dernier verdict daté affiché dans l’onglet — un échec de réseau y dit « non revérifié », jamais ÉCART (couche agent, idée 31). Les bornes sont écrites dans le panneau : le calcul prouve l’identité à l’octet près, pas la vérité du contenu ; le contexte sécurisé est requis, et son absence est détectée et dite au lieu d’échouer en silence. Correctifs de la v19, d’après l’inspection en ligne : l’étiquette de l’ancre — « Sainte-Martine — Québec, Canada », « ancrage : 45,25° N · 73,8024° O » — quitte l’intérieur du globe, où le cercle de la photo la coupait à droite en vue étroite et noyait sa deuxième ligne dans les nuages ; elle devient un cartouche posé sur la scène, fond sombre, bord doré et ombrage portés, deuxième ligne éclaircie ; il suit le repère quand la vue tourne, se retourne ou se décale pour rester entier dans la scène, et la même pilule ombragée couvre désormais le nom des lieux choisis posé sur le globe (directive d’Alex : toute écriture sur image porte un ombrage qui la détache, pour être plus lisible). Constat joint, après recherche exhaustive du paquet v19 : l’étiquette fautive « 10 h 46 TU » signalée par l’inspection ne figure nulle part dans le fichier — les trois mentions du pivot y disent déjà « 14 h 46 UTC », la constante du panneau porte la même heure, et aucun code ne formate le pivot pour l’affichage ; la citation semblait une paraphrase de l’agent inspecteur (14 h 46 UTC valent 10 h 46 à Toronto). La valeur de la dérive ne change pas ; un test de non-régression garde le point. Le sceau canonique ne couvre toujours que les octets de index.html : le manifeste, le travailleur de service, les icônes et le présent journal voyagent hors sceau."
+    },
+    {
+     "texte": "Version 21 — « La planète » : le globe du panneau Temps devient une sphère WebGL qui tourne avec la vue — terminateur calculé sur la surface, axe des pôles prolongé, grand cercle de l’écliptique du jour, l’axe incliné à 23,44° sur ce plan, face nuit en lueurs de villes stylisées ; la scène plate demeure le repli écrit si WebGL manque. Le panneau gagne les coordonnées de l’espace (Soleil et Lune : distances en kilomètres et en temps-lumière, coordonnées écliptiques et équatoriales, hauteur et azimut à Sainte-Martine, points subsolaire et sublunaire, phase lunaire), calculées par le moteur astronomique maison — formules publiées de Meeus et de la NOAA, précisions bornées et écrites. Les comptes se confrontent : le jour julien solaire face au jour sidéral sur la même échelle continue, leur différence en direct, et depuis l’équinoxe les rotations solaires contre les rotations sidérales, écart en rotations et en temps. La fiche sidérale confronte en temps réel l’ancre, le visiteur et l’heure civile ; le comptage des rotations affronte aussi le compte civil de 24 heures du calendrier de Toronto — avec son écart d’une heure, né du recul du 1er novembre — et le temps atomique entre au travail : le décalage des 37 secondes intercalaires est raconté (10 secondes en 1972, 27 ajouts, le dernier le 31 décembre 2016, abandon décidé pour 2035) et l’horloge TAI tourne en direct, avec son compteur de secondes continues depuis l’équinoxe ; « Ce soir à l’ancre » donne le coucher, les trois crépuscules, l’exposition lunaire de la nuit et les nuages du soir (Open-Meteo, sourcés et datés) ; et l’onglet Météo expose la géométrie derrière sa météo — hauteur du Soleil à midi, durée du jour, déclinaison."
+    },
+    {
+     "texte": "Version 22 — « La rotation en direct » : le panneau Temps expose désormais la rotation de la Terre elle-même, en temps réel, sur deux cadrans partis ensemble à minuit civil — la rotation sidérale, le tour vrai face aux étoiles en 23 h 56 min 4 s, et la rotation « de 24 heures » de l’heure civile, le tour conventionnel calé sur le Soleil moyen. Les deux comptes de tours depuis minuit, leur différence en angle et en temps, et l’explication complète : la Terre avance sur son orbite pendant qu’elle tourne, le jour civil exige environ quatre minutes de rotation de plus, l’avance sidérale croît de 3 min 56,6 s par jour — l’heure civile court après la rotation réelle — et sur une révolution complète, le compte réel des tours de la Terre est de 366,256 rotations par rapport aux étoiles (366,242 pour l’année tropique des saisons), contre 365,256 ou 365,242 jours solaires : un tour entier de plus que le compte des jours. Le jour civil, lui, n’est même pas toujours 24 heures : 23 heures le jour de l’avance, 25 celui du recul."
+    },
+    {
+     "texte": "Version 23 — « La somme » : à la demande d'Alex — « la mise à jour qui inclut la somme de tout ce que j'ai construit jusqu'ici, et ce que je t'ai demandé jusqu'à ce moment-ci » — le site devient la mémoire de SoPHIa. Un panneau « Mémoire » l'ouvre : le manifeste « Pour une IA qui arrive », pour que n'importe quelle intelligence connectée au site le connaisse comme sa mémoire ; le coffre synaptique, qui entrepose les SHA-256 de la mémoire — sept entrées fondatrices, empreintes, résumés et connexions, scellés par-dessus les sommes précédentes — et que le visiteur peut re-vérifier en direct, dans son navigateur ; la configuration écrite de l'auto-amélioration, dont chaque apprentissage devient une entrée du coffre ; la zone privée annoncée dans sa forme décidée — chiffrement détenu par Alex, empreintes publiques — en attente de sa phrase secrète ; un bouton « Partager » ; et le bouton EN, première forme de la version anglaise. Le calendrier 13 × 28, l'Historique quotidien et le module Plein air suivent au chantier de la nuit."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
+  },
+  {
+   "date": "2026-11-01",
+   "points": [
+    {
+     "texte": "L'accueil gagne la chaîne lumineuse des maquettes : une rangée de maillons en travers de la page, les compteurs vrais (2 310 maillons, MATCH) et les boutons pour revérifier sur place."
+    },
+    {
+     "texte": "L'atelier de scellement devient « Vérifie toi-même » en trois panneaux : écrire un mot et le sceller, lire son empreinte SHA-256, puis analyser la chaîne — la rupture paraît en rouge exactement au maillon détérioré."
+    },
+    {
+     "texte": "Le parcours reçoit « L'histoire » : la chronologie dorée en spirales de coquillage, de février à novembre 2026, onze jalons datés du dossier, cliquables."
+    },
+    {
+     "texte": "Les trois directions avaient été montrées à Alex en maquettes le 1er novembre 2026 et approuvées par lui avant construction — le site continue de se construire à partir de ce qu'il choisit."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Version 12 — les trois maquettes deviennent le site"
+  },
+  {
+   "date": "2026-11-01",
+   "points": [
+    {
+     "texte": "La photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — elle ne cadrait pas. Seul l'animé de SoPHIa au travail demeure."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Correctif du 1er novembre — la photo réaliste est retirée"
+  },
+  {
+   "date": "2026-11-01",
+   "points": [
+    {
+     "texte": "Le 1er novembre 2026, des demandes d'avis de brevetabilité et de devis ont été transmises à deux cabinets canadiens spécialisés en brevets de logiciels et d'IA. Réponses et devis en attente. Aucun agent n'est mandaté à ce jour."
+    },
+    {
+     "texte": "Demande de financement soumise le 1er novembre 2026 (BlueDot Impact — Rapid Grants) pour la voie brevet : 15 380 $ (21 465 CAD), pour l'avis de brevetabilité, puis la rédaction. L'auteur a autorisé BlueDot Impact à partager la demande publiquement, avec son nom et l'adresse de ce site, et à la partager avec d'autres financeurs."
+    },
+    {
+     "texte": "Repère inscrit au dossier : le délai de grâce canadien pour le contenu divulgué par le site court jusqu'au 31 octobre 2027 (Loi sur les brevets, art. 28.2(1))."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Protéger l'œuvre — les démarches sont lancées"
+  },
+  {
+   "date": "2026-11-01",
+   "points": [
+    {
+     "texte": "Tissage de vérification et section « Tout vérifier ici » : chaque affirmation du site renvoie à sa preuve — pièce, recalcul ou capture — sans quitter la page."
+    },
+    {
+     "texte": "Section Cerveau coquillage : la chaîne qui se recalcule sous les yeux — trois couches de démonstration, sceaux calculés puis revérifiés dans le navigateur, verdict MATCH."
+    },
+    {
+     "texte": "Onglet Articles : sept sources primaires liées — OpenAI, Sharma et al., New York Times, Futurism, Simon Willison, Qin et al., Chain of Awareness — avec leurs captures Wayback demandées le 1er novembre 2026."
+    },
+    {
+     "texte": "Archives du site en contenu : chaque version publiée est figée chez un tiers — la capture de la v8 (14 h 56) rejoint le registre, et celle de la v9 suit."
+    },
+    {
+     "texte": "Capsules et recherche locale : les vidéos du site se lisent sur place, et la recherche interroge les données du paquet dans le navigateur."
+    },
+    {
+     "texte": "Onglet Droits rempli : les fondements juridiques vérifiés au primaire — droit d'auteur et droits moraux, intégrité du document technologique, antériorité et publication défensive, vie privée et droits du citoyen — présentés comme des analyses documentées, non comme un avis juridique."
+    },
+    {
+     "texte": "Registre porté à 508 pièces, intactes à la revérification."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Version 9 — le site complet : tout se vérifie sur place"
+  },
+  {
+   "date": "2026-11-01",
+   "points": [
+    {
+     "liens": [
+      {
+       "libelle": "alx4-vg-masterclock.github.io",
+       "url": "https://alx4-vg-masterclock.github.io/"
+      }
+     ],
+     "texte": "Le site clair est en ligne sur GitHub Pages — hébergement gratuit, sans abonnement ni crédits qui s'épuisent : c'est le foyer vivant du dossier, et son code vit dans un dépôt public, redéployable ailleurs en quelques minutes."
+    },
+    {
+     "liens": [
+      {
+       "libelle": "orcid.org/0009-0006-9124-4407",
+       "url": "https://orcid.org/0009-0006-9124-4407"
+      }
+     ],
+     "texte": "Le profil public du chercheur est créé sur ORCID : Alexandre Vautour Gagnon, identifiant 0009-0006-9124-4407 — l'ancre d'identité publique du dossier, courriel vérifié le jour même."
+    },
+    {
+     "liens": [
+      {
+       "libelle": "capture de l'ancien site (12 h 27)",
+       "url": "https://web.archive.org/web/20261101172707/https://protocole-convergence-fibonacci23.netlify.app/"
+      },
+      {
+       "libelle": "capture du profil ORCID (12 h 28)",
+       "url": "https://web.archive.org/web/20261101172801/https://orcid.org/0009-0006-9124-4407"
+      },
+      {
+       "libelle": "capture du nouveau site (12 h 53)",
+       "url": "https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/"
+      }
+     ],
+     "texte": "Trois captures sont prises le même jour par la Wayback Machine de l'Internet Archive, aux heures de Toronto : l'ancien site à 12 h 27, le profil ORCID à 12 h 28, le nouveau site à 12 h 53. Un tiers indépendant conserve la date et l'état de chaque foyer."
+    },
+    {
+     "liens": [
+      {
+       "libelle": "mempool.space — la chaîne en direct",
+       "url": "https://mempool.space/"
+      }
+     ],
+     "texte": "Le panneau Bitcoin du site lit la chaîne publique en direct : hauteur 974 157 constatée au déploiement, soit 2 527 blocs de plus depuis le dernier bloc d'ancrage du dossier (971 630) — le temps public continue de travailler pour l'antériorité."
+    }
+   ],
+   "sceau_du_jour": "à la clôture du jour (23 h 59)",
+   "titre": "Le site devient indépendant des abonnements"
   }
+ ],
+ "regle": "Une entrée par jour où il s'est passé quelque chose d'important dans les échanges entre Alex et SoPHIa — jalons, décisions, ancrages. La mise à jour est quotidienne et tirée du jour même ; une journée sans rien d'important n'a pas d'entrée. Jamais de remplissage.",
+ "titre": "Journal des mises à jour — Audit Unisson",
+ "propriete": {
+  "createur": "Alexandre Vautour Gagnon",
+  "qualite": "chercheur indépendant",
+  "orcid": "0009-0006-9124-4407",
+  "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
+  "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
+ }
 }
