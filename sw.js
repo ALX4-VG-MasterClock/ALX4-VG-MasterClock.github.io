@@ -1,4 +1,4 @@
-/* Audit Unisson — travailleur de service (v22).
+/* Audit Unisson — travailleur de service (v27).
    Stratégies, dans l'ordre :
    1) La page (HTML), le journal des mises à jour (JSON) et TOUS les fichiers
       de données JSON sous assets/ (coffre, coffre privé, état de la chaîne,
@@ -13,8 +13,9 @@
    dépôt — et la reservait indéfiniment : la zone Mémoire verrouillée
    restait « en attente » sur les appareils déjà visiteurs alors que le
    paquet était en ligne. Désormais : réseau d'abord pour les données, et
-   une réponse non-OK n'entre jamais au cache. */
-var CACHE = 'sophia-site-v22';
+   une réponse non-OK n'entre jamais au cache.
+   Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, chercheur indépendant (ORCID 0009-0006-9124-4407) — tous droits réservés. */
+var CACHE = 'sophia-site-v27';
 var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png'];
