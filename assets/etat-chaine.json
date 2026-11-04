@@ -1,9 +1,9 @@
 {
- "maillons": 2619,
- "dernier_maillon": 2618,
- "sceau_dernier": "f53daeab3f7a3d0c8314817b94cc7d6d098bf0b2011bfbadf240bf4a0a8d8000",
- "digest_cumule": "5fe24cd666dfbcd5d7a56bce38ec8bcce0f9a9b55a24d85de674c0a8e26f154c",
- "mis_a_jour": "2026-11-03",
+ "maillons": 2685,
+ "dernier_maillon": 2684,
+ "sceau_dernier": "e51d34b1878272f87b7208262b29c310f4dbc3c8c24c3f3e769a6406f7df11ae",
+ "digest_cumule": "560d9ab523598403530330705bbf90b5813884dea5aafa3d715c35bcbef52e86",
+ "mis_a_jour": "2026-11-04",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
   "qualite": "chercheur indépendant",

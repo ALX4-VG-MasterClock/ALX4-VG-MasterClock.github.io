@@ -1,6 +1,36 @@
 {
  "entrees": [
   {
+   "date": "2026-11-04",
+   "titre": "Version 45 — « Faites un don »",
+   "points": [
+    {
+     "texte": "Un onglet nouveau, « Faites un don », au menu Le dossier — l’histoire : un don volontaire et sans contrepartie, pour soutenir la propriété intellectuelle derrière l’œuvre. Ce n’est pas un organisme de charité : aucun reçu d’impôt n’est émis, et c’est dit en première ligne. Dans son fonctionnement, le site se donne la discipline d’un organisme à but non lucratif — l’argent reçu sert la mission, jamais un profit personnel — sans en avoir le statut légal : il reste l’œuvre d’un particulier, et c’est dit tel quel."
+    },
+    {
+     "texte": "La liste des usages est publiée au complet — brevet, avocats, domaine, site, recherche, conformité, ou là où le besoin est le plus grand — et le donateur choisit : il écrit le code de l’usage choisi dans le message de son virement Interac (Autodépôt, vers la boîte dédiée du site). Le choix voyage avec le virement ; ce site ne recueille rien : aucun formulaire, aucun suivi, aucun cookie, et cette page ne charge aucun script de paiement."
+    },
+    {
+     "texte": "Transparence en agrégat : les dons seront comptés au registre du site en total et par usage choisi — jamais un nom, jamais un montant individuel — et l’usage réel des fonds y sera raconté. Le processeur (Interac et l’institution financière du donateur) est nommé à la carte des transits. État de chaîne rafraîchi au gel de la version : 2 685 maillons, sommet #2684, digest cumulé 560d9ab523598403530330705bbf90b5813884dea5aafa3d715c35bcbef52e86 — revérifié au complet par le vérificateur du dossier (MATCH)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
+   "titre": "Version 44 — « Les compteurs en direct »",
+   "points": [
+    {
+     "texte": "Les quatre compteurs reviennent en surface première de l’accueil, aux valeurs vraies : les maillons de la chaîne revérifiés MATCH, les pièces du registre du dossier intactes, le pouls de vérification de cinq secondes, les sceaux publics du registre tous recalculés MATCH — les quatre cartes que les purifications avaient retirées de la surface, rétablies comme au début du site."
+    },
+    {
+     "texte": "Le pouls bat désormais aussi à l’accueil : toutes les cinq secondes, tant que l’accueil est le panneau affiché et que l’onglet est visible, la page relit le fichier d’état public (assets/etat-chaine.json) et rafraîchit les affichages de la chaîne ; la ligne du battement dit l’heure et le nombre relus — ou « non relu » si la lecture échoue. Aucune donnée du visiteur n’est lue ni envoyée : la requête ne sort pas du site."
+    },
+    {
+     "texte": "État de chaîne rafraîchi au gel de la version : 2 657 maillons, sommet #2656, digest cumulé a0a2c0775d2a270ed695ec552748e42aca31d32923ea46f7079e5619d45d9b66 — revérifié au complet par le vérificateur du dossier (MATCH) ; le registre revérifié intact (508 pièces, 508 intactes, zéro rompue) et les onze sceaux publics recalculés un à un (11/11 MATCH) au même gel."
+    }
+   ]
+  },
+  {
    "date": "2026-11-03",
    "titre": "Version 43 — « Profondeur : l’atome-décision, le registre des conditions, la carte des transits et la proximité »",
    "points": [
