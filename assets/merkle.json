@@ -106,5 +106,12 @@
     "digest_cumule_chaine": "54d4bdd12c6d157cf7b51d74727b9bd08458a3efd80d5be9a2f72a60fce4f2e2",
     "maillon_reference": 2380,
     "sceau_generation": "dfdd0528394b17edfeaa20559c0547c238c8a199c30f1f127ee64ff9e21091f18af1ef111514bf86ae4aca6baf3ca7875a1fcd056f450705280d7f179cdc5655"
+  },
+  "propriete": {
+    "createur": "Alexandre Vautour Gagnon",
+    "qualite": "chercheur indépendant",
+    "orcid": "0009-0006-9124-4407",
+    "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
+    "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
   }
 }
