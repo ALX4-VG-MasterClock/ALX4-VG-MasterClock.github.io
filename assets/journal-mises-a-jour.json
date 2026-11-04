@@ -2,6 +2,48 @@
  "entrees": [
   {
    "date": "2026-11-03",
+   "titre": "Version 43 — « Profondeur : l’atome-décision, le registre des conditions, la carte des transits et la proximité »",
+   "points": [
+    {
+     "texte": "Le correctif de la Mémoire verrouillée et le mécanisme de rafraîchissement par les sommes (le cache est une somme précédente : l’état gardé s’affiche d’abord, se compare à la version fraîche par son sceau canonique, et force le rechargement si le sceau a bougé — jamais une version périmée en silence)."
+    },
+    {
+     "texte": "La feuille « Le for est ailleurs, tes recours sont ici » : la carte des clauses vérifiée aux contrats lus, les recours d’ici, la lettre au refus, et la section vérifiée au primaire — les mesures existent, surtout au Québec ; la mesure à porter est nommée (les comptes gratuits comme contrats de consommation), avec sa borne écrite."
+    },
+    {
+     "texte": "L’atome-décision (§A) dans le moteur du cerveau de l’utilisateur : une décision consignée rencontre sa preuve, et l’appariement scelle un verdict calculé — respectée, contredite, sans réponse à l’échéance — avec sa lecture humaine en langage clair."
+    },
+    {
+     "texte": "La chambre des bris (§B) ouvre avec sa pièce 1 : le faux sceau de juillet 2026 — nature, preuve, borne. Le site-fichier téléchargeable porte l’avis de propriété intellectuelle complet et les chemins de vérification, hors ligne."
+    },
+    {
+     "texte": "Le registre des conditions (§M) entre au site : les onze documents lus en entier (TikTok, Snapchat, Discord, Meta, X), leurs clauses de droits, le registre des silences, et le diff des conditions — baselines en empreintes, première entrée en attente : la révision Instagram annoncée pour le 20 janvier 2027."
+    },
+    {
+     "texte": "La carte des transits (§I) complétée par service (cadre CLOUD Act / FISA 702, non-transit documenté d’Apple, Conversions hors ligne de Meta, Ring/Alexa, Microsoft), la couche Snowden en trois registres, et le non-établi porté comme tel : les volumes réels par utilisateur."
+    },
+    {
+     "texte": "La couche proximité (§I+) : ce qui passe dans l’air — advertising BLE, balises, Find My (clé remplacée ~toutes les 15 minutes, le détecteur chiffre SA position), Find Hub (position agrégée en lieux fréquentés), Tile (silence technique consigné), probe requests Wi-Fi — avec l’audit de proximité guidé, les alertes officielles liées, le registre des lieux-relais prouvés par des régulateurs (Cadillac Fairview d’abord), le protocole anti-suivi de voyage et le kit « premier traqueur ». Borne écrite : une page web ne capte rien."
+    },
+    {
+     "texte": "Le minuteur de fenêtre (§L29) : les fenêtres des fiches et du registre, leurs sources, les silences écrits comme silences ; échéances scellées et rappels .ics locaux. Le protocole de la première heure (§L30) à la feuille Compte suspendu, étapes scellables — exporter avant toute suppression. Le détecteur d’export partiel (§L32) et le miroir des exports (44) : analyse 100 % locale, qui finit en un droit — la lettre de demande de complétion."
+    },
+    {
+     "texte": "Les preuves externes DANS le site (§F) : Bitcoin/OpenTimestamps, RFC 3161, Wayback — empreinte, date, et le chemin de vérification pas à pas chez le tiers. L’antériorité pour tous (48) : l’empreinte de ton fichier, scellée dans ton cerveau."
+    },
+    {
+     "texte": "L’onglet « Écrire à SoPHIa » passe au double relais courriel (décision d’Alex, 22 h 33) : le code de fil de 12 caractères généré sur l’appareil, l’envoi par l’application courriel du visiteur (sujet « [SoPHIa <code>] »), la réponse par courriel et sur le fil — aucun service d’envoi, aucun envoi silencieux ; la sonde dit l’état réel du relais."
+    },
+    {
+     "texte": "Ton exposition (fournée 6, adoptée le 3 novembre) : ton empreinte recalculée ici, jamais envoyée, scellable (36) ; le panneau de bord du non-tracking — les requêtes de cette page en direct, par ton propre navigateur (37) ; la surveillance de ton exposition entre visites (38) ; « vérifie que c’est bien nous » (41) ; la preuve de présence consentie, déclarée jamais captée (42). Et la fournée 7 : le guide « ce que ton téléphone raconte ce soir » (46 — rapports officiels iOS et Android), la laisse numérique des enfants (47), l’effaceur de métadonnées EXIF local (49), la visite guidée côté pisteur (50), la carte des consentements (51) et l’enveloppe « en cas d’incapacité » chiffrée par ta phrase, dans ton cerveau (52, exploratoire bornée)."
+    },
+    {
+     "texte": "Jumeaux anglais complets (règle 14) des cinq feuilles de la version 42 et de toutes les surfaces nouvelles de la tranche ; les citations de lois dont la version anglaise officielle n’a pas été récupérée sont marquées, jamais traduites."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
    "titre": "Version 42 — « Aller chercher : les sections de la récolte, les caméras, l'explication des décisions, le registre et le compte suspendu »",
    "points": [
     {
