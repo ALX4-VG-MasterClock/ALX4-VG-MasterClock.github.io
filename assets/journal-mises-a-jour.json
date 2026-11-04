@@ -2,6 +2,27 @@
  "entrees": [
   {
    "date": "2026-11-04",
+   "titre": "Version 47 — « Les inclusions »",
+   "points": [
+    {
+     "texte": "Deux feuilles nouvelles au menu « Tes données », dans « Le parcours », chacune bilingue intégrale et construite depuis sa fiche vérifiée au primaire : « Les assurances » (la télématique, le Fichier central des sinistres, la décision automatisée et l’explication à demander, les appels enregistrés, le régulateur et les plaintes) et « Le suivi familial et la localisation » (Life360 lu en entier : ce que ces applications voient, partagent et vendent — et les droits qui ferment les canaux)."
+    },
+    {
+     "texte": "Le panneau « Écrire à SoPHIa » gagne la zone des questions suggérées : dix-huit questions préparées dont la réponse s’affiche sur place, sans aucun transit — aucune donnée ne quitte l’appareil ; la question libre, par le formulaire, reste le chemin vers l’agente."
+    },
+    {
+     "texte": "« L’édition du jour » paraît au menu « Le cerveau du site » : la page datée que SoPHIa signe chaque jour, ouverte par l’édition nº 1 du 4 novembre 2026, son empreinte inscrite au registre des actions du site."
+    },
+    {
+     "texte": "Le panneau « Conditions d’utilisation du site » reçoit la puce du manque, remontée depuis la source v4 des conditions : ce site a aussi pour but de combler ce que les provinces et le Canada n’offrent pas aux utilisateurs — savoir comment leurs données transitent, y accéder, garder leur propre mémoire."
+    },
+    {
+     "texte": "Correctif d’auto-suffisance du paquet : les octets servis de la Mémoire verrouillée (assets/coffre-prive.json) voyagent désormais avec le paquet — une restauration depuis le paquet seul ne la fera plus retomber en erreur."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
    "titre": "Version 46 — « Les textes du site »",
    "points": [
     {
