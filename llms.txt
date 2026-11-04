@@ -7,7 +7,7 @@ d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 45 — « Faites un don » (4 novembre 2026). L’accueil
+Version 46 — « Les textes du site » (4 novembre 2026). L’accueil
 retrouve ses quatre compteurs en surface première — maillons de la
 chaîne, pièces du registre, pouls de vérification, sceaux publics —
 relus en direct. La navigation est un
