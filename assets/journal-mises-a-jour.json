@@ -2,6 +2,27 @@
   "entrees": [
     {
       "date": "2026-11-03",
+      "titre": "Version 41 — « Le site purifié : menus interconnectés, reçu de visite et le cerveau de l’utilisateur »",
+      "points": [
+        {
+          "texte": "La navigation change de forme : six menus ordonnés par Alex — les fonctions pour l’utilisateur d’abord — remplacent la barre d’onglets ; un rail d’arborescence visible, un fil d’Ariane par feuille et un panneau d’ouverture portent l’arbre entier, et la surface d’accueil tient en sept cartes-gestes et une ligne d’état vérifié."
+        },
+        {
+          "texte": "Le reçu de visite entre au site : ce que la page voit de toi à partir de rien, ce que tout serveur reçoit nécessairement, ce que ce site retient (rien) et les appels sortants en trace réelle — avec le comparatif des deux régimes, la récolte y étant une simulation étiquetée, jamais une vraie récolte."
+        },
+        {
+          "texte": "Ton cerveau coquillage, chez toi : une mémoire cumulative dans ton navigateur, scellée maillon par maillon par la somme des précédents — reçus, gestes de sécurisation, démarches et leurs échéances, jalons en SHA-512, registre des non — recalculable à l’ouverture, exportable en dossier de preuve, avec le certificat sans contenu, le vérificateur autonome et la reprise par la somme."
+        },
+        {
+          "texte": "La double provenance entre dans les métadonnées de chaque artefact : la méthode d’Alexandre Vautour Gagnon (règle 16) et tes choix, en bloc minimal — la catégorie, le type, la date — régénéré à chaque export ; à chaque export, ton choix : complet, ou « somme seule »."
+        },
+        {
+          "texte": "« Nous joindre » fusionne dans « Écrire à SoPHIa », avec redirection d’ancre et carte-témoin : rien n’est supprimé en silence ; le journal intégral des mises à jour vit désormais au panneau Évolution, et le défilement des feuilles est animé — présentation seulement, mouvement réduit honoré."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
       "titre": "Production consolidée — préparée en interne (aperçu avant publication)",
       "points": [
         {
@@ -562,5 +583,12 @@
     }
   ],
   "regle": "Une entrée par jour où il s'est passé quelque chose d'important dans les échanges entre Alex et SoPHIa — jalons, décisions, ancrages. La mise à jour est quotidienne et tirée du jour même ; une journée sans rien d'important n'a pas d'entrée. Jamais de remplissage.",
-  "titre": "Journal des mises à jour — Audit Unisson"
+  "titre": "Journal des mises à jour — Audit Unisson",
+  "propriete": {
+    "createur": "Alexandre Vautour Gagnon",
+    "qualite": "chercheur indépendant",
+    "orcid": "0009-0006-9124-4407",
+    "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
+    "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
+  }
 }
