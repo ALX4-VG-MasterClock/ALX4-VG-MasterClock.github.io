@@ -1,4 +1,4 @@
-/* Audit Unisson — travailleur de service (v28).
+/* Audit Unisson — travailleur de service (v29).
    Stratégies, dans l'ordre :
    1) La page (HTML), le journal des mises à jour (JSON) et TOUS les fichiers
       de données JSON sous assets/ (coffre, coffre privé, état de la chaîne,
@@ -14,8 +14,15 @@
    restait « en attente » sur les appareils déjà visiteurs alors que le
    paquet était en ligne. Désormais : réseau d'abord pour les données, et
    une réponse non-OK n'entre jamais au cache.
+   Correctif v29 (3 nov. 2026) : le rafraîchissement change de couche —
+   directive d'Alex du 3 novembre 2026, 22 h 20 : le cache est une somme
+   précédente ; c'est la PAGE qui se compare, par son sceau canonique, à la
+   version fraîche et qui se recharge une fois si le sceau a bougé
+   (mécanisme MECANISME-RAFRAICHISSEMENT-SOMMES dans index.html). Le
+   travailleur de service garde les stratégies de la v28 ; seul le nom de
+   cache change, pour purger l'ancien à l'activation.
    Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, chercheur indépendant (ORCID 0009-0006-9124-4407) — tous droits réservés. */
-var CACHE = 'sophia-site-v28';
+var CACHE = 'sophia-site-v29';
 var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png'];
