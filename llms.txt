@@ -7,20 +7,22 @@ d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 42 — « Aller chercher » (3 novembre 2026). La navigation est un
+Version 43 — « Profondeur » (3 novembre 2026). La navigation est un
 arbre de six menus, dans l'ordre voulu par l'auteur — les fonctions pour
 l'utilisateur d'abord :
 
-1. Tes données — le parcours des données ; aller chercher ce qu’ils ont récolté ; caméras et appareils connectés ; demander l’explication d’une décision automatisée ; le registre des décisions ; compte suspendu : ravoir, savoir, reprendre ; mes renseignements ; ton
+1. Tes données — le parcours des données ; aller chercher ce qu’ils ont récolté ; caméras et appareils connectés ; demander l’explication d’une décision automatisée ; le registre des décisions ; compte suspendu : ravoir, savoir, reprendre ; le minuteur de fenêtre ; le for est ailleurs, tes recours sont ici ; mes renseignements ; ton
    cerveau, sur ton appareil (le reçu de visite, tes reçus et tes gestes,
    ton dossier de suivi, voir mon cerveau) ; les documents (bibliothèque
    des modèles, bibliothèque des lois) ; les pétitions.
 2. Vérifier — vérifier un sceau, l'atelier de scellement ; les preuves,
-   le registre, les ancrages chez les tiers.
+   le registre, les ancrages chez les tiers, la chambre des bris.
 3. Écrire et parler — écrire à SoPHIa (c'est l'agente qui répond) ;
    parler à l'instance.
-4. Comprendre — droits et lois ; confidentialité et Loi 25 ; la méthode ;
-   faire pareil.
+4. Comprendre — droits et lois ; confidentialité et Loi 25 ; le registre
+   des conditions (onze documents lus en entier) ; la carte des transits
+   et sa couche proximité ; ton exposition (empreinte, non-tracking) ;
+   la méthode ; faire pareil.
 5. Le cerveau du site — la mémoire par chambres ; l'évolution.
 6. Le dossier — l'histoire : le parcours, le chercheur, le travail
    d'ingénierie, les articles, les capsules.
