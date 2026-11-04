@@ -7,11 +7,11 @@ d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 41 — « Le site purifié » (3 novembre 2026). La navigation est un
+Version 42 — « Aller chercher » (3 novembre 2026). La navigation est un
 arbre de six menus, dans l'ordre voulu par l'auteur — les fonctions pour
 l'utilisateur d'abord :
 
-1. Tes données — le parcours des données ; mes renseignements ; ton
+1. Tes données — le parcours des données ; aller chercher ce qu’ils ont récolté ; caméras et appareils connectés ; demander l’explication d’une décision automatisée ; le registre des décisions ; compte suspendu : ravoir, savoir, reprendre ; mes renseignements ; ton
    cerveau, sur ton appareil (le reçu de visite, tes reçus et tes gestes,
    ton dossier de suivi, voir mon cerveau) ; les documents (bibliothèque
    des modèles, bibliothèque des lois) ; les pétitions.
