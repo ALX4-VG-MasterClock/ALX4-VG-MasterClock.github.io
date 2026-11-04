@@ -2,6 +2,24 @@
  "entrees": [
   {
    "date": "2026-11-04",
+   "titre": "Version 48 — « Les textes validés »",
+   "points": [
+    {
+     "texte": "Les deux textes de gouvernance du site sont remplacés par les révisions validées par Alex le 4 novembre 2026 : la Politique du site (révision 4) et les Conditions d'utilisation (révision 5), réécrites depuis le registre des conditions des plateformes, lues en entier. Cette entrée tient lieu d'annonce au Journal des mises à jour, la surface d'annonce du site."
+    },
+    {
+     "texte": "La Politique chiffre le préavis de modification — toute modification importante est annoncée au moins 30 jours avant son entrée en vigueur — et ouvre une voie de contestation écrite de toute décision touchant un fil de messagerie : examen par une personne, réponse écrite au plus tard au passage de tri suivant. Le délai tenu de six heures vaut désormais pour toutes les demandes de droits."
+    },
+    {
+     "texte": "Les Conditions portent les mêmes deux engagements : le préavis de 30 jours et la protection des fils déjà ouverts (§7), la contestation écrite d'une décision touchant un fil (§4). La clause de loi applicable et de for (§8) est inchangée, mot pour mot."
+    },
+    {
+     "texte": "Les tables de conformité des deux textes rassemblent, article par article, ce que la loi exige et ce que le site fait. Les textes remplacés restent consultables dans les versions antérieures du site et leurs captures d'archive."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
    "titre": "Version 47 — « Les inclusions »",
    "points": [
     {

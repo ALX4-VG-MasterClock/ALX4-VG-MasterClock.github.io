@@ -1,6 +1,6 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v47",
+ "version_site": "v48",
  "date": "2026-11-04",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
@@ -9,10 +9,10 @@
    "id": "chaine",
    "nom": "La Chaîne",
    "source": "assets/etat-chaine.json",
-   "digest": "ffff343df82aff2e03f7e2b20ae6ca677b87870dd221ff331e445311e9b63cd1",
+   "digest": "dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e",
    "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
    "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
-   "derniere_croissance": "État rafraîchi à la construction de la version 47 : 2811 maillons, sommet #2810."
+   "derniere_croissance": "État rafraîchi à la construction de la version 48 : 2839 maillons, sommet #2838."
   },
   {
    "id": "coffre",
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "8d2f8d98bd371b7182be11576c473b1af70eae9800ec25aa027a16577131abf8",
+   "digest": "d36b3a7240a7f0a6e8913a2408329282ec3d158f1fe5524ff16fc0d7ea1fbdd7",
    "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 39.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 47 — « Les inclusions », 4 novembre 2026."
+   "derniere_croissance": "Version 48 — « Les textes validés », 4 novembre 2026."
   },
   {
    "id": "archives",
@@ -140,28 +140,28 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "695722b2f3244e1205469440101bc1ea3f53d49fb1d8862605095d941a2488f7",
+ "racine_cerveau": "9e2f82b6502838151f64919faac0e76b51ab831be47c0f5e60f77386aefa7f2b",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
-   "08ae4532021541e21bb8e3a10ffe85c5e6a99e1b63b2ac4d46dd9844de14e947",
+   "cd5b9f213269cc95ecec68ea9dc183fc8c8d21f5f9de5b68f7029cc1c3403137",
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "59ef0d9fe0909b2ca24f00eb9faff0dd78d0f4cf265be6c62ee809c271c0c729",
+   "0fa6302fca63791cf88cf8d16cdbb4c8277ee612fc7a26a601766db3d5514c06",
    "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
   [
-   "f022468de525a527d9c84a87314281c98d48b47d2f1da23365d4d6d5fcc41173",
+   "cb6a4e6f2bfe58eae29d41583e6c118751cdbb9b81d96d7ff2e6838ff0aade6f",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "788ae10f9f1989cd84e5c45e23abac71abbb20ceb8356b0a3c212c2512e8d05a"
+   "95ccea5a25f577b67100dc12cf58bef2a53bd0c11201723c579201ddcf4a461d"
   ],
   [
-   "d8ca258369ae425307e80582eac490da4267db84d4d7449113fb6ff6c2e3a249",
-   "cbb0fb588a586b655938333e0698b90f476ff7c40acde5aa1ac004d4e2dcb939"
+   "408d5f48b69c85136cfd16b259f605d7fd546939a6c7d91eea561a2d2101794a",
+   "63bd4eb3c4c61ccd38e2478c499e82f24c9fbb0054ef827018f3b7ce4fb22255"
   ],
   [
-   "695722b2f3244e1205469440101bc1ea3f53d49fb1d8862605095d941a2488f7"
+   "9e2f82b6502838151f64919faac0e76b51ab831be47c0f5e60f77386aefa7f2b"
   ]
  ],
  "propriete": {

@@ -1,8 +1,8 @@
 {
- "maillons": 2811,
- "dernier_maillon": 2810,
- "sceau_dernier": "1aef4d1c7715d476d92f11f8a75a7a0930fe661f8e7c869fb30099c667f29843",
- "digest_cumule": "ffff343df82aff2e03f7e2b20ae6ca677b87870dd221ff331e445311e9b63cd1",
+ "maillons": 2839,
+ "dernier_maillon": 2838,
+ "sceau_dernier": "7e432192a93b02756d8112038b4667cd8de584a3ced66e3c151d76a5429b7af4",
+ "digest_cumule": "dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e",
  "mis_a_jour": "2026-11-04",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
