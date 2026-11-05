@@ -2,6 +2,20 @@
  "entrees": [
   {
    "date": "2026-11-05",
+   "titre": "Correctif ciblé — « La chambre des versions recalculée »",
+   "points": [
+    {
+     "texte": "L’auto-vérification quotidienne du site servi (le niveau L0, qui recalcule tout depuis les octets servis) a relevé un écart, et un seul : le digest de la chambre « versions » du manifeste du cerveau ne correspondait plus au journal des mises à jour qu’il scelle — il avait été calculé au temps de l’entrée de la version 39, et les entrées ajoutées depuis, jusqu’à la version 50, ne l’avaient pas recalculé. Le passage du jour s’est arrêté avant toute publication et a remonté l’écart : vérifier d’abord, corriger ensuite, sur décision.",
+     "liens": []
+    },
+    {
+     "texte": "Sur le go d’Alexandre Vautour Gagnon (5 novembre 2026), le digest de la chambre « versions » est recalculé sur le journal actuel — la présente entrée comprise : 39 entrées — et la racine du cerveau est recalculée sur les six chambres. Rien d’autre ne change : le Voyage, les cinq autres chambres, le journal des dépôts et le gel de la chaîne (2 862 maillons, sommet #2861) sont inchangés.",
+     "liens": []
+    }
+   ]
+  },
+  {
+   "date": "2026-11-05",
    "titre": "Version 50 — « Le Voyage »",
    "points": [
     {
