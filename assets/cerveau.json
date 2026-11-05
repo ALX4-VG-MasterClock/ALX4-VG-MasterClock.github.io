@@ -1,7 +1,7 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v49",
- "date": "2026-11-04",
+ "version_site": "v50",
+ "date": "2026-11-05",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
  "chambres": [
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "3387f6a83e8b28c5efc80b3cf4896defc4892b0150d0fe8dc8e636003eadb423",
+   "digest": "b6e66d8edda898d7860ba4b0847bf82a59f6e67b4493d4672e34f0cd476bdbf1",
    "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 39.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Correctif ciblé au servi v48 (B1, B2, R1), 4 novembre 2026 — entrée ajoutée au remontage du paquet v49."
+   "derniere_croissance": "Version 50 — « Le Voyage », 5 novembre 2026 — entrée ajoutée au montage du candidat."
   },
   {
    "id": "archives",
@@ -140,7 +140,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e",
+ "racine_cerveau": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -148,20 +148,20 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "0738fcd7178eef4ebb88f7f56ecc26e67781447d222108fa61ed7a7d367476da",
+   "dbb42b02d10be7111bc7ce32e1e8a625f5f29f19152c431efcb470eed391834b",
    "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
   [
    "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "bd98ad5a77ef39b954083626314e1b74ad05c22c61218f4d5e79ecfc6dc77797"
+   "bfd5536f54c2bee1738042cf166552f5f8b2a5375c4740296b8bcecdd6ae3159"
   ],
   [
    "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "16556727a59019a8e49947f84a13680130f4fabe56552e58a25cc649251aa453"
+   "9668589340eb90dd7dca0e6abccf77fc833a24fa40b4e0d7c54573df06abf08b"
   ],
   [
-   "28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e"
+   "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920"
   ]
  ],
  "propriete": {

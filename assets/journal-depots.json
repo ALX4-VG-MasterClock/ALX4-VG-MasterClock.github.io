@@ -15,13 +15,13 @@
  "genese": {
   "champ_a_figer_au_lancement": "racine_cerveau_au_lancement",
   "nature": "Entrée de structure — la genèse du journal. Ce n'est pas un dépôt : elle ne porte ni empreinte déposée, ni date d'inscription, ni sceau propre.",
-  "racine_cerveau_au_lancement": "28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e",
-  "sceau_prec_de_la_premiere_entree": "La première entrée réelle (seq 1) portera, comme sceau_prec, la racine du cerveau du site au moment du lancement : 28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e — figée ici, en toutes lettres, au remontage du paquet v49, le 4 novembre 2026 (gel de montage inchangé : 2 862 maillons, sommet #2861). Le journal naît ainsi chaîné dans l'histoire déjà ancrée du site.",
+  "racine_cerveau_au_lancement": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
+  "sceau_prec_de_la_premiere_entree": "La première entrée réelle (seq 1) portera, comme sceau_prec, la racine du cerveau du site au moment du lancement : 2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920 — figée ici, en toutes lettres, au remontage du paquet v49, le 4 novembre 2026 (gel de montage inchangé : 2 862 maillons, sommet #2861). Le journal naît ainsi chaîné dans l'histoire déjà ancrée du site.",
   "seq": 0
  },
  "journal": "journal-des-depots",
  "nature": "Journal public chaîné : entrées appendues seulement, jamais réécrites. Publié tel quel à assets/journal-depots.json à la version d'ouverture (v49).",
- "racine_courante": "28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e",
+ "racine_courante": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
  "recette_chainage": "sceau(seq) = SHA-256( sceau_prec ‖ empreinte ‖ date ) — où ‖ est la concaténation des chaînes hexadécimales et de la date telles qu'écrites dans l'entrée. La racine du journal à un instant = le sceau de sa dernière entrée.",
  "spec": "hidden_files/spec-depose-ton-empreinte-2026-11-04.md (§2)",
  "statut": "Ouvert à la version 49 du site (4 novembre 2026) — aucune entrée réelle à l'ouverture ; la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur (spec §7.4, étape 5).",
