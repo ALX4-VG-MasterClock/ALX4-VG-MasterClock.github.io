@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "b6e66d8edda898d7860ba4b0847bf82a59f6e67b4493d4672e34f0cd476bdbf1",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — calculé après l’ajout de l’entrée de la version 39.",
+   "digest": "950eb594fe1e54c8b1a79eecdafa6f5dad7b08489a53d4ff9af25a554d3930b0",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après l’ajout de l’entrée du correctif ciblé du 5 novembre 2026 (39 entrées), à la suite de l’écart relevé par l’auto-vérification L0 du passage quotidien.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 50 — « Le Voyage », 5 novembre 2026 — entrée ajoutée au montage du candidat."
+   "derniere_croissance": "Correctif ciblé — chambre « versions » recalculée sur le journal complet, 5 novembre 2026."
   },
   {
    "id": "archives",
@@ -140,7 +140,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
+ "racine_cerveau": "c2a81f2a8cf43676f4c22b90cab9f6bb0aaf4ca454951dc8084fee37f70faac4",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -148,20 +148,20 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "dbb42b02d10be7111bc7ce32e1e8a625f5f29f19152c431efcb470eed391834b",
+   "7ce6725936cadb028417752335b7090d1389b7342b8d6f1178dbda2467ca6052",
    "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
   [
    "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "bfd5536f54c2bee1738042cf166552f5f8b2a5375c4740296b8bcecdd6ae3159"
+   "21866591f487590bf9e9650352bd8fc880feed843fdbee48951db6aa973fa9e1"
   ],
   [
    "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "9668589340eb90dd7dca0e6abccf77fc833a24fa40b4e0d7c54573df06abf08b"
+   "054314e62deb18aaef3b9178696df157bc3346f46cdbdeb645005dfd5edc0938"
   ],
   [
-   "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920"
+   "c2a81f2a8cf43676f4c22b90cab9f6bb0aaf4ca454951dc8084fee37f70faac4"
   ]
  ],
  "propriete": {
