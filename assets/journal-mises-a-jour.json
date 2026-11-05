@@ -2,6 +2,42 @@
  "entrees": [
   {
    "date": "2026-11-04",
+   "titre": "Version 49 — « Dépose ton empreinte »",
+   "points": [
+    {
+     "texte": "Un geste nouveau, au menu « Vérifier » : « Dépose ton empreinte ». Ton navigateur calcule l'empreinte SHA-256 d'un document que tu détiens — le fichier ne quitte jamais ton appareil — et seule l'empreinte, 64 caractères, peut être inscrite, datée, au journal public des dépôts. Les bornes sont dites avant tout champ : ce n'est pas un dépôt du document, ni une preuve d'identité, de paternité ou de vérité — et l'inscription est publique et permanente."
+    },
+    {
+     "texte": "L'inscription passe par la voie existante (variante A) : tu envoies le message prescrit « EMPREINTE » suivi de ton empreinte, par l'onglet « Écrire à SoPHIa » ou la boîte dédiée ; SoPHIa l'inscrit au passage de tri et te rend ton reçu par la même voie — empreinte, date d'inscription, numéro d'entrée, sceau de l'entrée, racine du journal. Le reçu est le seul titre du dépôt."
+    },
+    {
+     "texte": "Le journal des dépôts est public et chaîné : chaque entrée est scellée par le SHA-256 de la précédente, et sa première entrée naîtra chaînée à la racine du cerveau du site de cette version — il naît ainsi dans l'histoire déjà ancrée du site. Il est publié en entier (assets/journal-depots.json), recalculable par quiconque ; sa racine entre aux ancrages chez les tiers (OpenTimestamps/Bitcoin, RFC 3161) à chaque version et au moins une fois par mois. À l'ouverture, il compte 0 entrée : la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout."
+    },
+    {
+     "texte": "La politique du site reçoit la mention du dépôt d'empreinte préparée par le supplément d'évaluation des facteurs relatifs à la vie privée (4 novembre 2026) : pour cette fonction, l'opérateur ne détient aucun renseignement personnel — rien de ce qui identifierait une personne n'est demandé, transmis ni conservé ; la finalité est unique et écrite avant le geste : dater publiquement une empreinte."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
+   "titre": "Correctif ciblé — « Le site servi réparé »",
+   "points": [
+    {
+     "texte": "À la suite de l'audit A à Z du site, un correctif ciblé a été publié et vérifié au site servi le 4 novembre 2026 au soir (commit 53dc5e7), à même la version 48 en ligne : le régime des versions admet le correctif ciblé d'un bug, sur go ponctuel, sans attendre la version suivante. La présente entrée le consigne au journal, comme le montage du correctif le prescrivait."
+    },
+    {
+     "texte": "B1 — le générateur de lettre du panneau « Le modèle de réponse » portait deux fois l'identifiant for-lettre : la section et son champ de texte. Le champ s'appelle désormais for-lettre-texte, et ses quatre références suivent : Composer écrit la lettre dedans, Copier et Télécharger la lisent — le geste central du panneau, qui n'atteignait pas son champ."
+    },
+    {
+     "texte": "B2 — l'identifiant cv-etat existait deux fois : la ligne d'état de la démonstration « La chaîne vivante » s'appelle désormais demo-etat, et cv-etat ne désigne plus que l'état du panneau « Voir mon cerveau », dont les messages paraissent au bon endroit."
+    },
+    {
+     "texte": "R1 — l'étiquette du sceau canonique ne nomme plus un numéro de version figé (« version 42 ») : elle dit « la version courante de cette page », vraie à chaque montage. Le sceau canonique du site servi passe à 26dad6ef7fae82931b64d6810e8ed2f27b7da379c0533de5119ccee56c2d1e9c et le cache de son travailleur de service à sophia-site-v34b ; son état embarqué (2 839 maillons, sommet #2838) et sa racine du cerveau ne changent pas."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
    "titre": "Version 48 — « Les textes validés »",
    "points": [
     {
