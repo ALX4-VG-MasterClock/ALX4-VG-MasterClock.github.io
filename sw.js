@@ -22,7 +22,7 @@
    travailleur de service garde les stratégies de la v28 ; seul le nom de
    cache change, pour purger l'ancien à l'activation.
    Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, chercheur indépendant (ORCID 0009-0006-9124-4407) — tous droits réservés. */
-var CACHE = 'sophia-site-v34';
+var CACHE = 'sophia-site-v34b';
 var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png'];

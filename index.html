@@ -2000,7 +2000,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
       <button class="secondaire fixe" id="cv-reinit">Recommencer</button>
     </div>
     <div class="chaine-vivante" id="cv-chaine"><p class="petite">Aucun maillon pour l'instant — le premier dépendra de GENÈSE.</p></div>
-    <p class="petite" id="cv-etat" style="margin-top:.8rem" role="status"></p>
+    <p class="petite" id="demo-etat" style="margin-top:.8rem" role="status"></p>
   </div>
 
 
@@ -3040,7 +3040,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
     <p><button type="button" class="action" id="for-generer" data-en="Compose the letter">Composer la lettre</button>
     <button type="button" class="secondaire" id="for-copier" data-en="Copy">Copier</button>
     <button type="button" class="secondaire" id="for-telecharger" data-en="Download (.txt)">Télécharger (.txt)</button></p>
-    <textarea id="for-lettre" rows="16" style="width:100%"></textarea>
+    <textarea id="for-lettre-texte" rows="16" style="width:100%"></textarea>
     <p class="petite" id="for-etat" role="status"></p>
     <p><button type="button" class="action" id="for-consigner" data-en="Record this refusal as a decision in my brain">Consigner ce refus comme une décision de mon cerveau</button></p>
     <p class="petite" id="for-consigne-retour" role="status"></p>
@@ -4693,8 +4693,8 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   <p class="lead">Cette page ne demande plus seulement d'être recalculée : <strong>elle se recalcule elle-même, dans votre navigateur, au moment où vous la lisez</strong>, et publie l'état de ses trois foyers — GitHub Pages (le foyer vivant), Netlify (la copie complémentaire), la Wayback Machine (la mémoire datée d'un tiers indépendant). La règle d'Alex : tout ce qui se passe sur ce site assure sa connexion aux archives — et quand une capture n'existe pas encore, cette page le dit, en premier plan, plutôt que de le maquiller.</p>
   <div class="carte carte-sceau">
     <div class="sceau-cadre">
-    <p class="etiquette">Sceau canonique de la version affichée — version 42 « Aller chercher » (base : version 41 « Le site purifié ») (3 novembre 2026 — « L’évolution » : le panneau que le site calcule seul à chaque chargement — son état mesuré, la continuité entre ses états et l’ADN numérique, ses écarts nommés, son état d’ancrage en trois états, les prochains pas qu’il propose mécaniquement, et la frise de ses versions comme autobiographie ; construite sur la v39 « Tes données, ton dossier »)</p>
-    <span class="sceau-long" id="sceau-version-affiche">8b70f01699a2b1b14ae886b0ed789b7aad84a73d420eb6759867ec8fd193d0cd</span>
+    <p class="etiquette">Sceau canonique de la version affichée — la version courante de cette page</p>
+    <span class="sceau-long" id="sceau-version-affiche">26dad6ef7fae82931b64d6810e8ed2f27b7da379c0533de5119ccee56c2d1e9c</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e" data-maillon="2577"><strong>Sceau de génération de cette version</strong> — recette : SHA-512 de « sceau canonique de la version | racine de Merkle du coffre | digest cumulé de la chaîne », les trois chaînes hexadécimales jointes par « | », au dernier maillon au moment de la construction, le <strong>#2492</strong> (digest cumulé <span class="mono">8f58e7727ccb0aa75a5bca7bc741f30f08cc0b9eeb662466957ce4aa6a781be8</span> ; racine de Merkle <span class="mono">46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf</span>). Il lie en un seul sceau la page, l’arbre du coffre et la chaîne des réponses — trois échelles de la même somme. Sa valeur se calcule à l’affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l’affichage — la valeur est aussi consignée au fichier assets/merkle.json, champ « generation »</span>. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc consignée hors du fichier scellé et recalculée ici, jamais figée dedans.</p>
@@ -6855,13 +6855,13 @@ async function sha256b(txt){const b=await crypto.subtle.digest('SHA-256',new Tex
 const cv={liste:[]};
 function cvRendu(){
   const z=q2('cv-chaine');if(!z)return;
-  if(!cv.liste.length){z.innerHTML='<p class="petite">Aucun maillon pour l\u2019instant — le premier dépendra de GENÈSE.</p>';q2('cv-etat').textContent='';return}
+  if(!cv.liste.length){z.innerHTML='<p class="petite">Aucun maillon pour l\u2019instant — le premier dépendra de GENÈSE.</p>';q2('demo-etat').textContent='';return}
   z.innerHTML=cv.liste.map((e,i)=>(i?'<div class="lien-maillon">↓</div>':'')
     +'<div class="noeud"><div class="tete"><b>Maillon n° '+(i+1)+'</b><span class="petite">'+esc2(e.horo)+'</span></div>'
     +'<div>'+esc2(e.texte)+'</div>'
     +'<div class="depend">'+(i?'calculé à partir du maillon n° '+i+' — sceau précédent '+e.prev.slice(0,16)+'…':'premier maillon — sceau précédent : GENÈSE')+'</div>'
     +'<div class="mono" style="margin-top:.35rem">'+e.sceau+'</div></div>').join('');
-  q2('cv-etat').innerHTML='<span class="match">'+cv.liste.length+' maillon(s)</span> — chacun dépend du précédent : touchez au premier, et tous les suivants cesseraient de se recalculer.';
+  q2('demo-etat').innerHTML='<span class="match">'+cv.liste.length+' maillon(s)</span> — chacun dépend du précédent : touchez au premier, et tous les suivants cesseraient de se recalculer.';
 }
 const btnCv=q2('cv-ajouter');
 if(btnCv)btnCv.addEventListener('click',async()=>{
@@ -13964,17 +13964,17 @@ function effNettoyerPNG(buf) {
     }
     if ($('for-generer')) $('for-generer').addEventListener('click', function () {
       var p = lireFor();
-      $('for-lettre').value = forComposerLettre(p);
+      $('for-lettre-texte').value = forComposerLettre(p);
       $('for-etat').textContent = 'Lettre composée — rien n’a quitté cet onglet. Envoie-la, puis consigne le refus ci-dessous.';
     });
     if ($('for-copier')) $('for-copier').addEventListener('click', async function () {
-      var t = $('for-lettre').value;
+      var t = $('for-lettre-texte').value;
       if (!t) { $('for-etat').textContent = 'Compose d’abord la lettre.'; return; }
       try { await navigator.clipboard.writeText(t); $('for-etat').textContent = 'Lettre copiée.'; }
-      catch (e) { $('for-lettre').select(); $('for-etat').textContent = 'Copie automatique refusée par le navigateur : le texte est sélectionné, copie-le manuellement.'; }
+      catch (e) { $('for-lettre-texte').select(); $('for-etat').textContent = 'Copie automatique refusée par le navigateur : le texte est sélectionné, copie-le manuellement.'; }
     });
     if ($('for-telecharger')) $('for-telecharger').addEventListener('click', function () {
-      var t = $('for-lettre').value;
+      var t = $('for-lettre-texte').value;
       if (!t) { $('for-etat').textContent = 'Compose d’abord la lettre.'; return; }
       telecharger('reponse-for-etranger-demande-acces.txt', t, 'text/plain');
     });

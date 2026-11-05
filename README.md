@@ -1,59 +1,36 @@
-# Audit Unisson — site public d'Alexandre Vautour Gagnon
+# Le site d'Alexandre Vautour Gagnon — chercheur indépendant
 
-Site du chercheur indépendant **Alexandre Vautour Gagnon** (Sainte-Martine, Québec) :
-*Audit Unisson — Preuve d'Antériorité V-G*, la vitrine publique du Protocole de
-Convergence Fibonacci-23 (mémoire conversationnelle vérifiable côté utilisateur,
-sceaux SHA-256 chaînés, registre d'antériorité recalculable).
+Site public du chercheur indépendant **Alexandre Vautour Gagnon**
+(Sainte-Martine, Québec) : montrer, preuves recalculables à l'appui, comment
+les données des utilisateurs transitent chez les plateformes, donner les
+gestes et les liens pour aller les reprendre, et faire naître sur l'appareil
+de chaque visiteur une mémoire chaînée par SHA-256, sans compte, dont il est
+le seul détenteur. Trois fonctions, du côté de l'utilisateur : **SAVOIR**,
+**ACCÉDER**, **MÉMOIRE**.
 
-- **Adresse publique** : https://alexvg1618.github.io/
+- **Adresse publique** : https://alx4-vg-masterclock.github.io/
 - **ORCID** : [0009-0006-9124-4407](https://orcid.org/0009-0006-9124-4407)
-- **Version publiée ici** : v6 « modèle d'Alex », thème clair (1er novembre 2026).
+- **État publié** : v48 « Les textes validés » (4 novembre 2026) + correctif
+  ciblé (générateur de lettre, état du cerveau local, étiquette du sceau).
 
-## Hébergement gratuit, sans abonnement
+## Hébergement
 
-Ce dépôt est publié par **GitHub Pages** : l'hébergement est gratuit, sans
-abonnement, sans crédits et sans date d'expiration tant que le compte GitHub
-existe. Il complète le site Netlify
-(https://protocole-convergence-fibonacci23.netlify.app/), il ne le remplace pas.
+Ce dépôt est publié par **GitHub Pages** : hébergement gratuit, sans
+abonnement, sans date d'expiration tant que le compte GitHub existe. C'est
+le seul foyer du site.
 
 ## Mettre à jour le site
 
-Le site est entièrement statique : la racine de ce dépôt est la racine du site.
+Le site est entièrement statique : la racine de ce dépôt est la racine du
+site. Chaque mise à jour se publie par version entière, vérifiée au servi
+avant d'être déclarée en ligne :
 
-1. Remplacer les fichiers à la racine du dépôt (`index.html`, dossier `assets/`)
-   par la nouvelle version du paquet — par téléversement dans l'interface web
-   de GitHub (« Add file → Upload files ») ou en demandant à SoPHIa de pousser
-   la mise à jour.
-2. Valider (commit) : GitHub Pages republie automatiquement le site en
-   quelques instants, à la même adresse.
-3. Vérifier l'adresse publique après chaque mise à jour.
+1. Remplacer les fichiers visés à la racine du dépôt par ceux du paquet de
+   la version (téléversement dans l'interface web de GitHub).
+2. Valider (commit) : GitHub Pages republie automatiquement.
+3. Recalculer l'état servi (empreinte, sceau canonique, racine) et le
+   comparer au paquet — publié ne veut pas dire déployé, déployé ne veut
+   pas dire vérifié.
 
 Le fichier `.nojekyll` à la racine demande à GitHub Pages de servir les
 fichiers tels quels, sans transformation.
-
-## Contenu et limites connues de cette copie
-
-- `index.html` et `assets/registre-historique.json` (les 11 sceaux publics du
-  registre, recalculés 11/11 MATCH à l'assemblage) sont publiés par pousée
-  automatisée.
-- Les médias binaires — `assets/sophia.webp` (avatar), `assets/sophia-plein-corps.jpg`
-  et `assets/sophia-au-travail.mp4` (vidéo) — s'ajoutent dans le dossier
-  `assets/` par téléversement web : aucun changement de code n'est requis,
-  le site les affiche dès qu'ils sont présents.
-- La fonction serveur « Instance Souveraine » (une fonction Netlify) n'est pas
-  portable sur GitHub Pages, qui ne sert que du statique : sur cette copie,
-  l'onglet Instance répond par le repli honnête prévu dans le site. La version
-  Netlify demeure la copie où l'Instance peut être branchée.
-
-## Portabilité
-
-Le même paquet statique se déploie en quelques minutes sur n'importe quel
-hébergeur de fichiers statiques (Netlify par glisser-déposer, GitHub Pages,
-ou autre) : aucun verrouillage à une plateforme.
-<!-- Redéclenchement du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 2 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 3 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 4 du déploiement Pages le 2026-11-04, après bascule de la source Pages (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 5 du déploiement Pages le 2026-11-04 (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 6 du déploiement Pages le 2026-11-04, en série (sans effet sur le site servi). -->
-<!-- Redéclenchement nº 7 du déploiement Pages le 2026-11-04, en série (sans effet sur le site servi). -->
