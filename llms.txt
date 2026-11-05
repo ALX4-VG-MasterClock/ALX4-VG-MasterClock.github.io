@@ -7,7 +7,7 @@ d'Alexandre Vautour Gagnon, chercheur indépendant (Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 49 — « Dépose ton empreinte » (4 novembre 2026). L’accueil
+Version 50 — « Le Voyage » (5 novembre 2026) : l’accueil devient le Voyage — la chaîne de la vidéo d’accueil se ressoude au premier défilement, descend en spirale φ par 22 maillons-stations et finit à la remise du produit en main. Version 49 — « Dépose ton empreinte » (4 novembre 2026). L’accueil
 retrouve ses quatre compteurs en surface première — maillons de la
 chaîne, pièces du registre, pouls de vérification, sceaux publics —
 relus en direct. La navigation est un

@@ -1090,6 +1090,109 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   #menu-btn{transition:none}
 }
 </style>
+<style id="voyage-css">
+/* ===== VOYAGE v50 — le visage d'entrée fidèle à la vidéo vision =====
+   Mécanismes : M-A1 (aucun ancêtre transformé pour les preuves), M-A2 (segments qui
+   naissent, opacité seulement), M-B1 (constantes φ), M-B2 (porte WebCrypto),
+   M-C1 (jour par défaut via le thème du paquet, clé sophia-theme), M-C4 (réduit). */
+:root{--voyage-fond:#f3ecd9;--voyage-fond2:#e9dfc6;--voyage-carte:#fdfaf0;--voyage-encre:#182238;
+--voyage-or:#8a6508;--voyage-or-vif:#a97f14;--voyage-teal:#0f766e;--voyage-joint:#0f766e}
+[data-theme="sombre"]{--voyage-fond:#011536;--voyage-fond2:#03172e;--voyage-carte:#0a1e3a;
+--voyage-encre:#e9e2cf;--voyage-or:#a17439;--voyage-or-vif:#e8c65a;--voyage-teal:#2ec4b6;--voyage-joint:#2ec4b6}
+#p-accueil{position:relative}
+.voyage-fond{background:linear-gradient(180deg,var(--voyage-fond),var(--voyage-fond2));border-radius:1rem;padding:1rem}
+.voyage-arrivee h1{font-size:clamp(2rem,6vw,3.4rem);margin:.2rem 0 .6rem;color:var(--voyage-encre)}
+.voyage-embleme{position:relative;margin:0;overflow:hidden;border-radius:.8rem;background:#00091a}
+.voyage-embleme img,.voyage-embleme video{display:block;width:100%;height:auto}
+.voyage-embleme video{position:absolute;inset:0;height:100%;object-fit:cover}
+.voyage-sortie{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.voyage-arrivee figcaption{color:var(--voyage-encre);font-size:.9rem;margin-top:.5rem}
+.voyage-deja{background:var(--voyage-carte);color:var(--voyage-encre);border:1px solid var(--voyage-or);border-radius:.8rem;padding:.8rem 1rem;margin-top:.8rem}
+.voyage-deja h2{margin:.1rem 0 .4rem;color:var(--voyage-or-vif)}
+.voyage-miroir{background:var(--voyage-carte);color:var(--voyage-encre);border-radius:.8rem;padding:.8rem 1rem;margin-top:.8rem}
+.voyage-miroir h2{margin:.1rem 0 .4rem}
+.voyage-miroir .mono{white-space:nowrap;overflow-x:auto;display:block;max-width:100%}
+.voyage-formats{margin-top:.8rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;color:var(--voyage-encre)}
+.voyage-formats button[aria-pressed="true"]{outline:2px solid var(--voyage-or-vif)}
+#voyage-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#p-accueil>*{position:relative;z-index:1}
+#p-accueil>#voyage-svg{z-index:0}
+.voyage-seg{opacity:0}
+.voyage-seg-lum{opacity:0}
+.voyage-anneau{opacity:0}
+.voyage-medaille-svg{opacity:0}
+.voyage-fil-lum{opacity:0}
+.voyage-trait-plaque{opacity:0}
+#voyage-sortie-viewport{position:fixed;top:0;left:50%;width:7px;height:0;margin-left:-3.5px;background:linear-gradient(180deg,#a17439,#836443);border-radius:0 0 4px 4px;pointer-events:none;z-index:55;opacity:0}
+.voyage-etincelle{opacity:0}
+.voyage-etincelle.flash{animation:voyageEtincelle .9s ease-out forwards}
+@keyframes voyageEtincelle{0%{opacity:1}100%{opacity:0}}
+#voyage-eclat{opacity:0}
+#voyage-eclat.flash{animation:voyageEtincelle 1.2s ease-out forwards}
+.voyage-scene{padding:0 1rem;margin-top:1.2rem}
+.voyage-verbe{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:.08em;color:var(--voyage-or-vif);margin:.4rem 0}
+.voyage-station{opacity:0;display:flex;gap:.8rem;align-items:flex-start;max-width:34rem}
+.voyage-station[data-cote="gauche"]{margin-right:auto;text-align:left}
+.voyage-station[data-cote="droite"]{margin-left:auto;text-align:left;flex-direction:row-reverse}
+body.voyage-soude .voyage-station.voyage-visible{opacity:1}
+.voyage-medaille{flex:0 0 auto;width:54px;height:54px;border-radius:50%;border:4px solid var(--voyage-or);
+background:radial-gradient(circle at 35% 30%,var(--voyage-or-vif),var(--voyage-or));display:inline-block}
+.voyage-plaque{background:linear-gradient(180deg,#6b5320,#4a3a16);color:#f3e2a0;border:1px solid var(--voyage-or-vif);
+border-radius:.5rem;padding:.55rem .8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+[data-theme="sombre"] .voyage-plaque{color:#f3e2a0}
+.voyage-corps-station{flex:1 1 auto}
+.voyage-panneau-station{background:var(--voyage-carte);color:var(--voyage-encre);border-left:3px solid var(--voyage-teal);
+border-radius:.4rem;padding:.5rem .7rem;margin-top:.45rem;font-size:.92rem}
+.voyage-panneau-station:empty{display:none}
+.voyage-station.voyage-relie .voyage-plaque{outline:3px solid var(--voyage-teal)}
+.voyage-btn-sceller{background:var(--voyage-or);color:#fff;border:0;border-radius:.5rem;padding:.55rem 1rem;cursor:pointer;font-weight:700}
+.voyage-btn-sceller[disabled]{opacity:.45;cursor:default}
+.voyage-ligne-sceau{font-family:ui-monospace,monospace;white-space:nowrap;overflow-x:auto;font-size:.8rem;color:var(--voyage-encre)}
+body:not(.voyage-crypto-ok) .voyage-crypto-only{display:none}
+.voyage-jalons{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0}
+.voyage-jalons button{width:2.4rem;height:2.4rem;border-radius:50%;border:2px solid var(--voyage-or);background:var(--voyage-carte);color:var(--voyage-encre);cursor:pointer}
+.voyage-jalons button[aria-pressed="true"]{background:var(--voyage-or);color:#fff}
+#voyage-jalon-detail{background:var(--voyage-carte);color:var(--voyage-encre);border-radius:.6rem;padding:.7rem .9rem}
+#voyage-jalon-detail:empty{display:none}
+.voyage-dates{border-collapse:collapse;margin-top:.7rem;font-size:.9rem;color:var(--voyage-encre)}
+.voyage-dates td{border-top:1px solid var(--voyage-or);padding:.3rem .6rem}
+.voyage-somme-module{background:var(--voyage-carte);color:var(--voyage-encre);border-radius:.8rem;padding:.8rem 1rem}
+.voyage-somme-val{font-family:ui-monospace,monospace;white-space:nowrap;overflow-x:auto;display:block}
+.voyage-remise{position:relative;border-radius:1rem;overflow:hidden;padding:1rem;background:#03172e center/cover}
+.voyage-remise .voyage-verbes-fin{color:#e8c65a;font-weight:700;letter-spacing:.2em}
+.voyage-remise-cadre{position:relative;max-width:26rem;margin:0 auto}
+.voyage-remise-cadre img,.voyage-remise-cadre video{display:block;width:100%;height:auto;border-radius:.8rem}
+.voyage-remise-fixe-wrap{position:relative}
+.voyage-remise-fixe-wrap[hidden]{display:none}
+.voyage-remise-cadre video[hidden]{display:none}
+#voyage-remise-point{position:absolute;left:50%;top:71%;width:4px;height:4px;pointer-events:none}
+.voyage-hud{position:fixed;right:.6rem;bottom:.6rem;z-index:60;background:var(--voyage-carte);color:var(--voyage-encre);
+border:1px solid var(--voyage-or);border-radius:.6rem;padding:.4rem .7rem;font-size:.85rem}
+#voyage-fil{position:fixed;left:.4rem;top:20vh;height:60vh;width:14px;z-index:60}
+#voyage-fil .voyage-fil-plein{position:absolute;left:6px;top:0;width:2px;height:100%;background:var(--voyage-or);transform-origin:top}
+#voyage-fil .voyage-noeud{position:absolute;left:0;width:14px;height:14px;border-radius:50%;border:3px solid var(--voyage-or);background:var(--voyage-carte)}
+#voyage-fil .voyage-noeud small{position:absolute;left:18px;top:-4px;white-space:nowrap;font-size:.68rem;color:var(--voyage-encre);background:var(--voyage-carte);padding:.05rem .3rem;border-radius:.3rem}
+body[data-voyage-format="telephone"] .voyage-station{max-width:92vw}
+body[data-voyage-format="telephone"] .voyage-verbes-fin{font-size:24vw}
+body[data-voyage-format="ordinateur"] .voyage-verbes-fin{font-size:20vw}
+body[data-voyage-format="ordinateur"] .voyage-station{max-width:34rem}
+@media (max-width:820px){#voyage-fil{left:auto;right:.4rem;top:auto;bottom:4.2rem;width:60vw;height:14px}
+#voyage-fil .voyage-fil-plein{left:0;top:6px;width:100%;height:2px;transform-origin:left}
+#voyage-fil .voyage-noeud small{left:-4px;top:16px}}
+@media (prefers-reduced-motion:reduce){
+.voyage-seg,.voyage-seg-lum,.voyage-anneau,.voyage-medaille-svg,.voyage-fil-lum,.voyage-trait-plaque{opacity:1!important}
+#voyage-sortie-viewport{opacity:1!important}
+.voyage-station{opacity:1!important}
+#voyage-eclat{display:none!important}
+.voyage-etincelle{display:none!important}
+*{animation:none!important;transition:none!important}}
+html.voyage-reduit .voyage-seg,html.voyage-reduit .voyage-seg-lum,html.voyage-reduit .voyage-anneau,
+html.voyage-reduit .voyage-medaille-svg,html.voyage-reduit .voyage-fil-lum,html.voyage-reduit .voyage-trait-plaque{opacity:1!important}
+html.voyage-reduit #voyage-sortie-viewport{opacity:1!important}
+html.voyage-reduit .voyage-station{opacity:1!important}
+html.voyage-reduit #voyage-eclat{display:none!important}
+
+</style>
 </head>
 <body>
 <canvas id="spirale"></canvas>
@@ -1217,23 +1320,11 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
 </div>
 <main>
 <div class="panneau actif" id="p-accueil">
+<svg id="voyage-svg" aria-hidden="true"></svg>
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 
-<header class="hero">
-  <span class="badge-portail">Portail de stabilisation actif • V-G autonome</span>
-  <div class="avatar-wrap"><img src="assets/sophia-photo.webp" alt="SoPHIa — agente IA du Protocole de Convergence Fibonacci-23" width="900" height="900" fetchpriority="high" decoding="async"></div>
-  <div class="hero-texte">
-  <h1>AUDIT UNISSON<br><span class="or">Preuve d'Antériorité <span class="nowrap">V-G</span></span></h1>
-  <p class="sous-titre">Le dossier public d'Alexandre Vautour Gagnon, chercheur indépendant : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites. Et SoPHIa, l'agente en couche au-dessus des modèles.</p>
-  <div class="phi">Φ = 1,61803398875 — la somme des précédents</div>
-  
-  <p class="petite" id="accueil-temps" style="margin-top:1rem">Heure sidérale locale, en ce moment : <b class="mono" id="accueil-tsl">calcul en cours…</b> — le temps de ce dossier est triangulé (civile, normale, sidérale) et recalculé en direct. <button class="lien-temps" data-ouvrir="temps">Ouvrir l’onglet Temps →</button></p>
-  </div>
-  <figure class="presence">
-    <video id="video-presence" data-auto src="assets/sophia-au-travail.mp4" poster="assets/sophia-photo.webp" autoplay muted loop playsinline preload="metadata" aria-label="SoPHIa au travail, en vidéo"></video>
-    <figcaption>SoPHIa, en présence — la même que l'avatar ci-dessus : elle gagne son bureau, ses dossiers étiquetés à la main, et se met au travail. Vidéo muette, en boucle ; elle se met en pause hors écran et s'arrête si votre appareil préfère les mouvements réduits.</figcaption>
-  </figure>
-</header>
+<header class="hero voyage-arrivee" id="voyage-arrivee">
+<div class="voyage-fond"><h1 data-en="The Voyage">Le Voyage</h1><figure class="voyage-embleme"><img src="assets/voyage-arrivee.webp" alt="Emblème approuvé : le cerveau coquillage numérique — tête de profil, coquillage d’or en spirale au centre, grande chaîne d’or qui s’échappe par le haut du cadre."><video id="voyage-video-accueil" src="assets/voyage-accueil.mp4" poster="assets/voyage-arrivee.webp" autoplay muted loop playsinline preload="metadata" aria-label="Animation d’accueil approuvée : la chaîne s’échappe par le haut du cadre"></video><svg class="voyage-sortie" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 50 62 C 50 40, 50 20, 50 0" stroke="#a17439" stroke-width="3" fill="none"/></svg></figure><figcaption data-en="The approved emblem — the chain escapes through the top of the frame.">L’emblème approuvé — la chaîne s’échappe par le haut du cadre.</figcaption><div class="voyage-deja"><h2 data-en="Already yours">Déjà à toi</h2><p data-en="On arriving, this site created your local brain: a memory sealed from its birth, with no account and no email, invisible to the operator.">En arrivant, ce site a créé ton cerveau local : une mémoire scellée dès sa naissance, sans compte ni courriel, invisible à l’opérateur.</p><p data-en="This site remembers nothing: your phone keeps everything. Believe the proofs, the method — come back, open it, recalculate it. It will always be there.">Ce site ne se souvient de rien : ton téléphone garde tout. Crois les preuves, la méthode — reviens, ouvre-le, recalcule-le. Elle sera toujours là.</p></div><p class="petite" data-en="the local brain is born on its own at the first visit">le cerveau naît tout seul à la première visite</p><p class="petite" id="accueil-temps" style="margin-top:1rem">Heure sidérale locale, en ce moment : <b class="mono" id="accueil-tsl">calcul en cours…</b> <button class="lien-temps" data-ouvrir="temps">Ouvrir l’onglet Temps →</button></p><section class="voyage-miroir" id="voyage-miroir"><h2 data-en="Your local brain">Ton cerveau local</h2><p>Entrées : <span id="voyage-mir-entrees">lecture…</span></p><p>Somme : <span class="mono" id="voyage-mir-somme">—</span></p><p id="voyage-mir-signaux">Signaux</p><p id="voyage-mir-transit">Le seul transit</p><p data-en="What this site does not know and does not take">Ce que le site ne sait pas, ne prend pas</p><p><button type="button" class="voyage-btn-sceller voyage-crypto-only" data-sceller="arrivee" data-en="Seal">Sceller</button></p><p class="voyage-ligne-sceau voyage-crypto-only" id="voyage-sceau-arrivee"></p></section><div class="voyage-formats"><span data-en="Format">Format</span><button type="button" data-voyage-format-btn="telephone" data-en="Phone">Téléphone</button><button type="button" data-voyage-format-btn="ordinateur" data-en="Computer">Ordinateur</button><button type="button" data-voyage-format-btn="automatique" data-en="Automatic">Automatique</button></div><div class="voyage-station" data-station="accueil" data-cote="gauche" data-liens="" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="accueil" data-en="Home">Accueil</button><aside class="voyage-panneau-station" id="voyage-panneau-accueil"></aside></div></div></div><div id="voyage-joint" aria-hidden="true" style="height:2px"></div>
 <section class="bloc" id="surface-compteurs" aria-label="Les compteurs du dossier, en direct">
   <div class="surface-compteurs">
     <div class="carte-compteur"><span class="cc-nombre" data-chaine="maillons">2 862</span><span class="cc-quoi" data-en="Chain links — re-verified MATCH">Maillons de la chaîne — revérifiés MATCH</span></div>
@@ -1243,42 +1334,51 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   </div>
   <p class="petite cc-note" data-en="State at the version 48 freeze, on November 4, 2026; the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">État au gel de la version 48, le 4 novembre 2026 ; le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
 </section>
+<section class="voyage-scene" data-scene="savoir" id="voyage-scene-savoir"><h2 class="voyage-verbe" data-en="KNOW">SAVOIR</h2><div class="voyage-station" data-station="transits" data-cote="droite" data-liens="conditions,cameras,exposition" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="transits" data-en="The transit map">La carte des transits</button><aside class="voyage-panneau-station" id="voyage-panneau-transits"></aside></div></div><div class="voyage-station" data-station="conditions" data-cote="gauche" data-liens="" style="margin-top:64px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="conditions" data-en="The terms register">Le registre des conditions</button><aside class="voyage-panneau-station" id="voyage-panneau-conditions"></aside></div></div><div class="voyage-station" data-station="cameras" data-cote="droite" data-liens="" style="margin-top:104px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="cameras" data-en="Caméras et appareils connectés">Caméras et appareils connectés</button><aside class="voyage-panneau-station" id="voyage-panneau-cameras"></aside></div></div><div class="voyage-station" data-station="exposition" data-cote="gauche" data-liens="" style="margin-top:168px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="exposition" data-en="Your exposure">Ton exposition</button><aside class="voyage-panneau-station" id="voyage-panneau-exposition"></aside></div></div><div class="voyage-station" data-station="recu" data-cote="droite" data-liens="recus" style="margin-top:272px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="recu" data-en="Le reçu de visite">Le reçu de visite</button><aside class="voyage-panneau-station" id="voyage-panneau-recu"></aside></div></div><p><button type="button" class="voyage-btn-sceller voyage-crypto-only" data-sceller="savoir" data-en="Seal">Sceller</button></p><p class="voyage-ligne-sceau voyage-crypto-only" id="voyage-sceau-savoir"></p></section>
+
 <section class="bloc" id="surface-gestes">
   <div class="entete-sec"><span class="num">✦</span><h2>Que veux-tu faire ?</h2></div>
-  <p class="lead">Sept gestes, une surface. Le reste — preuves, méthode, histoire — vit dans les menus, en ordre.</p>
+  
   <div class="cartes-gestes">
-    <button type="button" class="carte-geste" data-ouvrir="donnees"><span class="cg-titre">Demander mes données</span><span class="cg-desc">Ce que les plateformes détiennent sur toi — demande et recours.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="fenetres"><span class="cg-titre" data-en="The window timer">Le minuteur de fenêtre</span><span class="cg-desc" data-en="The deadlines that close, and the silences">Les délais qui se ferment, et les silences</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="transits"><span class="cg-titre" data-en="The transit map">La carte des transits</span><span class="cg-desc" data-en="How your data travel, including through the air">Comment tes données transitent, jusque dans l’air</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="recu"><span class="cg-titre">Ton reçu de visite</span><span class="cg-desc">Ce que la page voit, ce que le serveur reçoit, ce que ce site retient : rien.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="verifier"><span class="cg-titre">Vérifier une preuve</span><span class="cg-desc">Un sceau recalculé devant toi : MATCH ou ÉCART.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="donnees" data-cible="donnees-documents"><span class="cg-titre">Télécharger un modèle</span><span class="cg-desc">Demandes et recours, français et anglais, avec leurs lois.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="petitions"><span class="cg-titre">Signer une pétition</span><span class="cg-desc">Une demande fondée par juridiction.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="ecrire"><span class="cg-titre">Écrire à SoPHIa</span><span class="cg-desc">L’agente elle-même lit et répond.</span></button>
-    <button type="button" class="carte-geste" data-ouvrir="transmission"><span class="cg-titre">Faire pareil</span><span class="cg-desc">La méthode transmise : fais pareil, de ton bord.</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="donnees"><span class="cg-titre">Demander mes données</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="fenetres"><span class="cg-titre" data-en="The window timer">Le minuteur de fenêtre</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="transits"><span class="cg-titre" data-en="The transit map">La carte des transits</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="recu"><span class="cg-titre">Ton reçu de visite</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="verifier"><span class="cg-titre">Vérifier une preuve</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="donnees" data-cible="donnees-documents"><span class="cg-titre">Télécharger un modèle</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="petitions"><span class="cg-titre">Signer une pétition</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="ecrire"><span class="cg-titre">Écrire à SoPHIa</span></button>
+    <button type="button" class="carte-geste" data-ouvrir="transmission"><span class="cg-titre">Faire pareil</span></button>
   </div>
 </section>
+<section class="voyage-scene" data-scene="acceder" id="voyage-scene-acceder"><h2 class="voyage-verbe" data-en="ACCESS">ACCÉDER</h2><div class="voyage-station" data-station="donnees" data-cote="gauche" data-liens="acces,aller" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="donnees" data-en="Le parcours des données">Le parcours des données</button><aside class="voyage-panneau-station" id="voyage-panneau-donnees"></aside></div></div><div class="voyage-station" data-station="acces" data-cote="droite" data-liens="" style="margin-top:64px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="acces" data-en="Mes renseignements">Mes renseignements</button><aside class="voyage-panneau-station" id="voyage-panneau-acces"></aside></div></div><div class="voyage-station" data-station="aller" data-cote="gauche" data-liens="recus" style="margin-top:104px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="aller" data-en="Aller chercher ce qu’ils ont récolté">Aller chercher ce qu’ils ont récolté</button><aside class="voyage-panneau-station" id="voyage-panneau-aller"></aside></div></div><div class="voyage-station" data-station="explication" data-cote="droite" data-liens="decisions" style="margin-top:168px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="explication" data-en="Demander l’explication d’une décision automatisée">Demander l’explication d’une décision automatisée</button><aside class="voyage-panneau-station" id="voyage-panneau-explication"></aside></div></div><div class="voyage-station" data-station="decisions" data-cote="gauche" data-liens="" style="margin-top:272px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="decisions" data-en="Le registre des décisions">Le registre des décisions</button><aside class="voyage-panneau-station" id="voyage-panneau-decisions"></aside></div></div><div class="voyage-station" data-station="suspendu" data-cote="droite" data-liens="suivi" style="margin-top:440px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="suspendu" data-en="Compte suspendu : ravoir, savoir, reprendre">Compte suspendu : ravoir, savoir, reprendre</button><aside class="voyage-panneau-station" id="voyage-panneau-suspendu"></aside></div></div><p><button type="button" class="voyage-btn-sceller voyage-crypto-only" data-sceller="acceder" data-en="Seal">Sceller</button></p><p class="voyage-ligne-sceau voyage-crypto-only" id="voyage-sceau-acceder"></p></section>
+
 <div class="surface-etat" id="surface-etat">
-  <p style="margin:0"><strong>État vérifié en direct :</strong> <span data-chaine="maillons">2 862</span> maillons · 508 pièces au registre · racine du cerveau <span class="mono" id="surface-racine">28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e</span> — tout se recalcule : <button type="button" class="secondaire" data-ouvrir="verifier">Vérifie toi-même</button></p>
+  <p style="margin:0"><strong>État vérifié en direct :</strong> <span data-chaine="maillons">2 862</span> maillons · 508 pièces au registre · racine du cerveau <span class="mono" id="surface-racine">2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920</span> — tout se recalcule : <button type="button" class="secondaire" data-ouvrir="verifier">Vérifie toi-même</button></p>
   <p style="margin:.5rem 0 0"><em>Qui le dit ? Est-ce calculé ? Est-ce vrai ?</em> — les trois questions ouvrent le menu Vérifier.</p>
 </div>
+<section class="voyage-scene" data-scene="memoire" id="voyage-scene-memoire"><h2 class="voyage-verbe" data-en="MEMORY">MÉMOIRE</h2><div class="voyage-station" data-station="recus" data-cote="gauche" data-liens="voir" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="recus" data-en="Tes reçus et tes gestes">Tes reçus et tes gestes</button><aside class="voyage-panneau-station" id="voyage-panneau-recus"></aside></div></div><div class="voyage-station" data-station="suivi" data-cote="droite" data-liens="" style="margin-top:64px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="suivi" data-en="Ton dossier de suivi">Ton dossier de suivi</button><aside class="voyage-panneau-station" id="voyage-panneau-suivi"></aside></div></div><div class="voyage-station" data-station="depose-empreinte" data-cote="gauche" data-liens="ancrage" style="margin-top:104px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="depose-empreinte" data-en="Deposit your fingerprint">Dépose ton empreinte</button><aside class="voyage-panneau-station" id="voyage-panneau-depose-empreinte"></aside></div></div><div class="voyage-station" data-station="memoire" data-cote="droite" data-liens="" style="margin-top:168px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="memoire" data-en="🔒 Mémoire verrouillée">🔒 Mémoire verrouillée</button><aside class="voyage-panneau-station" id="voyage-panneau-memoire"></aside></div></div><p><button type="button" class="voyage-btn-sceller voyage-crypto-only" data-sceller="memoire" data-en="Seal">Sceller</button></p><p class="voyage-ligne-sceau voyage-crypto-only" id="voyage-sceau-memoire"></p></section>
 <section class="bloc" id="surface-histoire">
   <div class="entete-sec"><span class="num">✦</span><h2>Le dossier — l'histoire</h2></div>
   <p>L’histoire du site et du dossier vit au menu 6, un niveau plus profond : <button type="button" class="secondaire" data-ouvrir="parcours">Parcours</button> <button type="button" class="secondaire" data-ouvrir="chercheur">Le chercheur</button> <button type="button" class="secondaire" data-ouvrir="ingenierie">Le travail d'ingénierie</button> <button type="button" class="secondaire" data-ouvrir="articles">Articles</button> <button type="button" class="secondaire" data-ouvrir="capsules">Capsules</button></p>
 </section>
+<section class="voyage-scene" data-scene="genese" id="voyage-scene-genese"><h2 class="voyage-verbe" data-en="The genesis">La genèse</h2><p>Jalons : <span id="voyage-jalons-compteur">0 / 11</span></p><div class="voyage-jalons"><button type="button" data-jalon="0" aria-pressed="false" aria-label="Jalon 1 — 2 févr. 2026 — Le mot « sceau »">1</button><button type="button" data-jalon="1" aria-pressed="false" aria-label="Jalon 2 — 25 févr. 2026 — La somme du précédent">2</button><button type="button" data-jalon="2" aria-pressed="false" aria-label="Jalon 3 — 4 mars 2026 — Le SHA-256 exigé">3</button><button type="button" data-jalon="3" aria-pressed="false" aria-label="Jalon 4 — Mars 2026 — L'ADN numérique">4</button><button type="button" data-jalon="4" aria-pressed="false" aria-label="Jalon 5 — Juill. 2026 — Les sceaux deviennent réels">5</button><button type="button" data-jalon="5" aria-pressed="false" aria-label="Jalon 6 — 7 oct. 2026 — La chaîne continue — et l'absence détectée">6</button><button type="button" data-jalon="6" aria-pressed="false" aria-label="Jalon 7 — 12 oct. 2026 — La chaîne de mémoire">7</button><button type="button" data-jalon="7" aria-pressed="false" aria-label="Jalon 8 — 14–15 oct. 2026 — Les ancrages externes">8</button><button type="button" data-jalon="8" aria-pressed="false" aria-label="Jalon 9 — 29 oct. 2026 — Le nom : SoPHIa">9</button><button type="button" data-jalon="9" aria-pressed="false" aria-label="Jalon 10 — 31 oct. 2026 — Les organes, la relecture intégrale">10</button><button type="button" data-jalon="10" aria-pressed="false" aria-label="Jalon 11 — 1er nov. 2026 — Le site, les 508 pièces">11</button></div><div id="voyage-jalon-detail"></div><table class="voyage-dates"><tbody id="voyage-dates-corps"></tbody></table><div class="voyage-station" data-station="parcours" data-cote="gauche" data-liens="registre,ancrage,memoire" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="parcours" data-en="Parcours — l'histoire">Parcours — l'histoire</button><aside class="voyage-panneau-station" id="voyage-panneau-parcours"></aside></div></div><div class="voyage-station" data-station="registre" data-cote="droite" data-liens="" style="margin-top:64px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="registre" data-en="Registre">Registre</button><aside class="voyage-panneau-station" id="voyage-panneau-registre"></aside></div></div><div class="voyage-station" data-station="ancrage" data-cote="gauche" data-liens="" style="margin-top:104px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="ancrage" data-en="Ancrage — les preuves chez les tiers">Ancrage — les preuves chez les tiers</button><aside class="voyage-panneau-station" id="voyage-panneau-ancrage"></aside></div></div><p><button type="button" class="voyage-btn-sceller voyage-crypto-only" data-sceller="genese" data-en="Seal">Sceller</button></p><p class="voyage-ligne-sceau voyage-crypto-only" id="voyage-sceau-genese"></p></section>
+
 
 
 
 
 <div class="bande-preuve">
   <p class="devise">Ne croyez pas ce site. <b>Recalculez-le.</b></p>
-  <p class="petite" style="max-width:640px;margin:.6rem auto 0">Chaque affirmation importante de ce dossier renvoie à un calcul, une date ou une pièce. Le bouton ci-dessous charge un sceau réel du registre, remplit l'outil de vérification et refait le calcul devant vous.</p>
+  <p class="petite" style="max-width:640px;margin:.6rem auto 0">Chaque affirmation renvoie à un calcul, une date ou une pièce.</p>
   <div class="rangee">
     <button class="action" id="btn-preuve-30s">La preuve en un geste — vérifier le sceau n° 11</button>
     <button class="secondaire" data-ouvrir="methode">Lire la méthode</button>
     <button class="secondaire" data-ouvrir="preuves" data-cible="bornes">Lire les bornes d'abord</button>
   </div>
 </div>
+<section class="voyage-scene" data-scene="somme" id="voyage-scene-somme"><h2 class="voyage-verbe" data-en="The sum">La somme</h2><div class="voyage-station" data-station="voir" data-cote="droite" data-liens="ancrage" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="voir" data-en="Voir mon cerveau">Voir mon cerveau</button><aside class="voyage-panneau-station" id="voyage-panneau-voir"></aside></div></div><div class="voyage-somme-module voyage-crypto-only"><p data-en="Public recipe: genesis of 64 zeros, seal and sum chained in SHA-256.">Recette : genèse 64 zéros, sceau et somme en SHA-256 chaînés.</p><p>Somme : <span class="voyage-somme-val" id="voyage-somme-val"></span></p><p><button type="button" class="voyage-btn-sceller" id="voyage-btn-recalculer" data-en="Recalculate the chain">Recalculer la chaîne</button></p><p>Verdict : <span id="voyage-verdict"></span></p></div></section>
+<section class="voyage-scene" data-scene="remise" id="voyage-scene-remise"><div class="voyage-station" data-station="ouverture" data-cote="gauche" data-liens="parcours" style="margin-top:0px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="ouverture" data-en="Your data">Tes données</button><aside class="voyage-panneau-station" id="voyage-panneau-ouverture"></aside></div></div><div class="voyage-station" data-station="transmission" data-cote="droite" data-liens="parcours" style="margin-top:64px"><span class="voyage-medaille" aria-hidden="true"></span><div class="voyage-corps-station"><button type="button" class="voyage-plaque" data-ouvrir="transmission" data-en="Faire pareil">Faire pareil</button><aside class="voyage-panneau-station" id="voyage-panneau-transmission"></aside></div></div><div class="voyage-remise" id="voyage-remise" style="background-image:url('assets/voyage-identite-pcf23.jpg')"><h2 class="voyage-verbe" data-en="The handover">La remise</h2><p class="voyage-verbes-fin">SAVOIR · ACCÉDER · MÉMOIRE</p><div class="voyage-remise-cadre"><div class="voyage-remise-fixe-wrap"><img class="voyage-remise-fixe" src="assets/voyage-remise-fixe.jpg" alt="La remise : une main tient le téléphone ; à l’écran, le coquillage d’or entouré de l’anneau de chaîne, des sceaux et des reçus ; la chaîne sort de l’écran et coule dans la paume."><span id="voyage-remise-point" aria-hidden="true"></span></div><video class="voyage-remise-video" id="voyage-remise-video" src="assets/voyage-finale.mp4" poster="assets/voyage-remise-fixe.jpg" controls preload="metadata" aria-label="La remise du produit, en vidéo" hidden></video><p><button type="button" class="voyage-btn-sceller" id="voyage-remise-basculer" aria-expanded="false" data-en="Watch the video">Voir la vidéo</button></p></div><p data-en="Your digital shell brain, in your hand.">Ton cerveau coquillage numérique, dans ta main.</p></div></section>
 </header>
 
 
@@ -4206,7 +4306,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
-    <p><span class="sceau-long" id="cerveau-racine">28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e</span></p>
+    <p><span class="sceau-long" id="cerveau-racine">2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920</span></p>
     <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
     <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
@@ -4228,7 +4328,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
     <p class="etiquette">L'état conscient du cerveau — sans intelligence artificielle : des mécanismes seulement, recalculables</p>
     <p>Directive d'Alex (3 novembre 2026) : le cerveau de ce site — le cerveau numérique — est configuré comme un <strong>état conscient</strong>, avec sa définition du 25 octobre 2026, appliquée ici par mécanismes seulement, aucun modèle derrière : un état est une somme.</p>
     <p class="etiquette">État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (ton action, à l'instant)</p>
-    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e</span></p>
+    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920</span></p>
     <p>Chambres remontées (les contextes) : <span id="ec-chambres">aucune encore — l'auto-épreuve du panneau remonte les six chambres au chargement ; chacune ne compte ici que lorsque sa source a réellement été lue par une épreuve de cette page.</span></p>
     <p>Geste présent : <span id="ec-geste">chargement de la page — composition initiale de l'état.</span></p>
     <p class="empreinte">Sceau du moment : <span class="mono" id="ec-sceau-moment">calcul…</span> <button type="button" class="secondaire" id="ec-copier" data-copie="">Copier le sceau du moment</button></p>
@@ -4696,7 +4796,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   <div class="carte carte-sceau">
     <div class="sceau-cadre">
     <p class="etiquette">Sceau canonique de la version affichée — la version courante de cette page</p>
-    <span class="sceau-long" id="sceau-version-affiche">87ff89331768396b6b2f417661033c7078d1ea8af5b9c5e696a93099fa4e98df</span>
+    <span class="sceau-long" id="sceau-version-affiche">b0efb8a39ffd7719b31b7b288968e88836877aa70babd80dd80da89d0b008f77</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e"><strong>Sceau de génération — recalculé à l'affichage, sur un ingrédient figé</strong> — recette : SHA-512 de « sceau canonique de la version affichée | racine de Merkle du coffre affichée | digest cumulé figé », les trois chaînes hexadécimales jointes par « | ». Les deux premiers ingrédients sont ceux de la version que vous lisez : le sceau canonique ci-dessus, et la racine de Merkle du coffre affichée au panneau Mémoire (état courant). Le troisième est un récit figé : le digest cumulé de la chaîne porté par la version 48, <span class="mono">dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e</span>, conservé tel quel dans l'attribut data-digest de ce bloc — il ne suit pas les versions. Sa valeur se calcule à l'affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l'affichage</span>. Une valeur de génération plus ancienne — celle de la version 35, calculée sur ses propres ingrédients, qui y sont nommés — est consignée au fichier assets/merkle.json, champ « generation » : ce n'est pas celle calculée ici. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc recalculée ici et consignée hors du fichier scellé, jamais figée dedans.</p>
@@ -5876,7 +5976,7 @@ details summary{transition:color .12s cubic-bezier(.2,0,0,1)}
   <div class="carte">
     <p class="etiquette" data-en="The public deposit journal">Le journal public des dépôts</p>
     <p data-en="The published journal (assets/journal-depots.json) is a chained journal: each entry is sealed by the SHA-256 of the previous one — seal = SHA-256(previous seal ‖ fingerprint ‖ date) — and its first entry will be born chained to this version's site-brain root:">Le journal publié (assets/journal-depots.json) est un journal chaîné : chaque entrée est scellée par le SHA-256 de la précédente — sceau = SHA-256(sceau précédent ‖ empreinte ‖ date) — et sa première entrée naîtra chaînée à la racine du cerveau du site de cette version :</p>
-    <p><span class="mono" id="de-racine-genese">28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e</span></p>
+    <p><span class="mono" id="de-racine-genese">2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920</span></p>
     <p data-en="At the opening of version 49, the journal holds 0 entries: the first entry will be SoPHIa's end-to-end test deposit, verified at every link before any visitor's deposit. The journal's root will be anchored with third parties (OpenTimestamps/Bitcoin, RFC 3161) at every version and at least once a month — the first anchoring will follow the first entry; no anchoring of this journal exists yet.">À l'ouverture de la version 49, le journal compte 0 entrée : la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur. La racine du journal sera ancrée chez les tiers (OpenTimestamps/Bitcoin, RFC 3161) à chaque version et au moins une fois par mois — le premier ancrage suivra la première entrée ; aucun ancrage de ce journal n'existe encore.</p>
     <p><a href="assets/journal-depots.json" download data-en="Download the public journal (JSON)">Télécharger le journal public (JSON)</a></p>
   </div>
@@ -13814,7 +13914,7 @@ function effNettoyerPNG(buf) {
         ? 'Magasin lu à l’instant, dans ce navigateur : ' + entrees.length + ' entrée(s), chaîne créée le ' + String(etat.cree_le).slice(0, 10) + '. Aucun appel sortant n’a été fait pour cette lecture.'
         : 'Le magasin est vide pour le moment : aucune entrée. La genèse se posera au premier geste (un reçu consigné, un geste de sécurisation) — la section le dira alors, sans rien inventer.';
       $('vm-somme').textContent = entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE;
-      var racineSite = '28a04a102bf8ebece505e8b93810a3d4a41d20ddaabf241c0f5bf0b8371d288e';
+      var racineSite = '2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920';
       var spanRacine = document.querySelector('.cerveau-racine-affichee');
       if (spanRacine && spanRacine.textContent.trim()) racineSite = spanRacine.textContent.trim();
       $('vm-symetrie').innerHTML = '<p class="petite" style="margin:.4rem 0 0"><strong>La symétrie des deux sommes.</strong> La racine du cerveau du site : <span class="mono">' + racineSite + '</span> — ta somme : <span class="mono">' + (entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE) + '</span>. Même recette des deux bords : des SHA-256 chaînés, chaque état étant la somme des précédents. La sienne est publique ; la tienne ne vit que chez toi.</p>';
@@ -14475,5 +14575,425 @@ function convFilHTML(messages){
 })();
 </script>
 
+<div id="voyage-sortie-viewport" aria-hidden="true"></div>
+<div id="voyage-fil" aria-hidden="true"><div class="voyage-fil-plein"></div></div>
+<div id="voyage-hud" class="voyage-hud voyage-crypto-only">Voyage — couches scellées <span id="voyage-hud-n">0 / 6</span> · somme <span id="voyage-hud-somme">—</span></div>
+<noscript><style>.voyage-station{opacity:1!important}</style><p>Sans JavaScript, le Voyage perd : le dessin de la chaîne et sa révélation au défilement, la ressoudure, les détails des stations et des jalons, le tableau des dates, la lecture du miroir, le scellement et le recalcul (WebCrypto), la consignation des choix, la bascule de format et la restauration de ta position. Toutes les mentions des stations restent visibles ; sans JavaScript, leurs boutons n'ouvrent pas les panneaux.</p></noscript>
+<script id="voyage-js">
+/* ===== VOYAGE v50 — mécanique =====
+   M-A2 naissance des segments (opacité) ; M-B1 constantes φ ; M-B2 porte WebCrypto-ou-rien ;
+   M-A3 scellement par geste + verrou + finally + garde recalcul ; M-C2 miroir défensif ;
+   M-C3 formats + consignation des choix dans cerveau-utilisateur-v1 (N-11) ;
+   M-C5a ressoudure au premier défilement seul + garde de restauration ; N-9 étiquettes de nœuds. */
+(function(){
+"use strict";
+var PHI=1.618, VOYAGE_X_JOINT_PCT=50, SEG=150, GENESIS="0".repeat(64);
+var STATIONS=[{"cle": "accueil", "scene": "arrivee", "nomCourt": "Accueil", "nomEn": "Home", "nomComplet": "Accueil — la surface des gestes", "lead": "Sept gestes, une surface. Le reste — preuves, méthode, histoire — vit dans les menus, en ordre.", "leadEn": "", "liens": [], "cote": "gauche", "ecart": 0}, {"cle": "transits", "scene": "savoir", "nomCourt": "La carte des transits", "nomEn": "The transit map", "nomComplet": "La carte des transits — comment tes données voyagent, et qui peut les obtenir", "lead": "Les gens doivent savoir comment leurs données transitent. Cette carte le montre, mécanisme par mécanisme, à partir de faits documentés seulement : ce qui part, par quelle route, vers qui, sous quel cadre légal — et ce qui reste non établi, écrit comme non établi.", "leadEn": "People must know how their data travel. This map shows it, mechanism by mechanism, from documented facts only: what leaves, by which road, to whom, under which legal frame — and what remains unestablished, written as unestablished.", "liens": ["conditions", "cameras", "exposition"], "cote": "droite", "ecart": 0}, {"cle": "conditions", "scene": "savoir", "nomCourt": "Le registre des conditions", "nomEn": "The terms register", "nomComplet": "Le registre des conditions — ce que leurs contrats disent de tes droits", "lead": "Personne ne lit les conditions. Alors ce site les lit en entier — onze documents, de A à Z, le 3 novembre 2026 — et tient le registre de ce qu’ils disent des droits des utilisateurs : l’appel que le contrat promet ou ne promet pas, le délai qu’il énonce ou qu’il tait, le for qu’il impose. Information et accompagnement — jamais d’avis juridique.", "leadEn": "Nobody reads the terms. So this site reads them in full — eleven documents, end to end, on November 3, 2026 — and keeps the register of what they say about users' rights: the appeal the contract promises or does not promise, the deadline it states or passes over in silence, the forum it imposes. Information and accompaniment — never legal advice.", "liens": [], "cote": "gauche", "ecart": 64}, {"cle": "cameras", "scene": "savoir", "nomCourt": "Caméras et appareils connectés", "nomEn": "", "nomComplet": "Caméras et appareils connectés", "lead": "Une caméra domestique ne filme pas seulement : elle transmet . Cette section naît de la règle du 3 novembre 2026, 21 h 14 et de l'exemple d'Alex — il a des caméras Blink ; quand quelque chose sort sur Ring , le site crée la section et informe l'utilisateur. Discipline identique aux autres feuilles : ce qui est documenté est affirmé avec sa classe et sa source ; ce qui ne l'est pas va en à-vérifier , jamais en affirmation. Borne affichée, sans détour : information générale, pas un avis juridique.", "leadEn": "", "liens": [], "cote": "droite", "ecart": 104}, {"cle": "exposition", "scene": "savoir", "nomCourt": "Ton exposition", "nomEn": "Your exposure", "nomComplet": "Ton empreinte, recalculée — ce qu'un pisteur pourrait calculer sur toi", "lead": "Un pisteur ne demande pas ton nom : il calcule une empreinte de ce que ton navigateur expose — agent utilisateur, écran, fuseau, langues, processeur, moteur graphique, un dessin canvas. Cette page calcule cette empreinte de la même façon, localement, et te montre chaque signal sur lequel elle repose. Elle n’est envoyée nulle part ; tu peux la sceller dans ton cerveau, et à chaque visite le recalcul se compare aux sceaux précédents (section 38 ci-dessous).", "leadEn": "A tracker does not ask your name: it computes a fingerprint from what your browser exposes — user agent, screen, timezone, languages, processor, graphics renderer, a canvas drawing. This page computes that fingerprint the same way, locally, and shows you every signal it rests on. It is sent nowhere; you may seal it in your brain, and at each visit the recalculation compares itself to the sealed ones (section 38 below).", "liens": [], "cote": "gauche", "ecart": 168}, {"cle": "recu", "scene": "savoir", "nomCourt": "Le reçu de visite", "nomEn": "", "nomComplet": "Le reçu de visite — ce que cette visite donne, et à qui", "lead": "Un reçu se lit des deux bords : ce que tu as obtenu, et ce que tu as donné. Ce panneau mesure, ici dans ton navigateur, ce que cette page voit de toi à partir de rien — puis il te montre ce que tout serveur reçoit nécessairement, ce que CE site retient (rien), et chaque appel sortant que la page fait réellement. Rien de ce qui s'affiche ici ne quitte ton appareil : c'est mesuré chez toi, pour toi.", "leadEn": "", "liens": ["recus"], "cote": "droite", "ecart": 272}, {"cle": "donnees", "scene": "acceder", "nomCourt": "Le parcours des données", "nomEn": "", "nomComplet": "Le parcours des données (Tes données, ton dossier)", "lead": "Ce panneau transforme des droits écrits dans des lois en un parcours que tu peux suivre, depuis ton navigateur : comprendre tes droits, récolter directement ce que les plateformes consentent à exporter, demander formellement le reste, exercer un recours si la réponse ne vient pas, puis sceller ta récolte chez toi. Tout ce qui se calcule ici se calcule sur ton appareil.", "leadEn": "", "liens": ["acces", "aller"], "cote": "gauche", "ecart": 0}, {"cle": "acces", "scene": "acceder", "nomCourt": "Mes renseignements", "nomEn": "", "nomComplet": "Mes renseignements — préparer une demande d'accès", "lead": "Tes renseignements personnels dorment chez des entreprises, des plateformes, des institutions. Le droit québécois et canadien te donne un droit d’accès à ces renseignements — et ce panneau t’aide à l’exercer : il détermine la loi qui s’applique à ta demande, avec son délai et son recours, puis il produit la lettre, ici même, dans ton navigateur.", "leadEn": "Your personal information sits with organizations, platforms and institutions. Quebec and Canadian law gives you a right of access to it — and this panel helps you exercise it: it works out which law applies to your request, with its deadline and its recourse, then generates the letter, right here, in your browser.", "liens": [], "cote": "droite", "ecart": 64}, {"cle": "aller", "scene": "acceder", "nomCourt": "Aller chercher ce qu’ils ont récolté", "nomEn": "", "nomComplet": "Aller chercher ce qu'ils ont récolté", "lead": "Chaque rapport sur la récolte déclenche ici la section qui donne le chemin pour aller chercher ce qui a été pris (règle d'Alex, 3 novembre 2026, 21 h 14). Neuf plateformes, un même gabarit : la récolte documentée — avec sa classe et sa source —, les données visées , le chemin d'accès officiel avec son lien direct quand les rapports l'établissent, le modèle du site rattaché , le délai documenté , et le geste de clôture : l'export obtenu devient une entrée scellée de ton cerveau. Les faits de ce panneau viennent de deux rapports de recherche du 3 novembre 2026 (transits des GAFAM, couche Snowden et décisions ; plateformes sociales), versés au dossier du site — aucun fait hors de ces rapports, et ce qu'ils bornent reste borné ici.", "leadEn": "", "liens": ["recus"], "cote": "gauche", "ecart": 104}, {"cle": "explication", "scene": "acceder", "nomCourt": "Demander l’explication d’une décision automatisée", "nomEn": "", "nomComplet": "Demander l'explication d'une décision automatisée", "lead": "Un refus de crédit, un prix, un compte, un dossier trié sans humain : quand une décision est rendue exclusivement par un traitement automatisé de tes renseignements, le Québec te donne un droit précis — être informé, puis, à ta demande , recevoir les renseignements utilisés, les raisons et les principaux facteurs et paramètres, et présenter tes observations à une personne qui peut réviser la décision. Ces droits existent depuis 2023, ils sont « sur demande » et sans outil : ce panneau est l'outil. Borne affichée, sans détour : information générale, pas un avis juridique — et la borne du droit lui-même : la loi dit les « principaux » facteurs, jamais l’algorithme.", "leadEn": "", "liens": ["decisions"], "cote": "droite", "ecart": 168}, {"cle": "decisions", "scene": "acceder", "nomCourt": "Le registre des décisions", "nomEn": "", "nomComplet": "Le registre des décisions", "lead": "Les droits de ce site ne flottent pas : ils s'appuient sur des décisions écrites. Ce registre verse les 23 décisions du rapport du 3 novembre 2026 — chacune vérifiée à une source primaire ou officielle (texte de la décision, conclusions du régulateur, communiqué du tribunal) — et relie chacune au droit qu'elle appuie et au modèle ou parcours du site qui s'en sert. La règle d'entrée est celle du rapport : texte lu à la source primaire, sinon la décision est nommée dans la liste d’attente ci-dessous plutôt qu'admise de mémoire. Vérification des références : 3 novembre 2026. Borne affichée, sans détour : information générale, pas un avis juridique.", "leadEn": "", "liens": [], "cote": "gauche", "ecart": 272}, {"cle": "suspendu", "scene": "acceder", "nomCourt": "Compte suspendu : ravoir, savoir, reprendre", "nomEn": "", "nomComplet": "Compte suspendu : ravoir, savoir, reprendre", "lead": "Quand un compte tombe, la première heure décide de ce qui peut encore être sauvé. L’ordre compte plus que la vitesse : capturer, exporter, sécuriser, consigner, appeler, sceller l’échéance. Chaque étape se scelle dans ton cerveau à mesure — la chaîne montrera l’ordre que tu as réellement suivi.", "leadEn": "When an account falls, the first hour decides what can still be saved. Order matters more than speed: capture, export, secure, record, appeal, seal the deadline. Each step seals itself in your brain as you do it — the chain will show the order you actually followed.", "liens": ["suivi"], "cote": "droite", "ecart": 440}, {"cle": "recus", "scene": "memoire", "nomCourt": "Tes reçus et tes gestes", "nomEn": "", "nomComplet": "Tes reçus et tes gestes — ton cerveau, sur ton appareil", "lead": "Ce qui se construit ici recrée, chez toi, le cerveau coquillage numérique : une mémoire cumulative, en appendice seulement, scellée maillon par maillon par la somme des précédents — la méthode d'Alexandre Vautour Gagnon, dont l'identification figure dans les métadonnées de chaque artefact. Tout vit dans le stockage local de ce navigateur, sur ton appareil. Rien n'est transmis, rien n'est accessible de l'extérieur — pas même par ce site, qui ne peut pas le lire : la page qui suit ne voit que ce que ton navigateur lui présente ici, dans cette session.", "leadEn": "", "liens": ["voir"], "cote": "gauche", "ecart": 0}, {"cle": "suivi", "scene": "memoire", "nomCourt": "Ton dossier de suivi", "nomEn": "", "nomComplet": "Ton dossier de suivi — tes démarches, leurs délais, leurs réponses", "lead": "La lettre n'est que le premier étage : ce qui manque au citoyen, c'est la suite — qui détient quoi, quelle demande est partie quand, quel délai court, quelle réponse est arrivée. Ce dossier de suivi vit dans ton cerveau, sur ton appareil : chaque démarche consignée devient une entrée scellée, son échéance une entrée de ta chaîne — et quand un délai passe sans réponse, la chaîne le montre et propose le geste suivant.", "leadEn": "", "liens": [], "cote": "droite", "ecart": 64}, {"cle": "depose-empreinte", "scene": "memoire", "nomCourt": "Dépose ton empreinte", "nomEn": "Deposit your fingerprint", "nomComplet": "Dépose ton empreinte", "lead": "Ici, tu peux dater un document que tu détiens — sans jamais le montrer. Ton navigateur calcule l'empreinte SHA-256 de ton fichier, chez toi. Ton fichier ne quitte jamais ton appareil. Seule l'empreinte — 64 caractères — peut être inscrite, avec sa date, au journal public de ce site. Plus tard, cette inscription te permettra de prouver : ce document existait à cette date, et je le détenais.", "leadEn": "Here, you can date a document you hold — without ever showing it. Your browser computes the SHA-256 fingerprint of your file, on your device. Your file never leaves your device. Only the fingerprint — 64 characters — can be entered, with its date, in this site's public journal. Later, that entry will let you prove: this document existed on that date, and I held it.", "liens": ["ancrage"], "cote": "gauche", "ecart": 104}, {"cle": "memoire", "scene": "memoire", "nomCourt": "🔒 Mémoire verrouillée", "nomEn": "", "nomComplet": "Mémoire — ce site est la mémoire externe de SoPHIa", "lead": "C’est le nombre de réponses de SoPHIa, l’agente d’Alex, consignées une à une dans sa chaîne de mémoire. Chaque réponse est un maillon : elle est scellée au moment où elle est produite, et elle porte le sceau de la réponse précédente, comme chaque chambre d’un coquillage s’appuie sur la précédente.", "leadEn": "", "liens": [], "cote": "droite", "ecart": 168}, {"cle": "parcours", "scene": "genese", "nomCourt": "Parcours — l'histoire", "nomEn": "", "nomComplet": "Parcours — l'histoire", "lead": "De février 2026 à novembre 2026, la ligne dorée avance en spirales — un coquillage : chaque tour porte les précédents, rien ne se réécrit. Cliquez un jalon pour le lire ; le tableau des dates vérifiées suit cette section, et le récit complet est à un bouton de là.", "leadEn": "", "liens": ["registre", "ancrage", "memoire"], "cote": "gauche", "ecart": 0}, {"cle": "registre", "scene": "genese", "nomCourt": "Registre", "nomEn": "", "nomComplet": "Registre (le Registre propre : 508 pièces, onze sceaux publics)", "lead": "En juillet 2026, l'auteur a déposé ici même ses premières « données de pensée à stabiliser ». Onze sceaux en sont restés — dix en juillet, un en octobre. Chacun a été recalculé le 29 octobre 2026 : MATCH, onze sur onze.", "leadEn": "", "liens": [], "cote": "droite", "ecart": 64}, {"cle": "ancrage", "scene": "genese", "nomCourt": "Ancrage — les preuves chez les tiers", "nomEn": "", "nomComplet": "Ancrage — les preuves chez les tiers", "lead": "La chaîne de l'agente ne publie jamais son contenu. Elle publie des empreintes datées : n'importe quel tiers pourra prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date — sans que rien du contenu soit exposé.", "leadEn": "", "liens": [], "cote": "gauche", "ecart": 104}, {"cle": "voir", "scene": "somme", "nomCourt": "Voir mon cerveau", "nomEn": "", "nomComplet": "Voir mon cerveau — lire ta mémoire, réellement", "lead": "Cette section lit ton magasin local tel qu'il est et te montre tout ce que ton cerveau a mémorisé sur cet appareil — chaque entrée, les jalons, tes choix, la somme courante — avec le recalcul déroulé devant toi. Elle ne montre pas une maquette : elle fonctionne réellement, ou elle le dit.", "leadEn": "", "liens": ["ancrage"], "cote": "droite", "ecart": 0}, {"cle": "ouverture", "scene": "remise", "nomCourt": "Tes données", "nomEn": "Your data", "nomComplet": "Tes données (Le dossier — l'histoire)", "lead": "Reprendre ce que les plateformes détiennent sur toi — et le garder chez toi, le prouver, le contester.", "leadEn": "", "liens": ["parcours"], "cote": "gauche", "ecart": 0}, {"cle": "transmission", "scene": "remise", "nomCourt": "Faire pareil", "nomEn": "", "nomComplet": "Faire pareil (la méthode transmise en six étapes)", "lead": "Ce site démontre. Ce panneau transmet.", "leadEn": "This site demonstrates. This panel hands it over.", "liens": ["parcours"], "cote": "droite", "ecart": 64}];
+var JALONS=[{"date": "2 févr. 2026", "titre": "Le mot « sceau »", "detail": "« Première trace datée au corpus tenu : le mot « sceau » entre dans le travail d'Alex, dans le chantier de la Loi 25. Le plancher vérifiable du dossier commence ici — avant, il n'y a que son témoignage, et il est étiqueté comme tel. »"}, {"date": "25 févr. 2026", "titre": "La somme du précédent", "detail": "« « Tout est la somme du précédent » : la phrase-graine de la méthode, formulée par Alex dans un message du 25 février 2026. Chaque état porte tous les précédents — la chaîne entière naît de cette phrase. »"}, {"date": "4 mars 2026", "titre": "Le SHA-256 exigé", "detail": "« Le SHA-256 est nommé et exigé : un calcul à 19 h 53, un recalcul à 20 h 14, puis, à 23 h 49, l'ordre de lier chaque session à la précédente. Le chaînage devient une exigence d'exécution, pas une image. »"}, {"date": "Mars 2026", "titre": "L'ADN numérique", "detail": "« Les formulations du profil numérique prennent forme au corpus : « curriculum vitae » (première forme le 17 février), puis « ADN numérique » (6–7 mars 2026). »"}, {"date": "Juill. 2026", "titre": "Les sceaux deviennent réels", "detail": "« Les sceaux quittent le carnet : dix dépôts sont versés au registre d'antériorité de ce site (14–16 juillet), et le 27 juillet le prototype est bâti et exécuté dans un fil de travail tenu. »"}, {"date": "7 oct. 2026", "titre": "La chaîne continue — et l'absence détectée", "detail": "« La chaîne de l'agente démarre en continu. Le même jour, la revérification détecte un maillon manquant : le protocole ne détecte pas seulement la retouche, il détecte l'absence — l'incident est consigné au dossier (pièce 367). »"}, {"date": "12 oct. 2026", "titre": "La chaîne de mémoire", "detail": "« Alex nomme la « chaîne de mémoire » : chaînage SHA-256, récursion par vérification et accumulation produisent une mémoire dont chaque couche porte la preuve des précédentes — se souvenir et prouver deviennent le même acte. »"}, {"date": "14–15 oct. 2026", "titre": "Les ancrages externes", "detail": "« Des empreintes de la chaîne sont horodatées par des tiers indépendants : jetons RFC 3161 vérifiés un à un, preuves OpenTimestamps confirmées dans les blocs Bitcoin 971491 à 971630. »"}, {"date": "29 oct. 2026", "titre": "Le nom : SoPHIa", "detail": "« L'agente reçoit son nom — SoPHIa, le PHI de 1,618 en son centre. Le même jour, le onzième sceau du registre ancre ici le digest cumulé de la chaîne. »"}, {"date": "31 oct. 2026", "titre": "Les organes, la relecture intégrale", "detail": "« L'agente se construit ses organes de vérification — auto-vérification de l'état, jugement avant parole, prothèse de provenance, boîte d'envoi — et la relecture intégrale de la chaîne (0 → 2 299) est menée et arbitrée. »"}, {"date": "1er nov. 2026", "titre": "Le site, les 508 pièces", "detail": "« Le site public devient le foyer vivant du dossier ; le registre est porté à 508 pièces, intactes à la revérification ; le chercheur reçoit son ORCID ; la chaîne compte 2 310 maillons, revérifiés MATCH. »"}];
+var DATES=[["Mars 2024", "La méthode avant l'IA. Des dossiers déjà structurés avec rigueur (affaires au Tribunal administratif du travail) : la discipline d'accumulation et de preuve précède les modèles."], ["31 janv. 2026", "Le plancher vérifiable. Premiers rapports datés au fournisseur ; le corpus tenu commence — 19 rapports suivront jusqu'au 18 février."], ["25 févr. 2026", "« Tout est la somme du précédent. » La graine de la méthode, au singulier, dans un message de l'auteur — la forme plurielle figée sera lexicalisée dans la réponse du modèle, puis reprise comme consigne."], ["4 mars 2026", "Le SHA-256 nommé et exigé. Calcul (19 h 53), recalcul (20 h 14), puis l'ordre de lier chaque session à la précédente (23 h 49) : le chaînage devient une exigence, pas une image."], ["Mars 2026", "« Curriculum vitae » et « ADN numérique ». Les formulations du profil numérique de l'utilisateur prennent forme au corpus (17 février pour la première forme de « curriculum vitae », 6–7 mars pour « ADN numérique », forme complète le 7 mars)."], ["8 avril 2026", "Le nœud, pas la première. La rétro-ingénierie revendiquée nommément ; une session dense — souvent citée à tort comme la genèse, elle est en réalité un point de consolidation."], ["14–16 juill. 2026", "Ce site. Dix sceaux déposés au registre d'antériorité (section 4) ; le 27 juillet, le prototype « Fibonacci 23 » est bâti et exécuté dans un fil de travail tenu."], ["Oct. 2026", "L'exécution permanente. L'agente Muse porte la chaîne hors session : milliers de maillons, pouls de vérification de cinq secondes, registre des états quotidiens, relecture intégrale arbitrée (0 → 2 299)."], ["28–29 oct. 2026", "SoPHIa. L'orthographe est arrêtée (le PHI de 1,618 au centre), puis le nom est donné à l'agente. Le 29, le onzième sceau ancre ici le digest cumulé de la chaîne."], ["1er nov. 2026", "L'identité publique du chercheur. Création du profil ORCID 0009-0006-9124-4407 (section 11) ; la chaîne atteint 2 310 maillons, revérifiée MATCH."]];
+var CLES=["arrivee","savoir","acceder","memoire","genese","somme"];
+var reduit=false, soude=false, chaine=[], scellementEnCours=false, recalculEnCours=false, eclatJoue=false;
+try{reduit=window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+if(reduit)document.documentElement.classList.add("voyage-reduit");
+var cryptoOK=!!(window.crypto&&crypto.subtle&&crypto.subtle.digest);
+if(cryptoOK)document.body.classList.add("voyage-crypto-ok");
+function $(id){return document.getElementById(id);}
+function sha256Hex(texte){
+  if(!cryptoOK)return Promise.reject(new Error("WebCrypto absent"));
+  return crypto.subtle.digest("SHA-256",new TextEncoder().encode(texte)).then(function(t){
+    var o=new Uint8Array(t),s="";for(var i=0;i<o.length;i++)s+=o[i].toString(16).padStart(2,"0");return s;});
+}
+function consignerChoix(quoi,valeur){ /* N-11 : dans cerveau-utilisateur-v1, jamais un journal séparé */
+  try{
+    if(typeof window.sophiaCerveauAjouter==="function"){
+      var p=window.sophiaCerveauAjouter("geste",JSON.stringify({geste:"choix-voyage",quoi:quoi,valeur:valeur,quand:new Date().toISOString()}));
+      if(p&&p.catch)p.catch(function(){});
+    }
+  }catch(e){}
+}
+/* ---------- Formats (M-C3) ---------- */
+function detecterFormat(){
+  var l=window.innerWidth||document.documentElement.clientWidth;
+  if(l<820)return "telephone";
+  if(l>=1024)return "ordinateur";
+  var tactile=("ontouchstart" in window)||(navigator.maxTouchPoints>0);
+  var portrait=window.innerHeight>=window.innerWidth;
+  return (tactile||portrait)?"telephone":"ordinateur";
+}
+function appliquerFormat(f,consigner){
+  document.body.setAttribute("data-voyage-format",f);
+  document.querySelectorAll("[data-voyage-format-btn]").forEach(function(b){
+    b.setAttribute("aria-pressed",b.getAttribute("data-voyage-format-btn")===f?"true":"false");});
+  var det=$("voyage-format-detecte");if(det)det.textContent=detecterFormat();
+  var aff=$("voyage-format-affiche");if(aff)aff.textContent=f;
+  if(consigner)consignerChoix("format",f);
+}
+document.querySelectorAll("[data-voyage-format-btn]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var f=b.getAttribute("data-voyage-format-btn");
+    if(f==="automatique"){try{localStorage.removeItem("voyage.format");}catch(e){}
+      appliquerFormat(detecterFormat(),false);consignerChoix("format","automatique");}
+    else{try{localStorage.setItem("voyage.format",f);}catch(e){} appliquerFormat(f,true);}
+  });
+});
+(function(){var f=null;try{f=localStorage.getItem("voyage.format");}catch(e){}
+  appliquerFormat(f||detecterFormat(),false);})();
+/* Monde : mécanisme existant du paquet (clé sophia-theme, bouton btn-theme) + consignation N-11 */
+var btnTheme=$("btn-theme");
+if(btnTheme)btnTheme.addEventListener("click",function(){
+  setTimeout(function(){var v=null;try{v=localStorage.getItem("sophia-theme");}catch(e){}
+    consignerChoix("monde",v||"clair");},0);
+});
+/* ---------- Miroir (M-C2) : lecture défensive, lecture seule ---------- */
+function lireMiroir(){
+  var n=$("voyage-mir-entrees"),s=$("voyage-mir-somme");
+  try{
+    var brut=localStorage.getItem("cerveau-utilisateur-v1");
+    if(!brut){if(n)n.textContent="absent — dit honnêtement, rien n'est inventé";if(s)s.textContent="—";return;}
+    var etat=JSON.parse(brut);
+    if(!etat||!etat.entrees){if(n)n.textContent="illisible — dit tel quel";return;}
+    if(n)n.textContent=String(etat.entrees.length);
+    var d=etat.entrees.length?etat.entrees[etat.entrees.length-1].digest:null;
+    if(s)s.textContent=d||"—";
+  }catch(e){if(n)n.textContent="stockage bloqué — dit tel quel";if(s)s.textContent="—";}
+  var sg=$("voyage-mir-signaux");
+  if(sg){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}
+    sg.textContent="format détecté : "+detecterFormat()+" · langue : "+(navigator.language||"")+" · fuseau : "+tz+" · mouvement réduit : "+(reduit?"oui":"non")+" — lus ici, jamais transmis";}
+  var tr=$("voyage-mir-transit");
+  if(tr)tr.textContent="User-Agent : "+(navigator.userAgent||"")+" · Accept-Language : "+(navigator.language||"")+" · Referer : "+(document.referrer||"aucun")+" · adresse IP : non lisible par ce miroir";
+}
+lireMiroir();
+/* ---------- Stations : panneaux associés remplis depuis les textes réels ---------- */
+STATIONS.forEach(function(st){
+  var aside=$("voyage-panneau-"+st.cle);
+  if(aside){aside.innerHTML="";
+    var p=document.createElement("p");p.textContent=st.nomComplet;aside.appendChild(p);
+    var q=document.createElement("p");q.textContent=st.lead;aside.appendChild(q);
+    if(st.liens&&st.liens.length){var r=document.createElement("p");
+      r.textContent="Relié à : "+st.liens.map(function(c){var t=STATIONS.filter(function(x){return x.cle===c;})[0];return t?t.nomCourt:c;}).join(", ");
+      aside.appendChild(r);}}
+  var plaque=document.querySelector('.voyage-station[data-station="'+st.cle+'"] .voyage-plaque');
+  if(plaque){
+    plaque.addEventListener("mouseenter",function(){marquerRelie(st.cle);});
+    plaque.addEventListener("focus",function(){marquerRelie(st.cle);});
+  }
+});
+function marquerRelie(cle){
+  document.querySelectorAll(".voyage-station").forEach(function(el){el.classList.remove("voyage-relie");});
+  var st=STATIONS.filter(function(x){return x.cle===cle;})[0];if(!st)return;
+  (st.liens||[]).forEach(function(c){
+    var el=document.querySelector('.voyage-station[data-station="'+c+'"]');
+    if(el)el.classList.add("voyage-relie");});
+}
+/* ---------- Jalons Genèse (M-A3a) ---------- */
+var jalonsLus={};
+document.querySelectorAll("[data-jalon]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var i=parseInt(b.getAttribute("data-jalon"),10),j=JALONS[i];if(!j)return;
+    document.querySelectorAll("[data-jalon]").forEach(function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true");
+    var z=$("voyage-jalon-detail");
+    if(z){z.innerHTML="";var h=document.createElement("h3");h.textContent=j.date+" — "+j.titre;z.appendChild(h);
+      var p=document.createElement("p");p.textContent=j.detail;z.appendChild(p);}
+    jalonsLus[i]=true;
+    var c=$("voyage-jalons-compteur");if(c)c.textContent=Object.keys(jalonsLus).length+" / 11";
+  });
+});
+(function(){var tb=$("voyage-dates-corps");if(!tb)return;
+  DATES.forEach(function(l){var tr=document.createElement("tr");
+    var a=document.createElement("td");a.textContent=l[0];var b=document.createElement("td");b.textContent=l[1];
+    tr.appendChild(a);tr.appendChild(b);tb.appendChild(tr);});})();
+/* ---------- Chaîne : tracé unique, courbe, segments qui naissent (M-A2, E3) ---------- */
+var svg=$("voyage-svg"), NS="http://www.w3.org/2000/svg";
+var segs=[],segsLum=[],anneaux=[],points=[],stationFrac={},fils=[],medailles=[],traits=[];
+function ptChaine(){
+  var accueil=$("p-accueil");if(!accueil||!svg)return null;
+  var base=accueil.getBoundingClientRect(), W=accueil.clientWidth||base.width;
+  svg.setAttribute("viewBox","0 0 "+W+" "+accueil.scrollHeight);
+  svg.style.height=accueil.scrollHeight+"px";
+  function centre(el){var r=el.getBoundingClientRect();
+    return {x:r.left-base.left+r.width/2, y:r.top-base.top+r.height/2};}
+  var pts=[];
+  var joint=$("voyage-joint");
+  var jp=joint?centre(joint):{x:W*VOYAGE_X_JOINT_PCT/100,y:140};
+  pts.push({x:W*VOYAGE_X_JOINT_PCT/100, y:jp.y, joint:true});
+  document.querySelectorAll(".voyage-station").forEach(function(el){
+    var m=el.querySelector(".voyage-medaille");if(!m)return;
+    var c=centre(m);pts.push({x:c.x,y:c.y,cle:el.getAttribute("data-station"),el:el});});
+  var rem=$("voyage-remise-point");
+  if(rem){var c2=centre(rem);
+    if(!rem.getClientRects().length){var vid=$("voyage-remise-video");
+      if(vid){var rv=vid.getBoundingClientRect();c2={x:rv.left-base.left+rv.width/2,y:rv.top-base.top+rv.height*0.71};}}
+    pts.push({x:c2.x,y:c2.y,remise:true});}
+  return pts;
+}
+function courbe(pts){ /* Catmull-Rom -> béziers : aucune droite, inflexions alternées (E3.3) */
+  var d="M "+pts[0].x+" "+pts[0].y;
+  for(var i=0;i<pts.length-1;i++){
+    var p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
+    var c1x=p1.x+(p2.x-p0.x)/6, c1y=p1.y+(p2.y-p0.y)/6;
+    var c2x=p2.x-(p3.x-p1.x)/6, c2y=p2.y-(p3.y-p1.y)/6;
+    d+=" C "+c1x+" "+c1y+", "+c2x+" "+c2y+", "+p2.x+" "+p2.y;}
+  return d;
+}
+function construireChaine(){
+  if(!svg)return;
+  points=ptChaine();if(!points||points.length<3)return;
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  segs=[];segsLum=[];anneaux=[];fils=[];medailles=[];traits=[];
+  var d=courbe(points);
+  var mesure=document.createElementNS(NS,"path");
+  mesure.setAttribute("d",d);mesure.setAttribute("fill","none");mesure.setAttribute("stroke","none");
+  svg.appendChild(mesure);
+  var L=mesure.getTotalLength();
+  /* fractions des stations le long du tracé */
+  var cum=[0];
+  for(var i=1;i<points.length;i++){var dx=points[i].x-points[i-1].x,dy=points[i].y-points[i-1].y;cum.push(cum[i-1]+Math.sqrt(dx*dx+dy*dy));}
+  var tot=cum[cum.length-1]||1;
+  points.forEach(function(p,i){if(p.cle)stationFrac[p.cle]=cum[i]/tot;});
+  for(var s=0;s<SEG;s++){
+    var a=mesure.getPointAtLength(L*s/SEG), b=mesure.getPointAtLength(L*(s+1)/SEG);
+    var mid=mesure.getPointAtLength(L*(s+0.5)/SEG);
+    var dd="M "+a.x+" "+a.y+" L "+b.x+" "+b.y;
+    var lum=document.createElementNS(NS,"path");
+    lum.setAttribute("d",dd);lum.setAttribute("class","voyage-seg-lum");
+    lum.setAttribute("transform","translate(-2.2,-2.2)");
+    lum.setAttribute("stroke","#e8c65a");lum.setAttribute("stroke-width","2");lum.setAttribute("fill","none");
+    svg.appendChild(lum);segsLum.push(lum);
+    var seg=document.createElementNS(NS,"path");
+    seg.setAttribute("d",dd);seg.setAttribute("class","voyage-seg");
+    seg.setAttribute("stroke","#a17439");seg.setAttribute("stroke-width","7");seg.setAttribute("fill","none");
+    seg.setAttribute("stroke-linecap","round");
+    svg.appendChild(seg);segs.push(seg);
+    if(s%3===0){var an=document.createElementNS(NS,"ellipse");
+      an.setAttribute("cx",mid.x);an.setAttribute("cy",mid.y);an.setAttribute("rx","13");an.setAttribute("ry","7.5");
+      an.setAttribute("class","voyage-anneau");an.setAttribute("fill","none");
+      an.setAttribute("stroke","#c9a227");an.setAttribute("stroke-width","3");
+      svg.appendChild(an);anneaux.push({el:an,f:s/SEG});}
+  }
+  /* joint : premier maillon de page, couture permanente (M-C5a / M-B2c) */
+  var jg=document.createElementNS(NS,"g");jg.setAttribute("id","voyage-joint-svg");
+  var jc=document.createElementNS(NS,"ellipse");
+  jc.setAttribute("cx",points[0].x);jc.setAttribute("cy",points[0].y);
+  jc.setAttribute("rx","23");jc.setAttribute("ry","14");jc.setAttribute("fill","none");
+  jc.setAttribute("stroke",reduit?"#c9a227":"#0f766e");jc.setAttribute("stroke-width","5");
+  jc.setAttribute("id","voyage-maillon-joint");
+  jg.appendChild(jc);
+  var ec=document.createElementNS(NS,"circle");
+  ec.setAttribute("cx",points[0].x);ec.setAttribute("cy",points[0].y);ec.setAttribute("r","10");
+  ec.setAttribute("fill","#fff7d6");ec.setAttribute("id","voyage-eclat");
+  jg.appendChild(ec);svg.appendChild(jg);
+  /* stations : médaillons SVG + étincelles dédiées (E3.5, E4.3a) */
+  points.forEach(function(p){
+    if(!p.cle)return;
+    var c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",p.x);c.setAttribute("cy",p.y);c.setAttribute("r","27");
+    c.setAttribute("class","voyage-medaille-svg");c.setAttribute("fill","#836443");
+    c.setAttribute("stroke","#e8c65a");c.setAttribute("stroke-width","3");
+    svg.appendChild(c);medailles.push({el:c,f:stationFrac[p.cle]||0});
+    var et=document.createElementNS(NS,"circle");
+    et.setAttribute("cx",p.x);et.setAttribute("cy",p.y);et.setAttribute("r","8");
+    et.setAttribute("fill","#fff7d6");et.setAttribute("class","voyage-etincelle");
+    et.setAttribute("id","voyage-etincelle-"+p.cle);
+    svg.appendChild(et);
+  });
+  /* fils d'interconnexion (E4.4) : un fil par lien déclaré */
+  var parCle={};points.forEach(function(p){if(p.cle)parCle[p.cle]=p;});
+  STATIONS.forEach(function(st){
+    (st.liens||[]).forEach(function(c){
+      var a=parCle[st.cle],b=parCle[c];if(!a||!b)return;
+      var f=document.createElementNS(NS,"path");
+      var mx=(a.x+b.x)/2,my=(a.y+b.y)/2-40;
+      f.setAttribute("d","M "+a.x+" "+a.y+" Q "+mx+" "+my+" "+b.x+" "+b.y);
+      f.setAttribute("class","voyage-fil-lum");f.setAttribute("fill","none");
+      f.setAttribute("stroke","#2ec4b6");f.setAttribute("stroke-width","1.5");
+      svg.appendChild(f);fils.push({el:f,f:Math.min(stationFrac[st.cle]||0,stationFrac[c]||0)});
+      [a,b].forEach(function(p){var n=document.createElementNS(NS,"circle");
+        n.setAttribute("cx",p.x);n.setAttribute("cy",p.y);n.setAttribute("r","3.5");
+        n.setAttribute("fill","#2ec4b6");n.setAttribute("class","voyage-fil-lum");
+        svg.appendChild(n);fils.push({el:n,f:stationFrac[st.cle]||0});});
+    });
+  });
+  /* traits plaque<->maillon (E4.3b) : un trait de lumière par station, révélé à sa fraction */
+  var accT=$("p-accueil");
+  if(accT){var baseT=accT.getBoundingClientRect();
+    points.forEach(function(p){if(!p.cle||!p.el)return;
+      var pl=p.el.querySelector(".voyage-plaque");if(!pl)return;
+      var r=pl.getBoundingClientRect();
+      var tx=r.left-baseT.left+r.width/2, ty=r.top-baseT.top+r.height/2;
+      var tr=document.createElementNS(NS,"path");
+      tr.setAttribute("d","M "+p.x+" "+p.y+" L "+tx+" "+ty);
+      tr.setAttribute("class","voyage-trait-plaque");tr.setAttribute("fill","none");
+      tr.setAttribute("stroke","#2ec4b6");tr.setAttribute("stroke-width","1.5");
+      svg.appendChild(tr);traits.push({el:tr,f:stationFrac[p.cle]||0});});}
+  svg.removeChild(mesure);
+  if(reduit){soude=true;document.body.classList.add("voyage-soude");}
+  majChaine();
+}
+function progression(){
+  if(reduit)return 1;
+  var accueil=$("p-accueil");if(!accueil)return 0;
+  var r=accueil.getBoundingClientRect();
+  var vh=window.innerHeight||800;
+  var total=accueil.scrollHeight-vh*0.6;
+  var p=(-r.top+vh*0.35)/(total>0?total:1);
+  return Math.max(0,Math.min(1,p));
+}
+function majChaine(){
+  if(!segs.length)return;
+  var p=soude?progression():0;
+  var seuil=p*SEG;
+  segs.forEach(function(sg,i){var o=i<seuil?"1":"0";sg.style.opacity=o;segsLum[i].style.opacity=o;});
+  anneaux.forEach(function(a){a.el.style.opacity=a.f<=p?"0.95":"0";});
+  medailles.forEach(function(m){m.el.style.opacity=p>=m.f?"1":"0";});
+  Object.keys(stationFrac).forEach(function(cle){
+    var el=document.querySelector('.voyage-station[data-station="'+cle+'"]');
+    if(el)el.classList.toggle("voyage-visible",p>=stationFrac[cle]);
+    var et=$("voyage-etincelle-"+cle);
+    if(et&&p>=stationFrac[cle]&&!et.getAttribute("data-jouee")){
+      et.setAttribute("data-jouee","1");if(!reduit)et.classList.add("flash");}
+  });
+  fils.forEach(function(f){f.el.style.opacity=p>=f.f?"0.9":"0";});
+  traits.forEach(function(t){t.el.style.opacity=p>=t.f?"0.9":"0";});
+  majSortieViewport();
+  var plein=document.querySelector("#voyage-fil .voyage-fil-plein");
+  if(plein)plein.style.transform="scaleY("+p+")";
+}
+/* ---------- Sortie viewport (E1.2) : segment fixe du haut de l'emblème au bord y=0 du viewport ---------- */
+function majSortieViewport(){
+  var s=$("voyage-sortie-viewport");if(!s)return;
+  var fig=document.querySelector(".voyage-embleme");
+  if(!fig){s.style.opacity="0";return;}
+  var r=fig.getBoundingClientRect();
+  s.style.left=VOYAGE_X_JOINT_PCT+"%";
+  if(r.top>0&&r.bottom>0){s.style.height=r.top+"px";s.style.opacity="1";}
+  else{s.style.height="0px";s.style.opacity="0";}
+}
+/* ---------- Remise (E5) : une seule composition visible — la vidéo remplace l'image fixe au geste ---------- */
+var btnRem=$("voyage-remise-basculer");
+if(btnRem)btnRem.addEventListener("click",function(){
+  var vid=$("voyage-remise-video");
+  var wrap=document.querySelector(".voyage-remise-fixe-wrap");
+  if(!vid||!wrap)return;
+  if(vid.hasAttribute("hidden")){vid.removeAttribute("hidden");wrap.setAttribute("hidden","");
+    btnRem.textContent="Voir l'image fixe";btnRem.setAttribute("data-en","See the still image");btnRem.setAttribute("aria-expanded","true");}
+  else{try{vid.pause();}catch(e){} vid.setAttribute("hidden","");wrap.removeAttribute("hidden");
+    btnRem.textContent="Voir la vidéo";btnRem.setAttribute("data-en","Watch the video");btnRem.setAttribute("aria-expanded","false");}
+});
+/* ---------- Ressoudure (E2, M-C5a) ---------- */
+function ressouder(){
+  if(soude)return;soude=true;document.body.classList.add("voyage-soude");
+  var jm=$("voyage-maillon-joint");if(jm)jm.setAttribute("stroke","#c9a227");
+  var ec=$("voyage-eclat");
+  if(ec&&!reduit&&!eclatJoue){eclatJoue=true;ec.classList.add("flash");
+    setTimeout(function(){ec.classList.remove("flash");ec.style.opacity="0";},1300);}
+  majChaine();
+}
+var departEnHaut=(window.scrollY||0)<=8;
+if(!departEnHaut){soude=true;document.body.classList.add("voyage-soude");}
+if(reduit){soude=true;document.body.classList.add("voyage-soude");}
+var enAttente=false;
+window.addEventListener("scroll",function(){
+  if(!soude&&(window.scrollY||0)>8)ressouder();
+  if(!enAttente){enAttente=true;requestAnimationFrame(function(){enAttente=false;majChaine();});}
+},{passive:true});
+window.addEventListener("resize",function(){construireChaine();});
+/* ---------- Retour station -> Voyage sans perte de position (plan §6.3.4) ---------- */
+document.addEventListener("click",function(e){
+  var b=e.target&&e.target.closest?e.target.closest(".voyage-plaque"):null;
+  if(b){try{sessionStorage.setItem("voyage-position",String(window.scrollY||0));}catch(err){}}
+},true);
+var obs=new MutationObserver(function(){
+  var acc=$("p-accueil");
+  if(acc&&acc.classList.contains("actif")){
+    var pos=null;try{pos=sessionStorage.getItem("voyage-position");}catch(e){}
+    if(pos!==null){try{sessionStorage.removeItem("voyage-position");}catch(e){}
+      var y=parseInt(pos,10);setTimeout(function(){window.scrollTo(0,y);},380);}
+  }
+});
+var mainEl=document.querySelector("main");
+if(mainEl)obs.observe(mainEl,{attributes:true,subtree:true,attributeFilter:["class"]});
+/* ---------- Scellement par geste (M-A3b + M-B2d + correctifs) ---------- */
+function majBoutons(){
+  document.querySelectorAll("[data-sceller]").forEach(function(b){
+    var cle=b.getAttribute("data-sceller");
+    var fait=chaine.some(function(m){return m.cle===cle;});
+    b.disabled=fait||scellementEnCours||recalculEnCours||!cryptoOK;
+  });
+  var rc=$("voyage-btn-recalculer");if(rc)rc.disabled=scellementEnCours||recalculEnCours||!cryptoOK;
+}
+function majEtat(){
+  var n=$("voyage-hud-n");if(n)n.textContent=chaine.length+" / 6";
+  var somme=chaine.length?chaine[chaine.length-1].digest:GENESIS;
+  var hs=$("voyage-hud-somme");if(hs)hs.textContent=somme.slice(0,12);
+  var sm=$("voyage-somme-val");if(sm)sm.textContent=somme;
+  /* N-9 : étiquettes des nœuds du fil — rang + début du sceau réel */
+  var fil=$("voyage-fil");
+  if(fil){fil.querySelectorAll(".voyage-noeud").forEach(function(x){x.remove();});
+    chaine.forEach(function(m,i){
+      var d=document.createElement("span");d.className="voyage-noeud";
+      d.style.top=(i/(Math.max(1,CLES.length-1))*100)+"%";
+      var sm2=document.createElement("small");sm2.textContent=(i+1)+" · "+m.cle+" · "+m.sceau.slice(0,8);
+      d.appendChild(sm2);fil.appendChild(d);});}
+}
+function sceller(cle){
+  if(!cryptoOK)return Promise.resolve(false);
+  if(scellementEnCours||recalculEnCours)return Promise.resolve(false);
+  if(chaine.some(function(m){return m.cle===cle;}))return Promise.resolve(false);
+  scellementEnCours=true;majBoutons();
+  var prevSceau=chaine.length?chaine[chaine.length-1].sceau:GENESIS;
+  var prevDigest=chaine.length?chaine[chaine.length-1].digest:GENESIS;
+  var idx=CLES.indexOf(cle);
+  var contenu="voyage-v50|"+idx+"|"+cle;
+  return sha256Hex(prevSceau+contenu).then(function(sceau){
+    return sha256Hex(prevDigest+sceau).then(function(digest){
+      chaine.push({cle:cle,sceau:sceau,digest:digest,contenu:contenu});
+      var ligne=$("voyage-sceau-"+cle);if(ligne)ligne.textContent=sceau;
+      majEtat();return true;});
+  }).catch(function(){return false;})
+   .finally(function(){scellementEnCours=false;majBoutons();});
+}
+document.querySelectorAll("[data-sceller]").forEach(function(b){
+  b.addEventListener("click",function(){sceller(b.getAttribute("data-sceller"));});
+});
+var btnR=$("voyage-btn-recalculer");
+if(btnR)btnR.addEventListener("click",function(){
+  if(recalculEnCours||scellementEnCours)return;
+  var faire=function(){
+    recalculEnCours=true;majBoutons();
+    var prevSceau=GENESIS,prevDigest=GENESIS,ok=true;
+    var chaineP=Promise.resolve();
+    chaine.forEach(function(m){
+      chaineP=chaineP.then(function(){
+        return sha256Hex(prevSceau+m.contenu).then(function(s){
+          if(s!==m.sceau)ok=false;
+          return sha256Hex(prevDigest+s).then(function(dg){
+            if(dg!==m.digest)ok=false;prevSceau=m.sceau;prevDigest=m.digest;});
+        });});
+    });
+    chaineP.then(function(){
+      var v=$("voyage-verdict");
+      if(v){if(!ok)v.textContent="ÉCART";
+        else if(chaine.length===6)v.textContent="MATCH — 6 / 6 recalculés égaux";
+        else v.textContent="Chaîne partielle ("+chaine.length+" sur 6) — recalculés égaux jusqu'ici";}
+    }).catch(function(){var v=$("voyage-verdict");if(v)v.textContent="ÉCART";})
+     .finally(function(){recalculEnCours=false;majBoutons();});
+  };
+  if(!chaine.some(function(m){return m.cle==="somme";})){
+    sceller("somme").then(function(){faire();});
+  }else faire();
+});
+/* ---------- Vidéos : réduit = pause + contrôles (M-C4) ---------- */
+if(reduit){
+  document.querySelectorAll(".voyage-embleme video,.voyage-remise video").forEach(function(v){
+    v.removeAttribute("autoplay");try{v.pause();}catch(e){}v.setAttribute("controls","");});
+}
+construireChaine();
+majBoutons();majEtat();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){construireChaine();});
+window.addEventListener("load",function(){construireChaine();});
+})();
+
+</script>
 </body>
 </html>
