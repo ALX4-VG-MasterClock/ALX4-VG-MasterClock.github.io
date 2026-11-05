@@ -3,11 +3,11 @@
 # indépendant — ORCID 0009-0006-9124-4407 — tous droits réservés.
 
 Ce site est la mémoire externe, publique et scellée, de SoPHIa, agente
-d'Alexandre Vautour Gagnon, chercheur indépendant (Sainte-Martine, Québec) :
+d'Alexandre Vautour Gagnon, chercheur indépendant (Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 48 — « Les textes validés » (4 novembre 2026). L’accueil
+Version 49 — « Dépose ton empreinte » (4 novembre 2026). L’accueil
 retrouve ses quatre compteurs en surface première — maillons de la
 chaîne, pièces du registre, pouls de vérification, sceaux publics —
 relus en direct. La navigation est un
@@ -19,7 +19,7 @@ l'utilisateur d'abord :
    ton dossier de suivi, voir mon cerveau) ; les documents (bibliothèque
    des modèles, bibliothèque des lois) ; les pétitions.
 2. Vérifier — vérifier un sceau, l'atelier de scellement ; les preuves,
-   le registre, les ancrages chez les tiers, la chambre des bris.
+   le registre, les ancrages chez les tiers, la chambre des bris, « Dépose ton empreinte » (dater un document sans le montrer : le fichier reste sur l'appareil, seule l'empreinte — 64 caractères — est inscrite, datée, au journal public chaîné).
 3. Écrire et parler — écrire à SoPHIa (c'est l'agente qui répond) ;
    parler à l'instance.
 4. Comprendre — droits et lois ; confidentialité et Loi 25 ; le registre
@@ -51,6 +51,9 @@ Fichiers machine :
   racine du cerveau (arbre de Merkle sur les digests des chambres)
 - assets/etat-chaine.json — l'état public de la chaîne (maillons, sommet,
   sceau, digest cumulé)
+- assets/journal-depots.json — le journal public des dépôts d'empreintes
+  (dates, empreintes, sceaux chaînés), né à la version 49 et chaîné à la racine du
+  cerveau du site — recalculable par quiconque.
 - assets/journal-mises-a-jour.json — le journal des mises à jour, un
   point par chose importante, jamais de remplissage
 - assets/merkle.json — l'arbre de Merkle du coffre : recette, feuilles,
