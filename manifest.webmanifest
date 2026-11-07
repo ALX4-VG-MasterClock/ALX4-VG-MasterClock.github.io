@@ -1,7 +1,7 @@
 {
   "name": "SoPHIa — Audit Unisson",
   "short_name": "SoPHIa",
-  "description": "Le dossier public d'Alexandre Vautour Gagnon, chercheur indépendant : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.",
+  "description": "Le dossier public d'Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
