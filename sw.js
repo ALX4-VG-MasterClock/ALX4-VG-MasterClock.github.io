@@ -21,11 +21,14 @@
    (mécanisme MECANISME-RAFRAICHISSEMENT-SOMMES dans index.html). Le
    travailleur de service garde les stratégies de la v28 ; seul le nom de
    cache change, pour purger l'ancien à l'activation.
-   Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes (ORCID 0009-0006-9124-4407) — tous droits réservés. */
-var CACHE = 'sophia-site-v37';
+   Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes et développeur (ORCID 0009-0006-9124-4407) — tous droits réservés. */
+var CACHE = 'sophia-site-v38';
 /* v50 : cache renommé pour purger l'ancien à l'activation. Les actifs du Voyage
    (assets/voyage-*.mp4/webp/jpg) ne sont PAS ajoutés au COEUR : stratégie
-   « cache d'abord » au premier service, comme les autres actifs statiques. */
+   « cache d'abord » au premier service, comme les autres actifs statiques.
+   v52 : les actifs de l'ancien Voyage sont retirés du paquet ; les actifs du
+   Voyage animé B5 (assets/b5-*.webp/webm/mp4) suivent la même politique —
+   jamais au COEUR, « cache d'abord » au premier service. */
 var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png'];

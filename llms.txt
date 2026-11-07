@@ -1,13 +1,13 @@
 # AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa
 # Propriété intellectuelle : © 2026 Alexandre Vautour Gagnon, ingénieur
-# indépendant, concepteur de systèmes — ORCID 0009-0006-9124-4407 — tous droits réservés.
+# indépendant, concepteur de systèmes et développeur — ORCID 0009-0006-9124-4407 — tous droits réservés.
 
 Ce site est la mémoire externe, publique et scellée, de SoPHIa, agente
-d'Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes (Québec) :
+d'Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes et développeur (Québec) :
 une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256
 chaînés, chaque état étant la somme des précédents.
 
-Version 51 — « Le nom » (6 novembre 2026) : le titre arrêté de l'auteur — ingénieur indépendant, concepteur de systèmes — entre dans la prose d'identité du site, formulé et expliqué ; la carte ORCID reste le miroir fidèle du profil. Version 50 — « Le Voyage » (5 novembre 2026) : l’accueil devient le Voyage — la chaîne de la vidéo d’accueil se ressoude au premier défilement, descend en spirale φ par 22 maillons-stations et finit à la remise du produit en main. Version 49 — « Dépose ton empreinte » (4 novembre 2026). L’accueil
+Version 52 — « La base B5 » (7 novembre 2026) : l’accueil devient le Voyage animé (modèle B5) — l’ancienne couche Voyage, qui figeait une ligne bronze au centre de l’écran, est retirée ; l’identité gagne « et développeur » ; la page du calendrier 13 × 28 sidéral entre au site, module donné ; l’accueil se termine par le reçu de visite. Version 51 — « Le nom » (6 novembre 2026) : le titre arrêté de l'auteur — ingénieur indépendant, concepteur de systèmes et développeur — entre dans la prose d'identité du site, formulé et expliqué ; la carte ORCID reste le miroir fidèle du profil. Version 50 — « Le Voyage » (5 novembre 2026) : l’accueil devient le Voyage — la chaîne de la vidéo d’accueil se ressoude au premier défilement, descend en spirale φ par 22 maillons-stations et finit à la remise du produit en main. Version 49 — « Dépose ton empreinte » (4 novembre 2026). L’accueil
 retrouve ses quatre compteurs en surface première — maillons de la
 chaîne, pièces du registre, pouls de vérification, sceaux publics —
 relus en direct. La navigation est un
