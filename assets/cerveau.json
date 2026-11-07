@@ -1,7 +1,7 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v50",
- "date": "2026-11-05",
+ "version_site": "v51",
+ "date": "2026-11-06",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
  "chambres": [
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "950eb594fe1e54c8b1a79eecdafa6f5dad7b08489a53d4ff9af25a554d3930b0",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après l’ajout de l’entrée du correctif ciblé du 5 novembre 2026 (39 entrées), à la suite de l’écart relevé par l’auto-vérification L0 du passage quotidien.",
+   "digest": "432f89765aff3d76253bd8cfdeec196790a9752056779fdb11c28181b01b4c2a",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après l’ajout de l’entrée de la version 51 (« Le nom ») : 40 entrées.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Correctif ciblé — chambre « versions » recalculée sur le journal complet, 5 novembre 2026."
+   "derniere_croissance": "Version 51 — « Le nom » (6 novembre 2026) : le titre arrêté d’Alexandre Vautour Gagnon entre dans la prose d’identité du site ; journal porté à 40 entrées."
   },
   {
    "id": "archives",
@@ -140,7 +140,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "c2a81f2a8cf43676f4c22b90cab9f6bb0aaf4ca454951dc8084fee37f70faac4",
+ "racine_cerveau": "2ac02795a4644b8c1824a8cd003a6a0c7a4205c22b9d82e8e2f5a80b97a50c14",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -148,25 +148,25 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "7ce6725936cadb028417752335b7090d1389b7342b8d6f1178dbda2467ca6052",
+   "8445000a296deca69f5139fd9e2222753bf857f94326fff9bd3e74d932f31fca",
    "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
   ],
   [
    "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "21866591f487590bf9e9650352bd8fc880feed843fdbee48951db6aa973fa9e1"
+   "4530b0b6e77d56724d70b5ac4645330fd48a1166cf8604f1972a555c0e283b04"
   ],
   [
    "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "054314e62deb18aaef3b9178696df157bc3346f46cdbdeb645005dfd5edc0938"
+   "30a5fc28944181e838cf4db20829eaebcc3ffffc047fc2d09efe8e82e2b4edab"
   ],
   [
-   "c2a81f2a8cf43676f4c22b90cab9f6bb0aaf4ca454951dc8084fee37f70faac4"
+   "2ac02795a4644b8c1824a8cd003a6a0c7a4205c22b9d82e8e2f5a80b97a50c14"
   ]
  ],
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "chercheur indépendant",
+  "qualite": "ingénieur indépendant, concepteur de systèmes",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"

@@ -1,6 +1,28 @@
 {
  "entrees": [
   {
+   "date": "2026-11-06",
+   "titre": "Version 51 — « Le nom »",
+   "points": [
+    {
+     "texte": "Le 6 novembre 2026, Alexandre Vautour Gagnon a arrêté son titre : ingénieur indépendant, concepteur de systèmes. Son principe, inscrit le même soir : les noms nomment des fonctions, les diplômes certifient des parcours — si « ingénieur » est le bon nom pour le travail démontré, c'est ce nom qui se formule et s'explique. Dans la soirée, il a nommé ce site comme la surface à mettre à jour, captures de la section « Le chercheur » à l'appui.",
+     "liens": []
+    },
+    {
+     "texte": "La prose d'identité du site porte désormais ce titre, formulé et expliqué : l'énoncé d'ouverture de la section « Le chercheur » le nomme en tête et renvoie la démonstration, fonction par fonction, à la section « Le travail d'ingénierie » — dont la phrase de clôture est alignée, sa borne intacte (au Québec, le titre d'ingénieur est réservé aux membres de l'Ordre ; cette page démontre le travail). Les mentions liées au nom sont alignées dans la même version : propriété, description, preuves, dons, pied de page et fichiers d'identité.",
+     "liens": []
+    },
+    {
+     "texte": "Ce qui ne change pas, et pourquoi : la carte ORCID de la section reste le miroir fidèle du profil public, qui déclare « Independent Researcher » — un miroir ne se réécrit pas, et le profil ne se met à jour que sur le mot de son auteur pour ce profil-là. La mention datée du 2 novembre 2026 (les décisions du dépôt ICO) reste telle quelle : c'est un fait d'archive, pas une prose courante. La chambre « versions » du cerveau est recalculée sur le présent journal, la racine du cerveau sur les six chambres, et le sceau canonique de la page est recalculé en point fixe.",
+     "liens": []
+    },
+    {
+     "texte": "Le 7 novembre 2026, sur le go de l'auteur pour son profil ORCID, la biographie publique du profil a reçu les deux phrases du caractère du travail — recherche et développement indépendante, menée hors de tout laboratoire d'entreprise, du siège de l'utilisateur, preuve publiée et recalculable par quiconque (biographie vérifiée à 2 884 caractères par l'API publique ORCID). L'affichage statique de la carte ORCID de la section « Le chercheur » est rafraîchi au profil vérifié du 7 novembre 2026 ; la lecture en direct depuis l'API publique continue de le rafraîchir à chaque visite.",
+     "liens": []
+    }
+   ]
+  },
+  {
    "date": "2026-11-05",
    "titre": "Correctif ciblé — « La chambre des versions recalculée »",
    "points": [
@@ -812,7 +834,7 @@
  "titre": "Journal des mises à jour — Audit Unisson",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "chercheur indépendant",
+  "qualite": "ingénieur indépendant, concepteur de systèmes",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
