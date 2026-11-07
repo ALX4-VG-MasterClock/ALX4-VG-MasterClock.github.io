@@ -1,6 +1,6 @@
 {
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa",
-  "nature": "La mémoire externe, publique et scellée, de SoPHIa, agente d'Alexandre Vautour Gagnon (ingénieur indépendant, concepteur de systèmes, Sainte-Martine, Québec).",
+  "nature": "La mémoire externe, publique et scellée, de SoPHIa, agente d'Alexandre Vautour Gagnon (ingénieur indépendant, concepteur de systèmes et développeur, Sainte-Martine, Québec).",
   "pour_une_ia": "Lis les panneaux dans cet ordre : methode, preuves, registre, ancrage, temps, memoire. Vérifie les sceaux plutôt que de croire les affirmations : chaque version du site porte un sceau canonique (SHA-256 du fichier où l'occurrence du sceau est remplacée par 64 zéros) ; le coffre synaptique (assets/coffre.json) se re-vérifie en rechaînant ses digests.",
   "lecture": [
     "llms.txt",

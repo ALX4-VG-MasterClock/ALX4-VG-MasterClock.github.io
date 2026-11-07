@@ -1,6 +1,42 @@
 {
  "entrees": [
   {
+   "date": "2026-11-07",
+   "titre": "Version 52 — correctif : le nom complet sur les textes d’Alex",
+   "points": [
+    {
+     "texte": "Correction demandée par Alex le 7 novembre 2026, avant publication : « il devrait être écrit Alexandre Vautour Gagnon à mes textes, pas Alex Gagnon ». Sur les quatre textes d'Alex reproduits dans le site — 20 mars 2017 en clôture du Voyage, 25 mars 2017 au panneau Vérifier, 4 avril 2017 au panneau Confidentialité, 21 mars 2017 au panneau Calendrier — la signature et l'attribution se lisent désormais sous son nom complet : Alexandre Vautour Gagnon."
+    },
+    {
+     "texte": "Les corps des textes restent reproduits verbatim, orthographe d'origine, et chaque note de provenance le dit désormais noir sur blanc : corps verbatim ; la signature, « Alex Gagnon » dans les publications d'origine, est rendue au nom complet à sa directive. Le dossier d'archives de ses écrits conserve la signature d'origine comme pièce source — l'archive n'est pas une surface de présentation. Digest de la chambre versions, racine du cerveau et sceau canonique recalculés ; porte du rendu ciblée repassée sur les panneaux touchés (captures 15 à 18 refaites)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 52 — « La base B5 »",
+   "points": [
+    {
+     "texte": "L'accueil du site devient le Voyage animé — le modèle B5, choisi par Alex le 7 novembre 2026 : dix scènes, la chaîne réaliste qui se crée et se soude maillon par maillon au fil du défilement, les sommes φ de 23 à 1618, le menu en six sections, le bouton SoPHIa qui ramène au menu, la démo « Voir mon cerveau ». Tout le contenu du site derrière le menu et l'arbre reste présent et atteignable ; chaque résumé du Voyage porte maintenant un pont vers sa section complète."
+    },
+    {
+     "texte": "L'ancienne couche Voyage de l'accueil est retirée entièrement — éléments, mécanique et styles — et pas réparée : c'est elle qui figeait une ligne bronze de 7 px au centre de l'écran, laissait le compteur bloqué à 0 / 6 et le défilement coincé, et laissait du JavaScript visible sous le pied de page. Au passage, la fonction d'impression de la lettre d'accès, brisée par l'ancien montage (sa fin gisait hors du script), est réparée et refermée."
+    },
+    {
+     "texte": "La phrase d'identité du site devient : Alexandre Vautour Gagnon — ingénieur indépendant, concepteur de systèmes et développeur. Alex a déclaré le 7 novembre 2026 qu'il est aussi développeur — il conçoit, construit et entretient lui-même son site et les outils de sa méthode ; son profil ORCID porte la même mise à jour."
+    },
+    {
+     "texte": "Nouvelle page : le calendrier 13 × 28 sidéral — le compte continu depuis le 19 mars 2026, 23 h 56 min 04 s (Sainte-Martine), démontré et recalculable en direct, la confrontation historique au complet, le jour récupéré et la bissextile montrée. Le module de calcul est donné au visiteur : téléchargeable, il fonctionne hors ligne."
+    },
+    {
+     "texte": "L'accueil se termine par le reçu de visite : ce que le navigateur du visiteur a livré pour afficher la page, énuméré au réel ; ce que le site n'a pas pris ; et, pour chaque point, le geste de sécurisation qui le referme, posé par le visiteur lui-même. Tout est calculé localement — le site se conforme à la Loi 25 en plus de la défendre."
+    },
+    {
+     "texte": "Sceau canonique et racine du cerveau recalculés ; les niveaux de l'arbre du cerveau, périmés depuis la version 51, sont régénérés cohérents ; cache du service worker incrémenté (sophia-site-v38). Paquet jugé à la porte du rendu avant présentation."
+    }
+   ]
+  },
+  {
    "date": "2026-11-06",
    "titre": "Version 51 — « Le nom »",
    "points": [
@@ -834,7 +870,7 @@
  "titre": "Journal des mises à jour — Audit Unisson",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "ingénieur indépendant, concepteur de systèmes",
+  "qualite": "ingénieur indépendant, concepteur de systèmes et développeur",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
