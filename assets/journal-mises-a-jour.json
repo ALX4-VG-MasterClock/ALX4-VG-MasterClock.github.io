@@ -2,6 +2,108 @@
  "entrees": [
   {
    "date": "2026-11-07",
+   "titre": "Version 53 — réparation du même jour : le point météo aligné sur l’ancrage canonique",
+   "points": [
+    {
+     "texte": "À la demande d’Alex (7 novembre 2026 : « tu laisses pas une dérive, répare ça tout de suite ») : le panneau Météo interrogeait Open-Meteo au point 45,25 / −73,8024, à environ 300 mètres de l’ancrage canonique du site (45,24915, −73,7989 — Master Clock, relevé embarqué, Porte nº 2). La réparation aligne le point météo sur le canonique, partout où la météo de l’ancre est lue."
+    },
+    {
+     "texte": "Concrètement : constantes météo dédiées au point canonique pour l’onglet Météo et la température triangulée des sens ; requêtes des nuages du soir et de l’appel du reçu de visite au point canonique ; affichages du point et bloc « Comment cette météo a été obtenue » alignés. Les constantes des calculs sidéraux et des sens sont inchangées — lectures sidérales, du calendrier et des panneaux Temps et Ancrage revérifiées identiques, en exécution réelle, avant et après la réparation (57 lectures comparées, aucune différence ; zéro erreur de console)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 53 — ajout du même jour : la météo triangulée",
+   "points": [
+    {
+     "texte": "À la demande d’Alex (7 novembre 2026) : l’onglet Météo gagne le bouton « Météo près de moi ». Au seul geste du visiteur — rien ne part avant le clic — la triangulation pose le point le plus proche, dans cet ordre : la position que l’appareil partage (géolocalisation du navigateur, avec sa permission) ; si elle est refusée ou indisponible, l’estimation par adresse IP (Porte nº 5) ; si les deux échouent, le relevé reste à l’ancre du site, Sainte-Martine — et chaque cas est dit au visiteur."
+    },
+    {
+     "texte": "Le bloc « Comment cette météo a été obtenue » montre, pour le relevé affiché : le signal utilisé (« position partagée par ton appareil » / « approximation par ton adresse IP » / « ancre du site »), le lieu nommé (pour la position de l’appareil : le lieu connu du site le plus proche, calculé ici — aucun géocodage inverse), les coordonnées utilisées (arrondies à deux décimales et dites approximatives pour les signaux visiteur), le point de grille Open-Meteo réellement interrogé (latitude, longitude, élévation de la réponse du service), l’heure du relevé et les sources, avec le verdict d’écart existant (CONCORDENT si l’écart ne dépasse pas 2 °C). La bannière de l’accueil reflète le point retenu quand la triangulation a eu lieu."
+    },
+    {
+     "texte": "Aucune conservation : ni les coordonnées ni l’adresse IP ne sont stockées — aucun stockage local pour la position ; le point vit en mémoire de page et s’efface au rechargement. La Porte nº 5 (estimation par adresse IP — ipwho.is, repli ipapi.co) est documentée à la carte des transits (section 44) : destination, ce qui transite (l’adresse IP, par la requête elle-même, et c’est tout), ce qui n’est pas conservé, pourquoi — les conditions des deux services ont été lues au dossier le 7 novembre 2026."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 53 — ajout du même jour : les soudures de couture du Voyage",
+   "points": [
+    {
+     "texte": "À la demande d’Alex (7 novembre 2026) : sur la page du Voyage, à chaque couture entre deux stations, un maillon dessiné à cheval sur la couture — aligné sur la chaîne latérale qui descend, au niveau du repère « Jonction · soudure » de la station — soude visiblement la chaîne de la station qui finit à celle de la station qui commence : le défilement entier lit comme une seule chaîne cumulée (neuf coutures soudées, entre les dix stations)."
+    },
+    {
+     "texte": "Élément fonctionnel, pas une décoration : la soudure marque la jonction entre deux stations, comme le repère qu’elle prolonge. Aucune image régénérée, aucune animation ajoutée ; la position de chaque soudure est mesurée au DOM (bas de chaque scène, centre de son dernier maillon) et recalculée au redimensionnement — vérifiée au rendu, bureau et 375 px, sur les coutures 1, 4 et 9."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 53 — ajout du même jour : la suppression symétrique, et sa conséquence",
+   "points": [
+    {
+     "texte": "Le principe d’Alex entre à l’onglet des deux modes, dans le mouvement du retour : « si c’est supprimé pour moi, c’est supprimé pour eux » — Alexandre Vautour Gagnon. Une suppression qui ne retire que l’accès de l’utilisateur pendant que la plateforme conserve ses données est une suppression de façade (son exemple : son historique Gemini, supprimé de son bord). L’écart honnête est écrit au même endroit : les politiques actuelles des plateformes se réservent en général des rétentions après une suppression — les formulations exactes relèvent du Registre des conditions, aucune n’est citée ici. Renvoi à l’onglet Droits, dans une carte dédiée."
+    },
+    {
+     "texte": "Sa conséquence suit immédiatement, dans ses mots : « Ça commence par resserrer les lois et redonner aux citoyens le droit sur leurs données et leurs ADN numériques. » Le principe ne tient à grande échelle que s’il devient un droit écrit, pas seulement une pratique de ce site ; renvoi au panneau Confidentialité et Loi 25 et au Registre des conditions pour ce que les lois actuelles prévoient déjà — aucun nouvel exposé juridique."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 53 — « La bannière, le miroir, les portes ouvertes »",
+   "points": [
+    {
+     "texte": "Une bannière cliquable ouvre l'accueil : la date (civile et calendrier 13 × 28 — le segment ouvre le panneau Calendrier), l'heure (civile vivante et sidérale de Sainte-Martine — le segment ouvre le panneau Temps), la météo de l'ancre (le segment ouvre le panneau Ancrage). Le temps se lit chez le visiteur ; aucun serveur n'est appelé pour l'afficher."
+    },
+    {
+     "texte": "Nouveau panneau « Le miroir » (52e panneau, section Savoir) : le relevé maximal de ce qu'une simple visite révèle — appareil et système, affichage, langue et temps, réseau lisible, navigateur, capacités et empreinte, états d'autorisations (états seulement, jamais demandés), et ce que ce site garde de toi chez toi — chaque signal expliqué et classé LOCAL ou TRANSIT, calculé entièrement dans le navigateur, et scellable dans le cerveau du visiteur."
+    },
+    {
+     "texte": "Le miroir donne le choix, dès l'arrivée : mode local (défaut — aucune porte ouverte, tout fonctionne sans connexion) ou mode démonstration avec serveurs (choisi, révocable, gardé dans le navigateur du visiteur) — qui n'ouvre que des portes documentées, listées avant l'activation, au consentement éclairé. Les deux modes sécurisent pareil : le cerveau, les sceaux et le calendrier fonctionnent à l'identique ; le mode serveur n'ajoute que de la démonstration."
+    },
+    {
+     "texte": "La doctrine des portes devient : aucune porte silencieuse — une porte pertinente et documentée est permise. La carte des transits (section 44) gagne la Porte nº 2 — Open-Meteo, la météo en direct de la bannière en mode serveur (en mode local, la bannière affiche le relevé daté embarqué) — et la Porte nº 3 — l'écho du miroir, le Worker du site qui renvoie au visiteur ce qu'un serveur reçoit de lui, sans rien journaliser ni conserver (règle de l'opérateur sans accès) ; le code du Worker est publié avec le paquet, son déploiement attend la publication. Le reçu de visite compte désormais les requêtes par destination et nomme les portes documentées, au lieu d'affirmer zéro requête externe."
+    },
+    {
+     "texte": "Le cerveau du visiteur répare ses doublons exacts : à l'ouverture et à la reprise d'un export, les copies identiques et consécutives d'un maillon sont retirées si — et seulement si — la chaîne réparée, recalculée, est intègre et sa somme identique ; la réparation est consignée et affichée (« ta somme n'a pas bougé »), une garde empêche le double déclenchement à l'écriture, et le verdict distingue désormais un doublon d'une rupture. Cas réel traité : la chaîne d'Alex, dont un maillon « monde clair » du 6 novembre 2026 avait été inscrit trois fois par l'ancien code du Voyage."
+    },
+    {
+     "texte": "Le seul besoin d'internet, c'est une mise à jour : le relevé météo embarqué et le module du calendrier entrent au cœur du travailleur de service — bannière, miroir et cerveau fonctionnent sans connexion dès la première visite complétée, ce qui est éprouvé à la porte du rendu de cette version."
+    },
+    {
+     "texte": "Un panneau dédié « Les deux modes » (53e panneau), joignable dès l'accueil — un indicateur dans la bannière dit le mode courant et l'ouvre au toucher — explique le choix en langage clair : ce que chaque mode fait concrètement, un exemple par mode, les portes du mode serveurs écrites avant l'activation, et ce qui ne change jamais (la sécurité — cerveau, sceaux, calculs — identique dans les deux modes). Un bloc « pourquoi », placé avant le sélecteur, y explique le sens unique de la récolte des plateformes — elle part sans retour, sans contrepartie, sans la part qui revient à l'utilisateur — et l'asymétrie fondatrice dont l'idée est née — la citation courte du dossier, « Google détient tout ce que je dis, mais moi je détiens rien », y est portée en forme complète : tout ce que je dis, tout ce que je fais, où je m'en vais, ce que j'écoute, la récolte étant celle des plateformes en général et Google nommé comme, selon l'auteur, le plus grand exemple ; les quatre verbes deviennent le fil conducteur des signaux du Miroir ; le bloc porte le cadre complet, dans l'ordre : le GAFAM nommé au complet (Google, Apple, Facebook/Meta, Amazon, Microsoft), les compagnies d'intelligence artificielle de 2026 (OpenAI, Anthropic) présentées, selon l'auteur, comme commençant à détenir un pouvoir comparable, et l'explication du « 51e État numérique » — appartenance de fait par les données et l'infrastructure, jamais annexion politique, avec sa borne permanente : pourvu que le Canada garde ses propres lois ; la réponse du site y est nommée : le retour — son cerveau chez l'utilisateur, ses reçus, ses sommes recalculables, la compréhension. C'est là que vit le choix, gardé dans le navigateur du visiteur ; le panneau Miroir et la météo de la bannière le lisent. Le point culminant du bloc nomme, dans les formulations de l'auteur, le duopole des systèmes (Google et Apple, Android et iOS — la récolte commence sous les applications, au niveau du système), le « jumeau numérique » que la récolte permet de recréer (lieux, pensées, chansons, entourage, gestes), et « notre ADN numérique » — le code complet et unique de la personne, à partir duquel le jumeau se reconstruit ; le retour y est conclu comme la reprise chez soi de la copie de son propre ADN numérique. Le bloc va jusqu'au plus profond de la récolte : les données biométriques (le visage, l'empreinte, la voix — la couche la plus intime de l'ADN numérique), les suites maison au complet (Santé, Plans/Maps et le reste des applications de Google et d'Apple), et les applications dérivées qui font, dans la formulation de l'auteur, « pareil, ou mieux », en nourrissant les mêmes traqueurs — les trousses de développement de Google et de Meta à l'intérieur des applications des autres, mécanisme repris à la section TRANSIT du Miroir."
+    },
+    {
+     "texte": "L'onglet des deux modes porte l'arc complet des explications (directive du 7 novembre, 13 h 03) : le sens unique et l'asymétrie fondatrice, le GAFAM et les compagnies d'IA de 2026, le « 51e État numérique » borné, le duopole des systèmes, l'ADN et le jumeau numériques, les couches de profondeur (biométrie bornée aux gabarits déclarés dans l'appareil, suites maison au complet, dérivés « pareil, ou mieux » et traqueurs hébergés dans les applications des autres), la corroboration et les profils publicitaires (borne : pas de pot commun unique — chacun corrobore chez lui, la couche publicitaire recolle), la publicité nommée excuse par l'auteur, sa question (« Pourquoi vous faites de l'argent sur nos données ? ») et son point humain (se sentir bien, pas surveillé comme un suspect) — puis le tableau de la récolte passé au calcul, résumé fidèlement dans l'onglet : trois critères sourcés et datés (largeur déclarée, Surfshark 22 sept. 2026 : Meta devant ; portée de traçage, DuckDuckGo 2020 et WhoTracksMe : Google de très loin ; surface : match nul au sommet), la dimension système (Android ≈ 72,7 %, iOS ≈ 26,9 %, StatCounter mai 2025), les inclassables (OpenAI, Anthropic ; FTC, 19 sept. 2024) et la formulation-verdict — l'étendue : Google ; la profondeur par personne : Meta ; aucune mesure unique n'existe. La conclusion de l'onglet reste la réponse du site : le retour."
+    },
+    {
+     "texte": "Une page dédiée, « Le 51e État numérique » (54e panneau, famille Savoir), reliée depuis l'onglet des deux modes et depuis le Miroir, développe la thèse dans les formes de son auteur (« 51e état », « on est déjà numériquement américain » — réponse à Trump : politiquement non, numériquement de fait, par les données et l'infrastructure ; borne permanente : pourvu que le Canada garde ses propres lois ; le composé du titre n'est jamais mis dans sa bouche comme un slogan) : l'assemblage (ADN numérique, jumeau numérique, corroboration et profils publicitaires), qui tient les portes (GAFAM, duopole des systèmes, compagnies d'IA de 2026), et le tableau de la récolte en place complète. Un étage État y est annoncé au-dessus des entreprises, sa structure réservée : ses pièces sourcées sont en recherche primaire et seront versées quand elles seront tenues — en attendant, la page le marque « en attente de ses pièces » et n'y écrit aucun fait non sourcé."
+    },
+    {
+     "texte": "Décision du 7 novembre 2026 : ce site ne reprend aucune donnée de DuckDuckGo, de Ghostery ou de WhoTracks.Me — aucun jeu de données embarqué, aucune de leurs bases ; nos relevés sont les nôtres. En contrepartie, le site pointe vers eux : un bloc « Pour aller plus loin », dans l'onglet des deux modes et sur la page du 51e État numérique, donne leurs adresses en liens ordinaires — un lien ne s'ouvre que si le visiteur clique. Le même bloc dit pourquoi nos relevés resteront plus petits que les leurs : mesurer à leur échelle demanderait de récolter des données sur nos visiteurs et de brancher des services qui récoltent aussi. On refuse — nos relevés sont plus petits parce qu'ils sont propres, et cette règle se voit."
+    },
+    {
+     "texte": "Une porte de plus, ouverte par le seul geste du visiteur (Porte nº 4 à la carte des transits) : une boîte de recherche DuckDuckGo dans l'onglet des deux modes, reliée depuis la page du 51e État numérique. Aucun cadre préchargé, aucun appel tant que le visiteur n'a pas soumis sa recherche ; elle part alors vers DuckDuckGo, dans un nouvel onglet, sans rien transiter par ce site."
+    },
+    {
+     "texte": "L'étage État de la page du 51e État numérique est bâti : ses pièces sont arrivées (recherche primaire aux sources officielles, rapport versé au dossier le 7 novembre 2026) — PRISM et sa borne (directives secrètes et remise par l'entreprise, pas « d'accès direct »), l'avis du juge Bates (250 millions de communications par année, une partie jugée inconstitutionnelle), les 89 138 cibles de 2013 sous une seule certification, le CLOUD Act cité au texte (« possession, garde ou contrôle », où que se trouvent les données), l'aveu du Livre blanc d'Ottawa (pas de pleine souveraineté, la FISA nommée, « sans en aviser le Canada »), le « Non, je ne peux pas le garantir » de Microsoft France sous serment (Sénat, 10 juin 2025), la réponse canadienne (nuage souverain annoncé le 11 septembre 2025 ; politique du Québec, février 2026), et le fait de 2026 : l'article 702 expiré le 12 juin, la collecte qui continue jusqu'au 17 mars 2027. Chaque fait porte sa source et sa date sur la page."
+    },
+    {
+     "texte": "Le principe du mode démonstration est écrit dans l'onglet des deux modes, près du sélecteur et près de la recherche DuckDuckGo : chaque fonctionnalité connectée est un transit de plus qu'on expose — plus le site connecte de fonctions, plus il peut montrer, portes nommées à l'appui, les serveurs par où les données passent. Et le bloc d'explication de l'onglet se ferme sur la phrase-doctrine du site, signée comme sa position : « Même un site web offensif comme le mien récolte autant de données. La différence avec tous les autres : nous, on vous les redonne — et on vous apprend comment les récupérer. »"
+    },
+    {
+     "texte": "Un panneau dédié parle aux partenaires (55e panneau, « Partenaires et soutien », groupe Soutenir du menu, relié depuis la page du 51e État numérique) : ce que ce site est, ce qu'il construit (la méthode, le cerveau coquillage côté personne, la couche proposée sous licence côté industrie), ce qu'il cherche (du soutien pour exister, durer et grandir — les usages déjà publics : brevet, avocats, domaine, site, recherche, conformité, besoin), et ce qu'il refuse, écrit comme une garantie et non comme une contrainte : jamais les données des gens — aucune donnée d'utilisateur n'est un actif. Aucune promesse, aucun appel public à l'épargne, aucune offre de valeurs : une présentation et une invitation à discuter, par les canaux existants du site ; le circuit de dons y est rappelé tel quel. TEXTE À APPROUVER PAR ALEX AVANT PUBLICATION. Précision de l'auteur (7 novembre 2026, 14 h 24), intégrée au texte : les trois gestes y sont distingués — vendre (le produit, qui se finance par ses ventes), investir et donner (le reste : le brevet, la vie du site, le retour aux utilisateurs) ; un investissement n'achète ni le produit ni une part du produit. Et la première forme du retour y est écrite : redonner aux gens les chemins de leurs données et la capacité de les récolter eux-mêmes, c'est leur redonner une part de leur richesse — même sans rien leur donner monétairement. La raison fondatrice du retour y est portée dans les mots de l'auteur : « Je bâtis pour les autres ce que j'aurais eu besoin pour moi. »"
+    },
+    {
+     "texte": "La couche intelligence artificielle est nommée au complet, dans l'onglet des deux modes et sur la page du 51e État numérique : ce ne sont pas seulement OpenAI et Anthropic — ce sont les assistants, chacun rattaché à sa maison : Gemini (Google), ChatGPT (OpenAI), Claude (Anthropic), Grok (xAI), Meta AI (Meta), Copilot (Microsoft). Des récolteurs de premier rang, pas une note de bas de page des entreprises : c'est là que le « dire » est le plus intime. Le tableau calculé, lui, reste la pièce sourcée inchangée."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "titre": "Version 52 — correctif : le nom complet sur les textes d’Alex",
    "points": [
     {
@@ -874,5 +976,7 @@
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
- }
+ },
+ "version": "v53",
+ "date": "2026-11-07"
 }
