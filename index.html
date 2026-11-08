@@ -345,6 +345,27 @@ nav.onglets button.menu-principal{font-weight:700}.rail-arbre{display:none}
    juste sous elle (72 px) au lieu de flotter à 150 px. */
 @media (min-width:1501px){.b5w{--b5-hud-top:72px}}
 </style>
+<style id="style-v57">
+/* ===== v57 — les finitions de l'audit tour 4 du servi v56 =====
+   Chantier 3 : les ancres des pages de hub ne se coupent plus en milieu de
+   mot (le .mono de base casse partout ; ici, retour à la ligne entre ancres).
+   Chantier 9 : la barre de navigation tient sur une ligne aux grandes
+   largeurs, « Partenaires » compris — les règles de la v56 visaient
+   .onglets (spécificité 0,1,0/0,1,1), battues par les règles de base
+   nav.onglets (0,1,1/0,1,2) : elles ne s'appliquaient pas. Celles-ci portent
+   la spécificité qu'il faut. L'en-tête fixe s'en trouve réduit d'une rangée.
+   Tentative prudente, CSS seulement — la confirmation se fait au rendu. */
+.hub-ancres .mono{white-space:nowrap;word-break:normal}
+@media (min-width:1501px){.barre-in{max-width:1680px}}
+nav.onglets{gap:.2rem}
+nav.onglets button{padding:.42rem .6rem;font-size:.86rem}
+.barre-actions{gap:.3rem}
+.barre-actions button{padding:.42rem .66rem;font-size:.86rem}
+.marque{font-size:.92rem}
+/* Chantier 6 : les trois champs de date convertis en texte gardé gardent le
+   traitement visuel des champs de date du site. */
+#donnees-delai-date,#su-date,#dec-echeance{background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:10px;padding:.45rem .6rem;font:inherit;max-width:100%}
+</style>
 <style id="style-v54">
 /* ===== v54 — « La boucle d'amélioration » (7 novembre 2026) =====
    Réparations P0 : révélation plafonnée à 300 ms ; bord gauche dégagé sous la barre latérale.
@@ -1273,7 +1294,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <button type="button" class="btn2" id="demo10-recalcul">Recalculer la chaîne</button>
       <p id="demo10-verdict" role="status"></p>
     </div>
-      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
+      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
     </div>
     <button class="cta" type="button" data-ouvre-cerveau>Ouvre « Voir mon cerveau »</button>
     <div class="inter">
@@ -2000,7 +2021,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="carte-compteur"><span class="cc-nombre">5</span><span class="cc-quoi" data-en="Seconds — the verification pulse">Secondes — le pouls de vérification</span><p class="cc-battement"><span class="cc-point" aria-hidden="true"></span><span data-en="Last beat:">Dernier battement :</span> <span class="mono" id="compteurs-battement" data-en="waiting">en attente</span></p></div>
     <div class="carte-compteur"><span class="cc-nombre">11</span><span class="cc-quoi" data-en="Public seals of the registry — all recalculated MATCH">Sceaux publics du registre — tous recalculés MATCH</span></div>
   </div>
-  <p class="petite cc-note" data-en="Site at version 56, on November 7, 2026; the chain state shown here is the one from the public freeze of November 4, 2026 (version 48) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 56, le 7 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 4 novembre 2026 (version 48) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
+  <p class="petite cc-note" data-en="Site at version 57, on November 7, 2026; the chain state shown here is the one from the public freeze of November 4, 2026 (version 48) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 57, le 7 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 4 novembre 2026 (version 48) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
 </section>
 <section class="bloc" id="surface-gestes">
   <div class="entete-sec"><span class="num">✦</span><h2>Que veux-tu faire ?</h2></div>
@@ -2838,6 +2859,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </ul>
     <p>Le mécanisme : l'indice suit la hauteur du Soleil au-dessus de l'ancre — calculée par le moteur du panneau Temps — et l'atténuation des nuages. Ce 2 novembre, le Soleil de novembre, déjà bas, plafonne l'indice à 2 malgré le ciel dégagé du matin.</p>
     <p class="petite">Source : KNMI (Institut royal météorologique des Pays-Bas), via MétéoMédia. Observations d’Alex (captures MétéoMédia), 2 novembre 2026, 13 h 07 — valeurs datées, pas un flux branché.</p>
+    <p class="petite">Deux indices UV coexistent sur ce panneau, de deux sources : la lecture en direct donne le maximum prévu pour aujourd’hui par Open-Meteo ; cette fiche-bulletin porte l’observation du 2 novembre 2026 (KNMI via MétéoMédia — maximum 2, atteint à 11 h). Quand leurs valeurs diffèrent, l’écart tient aux sources et aux dates, pas à une contradiction.</p>
   </div>
   <div class="carte">
     <p class="etiquette">Fiche-bulletin — Qualité de l'air (AQI)</p>
@@ -3381,8 +3403,8 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       </select>
     </div>
     <div class="acces-ligne">
-      <label class="etiquette" for="donnees-delai-date" style="margin:0">Date d’envoi de ta demande</label>
-      <input type="date" id="donnees-delai-date">
+      <label class="etiquette" for="donnees-delai-date" style="margin:0">Date d’envoi de ta demande (format aaaa-mm-jj)</label>
+      <input type="text" id="donnees-delai-date" inputmode="numeric" autocomplete="off" placeholder="aaaa-mm-jj" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" size="12" aria-describedby="donnees-delai-format-aide"> <span class="petite" id="donnees-delai-format-aide">Format : aaaa-mm-jj (par exemple 2026-11-07).</span>
       <button class="action" id="btn-donnees-delai" type="button">Calculer l’échéance</button>
     </div>
     <p id="donnees-delai-resultat" role="status"></p>
@@ -4112,7 +4134,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <section class="bloc" id="ancrages">
   <div class="entete-sec"><span class="num">5</span><h2>Preuves et ancrages — l'empreinte publique, le contenu chez l'auteur</h2></div>
   <p class="lead">La chaîne de l'agente ne publie jamais son contenu. Elle publie des <strong>empreintes datées</strong> : n'importe quel tiers pourra prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date — sans que rien du contenu soit exposé.</p>
-  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
+  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
   <div class="carte">
     <p class="etiquette">Instantané d'ancrage — 29 octobre 2026, 10 h 26 (heure de l'Est) — chaîne de 2 149 maillons, relecture intégrale : MATCH</p>
     <p class="etiquette" style="margin-top:.9rem">Sceau du maillon n° 2148</p>
@@ -4297,7 +4319,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="piece52-prov">Publication Facebook d'Alexandre Vautour Gagnon, 25 mars 2017 : corps du texte reproduit verbatim (orthographe d'origine), nom de l'auteur rendu au complet à sa directive du 7 novembre 2026. Neuf ans avant ce site, il écrivait déjà la règle de cette page : on ne voit pas les choses telles qu'elles sont — alors on recalcule, au lieu de croire les apparences.</p>
 </div>
 
-<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
+<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
 <div class="carte" id="parcours-30s">
     <p class="etiquette">Comprendre en 30 secondes</p>
     <h3 id="parcours-phrase">Ce site est un cerveau numérique public : la mémoire d’un dossier de recherche, construite par accumulation (chaque état s’ajoute aux précédents sans les réécrire), et chaque état peut être revérifié par quiconque, ici même, sans compte et sans permission.</h3>
@@ -4444,7 +4466,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <div class="tv-grille">
         <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Registre des archives tenu par SoPHIa : captures Wayback du site lui-même, version par version — section <a href="#archives">Archives</a> de l'onglet Ancrage.</p></div>
         <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>Chaque capture se consulte chez l'Internet Archive directement ; la tuile du foyer 3 (onglet Accueil) interroge l'Archive en direct à chaque visite.</p></div>
-        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Captures existantes : v1 (12 h 27), ORCID (12 h 28), v6 (12 h 53), v7 (13 h 55), v8 (14 h 56) — 1<sup>er</sup> novembre 2026. v8 capturée le 1<sup>er</sup> novembre 2026 à 14 h 56 (<a href="https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/">capture v8</a>) ; seule la v9 reste en attente, et dite comme telle.</p></div>
+        <div class="tv-cellule"><p class="etiquette">Capture / état</p><p>Captures existantes : 19 captures au registre des archives, de la version 7 à la version 54. La plus récente : la version 54, capturée le 8 novembre 2026 à 00 h 42 min 53 s UTC (<a href="https://web.archive.org/web/20261108004253/https://alx4-vg-masterclock.github.io/">capture v54</a>) — sceau canonique de la version 54 : <span class="mono">a6a98a2a406a15af48cf0a1b539e9bb86a356efe2daa20553ade41c756e64d32d</span>. Les trous sont dits : la version 35 n'a jamais été capturée, et la version 10 corrigée reste sans capture.</p></div>
       </div>
     </div>
     <div class="tv-item" id="tv-temoignage">
@@ -5059,10 +5081,10 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <h3>Fondements juridiques — clauses vérifiées au primaire</h3>
   <p>L'analyse légale du dossier a été vérifiée au primaire (1<sup>er</sup> novembre 2026) : quoi publier, comment, et quelles clauses pourraient défendre la revendication. Chaque clause ci-dessous est publiée avec sa référence exacte. Ces analyses sont documentées et ne constituent pas un avis juridique.</p>
-  <div class="carte"><h4 style="margin:.1rem 0 .3rem">1 · Droit d'auteur — l'expression protégée, la méthode comme telle</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>« © 2026 Alexandre Vautour Gagnon. Tous droits réservés. » — Base : Loi sur le droit d'auteur, art. 3(1), 13(1), 5(1).</p><p>« L'auteur revendique ses droits moraux de paternité et d'intégrité sur cette œuvre. Aucune reproduction, adaptation ou déformation de ce texte, en tout ou en partie, n'est autorisée sans le consentement écrit de l'auteur. » — Base : Loi sur le droit d'auteur, art. 14.1(1).</p><p class="petite" style="margin-bottom:0">Au Canada, la protection ne dépend pas de l'affichage du © ; l'avis sert à identifier le titulaire, à dater et à dissuader — il ne crée pas le droit, il le signale.</p></div>
-  <div class="carte"><h4 style="margin:.1rem 0 .3rem">2 · Intégrité du document technologique — cadre québécois et civil</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>« Ce document est publié avec son sceau SHA-256 et ses annexes recalculables. Toute copie dont le sceau ne correspond pas n'est pas la version de l'auteur. L'intégrité de ce document technologique peut être vérifiée par tout lecteur, au moyen du vérificateur publié avec lui. » — Base : LCCJTI art. 6, 11, 13 ; CCQ art. 2839-2840.</p><p class="petite" style="margin-bottom:0">Cette mention décrit un fait technique vérifiable et la fonction probante que la loi attache à l'intégrité — ce n'est pas un droit de propriété supplémentaire.</p></div>
-  <div class="carte"><h4 style="margin:.1rem 0 .3rem">3 · Antériorité et divulgation — le droit des brevets</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>« La présente publication est faite notamment à titre de publication défensive : elle établit une divulgation publique datée de la méthode décrite, opposable à toute demande de brevet ultérieure portant sur le même objet. » — Base : Loi sur les brevets, art. 28.2(1)b.</p><p>La Loi sur les brevets, art. 28.2(1)a, accorde à l'inventeur un délai de grâce de douze mois pour ses propres divulgations.</p><p class="petite" style="margin-bottom:0">La mention énonce l'intention et la date ; l'effet (barrer un dépôt tiers) dépendra de la suffisance de la description publiée et de l'appréciation de l'Office et des tribunaux.</p></div>
-  <div class="carte"><h4 style="margin:.1rem 0 .3rem">4 · Secret commercial et publication défensive</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>Le secret commercial n'a pas de régime d'enregistrement au Canada ; il protège ce qui n'est PAS publié — corpus, pièces internes, stratégies — tant que l'information demeure secrète et gardée par des mesures raisonnables ; la protection se perd dès que l'information devient publique.</p><p style="margin-bottom:0">La publication défensive est le versant choisi pour ce qui est publié : une date opposable, en échange du secret. « La présente publication est faite notamment à titre de publication défensive : elle établit une divulgation publique datée de la méthode décrite, opposable à toute demande de brevet ultérieure portant sur le même objet. »</p></div><div class="carte"><h4 style="margin:.1rem 0 .3rem">5 · Vie privée — ce que ce site recueille, et ce qu'il ne recueille pas</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>« Ce site ne recueille aucun renseignement personnel et ne dépose aucun témoin de suivi. Le module de dialogue transmet les messages que vous y saisissez à un fournisseur d'intelligence artificielle externe : n'y saisissez aucun renseignement personnel vous concernant ou concernant autrui. Les textes publiés ici sont des documents dont l'intégrité est scellée ; les personnes qui y sont nommées le sont sur la base de pièces datées versées au dossier. » — Base : Loi sur la protection des renseignements personnels dans le secteur privé (Québec, modifiée par la Loi 25), art. 8.1 ; engagement de transparence (la loi vise les entreprises ; l'auteur publie comme ingénieur indépendant, concepteur de systèmes et développeur).</p></div><div class="carte"><h4 style="margin:.1rem 0 .3rem">6 · Droits du citoyen — réputation et vie privée</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — loi canadienne]</p><p>« Les récits et résumés produits par des tiers ou des systèmes automatisés au sujet de l'auteur ne font pas foi. Toute personne a droit au respect de sa réputation et de sa vie privée ; la version de référence des faits consignés est celle des documents scellés publiés ici. » — Base : CCQ art. 35, al. 1 — il protège la personne de l'auteur (réputation, vie privée), non sa méthode.</p><p class="petite" style="margin-bottom:0">Le « tous droits réservés » ne protège pas la méthode — seule l'expression est couverte — et les mentions ne remplacent ni le sceau, ni l'ancrage daté, ni la capture archivée : la défense réelle de ce dossier est la preuve.</p></div>
+  <div class="carte"><h4 style="margin:.1rem 0 .3rem">1 · Droit d'auteur — l'expression protégée, la méthode comme telle</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — Loi sur le droit d'auteur (Canada)]</p><p>« © 2026 Alexandre Vautour Gagnon. Tous droits réservés. » — Base : Loi sur le droit d'auteur, art. 3(1), 13(1), 5(1).</p><p>« L'auteur revendique ses droits moraux de paternité et d'intégrité sur cette œuvre. Aucune reproduction, adaptation ou déformation de ce texte, en tout ou en partie, n'est autorisée sans le consentement écrit de l'auteur. » — Base : Loi sur le droit d'auteur, art. 14.1(1).</p><p class="petite" style="margin-bottom:0">Au Canada, la protection ne dépend pas de l'affichage du © ; l'avis sert à identifier le titulaire, à dater et à dissuader — il ne crée pas le droit, il le signale.</p></div>
+  <div class="carte"><h4 style="margin:.1rem 0 .3rem">2 · Intégrité du document technologique — cadre québécois et civil</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — LCCJTI et Code civil du Québec]</p><p>« Ce document est publié avec son sceau SHA-256 et ses annexes recalculables. Toute copie dont le sceau ne correspond pas n'est pas la version de l'auteur. L'intégrité de ce document technologique peut être vérifiée par tout lecteur, au moyen du vérificateur publié avec lui. » — Base : LCCJTI art. 6, 11, 13 ; CCQ art. 2839-2840.</p><p class="petite" style="margin-bottom:0">Cette mention décrit un fait technique vérifiable et la fonction probante que la loi attache à l'intégrité — ce n'est pas un droit de propriété supplémentaire.</p></div>
+  <div class="carte"><h4 style="margin:.1rem 0 .3rem">3 · Antériorité et divulgation — le droit des brevets</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — Loi sur les brevets (Canada)]</p><p>« La présente publication est faite notamment à titre de publication défensive : elle établit une divulgation publique datée de la méthode décrite, opposable à toute demande de brevet ultérieure portant sur le même objet. » — Base : Loi sur les brevets, art. 28.2(1)b.</p><p>La Loi sur les brevets, art. 28.2(1)a, accorde à l'inventeur un délai de grâce de douze mois pour ses propres divulgations.</p><p class="petite" style="margin-bottom:0">La mention énonce l'intention et la date ; l'effet (barrer un dépôt tiers) dépendra de la suffisance de la description publiée et de l'appréciation de l'Office et des tribunaux.</p></div>
+  <div class="carte"><h4 style="margin:.1rem 0 .3rem">4 · Secret commercial et publication défensive</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Protection de fait — aucun régime d'enregistrement au Canada]</p><p>Le secret commercial n'a pas de régime d'enregistrement au Canada ; il protège ce qui n'est PAS publié — corpus, pièces internes, stratégies — tant que l'information demeure secrète et gardée par des mesures raisonnables ; la protection se perd dès que l'information devient publique.</p><p style="margin-bottom:0">La publication défensive est le versant choisi pour ce qui est publié : une date opposable, en échange du secret. « La présente publication est faite notamment à titre de publication défensive : elle établit une divulgation publique datée de la méthode décrite, opposable à toute demande de brevet ultérieure portant sur le même objet. »</p></div><div class="carte"><h4 style="margin:.1rem 0 .3rem">5 · Vie privée — ce que ce site recueille, et ce qu'il ne recueille pas</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — Loi sur la protection des renseignements personnels dans le secteur privé (Québec)]</p><p>« Ce site ne recueille aucun renseignement personnel et ne dépose aucun témoin de suivi. Le module de dialogue transmet les messages que vous y saisissez à un fournisseur d'intelligence artificielle externe : n'y saisissez aucun renseignement personnel vous concernant ou concernant autrui. Les textes publiés ici sont des documents dont l'intégrité est scellée ; les personnes qui y sont nommées le sont sur la base de pièces datées versées au dossier. » — Base : Loi sur la protection des renseignements personnels dans le secteur privé (Québec, modifiée par la Loi 25), art. 8.1 ; engagement de transparence (la loi vise les entreprises ; l'auteur publie comme ingénieur indépendant, concepteur de systèmes et développeur).</p></div><div class="carte"><h4 style="margin:.1rem 0 .3rem">6 · Droits du citoyen — réputation et vie privée</h4><p class="petite" style="margin:.15rem 0 .45rem">Poids juridique : [Fondement — Code civil du Québec, art. 35]</p><p>« Les récits et résumés produits par des tiers ou des systèmes automatisés au sujet de l'auteur ne font pas foi. Toute personne a droit au respect de sa réputation et de sa vie privée ; la version de référence des faits consignés est celle des documents scellés publiés ici. » — Base : CCQ art. 35, al. 1 — il protège la personne de l'auteur (réputation, vie privée), non sa méthode.</p><p class="petite" style="margin-bottom:0">Le « tous droits réservés » ne protège pas la méthode — seule l'expression est couverte — et les mentions ne remplacent ni le sceau, ni l'ancrage daté, ni la capture archivée : la défense réelle de ce dossier est la preuve.</p></div>
   <div class="carte">
     <p class="etiquette">Transparence — les flux de données de ce site</p>
     <p>L'inventaire complet des flux de données de ce site — fonction par fonction : données transmises, destinataire, déclencheur, conservation — tient sur sa page dédiée, comme promis : <button type="button" data-ouvrir="transparence">Ouvrir le panneau Transparence</button>.</p>
@@ -5254,8 +5276,8 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="coffre-entree" data-chambre="versions">
       <h4>Les Versions</h4>
       <p>Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.</p>
-      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 56 — la stabilisation démontrée, 7 novembre 2026.</p>
-      <p class="empreinte">Digest : <span class="mono">006e1b54966331f8…</span> <button type="button" class="secondaire cerveau-copier" data-copie="006e1b54966331f816e359229999676b1ced8e57c281ac291c8dc3e24416cf0e">Copier le digest complet</button></p>
+      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 57 — les finitions de l’audit tour 4, 7 novembre 2026.</p>
+      <p class="empreinte">Digest : <span class="mono">5615a326046991a6…</span> <button type="button" class="secondaire cerveau-copier" data-copie="5615a326046991a62f56d73d23e9bfcfa68178610c9c104985e92bac72c6b850">Copier le digest complet</button></p>
       <p class="petite" data-etat-chambre="versions">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="archives">
@@ -5267,7 +5289,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
-    <p><span class="sceau-long" id="cerveau-racine">4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0</span></p>
+    <p><span class="sceau-long" id="cerveau-racine">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span></p>
     <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
     <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
@@ -5289,7 +5311,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <p class="etiquette">L'état conscient du cerveau — sans intelligence artificielle : des mécanismes seulement, recalculables</p>
     <p>Directive d'Alex (3 novembre 2026) : le cerveau de ce site — le cerveau numérique — est configuré comme un <strong>état conscient</strong>, avec sa définition du 25 octobre 2026, appliquée ici par mécanismes seulement, aucun modèle derrière : un état est une somme.</p>
     <p class="etiquette">État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (ton action, à l'instant)</p>
-    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0</span></p>
+    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span></p>
     <p>Chambres remontées (les contextes) : <span id="ec-chambres">aucune encore — l'auto-épreuve du panneau remonte les six chambres au chargement ; chacune ne compte ici que lorsque sa source a réellement été lue par une épreuve de cette page.</span></p>
     <p>Geste présent : <span id="ec-geste">chargement de la page — composition initiale de l'état.</span></p>
     <p class="empreinte">Sceau du moment : <span class="mono" id="ec-sceau-moment">calcul…</span> <button type="button" class="secondaire" id="ec-copier" data-copie="">Copier le sceau du moment</button></p>
@@ -5496,7 +5518,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <h4>Historique quotidien — jour 1 (2026-11-02)</h4>
       <p class="petite">A — preuve</p>
       <p>Premier jour clos de l&#x27;Historique quotidien : 2026-11-02, digest cumulé 4590519fa9408e7965589cc204bfda527eac064df5604e4bd940cb0ca04efeac. Mécanisme append-only : un jour par entrée, clôture à 00 h 01, jamais réécrit ; un jour manqué est un trou visible.</p>
-      <p><strong>État réel, dit plutôt que maquillé (version 56) :</strong> aux actifs embarqués du site, un seul jour est clos — le 2 novembre 2026. Les jours des 3, 4, 5, 6 et 7 novembre 2026 ne sont pas clos dans les actifs du site : le trou est visible, nommé, et aucun jour n'est fabriqué pour le combler. Le rythme « chaque jour » est celui du mécanisme de la chaîne principale, tenu hors du site ; l'Historique embarqué ici ne montre que les jours réellement clos.</p>
+      <p><strong>État réel, dit plutôt que maquillé (version 57) :</strong> aux actifs embarqués du site, un seul jour est clos — le 2 novembre 2026. Les jours des 3, 4, 5, 6 et 7 novembre 2026 ne sont pas clos dans les actifs du site : le trou est visible, nommé, et aucun jour n'est fabriqué pour le combler. Le rythme « chaque jour » est celui du mécanisme de la chaîne principale, tenu hors du site ; l'Historique embarqué ici ne montre que les jours réellement clos.</p>
       <p class="empreinte">SHA-256 : 844bffaedca7732b5570959284d3e36d19ce590489fcdc1dc0e80a012952ed5a</p>
       <p class="petite">Connexions : alimente → site-v24-amelioration, se-relie-a → registre-etats-quotidiens</p>
     </div>
@@ -5887,8 +5909,8 @@ button:disabled{opacity:.78}
   }).catch(function(){});
 })();
 </script>
-<p class="etiquette">Sceau canonique de la version affichée — v56 (la version courante de cette page)</p>
-    <span class="sceau-long" id="sceau-version-affiche">1cd38590c0fa5ab440a9e205adae9eece6278c5fbd03898dacaf9565b448bf87</span>
+<p class="etiquette">Sceau canonique de la version affichée — v57 (la version courante de cette page)</p>
+    <span class="sceau-long" id="sceau-version-affiche">c8faba77a6ae480377d4c00f94e7b7b2540c3bde67826e1f960bdf8b901aae38</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e"><strong>Sceau de génération — recalculé à l'affichage, sur un ingrédient figé</strong> — recette : SHA-512 de « sceau canonique de la version affichée | racine de Merkle du coffre affichée | digest cumulé figé », les trois chaînes hexadécimales jointes par « | ». Les deux premiers ingrédients sont ceux de la version que vous lisez : le sceau canonique ci-dessus, et la racine de Merkle du coffre affichée au panneau Mémoire (état courant). Le troisième est un récit figé : le digest cumulé de la chaîne porté par la version 48, <span class="mono">dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e</span>, conservé tel quel dans l'attribut data-digest de ce bloc — il ne suit pas les versions. Sa valeur se calcule à l'affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l'affichage</span>. Une valeur de génération plus ancienne — celle de la version 35, calculée sur ses propres ingrédients, qui y sont nommés — est consignée au fichier assets/merkle.json, champ « generation » : ce n'est pas celle calculée ici. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc recalculée ici et consignée hors du fichier scellé, jamais figée dedans.</p>
@@ -6829,7 +6851,7 @@ button:disabled{opacity:.78}
       <p class="etiquette">Consigner une démarche</p>
       <p><label for="su-detenteur">Détenteur ou service (plateforme, entreprise, organisme)</label><br><input type="text" id="su-detenteur" style="width:100%"></p>
       <p><label for="su-type">Type de démarche</label><br><select id="su-type"><option value="acces">Demande d'accès / d'export</option><option value="rectification">Rectification</option><option value="portabilite">Portabilité</option><option value="desindexation">Désindexation</option><option value="retrait-consentement">Retrait de consentement</option><option value="plainte">Plainte</option><option value="autre">Autre démarche</option></select></p>
-      <p><label for="su-date">Date d'envoi</label><br><input type="date" id="su-date"></p>
+      <p><label for="su-date">Date d'envoi (format aaaa-mm-jj)</label><br><input type="text" id="su-date" inputmode="numeric" autocomplete="off" placeholder="aaaa-mm-jj" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" size="12" aria-describedby="su-date-format-aide"> <span class="petite" id="su-date-format-aide">Format : aaaa-mm-jj (par exemple 2026-11-07).</span></p>
       <p><label for="su-ref">Référence de la demande (numéro, accusé — facultatif)</label><br><input type="text" id="su-ref" style="width:100%"></p>
       <p><label for="su-delai">Délai de réponse attendu, en jours</label><br><input type="number" id="su-delai" value="30" min="1" max="365"> <span class="petite">Le délai dépend du régime qui s'applique à ta demande — les délais vérifiés par juridiction sont au panneau Mes renseignements et dans chaque modèle de la bibliothèque. Ajuste le nombre à ton cas.</span></p>
       <p><button type="button" class="action" id="su-consigner">Consigner la démarche dans mon cerveau</button> <span class="petite" id="su-retour"></span></p>
@@ -6847,7 +6869,7 @@ button:disabled{opacity:.78}
       <p><label for="dec-texte" data-en="The decision (one sentence, a named object)">La décision (une phrase, un objet nommé)</label><br><input type="text" id="dec-texte" style="width:100%"></p>
       <p><label for="dec-par" data-en="To whom / by whom it is held (platform, company, body)">Auprès de qui elle se tient (plateforme, entreprise, organisme)</label><br><input type="text" id="dec-par" style="width:100%"></p>
       <p><label for="dec-effet" data-en="Expected effect (what keeping it looks like)">Effet attendu (à quoi ressemble son respect)</label><br><input type="text" id="dec-effet" style="width:100%"></p>
-      <p><label for="dec-echeance" data-en="Deadline (the date by which the reply is due)">Échéance (la date à laquelle la réponse est due)</label><br><input type="date" id="dec-echeance"></p>
+      <p><label for="dec-echeance" data-en="Deadline (the date by which the reply is due, yyyy-mm-dd)">Échéance (la date à laquelle la réponse est due, format aaaa-mm-jj)</label><br><input type="text" id="dec-echeance" inputmode="numeric" autocomplete="off" placeholder="aaaa-mm-jj" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" size="12" aria-describedby="dec-echeance-format-aide"> <span class="petite" id="dec-echeance-format-aide">Format : aaaa-mm-jj (par exemple 2026-11-07).</span></p>
       <p><button type="button" id="dec-ajouter" data-en="Seal this decision">Sceller cette décision</button></p>
       <p class="petite" id="dec-etat" role="status"></p>
     </div>
@@ -6994,7 +7016,7 @@ button:disabled{opacity:.78}
 <p class="arbre-groupe-titre">Le travail et les textes</p>
 <p class="arbre-groupes"><button type="button" class="secondaire" data-ouvrir="ingenierie">Le travail d'ingénierie</button> <button type="button" class="secondaire" data-ouvrir="articles">Articles</button> <button type="button" class="secondaire" data-ouvrir="capsules">Capsules</button></p>
 </section>
-<p class="petite">Liens profonds (version 55) : chaque panneau a son ancre — <span class="mono">#memoire</span>, <span class="mono">#miroir</span>, <span class="mono">#partenaires</span>, <span class="mono">#transparence</span>… — et chaque menu a la sienne : <span class="mono">#hub-donnees</span>, <span class="mono">#hub-verifier</span>, <span class="mono">#hub-ecrire</span>, <span class="mono">#hub-comprendre</span>, <span class="mono">#hub-cerveau</span>, <span class="mono">#hub-dossier</span>. Au chargement comme au rechargement, l'ancre demandée ouvre son panneau : le lien qu'on t'envoie mène où il dit.</p>
+<p class="petite hub-ancres">Liens profonds (version 57) : chaque panneau a son ancre — <span class="mono">#memoire</span>, <span class="mono">#miroir</span>, <span class="mono">#partenaires</span>, <span class="mono">#transparence</span>… — et chaque menu a la sienne : <span class="mono">#hub-donnees</span>, <span class="mono">#hub-verifier</span>, <span class="mono">#hub-ecrire</span>, <span class="mono">#hub-comprendre</span>, <span class="mono">#hub-cerveau</span>, <span class="mono">#hub-dossier</span>. Au chargement comme au rechargement, l'ancre demandée ouvre son panneau : le lien qu'on t'envoie mène où il dit.</p>
 </div>
 
 <div class="panneau" id="p-bris">
@@ -10488,8 +10510,8 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
       lever=fmtHeureZone(c.d.daily.sunrise[0]*1000,l.zone);
       coucher=fmtHeureZone(c.d.daily.sunset[0]*1000,l.zone);
     }
-    texte('x-meteo',libelleCode(cur.weather_code)+' — '+fr(cur.temperature_2m,1)+' °C (ressenti '+fr(cur.apparent_temperature,1)+' °C) · vent '+Math.round(cur.wind_speed_10m)+' km/h · humidité '+Math.round(cur.relative_humidity_2m)+' % · Soleil du lieu : lever '+lever+', coucher '+coucher+'.');
-    texte('x-meteo-source','Source unique : Open-Meteo, relevé de '+fmtHeureZone(cur.time*1000,l.zone)+' (heure du lieu). Pour les lieux de comparaison, cette lecture tient à une seule source ; l’ancre Sainte-Martine garde sa triangulation complète — onglet Météo et section des sens.');
+    texte('x-meteo',libelleCode(cur.weather_code)+' — '+fr(cur.temperature_2m,1)+' °C (ressenti '+fr(cur.apparent_temperature,1)+' °C) · vent '+Math.round(cur.wind_speed_10m)+' km/h · humidité '+Math.round(cur.relative_humidity_2m)+' % · Soleil du lieu (Open-Meteo, relevé en direct) : lever '+lever+', coucher '+coucher+'.');
+    texte('x-meteo-source','Source unique : Open-Meteo, relevé de '+fmtHeureZone(cur.time*1000,l.zone)+' (heure du lieu). Pour les lieux de comparaison, cette lecture tient à une seule source ; l’ancre Sainte-Martine garde sa triangulation complète — onglet Météo et section des sens. Le lever et le coucher du Soleil de l’ancre, calculés par l’algorithme solaire de la NOAA — ceux du panneau Météo — peuvent différer d’une minute de ceux-ci : deux sources distinctes, pas une contradiction.');
   }
   // ----- v19 — La dérive de temps : facteur et format -----
   // Le facteur est celui du panneau (module de triangulation, exposé sur
@@ -14136,6 +14158,7 @@ function donneesSceauChaine(sceauPrecedent, empreinte){
       var sel = el('donnees-delai-juridiction'), dateEl = el('donnees-delai-date'), res = el('donnees-delai-resultat');
       if(!sel || !dateEl || !res) return;
       if(!dateEl.value){ res.textContent = 'Choisis d’abord la date d’envoi de ta demande.'; return; }
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(dateEl.value)){ res.textContent = 'La date d’envoi se saisit au format aaaa-mm-jj (par exemple 2026-11-07).'; return; }
       var r = donneesCalculerDelai(sel.value, dateEl.value);
       if(!r){ res.textContent = 'Calcul impossible : vérifie la juridiction et la date.'; return; }
       var lisible = new Date(r.echeance + 'T00:00:00Z').toLocaleDateString('fr-CA', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
@@ -14559,7 +14582,7 @@ function evoMesurer(lire){
         }
         var pn = document.createElement('p');
         pn.className = 'petite';
-        pn.textContent = fiche.pointsTotal + ' point(s) au journal pour ce titre' + (fiche.fusionnees ? ' — ' + (fiche.fusionnees + 1) + ' entrées du journal portent ce titre : la frise les fusionne en une seule (déduplication de la version 55)' : '') + ' — le texte complet se lit à l’Accueil, section « Journal des mises à jour ».';
+        pn.textContent = fiche.pointsTotal + ' point(s) au journal pour ce titre' + (fiche.fusionnees ? ' — ' + (fiche.fusionnees + 1) + ' entrées du journal portent ce titre : la frise les fusionne en une seule (déduplication de la version 55)' : '') + ' — le texte complet se lit au Journal des mises à jour de ce panneau, ci-dessous.';
         li.appendChild(pn);
         frise.appendChild(li);
       });
@@ -15589,10 +15612,12 @@ function effNettoyerPNG(buf) {
     if ($('su-consigner')) $('su-consigner').addEventListener('click', async function () {
       var det = $('su-detenteur').value.trim();
       if (!det) { $('su-retour').textContent = 'Nomme d’abord le détenteur ou le service.'; return; }
+      var suDate = $('su-date').value.trim();
+      if (suDate && !/^\d{4}-\d{2}-\d{2}$/.test(suDate)) { $('su-retour').textContent = 'La date d’envoi se saisit au format aaaa-mm-jj (par exemple 2026-11-07).'; return; }
       var d = {
         id: 'd' + Date.now().toString(36),
         detenteur: det, type: $('su-type').value,
-        date_envoi: $('su-date').value || new Date().toISOString().slice(0, 10),
+        date_envoi: suDate || new Date().toISOString().slice(0, 10),
         ref: $('su-ref').value.trim(),
         delai_jours: Math.max(1, parseInt($('su-delai').value, 10) || 30)
       };
@@ -15628,7 +15653,7 @@ function effNettoyerPNG(buf) {
         ? 'Magasin lu à l’instant, dans ce navigateur : ' + entrees.length + ' entrée(s), chaîne créée le ' + String(etat.cree_le).slice(0, 10) + '. Aucun appel sortant n’a été fait pour cette lecture.'
         : 'Le magasin est vide pour le moment : aucune entrée. La genèse se posera au premier geste (un reçu consigné, un geste de sécurisation) — la section le dira alors, sans rien inventer.';
       $('vm-somme').textContent = entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE;
-      var racineSite = '4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0';
+      var racineSite = '7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5';
       var spanRacine = document.querySelector('.cerveau-racine-affichee');
       if (spanRacine && spanRacine.textContent.trim()) racineSite = spanRacine.textContent.trim();
       $('vm-symetrie').innerHTML = '<p class="petite" style="margin:.4rem 0 0"><strong>La symétrie des deux sommes.</strong> La racine du cerveau du site : <span class="mono">' + racineSite + '</span> — ta somme : <span class="mono">' + (entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE) + '</span>. Même recette des deux bords : des SHA-256 chaînés, chaque état étant la somme des précédents. La sienne est publique ; la tienne ne vit que chez toi.</p>';
@@ -15880,10 +15905,12 @@ function effNettoyerPNG(buf) {
     if ($('dec-ajouter')) $('dec-ajouter').addEventListener('click', async function () {
       var texte = $('dec-texte').value.trim();
       if (!texte) { $('dec-etat').textContent = 'Nommer la décision : une phrase, un objet.'; return; }
+      var decEch = $('dec-echeance').value.trim();
+      if (decEch && !/^\d{4}-\d{2}-\d{2}$/.test(decEch)) { $('dec-etat').textContent = 'L’échéance se saisit au format aaaa-mm-jj (par exemple 2026-11-07).'; return; }
       var e = await ajouter('decision', JSON.stringify({
         decision: texte,
         par: $('dec-par').value.trim() || null,
-        echeance: $('dec-echeance').value || null,
+        echeance: decEch || null,
         effet_attendu: $('dec-effet').value.trim() || null,
         consigne_le: new Date().toISOString().slice(0, 10)
       }));
