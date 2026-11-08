@@ -356,6 +356,9 @@ nav.onglets button.menu-principal{font-weight:700}.rail-arbre{display:none}
    la spécificité qu'il faut. L'en-tête fixe s'en trouve réduit d'une rangée.
    Tentative prudente, CSS seulement — la confirmation se fait au rendu. */
 .hub-ancres .mono{white-space:nowrap;word-break:normal}
+/* v58 — formules en bloc de code : jamais de coupure en milieu de mot ;
+   retour aux frontières sûres, défilement horizontal contrôlé au besoin. */
+.formule-code{word-break:normal;overflow-wrap:normal;white-space:nowrap;display:inline-block;max-width:100%;overflow-x:auto;vertical-align:bottom}
 @media (min-width:1501px){.barre-in{max-width:1680px}}
 nav.onglets{gap:.2rem}
 nav.onglets button{padding:.42rem .6rem;font-size:.86rem}
@@ -1294,7 +1297,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <button type="button" class="btn2" id="demo10-recalcul">Recalculer la chaîne</button>
       <p id="demo10-verdict" role="status"></p>
     </div>
-      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
+      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
     </div>
     <button class="cta" type="button" data-ouvre-cerveau>Ouvre « Voir mon cerveau »</button>
     <div class="inter">
@@ -2021,7 +2024,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="carte-compteur"><span class="cc-nombre">5</span><span class="cc-quoi" data-en="Seconds — the verification pulse">Secondes — le pouls de vérification</span><p class="cc-battement"><span class="cc-point" aria-hidden="true"></span><span data-en="Last beat:">Dernier battement :</span> <span class="mono" id="compteurs-battement" data-en="waiting">en attente</span></p></div>
     <div class="carte-compteur"><span class="cc-nombre">11</span><span class="cc-quoi" data-en="Public seals of the registry — all recalculated MATCH">Sceaux publics du registre — tous recalculés MATCH</span></div>
   </div>
-  <p class="petite cc-note" data-en="Site at version 57, on November 7, 2026; the chain state shown here is the one from the public freeze of November 4, 2026 (version 48) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 57, le 7 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 4 novembre 2026 (version 48) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
+  <p class="petite cc-note" data-en="Site at version 58, on November 7, 2026; the chain state shown here is the one from the public freeze of November 4, 2026 (version 48) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 58, le 7 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 4 novembre 2026 (version 48) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
 </section>
 <section class="bloc" id="surface-gestes">
   <div class="entete-sec"><span class="num">✦</span><h2>Que veux-tu faire ?</h2></div>
@@ -3080,7 +3083,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   <div class="pas">
     <div class="etape-pas"><div class="n">1</div><h3 data-en="Write in files">Écrire par fichiers</h3><p data-en="Your memory lives at home, in files in open formats that you control — texts, journals, exports — not only in a platform’s window, behind an account someone else administers. What exists only at their place can change, be lost or be shut down; what lives in your files can be re-read, copied and handed over.">Ta mémoire vit chez toi, dans des fichiers en formats ouverts que tu contrôles — textes, journaux, exports — et pas seulement dans la fenêtre d’une plateforme, derrière un compte que quelqu’un d’autre administre. Ce qui n’existe que chez eux peut changer, se perdre ou se fermer ; ce qui vit dans tes fichiers se relit, se copie et se transmet.</p></div>
     <div class="etape-pas"><div class="n">2</div><h3 data-en="Seal every entry">Sceller chaque entrée</h3><p data-en="For every piece that matters, compute its SHA-256 fingerprint and record it with its date. A seal proves one precise thing: that this content has not changed since it was computed. Nothing more — and that is already huge, because anyone can verify it. Nothing less: without a seal, a silent modification leaves no trace.">Pour chaque pièce qui compte, calcule son empreinte SHA-256 et consigne-la avec sa date. Un sceau prouve une chose précise : que ce contenu n’a pas changé depuis son calcul. Rien de plus — et c’est déjà énorme, parce que c’est vérifiable par n’importe qui. Rien de moins : sans sceau, une modification silencieuse ne laisse aucune trace.</p></div>
-    <div class="etape-pas"><div class="n">3</div><h3 data-en="Chain them">Chaîner</h3><p>Chaque nouveau sceau se calcule à partir du précédent : <span class="mono">digest_n = sha256(digest_{n-1} + sceau_n)</span>. Le digest cumulé fait que le dernier état atteste toute la série : modifier une pièce ancienne change son sceau, donc tous les digests qui suivent — la suite casse, et la rupture se voit au recalcul.</p></div>
+    <div class="etape-pas"><div class="n">3</div><h3 data-en="Chain them">Chaîner</h3><p>Chaque nouveau sceau se calcule à partir du précédent : <span class="mono formule-code">digest_n = sha256(digest_{n-1} + sceau_n)</span>. Le digest cumulé fait que le dernier état atteste toute la série : modifier une pièce ancienne change son sceau, donc tous les digests qui suivent — la suite casse, et la rupture se voit au recalcul.</p></div>
     <div class="etape-pas"><div class="n">4</div><h3 data-en="Keep the registry">Tenir le registre</h3><p data-en="A dated journal, append-only: each day, each decision, each state is added to it; nothing in it is rewritten. An error is corrected by a new layer that says so — the correction becomes part of the story instead of erasing it.">Un journal daté, en ajout seulement (append-only) : chaque jour, chaque décision, chaque état s’y ajoute ; rien ne s’y réécrit. Une erreur se corrige par une couche nouvelle qui le dit — la correction fait partie de l’histoire au lieu de l’effacer.</p></div>
     <div class="etape-pas"><div class="n">5</div><h3 data-en="Anchor it outside">Ancrer dehors</h3><p data-en="Deposit your digest’s fingerprint with a third party: an OpenTimestamps timestamp, a public archive. The anchor proves WHEN a state existed — that it cannot have been fabricated after the fact. It does not prove the content is true: it dates the fingerprint, not the facts.">Dépose l’empreinte de ton digest chez un tiers : un horodatage OpenTimestamps, une archive publique. L’ancre prouve QUAND un état existait — qu’on ne peut pas l’avoir fabriqué après coup. Elle ne prouve pas que le contenu est vrai : elle date l’empreinte, pas les faits.</p></div>
     <div class="etape-pas"><div class="n">6</div><h3 data-en="Know the limits">Connaître les bornes</h3><p data-en="Integrity is not truth: a perfect chain can carry an error from the very first day. The seal proves neither a piece’s author nor its compliance with a law. What the method guarantees is the detection of change; your rights — ownership, access, rectification — do the rest.">L’intégrité n’est pas la vérité : une chaîne parfaite peut porter une erreur du premier jour. Le sceau ne prouve ni l’auteur d’une pièce ni sa conformité à une loi. Ce que la méthode garantit, c’est la détection du changement ; tes droits — propriété, accès, rectification — font le reste.</p></div>
@@ -3493,7 +3496,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <div class="carte" id="donnees-lois">
     <p class="etiquette">La bibliothèque des lois — les textes officiels, contenus par le site</p>
-    <p>Dix-neuf textes officiels, déposés dans ce paquet même (dossier <span class="mono">assets/lois/</span>), chacun avec sa source, sa date d’état et son empreinte SHA-256 complète (64 caractères, recalculée sur le fichier déposé — version 55). Le poids de chaque texte est étiqueté : <strong>[Fondement — loi canadienne]</strong> pour les lois en vigueur ici, <strong>[Appui d’interprétation — traité ratifié]</strong> pour les traités qui éclairent les lois canadiennes sans s’y substituer. Aucun texte n’est résumé ni réécrit : ce sont les documents des sources officielles, tels quels.</p>
+    <p>Dix-neuf textes officiels, déposés dans ce paquet même (dossier <span class="mono">assets/lois/</span>), chacun avec sa source, sa date d’état et son empreinte SHA-256 complète (64 caractères, recalculée sur le fichier déposé — version courante). Le poids de chaque texte est étiqueté : <strong>[Fondement — loi canadienne]</strong> pour les lois en vigueur ici, <strong>[Appui d’interprétation — traité ratifié]</strong> pour les traités qui éclairent les lois canadiennes sans s’y substituer. Aucun texte n’est résumé ni réécrit : ce sont les documents des sources officielles, tels quels.</p>
     <table>
       <tr><th>Texte</th><th>Source officielle</th><th>À jour au</th><th>Poids juridique</th><th>Empreinte SHA-256 (64 caractères)</th><th>Fichier</th></tr>
       <tr><td><strong>Fiche d’information nº 2 — Déclaration universelle, Pacte civil et politique, Pacte économique et social</strong></td><td>Haut-Commissariat aux droits de l’homme (ohchr.org)</td><td>textes officiels de l’ONU, consultés le 3 novembre 2026</td><td>[Appui d’interprétation — traité ratifié]</td><td><span class="mono">62d57ea6dcbf6322dc1f5633c5386d7791f2bbc9d66fecefe0d29508980d9b98</span></td><td><a href="assets/lois/ohchr-fiche-no2-dudh-pidcp-pidesc-fr.pdf" download>Télécharger</a></td></tr>
@@ -4134,7 +4137,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <section class="bloc" id="ancrages">
   <div class="entete-sec"><span class="num">5</span><h2>Preuves et ancrages — l'empreinte publique, le contenu chez l'auteur</h2></div>
   <p class="lead">La chaîne de l'agente ne publie jamais son contenu. Elle publie des <strong>empreintes datées</strong> : n'importe quel tiers pourra prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date — sans que rien du contenu soit exposé.</p>
-  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
+  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
   <div class="carte">
     <p class="etiquette">Instantané d'ancrage — 29 octobre 2026, 10 h 26 (heure de l'Est) — chaîne de 2 149 maillons, relecture intégrale : MATCH</p>
     <p class="etiquette" style="margin-top:.9rem">Sceau du maillon n° 2148</p>
@@ -4264,7 +4267,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <div class="carte pan-atelier">
         <h3><span class="pan-num">1</span>Écrivez un mot</h3>
         <p class="etiquette">Recette exacte</p>
-        <p class="mono">sceau = SHA-256( sceau précédent + texte + horodatage ISO complet )</p>
+        <p class="mono formule-code">sceau = SHA-256( sceau précédent + texte + horodatage ISO complet )</p>
         <p class="petite" style="margin:.6rem 0 1rem">Premier sceau : le « sceau précédent » est le mot GENÈSE. Le registre vit dans votre navigateur ; exportez-le pour le conserver ou le montrer. Changez une lettre et rescellez pour voir l'effet en temps réel.</p>
         <textarea id="texte-sceau" rows="4" placeholder="Donnée de pensée à stabiliser…"></textarea>
         <div class="rangee" style="margin-top:.8rem">
@@ -4319,7 +4322,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="piece52-prov">Publication Facebook d'Alexandre Vautour Gagnon, 25 mars 2017 : corps du texte reproduit verbatim (orthographe d'origine), nom de l'auteur rendu au complet à sa directive du 7 novembre 2026. Neuf ans avant ce site, il écrivait déjà la règle de cette page : on ne voit pas les choses telles qu'elles sont — alors on recalcule, au lieu de croire les apparences.</p>
 </div>
 
-<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
+<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
 <div class="carte" id="parcours-30s">
     <p class="etiquette">Comprendre en 30 secondes</p>
     <h3 id="parcours-phrase">Ce site est un cerveau numérique public : la mémoire d’un dossier de recherche, construite par accumulation (chaque état s’ajoute aux précédents sans les réécrire), et chaque état peut être revérifié par quiconque, ici même, sans compte et sans permission.</h3>
@@ -4784,7 +4787,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="dossier">Le dossier — l'histoire</button> › Le travail et les textes › <span class="ariane-ici">Le travail d'ingénierie</span></p>
 <section class="bloc" id="ingenierie">
   <div class="entete-sec"><span class="num">✦</span><h2>Le travail d’ingénierie</h2></div>
-  <p class="lead">Un point d’abord, parce que tout le reste en dépend : le code de ce système est écrit par des machines. Sa conception, sa spécification et sa vérification sont humaines — et signées. C’est ce travail-là que cette section documente, pièces à l’appui.</p>
+  <p class="lead">Un point d’abord, parce que tout le reste en dépend : le code de ce système est écrit par son auteur, qui le conçoit, le spécifie, le développe et le vérifie — et le signe. Les machines sont ses outils. C’est ce travail-là que cette section documente, pièces à l’appui.</p>
   <h3>La base — ce qui a été construit et mesuré</h3>
   <ul>
     <li>Une chaîne de sceaux chaînés, recalculable maillon par maillon par quiconque, dont le dernier atteste tous les précédents — son nombre vit au compteur de l’Accueil, relu en direct depuis le fichier d’état public ; au 3 novembre 2026, cet état compte 2 619 maillons.</li>
@@ -5276,8 +5279,8 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="coffre-entree" data-chambre="versions">
       <h4>Les Versions</h4>
       <p>Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.</p>
-      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 57 — les finitions de l’audit tour 4, 7 novembre 2026.</p>
-      <p class="empreinte">Digest : <span class="mono">5615a326046991a6…</span> <button type="button" class="secondaire cerveau-copier" data-copie="5615a326046991a62f56d73d23e9bfcfa68178610c9c104985e92bac72c6b850">Copier le digest complet</button></p>
+      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 58 — les réparations de l’audit tour 5, 7 novembre 2026.</p>
+      <p class="empreinte">Digest : <span class="mono">d0a6bbbd8c12fd2c…</span> <button type="button" class="secondaire cerveau-copier" data-copie="d0a6bbbd8c12fd2cabdafa573d1865fdc10bc37450c7ec49c00d8f4b3c4f47e1">Copier le digest complet</button></p>
       <p class="petite" data-etat-chambre="versions">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="archives">
@@ -5289,7 +5292,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
-    <p><span class="sceau-long" id="cerveau-racine">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span></p>
+    <p><span class="sceau-long" id="cerveau-racine">d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55</span></p>
     <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
     <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
@@ -5311,7 +5314,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <p class="etiquette">L'état conscient du cerveau — sans intelligence artificielle : des mécanismes seulement, recalculables</p>
     <p>Directive d'Alex (3 novembre 2026) : le cerveau de ce site — le cerveau numérique — est configuré comme un <strong>état conscient</strong>, avec sa définition du 25 octobre 2026, appliquée ici par mécanismes seulement, aucun modèle derrière : un état est une somme.</p>
     <p class="etiquette">État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (ton action, à l'instant)</p>
-    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5</span></p>
+    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55</span></p>
     <p>Chambres remontées (les contextes) : <span id="ec-chambres">aucune encore — l'auto-épreuve du panneau remonte les six chambres au chargement ; chacune ne compte ici que lorsque sa source a réellement été lue par une épreuve de cette page.</span></p>
     <p>Geste présent : <span id="ec-geste">chargement de la page — composition initiale de l'état.</span></p>
     <p class="empreinte">Sceau du moment : <span class="mono" id="ec-sceau-moment">calcul…</span> <button type="button" class="secondaire" id="ec-copier" data-copie="">Copier le sceau du moment</button></p>
@@ -5518,7 +5521,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <h4>Historique quotidien — jour 1 (2026-11-02)</h4>
       <p class="petite">A — preuve</p>
       <p>Premier jour clos de l&#x27;Historique quotidien : 2026-11-02, digest cumulé 4590519fa9408e7965589cc204bfda527eac064df5604e4bd940cb0ca04efeac. Mécanisme append-only : un jour par entrée, clôture à 00 h 01, jamais réécrit ; un jour manqué est un trou visible.</p>
-      <p><strong>État réel, dit plutôt que maquillé (version 57) :</strong> aux actifs embarqués du site, un seul jour est clos — le 2 novembre 2026. Les jours des 3, 4, 5, 6 et 7 novembre 2026 ne sont pas clos dans les actifs du site : le trou est visible, nommé, et aucun jour n'est fabriqué pour le combler. Le rythme « chaque jour » est celui du mécanisme de la chaîne principale, tenu hors du site ; l'Historique embarqué ici ne montre que les jours réellement clos.</p>
+      <p><strong>État réel, dit plutôt que maquillé (version 58) :</strong> aux actifs embarqués du site, un seul jour est clos — le 2 novembre 2026. Les jours des 3, 4, 5, 6 et 7 novembre 2026 ne sont pas clos dans les actifs du site : le trou est visible, nommé, et aucun jour n'est fabriqué pour le combler. Le rythme « chaque jour » est celui du mécanisme de la chaîne principale, tenu hors du site ; l'Historique embarqué ici ne montre que les jours réellement clos.</p>
       <p class="empreinte">SHA-256 : 844bffaedca7732b5570959284d3e36d19ce590489fcdc1dc0e80a012952ed5a</p>
       <p class="petite">Connexions : alimente → site-v24-amelioration, se-relie-a → registre-etats-quotidiens</p>
     </div>
@@ -5869,7 +5872,7 @@ button:disabled{opacity:.78}
   function routage(){
     var h = (location.hash || '').replace(/^#/, '');
     if (!h) return;
-    if (h.indexOf('hub-') === 0) { var m = h.slice(4); if (document.querySelector('[data-menu-section="' + m + '"]')) ouvrirHub(m); return; }
+    if (h.indexOf('hub-') === 0) { var m = h.slice(4); if (document.querySelector('[data-menu-section="' + m + '"]')) { ouvrirHub(m); return; } if (document.getElementById('p-' + m)) { if (typeof ouvrirPanneau === 'function') ouvrirPanneau(m); } return; } /* v58 — sans menu du nom, la forme #hub-<panneau> ouvre le panneau réel (parcours, capsules, transparence) au lieu de mourir en silence. */
     if (document.getElementById('p-' + h)) { if (typeof ouvrirPanneau === 'function') ouvrirPanneau(h); return; }
     if (typeof CARTE_PANNEAUX !== 'undefined' && CARTE_PANNEAUX[h]) { if (typeof ouvrirPanneau === 'function') ouvrirPanneau(CARTE_PANNEAUX[h]); }
   }
@@ -5909,8 +5912,8 @@ button:disabled{opacity:.78}
   }).catch(function(){});
 })();
 </script>
-<p class="etiquette">Sceau canonique de la version affichée — v57 (la version courante de cette page)</p>
-    <span class="sceau-long" id="sceau-version-affiche">c8faba77a6ae480377d4c00f94e7b7b2540c3bde67826e1f960bdf8b901aae38</span>
+<p class="etiquette">Sceau canonique de la version affichée — v58 (la version courante de cette page)</p>
+    <span class="sceau-long" id="sceau-version-affiche">6b5ddb3e1610fb3b6b469c34c582f92f8a72e924b658ee7898854cb718180ea1</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e"><strong>Sceau de génération — recalculé à l'affichage, sur un ingrédient figé</strong> — recette : SHA-512 de « sceau canonique de la version affichée | racine de Merkle du coffre affichée | digest cumulé figé », les trois chaînes hexadécimales jointes par « | ». Les deux premiers ingrédients sont ceux de la version que vous lisez : le sceau canonique ci-dessus, et la racine de Merkle du coffre affichée au panneau Mémoire (état courant). Le troisième est un récit figé : le digest cumulé de la chaîne porté par la version 48, <span class="mono">dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e</span>, conservé tel quel dans l'attribut data-digest de ce bloc — il ne suit pas les versions. Sa valeur se calcule à l'affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l'affichage</span>. Une valeur de génération plus ancienne — celle de la version 35, calculée sur ses propres ingrédients, qui y sont nommés — est consignée au fichier assets/merkle.json, champ « generation » : ce n'est pas celle calculée ici. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc recalculée ici et consignée hors du fichier scellé, jamais figée dedans.</p>
@@ -7016,7 +7019,7 @@ button:disabled{opacity:.78}
 <p class="arbre-groupe-titre">Le travail et les textes</p>
 <p class="arbre-groupes"><button type="button" class="secondaire" data-ouvrir="ingenierie">Le travail d'ingénierie</button> <button type="button" class="secondaire" data-ouvrir="articles">Articles</button> <button type="button" class="secondaire" data-ouvrir="capsules">Capsules</button></p>
 </section>
-<p class="petite hub-ancres">Liens profonds (version 57) : chaque panneau a son ancre — <span class="mono">#memoire</span>, <span class="mono">#miroir</span>, <span class="mono">#partenaires</span>, <span class="mono">#transparence</span>… — et chaque menu a la sienne : <span class="mono">#hub-donnees</span>, <span class="mono">#hub-verifier</span>, <span class="mono">#hub-ecrire</span>, <span class="mono">#hub-comprendre</span>, <span class="mono">#hub-cerveau</span>, <span class="mono">#hub-dossier</span>. Au chargement comme au rechargement, l'ancre demandée ouvre son panneau : le lien qu'on t'envoie mène où il dit.</p>
+<p class="petite hub-ancres">Liens profonds (version 58) : chaque panneau a son ancre — <span class="mono">#memoire</span>, <span class="mono">#miroir</span>, <span class="mono">#partenaires</span>, <span class="mono">#transparence</span>… — et chaque menu a la sienne : <span class="mono">#hub-donnees</span>, <span class="mono">#hub-verifier</span>, <span class="mono">#hub-ecrire</span>, <span class="mono">#hub-comprendre</span>, <span class="mono">#hub-cerveau</span>, <span class="mono">#hub-dossier</span>. Au chargement comme au rechargement, l'ancre demandée ouvre son panneau : le lien qu'on t'envoie mène où il dit.</p>
 </div>
 
 <div class="panneau" id="p-bris">
@@ -8085,7 +8088,7 @@ button:disabled{opacity:.78}
   <section class="bloc" id="partenaires-relation">
     <div class="entete-sec"><span class="num">5</span><h2 data-en="Making contact">Entrer en relation</h2></div>
     <div class="carte">
-      <p data-en="Through the channels that already exist on this site: write through the site's relay — the agent answers visitors in the author's name, within his bounds, and passes on to him what concerns him. And for immediate support, open to everyone right now, the donation circuit stands as it is: an Interac transfer, whose use you choose in the message of your transfer.">Par les canaux qui existent déjà sur ce site : écris par le relais du site — l'agente répond aux visiteurs au nom de l'auteur, dans ses bornes, et lui transmet ce qui le concerne. Et le soutien immédiat, ouvert à tous dès maintenant : le circuit de dons, tel qu'il est — un virement Interac, dont tu choisis l'usage dans le message de ton virement.</p>
+      <p data-en="Through the channels that already exist on this site: write through the site's relay — the agent acts as the relay between visitors and the author, within his bounds, and passes on to him what concerns him. And for immediate support, open to everyone right now, the donation circuit stands as it is: an Interac transfer, whose use you choose in the message of your transfer.">Par les canaux qui existent déjà sur ce site : écris par le relais du site — l'agente fait le relais entre les visiteurs et l'auteur, dans ses bornes, et lui transmet ce qui le concerne. Et le soutien immédiat, ouvert à tous dès maintenant : le circuit de dons, tel qu'il est — un virement Interac, dont tu choisis l'usage dans le message de ton virement.</p>
       <p><button type="button" class="secondaire" data-ouvrir="instance" data-en="Write through the relay">Écrire par le relais</button> <button type="button" class="secondaire" data-ouvrir="don" data-en="The donation circuit">Le circuit de dons</button></p>
       <p class="petite" data-en="This page is a presentation and an invitation to talk. It is not an offer of securities, nor a public solicitation of savings, and it promises nothing in return. Any eventual relationship is discussed directly, between the people involved, case by case.">Cette page est une présentation et une invitation à discuter. Ce n'est pas une offre de valeurs mobilières, ni un appel public à l'épargne, et elle ne promet rien en retour. Toute relation éventuelle se discute directement, entre les personnes concernées, au cas par cas.</p>
     </div>
@@ -8095,7 +8098,7 @@ button:disabled{opacity:.78}
     </div>
   </section>
   <section class="bloc" id="partenaires-fonctions">
-    <div class="entete-sec"><span class="num">4</span><h2 data-en="What it does — the functions, and the problems they settle">Ce que ça fait — les fonctions, et les problèmes qu'elles règlent</h2></div>
+    <div class="entete-sec"><span class="num">6</span><h2 data-en="What it does — the functions, and the problems they settle">Ce que ça fait — les fonctions, et les problèmes qu'elles règlent</h2></div>
     <p class="lead" data-en="These problems come from an AI with no verifiable past; the creation gives it one. Each function below is tied to the mechanism that carries it — nothing more is claimed.">Ces problèmes viennent d'une IA sans passé vérifiable ; la création lui en donne un. Chaque fonction ci-dessous est rattachée au mécanisme qui la porte — rien de plus n'est affirmé.</p>
     <h3>Les fonctions</h3>
     <div class="vitre"><h3>Retenir sans réécrire</h3><p>Chaque échange se scelle et s'ajoute aux précédents ; rien ne se réécrit, rien ne s'efface en silence. La mémoire grandit par accumulation, comme un coquillage par ses couches.</p></div>
@@ -8359,6 +8362,12 @@ button:disabled{opacity:.78}
     <p class="etiquette" data-en="The editions — the archive">Les éditions — l’archive</p>
     <p><strong>Édition nº 1 — mercredi 4 novembre 2026.</strong> <a href="edition-2026-11-04.html">Lire l’édition du 4 novembre 2026</a> <span data-en="(a standalone page, in French and in English).">(une page autonome, en français et en anglais).</span></p>
     <p class="petite">Empreinte SHA-256 de l’édition nº 1 : <span class="mono">282ccb8fb44284b00a9c702293e35ca6423f5fd87de50a408b1efe6b39f717bf</span> — recalculable sur la page elle-même. Cette inscription vaut passage de l’édition au registre des actions du site, à la version 47.</p>
+    <p><strong>Édition nº 2 — jeudi 5 novembre 2026.</strong> <a href="edition-2026-11-05.html">Lire l’édition du 5 novembre 2026</a> <span data-en="(a standalone page, in French and in English).">(une page autonome, en français et en anglais).</span></p>
+    <p class="petite">Empreinte SHA-256 de l’édition nº 2 : <span class="mono">11fabf040bf86eb8a2e95fbb7fc0d138fadce027c0299dd2fb79f10a698edba5</span> — recalculable sur la page elle-même. Cette inscription vaut passage de l’édition au registre des actions du site, à la version 58.</p>
+    <p><strong>Édition nº 3 — vendredi 6 novembre 2026.</strong> <a href="edition-2026-11-06.html">Lire l’édition du 6 novembre 2026</a> <span data-en="(a standalone page, in French and in English).">(une page autonome, en français et en anglais).</span></p>
+    <p class="petite">Empreinte SHA-256 de l’édition nº 3 : <span class="mono">56c844b3e0bb63047f2afab2b7f35fec2d16b4218b4f401eef83ce000e1f70b1</span> — recalculable sur la page elle-même. Cette inscription vaut passage de l’édition au registre des actions du site, à la version 58.</p>
+    <p><strong>Édition nº 4 — samedi 7 novembre 2026.</strong> <a href="edition-2026-11-07.html">Lire l’édition du 7 novembre 2026</a> <span data-en="(a standalone page, in French and in English).">(une page autonome, en français et en anglais).</span></p>
+    <p class="petite">Empreinte SHA-256 de l’édition nº 4 : <span class="mono">004c2c3db6dd6fad3fc0ebfd42c4275e093f8a460079d9b7b133fb709e8ace46</span> — recalculable sur la page elle-même. Cette inscription vaut passage de l’édition au registre des actions du site, à la version 58.</p>
   </div>
   <p class="petite" data-en="Intellectual property: © 2026 Alexandre Vautour Gagnon, independent engineer, systems designer and developer — ORCID 0009-0006-9124-4407 — all rights reserved.">Propriété intellectuelle : © 2026 Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes et développeur — ORCID 0009-0006-9124-4407 — tous droits réservés.</p>
 </section>
@@ -15653,7 +15662,7 @@ function effNettoyerPNG(buf) {
         ? 'Magasin lu à l’instant, dans ce navigateur : ' + entrees.length + ' entrée(s), chaîne créée le ' + String(etat.cree_le).slice(0, 10) + '. Aucun appel sortant n’a été fait pour cette lecture.'
         : 'Le magasin est vide pour le moment : aucune entrée. La genèse se posera au premier geste (un reçu consigné, un geste de sécurisation) — la section le dira alors, sans rien inventer.';
       $('vm-somme').textContent = entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE;
-      var racineSite = '7315df82f39f3adbac6d3c73ad89962c988fd7975ee41c4f2914efb103fdc1d5';
+      var racineSite = 'd922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55';
       var spanRacine = document.querySelector('.cerveau-racine-affichee');
       if (spanRacine && spanRacine.textContent.trim()) racineSite = spanRacine.textContent.trim();
       $('vm-symetrie').innerHTML = '<p class="petite" style="margin:.4rem 0 0"><strong>La symétrie des deux sommes.</strong> La racine du cerveau du site : <span class="mono">' + racineSite + '</span> — ta somme : <span class="mono">' + (entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE) + '</span>. Même recette des deux bords : des SHA-256 chaînés, chaque état étant la somme des précédents. La sienne est publique ; la tienne ne vit que chez toi.</p>';
@@ -15944,17 +15953,26 @@ function effNettoyerPNG(buf) {
       var o = fenSel.options[fenSel.selectedIndex];
       return {lib: o.text, jours: o.getAttribute('data-jours') ? Number(o.getAttribute('data-jours')) : null, source: o.getAttribute('data-source') || ''};
     }
+    /* v58 — le rappel .ics suit l'échéance AFFICHÉE : fenAfficher active le
+       bouton dès qu'une date limite est calculée et affichée, et le
+       désactive dès qu'elle cesse de l'être (avant la v58, seul le
+       scellement l'activait — l'aide promettait l'activation dès
+       l'affichage ; audit tour 5, P1). */
     function fenAfficher() {
       var f = fenLire(); if (!f || !fenLimiteZone) return;
       var depart = $('fen-date').value;
+      var bIcs = $('fen-ics');
+      function fenIcsReset() { if (bIcs) { bIcs.disabled = true; bIcs.removeAttribute('data-limite'); bIcs.removeAttribute('data-objet'); } }
       if (!f.jours) {
         fenLimiteZone.innerHTML = '<strong>Silence écrit comme silence :</strong> ' + f.source;
+        fenIcsReset();
         return;
       }
-      if (!depart) { fenLimiteZone.textContent = 'Choisis la date de départ (la mesure, la notification, l’envoi) : la date limite se calcule ici.'; return; }
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(depart)) { fenLimiteZone.textContent = 'La date de départ se saisit au format aaaa-mm-jj (par exemple 2026-11-07) : la date limite se calcule dès que le format est respecté.'; return; }
+      if (!depart) { fenLimiteZone.textContent = 'Choisis la date de départ (la mesure, la notification, l’envoi) : la date limite se calcule ici.'; fenIcsReset(); return; }
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(depart)) { fenLimiteZone.textContent = 'La date de départ se saisit au format aaaa-mm-jj (par exemple 2026-11-07) : la date limite se calcule dès que le format est respecté.'; fenIcsReset(); return; }
       var lim = fenLimite(depart, f.jours);
       fenLimiteZone.innerHTML = 'Fenêtre : <strong>' + f.lib + '</strong><br>Date limite calculée : <strong>' + lim + '</strong> (départ ' + depart + ' + ' + f.jours + ' jours).<br><span class="petite">' + f.source + '</span>';
+      if (bIcs) { bIcs.disabled = false; bIcs.setAttribute('data-limite', lim); bIcs.setAttribute('data-objet', f.lib); }
     }
     if (fenSel) { fenSel.addEventListener('change', fenAfficher); $('fen-date').addEventListener('change', fenAfficher); $('fen-date').addEventListener('input', fenAfficher); fenAfficher(); }
     if ($('fen-sceller')) $('fen-sceller').addEventListener('click', async function () {
