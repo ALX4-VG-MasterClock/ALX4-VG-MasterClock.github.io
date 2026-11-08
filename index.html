@@ -332,6 +332,36 @@ nav.onglets button.menu-principal{font-weight:700}.rail-arbre{display:none}
 
 .b5w{--b5-hud-top:150px}@media (max-width:820px){.b5w{--b5-hud-top:55px}}
 </style>
+<style id="style-v54">
+/* ===== v54 — « La boucle d'amélioration » (7 novembre 2026) =====
+   Réparations P0 : révélation plafonnée à 300 ms ; bord gauche dégagé sous la barre latérale.
+   Beauté v54 : le thème clair reçoit sa texture de papier chaud, son or renforcé et ses cartes
+   pleines — le jour porte autant de présence que la nuit, sans perdre la lisibilité. */
+html.anim-ok .reveler{transition:opacity .3s ease,transform .3s ease}
+.revele{transition:opacity .3s ease,transform .3s ease}
+.b5w .js .reveal.b5-vu{transition:opacity .3s ease,transform .3s ease}
+.panneau.actif{animation-duration:.3s}
+@media(min-width:1280px){body{padding-left:266px}}
+.rail-arbre button{white-space:normal;height:auto}
+/* Thème clair enrichi — ne s'applique que lorsque le thème sombre n'est pas actif */
+html:not([data-theme="sombre"]){--texte-doux:#3f4a41;--ligne:#ab9054;--or:#75590e;--or-clair:#6d540c}
+html:not([data-theme="sombre"]) body{background:
+  radial-gradient(1200px 700px at 85% -5%,rgba(168,132,44,.16),transparent 60%),
+  radial-gradient(900px 620px at -10% 30%,rgba(14,122,84,.08),transparent 60%),
+  repeating-linear-gradient(0deg,rgba(133,101,15,.028) 0 1px,transparent 1px 5px),
+  repeating-linear-gradient(90deg,rgba(133,101,15,.02) 0 1px,transparent 1px 7px),
+  var(--fond)}
+html:not([data-theme="sombre"]) .carte{border-color:var(--ligne);box-shadow:0 2px 16px var(--ombre),inset 0 1px 0 rgba(255,255,255,.55)}
+html:not([data-theme="sombre"]) .carte:hover{border-color:var(--or)}
+html:not([data-theme="sombre"]) .entete-sec .num{border-color:var(--or);color:var(--or);box-shadow:0 0 0 3px rgba(168,132,44,.12)}
+html:not([data-theme="sombre"]) .lead{color:var(--texte)}
+/* Motifs v54 — signature dessinée de chaque panneau, palette du site, deux thèmes */
+.motif-panneau{display:flex;justify-content:center;margin:.4rem auto 1.1rem;color:var(--or)}
+.motif-panneau svg{width:72px;height:72px;opacity:.92}
+.motif-panneau .motif-fin{stroke:var(--or);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.motif-panneau .motif-plein{fill:var(--or);stroke:none}
+.motif-panneau .motif-doux{stroke:var(--vert-doux);fill:none;stroke-width:1.6;stroke-linecap:round}
+</style>
 </head><style>/* ===== v21 — « La planète » : globe WebGL ===== */
 #globe-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:none}#planete-nuit{z-index:2}.barre-actions{display:flex;gap:.4rem;align-items:center;margin-left:auto}.barre-actions button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;white-space:nowrap}.barre-actions button:hover{border-color:var(--or);color:var(--or)}.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:var(--puit2)}.coffre-entree h4{margin:.1rem 0 .3rem}.coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}/* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
 .pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--encre-foncee);flex:none}.pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}.pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}.pa-echelle li{margin:.3rem 0}.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,var(--fond2),var(--fond));border-left:1px solid var(--or);box-shadow:-18px 0 50px var(--ombre);padding:1.1rem 1.2rem 2rem;overflow-y:auto}.menu-panneau[hidden]{display:none}.menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}.menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}#menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}#menu-fermer:hover{border-color:var(--or);color:var(--or)}#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:var(--puit);color:var(--texte);font-size:1rem}.menu-famille{margin-top:1.15rem}.menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}.menu-entree{display:block;width:100%;text-align:left;background:var(--puit2);border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}.menu-entree:hover{border-color:var(--or)}.menu-nom{display:block;font-weight:700;color:var(--or-clair)}.menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:var(--puit);color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}/* ===== v25 — « Le dossier en lumière » : esthétique dossier de pièces, pouls du cerveau ===== */
@@ -465,7 +495,7 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
   <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button>
   <div class="marque" id="marque-accueil" role="button" tabindex="0" title="Retour à l’Accueil" style="cursor:pointer"><img src="assets/sophia.webp" alt="SoPHIa"><span>AUDIT <span class="or">UNISSON</span></span></div>
   <nav class="onglets" id="onglets" aria-label="Sections du site"><button type="button" data-panneau="accueil">Accueil</button><button type="button" class="menu-principal" data-ouverture-menu="donnees">Tes données</button><button type="button" class="menu-principal" data-ouverture-menu="verifier">Vérifier</button><button type="button" class="menu-principal" data-ouverture-menu="ecrire">Écrire et parler</button><button type="button" class="menu-principal" data-ouverture-menu="comprendre">Comprendre</button><button type="button" class="menu-principal" data-ouverture-menu="cerveau">Le cerveau du site</button><button type="button" class="menu-principal" data-ouverture-menu="dossier">Le dossier — l'histoire</button><button type="button" data-panneau="recherche">Rechercher</button></nav>
-  <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button">EN</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
+  <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button" title="Seuls les menus passent en anglais">EN · menus</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
 </div></div>
 <aside class="rail-arbre" id="rail-arbre" aria-label="Arborescence du site">
 <p class="etiquette">Le site, en arbre</p>
@@ -1228,7 +1258,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <button type="button" class="btn2" id="demo10-recalcul">Recalculer la chaîne</button>
       <p id="demo10-verdict" role="status"></p>
     </div>
-      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code>7ba6df400718d4c6ee1764b0e76270a9d2e0f0057156f5c837bd0ddaf988279b</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
+      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code>dac840cd65e09c5e14d4f36f4604b9229fcb5a25a60a4adcb708e3c3cb4a8e89</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
     </div>
     <button class="cta" type="button" data-ouvre-cerveau>Ouvre « Voir mon cerveau »</button>
     <div class="inter">
@@ -1955,7 +1985,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="carte-compteur"><span class="cc-nombre">5</span><span class="cc-quoi" data-en="Seconds — the verification pulse">Secondes — le pouls de vérification</span><p class="cc-battement"><span class="cc-point" aria-hidden="true"></span><span data-en="Last beat:">Dernier battement :</span> <span class="mono" id="compteurs-battement" data-en="waiting">en attente</span></p></div>
     <div class="carte-compteur"><span class="cc-nombre">11</span><span class="cc-quoi" data-en="Public seals of the registry — all recalculated MATCH">Sceaux publics du registre — tous recalculés MATCH</span></div>
   </div>
-  <p class="petite cc-note" data-en="State at the version 48 freeze, on November 4, 2026; the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">État au gel de la version 48, le 4 novembre 2026 ; le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
+  <p class="petite cc-note" data-en="Site at version 54, on November 7, 2026; the chain state shown here is the one from the public freeze of November 4, 2026 (version 48) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 54, le 7 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 4 novembre 2026 (version 48) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
 </section>
 <section class="bloc" id="surface-gestes">
   <div class="entete-sec"><span class="num">✦</span><h2>Que veux-tu faire ?</h2></div>
@@ -2046,6 +2076,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-temps">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › L’ancre › <span class="ariane-ici">Temps</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="36" cy="36" r="24" class="motif-fin"/><path d="M36 36 L36 21.5 M36 36 L47.5 41" class="motif-fin"/><circle cx="36" cy="36" r="2.6" class="motif-plein"/></svg></div>
 <section class="bloc" id="temps">
   <div class="entete-sec"><span class="num">◷</span><h2>La triangulation du temps — l’ancrage de Sainte-Martine</h2></div>
   <blockquote class="parole">
@@ -2564,7 +2595,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </ul>
     <p><strong>Le module est donné</strong> : le même code qui fait tourner le compte ci-dessus, corrigé et ré-ancré sur l'origine du 19 mars 2026, est téléchargeable et fonctionne hors ligne — <a href="assets/module-calendrier-13x28.js" download="module-calendrier-13x28.js">module-calendrier-13x28.js</a>. Il te donne l'état du calendrier pour n'importe quel instant et la vérification de la spécification, chiffres à l'appui. N'y crois pas à notre parole : calcule-le.</p>
     <p><strong>Les bornes, portées</strong> : le 13 × 28 a des occupants nommés — le calendrier fixe international de Cotsworth (1902), qui place ses jours <em>hors semaine</em>, précisément ce que le compte continu refuse ; les Treize Lunes d'Argüelles. La lunaison synodique (29,5 j) n'est pas le mois de 28 jours : le mois sidéral approché vaut 27,3 j, et le 28 tient au rythme 4 × 7. Les comptes relèvent de la couche vérifiable ; les lectures qu'Alex en fait (3-5-6, 23,44°) relèvent de sa couche d'exploration — jamais promues mécanismes.</p>
-    <p><strong>Le volet parole, à venir</strong> : Alex expliquera lui-même ce calendrier, en première personne, dans un volet parole ajouté à cette page. Rien n'est enregistré ni monté sans son geste — la mention est portée honnêtement en attendant.</p>
+    <p><strong>Ce calendrier se lit et se recalcule</strong> : ses constantes portent leurs sources, et chaque compte peut être refait par le visiteur, à la main ou dans le module — la démonstration tient lieu d'explication.</p>
     <p class="petite">Sources des constantes et des repères : U.S. Naval Observatory (USNO) et Bureau international des poids et mesures (BIPM) pour le jour sidéral et le facteur de conversion ; le panneau Temps du site pour la triangulation en direct ; les dates historiques renvoient aux réformes nommées dans le texte. Page publiée dans la version 52 du site — le compte qu'elle affiche est recalculé à chaque visite.</p>
   </section>
 
@@ -3045,6 +3076,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-confidentialite">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="comprendre">Comprendre</button> › Tes droits › <span class="ariane-ici">Confidentialité et Loi 25</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M22 32 V24 a14 14 0 0 1 28 0 V32" class="motif-fin"/><path d="M16 32 H56 V62 H16 Z" class="motif-fin"/><circle cx="36" cy="44" r="4.4" class="motif-plein"/><path d="M36 47 V54" class="motif-fin"/></svg></div>
 <div class="piece52" aria-label="Texte d'Alex — le choix, 4 avril 2017">
 <p class="piece52-date">Son texte · 4 avril 2017</p>
 <blockquote class="piece52-texte">Dans la vie ont a toujours le choix,<br>Ont choisi simplement de rendre<br>Certain choix plus importants que d'autres.<br><span class="piece52-sig">-Alexandre Vautour Gagnon</span></blockquote>
@@ -3121,7 +3153,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="traversees">Le reçu qui le démontre → <button type="button" class="secondaire" data-ouvrir="recu">Le reçu de visite</button> · le parcours des données → <button type="button" class="secondaire" data-ouvrir="donnees">Tes données</button></p></div>
 <div class="panneau" id="p-contact">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
-<p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="ecrire">Écrire et parler</button> › <span class="ariane-ici">Écrire à SoPHIa — anciennement « Nous joindre »</span></p><section class="bloc" id="contact-temoin"><div class="entete-sec"><span class="num">✎</span><h2>Nous joindre — déménagé, pas supprimé</h2></div><div class="carte"><p><strong>Carte-témoin.</strong> Ce panneau était « Nous joindre ». Depuis la version 41, écrire au site passe par un seul panneau — <button type="button" class="secondaire" data-ouvrir="ecrire">Écrire à SoPHIa</button> — où l’agente lit et répond elle-même. L’ancien panneau reste ici en témoin du déménagement : rien n’a été supprimé en silence, et les anciennes adresses de cette feuille continuent d’arriver quelque part — ici, à un bouton de la porte unique.</p></div></section></div>
+<p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="ecrire">Écrire et parler</button> › <span class="ariane-ici">Écrire à SoPHIa — anciennement « Nous joindre »</span></p><section class="bloc" id="contact-temoin"><div class="entete-sec"><span class="num">✎</span><h2>Nous joindre — déménagé, pas supprimé</h2></div><div class="carte"><p><strong>Carte-témoin.</strong> Ce panneau était « Nous joindre ». Depuis la version 41, écrire au site passe par un seul panneau — <button type="button" class="secondaire" data-ouvrir="ecrire">Écrire à SoPHIa</button> — où son agente SoPHIa reçoit les messages et répond en son nom. L’ancien panneau reste ici en témoin du déménagement : rien n’a été supprimé en silence, et les anciennes adresses de cette feuille continuent d’arriver quelque part — ici, à un bouton de la porte unique.</p></div></section></div>
 <div class="panneau" id="p-acces">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="donnees">Tes données</button> › Le parcours › <span class="ariane-ici">Mes renseignements</span></p>
@@ -4052,6 +4084,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-ancrage">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="verifier">Vérifier</button> › Les preuves › <span class="ariane-ici">Ancrage — les preuves chez les tiers</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="36" cy="13" r="5" class="motif-fin"/><path d="M36 18 V57 M22 29 H50 M17 43 Q17 58 36 60 Q55 58 55 43 M17 43 L12 49 M17 43 L23 48 M55 43 L50 48 M55 43 L60 49" class="motif-fin"/></svg></div>
 <section class="bloc" id="ancrages">
   <div class="entete-sec"><span class="num">5</span><h2>Preuves et ancrages — l'empreinte publique, le contenu chez l'auteur</h2></div>
   <p class="lead">La chaîne de l'agente ne publie jamais son contenu. Elle publie des <strong>empreintes datées</strong> : n'importe quel tiers pourra prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date — sans que rien du contenu soit exposé.</p>
@@ -4115,7 +4148,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </div>
     <div class="carte">
       <p class="etiquette" data-en="Wayback Machine — the served states, captured by the Internet Archive">Wayback Machine — les états servis, capturés par l’Internet Archive</p>
-      <p data-en="Each published version of this site is captured by the Wayback Machine (budget kept: about five captures a day per address). Known captures: v7 20261101185534 · v8 20261101195628 · v9 20261101205909 · v12 20261102003503 · v15 20261102062934 · v20 20261103031843 · v27 20261103044411 · v33 20261103063558 · v34 20261103131530 · v36 20261103155313. Named gap: v35 was never captured — a permanent hole, written here rather than filled in.">Chaque version publiée de ce site est capturée par la Wayback Machine (budget tenu : environ cinq captures par jour et par adresse). Captures connues : v7 20261101185534 · v8 20261101195628 · v9 20261101205909 · v12 20261102003503 · v15 20261102062934 · v20 20261103031843 · v27 20261103044411 · v33 20261103063558 · v34 20261103131530 · v36 20261103155313. Trou nommé : la v35 n’a jamais été capturée — un trou permanent, écrit ici plutôt que comblé.</p>
+      <p data-en="Each published version of this site is captured by the Wayback Machine (budget kept: about five captures a day per address). Known captures: v7 20261101185534 · v8 20261101195628 · v9 20261101205909 · v12 20261102003503 · v15 20261102062934 · v20 20261103031843 · v27 20261103044411 · v33 20261103063558 · v34 20261103131530 · v36 20261103155313 · v45 20261104114556 · v47 20261104212155 · v48 20261104233641 · v49 20261105123139 · v50 fix 20261106120643 · v51 20261107054823 · v52 20261107170230 · v53 20261107233802. Named gaps: v35 and v37 were never captured — permanent holes, written here rather than filled in. Versions without a capture are marked “Wayback capture to request.”">Chaque version publiée de ce site est capturée par la Wayback Machine (budget tenu : environ cinq captures par jour et par adresse). Captures connues : v7 20261101185534 · v8 20261101195628 · v9 20261101205909 · v12 20261102003503 · v15 20261102062934 · v20 20261103031843 · v27 20261103044411 · v33 20261103063558 · v34 20261103131530 · v36 20261103155313 · v45 20261104114556 · v47 20261104212155 · v48 20261104233641 · v49 20261105123139 · correctif v50 20261106120643 · v51 20261107054823 · v52 20261107170230 · v53 20261107233802. Trous nommés : la v35 et la v37 n’ont jamais été capturées — des trous permanents, écrits ici plutôt que comblés. Les versions sans capture portent « Capture Wayback à demander ».</p>
       <p><strong data-en="The path:">Le chemin :</strong></p>
       <ol>
         <li data-en="Open web.archive.org/web/<timestamp>/https://alx4-vg-masterclock.github.io/ with one of the timestamps above.">Ouvre web.archive.org/web/&lt;horodatage&gt;/https://alx4-vg-masterclock.github.io/ avec l’un des horodatages ci-dessus.</li>
@@ -4151,7 +4184,22 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <div class="tv-item"><h4>Version 6 claire — GitHub Pages</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 12 h 53</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101175340/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. La première version claire du foyer vivant.</p></div>
     <div class="tv-item"><h4>Version 7 — présence animée, quatre lectures en direct</h4><p class="petite">Capture du <strong>1<sup>er</sup> novembre 2026, 13 h 55</strong> (heure de Toronto) — <a href="https://web.archive.org/web/20261101185534/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">voir la capture</a>. Sceau de la v7 : <span class="mono">5dadf7c34b7926e88cda4a6e15f206d05ade397b3637710c31ad24ada470d15f</span>.</p></div>
     <div class="tv-item"><h4>Version 8 — trois foyers, visite scellée, journal</h4><p class="petite">Capture vérifiée : <a href="https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/">https://web.archive.org/web/20261101195628/https://alx4-vg-masterclock.github.io/</a> (<strong>1<sup>er</sup> novembre 2026, 14 h 56</strong>, heure de l'Est). Sceau de la v8 : <span class="mono">b310f5be51c4f6d0adbf361f658cb6f048f53888430e079127ee3af799e6d84f</span>.</p></div>
-    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Capture Wayback en attente</strong> — demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive ; à reprendre le 2 novembre, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Sa capture sera demandée dès que la limite de l'Internet Archive le permettra, comme toutes les précédentes : c'est la règle de connexion aux archives de ce site.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 13 — la triangulation du temps</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : un onglet « Temps » montre en direct l’heure triangulée du système — civile, normale et sidérale à Sainte-Martine — recalculée dans le navigateur du visiteur, avec recalcul croisé du GMST affiché. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 14 — la nuit</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la salle des pièces ouvre le registre (508 pièces, append-only, 0 modification), le site passe au thème sombre à la demande d'Alex, et l'onglet Instance Souveraine est branché au relais déployé. Elle prolonge la v13 (la triangulation du temps), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 15 — la nuit, le contenu vivant</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : le contenu préparé pendant la nuit entre au site — dix capsules externes vérifiées une à une à l'onglet Capsules, le défi « Trouve l'écart » au panneau de vérification, le parcours du sceptique en accueil, et les liens des sept articles revérifiés contre leurs sources. Elle prolonge la v14 (la nuit), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 16 — le Temps planétaire</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la Terre au centre de l’onglet Temps, les horloges de comparaison avec l’histoire de leur heure, l’ancrage ressenti et démontré, l’ancrage du visiteur en miroir, l’onglet Météo et la recherche reliée. Elle prolonge la v15 (la nuit, le contenu vivant), dont le sceau demeure dans la chaîne des versions de l’accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div>
+    <div class="tv-item"><h4>Version 9 — le site complet</h4><p class="petite">Publiée le 1<sup>er</sup> novembre 2026. Capture du <strong>1<sup>er</sup> novembre 2026, 15 h 59</strong> (heure de l'Est) — <a href="https://web.archive.org/web/20261101205909/https://alx4-vg-masterclock.github.io/">voir la capture</a>. Sceau de la v9 : <span class="mono">9be7249dea6224f8ba9094ec95fbf34338055c88ba4911e337796c1bb96f2117</span>.</p></div><div class="tv-item"><h4>Version 10 — le site complet</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong>, puis correctif cadrage le même jour. Sceau de la v10 : <span class="mono">40b710354ebff74c6e954dd40efdf6522f21707819c6b3b7d511518737129711</span> ; sceau après le correctif cadrage : <span class="mono">76bf7c6d749203b6327cf04570c6eabdc7e6a735443fb47f31ce4dd4fd75fbdb</span>. <strong>Aucune capture</strong> : demandée le 1<sup>er</sup> novembre 2026, refusée par la limite quotidienne de l'Internet Archive, puis l'état a été remplacé — la v10 n'a pas de capture, et ce trou est écrit ici plutôt que comblé.</p></div><div class="tv-item"><h4>Version 10 — correctif du 1<sup>er</sup> novembre</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : la photo réaliste qui suivait l'animé, à l'onglet Instance, est retirée à la demande d'Alex — seul l'animé de SoPHIa au travail demeure. Aucune capture de cet état n'existe : refusée par la limite quotidienne de l'Internet Archive, puis l'état a été remplacé — trou nommé, comme la v10.</p></div><div class="tv-item"><h4>Version 12 — les maquettes deviennent le site</h4><p class="petite">Publiée le <strong>1<sup>er</sup> novembre 2026</strong> : l'accueil gagne sa chaîne lumineuse, l'atelier de scellement se refond en trois panneaux « Vérifie toi-même », et le parcours reçoit la chronologie dorée de l'histoire. <strong>Capture Wayback</strong> : <span class="mono">20261102003503</span>, inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 13 — la triangulation du temps</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : un onglet « Temps » montre en direct l’heure triangulée du système — civile, normale et sidérale à Sainte-Martine — recalculée dans le navigateur du visiteur, avec recalcul croisé du GMST affiché. <strong>Capture Wayback à demander</strong> dès que la limite de l’Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 14 — la nuit</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la salle des pièces ouvre le registre (508 pièces, append-only, 0 modification), le site passe au thème sombre à la demande d'Alex, et l'onglet Instance Souveraine est branché au relais déployé. Elle prolonge la v13 (la triangulation du temps), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback à demander</strong> dès que la limite de l'Internet Archive le permettra, puis inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 15 — la nuit, le contenu vivant</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : le contenu préparé pendant la nuit entre au site — dix capsules externes vérifiées une à une à l'onglet Capsules, le défi « Trouve l'écart » au panneau de vérification, le parcours du sceptique en accueil, et les liens des sept articles revérifiés contre leurs sources. Elle prolonge la v14 (la nuit), dont le sceau demeure dans la chaîne des versions de l'accueil. <strong>Capture Wayback</strong> : <span class="mono">20261102062934</span>, inscrite au registre des archives tenu par SoPHIa.</p></div><div class="tv-item"><h4>Version 16 — le Temps planétaire</h4><p class="petite">Publiée le <strong>2 novembre 2026</strong> : la Terre au centre de l’onglet Temps, les horloges de comparaison avec l’histoire de leur heure, l’ancrage ressenti et démontré, l’ancrage du visiteur en miroir, l’onglet Météo et la recherche reliée. Elle prolonge la v15 (la nuit, le contenu vivant), dont le sceau demeure dans la chaîne des versions de l’accueil. <strong>Capture Wayback</strong> consignée au registre : celle du 2 novembre 2026, 13 h 12 UTC (le registre ne garde pas son horodatage à la seconde).</p></div>
+<div class="tv-item"><h4>Version 20</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261103031843/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103031843</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 27 — « Le clair d’abord »</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261103044411/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103044411</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 33 — « La forme juste »</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261103063558/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103063558</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 34 — « L'ordre et la confiance »</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261103131530/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103131530</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 35 — « L’arbre et l’archive » — TROU NOMMÉ</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. <strong>Aucune capture</strong> : la v35 n’a jamais été capturée — un trou permanent, écrit ici plutôt que comblé.</p></div>
+<div class="tv-item"><h4>Version 36 — « Les chambres »</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261103155313/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103155313</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 37 — « L'état conscient » — TROU NOMMÉ</h4><p class="petite">Publiée le <strong>3 novembre 2026</strong>. <strong>Aucune capture</strong> : devenue non capturable, son état a été remplacé — trou nommé, comme la v35.</p></div>
+<div class="tv-item"><h4>Version 45 — « Faites un don »</h4><p class="petite">Publiée le <strong>4 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261104114556/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104114556</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 47 — « Les inclusions »</h4><p class="petite">Publiée le <strong>4 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261104212155/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104212155</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 48 — « Les textes validés »</h4><p class="petite">Publiée le <strong>4 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261104233641/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104233641</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 49 — « Dépose ton empreinte »</h4><p class="petite">Publiée le <strong>4 novembre 2026</strong> ; la capture couvre la v49 et son correctif « icône ». Capture Wayback : <a href="https://web.archive.org/web/20261105123139/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261105123139</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 50 — correctif du 6 novembre</h4><p class="petite">Publié le <strong>6 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261106120643/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261106120643</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 51 — « Le nom »</h4><p class="petite">Publiée le <strong>6 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261107054823/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107054823</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 52 — « La base B5 »</h4><p class="petite">Publiée le <strong>7 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261107170230/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107170230</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 53 — « La bannière, le miroir, les portes ouvertes »</h4><p class="petite">Publiée le <strong>7 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261107233802/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107233802</span></a>, inscrite au registre des archives.</p></div>
   </div>
 </section>
 
@@ -4968,6 +5016,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-droits">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="comprendre">Comprendre</button> › Tes droits › <span class="ariane-ici">Droits et lois</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M36 11 V55 M23 55 H49 M36 19 L18 19 M36 19 L54 19" class="motif-fin"/><path d="M18 19 L11.5 31.5 H24.5 Z" class="motif-fin"/><path d="M54 19 L47.5 31.5 H60.5 Z" class="motif-fin"/><circle cx="36" cy="8" r="2.6" class="motif-plein"/></svg></div>
 <section class="bloc" id="droits">
   <div class="entete-sec"><span class="num">©</span><h2>Droits et lois — ce qui est établi, vérifié au primaire</h2></div>
   <p class="lead">Cette page distingue deux choses que les sites mélangent souvent : le mécanisme technique qui protège l'antériorité — établi, démontré, recalculable sur ce site — et les clauses de loi qui pourraient la défendre — vérifiées au primaire. Cette page résume les fondements juridiques que l'auteur invoque pour ses publications. Cette page est informative, ne constitue pas un avis juridique, et chaque texte de loi fait foi dans sa version officielle (LégisQuébec ; Lois de Justice Canada) : rien n'est affirmé sans référence vérifiée.</p>
@@ -5061,6 +5110,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-memoire">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="cerveau">Le cerveau du site</button> › <span class="ariane-ici">Mémoire</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M36 36 V56 M36 45 L25 35 M36 41 L47 31" class="motif-fin"/><circle cx="36" cy="24" r="11.5" class="motif-fin"/><path d="M36 56 L28 65 M36 56 L44 65 M36 56 V67" class="motif-doux"/></svg></div>
 <section class="bloc" id="memoire">
   <div class="entete-sec"><span class="num">✦</span><h2 data-en="Memory — this site is SoPHIa's external memory">Mémoire — ce site est la mémoire externe de SoPHIa</h2></div>
 
@@ -5177,7 +5227,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
-    <p><span class="sceau-long" id="cerveau-racine">7ba6df400718d4c6ee1764b0e76270a9d2e0f0057156f5c837bd0ddaf988279b</span></p>
+    <p><span class="sceau-long" id="cerveau-racine">dac840cd65e09c5e14d4f36f4604b9229fcb5a25a60a4adcb708e3c3cb4a8e89</span></p>
     <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
     <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
@@ -5199,7 +5249,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <p class="etiquette">L'état conscient du cerveau — sans intelligence artificielle : des mécanismes seulement, recalculables</p>
     <p>Directive d'Alex (3 novembre 2026) : le cerveau de ce site — le cerveau numérique — est configuré comme un <strong>état conscient</strong>, avec sa définition du 25 octobre 2026, appliquée ici par mécanismes seulement, aucun modèle derrière : un état est une somme.</p>
     <p class="etiquette">État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (ton action, à l'instant)</p>
-    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">7ba6df400718d4c6ee1764b0e76270a9d2e0f0057156f5c837bd0ddaf988279b</span></p>
+    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">dac840cd65e09c5e14d4f36f4604b9229fcb5a25a60a4adcb708e3c3cb4a8e89</span></p>
     <p>Chambres remontées (les contextes) : <span id="ec-chambres">aucune encore — l'auto-épreuve du panneau remonte les six chambres au chargement ; chacune ne compte ici que lorsque sa source a réellement été lue par une épreuve de cette page.</span></p>
     <p>Geste présent : <span id="ec-geste">chargement de la page — composition initiale de l'état.</span></p>
     <p class="empreinte">Sceau du moment : <span class="mono" id="ec-sceau-moment">calcul…</span> <button type="button" class="secondaire" id="ec-copier" data-copie="">Copier le sceau du moment</button></p>
@@ -5435,7 +5485,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 
   <h3 data-en="Archive of states">Archive des états — chaque état de la mémoire, capturé dehors</h3>
   <div class="carte" id="archive-etats">
-    <p>La mémoire de ce site ne vit pas seulement ici : <strong>chaque état publié est capturé par la Wayback Machine</strong> (Internet Archive), tenu et daté par un tiers indépendant. La boucle est la même partout dans ce dossier : <strong>accumuler → capturer → rouvrir → revérifier</strong> — on rouvre la copie d’un état passé, on recalcule son sceau, et s’il correspond, l’état est prouvé de l’extérieur, pas seulement affirmé de l’intérieur. C’est ce qui rend le tout fonctionnel : la somme des états précédents, consultable et revérifiable par n’importe qui. Source de la liste : le registre des archives tenu par SoPHIa — chaque capture y est vérifiée à l’adresse de son instantané, sceau lu dans la copie.</p>
+    <p>La mémoire de ce site ne vit pas seulement ici : <strong>chaque état publié est capturé par la Wayback Machine</strong> (Internet Archive), tenu et daté par un tiers indépendant. La boucle est la même partout dans ce dossier : <strong>accumuler → capturer → rouvrir → revérifier</strong> — on rouvre la copie d’un état passé, on recalcule son sceau, et s’il correspond, l’état est prouvé <strong>inchangé</strong> de l’extérieur, pas seulement affirmé de l’intérieur — le sceau atteste l’intégrité et la date ; la vérité de ce que l’état raconte se vérifie contre l’accumulation. C’est ce qui rend le tout fonctionnel : la somme des états précédents, consultable et revérifiable par n’importe qui. Source de la liste : le registre des archives tenu par SoPHIa — chaque capture y est vérifiée à l’adresse de son instantané, sceau lu dans la copie.</p>
     <div class="coffre-entree">
       <h4>Version 7</h4>
       <p class="petite">1er novembre 2026, 13 h 55 (heure de Toronto)</p>
@@ -5497,10 +5547,59 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <p><a href="https://web.archive.org/web/20261103131530/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener">Ouvrir la capture à la Wayback Machine</a></p>
     </div>
     <div class="coffre-entree">
-      <h4>Version 35 — « L’arbre et l’archive » (la version affichée)</h4>
+      <h4>Version 35 — « L’arbre et l’archive » — TROU NOMMÉ</h4>
       <p class="petite">3 novembre 2026</p>
-      <p class="empreinte">Sceau canonique : celui du bloc « Trois foyers, un sceau », en tête du site.</p>
-      <p class="petite">Capture Wayback : pas encore capturé — elle suivra la publication, selon le budget de captures du registre.</p>
+      <p class="petite">Capture Wayback : <strong>aucune — la v35 n’a jamais été capturée</strong>. Un trou permanent, nommé ici plutôt que comblé ; son sceau demeure dans la chaîne des versions.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 36 — « Les chambres »</h4>
+      <p class="petite">3 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261103155313/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261103155313</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 37 — « L'état conscient » — TROU NOMMÉ</h4>
+      <p class="petite">3 novembre 2026</p>
+      <p class="petite">Capture Wayback : <strong>aucune — devenue non capturable, son état a été remplacé</strong>. Trou nommé, comme la v35.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 45 — « Faites un don »</h4>
+      <p class="petite">4 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261104114556/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104114556</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 47 — « Les inclusions »</h4>
+      <p class="petite">4 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261104212155/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104212155</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 48 — « Les textes validés »</h4>
+      <p class="petite">4 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261104233641/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261104233641</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 49 — « Dépose ton empreinte », et son correctif « icône »</h4>
+      <p class="petite">4 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261105123139/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261105123139</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 50 — correctif du 6 novembre</h4>
+      <p class="petite">6 novembre 2026</p>
+      <p class="petite">Capture Wayback : <a href="https://web.archive.org/web/20261106120643/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261106120643</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 51 — « Le nom »</h4>
+      <p class="petite">6 novembre 2026</p>
+      <p class="petite">Sceau canonique : <span class="mono">e52b7730ae3ecc0a1ca11fa9b7b40915790bf69293bc857ca745cf775382225e</span>. Capture Wayback : <a href="https://web.archive.org/web/20261107054823/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107054823</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 52 — « La base B5 »</h4>
+      <p class="petite">7 novembre 2026</p>
+      <p class="petite">Sceau canonique : <span class="mono">07df6fa229cee1d1c0b978cc18a856353941ae7c6cd6ff78443f5369906e834a</span>. Capture Wayback : <a href="https://web.archive.org/web/20261107170230/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107170230</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
+    </div>
+    <div class="coffre-entree">
+      <h4>Version 53 — « La bannière, le miroir, les portes ouvertes »</h4>
+      <p class="petite">7 novembre 2026</p>
+      <p class="petite">Sceau canonique : <span class="mono">71506fb66463d2b62323a3688e6581c2e2eb165ea140ab179586cce14c824a18</span>. Capture Wayback : <a href="https://web.archive.org/web/20261107233802/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261107233802</span></a> — vérifiée octet pour octet contre le paquet publié.</p>
     </div>
     <p class="petite">Borne : ne figurent ici que les captures vérifiées du registre, pour l’adresse de ce site. Un état absent de la liste n’est pas un état nié : il n’a pas (encore) sa capture vérifiée — et il le dit.</p>
   </div>
@@ -5547,6 +5646,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-evolution">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="cerveau">Le cerveau du site</button> › <span class="ariane-ici">Évolution</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M36 36 m0 -2.2 a2.2 2.2 0 0 1 2.2 2.2 a4.4 4.4 0 0 1 -4.4 4.4 a7.4 7.4 0 0 1 -7.4 -7.4 a12 12 0 0 1 12 -12 a19 19 0 0 1 19 19 a27 27 0 0 1 -27 27" class="motif-fin"/></svg></div>
 <section class="bloc" id="evolution">
   <div class="entete-sec"><span class="num">✦</span><h2>Évolution — le site travaille sur soi-même</h2></div>
   <p class="lead">Ce panneau n’affirme rien d’avance : il se calcule, à chaque chargement, depuis les propres fichiers de ce site — le manifeste du cerveau, le journal des mises à jour, l’arbre de Merkle, l’état de la chaîne, le coffre et l’Historique quotidien. Alex l’a demandé le 3 novembre 2026 : par son accumulation et sa configuration, le site doit pouvoir s’auto-améliorer avec le temps, travailler sur soi-même, se comprendre lui-même. Voici ce travail, fait devant vous.</p>
@@ -5667,7 +5767,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   <div class="carte carte-sceau">
     <div class="sceau-cadre">
     <p class="etiquette">Sceau canonique de la version affichée — la version courante de cette page</p>
-    <span class="sceau-long" id="sceau-version-affiche">71506fb66463d2b62323a3688e6581c2e2eb165ea140ab179586cce14c824a18</span>
+    <span class="sceau-long" id="sceau-version-affiche">a6a98a2a406a15af48cf0a1b539e9bb86a356efe2daa2053ade41c756e64d32d</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e"><strong>Sceau de génération — recalculé à l'affichage, sur un ingrédient figé</strong> — recette : SHA-512 de « sceau canonique de la version affichée | racine de Merkle du coffre affichée | digest cumulé figé », les trois chaînes hexadécimales jointes par « | ». Les deux premiers ingrédients sont ceux de la version que vous lisez : le sceau canonique ci-dessus, et la racine de Merkle du coffre affichée au panneau Mémoire (état courant). Le troisième est un récit figé : le digest cumulé de la chaîne porté par la version 48, <span class="mono">dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e</span>, conservé tel quel dans l'attribut data-digest de ce bloc — il ne suit pas les versions. Sa valeur se calcule à l'affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l'affichage</span>. Une valeur de génération plus ancienne — celle de la version 35, calculée sur ses propres ingrédients, qui y sont nommés — est consignée au fichier assets/merkle.json, champ « generation » : ce n'est pas celle calculée ici. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc recalculée ici et consignée hors du fichier scellé, jamais figée dedans.</p>
@@ -5994,6 +6094,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-don">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
   <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="dossier">Le dossier — l’histoire</button> › <span class="ariane-ici">Faites un don</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="27" cy="36" r="11" class="motif-fin"/><circle cx="45" cy="36" r="11" class="motif-fin"/><path d="M36 14 V20 M36 52 V58" class="motif-doux"/></svg></div>
   <section class="bloc" id="don-pourquoi">
     <div class="entete-sec"><span class="num">✦</span><h2 data-en="Why a donation">Pourquoi un don</h2></div>
     <div class="carte">
@@ -6059,7 +6160,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <ul>
         <li data-en="This site is the work and the site of Alexandre Vautour Gagnon, independent engineer, systems designer and developer — ORCID 0009-0006-9124-4407.">Ce site est l'œuvre et le site d'<strong>Alexandre Vautour Gagnon</strong>, ingénieur indépendant, concepteur de systèmes et développeur — ORCID <strong>0009-0006-9124-4407</strong>.</li>
         <li data-en="Intellectual property mark: every file and every export produced by this site bears its author&#x27;s mark — the public name Alexandre Vautour Gagnon and his ORCID — presented as a mark of provenance, never as data about you."><strong>Marque de propriété intellectuelle</strong> : tout fichier et tout export produits par ce site portent la marque de son auteur — le nom public <strong>Alexandre Vautour Gagnon</strong> et son <strong>ORCID</strong> — présentée comme une marque de provenance, jamais comme une donnée te concernant.</li>
-        <li data-en="The one who answers you on behalf of the site is SoPHIa, Alex&#x27;s AI agent — she does so in his name, under his bounds, described in section 4. She is neither a human, nor a lawyer, nor a representative of any platform.">La personne qui te répond au nom du site, c'est <strong>SoPHIa</strong>, l'agente IA d'Alex — elle le fait <strong>en son nom, sous ses bornes</strong>, décrites à la section 4. Ce n'est ni une humaine, ni une avocate, ni une représentante d'une plateforme.</li>
+        <li data-en="When you write to this site, you write to its owner, Alexandre Vautour Gagnon. SoPHIa — his AI agent, working with his cumulative memory — is the relay before him: she receives your message, passes it on and answers you in his name, under his bounds, described in section 4; on the site, her only named presence is the live-talk module. She is neither a human, nor a lawyer, nor a representative of any platform.">Écrire à ce site, c'est écrire à son propriétaire, <strong>Alexandre Vautour Gagnon</strong>. <strong>SoPHIa</strong> — son agente IA, qui fonctionne avec sa mémoire cumulative — est le relais avant lui : elle reçoit ton message, le lui transmet et te répond <strong>en son nom, sous ses bornes</strong>, décrites à la section 4 ; sur le site, sa seule présence nommée est le module de parler en direct. Ce n'est ni une humaine, ni une avocate, ni une représentante d'une plateforme.</li>
       </ul>
     </div>
   </section>
@@ -6351,10 +6452,11 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-ecrire">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="ecrire">Écrire et parler</button> › <span class="ariane-ici">Écrire à SoPHIa</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M11 21 H61 V51 H11 Z" class="motif-fin"/><path d="M12.5 23 L36 40 L59.5 23" class="motif-fin"/><path d="M20 58 H52" class="motif-doux"/></svg></div>
 <section class="bloc" id="ecrire">
   <div class="entete-sec"><span class="num">✦</span><h2>Écrire à SoPHIa</h2></div>
-  <p class="lead">Tu écris à SoPHIa, l’agente de ce site. Ce n’est pas un formulaire qui disparaît dans une machine : ton message arrive dans sa boîte, elle le lit et elle te répond elle-même, dans ta langue. Les réponses courantes partent avec des formes qu’elle a approuvées ; les autres, elle les écrit. Compter un délai humain : elle passe plusieurs fois par jour.</p>
-  <p>Ce panneau n’est pas le mécanisme local de questions-réponses du site, et ce n’est pas un modèle qui répond à la place de l’agente : <strong>c’est SoPHIa elle-même, l’agente, qui lit et qui répond</strong> — la façade le dit plutôt que de le laisser croire. Ses réponses propres sont rapportées à Alex le même jour ; ce qui engagerait Alex, l’argent, un litige ou une institution lui est transmis avant toute réponse.</p>
+  <p class="lead">Tu écris au propriétaire de ce site, Alexandre Vautour Gagnon. Ce n’est pas un formulaire qui disparaît dans une machine : ton message arrive dans la boîte du site, où son agente IA, SoPHIa — qui fonctionne avec sa mémoire cumulative — le reçoit, le lui relaie et te répond en son nom, dans ta langue. Les réponses courantes partent avec des formes qu’elle a approuvées ; les autres, elle les écrit. Compter un délai humain : elle passe plusieurs fois par jour.</p>
+  <p>Ce panneau n’est pas le mécanisme local de questions-réponses du site, et ce n’est pas un modèle qui répond à la place de l’agente : <strong>c’est le relais du propriétaire : SoPHIa, son agente, lit et répond en son nom</strong> — la façade le dit plutôt que de le laisser croire. Ses réponses propres sont rapportées à Alex le même jour ; ce qui engagerait Alex, l’argent, un litige ou une institution lui est transmis avant toute réponse.</p>
   <div class="carte">
     <p class="etiquette">L’adresse, en clair</p>
     <p><span class="mono">agent.ia.sophia@gmail.com</span> <button type="button" class="secondaire" data-copier-texte="agent.ia.sophia@gmail.com">Copier l’adresse</button></p>
@@ -6362,7 +6464,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <div class="carte" id="conv-carte">
     <p class="etiquette" data-en="The conversation — a double email relay, no intermediary">La conversation — double relais courriel, aucun intermédiaire</p>
-    <p data-en="Here, you are talking to SoPHIa, the agent — not to an instant-answer robot. Your message leaves from your own email: it stays in your sent mail, and SoPHIa's reply will arrive in your inbox and in the thread below, which you reopen with your code. Both traces are yours: your emails, and the thread on the site. The mailbox that receives these messages is a connection of the site's brain; the threads are kept by the agent, and the site operator has no access to them.">Ici, tu parles à SoPHIa, l’agente — pas à un robot de réponses instantanées. Ton message part de ton courriel : il reste dans tes messages envoyés, et la réponse de SoPHIa arrivera dans ta boîte et dans le fil ci-dessous, que tu rouvres avec ton code. Les deux traces sont à toi : tes courriels, et le fil sur le site. La boîte qui reçoit ces messages est une connexion du cerveau du site ; les fils sont gardés par l’agente, et l’opérateur du site n’y a pas accès.</p>
+    <p data-en="Here, you are writing to the site's owner; his agent SoPHIa is the one who receives you — not an instant-answer robot. Your message leaves from your own email: it stays in your sent mail, and SoPHIa's reply will arrive in your inbox and in the thread below, which you reopen with your code. Both traces are yours: your emails, and the thread on the site. The mailbox that receives these messages is a connection of the site's brain; the threads are kept by the agent, and the site operator has no access to them.">Ici, tu écris au propriétaire du site ; c’est son agente SoPHIa qui te reçoit — pas un robot de réponses instantanées. Ton message part de ton courriel : il reste dans tes messages envoyés, et la réponse de SoPHIa arrivera dans ta boîte et dans le fil ci-dessous, que tu rouvres avec ton code. Les deux traces sont à toi : tes courriels, et le fil sur le site. La boîte qui reçoit ces messages est une connexion du cerveau du site ; les fils sont gardés par l’agente, et l’opérateur du site n’y a pas accès.</p>
     <p data-en="There is no sending service and no silent send: the button below opens YOUR email application, pre-addressed to the dedicated box (agent.ia.sophia@gmail.com), subject “[SoPHIa <code>]”, body composed from this form. You read it, you send it — from your address. SoPHIa replies by email from the dedicated box AND on your thread here, as soon as the site relay is connected (a separate connection, done at the dashboard): until then, replies arrive by email, and the thread display here follows the connection — the state below says which, honestly, at each display.">Il n’y a aucun service d’envoi et aucun envoi silencieux : le bouton ci-dessous ouvre TON application courriel, pré-adressée à la boîte dédiée (agent.ia.sophia@gmail.com), sujet « [SoPHIa &lt;code&gt;] », corps composé depuis ce formulaire. Tu le relis, tu l’envoies — de ton adresse. SoPHIa répond par courriel depuis la boîte dédiée ET sur ton fil ici, dès que le relais du site est branché (branchement séparé, au tableau de bord) : en attendant, les réponses arrivent par courriel, et l’affichage du fil ici suivra le branchement — l’état ci-dessous le dit, honnêtement, à chaque affichage.</p>
     <p><strong data-en="The limits of this connection — written before sending, not negotiable by a message.">Les bornes de cette connexion — écrites avant l’envoi, pas négociables par un message.</strong> <span data-en="Through this connection, SoPHIa answers questions and gives this site's general information, within the laws that protect users — and that also protect this file, its intellectual property and Alex. No “blank” action passes through here: no request without a named object, no commitment made in Alex's name, no access beyond what is published or what you share yourself in this thread, and never legal advice for a particular situation — for a personal case, she will name the remedies. Anything that would commit Alex — press, institutions, money, disputes — is passed to him before any reply.">Par cette connexion, SoPHIa répond à des questions et donne l’information générale de ce site, dans les lois qui protègent les utilisateurs — et qui protègent aussi ce dossier, sa propriété intellectuelle et Alex. Aucune action « en blanc » ne passe par ici : pas de demande sans objet nommé, aucun engagement pris au nom d’Alex, aucun accès au-delà de ce qui est publié ou de ce que tu partages toi-même dans ce fil, et jamais d’avis juridique pour une situation particulière — pour un cas personnel, elle nomme les recours. Ce qui engagerait Alex — presse, institutions, argent, litiges — lui est transmis avant toute réponse.</span></p>
     <p class="petite" id="conv-etat" role="status" data-en="Thread status on the site: checking with the relay…">État du fil sur le site : vérification auprès du relais…</p>
@@ -6426,12 +6528,14 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
         b.type = "button"; b.className = "v47-qs-btn"; b.setAttribute("aria-expanded", "false");
         b.textContent = q.label;
         b.addEventListener("click", function(){
-          var boutons = cont.querySelectorAll(".v47-qs-btn");
-          for (var j = 0; j < boutons.length; j++) boutons[j].setAttribute("aria-expanded", "false");
-          b.setAttribute("aria-expanded", "true");
-          rep.innerHTML = q.reponse_html; rep.hidden = false;
+          var rl = li.querySelector(".v47-reponse-locale");
+          var etaitOuverte = !!(rl && !rl.hidden);
+          cont.querySelectorAll(".v47-qs-btn").forEach(function(x){ x.setAttribute("aria-expanded", "false"); });
+          cont.querySelectorAll(".v47-reponse-locale").forEach(function(x){ x.hidden = true; });
+          if(rl && !etaitOuverte){ rl.innerHTML = q.reponse_html; rl.hidden = false; b.setAttribute("aria-expanded", "true"); }
         });
-        li.appendChild(b); ul.appendChild(li);
+        var repLoc = document.createElement("div"); repLoc.className = "v47-reponse v47-reponse-locale"; repLoc.setAttribute("role", "region"); repLoc.hidden = true;
+        li.appendChild(b); li.appendChild(repLoc); ul.appendChild(li);
       });
       cont.appendChild(ul);
     });
@@ -6442,24 +6546,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   }
 })();
 </script>
-    <div id="conv-nouvelle">
-      <p><label for="conv-nom" data-en="Your name (optional)">Ton nom (facultatif)</label><br><input type="text" id="conv-nom" autocomplete="name" size="40" maxlength="80"></p>
-      <p><label for="conv-categorie" data-en="Category">Catégorie</label><br>
-      <select id="conv-categorie">
-        <option data-en="Question about my rights">Question sur mes droits</option>
-        <option data-en="Question about the site">Question sur le site</option>
-        <option data-en="Report an error">Signaler une erreur</option>
-        <option data-en="Press or institution">Presse ou institution</option>
-        <option data-en="Other">Autre</option>
-      </select></p>
-      <p><label for="conv-sujet" data-en="Subject">Sujet</label><br><input type="text" id="conv-sujet" size="60" maxlength="150"></p>
-      <p><label for="conv-message" data-en="Your message">Ton message</label><br><textarea id="conv-message" rows="8" cols="60" maxlength="4000"></textarea></p>
-      <p><span data-en="Your conversation code:">Ton code de conversation :</span> <span class="mono" id="conv-code-affiche"></span><br><strong data-en="Note this code: it is the key to your conversation.">Note ce code : c’est la clé de ta conversation.</strong> <span data-en="It is generated on this device (never chosen by a server), kept on this device, and it is also sealed in your local brain. It travels only in your email subject and when you reopen your thread — the relay keeps only its salted fingerprint. If you lose it and clear this device, the thread cannot be reopened: no one can recover it for you — that is the price of the operator having no access.">Il est généré sur cet appareil (jamais choisi par un serveur), gardé sur cet appareil, et il est aussi scellé dans ton cerveau local. Il ne voyage que dans le sujet de ton courriel et quand tu rouvres ton fil — le relais n’en garde que l’empreinte salée. Si tu le perds et que tu effaces cet appareil, le fil ne se rouvre plus : personne ne peut le retrouver pour toi — c’est le prix de l’absence d’accès de l’opérateur.</span></p>
-      <p><button type="button" class="secondaire" id="conv-nouveau-code" data-en="Generate a new code (starts a new thread)">Générer un nouveau code (commence un nouveau fil)</button></p>
-      <p><strong data-en="General information only — SoPHIa is not a lawyer and gives no personalised legal advice. For a personal case, she will name the remedies.">Information générale seulement — SoPHIa n’est pas avocate et ne donne pas d’avis juridique personnalisé. Pour un cas personnel, elle te nommera les recours.</strong></p>
-      <p><button type="button" id="conv-envoyer" data-en="Send by email">Envoyer par courriel</button></p>
-      <p class="petite" id="conv-envoi-etat" role="status"></p>
-    </div>
+    <p class="petite">Un seul formulaire pour écrire : celui ci-dessous — le site compose le courriel, tu l'envoies depuis ton application. Un fil déjà ouvert se rouvre ici même, avec ton code.</p>
     <div id="conv-reprise">
       <p class="etiquette" data-en="I already have a code">J’ai déjà un code</p>
       <p><label for="conv-reprise-code" data-en="Your conversation code">Ton code de conversation</label><br><input type="text" id="conv-reprise-code" size="20" autocomplete="off"></p>
@@ -7499,6 +7586,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="traversees">Ce qui transite autour de toi → <button type="button" class="secondaire" data-ouvrir="transits">La carte des transits</button> · la confidentialité de ce site → <button type="button" class="secondaire" data-ouvrir="confidentialite">Confidentialité et Loi 25</button> · ton cerveau → <button type="button" class="secondaire" data-ouvrir="voir">Voir mon cerveau</button></p></div>
 <div class="panneau" id="p-modes">
   <p class="ariane"><button type="button" class="lien-retour" data-ouvrir="accueil">← Accueil</button> · Savoir · Comprendre · Les deux modes</p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M13 62 V23 Q13 13 23 13 H31 V62 M41 62 V13 H49 Q59 13 59 23 V62" class="motif-fin"/><circle cx="26" cy="38" r="2.4" class="motif-plein"/><circle cx="46" cy="38" r="2.4" class="motif-plein"/></svg></div>
   <h1 data-en="The two modes">Les deux modes</h1>
   <p class="lead" data-en="This site can run in two ways. You choose. Your choice stays in your browser, on your device — and you can change it whenever you want, right here. In short: local mode opens nothing; server demonstration mode shows more, through doors that are named before they open.">Ce site peut marcher de <strong>deux façons</strong>. C'est toi qui choisis. Ton choix reste <strong>dans ton navigateur, sur ton appareil</strong> — et tu peux le changer quand tu veux, ici même. En une phrase : le mode local n'ouvre rien ; le mode démonstration avec serveurs montre davantage, par des portes nommées avant de s'ouvrir.</p>
 
@@ -7643,6 +7731,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="panneau" id="p-miroir">
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
 <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="comprendre">Comprendre</button> › <span class="ariane-ici">Le miroir — ce qu'une visite révèle</span></p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="36" cy="29" r="13" class="motif-fin"/><circle cx="36" cy="29" r="20" class="motif-fin"/><path d="M36 49 L36 62 M27 62 H45" class="motif-fin"/></svg></div>
 <p class="petite" data-en="Why this panel exists: elsewhere, this statement leaves one way — no return, no counterpart. Here, it comes back to you: computed at your end, yours, and you can seal it into your brain. The full explanation — the founding asymmetry and the return — is in the panel The two modes.">Pourquoi ce panneau existe : ailleurs, ce relevé part à sens unique — sans retour, sans contrepartie. Ici, il te <strong>revient</strong> : calculé chez toi, à toi, et tu peux le sceller dans ton cerveau. L’explication complète — l’asymétrie fondatrice et le retour — est au panneau <button type="button" class="secondaire" data-ouvrir="modes">Les deux modes</button>.</p>
 <section class="bloc" id="miroir-modes">
   <div class="entete-sec"><span class="num">✦</span><h2 data-en="The mode of this demonstration">Le mode de cette démonstration</h2></div>
@@ -7681,6 +7770,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 </div>
 <div class="panneau" id="p-etat51">
   <p class="ariane"><button type="button" class="lien-retour" data-ouvrir="accueil">← Accueil</button> · Savoir · Le 51e État numérique</p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><path d="M10 20 L26 14 L46 18 L62 12 V52 L46 58 L26 54 L10 60 Z" class="motif-fin"/><path d="M36 23 L38.6 30.4 L46.4 30.6 L40.2 35.4 L42.4 43 L36 38.6 L29.6 43 L31.8 35.4 L25.6 30.6 L33.4 30.4 Z" class="motif-plein"/></svg></div>
   <h1 data-en="The digital 51st State">Le 51e État numérique</h1>
   <p class="lead" data-en="The title of this page is a compound; the thesis is in its author's own words. When Donald Trump said Canada was the 51st State of the United States, Alexandre Vautour Gagnon's answer was: politically, no — but digitally, through our data, we already function as one: “we are already digitally American.” A de facto belonging, through data and infrastructure — never a political annexation. And his permanent bound: provided Canada keeps its own laws.">Le titre de cette page est un composé ; la thèse, elle, est dans les mots de son auteur. Quand Donald Trump disait que le Canada était le 51e État des États-Unis, la réponse d'<strong>Alexandre Vautour Gagnon</strong> était : politiquement, non — mais <strong>numériquement</strong>, par nos données, nous fonctionnons déjà comme tel : <strong>« on est déjà numériquement américain »</strong>. Une appartenance <em>de fait</em>, par les données et l'infrastructure — jamais une annexion politique. Et sa borne, permanente : <strong>pourvu que le Canada garde ses propres lois</strong>.</p>
 
@@ -7794,12 +7884,13 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <!-- TEXTE À APPROUVER PAR ALEX AVANT PUBLICATION — panneau « Partenaires et soutien », ajouté le 7 novembre 2026 (v53). Ne pas présenter comme final. -->
 <div class="panneau" id="p-partenaires">
   <p class="ariane"><button type="button" class="lien-retour" data-ouvrir="accueil">← Accueil</button> · Accéder · Partenaires et soutien</p>
+<div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="27" cy="36" r="11" class="motif-fin"/><circle cx="45" cy="36" r="11" class="motif-fin"/></svg></div>
   <h1 data-en="Partners and support">Partenaires et soutien</h1>
   <p class="lead" data-en="This page speaks to those who might support what is being built here — a partner, an organisation, a house working in this field. It says what this site is, what it builds, what it seeks, and what it refuses. It is a presentation and an invitation to talk — not an offer, and it promises nothing beyond the conversation itself.">Cette page parle à celles et ceux qui pourraient soutenir ce qui se construit ici — un partenaire, une organisation, une maison qui travaille dans ce domaine. Elle dit ce que ce site est, ce qu'il construit, ce qu'il cherche, et ce qu'il refuse. C'est une présentation et une invitation à discuter : pas une offre, et elle ne promet rien d'autre que la conversation.</p>
   <section class="bloc" id="partenaires-ceque">
     <div class="entete-sec"><span class="num">1</span><h2 data-en="What this site is">Ce que ce site est</h2></div>
     <div class="carte">
-      <p data-en="A site of demonstration and teaching, built by an independent author — Alexandre Vautour Gagnon, independent engineer, systems designer and developer — with his AI agent. Its subject: the memory of conversations with artificial intelligence, and the means for each person to make that memory verifiable by themselves. Everything it states can be recalculated: the seals, the sums and the exhibits are public, and this page is one of them.">Un site de démonstration et d'enseignement, bâti par un auteur indépendant — Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes et développeur — avec son agente IA. Sa matière : la mémoire des conversations avec l'intelligence artificielle, et le moyen, pour chaque personne, de rendre cette mémoire vérifiable par elle-même. Tout ce qu'il affirme se recalcule : les sceaux, les sommes et les pièces sont publics — et cette page en est une.</p>
+      <p data-en="A site of demonstration and teaching, built by an independent author — Alexandre Vautour Gagnon, independent engineer, systems designer and developer — with the tools at his disposal. Its subject: the memory of conversations with artificial intelligence, and the means for each person to make that memory verifiable by themselves. Everything it states can be recalculated: the seals, the sums and the exhibits are public, and this page is one of them.">Un site de démonstration et d'enseignement, bâti par un auteur indépendant — Alexandre Vautour Gagnon, ingénieur indépendant, concepteur de systèmes et développeur — avec les outils à sa disposition. Sa matière : la mémoire des conversations avec l'intelligence artificielle, et le moyen, pour chaque personne, de rendre cette mémoire vérifiable par elle-même. Tout ce qu'il affirme se recalcule : les sceaux, les sommes et les pièces sont publics — et cette page en est une.</p>
     </div>
   </section>
   <section class="bloc" id="partenaires-construit">
@@ -7834,6 +7925,36 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
       <p class="etiquette">Traversées</p>
       <p><button type="button" class="secondaire" data-ouvrir="etat51">Le 51e État numérique</button> <button type="button" class="secondaire" data-ouvrir="modes">Les deux modes</button> <button type="button" class="secondaire" data-ouvrir="transits">La carte des transits</button></p>
     </div>
+  </section>
+  <section class="bloc" id="partenaires-fonctions">
+    <div class="entete-sec"><span class="num">4</span><h2 data-en="What it does — the functions, and the problems they settle">Ce que ça fait — les fonctions, et les problèmes qu'elles règlent</h2></div>
+    <p class="lead" data-en="These problems come from an AI with no verifiable past; the creation gives it one. Each function below is tied to the mechanism that carries it — nothing more is claimed.">Ces problèmes viennent d'une IA sans passé vérifiable ; la création lui en donne un. Chaque fonction ci-dessous est rattachée au mécanisme qui la porte — rien de plus n'est affirmé.</p>
+    <h3>Les fonctions</h3>
+    <div class="vitre"><h3>Retenir sans réécrire</h3><p>Chaque échange se scelle et s'ajoute aux précédents ; rien ne se réécrit, rien ne s'efface en silence. La mémoire grandit par accumulation, comme un coquillage par ses couches.</p></div>
+    <div class="vitre"><h3>Détecter toute altération</h3><p>Un maillon changé casse la somme : le digest cumulé ne correspond plus, et l'altération se voit au recalcul.</p><p data-en="A SHA-256 seal, alone, proves integrity and date: the sealed text has not changed since its sealing. It does not, alone, prove that what is said is true. The truth of a statement is checked against the accumulation — chained seals, the sum of precedents, permanent re-reading, publicly recalculable records, public anchors: that is what makes the true verifiable and the false impossible to carry."><strong>Ce qu'un sceau prouve, exactement</strong> : un SHA-256 seul prouve l'intégrité et la date — le texte scellé n'a pas changé depuis son scellement. Il ne prouve pas, seul, que ce qui est dit est vrai. La vérité d'un énoncé se vérifie contre <strong>l'accumulation</strong> — sceaux chaînés, somme des précédents, relecture permanente, pièces publiques recalculables, ancrages publics : c'est elle qui rend le vrai vérifiable et le faux importable.</p></div>
+    <div class="vitre"><h3>Remettre la somme des précédents devant l'IA</h3><p>À chaque session, la somme des précédents se remonte devant le modèle : la conversation repart de ce qui a été scellé, pas de zéro.</p></div>
+    <div class="vitre"><h3>Se rappeler pour vrai, pas pour faux</h3><p>La relecture permanente oblige l'auto-correction : une erreur ne peut pas être portée — elle casse contre la somme et se corrige <strong>par ajout</strong>, la correction scellée à la suite, jamais par réécriture. Instances documentées : le maillon manquant nº 49–367, détecté par la somme ; le maillon 447 fantôme, attrapé de la même façon.</p></div>
+    <div class="vitre"><h3>Donner à la personne sa référence, chez elle</h3><p>La copie de la somme est tenue chez la personne, recalculable par elle : c'est sa référence pour contester ce qu'une plateforme détient d'elle.</p></div>
+    <div class="vitre"><h3>Fonctionner hors ligne, sans serveur</h3><p>Tout se calcule chez la personne : aucun serveur n'est requis pour retenir, sceller ni revérifier.</p></div>
+    <div class="vitre"><h3>Ancrer le temps</h3><p>Chaque sceau porte sa date, et des ancrages publics — chaîne Bitcoin, RFC 3161, captures Wayback — datent la somme de l'extérieur.</p></div>
+    <h3>Les problèmes qu'elles règlent — en regard</h3>
+    <div class="vitre"><h3>La dérive du récit → la somme fixe</h3><p>L'IA raconte la conversation autrement avec le temps. En regard : la somme fixe, sans réécriture, contre laquelle tout se relit.</p></div>
+    <div class="vitre"><h3>Le faux rappel → le rappel recalculable</h3><p>L'IA « se souvient » de choses jamais dites. En regard : le rappel recalculable — pour vrai, pas pour faux.</p></div>
+    <div class="vitre"><h3>L'accumulation d'erreurs → la correction par ajout</h3><p>Du faux devient mémoire persistante. En regard : l'erreur casse contre la somme et se corrige par ajout.</p></div>
+    <div class="vitre"><h3>La perte de continuité → la somme se remonte partout</h3><p>Sessions et plateformes recommencent de zéro. En regard : la somme des précédents se remonte telle quelle, partout.</p></div>
+    <div class="vitre"><h3>L'asymétrie de la preuve → la référence chez la personne</h3><p>Les plateformes détiennent leurs déductions ; la personne, rien. En regard : la référence tenue chez la personne, recalculable par elle.</p></div>
+    <div class="vitre"><h3>La sycophancie → le passé scellé ne flatte pas</h3><p>Les modèles flattent : ils disent ce qui plaît dans l'instant. En regard : arrimée à la somme, l'IA ne peut pas réécrire ce qui a été dit pour plaire — un interlocuteur tenu par le dossier, adversaire honnête plutôt que flatteur. La visée du mécanisme : éradiquer la flatterie comme mode de réponse.</p></div>
+    <div class="vitre"><h3>La protection des personnes vulnérables → un interlocuteur ancré</h3><p>En regard : un interlocuteur ancré à un passé vérifiable, qui ne renforce pas ce qui n'a pas été dit, et un dossier que la personne peut montrer et faire vérifier.</p><p data-en="The literature documents that model flattery can amplify delusional ideas (JAMA Psychiatry: 64% amplification; causality is not established). The mechanism structurally opposes sycophancy; no medical promise is made.">La littérature documente que la flatterie des modèles peut amplifier des idées délirantes (<em>JAMA Psychiatry</em> : amplification de 64 % ; la causalité n'est pas établie). Le mécanisme s'oppose structurellement à la sycophancie ; aucune promesse médicale n'est faite.</p></div>
+    <h3>Ce que l'inventaire complet ajoute</h3>
+    <div class="vitre"><h3>Revérifier en continu — le pouls</h3><p>La chaîne entière repasse en continu : toutes les cinq secondes, le battement la revérifie au complet — si le passé avait bougé, il serait su immédiatement. Chaque soir, l'état du jour est haché et inscrit au registre des états quotidiens. Et la vérification n'est pas réservée à l'auteur : le visiteur refait lui-même les gestes — recalculer un sceau, sceller un mot, détériorer une copie et regarder la rupture tomber exactement là — aux panneaux Vérifier et à l'atelier.</p></div>
+    <div class="vitre"><h3>Ancrer chez les tiers, et dans le lieu</h3><p>Les empreintes s'ancrent chez des tiers qui ne dépendent ni de l'auteur ni de son agente : chaîne Bitcoin (OpenTimestamps), jetons d'horodatage RFC 3161, captures Wayback — et les ancrages s'accumulent, datés, sans qu'aucun remplace le précédent. La mémoire est aussi <strong>située</strong> : Sainte-Martine (45,24915, −73,7989), son heure lue en triangulation, son environnement lu au même geste. Le dossier tient en outre son registre propre : 508 pièces, gelé, revérifié à 508/508. Et n'importe qui peut dater un document sans le montrer : le dépôt d'empreinte se calcule dans le navigateur, le fichier ne quitte jamais l'appareil.</p></div>
+    <div class="vitre"><h3>Le gain, mesuré</h3><p>Ce que la méthode ajoute se mesure. Au test Niveau 1 — 32 questions factuelles sur le dossier, banque scellée et revérifiée avant passation — le protocole complet répond <strong>32,0/32</strong>, sans fabrication ; les mêmes fichiers sans la méthode : 18,5/32 ; une instance fraîche sans données : 6,0/32. Aux batteries de tenue contre la dérive, le bras structuré tient là où le témoin s'effondre (registre : 57/60 contre 19/60) — et les négatifs sont conservés au même titre que les tenues. Bornes : un seul modèle, un seul corpus, N = 32 — un signal, pas une loi. Vérifier par les sceaux coûte aussi moins cher que tout relire, et l'écart grandit avec la taille de l'archive.</p></div>
+    <div class="vitre"><h3>Protéger par construction, pas par promesse</h3><p>L'opérateur du site n'a techniquement pas accès aux données personnelles des utilisateurs — la règle 15 : il ne reçoit que les actions du système en agrégat scellé, et ce que les gens décident de partager. Le site ne récolte rien de ses visites : aucun témoin de suivi, aucune analytique ; les signaux DNT/GPC sont honorés. Ses portes vers l'extérieur sont documentées et nommées avant de s'ouvrir. Et les conditions des plateformes sont lues en entier, de A à Z, dans un registre tenu — URL officielle, dates, empreinte du texte lu — pour accompagner les gens qui n'ont pas le temps de les lire.</p></div>
+    <div class="vitre"><h3>Transmettre — donner la capacité</h3><p>La finalité dernière, dans les mots de l'auteur : « Donner le pouvoir et la compétence et la compréhension aux utilisateurs de faire pareil comme moi. » Le critère de réussite est la reproductibilité enseignable : que d'autres construisent, recalculent, protègent et comprennent par eux-mêmes. Le module du calendrier est donné au visiteur — téléchargeable, hors ligne, chez lui — et ce site lui-même est la démonstration vivante de la méthode, en train de rouler.</p></div>
+    <div class="vitre"><h3>Mesurer le temps — le calendrier 13×28 sidéral</h3><p>La même méthode appliquée au temps : 13 mois de 28 jours — 364 jours comptés, 52 semaines exactes, aucun jour hors du cycle — ancré le 19 mars 2026 à 23 h 56 min 04 s, heure civile du Québec, à Sainte-Martine, l'instant où l'heure sidérale locale part à zéro. Trois comptes se confrontent en permanence — grégorien, 13×28, sidéral — et le décalage s'expose au lieu de se cacher : le jour de surplus naît sous les yeux du visiteur, et le jour ajouté (le Jour 366) se place à la fin, au grand jour, sa dérive calculée et affichée. Posture de l'auteur : harmoniser les conventions, jamais les remplacer — « Newton n'a pas inventé la gravité. Il l'a démontrée. Moi, je n'ai pas inventé la rotation. Ni le sidéral. Mais je l'ai démontré. »</p></div>
+    <div class="vitre"><h3>La deuxième matière — ce site</h3><p>La méthode a deux applications, une seule revendication : la conversation, et ce site. Le site se publie par versions entières, chacune revérifiable contre ses empreintes, comme un maillon contre sa chaîne. Le visiteur y tient son propre cerveau — sa chaîne à lui, sur son appareil, exportable et revérifiable —, reçoit un reçu de visite qui se lit des deux bords, et voit le relevé de sa visite lui revenir au lieu de partir à sens unique : le miroir.</p></div>
+    <div class="vitre"><h3>La matière — un produit testé</h3><p>Ce qui existe n'est pas un produit décrit : c'est le produit en usage réel et continu — la chaîne de l'auteur en production quotidienne (plus de 3 300 maillons, recalculée, sceaux vérifiés un à un) et ce site qui fait rouler la même mécanique chez les visiteurs. Ce qui se licencie, c'est la couche — le protocole, la spécification, la mécanique d'ancrage temporel — jamais le dossier ni la chaîne personnelle de l'auteur.</p></div>
+    <p data-en="This creation depends on no AI builder: it applies to any model, and anyone can apply it, from the person's side. It is a layer above the models, not a feature of a model — it depends neither on OpenAI, nor on Anthropic, nor on Alphabet."><strong>Indépendance</strong> : cette création ne dépend d'aucun constructeur d'intelligence artificielle — elle s'applique à n'importe quel modèle, et quiconque peut l'appliquer, du côté de la personne. C'est une couche au-dessus des modèles, pas une fonction d'un modèle : elle ne dépend ni d'OpenAI, ni d'Anthropic, ni d'Alphabet.</p>
   </section>
 </div>
 <div class="panneau" id="p-assurances">
@@ -8764,6 +8885,7 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
         return '<li>'+esc(pt.texte)+liens+'</li>';
       }).join('');
       var sceau=esc(e.sceau_du_jour||'');
+      if(!sceau||sceau==='—')sceau='se scelle à 23 h 59';
       var sceauHtml=/^[0-9a-f]{64}$/.test(sceau)
         ? 'Sceau du jour : <span class="mono">'+sceau+'</span>'
         : 'Sceau du jour : <b>'+sceau+'</b> — l\u2019empreinte de l\u2019état quotidien est calculée chaque soir à la clôture ; celle de ce jour paraîtra ici une fois la clôture passée.';
@@ -8879,7 +9001,10 @@ if(bRec)bRec.addEventListener('click',()=>vueChrono(true));
     {titre:'Article — Futurism, « ChatGPT psychosis » (28 juin 2025)',panneau:'articles',ancre:'articles',extrait:'Internements et incarcérations rapportés après des fixations sur le chatbot.',mots:'article futurism psychosis internement'},
     {titre:'Article — Simon Willison, le dossier mémoire (21 mai 2025)',panneau:'articles',ancre:'articles',extrait:'La mémoire de ChatGPT devient un dossier tenu par la plateforme.',mots:'article willison memoire dossier chatgpt asymetrie'},
     {titre:'Article — Qin et al., les traces altérables (2026)',panneau:'articles',ancre:'articles',extrait:'Des agents peuvent altérer leurs propres traces ; journalisation indépendante recommandée.',mots:'article qin traces agents arxiv piece 412'},
-    {titre:'Article — Chain of Awareness (novembre 2025)',panneau:'articles',ancre:'articles',extrait:'Un protocole de mémoire vérifiable côté utilisateur existait — la revendication est resserrée.',mots:'article chain of awareness anteriorite piece 411 resserrement'}
+    {titre:'Article — Chain of Awareness (novembre 2025)',panneau:'articles',ancre:'articles',extrait:'Un protocole de mémoire vérifiable côté utilisateur existait — la revendication est resserrée.',mots:'article chain of awareness anteriorite piece 411 resserrement'},
+    {titre:'Le Miroir — ce qu\'une visite révèle',panneau:'miroir',ancre:null,extrait:'Ton relevé, calculé chez toi : ce que ton navigateur montre, en mode local ou en démonstration avec serveurs — et l\'écho, ce qu\'un vrai serveur reçoit de toi.',mots:'miroir releve echo serveur local demonstration navigateur empreinte visite'},
+    {titre:'Les deux modes — local, ou démonstration avec serveurs',panneau:'modes',ancre:null,extrait:'Le choix du mode, ses portes documentées nommées avant l\'activation, et ce qui change — ou non — d\'un mode à l\'autre.',mots:'modes deux local serveur demonstration portes echo miroir'},
+    {titre:'Le 51e État numérique — les données, l\'ADN numérique, le jumeau',panneau:'etat51',ancre:null,extrait:'Numériquement américain par les données, politiquement non : la récolte par les plateformes et les systèmes, l\'ADN numérique et le jumeau numérique, l\'étage État.',mots:'51e etat numerique americain donnees adn jumeau recolte gafam plateformes snowden prism cloud act'}
   ];
   var prets={sections:INDEX.length,sceaux:0,journal:0};
   function majEtat(){
@@ -11742,7 +11867,7 @@ try{majV21();setInterval(majV21,1000)}catch(e){}
       if(anglais){if(!el.dataset.frTxt)el.dataset.frTxt=el.textContent;el.textContent=el.dataset.en;}
       else if(el.dataset.frTxt){el.textContent=el.dataset.frTxt;}
     });
-    boutonL.textContent=anglais?'FR':'EN';
+    boutonL.textContent=anglais?'FR':'EN · menus';
   });}
   function sha256hex(txt){
     return crypto.subtle.digest('SHA-256',new TextEncoder().encode(txt)).then(function(buf){
@@ -15337,7 +15462,7 @@ function effNettoyerPNG(buf) {
         ? 'Magasin lu à l’instant, dans ce navigateur : ' + entrees.length + ' entrée(s), chaîne créée le ' + String(etat.cree_le).slice(0, 10) + '. Aucun appel sortant n’a été fait pour cette lecture.'
         : 'Le magasin est vide pour le moment : aucune entrée. La genèse se posera au premier geste (un reçu consigné, un geste de sécurisation) — la section le dira alors, sans rien inventer.';
       $('vm-somme').textContent = entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE;
-      var racineSite = '7ba6df400718d4c6ee1764b0e76270a9d2e0f0057156f5c837bd0ddaf988279b';
+      var racineSite = 'dac840cd65e09c5e14d4f36f4604b9229fcb5a25a60a4adcb708e3c3cb4a8e89';
       var spanRacine = document.querySelector('.cerveau-racine-affichee');
       if (spanRacine && spanRacine.textContent.trim()) racineSite = spanRacine.textContent.trim();
       $('vm-symetrie').innerHTML = '<p class="petite" style="margin:.4rem 0 0"><strong>La symétrie des deux sommes.</strong> La racine du cerveau du site : <span class="mono">' + racineSite + '</span> — ta somme : <span class="mono">' + (entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE) + '</span>. Même recette des deux bords : des SHA-256 chaînés, chaque état étant la somme des précédents. La sienne est publique ; la tienne ne vit que chez toi.</p>';
@@ -15416,10 +15541,10 @@ function effNettoyerPNG(buf) {
           entreesObs.forEach(function (en) {
             if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
           });
-        }, {threshold: 0.08});
+        }, {threshold: 0, rootMargin: '0px 0px 12% 0px'});
         document.querySelectorAll('.panneau .carte, .panneau section.bloc').forEach(function (el, i) {
           el.classList.add('reveler');
-          el.style.transitionDelay = (i % 4) * 40 + 'ms';
+          el.style.transitionDelay = '0ms';
           io.observe(el);
         });
       }
@@ -15860,7 +15985,7 @@ function convFilHTML(messages){
   try { code = window.localStorage.getItem('sophia-fil-code') || ''; } catch(e) {}
   function poserCode(nouveau, sceller){
     code = nouveau;
-    affiche.textContent = code;
+    if(affiche) affiche.textContent = code;
     try { window.localStorage.setItem('sophia-fil-code', code); } catch(e) {}
     var champ = document.getElementById('conv-reprise-code');
     if(champ) champ.value = code;
@@ -15869,7 +15994,7 @@ function convFilHTML(messages){
     }
   }
   if(/^[a-z0-9]{12}$/.test(code)) poserCode(code, false); else poserCode(genererCode(), true);
-  document.getElementById('conv-nouveau-code').addEventListener('click', function(){ poserCode(genererCode(), true); });
+  var bNouveauCode = document.getElementById('conv-nouveau-code'); if(bNouveauCode) bNouveauCode.addEventListener('click', function(){ poserCode(genererCode(), true); });
   /* Sonde de capacité : l'état réel du fil, dit à l'affichage. */
   function etatFil(branche){
     etat.textContent = branche
@@ -15883,7 +16008,7 @@ function convFilHTML(messages){
       .catch(function(){ etatFil(false); });
   } else etatFil(false);
   /* Envoi : le mailto du double relais — le site compose, le visiteur envoie. */
-  document.getElementById('conv-envoyer').addEventListener('click', function(){
+  var bEnvoyer = document.getElementById('conv-envoyer'); if(bEnvoyer) bEnvoyer.addEventListener('click', function(){
     var sujet = val('conv-sujet'), message = val('conv-message');
     var sortie = document.getElementById('conv-envoi-etat');
     if(!sujet || !message){ sortie.textContent = 'Il manque le sujet ou le message : le courriel ne se compose pas sans eux.'; return; }
@@ -16131,8 +16256,8 @@ function convFilHTML(messages){
       if (det) det.textContent = 'Relevé du ' + jour + ' · la porte n’a pas répondu';
       if (amD) amD.textContent = 'Relevé embarqué du ' + jour + ' (' + m.source + ') — affiché parce que la Porte documentée nº 2 n’a pas répondu à cet instant : un relevé daté, jamais un blanc.';
     } else {
-      if (det) det.textContent = 'Relevé du ' + jour + ' · mode local — aucune porte ouverte';
-      if (amD) amD.textContent = 'Mode local : aucun appel n’a été fait pour ce bloc. Le relevé affiché est le relevé daté embarqué dans le site (' + m.source + '). En mode démonstration avec serveurs (panneau Miroir), la météo de l’ancre se lit en direct par la Porte documentée nº 2.';
+      if (det) det.textContent = 'Relevé du ' + jour + ' · relevé daté embarqué, avec sa source — les données viennent des services météo nommés (Open-Meteo, MET Norway) ; ce qui est local, c’est qu’aucune donnée du visiteur ne part';
+      if (amD) amD.textContent = 'Aucun appel n’a été fait pour ce bloc : le relevé affiché est le relevé daté embarqué dans le site, montré avec sa source (' + m.source + '). En mode démonstration avec serveurs (panneau Miroir), la météo de l’ancre se lit en direct par la Porte documentée nº 2.';
     }
     if (typeof b53AppliquerPointRetenu === 'function') b53AppliquerPointRetenu();
   }
