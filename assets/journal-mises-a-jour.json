@@ -2,6 +2,39 @@
  "entrees": [
   {
    "date": "2026-11-07",
+   "titre": "Version 58 — les réparations de l’audit tour 5 : le minuteur réparé, les éditions à jour",
+   "points": [
+    {
+     "texte": "L’audit tour 5 du site servi en version 57 — aucun écart majeur, un écart moyen, trois mineurs — devient la liste de construction de cette version."
+    },
+    {
+     "texte": "Minuteur de fenêtre (panneau « Tes données ») : le bouton « Télécharger le rappel (.ics) » restait désactivé après le calcul d’une échéance affichée, alors que l’aide promettait son activation dès l’affichage. La cause était au code : seul le scellement de l’échéance dans le cerveau du visiteur activait le bouton ; l’affichage du calcul, lui, ne l’activait jamais. Le bouton suit maintenant l’échéance affichée : il s’active dès qu’une date limite est calculée et affichée, porte cette date-là, et se désactive si l’échéance cesse d’être affichée. Le bouton jumeau du panneau « Décision automatisée » a été lu au code : il ne portait pas le défaut."
+    },
+    {
+     "texte": "Édition du jour : les éditions des 5, 6 et 7 novembre 2026 sont publiées (éditions nº 2, 3 et 4), dans le format de l’édition nº 1 — pages autonomes, datées, signées, en français et en anglais — et chacune est inscrite à l’archive du panneau avec l’empreinte SHA-256 de sa page. Le retard de trois jours relevé par l’audit est comblé."
+    },
+    {
+     "texte": "Liens profonds : la note des hubs dit la version 58. Au fichier, la liste qu’elle cite — quatre panneaux et les six menus — résout au complet ; le routeur fait en plus aboutir les formes #hub-parcours, #hub-capsules et #hub-transparence sur leurs panneaux réels, que l’audit tour 5 avait relevées sans vue."
+    },
+    {
+     "texte": "Blocs de code : la recette du panneau Sceller et la formule du digest du panneau Faire pareil ne se coupent plus en milieu de mot — une classe dédiée leur donne le retour aux frontières sûres et, au besoin, le défilement horizontal contrôlé, sans toucher au retour des empreintes ni au nowrap des ancres des hubs."
+    },
+    {
+     "texte": "Bibliothèque des lois : la mention des empreintes dit « la version courante » au lieu d’un numéro figé. À la construction de cette version, les dix-neuf empreintes affichées ont été recalculées sur les fichiers déposés : dix-neuf concordances sur dix-neuf."
+    },
+    {
+     "texte": "Panneau Partenaires (arbitrage de l’auteur, deux retouches seulement) : la répondante y est dite comme elle opère — l’agente fait le relais entre les visiteurs et l’auteur, elle ne répond pas en son nom ; et la numérotation des sections du panneau est continue — 1, 2, 3, 4, 5, 6 — la section des fonctions portait un second « 4 ». Aucun autre mot du panneau n’a changé."
+    },
+    {
+     "texte": "Panneau « Travail d’ingénierie » (arbitrage de l’auteur) : la phrase d’ouverture dit l’auteur seul — le code de ce système est écrit par son auteur, qui le conçoit, le spécifie, le développe et le vérifie — et le signe ; les machines sont ses outils."
+    },
+    {
+     "texte": "Restes nommés : la capture Wayback de la version 57 reste prévue le 8 novembre (le budget de captures du 7 novembre était au plafond) ; la numérotation des Preuves, qui se lit entre panneaux, est inchangée."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "titre": "Version 57 — les finitions de l’audit tour 4 : le journal réparé, les sources étiquetées",
    "points": [
     {
@@ -1115,6 +1148,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v57",
+ "version": "v58",
  "date": "2026-11-07"
 }
