@@ -1,6 +1,6 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v53",
+ "version_site": "v55",
  "date": "2026-11-07",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
@@ -45,19 +45,19 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "c095c96b3aba5bd7048160203cfc869b377c5afe37a6a29d21d9cbf0df395441",
+   "digest": "7f53fd0e22685498b0caa9260d077f6f671e1bd8e884d104ae87b923c47080e8",
    "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après les trois ajouts du même jour à la version 53, puis la réparation du point météo aligné sur l’ancrage canonique : 47 entrées.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 53, réparation du même jour (7 novembre 2026, à la demande d’Alex) : le point météo de l’ancre est aligné sur l’ancrage canonique (45,24915, −73,7989) — onglet Météo, température des sens, nuages du soir, appel du reçu et bloc de provenance ; lectures sidérales, du calendrier et des panneaux Temps et Ancrage revérifiées identiques."
+   "derniere_croissance": "Version 55 — la base stable, 7 novembre 2026."
   },
   {
    "id": "archives",
    "nom": "Les Archives",
    "source": "liste canonique des captures (embarquée ci-dessous)",
-   "digest": "23da0c92095eb484b413cb03e31f5bfd91c88263bc84cced85196b4700d5d04d",
+   "digest": "cfaa63e1311a5471ff9034b579d58cb5c2f1d1ee0be96d843f74b927362b425d",
    "recette": "SHA-256 (UTF-8, lignes jointes par \\n, sans saut final) de la liste canonique des captures embarquée dans ce manifeste, au champ captures de la chambre.",
    "role": "Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.",
-   "derniere_croissance": "Capture de la version 36, 3 novembre 2026.",
+   "derniere_croissance": "Capture de la version 54, 7 novembre 2026.",
    "captures": [
     {
      "version": "v7",
@@ -98,6 +98,42 @@
     {
      "version": "v36",
      "instantane": "20261103155313"
+    },
+    {
+     "version": "v45",
+     "instantane": "20261104114556"
+    },
+    {
+     "version": "v47",
+     "instantane": "20261104212155"
+    },
+    {
+     "version": "v48",
+     "instantane": "20261104233641"
+    },
+    {
+     "version": "v49",
+     "instantane": "20261105123139"
+    },
+    {
+     "version": "v50",
+     "instantane": "20261106120643"
+    },
+    {
+     "version": "v51",
+     "instantane": "20261107054823"
+    },
+    {
+     "version": "v52",
+     "instantane": "20261107170230"
+    },
+    {
+     "version": "v53",
+     "instantane": "20261107233802"
+    },
+    {
+     "instantane": "20261108004253",
+     "version": "v54"
     }
    ]
   }
@@ -140,7 +176,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "7ba6df400718d4c6ee1764b0e76270a9d2e0f0057156f5c837bd0ddaf988279b",
+ "racine_cerveau": "81c8fcee263bbf5ed799b15e7e655bdcbcee6220eda20e24f51eb954fd51db4f",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -148,20 +184,21 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "df4efbb0c612fbb413164e29f265a0f004f611b5aeb916df0434d69a892ba879",
-   "28c1412a9b91f1a1d4264c51b670c9b50f2ce2d77a7b2247ce612659fcce02f4"
+   "b843c209e43e8ff388d2c13b70a04e5d6866775445ec29250b5a73506961e1ac",
+   "914cff4fd3cbe10390eb411964e4799d2852d517d80445e4f0d4708b98ce5618"
   ],
   [
    "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "4e7eb38c5dcd32ee3a585c2412ff25431664a10a0c71c1364100f5e880c28da8"
+   "c59443b258e5d6bcea61f6d1767104191cb1e094dbaac0b4dac678437868d5a4",
+   "c59443b258e5d6bcea61f6d1767104191cb1e094dbaac0b4dac678437868d5a4"
   ],
   [
    "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "de53c71abf78e11dd554636f5c8f70094a91de56d265b058a9c5c7347b2276f8"
+   "4ffbe60c99ad059e80d8154cb4ad0e57c8c431ac863c2ed53a27db469132f327"
   ],
   [
-   "d3dba7819cddf0e4a6b16fae791fe99c1a9a6c687224033c45672b66445ce0ec"
+   "81c8fcee263bbf5ed799b15e7e655bdcbcee6220eda20e24f51eb954fd51db4f"
   ]
  ],
  "propriete": {

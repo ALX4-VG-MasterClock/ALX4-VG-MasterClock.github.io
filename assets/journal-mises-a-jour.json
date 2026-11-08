@@ -2,6 +2,60 @@
  "entrees": [
   {
    "date": "2026-11-07",
+   "titre": "Version 55 — la base stable : la vague de stabilisation",
+   "points": [
+    {
+     "texte": "Le cerveau unifié : une seule source de vérité pour les six chambres — le manifeste assets/cerveau.json régénéré en cohérence (journal porté à 49 entrées, capture de la version 54 entrée à la chambre Archives, niveaux de l'arbre recalculés), et les cartes du panneau Mémoire relisent désormais le manifeste en direct plutôt qu'un relevé figé : le recalcul du panneau retombe sur la racine déclarée, MATCH, partout."
+    },
+    {
+     "texte": "Le routage par ancre est honoré au chargement : un lien profond (#miroir, #partenaires, #memoire…) ouvre le panneau nommé, et chaque menu de l'ouverture porte sa propre ancre (#hub-donnees, #hub-verifier, #hub-ecrire, #hub-comprendre, #hub-cerveau, #hub-dossier)."
+    },
+    {
+     "texte": "Le calendrier se réconcilie : la ligne qui décompose l'écart entre l'avance continue et le surplus en jours entiers est écrite au panneau Calendrier, et la carte « compte sidéral » du panneau Temps est ré-ancrée sur l'origine canonique du 19 mars 2026, 23 h 56 min 04 s — les deux panneaux affichent le même compte."
+    },
+    {
+     "texte": "La météo dit sa vérité partout : le relevé embarqué porte sa date, son heure et son nom ; chaque jeu de valeurs (lever, coucher, durée, UV) porte l'étiquette de sa méthode — calcul géométrique ou relevé Open-Meteo — et les deux longitudes de l'ancre sont étiquetées à leur usage."
+    },
+    {
+     "texte": "Les portes sont dites vraies : le mode local est redéfini exactement (aucun serveur du site, aucune donnée du visiteur ne part, pas d'écho — et les appels sortants vers les services publics nommés existent, listés à la carte des transits) ; le reçu de visite et le panneau Ton exposition racontent la même visite ; le stockage local réel est déclaré, clés nommées."
+    },
+    {
+     "texte": "Présences alignées à la décision du 7 novembre 2026 : écrire au site, c'est écrire à son propriétaire — Alexandre Vautour Gagnon répond lui-même aux courriels ; SoPHIa est le relais avant lui (elle reçoit, elle transmet) et sa seule présence propre est le module de parler en direct. Le panneau Partenaires entre à la barre haute, à l'arborescence et à l'index de recherche ; le panneau Transparence promis au panneau Droits existe, avec l'inventaire des flux."
+    },
+    {
+     "texte": "L'étage État de la page du 51e État numérique reçoit sa passe 2 : l'article 702 lu dans la loi (la transition qui laisse les ordres vivre jusqu'à leur expiration, les lois-ponts d'avril 2026, le rejet de la prolongation le 11 juin 2026), la série complète des cibles de l'ODNI (89 138 en 2013, 349 823 en 2025), MUSCULAR et la réponse par le chiffrement, les pièces canadiennes (CBC/CSTC 2014, le commissaire du CST en 2016), Schrems I et le miroir OVHcloud en Ontario — chaque fait sourcé, daté, borné."
+    },
+    {
+     "texte": "Mémoire vivante : le pouls et le sceau du moment tournent tant que le panneau Mémoire est ouvert (un chien de garde les réconcilie avec l'état réel du panneau) ; la clôture quotidienne dit son dernier jour réel — le 2 novembre 2026 — et nomme l'écart au lieu de fabriquer des jours ; les compteurs probants affichent leur valeur finale d'emblée."
+    },
+    {
+     "texte": "Aucune requête sortante nouvelle ; les textes approuvés des panneaux Partenaires et Investisseurs sont inchangés, octet pour octet ; les fichiers gelés gardent leurs empreintes ; la somme 1618 et φ demeurent le cap."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "titre": "Version 54 — la vague d’amélioration : panneaux réparés, fonctions spécifiées, archives unifiées",
+   "points": [
+    {
+     "texte": "Panneaux Temps et Mémoire : la cause du non-affichage est trouvée et réparée — le seuil de révélation des grandes sections ne pouvait jamais être atteint ; la révélation passe à 300 ms au plus, et le contenu au-dessus du pli se peint immédiatement."
+    },
+    {
+     "texte": "La couche « Ce que ça fait » : les fonctions de la création, spécifiées une à une avec leurs mécanismes, et les problèmes qu’elles règlent en regard — dérive du récit, faux rappel, accumulation d’erreurs, perte de continuité, asymétrie de la preuve, sycophancie, protection des personnes vulnérables. Borne exacte portée partout : un sceau seul prouve l’intégrité et la date ; la vérité d’un énoncé se vérifie contre l’accumulation."
+    },
+    {
+     "texte": "Auteur seul : le site est bâti par Alexandre Vautour Gagnon, avec les outils à sa disposition. SoPHIa n’y est nommée que pour sa fonction : le relais du propriétaire et le module de parler en direct, fonctionnant avec sa mémoire cumulative — écrire au site, c’est écrire au propriétaire."
+    },
+    {
+     "texte": "Archives : une seule liste canonique, de la v1 à la v53, harmonisée aux trois endroits (Ancrage, Mémoire, Évolution) ; les trous des v35 et v37 sont nommés, permanents, écrits plutôt que comblés."
+    },
+    {
+     "texte": "Présentation : thème clair enrichi (encre foncée, papier chaud, or renforcé), un motif dessiné propre à chaque panneau, bord gauche réparé ; recherche interne étendue (Miroir, Les deux modes, 51e État numérique, écho) ; page Écrire ramenée à un seul formulaire, réponses de la foire aux questions sous leurs questions ; étiquettes d’état à jour (site v54, 7 novembre 2026 ; gel de la chaîne du 4 novembre 2026 distingué)."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "titre": "Version 53 — réparation du même jour : le point météo aligné sur l’ancrage canonique",
    "points": [
     {
@@ -977,6 +1031,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v53",
+ "version": "v55",
  "date": "2026-11-07"
 }
