@@ -1,6 +1,6 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v55",
+ "version_site": "v56",
  "date": "2026-11-07",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "7f53fd0e22685498b0caa9260d077f6f671e1bd8e884d104ae87b923c47080e8",
+   "digest": "006e1b54966331f816e359229999676b1ced8e57c281ac291c8dc3e24416cf0e",
    "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après les trois ajouts du même jour à la version 53, puis la réparation du point météo aligné sur l’ancrage canonique : 47 entrées.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 55 — la base stable, 7 novembre 2026."
+   "derniere_croissance": "Version 56 — la stabilisation démontrée, 7 novembre 2026."
   },
   {
    "id": "archives",
@@ -176,7 +176,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "81c8fcee263bbf5ed799b15e7e655bdcbcee6220eda20e24f51eb954fd51db4f",
+ "racine_cerveau": "4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -184,21 +184,21 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "b843c209e43e8ff388d2c13b70a04e5d6866775445ec29250b5a73506961e1ac",
+   "0b13c3460102a55dd3d04ac3ad7ae2b42281fba0fd9b21586b66194e16b364ca",
    "914cff4fd3cbe10390eb411964e4799d2852d517d80445e4f0d4708b98ce5618"
   ],
   [
    "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "c59443b258e5d6bcea61f6d1767104191cb1e094dbaac0b4dac678437868d5a4",
-   "c59443b258e5d6bcea61f6d1767104191cb1e094dbaac0b4dac678437868d5a4"
+   "1a76e94b180128be71c253b3d2f3640a2021bab7ca5395af5145a4f027d6910b",
+   "1a76e94b180128be71c253b3d2f3640a2021bab7ca5395af5145a4f027d6910b"
   ],
   [
    "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "4ffbe60c99ad059e80d8154cb4ad0e57c8c431ac863c2ed53a27db469132f327"
+   "ccbf14844d5b73ebc44deac508ffc521359d5f077fbb25d44ab4482c26b524fd"
   ],
   [
-   "81c8fcee263bbf5ed799b15e7e655bdcbcee6220eda20e24f51eb954fd51db4f"
+   "4403292b8776aff37c50c75a82582b93f3d0fb1e1930e9b0ed48e7f89edc42d0"
   ]
  ],
  "propriete": {

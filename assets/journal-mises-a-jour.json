@@ -2,6 +2,26 @@
  "entrees": [
   {
    "date": "2026-11-07",
+   "titre": "Version 56 — la stabilisation démontrée : l’audit du servi devient la construction",
+   "points": [
+    "L’audit tour 3 du site servi en version 55 — un écart majeur, treize écarts moyens, cinq mineurs — devient la liste de construction de cette version : chaque écart nommé y reçoit sa réparation, ou son reste nommé plus bas.",
+    "Page « Le 51e État numérique » : la passe 2, relue contre les sources primaires le 7 novembre 2026, est maintenant entière dans la page — la série complète des cibles de l’ODNI, année par année (89 138 en 2013, 349 823 en 2025), le texte même de la transition de l’article 702 (§ 404(b)(1)), les détails de MUSCULAR, d’XKeyscore et de Tempora, les pièces canadiennes au complet, Snowden mot pour mot, le Livre blanc fédéral et les bornes de l’étage, écrites dans la page. La passe 1 n’a pas été touchée.",
+    "Le compteur de l’Accueil dit la version 56, et le panneau Preuves porte l’annotation complète de la chaîne : 2 310 maillons — relecture intégrale du 1er novembre 2026 : MATCH ; le compte est porté à 2 862 maillons au gel du dossier, le 4 novembre 2026.",
+    "La racine du cerveau est déclarée aux panneaux Ancrage et Vérifier, comme elle l’était à l’Accueil et en Mémoire — et relue depuis le fichier du cerveau à chaque chargement.",
+    "Un lien profond de hub (#hub-…) garde son adresse au chargement : l’URL n’est plus réécrite en #ouverture.",
+    "Météo : le relevé embarqué du panneau Ancrage affiche sa date et son heure, comme à l’Accueil. Le lever et le coucher du Soleil ne se lisent plus que d’une seule façon — calculés par l’algorithme solaire de la NOAA, la même valeur à la lecture météo, à la géométrie du panneau Météo et au panneau Méthode ; les tuiles des sept jours ne portent plus leurs propres levers et couchers. L’indice UV reste la valeur d’Open-Meteo, étiquetée comme telle.",
+    "Panneau Temps : l’avance du compte Calendrier s’affiche à la seconde — la même valeur qu’au panneau Calendrier — et la réconciliation chiffrée des deux avances (depuis l’ancre du 19 mars 2026 ; depuis l’équinoxe de printemps) est écrite dans la carte, avec son écart constant nommé.",
+    "Panneau Confidentialité : les clés de stockage locales sont nommées au complet — sophia-theme, sophia-fil-code et cerveau-utilisateur-v1, et les clés d’outils registre-vg-v2, sophia-mode-demonstration et sophia-format — toujours locales, jamais transmises.",
+    "Minuteur : la date de départ se saisit au format aaaa-mm-jj annoncé, dans un champ texte gardé par le code ; un format non respecté est dit au visiteur, jamais calculé en silence.",
+    "Panneau Droits : chaque clause porte maintenant son poids juridique — [Fondement — loi canadienne] — comme la Bibliothèque des lois du panneau Données.",
+    "Panneau Mémoire : le sceau du moment se fige à l’ouverture du panneau — horodatage et valeur écrits au même instant ; les battements du pouls ne le réécrivent plus, et la même valeur se relit telle quelle.",
+    "Panneau Ancrage : la tuile de la version 54 et sa capture (7 novembre 2026, 19 h 42) rejoignent la liste détaillée des versions.",
+    "La barre de navigation tient sur une ligne aux grandes largeurs, et la bande d’en-tête vide du haut de l’Accueil est réduite — corrigés au CSS, à confirmer au rendu.",
+    "Restes nommés : les sections du panneau Vérifier n’ont pas été renumérotées — aucune série numérotée n’y existe à remettre en ordre, et rien n’a été fabriqué pour simuler ce chantier ; en Mémoire, la capture de la version 54 reste « inscrite au registre des archives » — sa vérification octet pour octet n’a pas pu être refaite depuis les fichiers locaux, et le libellé honnête est gardé."
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "titre": "Version 55 — la base stable : la vague de stabilisation",
    "points": [
     {
@@ -1031,6 +1051,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v55",
+ "version": "v56",
  "date": "2026-11-07"
 }
