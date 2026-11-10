@@ -1,7 +1,7 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v58",
- "date": "2026-11-07",
+ "version_site": "v60",
+ "date": "2026-11-09",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
  "chambres": [
@@ -9,10 +9,10 @@
    "id": "chaine",
    "nom": "La Chaîne",
    "source": "assets/etat-chaine.json",
-   "digest": "d6df75b5872e986f8b769d822255db9dd297f7ed7f899ccdd5cb7b33b05f53c5",
+   "digest": "eaf5d5e008cb734152eab2fd76841fb4fe083a792ced4a5073ced4b6b7574cea",
    "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
    "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
-   "derniere_croissance": "État rafraîchi à la construction de la version 49 : 2862 maillons, sommet #2861."
+   "derniere_croissance": "État rafraîchi à la construction de la version 60 : 3615 maillons, sommet nº 3614 (9 novembre 2026). À partir de la version 59, la chambre se rafraîchit à chaque version."
   },
   {
    "id": "coffre",
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "d0a6bbbd8c12fd2cabdafa573d1865fdc10bc37450c7ec49c00d8f4b3c4f47e1",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json — recalculé après les trois ajouts du même jour à la version 53, puis la réparation du point météo aligné sur l’ancrage canonique : 47 entrées.",
+   "digest": "7179fa8c5c48a87b6659d32a0a04e01cbc6bd2fa13fb16feb72acb5ea68dd542",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json, tel que servi — 53 entrées à la version 59.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 58 — les réparations de l’audit tour 5, 7 novembre 2026."
+   "derniere_croissance": "Version 60 — le site construit dans l’image des 32 vues, 9 novembre 2026."
   },
   {
    "id": "archives",
@@ -176,34 +176,34 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55",
+ "racine_cerveau": "04f00b045f79b13cdf448c8418f181c485f16ade4b53d6dcc525fee92de42564",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
-   "6397c91131a623d3d9af98bc2cf1d7be060d454148eb2e4d652c5156bd6db15d",
+   "1463f02a7288c4c7017e7bf0661c1aad2803ef9b9427a798520c75eaba8e7410",
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "a361faef67b975af83ed2712b67b0cdb4f7942a7912c4b90ae0efa081f57a65f",
+   "8e23d8bb6ef6dcd5918825c04900f9739ab2d62db24c56e16d49fb7560c5f968",
    "914cff4fd3cbe10390eb411964e4799d2852d517d80445e4f0d4708b98ce5618"
   ],
   [
-   "8101e456d507f7ff8f6415ba5106f719e19d14a0d70c60c6d06904c33c6ed852",
+   "c59e6a22b5b59a989e3e4ce986a5a7e13d2bfc28f15bbdd121cdf178dab652cd",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "1fdf88443a272c7ed62777662737dec7d429aedf87bf9fd80ca83d21b9a21ba2",
-   "1fdf88443a272c7ed62777662737dec7d429aedf87bf9fd80ca83d21b9a21ba2"
+   "b719afb6ef7c11c587283ea87dd4f6745421fba00a7a9aab1aff425488af32f6",
+   "b719afb6ef7c11c587283ea87dd4f6745421fba00a7a9aab1aff425488af32f6"
   ],
   [
-   "f44b3161ef238eb7f2093c48242dab7a47ed9ab7136db72e78add9c9d068a5f5",
-   "6137c720b4dc66e971f7e69d4cef4f5c388474c8baf9ebd18ee7cecaa31ca159"
+   "ee5532f51c12f524fbd05f69dddbfedd70037d96a299a273eccee9f0556f2f15",
+   "ce06cd875a6e3a266763b2e93130e1cb27fad47b7c04a0bc89daaa8ec77e2152"
   ],
   [
-   "d922bf3a0f324bfe434809b1f586ebcbd7f41568649a25d55ae2cbb64f441f55"
+   "04f00b045f79b13cdf448c8418f181c485f16ade4b53d6dcc525fee92de42564"
   ]
  ],
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "ingénieur indépendant, concepteur de systèmes et développeur",
+  "qualite": "concepteur indépendant de systèmes et développeur",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"

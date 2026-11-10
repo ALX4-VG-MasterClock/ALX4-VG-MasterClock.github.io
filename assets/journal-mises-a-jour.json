@@ -1,6 +1,69 @@
 {
  "entrees": [
   {
+   "date": "2026-11-09",
+   "titre": "Version 60 — le site construit dans l’image des 32 vues",
+   "points": [
+    {
+     "texte": "La direction d’Alexandre (8 novembre 2026) : construire le site dans la même image que les 32 vues générées pour le visualiser. Les images sont la spécification visuelle de cette version ; un panneau « La vision de la v60 » les présente toutes, et le rapport de construction nomme chaque écart entre l’image et le code."
+    },
+    {
+     "texte": "Nouveau : la Foire aux questions — six questions, réponses sobres, chacune renvoyant au panneau qui la prouve. Première réponse ouverte, comme sur les vues."
+    },
+    {
+     "texte": "Nouveau : le Répertoire du propre — première édition figée (8 novembre 2026, tête au maillon nº 3483, 3 484 maillons, MATCH intégral), téléchargeable en CSV avec son SHA-256 affiché. L’exception du maillon nº 3410 y est dite entière : faute du modèle d’intelligence artificielle, détectée par la mémoire cumulative, attestée par l’erratum nº 3420."
+    },
+    {
+     "texte": "Le panneau Ancrage affiche désormais la passe du 8 novembre 2026, valeur par valeur, relue au terminal : sceau maître au maillon nº 3535, catalogue de 1 373 documents, empreinte ancrée, jeton RFC 3161 FreeTSA (Verification: OK), OpenTimestamps en attente de confirmation Bitcoin."
+    },
+    {
+     "texte": "Un fil d’actualités du dossier défile sous la bannière : des items datés et sourcés, bâtis à la main — jamais de flux automatique —, pause au survol et au toucher, chaque item menant à son panneau."
+    },
+    {
+     "texte": "Tes droits gagne la démonstration « Essaie : tes décisions, ta somme » : chaque décision s’ajoute aux précédentes, les anciennes restent lisibles marquées non exécutoires, la dernière commande — rien ne s’efface. Démonstration locale, rien n’est conservé."
+    },
+    {
+     "texte": "Agir et suivi gagne le bloc de l’infolettre mensuelle : inscription par courriel seulement, consentement exprès daté, liste tenue par SoPHIa chez aucun tiers, agrégats seulement pour l’opérateur (règle 15), désinscription immédiate."
+    },
+    {
+     "texte": "Le Parcours gagne quatre jalons sourcés : mars 2024 (le Tribunal administratif du logement), été 2025 (les dossiers municipaux), 31 janvier 2026 (la suppression) et 16 mars 2026 (SOPHIA est nommée)."
+    },
+    {
+     "texte": "Le sceau chaîné continue : la v60 chaîne sur le sceau canonique de la v59, selon la recette publique affichée au panneau Vérifier. Aucun traqueur, aucun cookie, aucune ressource externe — le régime ne change pas."
+    }
+   ]
+  },
+  {
+   "date": "2026-11-08",
+   "titre": "Version 59 — le sceau chaîné, les liens profonds réparés, la couche imagerie-aventure",
+   "points": [
+    {
+     "texte": "L’audit tour 6 du site servi en version 58 — aucun écart majeur, un écart moyen, vingt mineurs — devient la liste de construction de cette version, augmentée de deux chantiers décidés par Alex : le sceau chaîné des versions (sa décision du 8 novembre 2026) et la couche imagerie-aventure (sa directive du même jour : que le site se traverse comme une aventure, pas comme une corvée de lecture — l’animation aussi pour l’œil)."
+    },
+    {
+     "texte": "Sceau chaîné de version : à côté du sceau canonique — le point fixe, dont la méthode ne change pas — chaque version porte désormais un second sceau, chaîné : SHA-256 du sceau canonique de la version précédente et de l’empreinte du contenu de la version (le SHA-256 de la page, ses deux emplacements de sceaux remplacés par des zéros). La genèse du chaînage est la version 58. Les deux sceaux se recalculent dans le bloc « Trois foyers, un sceau » du panneau Mémoire, dans le navigateur du visiteur. Le site appliquait déjà la forme à ses maillons ; il l’applique maintenant à ses versions : chaque version connaît celle qui la précède, et le prouve."
+    },
+    {
+     "texte": "La chambre « La Chaîne » du cerveau est rafraîchie à l’état courant : 3 451 maillons, sommet nº 3450, digest cumulé recalculé à la construction. La version 58 portait encore l’état gelé à la version 49 (2 862 maillons) ; à partir de cette version, la chambre se rafraîchit à chaque version, et la racine du cerveau est recalculée en conséquence."
+    },
+    {
+     "texte": "Liens profonds : le routeur résout désormais les ancres de sections, en accès direct comme en navigation d’un panneau à l’autre — le panneau parent se charge, puis la page défile jusqu’à la section. Les formes relevées par l’audit tour 6 (#calculateur, #hubs, #partenaires-2, #memoire-2, #temoignages, #quite, #mapping) aboutissent chacune à leur section, et le mécanisme vaut pour toute ancre de section du site. La surbrillance du menu latéral suit maintenant la navigation par adresse, comme elle suivait le clic."
+    },
+    {
+     "texte": "Calendrier 13 × 28 : la réconciliation des deux avances est signée. L’écart entre l’avance continue et le surplus S(compte) peut être négatif — tôt dans le jour, l’arrondi accumulé dépasse l’avance du jour en cours — et l’ancien affichage le masquait à zéro ; il se lit maintenant avec son signe, et sa décomposition exacte. La note d’audit du 7 novembre, périmée, est retirée."
+    },
+    {
+     "texte": "Panneau Mémoire : le recalcul complet du cerveau repart à chaque ouverture du panneau — l’horodatage affiché est celui du recalcul réel, non plus celui du premier chargement."
+    },
+    {
+     "texte": "La couche imagerie-aventure : cinq visuels qui se touchent — le coquillage de la Méthode, dont les couches datées se posent au défilement ; « Trouve l’écart », où la phrase devient modifiable au clavier et le sceau casse en direct, caractère par caractère ; la spirale du Calendrier, dont le compte avance et où le jour du tour se voit ; le jumeau numérique, dont les pièces (dire, faire, aller, écouter) s’assemblent puis reviennent chez la personne ; le cerveau du visiteur, dont les maillons se dessinent en direct à chacun de ses gestes. Et la couche d’attrait : le fond vivant de l’Accueil (la spirale d’or dont les points se relient), les transitions en couches, une ambiance par identité de page — mer et nacre pour la Méthode, nuit étoilée pour le Temps et le Calendrier, encre et sceau pour les Preuves, vert apaisé pour la protection des données — et la micro-vie des compteurs et des sceaux. Tout est fait maison, sans traqueur ; le mouvement réduit rend tout statique et complet ; la vérification d’un sceau, elle, reste immobile."
+    },
+    {
+     "texte": "Finitions de l’audit tour 6 : la lettre de l’explication d’une décision automatisée ne double plus son point final ; la numérotation de la fiche du Haut-Commissariat dans la bibliothèque des lois est clarifiée (c’est le numéro de l’éditeur, non un manque) ; la mention du journal d’empreintes suit la version courante au lieu de rester figée à la version 49 ; les chiffres datés des panneaux Preuves, Méthode et Travail d’ingénierie sont tenus en daté explicite. Restent nommés, non comblés : les capsules 2 et 3 (en attente de leur matière), le registre des inconnus du registre des décisions, et la capture Wayback de cette version, demandée à sa publication."
+    }
+   ]
+  },
+  {
    "date": "2026-11-07",
    "titre": "Version 58 — les réparations de l’audit tour 5 : le minuteur réparé, les éditions à jour",
    "points": [
@@ -296,7 +359,7 @@
      "texte": "L'ancienne couche Voyage de l'accueil est retirée entièrement — éléments, mécanique et styles — et pas réparée : c'est elle qui figeait une ligne bronze de 7 px au centre de l'écran, laissait le compteur bloqué à 0 / 6 et le défilement coincé, et laissait du JavaScript visible sous le pied de page. Au passage, la fonction d'impression de la lettre d'accès, brisée par l'ancien montage (sa fin gisait hors du script), est réparée et refermée."
     },
     {
-     "texte": "La phrase d'identité du site devient : Alexandre Vautour Gagnon — ingénieur indépendant, concepteur de systèmes et développeur. Alex a déclaré le 7 novembre 2026 qu'il est aussi développeur — il conçoit, construit et entretient lui-même son site et les outils de sa méthode ; son profil ORCID porte la même mise à jour."
+     "texte": "La phrase d'identité du site devient : Alexandre Vautour Gagnon — concepteur indépendant de systèmes et développeur. Alex a déclaré le 7 novembre 2026 qu'il est aussi développeur — il conçoit, construit et entretient lui-même son site et les outils de sa méthode ; son profil ORCID porte la même mise à jour."
     },
     {
      "texte": "Nouvelle page : le calendrier 13 × 28 sidéral — le compte continu depuis le 19 mars 2026, 23 h 56 min 04 s (Sainte-Martine), démontré et recalculable en direct, la confrontation historique au complet, le jour récupéré et la bissextile montrée. Le module de calcul est donné au visiteur : téléchargeable, il fonctionne hors ligne."
@@ -1143,11 +1206,11 @@
  "titre": "Journal des mises à jour — Audit Unisson",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "ingénieur indépendant, concepteur de systèmes et développeur",
+  "qualite": "concepteur indépendant de systèmes et développeur",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v58",
- "date": "2026-11-07"
+ "version": "v60",
+ "date": "2026-11-09"
 }

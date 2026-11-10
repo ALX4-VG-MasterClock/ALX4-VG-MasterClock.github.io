@@ -1,12 +1,12 @@
 {
- "maillons": 2862,
- "dernier_maillon": 2861,
- "sceau_dernier": "1e3b9a19641bdb27834523a89bba27901f58f6a5b77ef809379c50d8d5adc374",
- "digest_cumule": "d6df75b5872e986f8b769d822255db9dd297f7ed7f899ccdd5cb7b33b05f53c5",
- "mis_a_jour": "2026-11-04",
+ "maillons": 3615,
+ "dernier_maillon": 3614,
+ "sceau_dernier": "853089614bc1a30a881249e8f235801b0d14d78798d8445e67cb6c66cd00593b",
+ "digest_cumule": "eaf5d5e008cb734152eab2fd76841fb4fe083a792ced4a5073ced4b6b7574cea",
+ "mis_a_jour": "2026-11-09",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
-  "qualite": "chercheur indépendant",
+  "qualite": "concepteur indépendant de systèmes et développeur",
   "orcid": "0009-0006-9124-4407",
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"

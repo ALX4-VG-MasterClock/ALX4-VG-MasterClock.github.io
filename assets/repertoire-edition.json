@@ -1,0 +1,21 @@
+{
+ "edition": "première édition figée — novembre 2026",
+ "figee_le": "2026-11-08T13:28:22-05:00",
+ "tete_seq": 3483,
+ "maillons": 3484,
+ "fichier": "repertoire-maillons-propre.csv",
+ "empreinte_sha256_du_fichier": "3acee06288d9fc115c2fdeae7d97ce2085f9c177c7f233c49899116ac7f16bfb",
+ "octets": 702734,
+ "colonnes": "seq, sceau_propre, sceau_brut, digest_cumul_propre, exception",
+ "source_propre_sha256": "8e2e0f9048ab9d2a255fb816d2c03bade80e3f4d12a598d3d30d2c4d72874671",
+ "source_brut_sha256": "fade8de8d19b9efb822efcc691e51802d3586179a8c07878a68dda111aa2d561",
+ "recette": "digest_cumul(n) = SHA-256(digest_cumul(n-1) + sceau(n)) ; genèse : sceau(0) sans prev, digest(0) = SHA-256(sceau(0))",
+ "exception_unique": {
+  "seq": 3410,
+  "erratum_seq": 3420,
+  "sceau_fautif_brut": "aa25a23e4b7c296610d0c57b8e48d9e4ee9832c7b4f0aefff285a55bb1d48e45",
+  "valeur_attestee_et_recalculee": "47250e0b9d8419f5fde8912a10e6db262036135a0658e26689108b11b5a83348",
+  "lecture": "le brut porte au nº 3410 un sceau fautif (faute du modèle : scellement avant le texte final, réécriture en place) ; le propre y substitue la valeur attestée par l'erratum nº 3420, recalculée indépendamment — concordante. Partout ailleurs, sceau_propre = sceau_brut."
+ },
+ "borne": "le lien sceau ↔ texte n'est pas vérifiable depuis ce seul répertoire : il se prouve à la pièce, en révélant le texte d'un maillon précis (sceau = SHA-256(sceau précédent + texte exact))."
+}
