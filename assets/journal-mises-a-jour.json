@@ -1,6 +1,36 @@
 {
  "entrees": [
   {
+   "date": "2026-11-16",
+   "titre": "Version 61 — les replis alignés, les archives rattrapées, les ancrages du 15 et du 16 novembre",
+   "points": [
+    {
+     "texte": "L’ordre d’Alexandre, donné en direct le 16 novembre 2026 : mettre le site à jour. Les passages quotidiens s’arrêtaient depuis sept jours à l’Étape 0 — leur référence pointait encore le paquet correctif de la version 50 — faute du go nommé ; cette version entière applique la synchronisation préparée."
+    },
+    {
+     "texte": "Les replis statiques de la chaîne sont alignés sur le gel lu à la construction : 4 196 maillons, sommet nº 4195, digest cumulé 80e4bb10d7807ec5… porté par assets/etat-chaine.json — là où les replis publiés dataient du gel du 4 novembre 2026 (2 862 maillons, version 48)."
+    },
+    {
+     "texte": "La chambre Archives rattrape ses captures Wayback : version 55 (capture du 8 novembre 2026), version 58 (8 novembre 2026) et version 60 (10 novembre 2026) rejoignent la liste canonique — 22 captures ; le digest de la chambre, les niveaux et la racine du cerveau sont recalculés, et le sceau de la version est rescellé à la clé."
+    },
+    {
+     "texte": "Le panneau Ancrage porte la passe hebdomadaire du 15 novembre 2026, valeur par valeur : sceau maître 4baa3783… à la hauteur du maillon nº 4114, catalogue de 1 845 documents, jeton FreeTSA série 0x0A0C0B0A (Verification: OK) — et la passe du 8 novembre y est désormais confirmée par Bitcoin (blocs 975121, 975123, 975126 et 975143)."
+    },
+    {
+     "texte": "Le même panneau porte l’ancrage spécial du 16 novembre 2026, demandé par Alexandre pendant le direct : empreinte ancrée d6ef1b52… (la chaîne à la hauteur du maillon nº 4180), jeton FreeTSA série 0x0A12B4BC émis à 16 h 20 min 45 s (Verification: OK), OpenTimestamps soumis à quatre calendriers, en attente de confirmation Bitcoin."
+    },
+    {
+     "texte": "Le profil ORCID du chercheur, verrouillé le 10 novembre puis débloqué le 13 novembre 2026 (recours nº 729351 fermé par ORCID Support, erreur de leur filtrage), est de nouveau public ; l’affichage statique de la page Chercheur est rafraîchi au profil relu le 16 novembre 2026 — la biographie y est désormais bilingue."
+    },
+    {
+     "texte": "Balayage des formes réfutées (red team du 15 novembre 2026) : aucune occurrence d’« infalsifiable » ni de forme d’unicité mondiale dans les textes du site ; la description du pouls est corrigée à la forme revérifiée au code le 15 novembre — la chaîne est revérifiée en entier à chaque passage de travail, le script de pouls en début de nuit revérifie la continuité des liens, et le battement de cinq secondes de ce site revérifie une chambre à tour de rôle tant que le panneau est ouvert."
+    },
+    {
+     "texte": "Le fichier llms.txt est rafraîchi : en-tête au titre public arrêté le 9 novembre 2026 (concepteur indépendant de systèmes), et le récit des versions se rend maintenant jusqu’à la version 61."
+    }
+   ]
+  },
+  {
    "date": "2026-11-09",
    "titre": "Version 60 — le site construit dans l’image des 32 vues",
    "points": [
@@ -1211,6 +1241,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v60",
- "date": "2026-11-09"
+ "version": "v61",
+ "date": "2026-11-16"
 }
