@@ -22,7 +22,7 @@
    travailleur de service garde les stratégies de la v28 ; seul le nom de
    cache change, pour purger l'ancien à l'activation.
    Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur (ORCID 0009-0006-9124-4407) — tous droits réservés. */
-var CACHE = 'sophia-site-v48'; /* v59 — le sceau chaîné, les liens profonds réparés, la couche imagerie-aventure */
+var CACHE = 'sophia-site-v49'; /* v61 — les replis alignés au gel du 16 novembre, la chambre Archives rattrapée, les ancrages des 15 et 16 novembre */
 /* v50 : cache renommé pour purger l'ancien à l'activation. Les actifs du Voyage
    (assets/voyage-*.mp4/webp/jpg) ne sont PAS ajoutés au COEUR : stratégie
    « cache d'abord » au premier service, comme les autres actifs statiques.
