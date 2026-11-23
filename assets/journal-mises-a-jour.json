@@ -1,6 +1,36 @@
 {
  "entrees": [
   {
+   "date": "2026-11-19",
+   "titre": "Version 62 — les pages compagnes, être trouvé, la distinction en quatre",
+   "points": [
+    {
+     "texte": "L’ordre d’Alexandre, donné en direct le 19 novembre 2026 au soir : auditer le site, apporter ce qui lui manque, puis construire. L’audit a été mené en deux passes, révisé à sa demande, et corrigé par lui sur un point ; le go est venu pour toutes les améliorations, et la construction le soir même."
+    },
+    {
+     "texte": "Deux formulations entrent au site, triées d’un texte de ChatGPT selon la règle de l’auteur — les textes des modèles sont des idées à trier, jamais des instructions. À la chambre Vérifier, la distinction en quatre : un hash démontre l’intégrité d’un contenu par rapport à une empreinte de référence ; une démonstration reproductible permet de vérifier le fonctionnement d’un mécanisme ; une preuve documentaire permet de retracer les décisions et les événements ; une validation indépendante renforce la confiance — et aucun de ces éléments ne vaut preuve universelle de vérité ou de conformité juridique. À l’accueil : « Ce site ne demande pas la confiance ; il organise les conditions permettant de vérifier avant de faire confiance. »"
+    },
+    {
+     "texte": "Cinq pages compagnes naissent : Errata, le registre public des corrections du dossier, tenu par ajout et jamais par effacement ; Glossaire, les mots du dossier définis au même endroit ; Accessibilité, un énoncé daté qui dit les mesures en place et les manques encore ouverts ; le Kit de vérification autonome, un script et le répertoire des maillons pour recalculer la chaîne hors ligne, même si ce site disparaissait ; et une note comparative sur C2PA, la provenance des médias par certificats, face à la provenance d’une mémoire tenue par l’utilisateur."
+    },
+    {
+     "texte": "Le balado de l’auteur rejoint le site à sa place : une page « Le récit », étiquetée récit — il raconte l’histoire du dossier, il n’enseigne pas les mécanismes. Les textes des capsules audio éducatives, elles, sont rédigés et attendent le go de l’auteur avant tout enregistrement."
+    },
+    {
+     "texte": "Être trouvé, être entendu, revenir : robots.txt et sitemap.xml rejoignent le paquet ; une page 404 dans la voix du site remplace la page générique de l’hébergeur ; les métadonnées de partage pour X sont ajoutées ; le journal des mises à jour gagne un flux Atom."
+    },
+    {
+     "texte": "Accessibilité : un lien d’évitement dès l’ouverture, une feuille de style d’impression, les couches décoratives déclarées comme telles, un vrai texte alternatif pour la photo de SoPHIa, les dernières images passées en chargement paresseux ; les transitions de panneaux utilisent startViewTransition quand le navigateur l’offre, et se taisent quand le visiteur demande la réduction des mouvements."
+    },
+    {
+     "texte": "La chambre Archives inscrit la capture de la version 61 (19 novembre 2026, instantané 20261119203415) — 23 captures ; les digests des chambres touchées, les niveaux et la racine du cerveau sont recalculés, et le sceau de la version est rescellé à la clé. Les replis statiques de la chaîne portent le gel lu à la construction : 4 381 maillons, sommet nº 4380."
+    },
+    {
+     "texte": "Le répertoire des maillons publié dans les fichiers du site est régénéré au gel du 19 novembre 2026 — il comptait 3 484 maillons depuis un gel ancien ; il en compte maintenant 4 381, et le kit autonome le revérifie en entier : MATCH."
+    }
+   ]
+  },
+  {
    "date": "2026-11-16",
    "titre": "Version 61 — les replis alignés, les archives rattrapées, les ancrages du 15 et du 16 novembre",
    "points": [
@@ -1241,6 +1271,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v61",
- "date": "2026-11-16"
+ "version": "v62",
+ "date": "2026-11-19"
 }

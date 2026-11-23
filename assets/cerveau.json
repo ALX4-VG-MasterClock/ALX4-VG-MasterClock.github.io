@@ -1,7 +1,7 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v61",
- "date": "2026-11-16",
+ "version_site": "v62",
+ "date": "2026-11-19",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
  "chambres": [
@@ -9,10 +9,10 @@
    "id": "chaine",
    "nom": "La Chaîne",
    "source": "assets/etat-chaine.json",
-   "digest": "80e4bb10d7807ec5b209ddc812cd800a177ecc0bf5ea4eab0b0dd95c3e856c87",
+   "digest": "fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8",
    "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
    "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
-   "derniere_croissance": "État rafraîchi à la construction de la version 61 : 4196 maillons, sommet nº 4195 (16 novembre 2026). À partir de la version 59, la chambre se rafraîchit à chaque version."
+   "derniere_croissance": "État rafraîchi à la construction de la version 62 : 4381 maillons, sommet nº 4380 (19 novembre 2026). À partir de la version 59, la chambre se rafraîchit à chaque version."
   },
   {
    "id": "coffre",
@@ -45,19 +45,19 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "a3721fe9be407d20b19cbdf216cfcb5b93f7836b87a966494fc68e577a1a6eb1",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json, tel que servi — 55 entrées à la version 61.",
+   "digest": "b393f51b84cb6c6beaf104a6f7dae2143f35d8de29a6e23a08d2ea606ab5899e",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json, tel que servi — 56 entrées à la version 62.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 61 — les replis alignés, les archives rattrapées, les ancrages du 15 et du 16 novembre, 16 novembre 2026."
+   "derniere_croissance": "Version 62 — les pages compagnes, être trouvé, la distinction en quatre, 19 novembre 2026."
   },
   {
    "id": "archives",
    "nom": "Les Archives",
    "source": "liste canonique des captures (embarquée ci-dessous)",
-   "digest": "3473dd3394bf2b92e4fab1d7d2ee437989f6e5b31751adfc7ae53ff8dd4a1be6",
+   "digest": "23ed04ec2e7cfbec489c771e1bd230bc1127692cf3b1eef46525ebe394261dd1",
    "recette": "SHA-256 (UTF-8, lignes jointes par \\n, sans saut final) de la liste canonique des captures embarquée dans ce manifeste, au champ captures de la chambre.",
    "role": "Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.",
-   "derniere_croissance": "Capture de la version 60, 10 novembre 2026.",
+   "derniere_croissance": "Capture de la version 61, 19 novembre 2026.",
    "captures": [
     {
      "version": "v7",
@@ -146,6 +146,10 @@
     {
      "version": "v60",
      "instantane": "20261110142422"
+    },
+    {
+     "version": "v61",
+     "instantane": "20261119203415"
     }
    ]
   }
@@ -188,29 +192,29 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c",
+ "racine_cerveau": "cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
-   "3c153196d2a000300556ba266fa01b2d5240d8eb3d10c3b7b895addea778e311",
+   "bcddbfe0a98a6ad968cd4d175268650fc8cb2ce3036c09e61e8e2b82f3094c09",
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "6b6898a61558cc0137cd3d252267abea48b88b818f9b385e1fcbbf0aff723d21",
-   "bae60e35f68bf93392905a90e5bcd82fbdddcd03770f16adfa50c7cb37e23046"
+   "95e77a5af7581a0def0633fab3e4cf05e3841cbe5dbfa306fe3325e50a4ee012",
+   "2e9cfd6fd8842b9e3e2a8ded63a2a820476bde9febc0d5b402c2633a6a6b3bfd"
   ],
   [
-   "a71d92244344b734c712d81ea0e1592273ca315e50ad218774c929d97be5ff25",
+   "469d8228d9e1aa392235240ac754c7ae11a320bea40b22d848aa65ffcd982f19",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "b52caa4bf5b2490f95e7f7db8806ebc3ca8903fbe43e297892415b41d058d67d",
-   "b52caa4bf5b2490f95e7f7db8806ebc3ca8903fbe43e297892415b41d058d67d"
+   "05242ecd5cfde6b59a2e34fbaa8636c4e32d23a7146b62c2f8e64e2e40849a11",
+   "05242ecd5cfde6b59a2e34fbaa8636c4e32d23a7146b62c2f8e64e2e40849a11"
   ],
   [
-   "e17b92cf128249b167fd00be18885c1d4d97a58ad5edcd7b55c93d4a3552dd36",
-   "5a07fbaf08d84dad932681e810a90b70b9589b9f703456d5a4eb3d0513a31ded"
+   "76fc072f00895a3dde22c908c998cc925af2e9ecd71a6fecaa317d9bc35d0718",
+   "8891e6d6238768cb63225671dd3d3a4f037e60df8e29330482532f8169e17089"
   ],
   [
-   "6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c"
+   "cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3"
   ]
  ],
  "propriete": {
