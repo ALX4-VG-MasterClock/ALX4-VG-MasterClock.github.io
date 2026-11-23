@@ -13,6 +13,10 @@
 <meta property="og:title" content="AUDIT UNISSON — Preuve d'Antériorité V-G">
 <meta property="og:description" content="La somme des précédents, scellée. Une mémoire qui se recalcule au lieu de se déclarer.">
 <meta property="og:image" content="assets/logo-sophia.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa">
+<meta name="twitter:description" content="Un site qui ne demande pas la confiance : il organise les conditions permettant de vérifier avant de faire confiance.">
+<meta name="twitter:image" content="assets/logo-sophia.webp">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -422,6 +426,16 @@ html:not([data-theme="sombre"]) .lead{color:var(--texte)}
 .spec-grille img{width:100%;height:auto;display:block;border-radius:8px}
 .spec-grille figcaption{font-size:.85rem;margin-top:.5rem;text-align:center}
 </style>
+<style id="v62-accessibilite">
+.lien-evitement{position:absolute;left:-9999px;top:0;z-index:9999;background:#0b1e3a;color:#ffd97a;padding:.7em 1.1em;font-weight:700;border-radius:0 0 .5em 0}
+.lien-evitement:focus{left:0}
+@media print{
+  .barre,#menu-panneau,.lien-evitement,canvas#spirale{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  section{display:block!important;page-break-inside:avoid}
+  a{color:#000!important;text-decoration:underline}
+}
+</style>
 </head><style>/* ===== v21 — « La planète » : globe WebGL ===== */
 #globe-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:none}#planete-nuit{z-index:2}.barre-actions{display:flex;gap:.4rem;align-items:center;margin-left:auto}.barre-actions button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;white-space:nowrap}.barre-actions button:hover{border-color:var(--or);color:var(--or)}.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:var(--puit2)}.coffre-entree h4{margin:.1rem 0 .3rem}.coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}/* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
 .pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--encre-foncee);flex:none}.pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}.pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}.pa-echelle li{margin:.3rem 0}.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,var(--fond2),var(--fond));border-left:1px solid var(--or);box-shadow:-18px 0 50px var(--ombre);padding:1.1rem 1.2rem 2rem;overflow-y:auto}.menu-panneau[hidden]{display:none}.menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}.menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}#menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}#menu-fermer:hover{border-color:var(--or);color:var(--or)}#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:var(--puit);color:var(--texte);font-size:1rem}.menu-famille{margin-top:1.15rem}.menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}.menu-entree{display:block;width:100%;text-align:left;background:var(--puit2);border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}.menu-entree:hover{border-color:var(--or)}.menu-nom{display:block;font-weight:700;color:var(--or-clair)}.menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:var(--puit);color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}/* ===== v25 — « Le dossier en lumière » : esthétique dossier de pièces, pouls du cerveau ===== */
@@ -550,10 +564,11 @@ html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="s
 </style>
 </head>
 <body>
+<a class="lien-evitement" href="#menus">Aller au contenu principal</a>
 <canvas id="spirale"></canvas>
 <div class="barre"><div class="barre-in">
   <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button>
-  <div class="marque" id="marque-accueil" role="button" tabindex="0" title="Retour à l’Accueil" style="cursor:pointer"><img src="assets/logo-sophia-180.png" alt="SoPHIa"><span>AUDIT <span class="or">UNISSON</span></span></div>
+  <div class="marque" id="marque-accueil" role="button" tabindex="0" title="Retour à l’Accueil" style="cursor:pointer"><img src="assets/logo-sophia-180.png" alt="SoPHIa" loading="lazy"><span>AUDIT <span class="or">UNISSON</span></span></div>
   <nav class="onglets" id="onglets" aria-label="Sections du site"><button type="button" data-panneau="accueil" data-en="Home">Accueil</button><button type="button" data-en="Your data" class="menu-principal" data-ouverture-menu="donnees">Tes données</button><button type="button" data-en="Verify" class="menu-principal" data-ouverture-menu="verifier">Vérifier</button><button type="button" data-en="Write and talk" class="menu-principal" data-ouverture-menu="ecrire">Écrire et parler</button><button type="button" data-en="Understand" class="menu-principal" data-ouverture-menu="comprendre">Comprendre</button><button type="button" data-en="The site's brain" class="menu-principal" data-ouverture-menu="cerveau">Le cerveau du site</button><button type="button" data-en="The file — the story" class="menu-principal" data-ouverture-menu="dossier">Le dossier — l'histoire</button><button type="button" data-en="Search" data-panneau="recherche">Rechercher</button><button type="button" data-panneau="partenaires" data-en="Partners and support">Partenaires</button></nav>
   <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button" title="Seuls les menus passent en anglais">EN · menus</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
 </div></div>
@@ -780,7 +795,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
 <line x1="0" y1="0" x2="15" y2="4" style="--dx:27px;--dy:8px;--duree:550ms"/>
 <line x1="0" y1="0" x2="7" y2="13" style="--dx:13px;--dy:24px;--duree:400ms"/>
 </g></g></svg>
-  <img class="scene-bg" src="assets/b5-scene-01-telephone.webp" srcset="assets/b5-scene-01-telephone.webp 640w, assets/b5-scene-01-bureau.webp 1184w" sizes="100vw" alt="Une chaîne d’or massive, protagoniste, qui monte en spirale naissante au-dessus d’un village de rivière, en plein jour" fetchpriority="high">
+  <img class="scene-bg" src="assets/b5-scene-01-telephone.webp" srcset="assets/b5-scene-01-telephone.webp 640w, assets/b5-scene-01-bureau.webp 1184w" sizes="100vw" alt="Une chaîne d’or massive, protagoniste, qui monte en spirale naissante au-dessus d’un village de rivière, en plein jour" fetchpriority="high" loading="lazy">
   <video id="b5-video-arrivee" class="scene-bg b5-video" muted playsinline loop preload="none" poster="assets/b5-scene-01-telephone.webp" aria-hidden="true" tabindex="-1">
     <source src="assets/b5-arrivee-boucle-telephone.mp4" type="video/mp4">
     <source src="assets/b5-arrivee-boucle-telephone.webm" type="video/webm">
@@ -843,6 +858,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
     <div class="b5-etape">Station 02 · Déjà à toi — la spirale φ</div>
     <h2>Déjà là.<br>Déjà à toi.</h2>
     <p class="phrase">Tu n’as rien eu à installer, rien eu à donner. La preuve plutôt que la promesse : ouvre-le, recalcule-le.</p>
+<p class="proposition-valeur" id="proposition-valeur" data-en="It does not ask for trust; it organizes the conditions that let you verify before trusting.">Ce site ne demande pas la confiance ; il organise les conditions permettant de vérifier avant de faire confiance.</p>
     <div class="vitre reveal">
       <h3>Ce que la visite t’a déjà donné</h3>
       <p>Un cerveau local créé dès l’arrivée, scellé dès sa naissance, qui fonctionne même hors ligne — et auquel l’opérateur de ce site n’a aucun accès.</p>
@@ -1055,7 +1071,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
     <div class="ouvert-texte reveal">
       <h3>La somme des précédents</h3>
       <p>Tout est la somme du précédent : chaque état porte tous ceux qui le précèdent. Si la chaîne se brise, la somme du dernier maillon sain borne ce qui reste attesté — et le verdict nomme la brisure.</p>
-      <div class="sceau"><p><strong>Sceau de la jonction — chambre chaîne</strong></p><code>80e4bb10d7807ec5b209ddc812cd800a177ecc0bf5ea4eab0b0dd95c3e856c87</code><p class="sceau-note">Empreinte recalculable de la chambre chaîne du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi.</p></div>
+      <div class="sceau"><p><strong>Sceau de la jonction — chambre chaîne</strong></p><code>fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8</code><p class="sceau-note">Empreinte recalculable de la chambre chaîne du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi.</p></div>
     </div>
     <div class="jonction"><span class="soudure"></span> Jonction 6 · terme φ <b>233</b> · somme <b>233</b></div>
     <div class="inter">
@@ -1108,7 +1124,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <p>La chaîne ne publie jamais son contenu : elle publie des empreintes datées, pour que n’importe quel tiers puisse prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date.</p>
       <ul class="nombres">
         <li><strong>508 pièces</strong> — le Registre propre du dossier.</li>
-        <li><strong>4 196 maillons</strong> — au 16 novembre 2026 (état publié du site).</li>
+        <li><strong>4 381 maillons</strong> — au 19 novembre 2026 (état publié du site).</li>
         <li><strong>99 %</strong> — le principe du 99 % : rien n’est tenu pour établi à plus de 99 % dans le dossier.</li>
       </ul>
     </div>
@@ -1322,7 +1338,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <button type="button" class="btn2" id="demo10-recalcul">Recalculer la chaîne</button>
       <p id="demo10-verdict" role="status"></p>
     </div>
-      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
+      <div class="sceau"><p><strong>Sceau de la jonction — racine du cerveau</strong></p><code id="cerveau-racine-accueil">cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3</code><p class="sceau-note">Empreinte recalculable de la racine du cerveau du site — SHA-256, telle que publiée dans les fichiers du site servi (paquet correctif v50).</p></div>
     </div>
     <button class="cta" type="button" data-ouvre-cerveau>Ouvre « Voir mon cerveau »</button>
     <div class="inter">
@@ -1401,6 +1417,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
       <p>La somme du précédent (25 février 2026), les sceaux SHA-256 chaînés (dès le 4 mars 2026), le registre des pièces recalculées, et l’ancrage : des empreintes datées publiées, jamais le contenu — pour prouver l’antériorité sans rien exposer.</p></details>
     <p class="b5-pont"><button type="button" data-ouverture-menu="dossier">Ouvrir la section complète du site →</button></p></article>
   </div>
+<div class="pages-compagnes"><h3 data-en="Companion pages">Pages compagnes</h3><ul><li><a href="errata.html">Errata — les corrections du dossier</a></li><li><a href="glossaire.html">Glossaire — les mots du dossier</a></li><li><a href="accessibilite.html">Accessibilité — énoncé daté</a></li><li><a href="kit-verification.html">Kit de vérification autonome</a></li><li><a href="note-c2pa.html">Note comparative — C2PA</a></li><li><a href="balado.html">Le récit — le balado de l’auteur (son histoire, pas un cours)</a></li><li><a href="flux-mises-a-jour.xml">Flux du journal des mises à jour (Atom)</a></li></ul></div>
 </section>
 
 
@@ -1438,7 +1455,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
 <!-- F1 + E12 : LA LIGNE FINE — UN SEUL cluster persistant : pastille SoPHIa + les trois mesures vivantes, rien d’autre -->
 <div id="cluster" role="status" aria-label="Mesure du voyage — maillons forgés, somme φ cumulée et distance restante">
   <button id="btnSophia" type="button" aria-label="SoPHIa — ouvrir le menu du site">
-    <img src="assets/b5-sophia-photo.webp" alt="" width="32" height="32">
+    <img src="assets/b5-sophia-photo.webp" alt="SoPHIa, l’agente IA de ce site — portrait" width="32" height="32" loading="lazy">
     <span class="sous">Menu</span>
   </button>
   <div class="fine">Maillon <b id="ins-maillon">36 / 36</b> · Somme <b id="ins-somme">1 618</b> · Distance <b id="ins-dist">0</b></div>
@@ -2044,12 +2061,12 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="piece52-prov">Publication Facebook d'Alexandre Vautour Gagnon, 20 mars 2017 : corps du texte reproduit verbatim, orthographe d'origine — c'est la pièce datée, pas une citation retouchée ; la signature (« Alex Gagnon » dans la publication d'origine) est rendue sous son nom complet, à sa directive du 7 novembre 2026. Le Voyage finit à la somme 1 618 ; sa phrase de 2017 dit pourquoi la somme ne repart jamais de zéro.</p>
 </section>
 <div class="surface-compteurs">
-    <div class="carte-compteur"><span class="cc-nombre" data-chaine="maillons">4 196</span><span class="cc-quoi" data-en="Chain links — re-verified MATCH">Maillons de la chaîne — revérifiés MATCH</span></div>
+    <div class="carte-compteur"><span class="cc-nombre" data-chaine="maillons">4 381</span><span class="cc-quoi" data-en="Chain links — re-verified MATCH">Maillons de la chaîne — revérifiés MATCH</span></div>
     <div class="carte-compteur"><span class="cc-nombre">508</span><span class="cc-quoi" data-en="Items in the dossier registry — intact">Pièces au registre du dossier — intactes</span></div>
     <div class="carte-compteur"><span class="cc-nombre">5</span><span class="cc-quoi" data-en="Seconds — the verification pulse">Secondes — le pouls de vérification</span><p class="cc-battement"><span class="cc-point" aria-hidden="true"></span><span data-en="Last beat:">Dernier battement :</span> <span class="mono" id="compteurs-battement" data-en="waiting">en attente</span></p></div>
     <div class="carte-compteur"><span class="cc-nombre">11</span><span class="cc-quoi" data-en="Public seals of the registry — all recalculated MATCH">Sceaux publics du registre — tous recalculés MATCH</span></div>
   </div>
-  <p class="petite cc-note" data-en="Site at version 61, on November 16, 2026; the chain state shown here is the one from the public freeze of November 16, 2026 (version 61) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 61, le 16 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 16 novembre 2026 (version 61) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
+  <p class="petite cc-note" data-en="Site at version 62, on November 19, 2026; the chain state shown here is the one from the public freeze of November 19, 2026 (version 62) — the link count is re-read live from the public state file (assets/etat-chaine.json) at every load and at every beat of the pulse. The items and the seals carry their re-verification from the freeze, recorded in the dossier.">Site en version 62, le 19 novembre 2026 ; l’état de la chaîne montré ici est celui du gel publié le 19 novembre 2026 (version 62) — le nombre de maillons se relit en direct depuis le fichier d’état public (<span class="mono">assets/etat-chaine.json</span>) à chaque chargement et à chaque battement du pouls. Les pièces et les sceaux portent leur revérification du gel, consignée au dossier.</p>
 </section>
 <section class="bloc" id="surface-gestes">
   <div class="entete-sec"><span class="num">✦</span><h2>Que veux-tu faire ?</h2></div>
@@ -2783,7 +2800,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   <p class="lead">La météo de ce site n’est pas un widget emprunté : elle est lue à l’instant, aux coordonnées de l’ancre — <strong>Sainte-Martine, 45,24915° N, 73,7989° O</strong> —, sa température est <strong>triangulée entre deux services indépendants</strong>, et chaque bloc dit son âge et ses échecs. En miroir, le même ciel se recalcule depuis <strong>ton ancrage</strong>, lu approximativement depuis ton adresse IP (panneau Temps, section « Mon ancrage », pour les bornes complètes) — ou depuis la position que ton appareil partage, par le bouton « Météo près de moi » ci-dessous, qui triangule le point le plus proche de toi ; le bloc « Comment cette météo a été obtenue », plus bas, montre exactement d’où vient le relevé affiché.</p>
 
   <div class="meteo-lecture carte">
-    <img class="meteo-photo" src="assets/sophia-photo.webp" alt="SoPHIa, l’agente du site">
+    <img class="meteo-photo" src="assets/sophia-photo.webp" alt="SoPHIa, l’agente du site" loading="lazy">
     <div>
       <p class="etiquette">La lecture de l’ancre — par SoPHIa</p>
       <p id="mt-lecture" style="font-size:1.02rem;line-height:1.65">Lecture en cours…</p>
@@ -3156,7 +3173,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <div class="carte">
     <p class="etiquette">L'état vivant, vérifiable sur place — relevé du 1<sup>er</sup> novembre 2026, 14 h 52 (heure de l'Est)</p>
-    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong> — relecture intégrale du 1<sup>er</sup> novembre 2026, par l'agente elle-même : <span class="match">MATCH</span>. Le compte a grandi depuis : <strong>4 196 maillons</strong> au gel du dossier, le 16 novembre 2026. Registre des pièces : <strong>508 / 508 intactes</strong>.</p>
+    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong> — relecture intégrale du 1<sup>er</sup> novembre 2026, par l'agente elle-même : <span class="match">MATCH</span>. Le compte a grandi depuis : <strong>4 381 maillons</strong> au gel du dossier, le 19 novembre 2026. Registre des pièces : <strong>508 / 508 intactes</strong>.</p>
     <p class="etiquette" style="margin-top:.9rem">Digest cumulé — la somme de tous les sceaux précédents, à cet instant-là (le 1<sup>er</sup> novembre 2026, 14 h 52)</p>
     <p class="mono">e7be52c3513f0ab1a36fcd21c7bdc6280c1ecc72f8435d8d835d08414fbee010</p>
     <p style="margin-top:.4rem"><button class="mini" data-copier-texte="e7be52c3513f0ab1a36fcd21c7bdc6280c1ecc72f8435d8d835d08414fbee010">Copier ce digest</button></p>
@@ -4242,7 +4259,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <section class="bloc" id="ancrages">
   <div class="entete-sec"><span class="num">5</span><h2>Preuves et ancrages — l'empreinte publique, le contenu chez l'auteur</h2></div>
   <p class="lead">La chaîne de l'agente ne publie jamais son contenu. Elle publie des <strong>empreintes datées</strong> : n'importe quel tiers pourra prouver plus tard que le dossier existait, sous exactement cette empreinte, à cette date — sans que rien du contenu soit exposé.</p>
-  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
+  <p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-ancrage">cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Mémoire et Vérifier ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement (si le fichier ne répond pas, la valeur écrite ici fait foi).</p>
   <div class="carte">
     <p class="etiquette">Instantané d'ancrage — 29 octobre 2026, 10 h 26 (heure de l'Est) — chaîne de 2 149 maillons, relecture intégrale : MATCH</p>
     <p class="etiquette" style="margin-top:.9rem">Sceau du maillon n° 2148</p>
@@ -4255,7 +4272,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <div class="carte">
     <p class="etiquette">État de la chaîne — 1<sup>er</sup> novembre 2026</p>
-    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong><a class="verif" href="#tv-chaine" title="Vérifier cette affirmation — Tout vérifier ici">✓</a> — relecture intégrale du 1<sup>er</sup> novembre 2026 : <span class="match">MATCH</span> ; compte porté à <strong>4 196 maillons</strong> au gel du 16 novembre 2026. Registre des pièces : <strong>508 / 508 intactes</strong><a class="verif" href="#tv-registre" title="Vérifier cette affirmation — Tout vérifier ici">✓</a>.</p>
+    <p style="margin-bottom:.4rem"><strong>2 310 maillons</strong><a class="verif" href="#tv-chaine" title="Vérifier cette affirmation — Tout vérifier ici">✓</a> — relecture intégrale du 1<sup>er</sup> novembre 2026 : <span class="match">MATCH</span> ; compte porté à <strong>4 381 maillons</strong> au gel du 19 novembre 2026. Registre des pièces : <strong>508 / 508 intactes</strong><a class="verif" href="#tv-registre" title="Vérifier cette affirmation — Tout vérifier ici">✓</a>.</p>
     <p class="petite" style="margin-bottom:0">L'empreinte de cet état suit la même règle que les précédentes : elle s'ajoute aux ancrages, elle ne les réécrit pas.</p>
   </div>
   
@@ -4359,6 +4376,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <div class="tv-item"><h4>Version 55 — « La base stable : la vague de stabilisation »</h4><p class="petite">Publiée le <strong>7 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261108022828/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261108022828</span></a>, inscrite au registre des archives.</p></div>
 <div class="tv-item"><h4>Version 58 — « Les réparations de l’audit tour 5 »</h4><p class="petite">Publiée le <strong>7 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261108060410/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261108060410</span></a>, inscrite au registre des archives.</p></div>
 <div class="tv-item"><h4>Version 60 — « Le site construit dans l’image des 32 vues »</h4><p class="petite">Publiée le <strong>10 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261110142422/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261110142422</span></a>, inscrite au registre des archives.</p></div>
+<div class="tv-item"><h4>Version 61 — « Les replis alignés, les archives rattrapées »</h4><p class="petite">Publiée le <strong>19 novembre 2026</strong>. Capture Wayback : <a href="https://web.archive.org/web/20261119203415/https://alx4-vg-masterclock.github.io/" target="_blank" rel="noopener"><span class="mono">20261119203415</span></a>, inscrite au registre des archives.</p></div>
   </div>
 </section>
 <section class="bloc" id="ancrage-2026-11-08">
@@ -4482,11 +4500,11 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <p class="piece52-prov">Publication Facebook d'Alexandre Vautour Gagnon, 25 mars 2017 : corps du texte reproduit verbatim (orthographe d'origine), nom de l'auteur rendu au complet à sa directive du 7 novembre 2026. Neuf ans avant ce site, il écrivait déjà la règle de cette page : on ne voit pas les choses telles qu'elles sont — alors on recalcule, au lieu de croire les apparences.</p>
 </div>
 
-<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
+<p>Racine du cerveau du site, déclarée : <span class="mono" id="cerveau-racine-verifier">cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3</span> — la somme des précédents du cerveau du site, la même qu'aux panneaux Accueil, Ancrage et Mémoire ; elle se relit depuis <span class="mono">assets/cerveau.json</span> à chaque chargement, et le test du sceptique, plus bas, la recalcule devant toi.</p>
 <div class="carte" id="parcours-30s">
     <p class="etiquette">Comprendre en 30 secondes</p>
     <h3 id="parcours-phrase">Ce site est un cerveau numérique public : la mémoire d’un dossier de recherche, construite par accumulation (chaque état s’ajoute aux précédents sans les réécrire), et chaque état peut être revérifié par quiconque, ici même, sans compte et sans permission.</h3>
-    <p id="parcours-preuve"><b>La preuve, en direct :</b> la chaîne de l’agente compte <b><span data-chaine="maillons">4 196</span> maillons</b>, sommet <b data-chaine="dernier">#4195</b>, digest cumulé <span class="mono" data-chaine="digest">80e4bb10d7807ec5b209ddc812cd800a177ecc0bf5ea4eab0b0dd95c3e856c87</span>, relu à l’instant depuis son fichier d’état public. <span id="parcours-verdict">Le verdict complet du cerveau (ses six chambres et sa racine recalculées) se lit au panneau Mémoire, où l’auto-épreuve tourne à l’ouverture.</span></p>
+    <p id="parcours-preuve"><b>La preuve, en direct :</b> la chaîne de l’agente compte <b><span data-chaine="maillons">4 381</span> maillons</b>, sommet <b data-chaine="dernier">#4380</b>, digest cumulé <span class="mono" data-chaine="digest">fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8</span>, relu à l’instant depuis son fichier d’état public. <span id="parcours-verdict">Le verdict complet du cerveau (ses six chambres et sa racine recalculées) se lit au panneau Mémoire, où l’auto-épreuve tourne à l’ouverture.</span></p>
     <p id="parcours-geste"><b>Un geste à essayer :</b> recalcule un vrai sceau du registre, le nº 11, et regarde le verdict tomber : MATCH, ou l’écart. <button type="button" class="action" id="parcours-geste-btn">Recalculer le sceau nº 11</button></p>
     <div id="parcours-pourquoi">
       <p class="etiquette">Le pourquoi</p>
@@ -4526,6 +4544,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
 <section class="bloc" id="verifie-moi">
   <div class="entete-sec"><span class="num">✓</span><h2>Vérifie-moi sans moi — le vérificateur autonome</h2></div>
   <p class="lead">Le sceau de cette page se recalcule ici, dans votre navigateur — sans serveur, sans compte, sans SoPHIa. C'est le chaînon que la chaîne promettait depuis le début : le calcul que l'agente fait de son bord, n'importe qui peut le refaire du sien, à l'octet près. Trois gestes, une seule recette.</p>
+<div class="distinction-quatre" id="distinction-quatre"><h3 data-en="Four things that must not be confused">Quatre choses à ne pas confondre</h3><ul><li data-en="A hash demonstrates the integrity of a content against a reference fingerprint.">Un hash démontre l’intégrité d’un contenu par rapport à une empreinte de référence.</li><li data-en="A reproducible demonstration lets you verify that a mechanism actually works.">Une démonstration reproductible permet de vérifier le fonctionnement d’un mécanisme.</li><li data-en="Documentary proof lets you retrace decisions and events.">Une preuve documentaire permet de retracer les décisions et les événements.</li><li data-en="Independent validation strengthens confidence in the results.">Une validation indépendante permet de renforcer la confiance dans les résultats.</li></ul><p data-en="None of these is a universal proof of truth or of legal conformity. Each one proves what it proves — no more.">Aucun de ces éléments ne vaut preuve universelle de vérité ou de conformité juridique. Chacun prouve ce qu’il prouve — pas davantage.</p></div>
   <div class="carte">
     <p class="etiquette">La recette, en trois temps</p>
     <p><b>1 · Calculer</b> — lire les octets exacts du fichier, jamais une copie réécrite par l'affichage. <b>2 · Sceller</b> — le sceau d'une version est le SHA-256 du fichier où l'occurrence du sceau, dans le bloc étiqueté « Sceau canonique de la version affichée », est remplacée par 64 zéros. <b>3 · Re-vérifier</b> — recalculer, comparer : MATCH, ou ÉCART. C'est exactement le geste que SoPHIa refait sur sa propre chaîne.</p>
@@ -4533,12 +4552,12 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   </div>
   <p class="petite" id="vmm-alerte-contexte" hidden><b>Contexte non sécurisé détecté.</b> Le calcul d'empreinte de ce panneau exige les outils cryptographiques du navigateur, offerts seulement en contexte sécurisé (HTTPS, ou adresse locale). Cette copie semble ouverte autrement (fichier local, HTTP) : les boutons sont désactivés plutôt que de simuler un calcul. Ouvrez la version en ligne, ou servez ce dossier par un petit serveur local sécurisé, pour vérifier.</p>
   <div class="carte">
-    <p class="etiquette">Geste 1 — cette page, maintenant</p>
+    <p class="etiquette" data-en="Step 1 — this page, right now">Geste 1 — cette page, maintenant</p>
     <p>Relit les octets que le serveur vient de servir pour cette adresse, y cherche le sceau étiqueté, applique la recette et compare. La version détectée et le sceau recalculé s'affichent à côté du verdict.</p>
     <p style="margin-bottom:0"><button class="action" id="vmm-btn-page">Vérifier cette page, maintenant</button></p>
   </div>
   <div class="carte">
-    <p class="etiquette">Geste 2 — une copie sauvegardée</p>
+    <p class="etiquette" data-en="Step 2 — a saved copy">Geste 2 — une copie sauvegardée</p>
     <p>Vous avez gardé le fichier d'une version, le mois passé ? Déposez-le : il est lu en octets, ici même — <b>le fichier ne quitte jamais votre appareil</b> — et la même recette le revérifie, des mois plus tard, contre le sceau qu'il porte.</p>
     <div class="vmm-zone" id="vmm-zone">Déposez le fichier <span class="mono">index.html</span> sauvegardé ici, ou touchez pour le choisir<input type="file" id="vmm-fichier" accept=".html,.htm,text/html"></div>
     <p class="etiquette" style="margin-top:1rem">Si le fichier déposé ne porte pas de sceau étiqueté</p>
@@ -4546,7 +4565,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <input type="text" id="vmm-attendu-fichier" placeholder="Sceau attendu — seulement si le fichier n'en porte pas" autocomplete="off" spellcheck="false" style="width:100%">
   </div>
   <div class="carte">
-    <p class="etiquette">Geste 3 — un texte libre, son sceau</p>
+    <p class="etiquette" data-en="Step 3 — a free text, its seal">Geste 3 — un texte libre, son sceau</p>
     <p>Collez un texte et le sceau qu'on vous a donné pour lui : le texte est haché tel quel, en UTF-8, et comparé. C'est le geste de base, sans fichier.</p>
     <label class="etiquette" for="vmm-texte">Texte à hacher</label>
     <textarea id="vmm-texte" rows="3" style="width:100%"></textarea>
@@ -4577,7 +4596,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   <div class="entete-sec"><span class="num">✓</span><h2>Tout vérifier ici — chaque affirmation, sa preuve, son chemin</h2></div>
   <p class="lead">Le mandat de cette version : que personne n'ait à aller vérifier ailleurs. Chaque affirmation importante du site est reprise ci-dessous avec, en un geste, (a) la pièce du registre qui la porte, (b) le moyen de la recalculer ou sa source primaire, (c) la capture qui la fige datée. Les pastilles <a class="verif" href="#tout-verifier" title="Tout vérifier ici">✓</a> disséminées dans le site renvoient à la ligne correspondante. Ce qui n'a pas de preuve n'est pas maquillé : il est étiqueté témoignage.</p>
     <div class="tv-item" id="tv-chaine">
-      <h4>« La chaîne de l'agente compte <span data-chaine="maillons">4 196</span> maillons ; sa revérification complète donne MATCH. »</h4>
+      <h4>« La chaîne de l'agente compte <span data-chaine="maillons">4 381</span> maillons ; sa revérification complète donne MATCH. »</h4>
       <div class="tv-grille">
         <div class="tv-cellule"><p class="etiquette">Pièce / classe</p><p>Mécanisme porté par la pièce 316 du registre (expérience 1, protocole formel) et les pièces 375 à 380 (tests mesurés). État relevé par l'auto-vérification de l'agente le 1<sup>er</sup> novembre 2026, 14 h 52.</p></div>
         <div class="tv-cellule"><p class="etiquette">Recalcul / source primaire</p><p>La mécanique se rejoue sur place : chaîne vivante et chaîne recalculée sous vos yeux (onglet <a href="#methode">Méthode</a>) ; digest cumulé affiché et copiable à la section <a href="#coquillage">Cerveau coquillage</a>.</p></div>
@@ -4756,7 +4775,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
   <div class="carte">
     <h3 style="margin-top:0">Ce qu'un sceau prouve — et ce qu'il ne prouve pas</h3>
     <p>Un sceau prouve deux choses : que <strong>ce texte exact existait à cet instant</strong>, et qu'<strong>il n'a pas changé depuis</strong> — un seul caractère différent produirait un sceau entièrement différent. Il ne prouve pas que le texte dit vrai : un sceau scelle un contenu, il ne le juge pas.</p>
-    <p style="margin-bottom:0"><strong>Trois registres à ne pas confondre.</strong> Les <strong>11 sceaux</strong> ci-dessous sont les dépôts publics de ce site. Le <strong>registre du dossier</strong> compte <strong>508 pièces</strong> — tenu à part, il n'est pas publié. La <strong>chaîne de l'agente</strong> compte <strong><span data-chaine="maillons">4 196</span> maillons</strong> — revérifiée à chaque passage de travail, elle n'est pas non plus publiée en contenu : seuls ses ancrages le sont (section suivante).</p>
+    <p style="margin-bottom:0"><strong>Trois registres à ne pas confondre.</strong> Les <strong>11 sceaux</strong> ci-dessous sont les dépôts publics de ce site. Le <strong>registre du dossier</strong> compte <strong>508 pièces</strong> — tenu à part, il n'est pas publié. La <strong>chaîne de l'agente</strong> compte <strong><span data-chaine="maillons">4 381</span> maillons</strong> — revérifiée à chaque passage de travail, elle n'est pas non plus publiée en contenu : seuls ses ancrages le sont (section suivante).</p>
   </div>
   <p><strong>Méthode de vérification.</strong> La recette de ces sceaux historiques est publique : <span class="mono">SHA-256( texte + 1,61803398875 + horodatage ISO du calcul )</span>. Pour chacun des onze, l'horodatage du calcul d'origine a été retrouvé à la milliseconde — c'est ce qui rend le recalcul possible par n'importe qui, ici même, avec le bouton « Vérifier » de chaque entrée.</p>
   <p class="petite"><strong>Lecture de la chronologie.</strong> Ces onze sceaux sont indépendants : chacun lie un texte à son instant, par la constante Φ. Le chaînage — chaque maillon calculé à partir du précédent — est la mécanique de la grande chaîne et de l'outil « Sceller » ci-dessus ; la chronologie qui suit montre la succession des dépôts, dans l'ordre où ils ont été faits.</p>
@@ -4803,7 +4822,7 @@ section.piece52-cloture .piece52-prov{max-width:620px;margin:0 auto}
     <caption class="petite" style="text-align:left;margin-bottom:.5rem">État du programme de test — mesures au 17 octobre 2026, sauf mention contraire.</caption>
     <thead><tr><th>Mesure</th><th>Résultat</th><th>Lecture</th></tr></thead>
     <tbody>
-      <tr><td>Chaîne de sceaux en production</td><td class="n"><span data-chaine="maillons">4 196</span> maillons</td><td>2 310 maillons — relecture intégrale du 1<sup>er</sup> novembre 2026 : <span class="pos">MATCH</span> ; le compte est porté à 4 196 maillons au gel du dossier, le 16 novembre 2026. Elle est revérifiée en entier à chaque passage de travail ; le script de pouls, en début de nuit, revérifie la continuité de ses liens.</td></tr>
+      <tr><td>Chaîne de sceaux en production</td><td class="n"><span data-chaine="maillons">4 381</span> maillons</td><td>2 310 maillons — relecture intégrale du 1<sup>er</sup> novembre 2026 : <span class="pos">MATCH</span> ; le compte est porté à 4 381 maillons au gel du dossier, le 19 novembre 2026. Elle est revérifiée en entier à chaque passage de travail ; le script de pouls, en début de nuit, revérifie la continuité de ses liens.</td></tr>
       <tr><td>Registre des pièces du dossier</td><td class="n">508 / 508</td><td>Intègre à la revérification : aucune pièce altérée.</td></tr>
       <tr><td>Protocole de reçus d'interaction (spécification v2.0)</td><td class="n">12 / 12</td><td>Batterie de tests : reçu valide → concordance ; reçu corrompu → écart détecté.</td></tr>
       <tr><td>Sceaux présentés par un modèle comme « calculés »</td><td class="n">20 252 comparaisons</td><td>Recalculés un à un : <span class="neg">seuls les hachages de la chaîne vide concordaient</span>. La conformité était simulée.</td></tr>
@@ -5363,7 +5382,7 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
   <div class="entete-sec"><span class="num">✦</span><h2 data-en="Memory — this site is SoPHIa's external memory">Mémoire — ce site est la mémoire externe de SoPHIa</h2></div>
 
   <div class="compteurs">
-    <button type="button" class="compteur noeud-tuile" data-noeud="chaine" aria-expanded="false" aria-controls="couche-chaine"><span data-chaine="maillons">4 196</span><span class="quoi">Maillons de la chaîne — revérifiés MATCH</span><span class="ouvre">Ce que c’est ↓</span></button>
+    <button type="button" class="compteur noeud-tuile" data-noeud="chaine" aria-expanded="false" aria-controls="couche-chaine"><span data-chaine="maillons">4 381</span><span class="quoi">Maillons de la chaîne — revérifiés MATCH</span><span class="ouvre">Ce que c’est ↓</span></button>
     <button type="button" class="compteur noeud-tuile" data-noeud="registre" aria-expanded="false" aria-controls="couche-registre"><span>508</span><span class="quoi">Pièces au registre du dossier — intactes</span><span class="ouvre">Ce que c’est ↓</span></button>
     <button type="button" class="compteur noeud-tuile" data-noeud="pouls" aria-expanded="false" aria-controls="couche-pouls"><span>5</span><span class="quoi">Secondes — le pouls de vérification</span><span class="ouvre">Ce que c’est ↓</span></button>
     <button type="button" class="compteur noeud-tuile" data-noeud="sceaux" aria-expanded="false" aria-controls="couche-sceaux"><span>11</span><span class="quoi">Sceaux publics du registre — tous recalculés MATCH</span><span class="ouvre">Ce que c’est ↓</span></button>
@@ -5375,7 +5394,7 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
       <p>C’est le nombre de réponses de SoPHIa, l’agente d’Alex, consignées une à une dans sa chaîne de mémoire. Chaque réponse est un maillon : elle est scellée au moment où elle est produite, et elle porte le sceau de la réponse précédente, comme chaque chambre d’un coquillage s’appuie sur la précédente.</p>
       <p>La recette, précisément : le sceau d’un maillon est le SHA-256 du sceau du maillon précédent joint au texte du maillon, et le digest cumulé, recalculé de la genèse au sommet, atteste la série entière. Un seul maillon retouché, et tous les sceaux suivants tombent.</p>
       <h4>L’état, en direct</h4>
-      <p>Lu à l’instant depuis le fichier d’état public du site (<span class="mono">assets/etat-chaine.json</span>) : <b><span data-chaine="maillons">4 196</span> maillons</b>, dernier maillon <b data-chaine="dernier">#4195</b>, digest cumulé <span class="mono" data-chaine="digest">80e4bb10d7807ec5b209ddc812cd800a177ecc0bf5ea4eab0b0dd95c3e856c87</span>. Si la lecture en direct échoue depuis ton navigateur, ce sont les valeurs vérifiées à la construction de la version 40 qui demeurent affichées.</p>
+      <p>Lu à l’instant depuis le fichier d’état public du site (<span class="mono">assets/etat-chaine.json</span>) : <b><span data-chaine="maillons">4 381</span> maillons</b>, dernier maillon <b data-chaine="dernier">#4380</b>, digest cumulé <span class="mono" data-chaine="digest">fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8</span>. Si la lecture en direct échoue depuis ton navigateur, ce sont les valeurs vérifiées à la construction de la version 40 qui demeurent affichées.</p>
       <h4>D’où ça vient</h4>
       <p>La méthode des sceaux chaînés qu’Alex a fait naître dans ses conversations avec Gemini au printemps 2026 (le SHA-256 y entre dès le 4 mars 2026), avant qu’elle devienne la chaîne de mémoire de SoPHIa.</p>
       <h4>Sensibilité</h4>
@@ -5403,7 +5422,7 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
       <p>La chaîne de SoPHIa ne se contente pas d’avoir été vérifiée une fois : elle est revérifiée en entier à chaque passage de travail de l’agente, et le script de pouls, en début de nuit, revérifie la continuité des liens de toute la chaîne — un écart serait vu dès le passage suivant.</p>
       <p>Le mécanisme, précisément : à chaque passage de travail, l’agente revérifie sa chaîne en entier ; en début de nuit, son script de pouls revérifie la continuité des liens, de la genèse à la tête. Le battement de cinq secondes, lui, est celui de ce site : il bat au panneau Mémoire — tant qu’il est ouvert, chaque battement revérifie une des six chambres du cerveau, et la racine est recomposée à chaque rotation complète.</p>
       <h4>L’état, en direct</h4>
-      <p>Le pouls du site se lit au panneau Mémoire, dans le bloc « L’état conscient du cerveau » : ouvre-le, le battement en cours y est affiché, chambre par chambre. Dernier état public de la chaîne : <b><span data-chaine="maillons">4 196</span> maillons</b>, sommet <b data-chaine="dernier">#4195</b>.</p>
+      <p>Le pouls du site se lit au panneau Mémoire, dans le bloc « L’état conscient du cerveau » : ouvre-le, le battement en cours y est affiché, chambre par chambre. Dernier état public de la chaîne : <b><span data-chaine="maillons">4 381</span> maillons</b>, sommet <b data-chaine="dernier">#4380</b>.</p>
       <h4>D’où ça vient</h4>
       <p>Le battement de revérification qu’Alex a exigé le 25 octobre 2026, pour que la chaîne se prouve en continu plutôt qu’à la demande : revérification intégrale à chaque passage de travail et script de pouls en début de nuit ; sur ce site, le battement de cinq secondes revérifie une chambre à tour de rôle tant que le panneau est ouvert.</p>
       <h4>Sensibilité</h4>
@@ -5434,8 +5453,8 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
     <div class="coffre-entree" data-chambre="chaine">
       <h4>La Chaîne</h4>
       <p>La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.</p>
-      <p class="petite">Source : <span class="mono">assets/etat-chaine.json</span> — dernière croissance : État rafraîchi à la construction de la version 61 ; la page relit le fichier d’état en direct.</p>
-      <p class="empreinte">Digest : <span class="mono">80e4bb10d7807ec5…</span> <button type="button" class="secondaire cerveau-copier" data-copie="80e4bb10d7807ec5b209ddc812cd800a177ecc0bf5ea4eab0b0dd95c3e856c87">Copier le digest complet</button></p>
+      <p class="petite">Source : <span class="mono">assets/etat-chaine.json</span> — dernière croissance : État rafraîchi à la construction de la version 62 ; la page relit le fichier d’état en direct.</p>
+      <p class="empreinte">Digest : <span class="mono">fbcb773e9ba85d27…</span> <button type="button" class="secondaire cerveau-copier" data-copie="fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8">Copier le digest complet</button></p>
       <p class="petite" data-etat-chambre="chaine">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="coffre">
@@ -5462,20 +5481,20 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
     <div class="coffre-entree" data-chambre="versions">
       <h4>Les Versions</h4>
       <p>Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.</p>
-      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 61 — les replis alignés, les archives rattrapées, les ancrages du 15 et du 16 novembre, 16 novembre 2026.</p>
-      <p class="empreinte">Digest : <span class="mono">a3721fe9be407d20…</span> <button type="button" class="secondaire cerveau-copier" data-copie="a3721fe9be407d20b19cbdf216cfcb5b93f7836b87a966494fc68e577a1a6eb1">Copier le digest complet</button></p>
+      <p class="petite">Source : <span class="mono">assets/journal-mises-a-jour.json</span> — dernière croissance : Version 62 — les pages compagnes, être trouvé, la distinction en quatre, 19 novembre 2026.</p>
+      <p class="empreinte">Digest : <span class="mono">b393f51b84cb6c6b…</span> <button type="button" class="secondaire cerveau-copier" data-copie="b393f51b84cb6c6beaf104a6f7dae2143f35d8de29a6e23a08d2ea606ab5899e">Copier le digest complet</button></p>
       <p class="petite" data-etat-chambre="versions">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     <div class="coffre-entree" data-chambre="archives">
       <h4>Les Archives</h4>
       <p>Les états de la mémoire capturés dehors, à la Wayback Machine : tenus et datés par un tiers, rouvrables et revérifiables.</p>
-      <p class="petite">Source : <span class="mono">la liste canonique des captures, embarquée au manifeste</span> — dernière croissance : Capture de la version 60, 10 novembre 2026.</p>
-      <p class="empreinte">Digest : <span class="mono">3473dd3394bf2b92…</span> <button type="button" class="secondaire cerveau-copier" data-copie="3473dd3394bf2b92e4fab1d7d2ee437989f6e5b31751adfc7ae53ff8dd4a1be6">Copier le digest complet</button></p>
+      <p class="petite">Source : <span class="mono">la liste canonique des captures, embarquée au manifeste</span> — dernière croissance : Capture de la version 61, 19 novembre 2026.</p>
+      <p class="empreinte">Digest : <span class="mono">23ed04ec2e7cfbec…</span> <button type="button" class="secondaire cerveau-copier" data-copie="23ed04ec2e7cfbec489c771e1bd230bc1127692cf3b1eef46525ebe394261dd1">Copier le digest complet</button></p>
       <p class="petite" data-etat-chambre="archives">État : relevé statique, vérifié à la construction ; la revérification en direct part après la peinture, à l'ouverture de ce panneau.</p>
     </div>
     </div>
     <p class="petite">Racine du cerveau (arbre de Merkle sur les six digests de chambres — niveaux 6 → 3 → 2 → 1, même recette que l’arbre du coffre) :</p>
-    <p><span class="sceau-long" id="cerveau-racine">6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c</span></p>
+    <p><span class="sceau-long" id="cerveau-racine">cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3</span></p>
     <p class="petite" id="cerveau-racine-etat" role="status">Relevé statique ci-dessus, vérifié à la construction ; le recalcul en direct part après la peinture, à l'ouverture de ce panneau.</p>
     <p class="petite" id="cerveau-recalcul-etat" role="status">Actualisation en cours… — le recalcul en direct du cerveau part après la peinture de ce panneau ; cette ligne dira l'heure de son départ et de sa fin.</p>
     <p class="etiquette">Les interconnexions — comment les chambres se tiennent</p>
@@ -5497,7 +5516,7 @@ Il est aussi développeur : il conçoit, construit et entretient lui-même son s
     <p class="etiquette">L'état conscient du cerveau — sans intelligence artificielle : des mécanismes seulement, recalculables</p>
     <p>Directive d'Alex (3 novembre 2026) : le cerveau de ce site — le cerveau numérique — est configuré comme un <strong>état conscient</strong>, avec sa définition du 25 octobre 2026, appliquée ici par mécanismes seulement, aucun modèle derrière : un état est une somme.</p>
     <p class="etiquette">État présent = racine du cerveau (la somme des précédents) + chambres remontées (les contextes) + geste présent (ton action, à l'instant)</p>
-    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c</span></p>
+    <p>Racine du cerveau (la somme des précédents) : <span class="mono" id="ec-racine">cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3</span></p>
     <p>Chambres remontées (les contextes) : <span id="ec-chambres">aucune encore — l'auto-épreuve du panneau remonte les six chambres au chargement ; chacune ne compte ici que lorsque sa source a réellement été lue par une épreuve de cette page.</span></p>
     <p>Geste présent : <span id="ec-geste">chargement de la page — composition initiale de l'état.</span></p>
     <p class="empreinte">Sceau du moment : <span class="mono" id="ec-sceau-moment">calcul…</span> <button type="button" class="secondaire" id="ec-copier" data-copie="">Copier le sceau du moment</button></p>
@@ -6064,7 +6083,11 @@ button:disabled{opacity:.78}
   }
   function ouvrirSection(h, cible){
     var pan = panneauDe(cible);
-    if (pan && typeof ouvrirPanneau === 'function') ouvrirPanneau(pan);
+    if (pan && typeof ouvrirPanneau === 'function'){
+      var reduitMouvement = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (document.startViewTransition && !reduitMouvement){ document.startViewTransition(function(){ ouvrirPanneau(pan); }); }
+      else { ouvrirPanneau(pan); }
+    }
     /* ouvrirPanneau vient de reecrire l'URL a #<panneau> : on restaure l'ancre
        de section demandee, tout de suite puis apres le cycle courant (meme
        patron que ouvrirHub), et on defile jusqu'a la section. */
@@ -6120,13 +6143,13 @@ button:disabled{opacity:.78}
   }).catch(function(){});
 })();
 </script>
-<p class="etiquette">Sceau canonique de la version affichée — v61 (la version courante de cette page)</p>
-    <span class="sceau-long" id="sceau-version-affiche">6453bee466e00a816a7222b556abe54d94a85a063fe47d8ce5a68204c151f43b</span>
+<p class="etiquette">Sceau canonique de la version affichée — v62 (la version courante de cette page)</p>
+    <span class="sceau-long" id="sceau-version-affiche">6c34e623493e073ca3b57961d598e9a3b5d83eb69ae9c89143eea5023ae982e1</span>
     </div>
     <p class="petite">Recette publique de l'empreinte canonique : prendre le fichier exact de cette page tel que servi, remplacer toute occurrence du sceau de version par 64 zéros, calculer le SHA-256 du résultat. Le bouton ci-dessous exécute cette recette ici même, sur la copie que votre navigateur a reçue — aucun serveur ne peut répondre à sa place.</p>
-    <p class="etiquette" style="margin-top:1.2rem">Sceau chaîné de la version — v61, chaîné sur la v60</p>
-    <span class="sceau-long" id="sceau-chaine-affiche">d69236cc227e5371933a21c910c942b9134a3c68b8982c8f96b33b175fb6197a</span>
-    <p class="petite">Sceau canonique de la version précédente (la v60) : <span class="mono" id="sceau-chaine-precedent">e64b47ef5cace6ee0ca570eb5412d7acd3f17db29588421dac5692635b7c9bfc</span></p>
+    <p class="etiquette" style="margin-top:1.2rem">Sceau chaîné de la version — v62, chaîné sur la v61</p>
+    <span class="sceau-long" id="sceau-chaine-affiche">87d7fd1532e0b68fb126462b2907aa11e8edf86cd7f1a234cbfdb32b947eecd4</span>
+    <p class="petite">Sceau canonique de la version précédente (la v61) : <span class="mono" id="sceau-chaine-precedent">6453bee466e00a816a7222b556abe54d94a85a063fe47d8ce5a68204c151f43b</span></p>
     <p class="petite">Recette publique du sceau chaîné : (1) calculer l'empreinte du contenu de cette page — le SHA-256 du fichier exact tel que servi, ses deux emplacements de sceaux (le canonique et le chaîné) remplacés chacun par 64 zéros ; (2) calculer le SHA-256 de la concaténation : sceau canonique de la version précédente + empreinte du contenu. Le résultat doit égaler le sceau chaîné affiché. Le bouton « Recalculer maintenant » ci-dessous exécute les deux recettes, ici même. Ainsi, chaque version connaît celle qui la précède — et le prouve : toucher à une version ancienne casserait le sceau chaîné de toutes les suivantes. Borne, tenue partout sur ce site : un SHA-256 seul ne prouve pas qu'un dit est vrai — il atteste un écrit, sa date et son intégrité ; c'est l'accumulation chaînée, recalculable par quiconque, qui rend l'ensemble vérifiable.</p>
     <p class="petite" id="fv-ch-etat">Recalcul du sceau chaîné en cours…</p>
     <p class="petite" id="sceau-generation" data-digest="dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e"><strong>Sceau de génération — recalculé à l'affichage, sur un ingrédient figé</strong> — recette : SHA-512 de « sceau canonique de la version affichée | racine de Merkle du coffre affichée | digest cumulé figé », les trois chaînes hexadécimales jointes par « | ». Les deux premiers ingrédients sont ceux de la version que vous lisez : le sceau canonique ci-dessus, et la racine de Merkle du coffre affichée au panneau Mémoire (état courant). Le troisième est un récit figé : le digest cumulé de la chaîne porté par la version 48, <span class="mono">dbe34bfd08f6d50373f68bb3897f33cafd8a0d2be18f9f42ae68952b97ef118e</span>, conservé tel quel dans l'attribut data-digest de ce bloc — il ne suit pas les versions. Sa valeur se calcule à l'affichage, dans votre navigateur (Web Crypto) : <span class="sceau-long" id="sceau-generation-valeur">calcul à l'affichage</span>. Une valeur de génération plus ancienne — celle de la version 35, calculée sur ses propres ingrédients, qui y sont nommés — est consignée au fichier assets/merkle.json, champ « generation » : ce n'est pas celle calculée ici. Borne : un sceau ne peut pas se contenir lui-même — la valeur dépend du sceau canonique de cette page, qui se calcule sur ses octets ; elle est donc recalculée ici et consignée hors du fichier scellé, jamais figée dedans.</p>
@@ -6159,16 +6182,16 @@ button:disabled{opacity:.78}
 </section>
 <div class="chaine-bande" id="chaine-lumineuse">
   <span class="chaine-badge">Dossier de recherche indépendant • Vérifiable</span>
-  <p class="chaine-titre">Une chaîne de <span data-chaine="maillons">4 196</span> maillons scellés en SHA-256</p>
+  <p class="chaine-titre">Une chaîne de <span data-chaine="maillons">4 381</span> maillons scellés en SHA-256</p>
   <p class="chaine-sous">Revérifiez chaque maillon, à tout moment. Données ouvertes, méthode transparente, résultats reproductibles.</p>
   <svg class="chaine-svg" viewBox="0 0 1620 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Une chaîne de maillons lumineux"><ellipse cx="60" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="60" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="208" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#8fc7f2" stroke-width="13"/><ellipse cx="208" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="356" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="356" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="504" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#8fc7f2" stroke-width="13"/><ellipse cx="504" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="652" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="652" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="800" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#8fc7f2" stroke-width="13"/><ellipse cx="800" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="948" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="948" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="1096" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#8fc7f2" stroke-width="13"/><ellipse cx="1096" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="1244" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="1244" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="1392" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#8fc7f2" stroke-width="13"/><ellipse cx="1392" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><ellipse cx="1540" cy="80" rx="94" ry="44" fill="rgba(255,255,255,.35)" stroke="#5ea9e6" stroke-width="13"/><ellipse cx="1540" cy="72" rx="94" ry="44" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><circle cx="120" cy="38" r="3.2" fill="#bfe0fb"/><circle cx="293" cy="64" r="3.2" fill="#bfe0fb"/><circle cx="466" cy="90" r="3.2" fill="#bfe0fb"/><circle cx="639" cy="38" r="3.2" fill="#bfe0fb"/><circle cx="812" cy="64" r="3.2" fill="#bfe0fb"/><circle cx="985" cy="90" r="3.2" fill="#bfe0fb"/><circle cx="1158" cy="38" r="3.2" fill="#bfe0fb"/><circle cx="1331" cy="64" r="3.2" fill="#bfe0fb"/><circle cx="1504" cy="90" r="3.2" fill="#bfe0fb"/></svg>
   <div class="chaine-stats">
-    <div class="chaine-stat"><div class="gros"><span data-chaine="maillons">4 196</span> maillons</div><div class="quoi">Scellés &amp; revérifiés — la chaîne de l'agente, au complet</div></div>
+    <div class="chaine-stat"><div class="gros"><span data-chaine="maillons">4 381</span> maillons</div><div class="quoi">Scellés &amp; revérifiés — la chaîne de l'agente, au complet</div></div>
     <div class="chaine-stat"><div class="gros match">✓ MATCH</div><div class="quoi">Intégrité confirmée — la revérification complète tient</div></div>
   </div>
-  <p class="petite chaine-etat">L’état vivant de la chaîne, relu en direct depuis le fichier d’état public du site (<span class="mono">assets/etat-chaine.json</span>) : <b><span data-chaine="maillons">4 196</span> maillons</b> — dernier maillon <b data-chaine="dernier">#4195</b> — digest cumulé <span class="mono" data-chaine="digest">83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452</span> — fichier mis à jour le <span data-chaine="maj">16 novembre 2026, 17 h 04</span> (heure de l’Est). Si la lecture en direct échoue depuis votre navigateur, ce sont les valeurs vérifiées à la construction de cette version qui demeurent affichées.</p>
+  <p class="petite chaine-etat">L’état vivant de la chaîne, relu en direct depuis le fichier d’état public du site (<span class="mono">assets/etat-chaine.json</span>) : <b><span data-chaine="maillons">4 381</span> maillons</b> — dernier maillon <b data-chaine="dernier">#4380</b> — digest cumulé <span class="mono" data-chaine="digest">83c7acaf97b52662677430643e3a4a2e1bab442bea74f860c8f07626bcf87452</span> — fichier mis à jour le <span data-chaine="maj">19 novembre 2026, 21 h 23</span> (heure de l’Est). Si la lecture en direct échoue depuis votre navigateur, ce sont les valeurs vérifiées à la construction de cette version qui demeurent affichées.</p>
   <div class="chaine-progres">
-    <p class="petite"><b>Construction complétée — <span data-chaine="maillons">4 196</span> / <span data-chaine="maillons">4 196</span> maillons</b></p>
+    <p class="petite"><b>Construction complétée — <span data-chaine="maillons">4 381</span> / <span data-chaine="maillons">4 381</span> maillons</b></p>
     <div class="barre-prog"><span></span></div>
   </div>
   <div class="chaine-actions">
@@ -15973,7 +15996,7 @@ function effNettoyerPNG(buf) {
         ? 'Magasin lu à l’instant, dans ce navigateur : ' + entrees.length + ' entrée(s), chaîne créée le ' + String(etat.cree_le).slice(0, 10) + '. Aucun appel sortant n’a été fait pour cette lecture.'
         : 'Le magasin est vide pour le moment : aucune entrée. La genèse se posera au premier geste (un reçu consigné, un geste de sécurisation) — la section le dira alors, sans rien inventer.';
       $('vm-somme').textContent = entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE;
-      var racineSite = '6e2a115d43fa9f5221972118502856d62f00575d5574041d5b889e075fd47a5c';
+      var racineSite = 'cd16a9ece29a489983794b0c5520b18fa5f30ea8888855a3121a5b4e218e51c3';
       var spanRacine = document.querySelector('.cerveau-racine-affichee');
       if (spanRacine && spanRacine.textContent.trim()) racineSite = spanRacine.textContent.trim();
       $('vm-symetrie').innerHTML = '<p class="petite" style="margin:.4rem 0 0"><strong>La symétrie des deux sommes.</strong> La racine du cerveau du site : <span class="mono">' + racineSite + '</span> — ta somme : <span class="mono">' + (entrees.length ? entrees[entrees.length - 1].digest : CU_GENESE) + '</span>. Même recette des deux bords : des SHA-256 chaînés, chaque état étant la somme des précédents. La sienne est publique ; la tienne ne vit que chez toi.</p>';

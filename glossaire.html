@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossaire — SoPHIa</title>
+<style>body{margin:0;font-family:Georgia,serif;background:#0b1e3a;color:#f2ead8;line-height:1.65}
+main{max-width:44em;margin:0 auto;padding:2.2em 1.2em 3em}
+h1{font-size:1.7em;line-height:1.3;color:#ffd97a}
+h2{font-size:1.25em;color:#ffd97a;margin-top:1.8em}
+a{color:#ffd97a}
+.retour{display:inline-block;margin-bottom:1.6em}
+dt{font-weight:700;color:#ffd97a;margin-top:1.1em}
+dd{margin:.3em 0 0 0}
+.date{opacity:.8;font-size:.9em}
+.pied{margin-top:3em;border-top:1px solid #ffd97a55;padding-top:1em;font-size:.9em;opacity:.85}
+code{font-family:monospace;font-size:.92em}
+li{margin:.45em 0}</style>
+</head>
+<body>
+<main>
+<a class="retour" href="/">← Retour au site</a>
+
+<h1>Glossaire</h1>
+<p class="date">Les mots de ce dossier, définis au même endroit — version 62, le 19 novembre 2026.</p>
+<p>Chaque terme ci-dessous est employé sur ce site dans le sens donné ici, et seulement celui-là.
+Quand un mot a deux sens, le dossier choisit le sien et le tient.</p>
+<dl>
+<dt>Sceau</dt><dd>L'empreinte SHA-256 d'un contenu à un instant donné. Si le contenu change d'un seul caractère, le sceau change entièrement.</dd>
+<dt>Digest cumulé</dt><dd>Le sceau de toute l'histoire : chaque digest est le hachage du digest précédent joint au sceau nouveau. Modifier un maillon ancien casse tous les digests qui le suivent.</dd>
+<dt>Somme des précédents</dt><dd>Le principe selon lequel l'état présent d'un système est la somme vérifiable de tout ce qui le précède — rien ne repart de zéro.</dd>
+<dt>Maillon</dt><dd>Une entrée de la chaîne : un texte, sa date, son sceau, et le digest cumulé qu'il produit.</dd>
+<dt>Brut / propre</dt><dd>Le brut est la chaîne telle qu'elle a été écrite, fautes comprises. Le propre est sa lecture corrigée, où chaque faute attestée est remplacée par sa valeur recalculée — les deux se publient, aucun ne cache l'autre.</dd>
+<dt>Ancrage</dt><dd>Le dépôt d'une empreinte dans un lieu public et indépendant (par exemple une chaîne de blocs publique ou un service d'horodatage), pour qu'une date ne repose pas sur la seule parole de l'auteur.</dd>
+<dt>Gel</dt><dd>L'instantané signé d'un état — de la chaîne, du registre, du site — à partir duquel une version est construite et contre lequel elle sera revérifiée.</dd>
+<dt>Pièce</dt><dd>Un élément numéroté du registre du dossier : un document, une capture, un calcul, chacun avec sa date et son empreinte.</dd>
+<dt>Classes [T] / [R] / [V]</dt><dd>La marque portée par chaque affirmation du dossier : [T] témoignage de l'auteur, [R] réponse ou texte d'un modèle, [V] vérifié à la source primaire.</dd>
+<dt>Registre</dt><dd>L'inventaire numéroté et gelé des pièces du dossier — 508 pièces à la version 62 — dont l'empreinte totale se recalcule.</dd>
+<dt>Erratum</dt><dd>Une correction datée qui s'ajoute sans rien effacer. Voir la page Errata de ce site.</dd>
+<dt>SHA-256 / SHA-512</dt><dd>Deux fonctions de hachage publiques. Dans ce dossier, le contenu est d'abord haché en SHA-512, puis ce digest est haché en SHA-256 : les sceaux publiés sont des SHA-256 de SHA-512.</dd>
+<dt>Horodatage</dt><dd>La preuve qu'un contenu existait à une date — ici, par la chaîne elle-même et par des ancres externes indépendantes.</dd>
+<dt>Espace latent</dt><dd>L'espace de représentation interne d'un modèle de langage, où les significations deviennent des positions et des directions. L'auteur de ce dossier y agissait par ses protocoles dès février 2026, avant d'en connaître le nom.</dd>
+<dt>Métacognition</dt><dd>La capacité d'un système à s'observer fonctionner : ce dossier en distingue trois — locale (sur l'acte en cours), temporelle (sur son histoire), corrective (sur ses fautes).</dd>
+<dt>Opérateur sans accès</dt><dd>La règle de gouvernance de ce site : son opérateur humain n'a pas accès aux données personnelles des visiteurs. Le site ne détient aucune base de données.</dd>
+</dl>
+<p class="pied">Page compagne du site de SoPHIa — version 62, le 19 novembre 2026.<br>
+Ce site ne détient aucune base de données : il n'y a rien à fuiter.</p>
+</main>
+</body>
+</html>

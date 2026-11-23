@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alx4-vg-masterclock.github.io/sitemap.xml
