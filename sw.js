@@ -1,3 +1,8 @@
+/* Refonte A (23 novembre 2026) — le site est devenu multi-pages : le
+   COEUR ne précache que le noyau (l'Accueil-manifeste, le style partagé,
+   le routeur, le manifeste) ; chaque page de chambre, réseau d'abord
+   comme avant, entre au cache quand elle est visitée — le hors-ligne
+   est celui des pages vues, et la page le dit. Stratégies inchangées. */
 /* Audit Unisson — travailleur de service (v30).
    Stratégies, dans l'ordre :
    1) La page (HTML), le journal des mises à jour (JSON) et TOUS les fichiers
@@ -22,7 +27,7 @@
    travailleur de service garde les stratégies de la v28 ; seul le nom de
    cache change, pour purger l'ancien à l'activation.
    Propriété intellectuelle du site et de sa méthode : © 2026 Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur (ORCID 0009-0006-9124-4407) — tous droits réservés. */
-var CACHE = 'sophia-site-v62'; /* v61 — les replis alignés au gel du 16 novembre, la chambre Archives rattrapée, les ancrages des 15 et 16 novembre */
+var CACHE = 'sophia-refonte-a-v63'; /* v61 — les replis alignés au gel du 16 novembre, la chambre Archives rattrapée, les ancrages des 15 et 16 novembre */
 /* v50 : cache renommé pour purger l'ancien à l'activation. Les actifs du Voyage
    (assets/voyage-*.mp4/webp/jpg) ne sont PAS ajoutés au COEUR : stratégie
    « cache d'abord » au premier service, comme les autres actifs statiques.
@@ -39,10 +44,12 @@ var CACHE = 'sophia-site-v62'; /* v61 — les replis alignés au gel du 16 novem
 /* v53, réparation du même jour (7 novembre 2026) : le cache passe à
    sophia-site-v42 — le point météo de l'ancre aligné sur l'ancrage
    canonique (45,24915, −73,7989). */
-var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/journal-mises-a-jour.json',
+var COEUR = ['./', 'index.html', 'manifest.webmanifest', 'assets/style.css',
+  'assets/js/routeur.js', 'assets/js/t12-utils.js', 'assets/manifeste.json',
+  'assets/journal-mises-a-jour.json',
   'assets/terre-atlantique.webp', 'assets/terre-atlantique.jpg',
   'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png', 'assets/apple-touch-icon.png',
-  'assets/meteo-sainte-martine.json', 'assets/module-calendrier-13x28.js'];
+  'assets/meteo-sainte-martine.json', 'assets/module-calendrier-13x28.js', 'assets/entetes-bitcoin.json'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
