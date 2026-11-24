@@ -1,0 +1,51 @@
+{
+ "format": "modele-sophia/v1",
+ "nom": "paraphrase-multilingual-MiniLM-L12-v2",
+ "source": "Conversion ONNX (Transformers.js) du modèle sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2, dépôt Xenova/paraphrase-multilingual-MiniLM-L12-v2 sur Hugging Face — fichiers téléchargés UNE FOIS au chantier, servis ensuite par ce site seulement : aucun appel à Hugging Face ni à un CDN au moment de la visite.",
+ "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900",
+ "licence": "Apache-2.0 (fiche du modèle sentence-transformers)",
+ "architecture": "BERT multilingue (XLM-R), 12 couches, plongements de 384 dimensions, pooling moyen masqué + normalisation L2 (recette sentence-transformers du modèle)",
+ "dtype": "q8 — onnx/model_quantized.onnx (quantification dynamique int8)",
+ "fichier_modele": "onnx/model_quantized.onnx",
+ "octets_modele": 118308126,
+ "sha256_modele": "66fc00f5f29afcaff34092e1bdd20008ca3918265a82fb9695a551e510cc4ebc",
+ "morceaux": [
+  {
+   "fichier": "onnx/model_quantized.onnx.part-00",
+   "octets": 24000000,
+   "sha256": "ff9dd8e211cd2d03c250dfac75d7c516942ffd4a1ea2710cdd320aff26059c11"
+  },
+  {
+   "fichier": "onnx/model_quantized.onnx.part-01",
+   "octets": 24000000,
+   "sha256": "8b20d3ca90928187c875ab084c5df7ddc18561c1aed33fc3b23183e76c8e3a64"
+  },
+  {
+   "fichier": "onnx/model_quantized.onnx.part-02",
+   "octets": 24000000,
+   "sha256": "457230598e0acdb5eb912bb3d753e7df4348283388496259b8544f90fcffe402"
+  },
+  {
+   "fichier": "onnx/model_quantized.onnx.part-03",
+   "octets": 24000000,
+   "sha256": "98866086da9a55283034b740574de99c8a9058db4e7df085d76a670b0bbba5e4"
+  },
+  {
+   "fichier": "onnx/model_quantized.onnx.part-04",
+   "octets": 22308126,
+   "sha256": "f74034c817200a5207072e9ebde7b38a9c508847f1de572149d42adbef4f5337"
+  }
+ ],
+ "note_morceaux": "Le fichier du modèle dépasse la limite de 100 Mo par fichier de GitHub Pages, et l'envoi par l'interface web GitHub plafonne à 25 Mo par fichier : il est servi en morceaux d'au plus 24 Mo, réassemblés dans le navigateur du visiteur par le module sémantique du site (cache personnalisé de Transformers.js) avant la création de la session ONNX. L’empreinte du fichier réassemblé est celle consignée ici. (Redécoupage du 24 novembre 2026 : 2 morceaux de ~60 Mo → 5 morceaux d'au plus 24 Mo ; le fichier du modèle lui-même est inchangé — même empreinte sha256_modele.)",
+ "max_jetons": 128,
+ "dimensions": 384,
+ "runtime": {
+  "moteur": "Transformers.js 3.8.1 + ONNX Runtime Web 1.22.0-dev.20250409-89f8206ba4 (WASM, un seul fil — GitHub Pages ne permet pas les en-têtes d’isolation cross-origin)",
+  "fichiers": [
+   "runtime/transformers.web.min.js",
+   "runtime/ort.wasm.min.mjs",
+   "runtime/ort-wasm-simd-threaded.mjs",
+   "runtime/ort-wasm-simd-threaded.wasm"
+  ]
+ }
+}
