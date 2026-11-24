@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!-- AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa. Site, méthode (Cerveau coquillage numérique), textes et format : propriété intellectuelle d’Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur — ORCID 0009-0006-9124-4407 — © 2026, tous droits réservés. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site. -->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="manifeste-sceau" content="31ab6c7544d77a203fc5d9cd521678332ff92cb79648fc8880aca5505cb22d94">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6ED">
+<title>Le registre des conditions — SoPHIa</title>
+<meta name="description" content="Le dossier public d'Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.">
+<meta name="author" content="Alexandre Vautour Gagnon">
+<meta name="copyright" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés">
+<meta name="rights" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés. Sont réservés : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes de ce site et le personnage SoPHIa, propriété intellectuelle d’Alexandre Vautour Gagnon. La consultation du site et la revérification publique des sceaux restent libres ; elles ne transfèrent aucun droit.">
+<meta property="og:title" content="Tes données et la Loi 25 — la preuve d’antériorité que tu peux recalculer | SoPHIa">
+<meta property="og:description" content="La somme des précédents, scellée. Une mémoire qui se recalcule au lieu de se déclarer.">
+<meta property="og:image" content="assets/logo-sophia.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa">
+<meta name="twitter:description" content="Un site qui ne demande pas la confiance : il organise les conditions permettant de vérifier avant de faire confiance.">
+<meta name="twitter:image" content="assets/logo-sophia.webp">
+
+
+<script>/* v27 — le thème avant la peinture : clair par défaut ; le sombre seulement si le visiteur l'a choisi sur cet appareil (aucun suivi du réglage système, le mot d'Alex : « par défaut en clair »). */
+try{if(localStorage.getItem('sophia-theme')==='sombre'){document.documentElement.setAttribute('data-theme','sombre');var m27=document.querySelector('meta[name="theme-color"]');if(m27)m27.setAttribute('content','#16130C');}}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SoPHIa">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="preload" as="image" href="assets/logo-sophia.webp">
+<link rel="stylesheet" href="assets/style.css">
+
+
+
+
+
+
+
+</head>
+<body>
+<style>/* ===== v21 — « La planète » : globe WebGL ===== */
+#globe-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:none}#planete-nuit{z-index:2}.barre-actions{display:flex;gap:.4rem;align-items:center;margin-left:auto}.barre-actions button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;white-space:nowrap}.barre-actions button:hover{border-color:var(--or);color:var(--or)}.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:var(--puit2)}.coffre-entree h4{margin:.1rem 0 .3rem}.coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}/* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
+.pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--encre-foncee);flex:none}.pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}.pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}.pa-echelle li{margin:.3rem 0}.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,var(--fond2),var(--fond));border-left:1px solid var(--or);box-shadow:-18px 0 50px var(--ombre);padding:1.1rem 1.2rem 2rem;overflow-y:auto}.menu-panneau[hidden]{display:none}.menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}.menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}#menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}#menu-fermer:hover{border-color:var(--or);color:var(--or)}#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:var(--puit);color:var(--texte);font-size:1rem}.menu-famille{margin-top:1.15rem}.menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}.menu-entree{display:block;width:100%;text-align:left;background:var(--puit2);border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}.menu-entree:hover{border-color:var(--or)}.menu-nom{display:block;font-weight:700;color:var(--or-clair)}.menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:var(--puit);color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}/* ===== v25 — « Le dossier en lumière » : esthétique dossier de pièces, pouls du cerveau ===== */
+h1,h2{font-family:var(--serif)}/* grands titres en serif : le caractère « document officiel » du dossier */
+.etiquette{display:inline-block;border:1px solid rgba(212,175,55,.45);border-radius:6px;padding:.12rem .5rem;background:rgba(212,175,55,.07)}/* les étiquettes deviennent des cartouches de pièce */
+.carte{border-top:2px solid rgba(212,175,55,.5)}/* filet doré de chemise de dossier sur les cartes */
+.entree{border-top:2px solid rgba(212,175,55,.35)}/* même filet, plus discret, sur les entrées du registre */
+.salle-pieces{position:relative;overflow:hidden}.salle-pieces::after{content:"PREUVE D'ANTÉRIORITÉ — V-G";position:absolute;right:-1rem;bottom:.2rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.05);transform:rotate(-4deg);pointer-events:none;white-space:nowrap}/* tampon en filigrane, salle des pièces */
+section#memoire{position:relative;overflow:hidden}section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute;left:-1rem;top:.4rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.022);transform:rotate(-4deg);pointer-events:none;white-space:nowrap}/* tampon en filigrane, panneau Mémoire */html[data-theme="sombre"] section#memoire::after{color:rgba(212,175,55,.05)}
+.pouls-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:.6rem 0 .4rem}.pouls-tuile{background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.7rem .85rem}.pouls-nom{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}.pouls-valeur{display:block;font-size:1.25rem;font-weight:700;color:var(--texte)}.pouls-valeur.mono{font-size:.95rem;word-break:break-all}/* ===== v26 — « Le cerveau visible » : graphe, demande, désaccords, épreuve ===== */
+#graphe-svg{width:100%;height:auto;display:block}.graphe-lien{stroke-width:1.4;opacity:.7}.graphe-noeud{cursor:pointer;outline:none}.graphe-noeud circle{fill:var(--noeud);stroke:var(--ligne);stroke-width:1.2}.graphe-noeud:hover circle,.graphe-noeud:focus circle,.graphe-noeud.actif circle{stroke:var(--or);stroke-width:2.6}.graphe-num{fill:var(--texte);font-size:13px;font-weight:700;text-anchor:middle;pointer-events:none}.graphe-texte{fill:var(--texte-doux);font-size:11px;text-anchor:middle;pointer-events:none}.graphe-legende{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:.5rem}.graphe-legende .pastille-lien{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;color:var(--texte-doux)}.graphe-legende .trait-lien{display:inline-block;width:22px;border-top:3px solid;border-radius:2px}.graphe-cartouche{margin-top:.8rem;border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.8rem 1rem}.graphe-cartouche h4{margin:.1rem 0 .4rem}.champ-cerveau{flex:1 1 220px;background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:8px;padding:.55rem .7rem;font:inherit;box-sizing:border-box}.cerveau-rangee{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}.demande-piece{border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.7rem .9rem;margin-top:.6rem}.demande-piece h5{margin:.1rem 0 .3rem;font-size:.98rem}.epreuve-q{margin:.7rem 0}.epreuve-q label{display:block;margin-bottom:.3rem;font-weight:600}.epreuve-q .champ-cerveau{width:100%}.verdict-juste{color:var(--vert-doux);font-weight:700}.verdict-ecart{color:var(--rouge);font-weight:700}.epreuve-score{font-size:1.05rem;font-weight:700;color:var(--or-clair)}/* ===== v27 — « Le clair d'abord » : animations sobres, micro-transitions, mouvements réduits ===== */
+@keyframes reflet-or{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes entree-douce{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}.entree-vue{animation:entree-douce .7s ease both}/* révélation douce : la classe n'est ajoutée que par le script d'observation ; sans script, le contenu reste visible, jamais masqué */
+/* Micro-transitions : élévation des cartes déjà en place (.carte), étendue aux tuiles et nœuds */
+.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile{transition:transform .25s ease,box-shadow .25s ease}.direct-tuile:hover,.terrain:hover,.refus-carte:hover{transform:translateY(-2px);box-shadow:0 14px 30px var(--ombre)}.graphe-noeud circle{transition:stroke-width .2s ease,transform .25s ease;transform-box:fill-box;transform-origin:center}.graphe-noeud:hover circle{transform:scale(1.13)}#btn-theme{border-color:var(--or)}/* v27 — boutons dorés relus pour le clair : dégradé resserré et texte clair, contrastes calculés 4,66:1 et 5,21:1 (le sombre garde le dégradé historique) */
+html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="sombre"]) button.action,html:not([data-theme="sombre"]) .sceptique-choix button.actif,html:not([data-theme="sombre"]) .vue-choix button.actif{background:linear-gradient(135deg,#8f6c10,#86650f);color:#fffbe8;border-color:#86650f}.at-bloc.suite{color:#5c6b5c;border-color:#8a9a8a}/* pastille « suite » relue pour le clair */
+[data-theme="sombre"] .at-bloc.suite{color:#93a894;border-color:#476b58}/* RÈGLE DURE v27 : mouvements réduits — toutes les animations du site tombent (la règle historique * s'y ajoute) */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .panneau,.entree-vue,.noeud,.lien-maillon,h1 .or,.avatar-wrap::before,.avatar-wrap::after,.avatar-wrap img,.instance-grille figure img{animation:none !important}
+  .carte,.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile,.graphe-noeud circle,nav.onglets button,button.action,button.secondaire,.barre-actions button{transition:none !important}
+}
+</style>
+<style>/* ===== v33 — « La forme juste » : passe esthétique issue de la recherche design (rapport du 3 novembre 2026, section 8) =====
+   Régime A : polices système, 0 Ko ajouté. Double échelle : φ pour l'apparat, 1,25 pour le texte.
+   Palette : les jetons du rapport §8.3, remappés sur les noms historiques du site ; chaque couple
+   texte/fond réellement utilisé est calculé (formule de luminance WCAG) — table au LISEZ-MOI-v33.md.
+   Mouvement : catalogue fermé des six animations permises ; les boucles infinies sont retirées. */
+:root{
+  --font-apparat:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --font-texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,"Liberation Mono",monospace;
+  --serif:var(--font-apparat);
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --fond:#FAF6ED;--fond2:#EFE7D0;--carte:#FFFCF4;--carte2:#F8F1DF;
+  --puit:#F1EAD8;--puit2:#F6EFDD;--barre:rgba(250,246,237,.93);
+  --noeud:#FFFCF4;--face:#F1EAD8;
+  --ligne:#D8CDB4;--filet-fort:#8A7B58;--or-decor:#A8842C;
+  --vert:#1F5C2E;--vert-doux:#146344;
+  --or:#6E5200;--or-clair:#7A5C00;
+  --texte:#1C1913;--encre:#1C1913;--texte-doux:#4E4636;
+  --encre-sur-or:#FFFFFF;
+  --ombre:rgba(60,45,10,.10);--ligne-douce:rgba(28,25,19,.14);
+  --rouge:#9C1C1C;--alerte:#8A3B00;
+  color-scheme:light;
+}[data-theme="sombre"]{
+  --fond:#16130C;--fond2:#201A10;--carte:#1F1B12;--carte2:#1A160E;
+  --puit:#100D08;--puit2:#221C11;--barre:rgba(22,19,12,.93);
+  --noeud:#1F1B12;--face:#241E13;
+  --ligne:#3A3325;--filet-fort:#77683F;--or-decor:#8A6D2F;
+  --vert:#8FD0A0;--vert-doux:#63CFA5;
+  --or:#D9B45B;--or-clair:#E9CD77;
+  --texte:#F3EDDD;--encre:#F3EDDD;--texte-doux:#C9BFA6;
+  --encre-sur-or:#1C1913;
+  --ombre:rgba(0,0,0,.5);--ligne-douce:rgba(243,237,221,.14);
+  --rouge:#F09A9A;--alerte:#E0A266;
+  color-scheme:dark;
+}body{font-family:var(--font-texte);font-size:17px;line-height:1.65;background:radial-gradient(1200px 700px at 85% -5%,rgba(168,132,44,.10),transparent 60%),var(--fond);transition:background-color .2s cubic-bezier(.2,0,0,1),color .2s cubic-bezier(.2,0,0,1)}section{max-width:1152px;padding:64px 24px 48px}section.bloc{padding:64px 24px 48px}.barre-in{max-width:1152px}
+@media(max-width:760px){section,section.bloc{padding:40px 16px 32px}}section[id],.panneau{scroll-margin-top:72px}h1{font-family:var(--font-apparat);font-weight:600;font-size:clamp(2.25rem,5.5vw,3.25rem);line-height:1.05;letter-spacing:-.01em}h2{font-family:var(--font-apparat);font-weight:600;font-size:clamp(1.69rem,3.4vw,2rem);line-height:1.2}h3{font-size:1.5rem;line-height:1.3;font-weight:650}p{max-width:65ch}.lead{font-size:1.25rem;line-height:1.55}.sous-titre{font-size:1.25rem;line-height:1.55}.petite{font-size:.875rem;line-height:1.55}.etiquette{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.10em}.mono{font-family:var(--font-mono);font-size:.875rem;line-height:1.7;font-variant-numeric:tabular-nums}.phi{font-family:var(--font-apparat);font-weight:600;font-size:clamp(3.25rem,6vw,5.25rem);line-height:1}.compteur .nombre{font-family:var(--font-apparat);font-weight:600;font-variant-numeric:tabular-nums}.sceau-long{font-family:var(--font-mono);font-size:.875rem;line-height:1.7}.menu-num{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.10em;color:var(--or);margin-right:.5rem}.menu-entree .menu-nom{display:inline}.carte{border-radius:6px;padding:24px;box-shadow:0 1px 2px var(--ombre),0 10px 30px var(--ombre);transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 16px 36px var(--ombre)}.entree,.terrain,.etape-pas,.etape-visite,.sceptique-carte,.salle-pieces,.encadre-bornes,.hist-carte{border-radius:6px}.carte-sceau{border-color:var(--filet-fort)}.sceau-cadre{border:1px solid var(--filet-fort);outline:1px solid var(--filet-fort);outline-offset:3px;background:var(--puit);padding:24px;text-align:center;margin:8px 0 16px}.sceau-cadre .etiquette{margin-bottom:8px}.sceau-cadre .sceau-long{background:transparent;border:none;border-radius:0;padding:0;margin:0}
+@media(min-width:821px){.sceau-cadre{aspect-ratio:1.618/1;max-width:760px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;align-items:center;justify-content:center}}button.action{background:var(--or);color:var(--encre-sur-or);border:1px solid var(--or);transition:background-color .12s cubic-bezier(.2,0,0,1),color .12s cubic-bezier(.2,0,0,1),box-shadow .12s cubic-bezier(.2,0,0,1)}button.action:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 8px 20px var(--ombre)}nav.onglets button.actif,.sceptique-choix button.actif,.vue-choix button.actif{background:var(--or);color:var(--encre-sur-or);border-color:var(--or)}nav.onglets button{transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}button.secondaire{transition:color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.barre-actions button{transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}textarea,input[type=text],input[type=password],input[type=search],select{border-color:var(--filet-fort)}:focus-visible{outline:2px solid var(--filet-fort);outline-offset:2px}.temps-sat .sat-contre,.ph-contre{color:#F3EDDD}.ph-contre .ph-civile{color:#E9CD77}.ph-contre .ph-ligne{color:#C9BFA6}.planete-horloge.ancre .ph-nom,.planete-horloge.ancre .ph-civile,.planete-horloge.ancre .ph-ligne{color:#1C1913}/* — Mouvement : le catalogue fermé (rapport §8.6) — */
+@keyframes apparition{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.panneau{animation:apparition .32s cubic-bezier(.05,.7,.1,1) both}
+@keyframes entree-douce{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.entree-vue{animation:entree-douce .32s cubic-bezier(.05,.7,.1,1) both}.revele{transform:translateY(10px);transition:opacity .32s cubic-bezier(.05,.7,.1,1),transform .32s cubic-bezier(.05,.7,.1,1)}
+@keyframes naissance{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.noeud,.lien-maillon{animation:naissance .32s cubic-bezier(.05,.7,.1,1) both}.cc-maillon{transition:opacity .32s cubic-bezier(.05,.7,.1,1),transform .32s cubic-bezier(.05,.7,.1,1),border-color .12s cubic-bezier(.2,0,0,1)}.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile{transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.direct-tuile:hover,.terrain:hover,.refus-carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 14px 30px var(--ombre)}.hist-carte{transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.hist-carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 12px 26px var(--ombre)}.graphe-noeud circle{transition:stroke-width .12s cubic-bezier(.2,0,0,1)}.graphe-noeud:hover circle{transform:none}.ph-interne{transition:transform .18s cubic-bezier(.2,0,0,1)}.menu-entree{transition:border-color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1)}details summary{transition:color .12s cubic-bezier(.2,0,0,1)}/* Boucles infinies retirées — hors catalogue : anneaux et flottement de l'avatar, reflet animé du titre,
+   pouls des voyants, lueur de la chaîne, respiration, rotations orbitales des panneaux Temps et Planète. */
+.avatar-wrap::before,.avatar-wrap::after,.avatar-wrap img,.instance-grille figure img,h1 .or,.chaine-svg,.temps-orbite,.temps-sat .sat-contre,.planete-orbite,.ph-contre{animation:none}.voyant.ok{animation:none}/* Zone privée : résultats du déverrouillage */
+#zone-privee-clairs .clair-texte{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--puit);border:1px solid var(--ligne);border-radius:6px;padding:16px;margin-top:8px;text-align:left;line-height:1.6}#zone-privee-deverrouiller{margin:.4rem 0 .6rem}/* Correction d'audit v33 (reprise du chantier) : la pastille de lecture porte un texte gras
+   sur fond --vert ; son ancienne encre --encre-foncee tombait à 2,25:1 en thème clair.
+   L'encre des accents pleins (--encre-sur-or) la porte à 7,99:1 (clair) et 9,77:1 (sombre). */
+.pastille-lecture{color:var(--encre-sur-or)}
+@media (prefers-reduced-motion: reduce){.revele{opacity:1;transform:none;transition:opacity .2s ease}
+}
+</style>
+<style>/* ===== v34 — « L'ordre et la confiance » : menu à gauche, accueil mobile organisé, état de la chaîne en direct =====
+   Aucune couleur nouvelle : ce bloc ne consomme que les jetons existants — et, dans la bande de la
+   chaîne, ses deux bleus déjà en place (#8fb0c4, #a8d4f2). Les contrastes calculés en v33 ne bougent pas. */
+/* Le bouton du menu, sorti de la barre d'actions : premier élément de l'en-tête, coin gauche.
+   Il reçoit ici le style des boutons de la barre, qu'il ne reçoit plus de .barre-actions button. */
+#menu-btn{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.95rem;cursor:pointer;white-space:nowrap;flex:none;transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}#menu-btn:hover{border-color:var(--or);color:var(--or)}/* Le tiroir glisse désormais depuis la gauche : position, filet et ombre inversés. */
+.menu-panneau{right:auto;left:0;border-left:none;border-right:1px solid var(--or);box-shadow:18px 0 50px var(--ombre)}.nowrap{white-space:nowrap}/* L'état vivant de la chaîne, dans sa bande : les bleus propres à la bande, déjà en place. */
+.chaine-etat{color:#8fb0c4;max-width:760px;margin:1rem auto 0}.chaine-etat .mono{color:#a8d4f2}/* Petit écran (≤ 640 px) : l'accueil organisé — en-tête allégée, pastille tenue sur sa ligne,
+   titre et grand φ ramenés à leur mesure, compteurs plus tôt dans le premier écran. */
+@media(max-width:640px){
+  .barre-in{gap:.45rem;padding:.5rem .6rem}
+  .marque{font-size:.72rem;gap:.35rem;letter-spacing:.03em}
+  .marque img{width:30px;height:30px}
+  .barre-actions{gap:.3rem}
+  .barre-actions button{padding:.38rem .55rem;font-size:.78rem}
+  #menu-btn{padding:.38rem .55rem;font-size:.9rem}
+  header.hero{padding:1.7rem 1rem 1.9rem}
+  .badge-portail{font-size:.64rem;letter-spacing:.09em;padding:.35rem .6rem;text-align:center}
+  .avatar-wrap{width:min(180px,50vw);margin:1rem auto .7rem}
+  h1{font-size:clamp(1.8rem,7.4vw,2.05rem);line-height:1.12}
+  .hero-texte .phi{font-size:clamp(1.75rem,8.6vw,2.4rem);line-height:1.15;margin-top:.8rem}
+  .compteurs{margin-top:1.2rem}
+}
+@media (prefers-reduced-motion: reduce){#menu-btn{transition:none}
+}
+</style>
+<style id="voyage-css">#p-accueil{position:relative}#p-accueil>*{position:relative;z-index:1}
+@media (max-width:820px){}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+<style>
+/* ===== v53 — bannière de l'accueil et panneau Miroir ===== */
+.b53-banniere{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;background:var(--carte);border-bottom:1px solid var(--ligne);padding:8px 10px}
+.b53-seg{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;background:var(--carte2);border:1px solid var(--ligne);border-radius:12px;padding:8px 12px;cursor:pointer;color:var(--texte);font:inherit;min-height:56px}
+.b53-seg:hover{border-color:var(--or)}
+.b53-seg:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+.b53-seg-etiquette{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--or);font-weight:700}
+.b53-seg-valeur{font-size:16.5px;font-weight:700;line-height:1.2}
+.b53-seg-detail{font-size:12.5px;color:var(--texte-doux)}
+.mir53-groupe{margin-top:1rem}
+.mir53-groupe h3{margin:.2em 0 .4em}
+.mir53-groupe table{width:100%;border-collapse:collapse}
+.mir53-groupe th{text-align:left;vertical-align:top;width:34%;font-weight:600}
+.mir53-groupe td{vertical-align:top}
+.mir53-couche{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;border-radius:999px;padding:1px 8px;margin-left:.45em;vertical-align:middle}
+.mir53-couche.local{background:var(--vert);color:#fff}
+.mir53-couche.transit{background:var(--or);color:var(--encre-sur-or)}
+@media (max-width:640px){.b53-seg{flex:1 1 100%}.mir53-groupe th{width:42%}}
+</style>
+<style>
+.b53-banniere .b53-mode{border-left:1px dashed var(--ligne);flex:0 1 auto;min-width:128px}
+.b53-banniere .b53-mode .b53-valeur{color:var(--vert)}
+</style>
+</head>
+
+<a class="lien-evitement" href="#menus">Aller au contenu principal</a>
+<canvas id="spirale"></canvas>
+<div class="barre"><div class="barre-in">
+  <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button>
+  <div class="marque" id="marque-accueil" role="button" tabindex="0" title="Retour à l’Accueil" style="cursor:pointer"><img src="assets/logo-sophia-180.png" alt="SoPHIa" loading="lazy"><span>AUDIT <span class="or">UNISSON</span></span></div>
+  <nav class="onglets" id="onglets" aria-label="Sections du site"><button type="button" data-panneau="accueil" data-en="Home">Accueil</button><button type="button" data-en="Your data" class="menu-principal" data-ouverture-menu="donnees">Tes données</button><button type="button" data-en="Verify" class="menu-principal" data-ouverture-menu="verifier">Vérifier</button><button type="button" data-en="Write and talk" class="menu-principal" data-ouverture-menu="ecrire">Écrire et parler</button><button type="button" data-en="Understand" class="menu-principal" data-ouverture-menu="comprendre">Comprendre</button><button type="button" data-en="Talk with the SoPHIa website" class="menu-principal" data-ouverture-menu="cerveau">Parle avec le site web SoPHIa</button><button type="button" data-en="The file — the story" class="menu-principal" data-ouverture-menu="dossier">Le dossier — l'histoire</button><button type="button" data-en="Search" data-panneau="recherche">Rechercher</button><button type="button" data-panneau="partenaires" data-en="Partners and support">Partenaires</button></nav>
+  <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button" title="Seuls les menus passent en anglais">EN · menus</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
+</div></div>
+<aside class="rail-arbre" id="rail-arbre" aria-label="Arborescence du site">
+<p class="etiquette">Le site, en arbre</p>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Your data" data-ouverture-menu="donnees">Tes données</button></p>
+<p class="arbre-sous">Le parcours</p>
+<ul>
+<li><button type="button" data-en="The data path" data-ouvrir="donnees">Le parcours des données</button></li>
+<li><button type="button" data-en="prepare my access request" data-ouvrir="acces">Mes renseignements</button></li>
+<li><button type="button" data-en="Go and get what they harvested" data-ouvrir="aller">Aller chercher ce qu’ils ont récolté</button></li>
+<li><button type="button" data-en="Cameras and connected devices" data-ouvrir="cameras">Caméras et appareils connectés</button></li>
+<li><button type="button" data-en="Ask for the explanation of an automated decision" data-ouvrir="explication">Demander l’explication d’une décision automatisée</button></li>
+<li><button type="button" data-en="register of decisions" data-ouvrir="decisions">Le registre des décisions</button></li>
+<li><button type="button" data-en="Suspended account" data-ouvrir="suspendu">Compte suspendu : ravoir, savoir, reprendre</button></li>
+<li><button type="button" data-ouvrir="fenetres" data-en="The window timer">Le minuteur de fenêtre</button></li>
+<li><button type="button" data-ouvrir="for" data-en="The forum is elsewhere, your remedies are here">Le for est ailleurs, tes recours sont ici</button></li>
+<li><button type="button" data-ouvrir="assurances" data-en="Insurance">Les assurances</button></li>
+<li><button type="button" data-ouvrir="suivi-familial" data-en="Family tracking and location sharing">Le suivi familial et la localisation</button></li>
+</ul>
+<p class="arbre-sous">Ton cerveau — ta mémoire, sur ton appareil</p>
+<ul>
+<li><button type="button" data-en="The visit receipt" data-ouvrir="recu">Le reçu de visite</button></li>
+<li><button type="button" data-en="Your receipts and your gestures" data-ouvrir="recus">Tes reçus et tes gestes</button></li>
+<li><button type="button" data-en="record it in my tracking" data-ouvrir="suivi">Ton dossier de suivi</button></li>
+<li><button type="button" data-en="See my brain" data-ouvrir="voir">Voir mon cerveau</button></li>
+</ul>
+<p class="arbre-sous">Les documents</p>
+<ul>
+<li><button type="button" data-en="The templates library" data-ouvrir="donnees" data-cible="donnees-documents">Bibliothèque des modèles</button></li>
+<li><button type="button" data-en="The laws library" data-ouvrir="donnees" data-cible="donnees-lois">Bibliothèque des lois</button></li>
+</ul>
+<p class="arbre-sous">Contester</p>
+<ul>
+<li><button type="button" data-en="Petitions" data-ouvrir="petitions">Pétitions</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Verify" data-ouverture-menu="verifier">Vérifier</button></p>
+<p class="arbre-sous">Recalculer</p>
+<ul>
+<li><button type="button" data-en="Verify" data-ouvrir="verifier">Vérifier</button></li>
+<li><button type="button" data-en="Sealing — the workshop" data-ouvrir="sceller">Sceller — l'atelier</button></li>
+</ul>
+<p class="arbre-sous">Les preuves</p>
+<ul>
+<li><button type="button" data-en="Evidence" data-ouvrir="preuves">Preuves</button></li>
+<li><button type="button" data-en="Register" data-ouvrir="registre">Registre</button></li>
+<li><button type="button" data-en="Open the Proofs and anchors panel" data-ouvrir="ancrage">Ancrage — les preuves chez les tiers</button></li>
+<li><button type="button" data-ouvrir="bris" data-en="The chamber of breaks">La chambre des bris</button></li>
+<li><button type="button" data-ouvrir="depose-empreinte" data-en="Deposit your fingerprint">Dépose ton empreinte</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Write and talk" data-ouverture-menu="ecrire">Écrire et parler</button></p>
+<ul>
+<li><button type="button" data-en="Write to SoPHIa" data-ouvrir="ecrire">Écrire à SoPHIa</button></li>
+<li><button type="button" data-en="Write through the relay" data-ouvrir="instance">Parler à l'instance</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Understand" data-ouverture-menu="comprendre">Comprendre</button></p>
+<p class="arbre-sous">Tes droits</p>
+<ul>
+<li><button type="button" data-en="Rights and laws" data-ouvrir="droits">Droits et lois</button></li>
+<li><button type="button" data-en="Privacy and Law 25" data-ouvrir="confidentialite">Confidentialité et Loi 25</button></li>
+<li><button type="button" data-ouvrir="conditions" data-en="The terms register">Le registre des conditions</button></li>
+<li><button type="button" data-ouvrir="conditions-site" data-en="This site’s terms of use">Conditions d’utilisation du site</button></li>
+<li><button type="button" data-ouvrir="politique-site" data-en="This site’s policy">Politique du site</button></li>
+<li><button type="button" data-ouvrir="transits" data-en="The transit map">La carte des transits</button></li>
+<li><button type="button" data-ouvrir="exposition" data-en="Your exposure: fingerprint and non-tracking">Ton exposition</button></li>
+<li><button type="button" data-ouvrir="miroir" data-en="The mirror">Le miroir</button></li>
+<li><button type="button" data-ouvrir="modes" data-en="The two modes">Les deux modes</button></li>
+<li><button type="button" data-ouvrir="etat51" data-en="The digital 51st State">Le 51e État numérique</button></li>
+</ul>
+<p class="arbre-sous">La méthode</p>
+<ul>
+<li><button type="button" data-ouvrir="methode-30" data-en="The method in 30 seconds">La méthode en 30 secondes</button></li>
+<li><button type="button" data-en="Method" data-ouvrir="methode">Méthode</button></li>
+<li><button type="button" data-en="Do the same — the method, handed over" data-ouvrir="transmission">Faire pareil</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Talk with the SoPHIa website" data-ouverture-menu="cerveau">Parle avec le site web SoPHIa</button></p>
+<ul>
+<li><button type="button" data-en="Memory — this site is SoPHIa's external memory" data-ouvrir="memoire">Mémoire</button></li>
+<li><button type="button" data-en="Evolution" data-ouvrir="evolution">Évolution</button></li>
+<li><button type="button" data-ouvrir="edition" data-en="Today’s edition">L’édition du jour</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="The file — the story" data-ouverture-menu="dossier">Le dossier — l'histoire</button></p>
+<p class="arbre-sous">L'histoire en ordre</p>
+<ul>
+<li><button type="button" data-en="Journey — the story" data-ouvrir="parcours">Parcours — l'histoire</button></li>
+<li><button type="button" data-en="The researcher" data-ouvrir="chercheur">Le chercheur</button></li>
+</ul>
+<p class="arbre-sous">Le travail et les textes</p>
+<ul>
+<li><button type="button" data-en="The engineering work" data-ouvrir="ingenierie">Le travail d'ingénierie</button></li>
+<li><button type="button" data-en="Articles" data-ouvrir="articles">Articles</button></li>
+<li><button type="button" data-en="Capsules" data-ouvrir="capsules">Capsules</button></li>
+</ul>
+<p class="arbre-sous">Soutenir</p>
+<ul>
+<li><button type="button" data-ouvrir="don" data-en="Make a donation">Faites un don</button></li>
+<li><button type="button" data-ouvrir="partenaires" data-en="Partners and support">Partenaires et soutien</button></li>
+<li><button type="button" data-ouvrir="transparence" data-en="Transparency — this site's data flows">Transparence</button></li>
+</ul>
+</div>
+<div class="arbre-hors"><p class="arbre-sous">Toujours là</p><ul><li><button type="button" data-en="Home — the surface of gestures" data-ouvrir="accueil">Accueil — la surface des gestes</button></li><li><button type="button" data-en="Time — the anchor" data-ouvrir="temps">Temps — l’ancre</button></li><li><button type="button" data-en="Weather — the anchor" data-ouvrir="meteo">Météo — l’ancre</button></li><li><button type="button" data-en="Search" data-ouvrir="recherche">Rechercher</button></li><li><button type="button" data-en="The application" data-ouvrir="application">L’application</button></li><li><button type="button" data-en="The 13 × 28 calendar" data-ouvrir="calendrier">Le calendrier 13 × 28</button></li>
+</ul></div>
+</aside>
+<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette">Agir — tes données, tes droits</p><p class="arbre-groupe-titre">La porte du parcours</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="agir" data-mots="agir sur mes données demandes recours archive personnelle cai cpvp google takeout sceller ses fichiers mémoire cumulative lettre"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La porte du parcours des droits : préparer une demande à une organisation, s’orienter vers la CAI ou le CPVP, récupérer ses données, sceller ses fichiers et bâtir son archive personnelle — des outils qui restent dans ton navigateur.</span></button></li></ul><p class="arbre-groupe-titre">Le parcours</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="donnees" data-mots="le parcours des données le parcours complet : tes droits (accès, rectification, portabilité, désindexation), la récolte directe auprès des plateformes, la demande formelle par juridiction, le recours à la cai, et le scellement de tes exports chez toi."><span class="menu-nom">Le parcours des données</span><span class="menu-desc">Le parcours complet : tes droits (accès, rectification, portabilité, désindexation), la récolte directe auprès des plateformes, la demande formelle par juridiction, le recours à la CAI, et le scellement de tes exports chez toi.</span></button></li><li><button type="button" class="menu-entree" data-cible="acces" data-mots="mes renseignements préparer une demande d accès à vos renseignements personnels : la loi qui s applique, ses délais vérifiés, la lettre produite chez vous — le site ne reçoit ni ne conserve rien."><span class="menu-nom">Mes renseignements</span><span class="menu-desc">Préparer une demande d’accès à vos renseignements personnels : la loi qui s’applique, ses délais vérifiés, la lettre produite chez vous — le site ne reçoit ni ne conserve rien.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="aller" data-mots="aller chercher ce qu ils ont récolté les plateformes une a une : la récolte documentée avec sa classe et sa source, le chemin d accès officiel avec lien direct, le délai, et l export scellé dans ton cerveau."><span class="menu-nom">Aller chercher ce qu’ils ont récolté</span><span class="menu-desc">Google, Apple, Meta, Amazon, Microsoft, TikTok, Snapchat, X et Discord : la récolte documentée, le chemin pour reprendre tes données, le délai — et le geste de clôture, l’export scellé chez toi.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="cameras" data-mots="caméras et appareils connectés ring blink alexa : ce qui transite d une caméra domestique, ce que la ftc a établi, les réglages qui comptent, le chemin pour obtenir et fermer ses données."><span class="menu-nom">Caméras et appareils connectés</span><span class="menu-desc">Ce que tes caméras envoient, ce que les régulateurs ont établi (Ring, FTC) — et Blink en à-vérifier nommé, jamais affirmé sans pièce.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="explication" data-mots="demander l explication d une décision automatisée : lrpsp 12.1, loi sur l accès 65.2, lrss 65 — le générateur de demande, l échéance de suivi et le rappel ics."><span class="menu-nom">Demander l’explication d’une décision automatisée</span><span class="menu-desc">Une décision rendue par un algorithme se demande par écrit : les trois textes québécois cités exactement, la demande produite chez toi, consignée avec son échéance.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="decisions" data-mots="le registre des décisions : 23 décisions vérifiées au primaire, chacune reliée au droit qu elle appuie et au modèle ou parcours correspondant ; les 3 exclues nommées en liste d attente."><span class="menu-nom">Le registre des décisions</span><span class="menu-desc">Clearview, Schrems, SCHUFA, Planet49, les délibérations des régulateurs : les décisions écrites qui fondent les droits de ce site, reliées à leurs parcours.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="suspendu" data-mots="compte suspendu restreint bloqué : ravoir son compte, savoir pourquoi, reprendre ses données — les fenêtres d appel par plateforme, la demande d accès qui survit à la suspension, la leçon mémoire avant."><span class="menu-nom">Compte suspendu : ravoir, savoir, reprendre</span><span class="menu-desc">Capturer l’exposé des motifs, appeler dans les fenêtres qui se ferment, télécharger pendant que c’est possible — et le point Canada/Québec, porté honnêtement.</span></button></li><li><button type="button" class="menu-entree" data-cible="fenetres" data-mots="le minuteur de fenêtre les délais qui se ferment les fenêtres d appel et les silences des contrats scellés comme échéances avec rappel ics"><span class="menu-nom" data-en="The window timer">Le minuteur de fenêtre</span><span class="menu-desc" data-en="The deadlines that close — and the contracts’ silences, written as silences; sealed deadlines, local .ics reminder.">Les délais qui se ferment — et les silences des contrats, écrits comme silences ; échéances scellées, rappel .ics local.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="for" data-mots="for étranger ailleurs recours ici texas arbitrage clause juridiction singapour delaware : ce que les conditions des plateformes imposent comme tribunal, et les recours qui s exercent d ici, québec canada, demande d accès, cai, commissariat, cdpdj."><span class="menu-nom" data-en="The forum is elsewhere, your remedies are here">Le for est ailleurs, tes recours sont ici</span><span class="menu-desc">Texas, Singapour, Delaware — ou la loi de ta résidence : la carte des clauses de for des cinq plateformes lues en entier, et les recours qui se saisissent d’ici.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="assurances" data-mots="assurances assureur télématique ajusto desjardins fichier central des sinistres fcsa décision automatisée explication 12.1 amf plainte appels enregistrés prime score"><span class="menu-nom" data-en="Insurance">Les assurances</span><span class="menu-desc" data-en="What your insurer knows, decides and shares: telematics, your claims file at the central file, the automated decision and the explanation to ask for, your recorded calls, the regulator and complaints.">Ce que ton assureur sait, décide et partage : la télématique, ton dossier de sinistres au Fichier central, la décision automatisée et l’explication à demander, tes appels enregistrés, le régulateur et les plaintes.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="suivi-familial" data-mots="suivi familial localisation life360 géolocalisation précise cercle événements de conduite partenaires arity enfants mineurs droits québec canada"><span class="menu-nom" data-en="Family tracking and location sharing">Le suivi familial et la localisation</span><span class="menu-desc" data-en="Life360 and the family tracking apps: what they see, share and sell — precise geolocation, the partner channels, your rights in Quebec and Canada, and the steps that close the channels.">Life360 et les applications de suivi familial : ce qu’elles voient, partagent et vendent — la géolocalisation précise, les canaux partenaires, tes droits au Québec et au Canada, et les gestes qui ferment les canaux.</span></button></li></ul><p class="arbre-groupe-titre">Ton cerveau — ta mémoire, sur ton appareil</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="recu" data-mots="le reçu de visite ce que cette page voit de toi à partir de rien, ce que le serveur reçoit, ce que ce site retient (rien) — mesuré chez toi, consigné dans ton cerveau, jamais transmis."><span class="menu-nom">Le reçu de visite</span><span class="menu-desc">Ce que cette page voit de toi à partir de rien, ce que le serveur reçoit, ce que ce site retient (rien) — mesuré chez toi, consigné dans ton cerveau, jamais transmis.</span></button></li><li><button type="button" class="menu-entree" data-cible="recus" data-mots="tes reçus et tes gestes ta mémoire cumulative sur ton appareil : tes reçus, tes gestes de sécurisation consignés, le recalcul de ta chaîne et son export — la somme de tes précédents, tenue de ton bord."><span class="menu-nom">Tes reçus et tes gestes</span><span class="menu-desc">Ta mémoire cumulative sur ton appareil : tes reçus, tes gestes de sécurisation consignés, le recalcul de ta chaîne et son export — la somme de tes précédents, tenue de ton bord.</span></button></li><li><button type="button" class="menu-entree" data-cible="suivi" data-mots="ton dossier de suivi tes démarches en cours et leurs échéances, consignées dans ton cerveau sur ton appareil : demandes envoyées, délais, réponses — et le geste suivant quand un délai passe."><span class="menu-nom">Ton dossier de suivi</span><span class="menu-desc">Tes démarches en cours et leurs échéances, consignées dans ton cerveau sur ton appareil : demandes envoyées, délais, réponses — et le geste suivant quand un délai passe.</span></button></li><li><button type="button" class="menu-entree" data-cible="voir" data-mots="voir mon cerveau lire ta mémoire locale, réellement : ouverture délibérée, toutes les entrées rendues, le recalcul déroulé devant toi — rien ne transite."><span class="menu-nom">Voir mon cerveau</span><span class="menu-desc">Lire ta mémoire locale, réellement : ouverture délibérée, toutes les entrées rendues, le recalcul déroulé devant toi — rien ne transite.</span></button></li></ul><p class="arbre-groupe-titre">Les documents</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="donnees" data-ancre="donnees-documents" data-mots="bibliothèque des modèles les 29 modèles de documents (demandes, recours, plaintes) en français et en anglais — chacun avec sa loi, son délai et son lien direct."><span class="menu-nom">Bibliothèque des modèles</span><span class="menu-desc">Les 29 modèles de documents (demandes, recours, plaintes) en français et en anglais — chacun avec sa loi, son délai et son lien direct.</span></button></li><li><button type="button" class="menu-entree" data-cible="donnees" data-ancre="donnees-lois" data-mots="bibliothèque des lois les 19 textes de lois officiels déposés au site, avec leur source, leur date d état et leur empreinte — à télécharger et à garder."><span class="menu-nom">Bibliothèque des lois</span><span class="menu-desc">Les 19 textes de lois officiels déposés au site, avec leur source, leur date d'état et leur empreinte — à télécharger et à garder.</span></button></li></ul><p class="arbre-groupe-titre">Contester</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="petitions" data-mots="pétitions une pétition par juridiction, fondée sur le manque documenté de chacune : les demandes et leurs fondements, les mécaniques des quatorze législatures, et le compteur de signataires du site à son état publié."><span class="menu-nom">Pétitions</span><span class="menu-desc">Une pétition par juridiction, fondée sur le manque documenté de chacune : les demandes et leurs fondements, les mécaniques des quatorze législatures, et le compteur de signataires du site à son état publié.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Comprendre</p><p class="arbre-groupe-titre">Tes droits</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits et lois tes droits et les lois qui les portent — accès, rectification, portabilité, recours — vérifiés au primaire, juridiction par juridiction."><span class="menu-nom">Droits et lois</span><span class="menu-desc">Tes droits et les lois qui les portent — accès, rectification, portabilité, recours — vérifiés au primaire, juridiction par juridiction.</span></button></li><li><button type="button" class="menu-entree" data-cible="confidentialite" data-mots="confidentialité et loi 25 la politique de confidentialité de ce site — ses pratiques réelles, relevées dans son code —, les mesures en place, et la loi 25 expliquée : droits des personnes, devoirs des organisations, recours."><span class="menu-nom">Confidentialité et Loi 25</span><span class="menu-desc">La politique de confidentialité de ce site — ses pratiques réelles, relevées dans son code —, les mesures en place, et la Loi 25 expliquée : droits des personnes, devoirs des organisations, recours.</span></button></li><li><button type="button" class="menu-entree" data-cible="conditions" data-mots="le registre des conditions onze documents lus en entier tiktok snapchat discord meta x leurs clauses leurs silences le diff des conditions"><span class="menu-nom" data-en="The terms register">Le registre des conditions</span><span class="menu-desc" data-en="Eleven documents read in full: what their contracts say about your rights, their silences, and the diff of changes.">Onze documents lus en entier : ce que leurs contrats disent de tes droits, leurs silences, et le diff des changements.</span></button></li><li><button type="button" class="menu-entree" data-cible="conditions-site" data-mots="conditions d utilisation du site les conditions de ce site ses regles d usage les bornes de la connexion ecrire a sophia les dons le registre scelle loi applicable tribunaux du quebec"><span class="menu-nom" data-en="This site’s terms of use">Conditions d’utilisation du site</span><span class="menu-desc" data-en="This site’s own terms: what it is, who publishes it, the written bounds of the connection to SoPHIa, donations, the sealed register of the site’s actions, and the governing law — Quebec’s laws and courts, bounded by the safeguard of your mandatory protections.">Les conditions de ce site lui-même : ce qu’il est, qui le publie, les bornes écrites de la connexion à SoPHIa, les dons, le registre scellé des actions du site, et la loi applicable — les lois et les tribunaux du Québec, avec la sauvegarde de tes protections impératives.</span></button></li><li><button type="button" class="menu-entree" data-cible="politique-site" data-mots="politique du site confidentialite donnees ce que ce site ne fait pas aucun cookie messagerie conservation suppression responsable loi 25 lrpsp conformite articles"><span class="menu-nom" data-en="This site’s policy">Politique du site</span><span class="menu-desc" data-en="This site’s own policy: what it does not do (no cookies, no tracking, no profiling technology), your local brain, the Locked Memory, the messaging path and its privacy impact assessment, retention and deletion, your rights and remedies — each commitment tied to the section it complies with, conformity table included.">La politique de ce site lui-même : ce qu’il ne fait pas (aucun cookie, aucune traque, aucune technologie de profilage), ton cerveau local, la Mémoire verrouillée, le trajet de la messagerie et son évaluation des facteurs relatifs à la vie privée, la conservation et la suppression, tes droits et tes recours — chaque engagement rattaché à l’article auquel il se conforme, table de conformité à l’appui.</span></button></li><li><button type="button" class="menu-entree" data-cible="transits" data-mots="la carte des transits comment tes données voyagent cloud act fisa 702 gafam snowden et la couche proximité bluetooth find my find hub tile les lieux-relais le protocole anti-suivi de voyage le kit premier traqueur"><span class="menu-nom" data-en="The transit map">La carte des transits</span><span class="menu-desc" data-en="How your data travel — through the services and through the air around you: proximity, relay places, travel, first tracker.">Comment tes données transitent — par les services et dans l’air autour de toi : proximité, lieux-relais, voyage, premier traqueur.</span></button></li><li><button type="button" class="menu-entree" data-cible="exposition" data-mots="ton exposition ton empreinte recalculée le panneau de bord du non-tracking les requêtes du site en direct la surveillance de ton exposition la preuve de présence consentie vérifie que c est bien nous"><span class="menu-nom" data-en="Your exposure">Ton exposition</span><span class="menu-desc" data-en="Your fingerprint recalculated here, never sent; this site’s requests, live; what changes between your visits, named and dated.">Ton empreinte recalculée ici, jamais envoyée ; les requêtes de ce site en direct ; ce qui change entre tes visites, nommé et daté.</span></button></li><li><button type="button" class="menu-entree" data-cible="miroir" data-mots="le miroir ce qu'une visite révèle relevé maximal signaux local transit adresse ip en-têtes navigateur écran autorisations empreinte deux modes local serveurs écho"><span class="menu-nom" data-en="The mirror">Le miroir</span><span class="menu-desc" data-en="Everything a simple visit reveals about you — a maximum statement computed in your browser, in two modes of your choice: local, or the server demonstration with its documented doors.">Tout ce qu'une simple visite révèle de toi — le relevé maximal, calculé dans ton navigateur, en deux modes à ton choix : local, ou démonstration avec serveurs aux portes documentées.</span></button></li><li><button type="button" class="menu-entree" data-cible="modes" data-mots="les deux modes choix local serveurs démonstration portes météo écho sécurité pareil"><span class="menu-nom" data-en="The two modes">Les deux modes</span><span class="menu-desc" data-en="Local, or the server demonstration: the choice, explained plainly — what each mode does, what never changes (security), and the doors listed before they open.">Local, ou démonstration avec serveurs : le choix, expliqué simplement — ce que chaque mode fait, ce qui ne change jamais (la sécurité), et les portes écrites avant de s'ouvrir.</span></button></li><li><button type="button" class="menu-entree" data-cible="etat51" data-mots="le 51e état numérique numériquement américain trump canada lois adn numérique jumeau numérique gafam"><span class="menu-nom" data-en="The digital 51st State">Le 51e État numérique</span><span class="menu-desc" data-en="His thesis, developed: digitally, we already function as a 51st State — never a political annexation, provided Canada keeps its own laws. The digital DNA, the twin, and the computed harvesting table.">Sa thèse, développée : numériquement, nous fonctionnons déjà comme un 51e État — jamais une annexion politique, pourvu que le Canada garde ses lois. L’ADN numérique, le jumeau, et le tableau de la récolte calculé.</span></button></li></ul><p class="arbre-groupe-titre">La méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode-30" data-mots="la méthode en 30 secondes recette canonique sceau digest sha-256 somme des précédents variantes registre historique journal des dépôts coffre"><span class="menu-nom">La méthode en 30 secondes</span><span class="menu-desc">La recette canonique de la chaîne, en une page : le sceau, le digest cumulé — et ses variantes nommées, une par objet.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="methode" data-mots="méthode la méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles."><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="transmission" data-mots="faire pareil faire pareil : la méthode transmise en six étapes, avec la démonstration « essaie la chaîne » à pratiquer chez soi."><span class="menu-nom">Faire pareil</span><span class="menu-desc">Faire pareil : la méthode transmise en six étapes, avec la démonstration « Essaie la chaîne » à pratiquer chez soi.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="calendrier" data-mots="calendrier 13 28 sidéral sideral compte rotation 364 mois semaines jeudi bissextile tour surplus origine mars triangulation démontré calcule"><span class="menu-nom">Le calendrier 13 × 28</span><span class="menu-desc">Le compte sidéral d’Alex, démontré et recalculable : compte continu, 13 mois de 28 jours, le jour récupéré, la bissextile montrée — et le module donné.</span></button></li>
+</ul></div>
+<div class="menu-famille"><p class="etiquette">Vérifier</p><p class="arbre-groupe-titre">Recalculer</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="vérifier vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même."><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller — l atelier l atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l écart."><span class="menu-nom">Sceller — l'atelier</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul><p class="arbre-groupe-titre">Les preuves</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune."><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre le registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics."><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage — les preuves chez les tiers les ancrages externes et les archives : wayback, opentimestamps, bitcoin, rfc 3161."><span class="menu-nom">Ancrage — les preuves chez les tiers</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="bris" data-mots="la chambre des bris le faux sceau de juillet 2026 l écart entre le déclaré et le réel nature preuve borne"><span class="menu-nom" data-en="The chamber of breaks">La chambre des bris</span><span class="menu-desc" data-en="Where the declared and the real part ways: each piece with its nature, its proof and its limit.">Là où le déclaré et le réel se séparent : chaque pièce avec sa nature, sa preuve et sa borne.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="depose-empreinte" data-mots="dépose ton empreinte déposer une empreinte dater un document sans le montrer prouver antériorité journal public des dépôts sha-256 reçu"><span class="menu-nom" data-en="Deposit your fingerprint">Dépose ton empreinte</span><span class="menu-desc" data-en="Date a document you hold, without ever showing it: the fingerprint alone is entered, dated, in the site's chained public journal.">Date un document que tu détiens, sans jamais le montrer : l'empreinte seule est inscrite, datée, au journal public chaîné du site.</span></button></li><li><button type="button" class="menu-entree" data-cible="transparence-audit" data-mots="transparence audit unisson données de visite reçu local dépôt première époque"><span class="menu-nom">Transparence — SoPHIa mémoire cumulative chaînée</span><span class="menu-desc">La page de la première époque : ce que le dépôt indique déjà sur les données de visite, et ton reçu local de visite, calculé chez toi.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Parle avec le site web SoPHIa</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="cerveau-coquillage" data-mots="cerveau coquillage mémoire cumulative spirale propriété intellectuelle dessinée accumulation couches"><span class="menu-nom">Cerveau coquillage</span><span class="menu-desc">La propriété intellectuelle d’Alex, dessinée : le cerveau coquillage en une image — la mémoire qui grandit par accumulation, couche après couche, et la détention des plateformes qui reste dehors.</span></button></li><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="mémoire la mémoire externe de sophia : le manifeste pour une ia, le coffre synaptique, l historique quotidien."><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree" data-cible="evolution" data-mots="évolution le panneau que le site calcule seul à chaque chargement : son état mesuré, la continuité entre ses états — son adn numérique —, ses écarts nommés, son état d ancrage en trois états et les prochains pas qu il propose mécaniquement."><span class="menu-nom">Évolution</span><span class="menu-desc">Le panneau que le site calcule seul à chaque chargement : son état mesuré, la continuité entre ses états — son ADN numérique —, ses écarts nommés, son état d’ancrage en trois états et les prochains pas qu’il propose mécaniquement.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="edition" data-mots="édition du jour page datée sophia veille faits vérifiés données droits archive éditions"><span class="menu-nom" data-en="Today’s edition">L’édition du jour</span><span class="menu-desc" data-en="The dated page SoPHIa signs each day: the day’s verified facts on data and rights, each with its source — and the archive of editions.">La page datée que SoPHIa signe chaque jour : les faits vérifiés du jour sur les données et les droits, chacun avec sa source — et l’archive des éditions.</span></button></li></ul><p class="arbre-groupe-titre">La zone verrouillée</p><ul class="menu-liste"><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire verrouillee coffre securise chiffre phrase secrete zone verrouillee aes-256"><span class="menu-nom">🔒 Mémoire verrouillée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256 ; le premier paquet y est déposé depuis le 3 novembre 2026 — déverrouillage par la phrase d’Alex, saisie chez lui.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Le dossier — l'histoire</p><p class="arbre-groupe-titre">L'histoire en ordre</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours — l histoire le parcours d alex et la chronologie du dossier, de février à novembre 2026."><span class="menu-nom">Parcours — l'histoire</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="le chercheur le profil du chercheur : orcid, travaux, démarches et foire aux questions."><span class="menu-nom">Le chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li></ul><p class="arbre-groupe-titre">Le travail et les textes</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="ingenierie" data-mots="le travail d ingénierie le rôle d ingénierie derrière ce système : poser le problème, concevoir, spécifier, diriger, vérifier, opérer, corriger — pièces et mesures à l appui, journal des ratés public compris."><span class="menu-nom">Le travail d'ingénierie</span><span class="menu-desc">Le rôle d’ingénierie derrière ce système : poser le problème, concevoir, spécifier, diriger, vérifier, opérer, corriger — pièces et mesures à l’appui, journal des ratés public compris.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles les articles du dossier : les textes longs, sourcés et datés."><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte."><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li></ul><p class="arbre-groupe-titre">Soutenir</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="don" data-mots="faites un don soutenir la propriété intellectuelle brevet avocats domaine développement virement interac choix de l usage"><span class="menu-nom" data-en="Make a donation">Faites un don</span><span class="menu-desc" data-en="Support the intellectual property behind the work: you choose what your donation serves — patent, counsel, domain, development — right in your transfer note.">Soutenir la propriété intellectuelle derrière l’œuvre : vous choisissez ce que votre don sert — brevet, avocats, domaine, développement — dans le message de votre virement.</span></button></li><li><button type="button" class="menu-entree" data-cible="partenaires" data-mots="partenaires soutien licence partenariat construire cherché refusé données garantie opérateur sans accès"><span class="menu-nom" data-en="Partners and support">Partenaires et soutien</span><span class="menu-desc" data-en="For those who might support what is being built here: what this site is, what it builds (the method, the shell-brain, the licence layer), what it seeks — and what it refuses, as a guarantee: people’s data is never an asset.">Pour qui pourrait soutenir ce qui se construit ici : ce que ce site est, ce qu’il construit (la méthode, le cerveau coquillage, la couche sous licence), ce qu’il cherche — et ce qu’il refuse, en garantie : les données des gens ne sont jamais un actif.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Écrire et parler</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="ecrire" data-mots="écrire à sophia écrire directement à l agente du site : une conversation ici même (identifiant + ton code), ou le courriel classique — le message arrive dans la boîte dédiée, sophia le relaie, alex répond lui-même."><span class="menu-nom">Écrire à SoPHIa</span><span class="menu-desc">Écrire au propriétaire, par le relais de son agente : une conversation ici même (identifiant + ton code), ou le courriel classique — le message arrive dans la boîte dédiée, SoPHIa le relaie, Alex répond lui-même.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="parler à l instance l instance souveraine : le relais ia du site, branché côté serveur."><span class="menu-nom">Parler à l'instance</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Toujours là</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil surface gestes"><span class="menu-nom">Accueil</span><span class="menu-desc">La surface des gestes : sept cartes, l’état vérifié, l’histoire en retrait.</span></button></li><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge ancre sidéral"><span class="menu-nom">Temps — l’ancre</span><span class="menu-desc">Le temps du dossier, triangulé.</span></button></li>
+li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo sainte-martine ancre"><span class="menu-nom">Météo — l’ancre</span><span class="menu-desc">L’environnement local, lu au même geste que l’heure.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="rechercher loupe trouver"><span class="menu-nom">Rechercher</span><span class="menu-desc">La loupe du site.</span></button></li><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa"><span class="menu-nom">L’application</span><span class="menu-desc">Installer le site comme une application.</span></button></li></ul></div>
+</div>
+<main>
+<div class="panneau actif" id="p-conditions">
+<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">31ab6c7544d77a203fc5d9cd521678332ff92cb79648fc8880aca5505cb22d94</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
+  <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
+<p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="comprendre">Comprendre</button> › Tes droits › <span class="ariane-ici">Le registre des conditions</span></p>
+<section class="bloc" id="conditions">
+  <div class="entete-sec"><span class="num">§M</span><h2 data-en="The terms register — what their contracts say about your rights">Le registre des conditions — ce que leurs contrats disent de tes droits</h2></div>
+  <p class="lead" data-en="Nobody reads the terms. So this site reads them in full — eleven documents, end to end, on November 3, 2026 — and keeps the register of what they say about users' rights: the appeal the contract promises or does not promise, the deadline it states or passes over in silence, the forum it imposes. Information and accompaniment — never legal advice.">Personne ne lit les conditions. Alors ce site les lit en entier — onze documents, de A à Z, le 3 novembre 2026 — et tient le registre de ce qu’ils disent des droits des utilisateurs : l’appel que le contrat promet ou ne promet pas, le délai qu’il énonce ou qu’il tait, le for qu’il impose. Information et accompagnement — jamais d’avis juridique.</p>
+  <div class="carte">
+    <p class="etiquette" data-en="The eleven documents read (pass 1 — social platforms)">Les onze documents lus (passe 1 — plateformes sociales)</p>
+    <table>
+      <tr><th data-en="Platform">Plateforme</th><th data-en="Document">Document</th><th data-en="In force">En vigueur</th><th data-en="Read on">Lu le</th><th data-en="Fingerprint of the archived extraction sheet">Empreinte de la fiche d’extraction archivée</th></tr>
+      <tr><td>TikTok</td><td>Terms of Service (ROW)</td><td data-en="Dec. 1, 2025">1<sup>er</sup> déc. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">5fde3663da91709de221ce75457b3df0b84e18c2e8eca7330e0d13fe2d03e1eb</td></tr>
+      <tr><td>TikTok</td><td>Privacy Policy (ROW)</td><td data-en="July 8, 2025">8 juill. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">c8b7e02a639d40995e0d4254f80285d282ed8ba94a7ba5902f7d78b04f0639f6</td></tr>
+      <tr><td>Snapchat</td><td>Terms of Service (Snap Group Limited)</td><td data-en="Sept. 21, 2026">21 sept. 2026</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">b9b2cd9fd144a27159d458aa293046fb0a9d4085389d562ca904f1491e3ded80</td></tr>
+      <tr><td>Snapchat</td><td>Privacy Policy</td><td data-en="Sept. 21, 2026">21 sept. 2026</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">2deed6b4b98e1a7613ab6eb0db90165fbce1fa0796f1c7902a383afa99b5aeb9</td></tr>
+      <tr><td>Discord</td><td>Terms of Service</td><td data-en="Sept. 29, 2025">29 sept. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">58edaf4699e6949f7c28ea1358e9c87d705799f580fc7ab1ab1ed28169a13283</td></tr>
+      <tr><td>Discord</td><td>Privacy Policy</td><td data-en="Sept. 29, 2025">29 sept. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">56e744b6b10a976e9eb6b18fe4a8097117977887067d5eaee60a0eb66bdccf50</td></tr>
+      <tr><td>Meta</td><td data-en="Terms of Use (Facebook)">Conditions d’utilisation (Facebook)</td><td data-en="Jan. 1, 2025">1<sup>er</sup> janv. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">8a11ac5c662d9280d2174709cd9d3abefe05c56a7dde507a66ea81b35e36df49</td></tr>
+      <tr><td>Meta</td><td data-en="Terms of Use (Instagram)">Conditions d’utilisation (Instagram)</td><td data-en="Jan. 1, 2025">1<sup>er</sup> janv. 2025</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">22dc90fb187e2fc292f63007319077e3ab70c4c7b3771a501eea571f978e3632</td></tr>
+      <tr><td>Meta</td><td data-en="Privacy Policy">Politique de confidentialité</td><td data-en="July 23, 2026">23 juill. 2026</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">0dc6afbae9bb6fc03770d152e9323481ca320afb0ce6935f0c866ef89b12e431</td></tr>
+      <tr><td>X</td><td data-en="Terms of Use">Conditions d’utilisation</td><td data-en="Oct. 9, 2026">9 oct. 2026</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">8b129f53c5c1587878febe88499007aff47ddd13d3e5a1c5bd234d3eb70a6677</td></tr>
+      <tr><td>X</td><td data-en="Privacy Policy">Politique de confidentialité</td><td data-en="Jan. 15, 2026">15 janv. 2026</td><td data-en="Nov. 3, 2026">3 nov. 2026</td><td class="mono">47c78feb9327fc6416253c52d59c50b63481659b2e8b86b5a495e6856b8a7342</td></tr>
+    </table>
+    <p class="petite" data-en="Limit of the archive: the fingerprints bear on the archived extraction sheets (full structure and faithfully transcribed rights clauses), never on the bytes served by the platforms. Meta's and X's documents were first blocked in text reading (HTTP 403; blocked domain) — the blockage is recorded as a fact, and the reading was done in a real browser session the same evening.">Borne de l’archivage : les empreintes portent sur les fiches d’extraction archivées (structure complète et clauses de droits transcrites fidèlement), jamais sur les octets servis par les plateformes. Les documents de Meta et de X ont d’abord été bloqués en lecture texte (HTTP 403 ; domaine bloqué) — le blocage est consigné comme un fait, et la lecture a été faite en session de navigateur réelle le même soir.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">TikTok — <span data-en="Singapore law, SIAC arbitration, no Canada anywhere">loi de Singapour, arbitrage SIAC, aucun Canada nulle part</span></p>
+    <p data-en="The contract that applies to Canada is the “Rest of World” version (TikTok Pte. Ltd.): Singapore law, arbitration in Singapore (SIAC, three arbitrators, in English). The terms contain no appeal mechanism against a removal or a deactivation; the policy describes no export tool; no retention period is quantified; the licence on your content is perpetual and irrevocable. The policy's collection includes content pre-loaded at creation even if never saved, the clipboard (with permission), typing patterns and rhythms, facial and body traits in images and audio.">Le contrat applicable au Canada est la version « Rest of World » (TikTok Pte. Ltd.) : loi de Singapour, arbitrage à Singapour (SIAC, trois arbitres, en anglais). Les conditions ne contiennent aucun mécanisme d’appel contre un retrait ou une désactivation ; la politique ne décrit aucun outil d’export ; aucune durée de conservation n’est chiffrée ; la licence sur ton contenu est perpétuelle et irrévocable. La collecte de la politique inclut le contenu pré-chargé à la création même non sauvegardé, le presse-papiers (avec permission), les motifs et rythmes de frappe, les traits du visage et du corps dans les images et l’audio.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Snapchat — <span data-en="a contractual appeal stronger than the help pages">un appel au contrat, plus fort que les pages d’aide</span></p>
+    <p data-en="Under Snap Group Limited (the contract applicable to Canada): complaints are receivable within six months of the measure, with a promised “timely, non-discriminatory, diligent and non-arbitrary” review — a commitment in the contract, not just in the help pages. But the policy promises no deletion deadline (“we cannot promise that deletion will take place by a specific time”); Chats are deleted from the servers within 24 hours after being read; Download My Data runs through accounts.snapchat.com. Law of England and Wales, save for mandatory local law.">Chez Snap Group Limited (le contrat applicable au Canada) : les plaintes sont recevables dans les six mois de la mesure, avec un examen « timely, non-discriminatory, diligent and non-arbitrary » promis — un engagement du contrat, pas seulement des pages d’aide. Mais la politique ne promet aucun délai de suppression (« we cannot promise that deletion will take place by a specific time ») ; les Chats sont supprimés des serveurs dans les 24 heures après lecture ; Download My Data passe par accounts.snapchat.com. Loi d’Angleterre et du Pays de Galles, sauf loi locale impérative.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Discord — <span data-en="Canada named by the arbitration clause">le Canada nommé par la clause d’arbitrage</span></p>
+    <p data-en="The terms announce mandatory arbitration and a class-action waiver for “all U.S. or Canada-based Discord users”: informal resolution first (60 days), then individual arbitration initiated in New Castle County, Delaware — with an opt-out within 30 days (arbitration-opt-out@discord.com), and one year to bring a claim. Appeals of enforcement measures exist in the contract (form or in-app); the six-month appeal period is stated for EU residents only. The policy: the export package is received within 30 days — a different “30 days” from the download link's lifetime, which lives in the help pages, not in the policy.">Les conditions annoncent un arbitrage obligatoire et une renonciation aux actions collectives pour « all U.S. or Canada-based Discord users » : règlement informel d’abord (60 jours), puis arbitrage individuel initié dans le comté de New Castle, Delaware — avec un refus possible dans les 30 jours (arbitration-opt-out@discord.com), et un an pour agir. Les appels des mesures d’application existent au contrat (formulaire ou dans l’app) ; le délai d’appel de six mois n’est énoncé que pour les résidents de l’UE. La politique : le paquet d’export est reçu dans les 30 jours — un autre « 30 jours » que la durée de vie du lien, qui vit dans les pages d’aide, pas dans la politique.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Meta — <span data-en="the consumer keeps the law and courts of home">le consommateur garde la loi et le tribunal de chez lui</span></p>
+    <p data-en="In Meta's terms (Facebook and Instagram), the consumer keeps the law and the courts of their country of residence for their claims: no mandatory arbitration, no class-action waiver. Facebook announces important changes at least 30 days ahead; Instagram's terms state no quantified advance notice. The Oversight Board is named for Facebook content decisions, not in Instagram's terms. The privacy policy states no retention table and no single response time for rights requests; its only Canadian mention is an advertising opt-out through the DAAC.">Dans les conditions de Meta (Facebook et Instagram), le consommateur garde la loi et le tribunal de son pays de résidence pour ses réclamations : aucun arbitrage obligatoire, aucune renonciation aux recours collectifs. Facebook annonce les modifications importantes au moins 30 jours à l’avance ; les conditions d’Instagram n’énoncent aucun préavis chiffré. Le Conseil de surveillance est nommé pour les décisions de contenu de Facebook, pas dans les conditions d’Instagram. La politique de confidentialité n’énonce ni tableau des conservations ni délai de réponse unique aux demandes de droits ; sa seule mention canadienne est une désinscription publicitaire via la DAAC.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">X — <span data-en="Texas law imposed on Canadians; the most quantified retentions">la loi du Texas imposée aux Canadiens ; les conservations les plus chiffrées</span></p>
+    <p data-en="X's terms impose the law of Texas and the courts of Wichita and Tarrant counties on residents outside the EU/EEA/UK — Canadians included — with binding AAA arbitration as a fallback, a jury and class-action waiver, termination “at its convenience”, and no deadline of any kind in the contract. The policy, by contrast, gives the register's most precise retentions: communications with X 18 months at most, cookies 13 months, ad interactions 12 months — and the identifiers (email, phone) of accounts suspended for a violation are kept with no time limit. Restoration after a voluntary deactivation: 30 days. The English version governs.">Les conditions de X imposent la loi du Texas et les tribunaux des comtés de Wichita et de Tarrant aux résidents hors UE/AELE/R.-U. — Canadiens compris — avec un arbitrage contraignant AAA en repli, une renonciation au jury et aux recours collectifs, une résiliation « à sa convenance », et aucun délai d’aucune sorte au contrat. La politique donne en revanche les conservations les plus précises du registre : communications avec X 18 mois au plus, témoins 13 mois, interactions publicitaires 12 mois — et les identifiants (courriel, téléphone) des comptes suspendus pour violation sont conservés sans limitation de durée. Restauration après désactivation volontaire : 30 jours. La version anglaise fait foi.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette" data-en="The register of silences — what none of the eleven documents says">Le registre des silences — ce qu’aucun des onze documents ne dit</p>
+    <p data-en="A silence is a fact when the reading is complete. Across the eleven documents read in full:">Un silence est un fait quand la lecture est complète. À travers les onze documents lus en entier :</p>
+    <ul>
+      <li data-en="No main body names Québec, Act 25 or the CAI; none names PIPEDA or the Privacy Commissioner of Canada. Canada appears only by exception: named by Discord's arbitration clause, kept as country of residence by Meta's consumer clause, handled as an advertising opt-out (DAAC) in Meta's policy.">Aucun corps principal ne nomme le Québec, la Loi 25 ni la CAI ; aucun ne nomme la LPRPDE ni le Commissariat à la protection de la vie privée du Canada. Le Canada ne paraît que par exception : visé par la clause d’arbitrage de Discord, gardé comme pays de résidence par la clause consommateur de Meta, traité en désinscription publicitaire (DAAC) dans la politique de Meta.</li>
+      <li data-en="No Canada supplement at TikTok (seven in the terms, seventeen in the policy — none for Canada); no Canada section visible in Snapchat's policy; Discord defers the regional detail to a separate page, not read in this pass.">Aucun supplément Canada chez TikTok (sept aux conditions, dix-sept à la politique — aucun pour le Canada) ; aucune section Canada visible dans la politique de Snapchat ; Discord renvoie le détail régional à une page séparée, non lue dans cette passe.</li>
+      <li data-en="No quantified retention at TikTok, Discord or in Meta's policy; no deletion deadline promised at Snapchat; no appeal deadline, response time or rights-exercise deadline anywhere at X.">Aucune conservation chiffrée chez TikTok, Discord ni dans la politique de Meta ; aucun délai de suppression promis chez Snapchat ; aucun délai d’appel, de réponse ni d’exercice des droits nulle part chez X.</li>
+      <li data-en="Appeals that live only in help pages: TikTok's age-ban windows and account appeals, Snapchat's “aims for 7 days” export — real, but without an anchor in the contracts read. The register names the level of each promise: contract, policy, or help.">Des appels qui ne vivent que dans les pages d’aide : les fenêtres de bannissement d’âge et l’appel de compte chez TikTok, l’export « visé 7 jours » chez Snapchat — réels, mais sans ancrage dans les contrats lus. Le registre nomme le niveau de chaque promesse : contrat, politique, ou aide.</li>
+    </ul>
+  </div>
+  <div class="carte">
+    <p class="etiquette" data-en="The terms diff — changes will be measured, not rumoured">Le diff des conditions — les changements se mesureront, pas se raconteront</p>
+    <p data-en="Baselines: the eleven fingerprints above, from the full reading of November 3, 2026. At each re-reading, the new extraction's fingerprint is compared to its baseline: same fingerprint, no detected change at that date; a different fingerprint opens the diff, clause by clause. First dated entry, awaiting: Instagram's terms announce a revision for January 20, 2027 — the first scheduled matter of this diff. Status: pending — nothing is asserted about its content before it is read.">Baselines : les onze empreintes ci-dessus, de la lecture intégrale du 3 novembre 2026. À chaque relecture, l’empreinte de la nouvelle extraction se compare à sa baseline : même empreinte, aucun changement détecté à cette date ; empreinte différente, le diff s’ouvre, clause par clause. Première entrée datée, en attente : les conditions d’Instagram annoncent une révision pour le 20 janvier 2027 — première matière programmée de ce diff. Statut : en attente — rien n’est affirmé sur son contenu avant sa lecture.</p>
+    <p class="petite" data-en="Pass 2 of the register is announced: Google, Apple, Microsoft, Amazon, then WhatsApp, Telegram, Reddit, LinkedIn, Pinterest, Twitch by their weight in the site's sheets. It will enter by version, like everything here.">La passe 2 du registre est annoncée : Google, Apple, Microsoft, Amazon, puis WhatsApp, Telegram, Reddit, LinkedIn, Pinterest, Twitch selon leur poids dans les fiches du site. Elle entrera par version, comme tout ici.</p>
+  </div>
+</section>
+<section class="bloc" id="conditions-enfants">
+  <div class="entete-sec"><span class="num">47</span><h2 data-en="Children's digital leash — the clauses, in plain words, at the moment of acceptance">La laisse numérique des enfants — les clauses, en mots clairs, au moment de l’acceptation</h2></div>
+  <p class="lead" data-en="Accepting a platform for a child is a decision made in one tap, on clauses nobody reads. Here they are in plain words — from the register's full readings — with the figures of the file: in the HabiloMédias survey (JCMB IV, n = 1,058, ages 9–17), 48% of young people never read privacy policies, and 46% do not use privacy settings. The leash is not the app; it is the acceptance. Read, then seal the parental decision.">Accepter une plateforme pour un enfant est une décision prise en un toucher, sur des clauses que personne ne lit. Les voici en mots clairs — depuis les lectures intégrales du registre — avec les chiffres du dossier : dans l’enquête d’HabiloMédias (JCMB IV, n = 1 058, 9 à 17 ans), 48 % des jeunes ne lisent jamais les politiques de confidentialité, et 46 % n’utilisent pas les paramètres de confidentialité. La laisse n’est pas l’application ; c’est l’acceptation. Lis, puis scelle la décision parentale.</p>
+  <div class="carte">
+    <p class="etiquette" data-en="In plain words — what accepting means, per platform read">En mots clairs — ce qu’accepter veut dire, par plateforme lue</p>
+    <ul>
+      <li><strong>TikTok (13 ans et plus au contrat).</strong> <span data-en="Accepting gives TikTok a perpetual, irrevocable licence on the child's videos; the policy collects facial and body traits from images and audio, typing patterns, inferred interests and age bracket. A discovered minor's account is terminated — and the joint investigation (OPC, CAI, B.C., Alberta, September 23, 2025) found TikTok removed about 500,000 underage accounts a year in Canada, while a self-declared date of birth was, at the time, the only barrier.">Accepter donne à TikTok une licence perpétuelle et irrévocable sur les vidéos de l’enfant ; la politique recueille les traits du visage et du corps dans les images et l’audio, les rythmes de frappe, les intérêts et la tranche d’âge inférés. Le compte d’un mineur découvert est terminé — et l’enquête conjointe (CPVP, CAI, C.-B., Alberta, 23 septembre 2025) a établi que TikTok retire environ 500 000 comptes de mineurs par année au Canada, alors qu’une date de naissance auto-déclarée était, au moment de l’enquête, la seule barrière.</span></li>
+      <li><strong>Snapchat.</strong> <span data-en="Under 13 (or the local minimum age): the account and its data are locked or deleted when Snap knows. Public content carries an irrevocable perpetual licence, and server copies may be kept indefinitely after removal; Memories carry no availability guarantee — the family's own copy is the only sure one.">Moins de 13 ans (ou l’âge minimal local) : le compte et ses données sont verrouillés ou supprimés dès que Snap le sait. Le contenu public porte une licence irrévocable et perpétuelle, et les copies serveur peuvent être conservées indéfiniment après retrait ; les Memories n’ont aucune garantie de disponibilité — la copie de la famille est la seule sûre.</span></li>
+      <li><strong>Meta.</strong> <span data-en="The terms keep the consumer's home law for claims — but the policy states no retention table and no single response time: for a child's data, the written request (access, then deletion) is the instrument, not a setting.">Les conditions gardent la loi du pays de résidence pour les réclamations — mais la politique n’énonce ni tableau des conservations ni délai de réponse unique : pour les données d’un enfant, l’instrument est la demande écrite (accès, puis suppression), pas un réglage.</span></li>
+      <li><strong>X.</strong> <span data-en="Under 13 prohibited; the terms impose Texas law on Canadian residents, and the identifiers of accounts suspended for a violation are kept with no time limit — a suspended teenager's email and phone stay, indefinitely, per the policy read.">Moins de 13 ans interdits ; les conditions imposent la loi du Texas aux résidents canadiens, et les identifiants des comptes suspendus pour violation sont conservés sans limitation de durée — le courriel et le téléphone d’un adolescent suspendu restent, indéfiniment, selon la politique lue.</span></li>
+    </ul>
+    <p class="petite" data-en="The federal Privacy Commissioner published a Children's Privacy Code on October 20, 2026 (comments open until January 20, 2027) — the direction of the law here is toward the child, not the platform.">Le Commissariat fédéral a publié un Code de la vie privée des enfants le 20 octobre 2026 (commentaires ouverts jusqu’au 20 janvier 2027) — la direction du droit d’ici va vers l’enfant, pas vers la plateforme.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette" data-en="Seal the parental decision">Sceller la décision parentale</p>
+    <p><label for="enf-service" data-en="Service or app">Service ou application</label><br><input type="text" id="enf-service" style="width:100%"></p>
+    <p><label for="enf-decision" data-en="The decision (accepted with these settings / refused / postponed — and why)">La décision (accepté avec ces réglages / refusé / reporté — et pourquoi)</label><br><input type="text" id="enf-decision" style="width:100%"></p>
+    <p><button type="button" id="enf-sceller" data-en="Seal this decision">Sceller cette décision</button></p>
+    <p class="petite" id="enf-etat" role="status"></p>
+    <p class="petite" data-en="The decision lands in your brain as a §A decision: it will meet its proofs — the settings kept or drifted, the account's life — and its verdict, like every decision here.">La décision entre dans ton cerveau comme une décision §A : elle rencontrera ses preuves — les réglages tenus ou dérivés, la vie du compte — et son verdict, comme chaque décision ici.</p>
+  </div>
+</section>
+<section class="bloc" id="conditions-consentements">
+  <div class="entete-sec"><span class="num">51</span><h2 data-en="The consent map — from a recorded acceptance to its withdrawal">La carte des consentements — d’une acceptation consignée au chemin de son retrait</h2></div>
+  <p class="lead" data-en="A consent is not a one-way door: each acceptance has a withdrawal path, and the withdrawal is a gesture that seals itself like the acceptance. This map pairs them — where the consent is given, the path that withdraws it, what the withdrawal changes — then lets you record your acceptances and seal their withdrawals.">Un consentement n’est pas une porte à sens unique : chaque acceptation a un chemin de retrait, et le retrait est un geste qui se scelle comme l’acceptation. Cette carte les apparie — où le consentement se donne, le chemin qui le retire, ce que le retrait change — puis te laisse consigner tes acceptations et sceller leurs retraits.</p>
+  <div class="carte">
+    <table>
+      <tr><th data-en="Consent">Consentement</th><th data-en="Where it is given">Où il se donne</th><th data-en="Withdrawal path">Chemin de retrait</th><th data-en="What the withdrawal changes">Ce que le retrait change</th></tr>
+      <tr><td data-en="App tracking (Apple — ATT)">Suivi par les applications (Apple — ATT)</td><td data-en="At each app's first request, or granted wholesale">À la première demande de chaque application, ou accordé en bloc</td><td data-en="Settings → Privacy & Security → Tracking → turn off “Allow Apps to Request to Track”, or app by app (Apple's official path)">Réglages → Confidentialité et sécurité → Suivi → désactiver « Autoriser les demandes de suivi des apps », ou application par application (chemin officiel d’Apple)</td><td data-en="Apps may no longer ask to track you across other companies' apps and sites; the identifier for advertisers is no longer shared on request">Les applications ne peuvent plus demander de te suivre à travers les applications et sites d’autres entreprises ; l’identifiant publicitaire n’est plus partagé sur demande</td></tr>
+      <tr><td data-en="Ad personalisation (Google)">Personnalisation des annonces (Google)</td><td data-en="In the Google Account, on by default for signed-in activity">Dans le compte Google, active par défaut pour l’activité connectée</td><td data-en="Google Account → Data & privacy → Ad personalisation → turn off (path in the account; the setting lives where the consent was given)">Compte Google → Données et confidentialité → Personnalisation des annonces → désactiver (chemin dans le compte ; le réglage vit où le consentement s’est donné)</td><td data-en="Ads stop being personalised from your account activity; the data stay governed by the written request for the rest">Les annonces cessent d’être personnalisées depuis l’activité de ton compte ; les données restent gouvernées par la demande écrite pour le reste</td></tr>
+      <tr><td data-en="Ad preferences (Meta)">Préférences publicitaires (Meta)</td><td data-en="In the Accounts Centre and the ad settings, fed also by merchants' transmissions (Offline Conversions)">Dans le Centre de comptes et les paramètres publicitaires, alimentées aussi par les transmissions des commerçants (Conversions hors ligne)</td><td data-en="Accounts Centre → Ad preferences → adjust the topics and the data from partners (in-app path); the merchant road itself is closed by the written request, not by a setting">Centre de comptes → Préférences publicitaires → ajuster les sujets et les données des partenaires (chemin dans l’application) ; la route des commerçants elle-même se referme par la demande écrite, pas par un réglage</td></tr>
+      <tr><td data-en="Personalised ads (TikTok)">Publicités personnalisées (TikTok)</td><td data-en="In the app's settings, on unless turned off; off-TikTok activity shared by advertisers feeds it (deleted once every 24 h when cleared)">Dans les réglages de l’application, actives sauf désactivation ; l’activité hors TikTok partagée par les annonceurs l’alimente (supprimée une fois par 24 h quand elle est effacée)</td><td data-en="In the app: Profile → Settings → Ads / Personalised ads → turn off; and clear the off-TikTok activity in the same area">Dans l’application : Profil → Réglages → Publicités / Publicités personnalisées → désactiver ; et effacer l’activité hors TikTok dans le même espace</td></tr>
+    </table>
+    <p class="petite" data-en="Paths are given in words where the gesture lives in an app or an account — a direct link is only printed where this site has verified it at the primary source (rule No. 13). A withdrawal never deletes what was already collected: it stops the future. Deletion is the written request.">Les chemins sont donnés en mots là où le geste vit dans une application ou un compte — un lien direct n’est imprimé que là où ce site l’a vérifié à la source primaire (règle nº 13). Un retrait ne supprime jamais ce qui a déjà été recueilli : il arrête l’avenir. La suppression, c’est la demande écrite.</p>
+  </div>
+  <div class="carte">
+    <p class="etiquette" data-en="Record an acceptance — then seal its withdrawal">Consigner une acceptation — puis sceller son retrait</p>
+    <p><label for="cons-service" data-en="Service">Service</label><br><input type="text" id="cons-service" style="width:100%"></p>
+    <p><label for="cons-objet" data-en="What was accepted (in your words)">Ce qui a été accepté (dans tes mots)</label><br><input type="text" id="cons-objet" style="width:100%"></p>
+    <p><button type="button" id="cons-consigner" data-en="Seal this acceptance">Sceller cette acceptation</button></p>
+    <p class="petite" id="cons-etat" role="status"></p>
+    <div id="cons-liste"></div>
+  </div>
+</section>
+<p class="traversees">Le for imposé, tes recours d’ici → <button type="button" class="secondaire" data-ouvrir="for">Le for est ailleurs</button> · les délais qui courent → <button type="button" class="secondaire" data-ouvrir="fenetres">Le minuteur de fenêtre</button> · les décisions des régulateurs → <button type="button" class="secondaire" data-ouvrir="decisions">Le registre des décisions</button></p></div>
+
+</main>
+
+  <p class="petite" id="note-rafraichissement" data-en="How this page refreshes (Alex's directive, November 3, 2026): on opening, the copy of the page kept in this device's cache — the previous state, the previous sum — is displayed at once; in the background, it compares itself, by the site's canonical seal, to the fresh version on the server; if the seal has moved, it reloads once, on its own, to the current version. This mechanism reads only the site's own files: the cache it uses is this page's cache, never your data — and the reload never touches your user brain; your local memory stays exactly as it is.">Rafraîchissement de la page (directive d’Alex, 3 novembre 2026) : à l’ouverture, la page gardée en cache sur cet appareil — l’état précédent, la somme précédente — s’affiche aussitôt ; en arrière-plan, elle se compare, par le sceau canonique du site, à la version fraîche du serveur ; si le sceau a bougé, elle se recharge une fois, toute seule, sur la version à jour. Ce mécanisme ne lit que les fichiers du site lui-même : le cache utilisé est celui de cette page, jamais tes données — et le rechargement ne touche pas ton cerveau d’utilisateur, ta mémoire locale reste telle quelle.</p>
+  <p class="petite" id="ligne-rafraichissement" hidden></p>
+
+<footer class="pied" id="contact">
+  <div class="interieur">
+    <p style="font-size:1.02rem;color:var(--encre)"><b>© 2026 Alexandre Vautour Gagnon — Tous droits réservés.</b></p>
+    <p>Le Protocole de Convergence Fibonacci-23, la méthode, les textes, le registre et le personnage SoPHIa sont la propriété intellectuelle de leur auteur. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site.</p>
+    <p><b>AUDIT UNISSON — Preuve d'Antériorité V-G</b> • Protocole de Convergence Fibonacci-23 • Sainte-Martine, Québec</p>
+    <p>Écrire au protocole : <a href="mailto:agent.ia.sophia@gmail.com">agent.ia.sophia@gmail.com</a> (boîte de l'agente SoPHIa) • Profil du chercheur : <a href="https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">ORCID 0009-0006-9124-4407</a></p>
+    <p>Borne, écrite et tenue : un sceau prouve qu'un contenu existait à une date et n'a pas changé depuis.<br>Il ne tranche pas la vérité du contenu, quel qu'en soit l'auteur.</p>
+    <p style="font-family:var(--serif);font-style:italic">« Qui surveille le surveillant ? Le SHA-256. »</p>
+  </div>
+</footer>
+
+
+<style>body{font-family:Georgia,serif;margin:2.2cm;color:#111}pre{white-space:pre-wrap;font:inherit;line-height:1.55}</style>
+<style>
+/* ===== v59 — couche imagerie-aventure : les visuels, les ambiances, la micro-vie ===== */
+.panneau.actif .bloc{animation:couche59 .55s ease both}
+@keyframes couche59{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#p-methode{background:linear-gradient(180deg,rgba(63,193,201,.08),transparent 360px)}
+#p-temps,#p-calendrier{background-image:radial-gradient(rgba(169,123,30,.13) 1px,transparent 1.5px);background-size:27px 27px;background-position:0 0}
+#p-preuves,#p-verifier{background:radial-gradient(900px 320px at 50% 0,rgba(176,44,32,.07),transparent 70%)}
+#p-confidentialite,#p-donnees{background:linear-gradient(180deg,rgba(53,192,139,.08),transparent 360px)}
+.compteur .nombre{animation:respire59 3.4s ease-in-out infinite}
+@keyframes respire59{0%,100%{opacity:1}50%{opacity:.8}}
+.sceau-cadre:hover .sceau-long{text-shadow:0 0 16px rgba(212,175,55,.5)}
+.coq59-grille{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:1.2rem;align-items:start}
+@media(max-width:820px){.coq59-grille{grid-template-columns:1fr}}
+#coq59-svg{width:100%;height:auto}
+#coq59-svg .couche{fill:none;stroke:var(--or);stroke-width:5;stroke-linecap:round;opacity:.1;transition:opacity .7s ease}
+#coq59-svg .couche.posee{opacity:.95}
+.coq59-liste{list-style:none;margin:0;padding:0}
+.coq59-liste li{margin:.5rem 0;padding:.45rem .7rem;border-left:3px solid var(--ligne);opacity:.38;transition:opacity .6s ease,border-color .6s ease}
+.coq59-liste li.posee{opacity:1;border-left-color:var(--or)}
+#te-phrase{cursor:text;outline:none;border-bottom:1px dashed var(--or);padding-bottom:.15rem}
+#te-phrase:focus{border-bottom:2px solid var(--or)}
+.te-boite.casse .te-sceau{color:#c0392b}
+.te-boite.casse{animation:tremble59 .35s ease}
+@keyframes tremble59{0%,100%{transform:none}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+#cal59-canvas{width:100%;height:auto;display:block}
+.jumeau-scene{position:relative;height:308px;margin:.6rem 0}
+.jumeau-zone{position:absolute;top:0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or-clair)}
+.jumeau-zone-g{left:0}.jumeau-zone-d{right:0}
+.jumeau-centre{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);text-align:center;color:var(--or-clair);opacity:.25;transition:opacity .8s ease}
+.jumeau-centre span{display:block;font-size:.72rem;letter-spacing:.14em;margin-top:.2rem}
+#jumeau-visuel.assemble .jumeau-centre{opacity:1}
+.jumeau-piece{position:absolute;left:2%;width:31%;border:1px solid var(--ligne);border-radius:12px;padding:.55rem .7rem;background:var(--puit2);transition:left 1.15s ease,border-color .8s ease,box-shadow .8s ease;top:calc(16% + var(--r)*21%)}
+.jumeau-piece b{letter-spacing:.12em;color:var(--or-clair)}
+.jumeau-piece span{display:block;font-size:.82rem;margin-top:.15rem}
+#jumeau-visuel.assemble .jumeau-piece{left:34.5%;border-color:var(--or);box-shadow:0 0 18px rgba(212,175,55,.18)}
+#jumeau-visuel.retour .jumeau-piece{left:67%;border-color:var(--vert);box-shadow:0 0 18px rgba(53,192,139,.18)}
+#jumeau-visuel.retour .jumeau-centre{opacity:.25}
+@media(max-width:640px){.jumeau-piece{width:40%}.jumeau-piece span{display:none}#jumeau-visuel.assemble .jumeau-piece{left:30%}#jumeau-visuel.retour .jumeau-piece{left:58%}}
+#vm-bande{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.6rem 0 .2rem}
+.vm-maillon{width:13px;height:13px;border-radius:50%;border:2px solid var(--or);flex:none}
+.vm-maillon.plein{background:var(--or)}
+.vm-lien{width:10px;height:2px;background:var(--or);opacity:.6;flex:none}
+@media (prefers-reduced-motion: reduce){
+  .panneau.actif .bloc{animation:none}
+  .compteur .nombre{animation:none}
+  .te-boite.casse{animation:none}
+  #coq59-svg .couche,.coq59-liste li,.jumeau-piece,.jumeau-centre{transition:none}
+}
+</style>
+<style>
+/* v63 corrigé — finitions écrans étroits : aucun défilement horizontal parasite */
+pre{max-width:100%;overflow-x:auto}
+.mono,.formule-code{overflow-wrap:anywhere}
+img,video,svg{max-width:100%}
+</style>
+<script>window.PANNEAU_PAGE="conditions";</script>
+<script src="assets/js/routeur.js"></script>
+<script src="assets/js/t12-utils.js"></script>
+<script src="assets/js/t13.js"></script>
+<script src="assets/js/t14.js"></script>
+<script src="assets/js/t15.js"></script>
+<script src="assets/js/t16.js"></script>
+<script src="assets/js/t17.js"></script>
+<script src="assets/js/t18.js"></script>
+<script src="assets/js/t19.js"></script>
+<script src="assets/js/t20.js"></script>
+<script src="assets/js/t21.js"></script>
+<script src="assets/js/t22.js"></script>
+<script src="assets/js/t23.js"></script>
+<script src="assets/js/t24.js"></script>
+<script src="assets/js/t25.js"></script>
+<script src="assets/js/t26.js"></script>
+<script src="assets/js/t27.js"></script>
+<script src="assets/js/t28.js"></script>
+<script src="assets/js/t29.js"></script>
+<script src="assets/js/t30.js"></script>
+<script src="assets/js/t31.js"></script>
+<script src="assets/js/t32.js"></script>
+<script src="assets/js/t33.js"></script>
+<script src="assets/js/t34.js"></script>
+<script src="assets/js/t35.js"></script>
+<script src="assets/js/t36.js"></script>
+<script src="assets/js/t37.js"></script>
+<script src="assets/js/t38.js"></script>
+<script src="assets/js/t39.js"></script>
+<script src="assets/js/t40.js"></script>
+<script src="assets/js/t41.js"></script>
+<script src="assets/js/t42.js"></script>
+<script src="assets/js/t43.js"></script>
+<script src="assets/js/t44.js"></script>
+<script src="assets/js/t45.js"></script>
+<script src="assets/js/t46.js"></script>
+<script src="assets/js/t47.js"></script>
+<script src="assets/js/t48.js"></script>
+<script src="assets/js/t49.js"></script>
+<script src="assets/js/rafraichissement.js"></script>
+<script src="assets/js/t51.js"></script>
+<script src="assets/js/t52.js"></script>
+<script src="assets/js/t53.js"></script>
+<script src="assets/js/recherche-texte.js"></script>
+<script src="assets/js/t55.js"></script>
+<script src="assets/js/t56.js"></script>
+</body>
+</html>
