@@ -22,7 +22,7 @@ li{margin:.45em 0}</style>
 <a class="retour" href="/">← Retour au site</a>
 
 <h1>Kit de vérification autonome</h1>
-<p class="date">Version 62, le 19 novembre 2026.</p>
+<p class="date">Version 63 — refonte A, le 23 novembre 2026.</p>
 <p>Le vérificateur de ce site fonctionne dans votre navigateur — mais il dépend du site.
 Ce kit-ci n'en dépend pas : il est fait pour survivre à la disparition du site lui-même.
 Si ce site fermait demain, la preuve qu'il portait resterait recalculable chez vous.</p>
@@ -36,13 +36,13 @@ Si ce site fermait demain, la preuve qu'il portait resterait recalculable chez v
 <p><code>python3 kit-verifier.py repertoire-maillons-propre.csv gel-montage.json</code></p>
 <p>Le script recalcule chaque digest cumulé depuis le premier maillon et le compare à celui publié.
 Il répond MATCH, ou il nomme le premier maillon où le calcul diverge. Il n'écrit rien, ne se connecte à rien.</p>
-<h2>Ce que ça prouve — et ce que ça ne prouve pas</h2>
+<h2>Le kit vérifie aussi le site lui-même</h2><p>Depuis la refonte A, le site est fait de pages par chambre, chaînées à un manifeste (<code>assets/manifeste.json</code>). Sans argument, le même script vérifie ce régime : <code>python3 kit-verifier.py</code> — il recalcule le sceau du manifeste, chaîné au sceau du dernier fichier unique, puis l’empreinte de chaque page contre le manifeste, puis celle de chaque endroit, puis le sceau canonique du noyau. Il répond MATCH, ou il nomme le premier écart.</p><h2>Ce que ça prouve — et ce que ça ne prouve pas</h2>
 <p>Ça prouve que la chaîne publiée est internement cohérente : aucun maillon n'a été réécrit
 sans casser la suite. Ça ne prouve pas, seul, que les textes disent vrai — pour les dates,
 la chaîne s'adosse à des ancrages publics indépendants, décrits sur la page Vérifier du site.
 Un hash démontre l'intégrité ; la démonstration reproductible, vous venez de la faire.</p>
 
-<p class="pied">Page compagne du site de SoPHIa — version 62, le 19 novembre 2026.<br>
+<p class="pied">Page compagne du site de SoPHIa — version 63 (refonte A), le 23 novembre 2026.<br>
 Ce site ne détient aucune base de données : il n'y a rien à fuiter.</p>
 </main>
 </body>

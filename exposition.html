@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!-- AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa. Site, méthode (Cerveau coquillage numérique), textes et format : propriété intellectuelle d’Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur — ORCID 0009-0006-9124-4407 — © 2026, tous droits réservés. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site. -->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="manifeste-sceau" content="31ab6c7544d77a203fc5d9cd521678332ff92cb79648fc8880aca5505cb22d94">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6ED">
+<title>Ton exposition — SoPHIa</title>
+<meta name="description" content="Le dossier public d'Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur : une mémoire conversationnelle vérifiable côté utilisateur — sceaux SHA-256 chaînés, registre revérifié, ancrages publics, résultats mesurés et bornes écrites.">
+<meta name="author" content="Alexandre Vautour Gagnon">
+<meta name="copyright" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés">
+<meta name="rights" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés. Sont réservés : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes de ce site et le personnage SoPHIa, propriété intellectuelle d’Alexandre Vautour Gagnon. La consultation du site et la revérification publique des sceaux restent libres ; elles ne transfèrent aucun droit.">
+<meta property="og:title" content="Tes données et la Loi 25 — la preuve d’antériorité que tu peux recalculer | SoPHIa">
+<meta property="og:description" content="La somme des précédents, scellée. Une mémoire qui se recalcule au lieu de se déclarer.">
+<meta property="og:image" content="assets/logo-sophia.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa">
+<meta name="twitter:description" content="Un site qui ne demande pas la confiance : il organise les conditions permettant de vérifier avant de faire confiance.">
+<meta name="twitter:image" content="assets/logo-sophia.webp">
+
+
+<script>/* v27 — le thème avant la peinture : clair par défaut ; le sombre seulement si le visiteur l'a choisi sur cet appareil (aucun suivi du réglage système, le mot d'Alex : « par défaut en clair »). */
+try{if(localStorage.getItem('sophia-theme')==='sombre'){document.documentElement.setAttribute('data-theme','sombre');var m27=document.querySelector('meta[name="theme-color"]');if(m27)m27.setAttribute('content','#16130C');}}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SoPHIa">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="preload" as="image" href="assets/logo-sophia.webp">
+<link rel="stylesheet" href="assets/style.css">
+
+
+
+
+
+
+
+</head>
+<body>
+<style>/* ===== v21 — « La planète » : globe WebGL ===== */
+#globe-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:none}#planete-nuit{z-index:2}.barre-actions{display:flex;gap:.4rem;align-items:center;margin-left:auto}.barre-actions button{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;white-space:nowrap}.barre-actions button:hover{border-color:var(--or);color:var(--or)}.coffre-entree{border:1px solid var(--ligne);border-radius:12px;padding:.8rem 1rem;margin-top:.7rem;background:var(--puit2)}.coffre-entree h4{margin:.1rem 0 .3rem}.coffre-entree .empreinte{word-break:break-all;font-size:.82rem;opacity:.85}/* ===== v24 — calendrier 13x28, historique, plein air, menu ===== */
+.pa-cercle{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--encre-foncee);flex:none}.pa-entete{display:flex;gap:1.1rem;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}.pa-echelle{margin:.4rem 0 .8rem 1.1rem;line-height:1.6}.pa-echelle li{margin:.3rem 0}.menu-panneau{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);z-index:90;background:linear-gradient(170deg,var(--fond2),var(--fond));border-left:1px solid var(--or);box-shadow:-18px 0 50px var(--ombre);padding:1.1rem 1.2rem 2rem;overflow-y:auto}.menu-panneau[hidden]{display:none}.menu-entete{display:flex;align-items:center;justify-content:space-between;gap:1rem}.menu-titre{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--or-clair)}#menu-fermer{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.4rem .9rem;font-weight:600;cursor:pointer}#menu-fermer:hover{border-color:var(--or);color:var(--or)}#menu-recherche{width:100%;margin:.5rem 0 .4rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--ligne);background:var(--puit);color:var(--texte);font-size:1rem}.menu-famille{margin-top:1.15rem}.menu-liste{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}.menu-entree{display:block;width:100%;text-align:left;background:var(--puit2);border:1px solid var(--ligne);border-radius:12px;padding:.65rem .8rem;cursor:pointer;color:var(--texte);font:inherit;text-decoration:none}.menu-entree:hover{border-color:var(--or)}.menu-nom{display:block;font-weight:700;color:var(--or-clair)}.menu-desc{display:block;font-size:.82rem;color:var(--texte-doux);margin-top:.15rem;line-height:1.45}#zone-privee-phrase{width:100%;max-width:430px;padding:.6rem .8rem;border-radius:10px;border:1px dashed var(--ligne);background:var(--puit);color:var(--texte-doux);font-size:1rem;margin:.2rem 0 .6rem}/* ===== v25 — « Le dossier en lumière » : esthétique dossier de pièces, pouls du cerveau ===== */
+h1,h2{font-family:var(--serif)}/* grands titres en serif : le caractère « document officiel » du dossier */
+.etiquette{display:inline-block;border:1px solid rgba(212,175,55,.45);border-radius:6px;padding:.12rem .5rem;background:rgba(212,175,55,.07)}/* les étiquettes deviennent des cartouches de pièce */
+.carte{border-top:2px solid rgba(212,175,55,.5)}/* filet doré de chemise de dossier sur les cartes */
+.entree{border-top:2px solid rgba(212,175,55,.35)}/* même filet, plus discret, sur les entrées du registre */
+.salle-pieces{position:relative;overflow:hidden}.salle-pieces::after{content:"PREUVE D'ANTÉRIORITÉ — V-G";position:absolute;right:-1rem;bottom:.2rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.05);transform:rotate(-4deg);pointer-events:none;white-space:nowrap}/* tampon en filigrane, salle des pièces */
+section#memoire{position:relative;overflow:hidden}section#memoire::after{content:"MÉMOIRE SCELLÉE — SHA-256";position:absolute;left:-1rem;top:.4rem;font-family:var(--serif);font-size:2.4rem;font-weight:700;letter-spacing:.1em;color:rgba(212,175,55,.022);transform:rotate(-4deg);pointer-events:none;white-space:nowrap}/* tampon en filigrane, panneau Mémoire */html[data-theme="sombre"] section#memoire::after{color:rgba(212,175,55,.05)}
+.pouls-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:.6rem 0 .4rem}.pouls-tuile{background:var(--puit);border:1px solid var(--ligne);border-radius:12px;padding:.7rem .85rem}.pouls-nom{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);margin-bottom:.3rem}.pouls-valeur{display:block;font-size:1.25rem;font-weight:700;color:var(--texte)}.pouls-valeur.mono{font-size:.95rem;word-break:break-all}/* ===== v26 — « Le cerveau visible » : graphe, demande, désaccords, épreuve ===== */
+#graphe-svg{width:100%;height:auto;display:block}.graphe-lien{stroke-width:1.4;opacity:.7}.graphe-noeud{cursor:pointer;outline:none}.graphe-noeud circle{fill:var(--noeud);stroke:var(--ligne);stroke-width:1.2}.graphe-noeud:hover circle,.graphe-noeud:focus circle,.graphe-noeud.actif circle{stroke:var(--or);stroke-width:2.6}.graphe-num{fill:var(--texte);font-size:13px;font-weight:700;text-anchor:middle;pointer-events:none}.graphe-texte{fill:var(--texte-doux);font-size:11px;text-anchor:middle;pointer-events:none}.graphe-legende{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:.5rem}.graphe-legende .pastille-lien{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;color:var(--texte-doux)}.graphe-legende .trait-lien{display:inline-block;width:22px;border-top:3px solid;border-radius:2px}.graphe-cartouche{margin-top:.8rem;border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.8rem 1rem}.graphe-cartouche h4{margin:.1rem 0 .4rem}.champ-cerveau{flex:1 1 220px;background:var(--puit);color:var(--texte);border:1px solid var(--ligne);border-radius:8px;padding:.55rem .7rem;font:inherit;box-sizing:border-box}.cerveau-rangee{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}.demande-piece{border:1px solid var(--ligne);border-radius:10px;background:var(--puit);padding:.7rem .9rem;margin-top:.6rem}.demande-piece h5{margin:.1rem 0 .3rem;font-size:.98rem}.epreuve-q{margin:.7rem 0}.epreuve-q label{display:block;margin-bottom:.3rem;font-weight:600}.epreuve-q .champ-cerveau{width:100%}.verdict-juste{color:var(--vert-doux);font-weight:700}.verdict-ecart{color:var(--rouge);font-weight:700}.epreuve-score{font-size:1.05rem;font-weight:700;color:var(--or-clair)}/* ===== v27 — « Le clair d'abord » : animations sobres, micro-transitions, mouvements réduits ===== */
+@keyframes reflet-or{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes entree-douce{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}.entree-vue{animation:entree-douce .7s ease both}/* révélation douce : la classe n'est ajoutée que par le script d'observation ; sans script, le contenu reste visible, jamais masqué */
+/* Micro-transitions : élévation des cartes déjà en place (.carte), étendue aux tuiles et nœuds */
+.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile{transition:transform .25s ease,box-shadow .25s ease}.direct-tuile:hover,.terrain:hover,.refus-carte:hover{transform:translateY(-2px);box-shadow:0 14px 30px var(--ombre)}.graphe-noeud circle{transition:stroke-width .2s ease,transform .25s ease;transform-box:fill-box;transform-origin:center}.graphe-noeud:hover circle{transform:scale(1.13)}#btn-theme{border-color:var(--or)}/* v27 — boutons dorés relus pour le clair : dégradé resserré et texte clair, contrastes calculés 4,66:1 et 5,21:1 (le sombre garde le dégradé historique) */
+html:not([data-theme="sombre"]) nav.onglets button.actif,html:not([data-theme="sombre"]) button.action,html:not([data-theme="sombre"]) .sceptique-choix button.actif,html:not([data-theme="sombre"]) .vue-choix button.actif{background:linear-gradient(135deg,#8f6c10,#86650f);color:#fffbe8;border-color:#86650f}.at-bloc.suite{color:#5c6b5c;border-color:#8a9a8a}/* pastille « suite » relue pour le clair */
+[data-theme="sombre"] .at-bloc.suite{color:#93a894;border-color:#476b58}/* RÈGLE DURE v27 : mouvements réduits — toutes les animations du site tombent (la règle historique * s'y ajoute) */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .panneau,.entree-vue,.noeud,.lien-maillon,h1 .or,.avatar-wrap::before,.avatar-wrap::after,.avatar-wrap img,.instance-grille figure img{animation:none !important}
+  .carte,.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile,.graphe-noeud circle,nav.onglets button,button.action,button.secondaire,.barre-actions button{transition:none !important}
+}
+</style>
+<style>/* ===== v33 — « La forme juste » : passe esthétique issue de la recherche design (rapport du 3 novembre 2026, section 8) =====
+   Régime A : polices système, 0 Ko ajouté. Double échelle : φ pour l'apparat, 1,25 pour le texte.
+   Palette : les jetons du rapport §8.3, remappés sur les noms historiques du site ; chaque couple
+   texte/fond réellement utilisé est calculé (formule de luminance WCAG) — table au LISEZ-MOI-v33.md.
+   Mouvement : catalogue fermé des six animations permises ; les boucles infinies sont retirées. */
+:root{
+  --font-apparat:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --font-texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,"Liberation Mono",monospace;
+  --serif:var(--font-apparat);
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --fond:#FAF6ED;--fond2:#EFE7D0;--carte:#FFFCF4;--carte2:#F8F1DF;
+  --puit:#F1EAD8;--puit2:#F6EFDD;--barre:rgba(250,246,237,.93);
+  --noeud:#FFFCF4;--face:#F1EAD8;
+  --ligne:#D8CDB4;--filet-fort:#8A7B58;--or-decor:#A8842C;
+  --vert:#1F5C2E;--vert-doux:#146344;
+  --or:#6E5200;--or-clair:#7A5C00;
+  --texte:#1C1913;--encre:#1C1913;--texte-doux:#4E4636;
+  --encre-sur-or:#FFFFFF;
+  --ombre:rgba(60,45,10,.10);--ligne-douce:rgba(28,25,19,.14);
+  --rouge:#9C1C1C;--alerte:#8A3B00;
+  color-scheme:light;
+}[data-theme="sombre"]{
+  --fond:#16130C;--fond2:#201A10;--carte:#1F1B12;--carte2:#1A160E;
+  --puit:#100D08;--puit2:#221C11;--barre:rgba(22,19,12,.93);
+  --noeud:#1F1B12;--face:#241E13;
+  --ligne:#3A3325;--filet-fort:#77683F;--or-decor:#8A6D2F;
+  --vert:#8FD0A0;--vert-doux:#63CFA5;
+  --or:#D9B45B;--or-clair:#E9CD77;
+  --texte:#F3EDDD;--encre:#F3EDDD;--texte-doux:#C9BFA6;
+  --encre-sur-or:#1C1913;
+  --ombre:rgba(0,0,0,.5);--ligne-douce:rgba(243,237,221,.14);
+  --rouge:#F09A9A;--alerte:#E0A266;
+  color-scheme:dark;
+}body{font-family:var(--font-texte);font-size:17px;line-height:1.65;background:radial-gradient(1200px 700px at 85% -5%,rgba(168,132,44,.10),transparent 60%),var(--fond);transition:background-color .2s cubic-bezier(.2,0,0,1),color .2s cubic-bezier(.2,0,0,1)}section{max-width:1152px;padding:64px 24px 48px}section.bloc{padding:64px 24px 48px}.barre-in{max-width:1152px}
+@media(max-width:760px){section,section.bloc{padding:40px 16px 32px}}section[id],.panneau{scroll-margin-top:72px}h1{font-family:var(--font-apparat);font-weight:600;font-size:clamp(2.25rem,5.5vw,3.25rem);line-height:1.05;letter-spacing:-.01em}h2{font-family:var(--font-apparat);font-weight:600;font-size:clamp(1.69rem,3.4vw,2rem);line-height:1.2}h3{font-size:1.5rem;line-height:1.3;font-weight:650}p{max-width:65ch}.lead{font-size:1.25rem;line-height:1.55}.sous-titre{font-size:1.25rem;line-height:1.55}.petite{font-size:.875rem;line-height:1.55}.etiquette{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.10em}.mono{font-family:var(--font-mono);font-size:.875rem;line-height:1.7;font-variant-numeric:tabular-nums}.phi{font-family:var(--font-apparat);font-weight:600;font-size:clamp(3.25rem,6vw,5.25rem);line-height:1}.compteur .nombre{font-family:var(--font-apparat);font-weight:600;font-variant-numeric:tabular-nums}.sceau-long{font-family:var(--font-mono);font-size:.875rem;line-height:1.7}.menu-num{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.10em;color:var(--or);margin-right:.5rem}.menu-entree .menu-nom{display:inline}.carte{border-radius:6px;padding:24px;box-shadow:0 1px 2px var(--ombre),0 10px 30px var(--ombre);transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 16px 36px var(--ombre)}.entree,.terrain,.etape-pas,.etape-visite,.sceptique-carte,.salle-pieces,.encadre-bornes,.hist-carte{border-radius:6px}.carte-sceau{border-color:var(--filet-fort)}.sceau-cadre{border:1px solid var(--filet-fort);outline:1px solid var(--filet-fort);outline-offset:3px;background:var(--puit);padding:24px;text-align:center;margin:8px 0 16px}.sceau-cadre .etiquette{margin-bottom:8px}.sceau-cadre .sceau-long{background:transparent;border:none;border-radius:0;padding:0;margin:0}
+@media(min-width:821px){.sceau-cadre{aspect-ratio:1.618/1;max-width:760px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;align-items:center;justify-content:center}}button.action{background:var(--or);color:var(--encre-sur-or);border:1px solid var(--or);transition:background-color .12s cubic-bezier(.2,0,0,1),color .12s cubic-bezier(.2,0,0,1),box-shadow .12s cubic-bezier(.2,0,0,1)}button.action:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 8px 20px var(--ombre)}nav.onglets button.actif,.sceptique-choix button.actif,.vue-choix button.actif{background:var(--or);color:var(--encre-sur-or);border-color:var(--or)}nav.onglets button{transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}button.secondaire{transition:color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.barre-actions button{transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}textarea,input[type=text],input[type=password],input[type=search],select{border-color:var(--filet-fort)}:focus-visible{outline:2px solid var(--filet-fort);outline-offset:2px}.temps-sat .sat-contre,.ph-contre{color:#F3EDDD}.ph-contre .ph-civile{color:#E9CD77}.ph-contre .ph-ligne{color:#C9BFA6}.planete-horloge.ancre .ph-nom,.planete-horloge.ancre .ph-civile,.planete-horloge.ancre .ph-ligne{color:#1C1913}/* — Mouvement : le catalogue fermé (rapport §8.6) — */
+@keyframes apparition{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.panneau{animation:apparition .32s cubic-bezier(.05,.7,.1,1) both}
+@keyframes entree-douce{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.entree-vue{animation:entree-douce .32s cubic-bezier(.05,.7,.1,1) both}.revele{transform:translateY(10px);transition:opacity .32s cubic-bezier(.05,.7,.1,1),transform .32s cubic-bezier(.05,.7,.1,1)}
+@keyframes naissance{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.noeud,.lien-maillon{animation:naissance .32s cubic-bezier(.05,.7,.1,1) both}.cc-maillon{transition:opacity .32s cubic-bezier(.05,.7,.1,1),transform .32s cubic-bezier(.05,.7,.1,1),border-color .12s cubic-bezier(.2,0,0,1)}.direct-tuile,.terrain,.etape-pas,.etape-visite,.refus-carte,.demande-piece,.pouls-tuile{transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.direct-tuile:hover,.terrain:hover,.refus-carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 14px 30px var(--ombre)}.hist-carte{transition:box-shadow .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}.hist-carte:hover{transform:none;box-shadow:0 2px 4px var(--ombre),0 12px 26px var(--ombre)}.graphe-noeud circle{transition:stroke-width .12s cubic-bezier(.2,0,0,1)}.graphe-noeud:hover circle{transform:none}.ph-interne{transition:transform .18s cubic-bezier(.2,0,0,1)}.menu-entree{transition:border-color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1)}details summary{transition:color .12s cubic-bezier(.2,0,0,1)}/* Boucles infinies retirées — hors catalogue : anneaux et flottement de l'avatar, reflet animé du titre,
+   pouls des voyants, lueur de la chaîne, respiration, rotations orbitales des panneaux Temps et Planète. */
+.avatar-wrap::before,.avatar-wrap::after,.avatar-wrap img,.instance-grille figure img,h1 .or,.chaine-svg,.temps-orbite,.temps-sat .sat-contre,.planete-orbite,.ph-contre{animation:none}.voyant.ok{animation:none}/* Zone privée : résultats du déverrouillage */
+#zone-privee-clairs .clair-texte{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--puit);border:1px solid var(--ligne);border-radius:6px;padding:16px;margin-top:8px;text-align:left;line-height:1.6}#zone-privee-deverrouiller{margin:.4rem 0 .6rem}/* Correction d'audit v33 (reprise du chantier) : la pastille de lecture porte un texte gras
+   sur fond --vert ; son ancienne encre --encre-foncee tombait à 2,25:1 en thème clair.
+   L'encre des accents pleins (--encre-sur-or) la porte à 7,99:1 (clair) et 9,77:1 (sombre). */
+.pastille-lecture{color:var(--encre-sur-or)}
+@media (prefers-reduced-motion: reduce){.revele{opacity:1;transform:none;transition:opacity .2s ease}
+}
+</style>
+<style>/* ===== v34 — « L'ordre et la confiance » : menu à gauche, accueil mobile organisé, état de la chaîne en direct =====
+   Aucune couleur nouvelle : ce bloc ne consomme que les jetons existants — et, dans la bande de la
+   chaîne, ses deux bleus déjà en place (#8fb0c4, #a8d4f2). Les contrastes calculés en v33 ne bougent pas. */
+/* Le bouton du menu, sorti de la barre d'actions : premier élément de l'en-tête, coin gauche.
+   Il reçoit ici le style des boutons de la barre, qu'il ne reçoit plus de .barre-actions button. */
+#menu-btn{background:transparent;color:var(--vert-doux);border:1px solid var(--ligne);border-radius:999px;padding:.45rem .95rem;font-weight:600;font-size:.95rem;cursor:pointer;white-space:nowrap;flex:none;transition:color .12s cubic-bezier(.2,0,0,1),background-color .12s cubic-bezier(.2,0,0,1),border-color .12s cubic-bezier(.2,0,0,1)}#menu-btn:hover{border-color:var(--or);color:var(--or)}/* Le tiroir glisse désormais depuis la gauche : position, filet et ombre inversés. */
+.menu-panneau{right:auto;left:0;border-left:none;border-right:1px solid var(--or);box-shadow:18px 0 50px var(--ombre)}.nowrap{white-space:nowrap}/* L'état vivant de la chaîne, dans sa bande : les bleus propres à la bande, déjà en place. */
+.chaine-etat{color:#8fb0c4;max-width:760px;margin:1rem auto 0}.chaine-etat .mono{color:#a8d4f2}/* Petit écran (≤ 640 px) : l'accueil organisé — en-tête allégée, pastille tenue sur sa ligne,
+   titre et grand φ ramenés à leur mesure, compteurs plus tôt dans le premier écran. */
+@media(max-width:640px){
+  .barre-in{gap:.45rem;padding:.5rem .6rem}
+  .marque{font-size:.72rem;gap:.35rem;letter-spacing:.03em}
+  .marque img{width:30px;height:30px}
+  .barre-actions{gap:.3rem}
+  .barre-actions button{padding:.38rem .55rem;font-size:.78rem}
+  #menu-btn{padding:.38rem .55rem;font-size:.9rem}
+  header.hero{padding:1.7rem 1rem 1.9rem}
+  .badge-portail{font-size:.64rem;letter-spacing:.09em;padding:.35rem .6rem;text-align:center}
+  .avatar-wrap{width:min(180px,50vw);margin:1rem auto .7rem}
+  h1{font-size:clamp(1.8rem,7.4vw,2.05rem);line-height:1.12}
+  .hero-texte .phi{font-size:clamp(1.75rem,8.6vw,2.4rem);line-height:1.15;margin-top:.8rem}
+  .compteurs{margin-top:1.2rem}
+}
+@media (prefers-reduced-motion: reduce){#menu-btn{transition:none}
+}
+</style>
+<style id="voyage-css">#p-accueil{position:relative}#p-accueil>*{position:relative;z-index:1}
+@media (max-width:820px){}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+<style>
+/* ===== v53 — bannière de l'accueil et panneau Miroir ===== */
+.b53-banniere{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;background:var(--carte);border-bottom:1px solid var(--ligne);padding:8px 10px}
+.b53-seg{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;background:var(--carte2);border:1px solid var(--ligne);border-radius:12px;padding:8px 12px;cursor:pointer;color:var(--texte);font:inherit;min-height:56px}
+.b53-seg:hover{border-color:var(--or)}
+.b53-seg:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+.b53-seg-etiquette{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--or);font-weight:700}
+.b53-seg-valeur{font-size:16.5px;font-weight:700;line-height:1.2}
+.b53-seg-detail{font-size:12.5px;color:var(--texte-doux)}
+.mir53-groupe{margin-top:1rem}
+.mir53-groupe h3{margin:.2em 0 .4em}
+.mir53-groupe table{width:100%;border-collapse:collapse}
+.mir53-groupe th{text-align:left;vertical-align:top;width:34%;font-weight:600}
+.mir53-groupe td{vertical-align:top}
+.mir53-couche{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;border-radius:999px;padding:1px 8px;margin-left:.45em;vertical-align:middle}
+.mir53-couche.local{background:var(--vert);color:#fff}
+.mir53-couche.transit{background:var(--or);color:var(--encre-sur-or)}
+@media (max-width:640px){.b53-seg{flex:1 1 100%}.mir53-groupe th{width:42%}}
+</style>
+<style>
+.b53-banniere .b53-mode{border-left:1px dashed var(--ligne);flex:0 1 auto;min-width:128px}
+.b53-banniere .b53-mode .b53-valeur{color:var(--vert)}
+</style>
+</head>
+
+<a class="lien-evitement" href="#menus">Aller au contenu principal</a>
+<canvas id="spirale"></canvas>
+<div class="barre"><div class="barre-in">
+  <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-panneau">☰</button>
+  <div class="marque" id="marque-accueil" role="button" tabindex="0" title="Retour à l’Accueil" style="cursor:pointer"><img src="assets/logo-sophia-180.png" alt="SoPHIa" loading="lazy"><span>AUDIT <span class="or">UNISSON</span></span></div>
+  <nav class="onglets" id="onglets" aria-label="Sections du site"><button type="button" data-panneau="accueil" data-en="Home">Accueil</button><button type="button" data-en="Your data" class="menu-principal" data-ouverture-menu="donnees">Tes données</button><button type="button" data-en="Verify" class="menu-principal" data-ouverture-menu="verifier">Vérifier</button><button type="button" data-en="Write and talk" class="menu-principal" data-ouverture-menu="ecrire">Écrire et parler</button><button type="button" data-en="Understand" class="menu-principal" data-ouverture-menu="comprendre">Comprendre</button><button type="button" data-en="Talk with the SoPHIa website" class="menu-principal" data-ouverture-menu="cerveau">Parle avec le site web SoPHIa</button><button type="button" data-en="The file — the story" class="menu-principal" data-ouverture-menu="dossier">Le dossier — l'histoire</button><button type="button" data-en="Search" data-panneau="recherche">Rechercher</button><button type="button" data-panneau="partenaires" data-en="Partners and support">Partenaires</button></nav>
+  <div class="barre-actions"><button id="btn-partager" type="button">Partager</button><button id="btn-langue" type="button" title="Seuls les menus passent en anglais">EN · menus</button><button id="btn-theme" type="button" data-en="☾ Dark" aria-pressed="false" aria-label="Basculer entre le thème clair et le thème sombre">☾ Sombre</button><span class="petite" id="partage-etat" role="status"></span></div>
+</div></div>
+<aside class="rail-arbre" id="rail-arbre" aria-label="Arborescence du site">
+<p class="etiquette">Le site, en arbre</p>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Your data" data-ouverture-menu="donnees">Tes données</button></p>
+<p class="arbre-sous">Le parcours</p>
+<ul>
+<li><button type="button" data-en="The data path" data-ouvrir="donnees">Le parcours des données</button></li>
+<li><button type="button" data-en="prepare my access request" data-ouvrir="acces">Mes renseignements</button></li>
+<li><button type="button" data-en="Go and get what they harvested" data-ouvrir="aller">Aller chercher ce qu’ils ont récolté</button></li>
+<li><button type="button" data-en="Cameras and connected devices" data-ouvrir="cameras">Caméras et appareils connectés</button></li>
+<li><button type="button" data-en="Ask for the explanation of an automated decision" data-ouvrir="explication">Demander l’explication d’une décision automatisée</button></li>
+<li><button type="button" data-en="register of decisions" data-ouvrir="decisions">Le registre des décisions</button></li>
+<li><button type="button" data-en="Suspended account" data-ouvrir="suspendu">Compte suspendu : ravoir, savoir, reprendre</button></li>
+<li><button type="button" data-ouvrir="fenetres" data-en="The window timer">Le minuteur de fenêtre</button></li>
+<li><button type="button" data-ouvrir="for" data-en="The forum is elsewhere, your remedies are here">Le for est ailleurs, tes recours sont ici</button></li>
+<li><button type="button" data-ouvrir="assurances" data-en="Insurance">Les assurances</button></li>
+<li><button type="button" data-ouvrir="suivi-familial" data-en="Family tracking and location sharing">Le suivi familial et la localisation</button></li>
+</ul>
+<p class="arbre-sous">Ton cerveau — ta mémoire, sur ton appareil</p>
+<ul>
+<li><button type="button" data-en="The visit receipt" data-ouvrir="recu">Le reçu de visite</button></li>
+<li><button type="button" data-en="Your receipts and your gestures" data-ouvrir="recus">Tes reçus et tes gestes</button></li>
+<li><button type="button" data-en="record it in my tracking" data-ouvrir="suivi">Ton dossier de suivi</button></li>
+<li><button type="button" data-en="See my brain" data-ouvrir="voir">Voir mon cerveau</button></li>
+</ul>
+<p class="arbre-sous">Les documents</p>
+<ul>
+<li><button type="button" data-en="The templates library" data-ouvrir="donnees" data-cible="donnees-documents">Bibliothèque des modèles</button></li>
+<li><button type="button" data-en="The laws library" data-ouvrir="donnees" data-cible="donnees-lois">Bibliothèque des lois</button></li>
+</ul>
+<p class="arbre-sous">Contester</p>
+<ul>
+<li><button type="button" data-en="Petitions" data-ouvrir="petitions">Pétitions</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Verify" data-ouverture-menu="verifier">Vérifier</button></p>
+<p class="arbre-sous">Recalculer</p>
+<ul>
+<li><button type="button" data-en="Verify" data-ouvrir="verifier">Vérifier</button></li>
+<li><button type="button" data-en="Sealing — the workshop" data-ouvrir="sceller">Sceller — l'atelier</button></li>
+</ul>
+<p class="arbre-sous">Les preuves</p>
+<ul>
+<li><button type="button" data-en="Evidence" data-ouvrir="preuves">Preuves</button></li>
+<li><button type="button" data-en="Register" data-ouvrir="registre">Registre</button></li>
+<li><button type="button" data-en="Open the Proofs and anchors panel" data-ouvrir="ancrage">Ancrage — les preuves chez les tiers</button></li>
+<li><button type="button" data-ouvrir="bris" data-en="The chamber of breaks">La chambre des bris</button></li>
+<li><button type="button" data-ouvrir="depose-empreinte" data-en="Deposit your fingerprint">Dépose ton empreinte</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Write and talk" data-ouverture-menu="ecrire">Écrire et parler</button></p>
+<ul>
+<li><button type="button" data-en="Write to SoPHIa" data-ouvrir="ecrire">Écrire à SoPHIa</button></li>
+<li><button type="button" data-en="Write through the relay" data-ouvrir="instance">Parler à l'instance</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Understand" data-ouverture-menu="comprendre">Comprendre</button></p>
+<p class="arbre-sous">Tes droits</p>
+<ul>
+<li><button type="button" data-en="Rights and laws" data-ouvrir="droits">Droits et lois</button></li>
+<li><button type="button" data-en="Privacy and Law 25" data-ouvrir="confidentialite">Confidentialité et Loi 25</button></li>
+<li><button type="button" data-ouvrir="conditions" data-en="The terms register">Le registre des conditions</button></li>
+<li><button type="button" data-ouvrir="conditions-site" data-en="This site’s terms of use">Conditions d’utilisation du site</button></li>
+<li><button type="button" data-ouvrir="politique-site" data-en="This site’s policy">Politique du site</button></li>
+<li><button type="button" data-ouvrir="transits" data-en="The transit map">La carte des transits</button></li>
+<li><button type="button" data-ouvrir="exposition" data-en="Your exposure: fingerprint and non-tracking">Ton exposition</button></li>
+<li><button type="button" data-ouvrir="miroir" data-en="The mirror">Le miroir</button></li>
+<li><button type="button" data-ouvrir="modes" data-en="The two modes">Les deux modes</button></li>
+<li><button type="button" data-ouvrir="etat51" data-en="The digital 51st State">Le 51e État numérique</button></li>
+</ul>
+<p class="arbre-sous">La méthode</p>
+<ul>
+<li><button type="button" data-ouvrir="methode-30" data-en="The method in 30 seconds">La méthode en 30 secondes</button></li>
+<li><button type="button" data-en="Method" data-ouvrir="methode">Méthode</button></li>
+<li><button type="button" data-en="Do the same — the method, handed over" data-ouvrir="transmission">Faire pareil</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="Talk with the SoPHIa website" data-ouverture-menu="cerveau">Parle avec le site web SoPHIa</button></p>
+<ul>
+<li><button type="button" data-en="Memory — this site is SoPHIa's external memory" data-ouvrir="memoire">Mémoire</button></li>
+<li><button type="button" data-en="Evolution" data-ouvrir="evolution">Évolution</button></li>
+<li><button type="button" data-ouvrir="edition" data-en="Today’s edition">L’édition du jour</button></li>
+</ul>
+</div>
+<div class="arbre-menu"><p class="arbre-menu-titre"><button type="button" data-en="The file — the story" data-ouverture-menu="dossier">Le dossier — l'histoire</button></p>
+<p class="arbre-sous">L'histoire en ordre</p>
+<ul>
+<li><button type="button" data-en="Journey — the story" data-ouvrir="parcours">Parcours — l'histoire</button></li>
+<li><button type="button" data-en="The researcher" data-ouvrir="chercheur">Le chercheur</button></li>
+</ul>
+<p class="arbre-sous">Le travail et les textes</p>
+<ul>
+<li><button type="button" data-en="The engineering work" data-ouvrir="ingenierie">Le travail d'ingénierie</button></li>
+<li><button type="button" data-en="Articles" data-ouvrir="articles">Articles</button></li>
+<li><button type="button" data-en="Capsules" data-ouvrir="capsules">Capsules</button></li>
+</ul>
+<p class="arbre-sous">Soutenir</p>
+<ul>
+<li><button type="button" data-ouvrir="don" data-en="Make a donation">Faites un don</button></li>
+<li><button type="button" data-ouvrir="partenaires" data-en="Partners and support">Partenaires et soutien</button></li>
+<li><button type="button" data-ouvrir="transparence" data-en="Transparency — this site's data flows">Transparence</button></li>
+</ul>
+</div>
+<div class="arbre-hors"><p class="arbre-sous">Toujours là</p><ul><li><button type="button" data-en="Home — the surface of gestures" data-ouvrir="accueil">Accueil — la surface des gestes</button></li><li><button type="button" data-en="Time — the anchor" data-ouvrir="temps">Temps — l’ancre</button></li><li><button type="button" data-en="Weather — the anchor" data-ouvrir="meteo">Météo — l’ancre</button></li><li><button type="button" data-en="Search" data-ouvrir="recherche">Rechercher</button></li><li><button type="button" data-en="The application" data-ouvrir="application">L’application</button></li><li><button type="button" data-en="The 13 × 28 calendar" data-ouvrir="calendrier">Le calendrier 13 × 28</button></li>
+</ul></div>
+</aside>
+<div class="menu-panneau" id="menu-panneau" hidden role="dialog" aria-label="Menu du site"><div class="menu-entete"><span class="menu-titre" data-en="Menu">Menu</span><button id="menu-fermer" type="button" data-en="Close">Fermer</button></div><label class="petite" for="menu-recherche" data-en="Search the site">Rechercher dans le site</label><input id="menu-recherche" type="search" placeholder="Rechercher dans le site…" autocomplete="off"><p class="petite" id="menu-vide" style="display:none">Aucune section ne correspond — essaie un autre mot.</p><div class="menu-famille"><p class="etiquette">Agir — tes données, tes droits</p><p class="arbre-groupe-titre">La porte du parcours</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="agir" data-mots="agir sur mes données demandes recours archive personnelle cai cpvp google takeout sceller ses fichiers mémoire cumulative lettre"><span class="menu-nom">Agir sur mes données</span><span class="menu-desc">La porte du parcours des droits : préparer une demande à une organisation, s’orienter vers la CAI ou le CPVP, récupérer ses données, sceller ses fichiers et bâtir son archive personnelle — des outils qui restent dans ton navigateur.</span></button></li></ul><p class="arbre-groupe-titre">Le parcours</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="donnees" data-mots="le parcours des données le parcours complet : tes droits (accès, rectification, portabilité, désindexation), la récolte directe auprès des plateformes, la demande formelle par juridiction, le recours à la cai, et le scellement de tes exports chez toi."><span class="menu-nom">Le parcours des données</span><span class="menu-desc">Le parcours complet : tes droits (accès, rectification, portabilité, désindexation), la récolte directe auprès des plateformes, la demande formelle par juridiction, le recours à la CAI, et le scellement de tes exports chez toi.</span></button></li><li><button type="button" class="menu-entree" data-cible="acces" data-mots="mes renseignements préparer une demande d accès à vos renseignements personnels : la loi qui s applique, ses délais vérifiés, la lettre produite chez vous — le site ne reçoit ni ne conserve rien."><span class="menu-nom">Mes renseignements</span><span class="menu-desc">Préparer une demande d’accès à vos renseignements personnels : la loi qui s’applique, ses délais vérifiés, la lettre produite chez vous — le site ne reçoit ni ne conserve rien.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="aller" data-mots="aller chercher ce qu ils ont récolté les plateformes une a une : la récolte documentée avec sa classe et sa source, le chemin d accès officiel avec lien direct, le délai, et l export scellé dans ton cerveau."><span class="menu-nom">Aller chercher ce qu’ils ont récolté</span><span class="menu-desc">Google, Apple, Meta, Amazon, Microsoft, TikTok, Snapchat, X et Discord : la récolte documentée, le chemin pour reprendre tes données, le délai — et le geste de clôture, l’export scellé chez toi.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="cameras" data-mots="caméras et appareils connectés ring blink alexa : ce qui transite d une caméra domestique, ce que la ftc a établi, les réglages qui comptent, le chemin pour obtenir et fermer ses données."><span class="menu-nom">Caméras et appareils connectés</span><span class="menu-desc">Ce que tes caméras envoient, ce que les régulateurs ont établi (Ring, FTC) — et Blink en à-vérifier nommé, jamais affirmé sans pièce.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="explication" data-mots="demander l explication d une décision automatisée : lrpsp 12.1, loi sur l accès 65.2, lrss 65 — le générateur de demande, l échéance de suivi et le rappel ics."><span class="menu-nom">Demander l’explication d’une décision automatisée</span><span class="menu-desc">Une décision rendue par un algorithme se demande par écrit : les trois textes québécois cités exactement, la demande produite chez toi, consignée avec son échéance.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="decisions" data-mots="le registre des décisions : 23 décisions vérifiées au primaire, chacune reliée au droit qu elle appuie et au modèle ou parcours correspondant ; les 3 exclues nommées en liste d attente."><span class="menu-nom">Le registre des décisions</span><span class="menu-desc">Clearview, Schrems, SCHUFA, Planet49, les délibérations des régulateurs : les décisions écrites qui fondent les droits de ce site, reliées à leurs parcours.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="suspendu" data-mots="compte suspendu restreint bloqué : ravoir son compte, savoir pourquoi, reprendre ses données — les fenêtres d appel par plateforme, la demande d accès qui survit à la suspension, la leçon mémoire avant."><span class="menu-nom">Compte suspendu : ravoir, savoir, reprendre</span><span class="menu-desc">Capturer l’exposé des motifs, appeler dans les fenêtres qui se ferment, télécharger pendant que c’est possible — et le point Canada/Québec, porté honnêtement.</span></button></li><li><button type="button" class="menu-entree" data-cible="fenetres" data-mots="le minuteur de fenêtre les délais qui se ferment les fenêtres d appel et les silences des contrats scellés comme échéances avec rappel ics"><span class="menu-nom" data-en="The window timer">Le minuteur de fenêtre</span><span class="menu-desc" data-en="The deadlines that close — and the contracts’ silences, written as silences; sealed deadlines, local .ics reminder.">Les délais qui se ferment — et les silences des contrats, écrits comme silences ; échéances scellées, rappel .ics local.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="for" data-mots="for étranger ailleurs recours ici texas arbitrage clause juridiction singapour delaware : ce que les conditions des plateformes imposent comme tribunal, et les recours qui s exercent d ici, québec canada, demande d accès, cai, commissariat, cdpdj."><span class="menu-nom" data-en="The forum is elsewhere, your remedies are here">Le for est ailleurs, tes recours sont ici</span><span class="menu-desc">Texas, Singapour, Delaware — ou la loi de ta résidence : la carte des clauses de for des cinq plateformes lues en entier, et les recours qui se saisissent d’ici.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="assurances" data-mots="assurances assureur télématique ajusto desjardins fichier central des sinistres fcsa décision automatisée explication 12.1 amf plainte appels enregistrés prime score"><span class="menu-nom" data-en="Insurance">Les assurances</span><span class="menu-desc" data-en="What your insurer knows, decides and shares: telematics, your claims file at the central file, the automated decision and the explanation to ask for, your recorded calls, the regulator and complaints.">Ce que ton assureur sait, décide et partage : la télématique, ton dossier de sinistres au Fichier central, la décision automatisée et l’explication à demander, tes appels enregistrés, le régulateur et les plaintes.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="suivi-familial" data-mots="suivi familial localisation life360 géolocalisation précise cercle événements de conduite partenaires arity enfants mineurs droits québec canada"><span class="menu-nom" data-en="Family tracking and location sharing">Le suivi familial et la localisation</span><span class="menu-desc" data-en="Life360 and the family tracking apps: what they see, share and sell — precise geolocation, the partner channels, your rights in Quebec and Canada, and the steps that close the channels.">Life360 et les applications de suivi familial : ce qu’elles voient, partagent et vendent — la géolocalisation précise, les canaux partenaires, tes droits au Québec et au Canada, et les gestes qui ferment les canaux.</span></button></li></ul><p class="arbre-groupe-titre">Ton cerveau — ta mémoire, sur ton appareil</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="recu" data-mots="le reçu de visite ce que cette page voit de toi à partir de rien, ce que le serveur reçoit, ce que ce site retient (rien) — mesuré chez toi, consigné dans ton cerveau, jamais transmis."><span class="menu-nom">Le reçu de visite</span><span class="menu-desc">Ce que cette page voit de toi à partir de rien, ce que le serveur reçoit, ce que ce site retient (rien) — mesuré chez toi, consigné dans ton cerveau, jamais transmis.</span></button></li><li><button type="button" class="menu-entree" data-cible="recus" data-mots="tes reçus et tes gestes ta mémoire cumulative sur ton appareil : tes reçus, tes gestes de sécurisation consignés, le recalcul de ta chaîne et son export — la somme de tes précédents, tenue de ton bord."><span class="menu-nom">Tes reçus et tes gestes</span><span class="menu-desc">Ta mémoire cumulative sur ton appareil : tes reçus, tes gestes de sécurisation consignés, le recalcul de ta chaîne et son export — la somme de tes précédents, tenue de ton bord.</span></button></li><li><button type="button" class="menu-entree" data-cible="suivi" data-mots="ton dossier de suivi tes démarches en cours et leurs échéances, consignées dans ton cerveau sur ton appareil : demandes envoyées, délais, réponses — et le geste suivant quand un délai passe."><span class="menu-nom">Ton dossier de suivi</span><span class="menu-desc">Tes démarches en cours et leurs échéances, consignées dans ton cerveau sur ton appareil : demandes envoyées, délais, réponses — et le geste suivant quand un délai passe.</span></button></li><li><button type="button" class="menu-entree" data-cible="voir" data-mots="voir mon cerveau lire ta mémoire locale, réellement : ouverture délibérée, toutes les entrées rendues, le recalcul déroulé devant toi — rien ne transite."><span class="menu-nom">Voir mon cerveau</span><span class="menu-desc">Lire ta mémoire locale, réellement : ouverture délibérée, toutes les entrées rendues, le recalcul déroulé devant toi — rien ne transite.</span></button></li></ul><p class="arbre-groupe-titre">Les documents</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="donnees" data-ancre="donnees-documents" data-mots="bibliothèque des modèles les 29 modèles de documents (demandes, recours, plaintes) en français et en anglais — chacun avec sa loi, son délai et son lien direct."><span class="menu-nom">Bibliothèque des modèles</span><span class="menu-desc">Les 29 modèles de documents (demandes, recours, plaintes) en français et en anglais — chacun avec sa loi, son délai et son lien direct.</span></button></li><li><button type="button" class="menu-entree" data-cible="donnees" data-ancre="donnees-lois" data-mots="bibliothèque des lois les 19 textes de lois officiels déposés au site, avec leur source, leur date d état et leur empreinte — à télécharger et à garder."><span class="menu-nom">Bibliothèque des lois</span><span class="menu-desc">Les 19 textes de lois officiels déposés au site, avec leur source, leur date d'état et leur empreinte — à télécharger et à garder.</span></button></li></ul><p class="arbre-groupe-titre">Contester</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="petitions" data-mots="pétitions une pétition par juridiction, fondée sur le manque documenté de chacune : les demandes et leurs fondements, les mécaniques des quatorze législatures, et le compteur de signataires du site à son état publié."><span class="menu-nom">Pétitions</span><span class="menu-desc">Une pétition par juridiction, fondée sur le manque documenté de chacune : les demandes et leurs fondements, les mécaniques des quatorze législatures, et le compteur de signataires du site à son état publié.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Comprendre</p><p class="arbre-groupe-titre">Tes droits</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="droits" data-mots="droits et lois tes droits et les lois qui les portent — accès, rectification, portabilité, recours — vérifiés au primaire, juridiction par juridiction."><span class="menu-nom">Droits et lois</span><span class="menu-desc">Tes droits et les lois qui les portent — accès, rectification, portabilité, recours — vérifiés au primaire, juridiction par juridiction.</span></button></li><li><button type="button" class="menu-entree" data-cible="confidentialite" data-mots="confidentialité et loi 25 la politique de confidentialité de ce site — ses pratiques réelles, relevées dans son code —, les mesures en place, et la loi 25 expliquée : droits des personnes, devoirs des organisations, recours."><span class="menu-nom">Confidentialité et Loi 25</span><span class="menu-desc">La politique de confidentialité de ce site — ses pratiques réelles, relevées dans son code —, les mesures en place, et la Loi 25 expliquée : droits des personnes, devoirs des organisations, recours.</span></button></li><li><button type="button" class="menu-entree" data-cible="conditions" data-mots="le registre des conditions onze documents lus en entier tiktok snapchat discord meta x leurs clauses leurs silences le diff des conditions"><span class="menu-nom" data-en="The terms register">Le registre des conditions</span><span class="menu-desc" data-en="Eleven documents read in full: what their contracts say about your rights, their silences, and the diff of changes.">Onze documents lus en entier : ce que leurs contrats disent de tes droits, leurs silences, et le diff des changements.</span></button></li><li><button type="button" class="menu-entree" data-cible="conditions-site" data-mots="conditions d utilisation du site les conditions de ce site ses regles d usage les bornes de la connexion ecrire a sophia les dons le registre scelle loi applicable tribunaux du quebec"><span class="menu-nom" data-en="This site’s terms of use">Conditions d’utilisation du site</span><span class="menu-desc" data-en="This site’s own terms: what it is, who publishes it, the written bounds of the connection to SoPHIa, donations, the sealed register of the site’s actions, and the governing law — Quebec’s laws and courts, bounded by the safeguard of your mandatory protections.">Les conditions de ce site lui-même : ce qu’il est, qui le publie, les bornes écrites de la connexion à SoPHIa, les dons, le registre scellé des actions du site, et la loi applicable — les lois et les tribunaux du Québec, avec la sauvegarde de tes protections impératives.</span></button></li><li><button type="button" class="menu-entree" data-cible="politique-site" data-mots="politique du site confidentialite donnees ce que ce site ne fait pas aucun cookie messagerie conservation suppression responsable loi 25 lrpsp conformite articles"><span class="menu-nom" data-en="This site’s policy">Politique du site</span><span class="menu-desc" data-en="This site’s own policy: what it does not do (no cookies, no tracking, no profiling technology), your local brain, the Locked Memory, the messaging path and its privacy impact assessment, retention and deletion, your rights and remedies — each commitment tied to the section it complies with, conformity table included.">La politique de ce site lui-même : ce qu’il ne fait pas (aucun cookie, aucune traque, aucune technologie de profilage), ton cerveau local, la Mémoire verrouillée, le trajet de la messagerie et son évaluation des facteurs relatifs à la vie privée, la conservation et la suppression, tes droits et tes recours — chaque engagement rattaché à l’article auquel il se conforme, table de conformité à l’appui.</span></button></li><li><button type="button" class="menu-entree" data-cible="transits" data-mots="la carte des transits comment tes données voyagent cloud act fisa 702 gafam snowden et la couche proximité bluetooth find my find hub tile les lieux-relais le protocole anti-suivi de voyage le kit premier traqueur"><span class="menu-nom" data-en="The transit map">La carte des transits</span><span class="menu-desc" data-en="How your data travel — through the services and through the air around you: proximity, relay places, travel, first tracker.">Comment tes données transitent — par les services et dans l’air autour de toi : proximité, lieux-relais, voyage, premier traqueur.</span></button></li><li><button type="button" class="menu-entree" data-cible="exposition" data-mots="ton exposition ton empreinte recalculée le panneau de bord du non-tracking les requêtes du site en direct la surveillance de ton exposition la preuve de présence consentie vérifie que c est bien nous"><span class="menu-nom" data-en="Your exposure">Ton exposition</span><span class="menu-desc" data-en="Your fingerprint recalculated here, never sent; this site’s requests, live; what changes between your visits, named and dated.">Ton empreinte recalculée ici, jamais envoyée ; les requêtes de ce site en direct ; ce qui change entre tes visites, nommé et daté.</span></button></li><li><button type="button" class="menu-entree" data-cible="miroir" data-mots="le miroir ce qu'une visite révèle relevé maximal signaux local transit adresse ip en-têtes navigateur écran autorisations empreinte deux modes local serveurs écho"><span class="menu-nom" data-en="The mirror">Le miroir</span><span class="menu-desc" data-en="Everything a simple visit reveals about you — a maximum statement computed in your browser, in two modes of your choice: local, or the server demonstration with its documented doors.">Tout ce qu'une simple visite révèle de toi — le relevé maximal, calculé dans ton navigateur, en deux modes à ton choix : local, ou démonstration avec serveurs aux portes documentées.</span></button></li><li><button type="button" class="menu-entree" data-cible="modes" data-mots="les deux modes choix local serveurs démonstration portes météo écho sécurité pareil"><span class="menu-nom" data-en="The two modes">Les deux modes</span><span class="menu-desc" data-en="Local, or the server demonstration: the choice, explained plainly — what each mode does, what never changes (security), and the doors listed before they open.">Local, ou démonstration avec serveurs : le choix, expliqué simplement — ce que chaque mode fait, ce qui ne change jamais (la sécurité), et les portes écrites avant de s'ouvrir.</span></button></li><li><button type="button" class="menu-entree" data-cible="etat51" data-mots="le 51e état numérique numériquement américain trump canada lois adn numérique jumeau numérique gafam"><span class="menu-nom" data-en="The digital 51st State">Le 51e État numérique</span><span class="menu-desc" data-en="His thesis, developed: digitally, we already function as a 51st State — never a political annexation, provided Canada keeps its own laws. The digital DNA, the twin, and the computed harvesting table.">Sa thèse, développée : numériquement, nous fonctionnons déjà comme un 51e État — jamais une annexion politique, pourvu que le Canada garde ses lois. L’ADN numérique, le jumeau, et le tableau de la récolte calculé.</span></button></li></ul><p class="arbre-groupe-titre">La méthode</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="methode-30" data-mots="la méthode en 30 secondes recette canonique sceau digest sha-256 somme des précédents variantes registre historique journal des dépôts coffre"><span class="menu-nom">La méthode en 30 secondes</span><span class="menu-desc">La recette canonique de la chaîne, en une page : le sceau, le digest cumulé — et ses variantes nommées, une par objet.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="methode" data-mots="méthode la méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles."><span class="menu-nom">Méthode</span><span class="menu-desc">La méthode en ses mots : calculer, sceller, revérifier — et les quatre noms, quatre rôles.</span></button></li><li><button type="button" class="menu-entree" data-cible="transmission" data-mots="faire pareil faire pareil : la méthode transmise en six étapes, avec la démonstration « essaie la chaîne » à pratiquer chez soi."><span class="menu-nom">Faire pareil</span><span class="menu-desc">Faire pareil : la méthode transmise en six étapes, avec la démonstration « Essaie la chaîne » à pratiquer chez soi.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="calendrier" data-mots="calendrier 13 28 sidéral sideral compte rotation 364 mois semaines jeudi bissextile tour surplus origine mars triangulation démontré calcule"><span class="menu-nom">Le calendrier 13 × 28</span><span class="menu-desc">Le compte sidéral d’Alex, démontré et recalculable : compte continu, 13 mois de 28 jours, le jour récupéré, la bissextile montrée — et le module donné.</span></button></li>
+</ul></div>
+<div class="menu-famille"><p class="etiquette">Vérifier</p><p class="arbre-groupe-titre">Recalculer</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="verifier" data-mots="vérifier vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même."><span class="menu-nom">Vérifier</span><span class="menu-desc">Vérifiez vous-même : recalculez la page servie, un texte libre ou un fichier, ici même.</span></button></li><li><button type="button" class="menu-entree" data-cible="sceller" data-mots="sceller — l atelier l atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l écart."><span class="menu-nom">Sceller — l'atelier</span><span class="menu-desc">L’atelier de scellement : écrivez, scellez, puis cassez un maillon pour voir l’écart.</span></button></li></ul><p class="arbre-groupe-titre">Les preuves</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="preuves" data-mots="preuves les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune."><span class="menu-nom">Preuves</span><span class="menu-desc">Les preuves du dossier, affirmation par affirmation, avec la pièce qui porte chacune.</span></button></li><li><button type="button" class="menu-entree" data-cible="registre" data-mots="registre le registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics."><span class="menu-nom">Registre</span><span class="menu-desc">Le Registre propre : 508 pièces intactes, la salle des pièces et les onze sceaux publics.</span></button></li><li><button type="button" class="menu-entree" data-cible="ancrage" data-mots="ancrage — les preuves chez les tiers les ancrages externes et les archives : wayback, opentimestamps, bitcoin, rfc 3161."><span class="menu-nom">Ancrage — les preuves chez les tiers</span><span class="menu-desc">Les ancrages externes et les archives : Wayback, OpenTimestamps, Bitcoin, RFC 3161.</span></button></li><li><button type="button" class="menu-entree" data-cible="bris" data-mots="la chambre des bris le faux sceau de juillet 2026 l écart entre le déclaré et le réel nature preuve borne"><span class="menu-nom" data-en="The chamber of breaks">La chambre des bris</span><span class="menu-desc" data-en="Where the declared and the real part ways: each piece with its nature, its proof and its limit.">Là où le déclaré et le réel se séparent : chaque pièce avec sa nature, sa preuve et sa borne.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="depose-empreinte" data-mots="dépose ton empreinte déposer une empreinte dater un document sans le montrer prouver antériorité journal public des dépôts sha-256 reçu"><span class="menu-nom" data-en="Deposit your fingerprint">Dépose ton empreinte</span><span class="menu-desc" data-en="Date a document you hold, without ever showing it: the fingerprint alone is entered, dated, in the site's chained public journal.">Date un document que tu détiens, sans jamais le montrer : l'empreinte seule est inscrite, datée, au journal public chaîné du site.</span></button></li><li><button type="button" class="menu-entree" data-cible="transparence-audit" data-mots="transparence audit unisson données de visite reçu local dépôt première époque"><span class="menu-nom">Transparence — SoPHIa mémoire cumulative chaînée</span><span class="menu-desc">La page de la première époque : ce que le dépôt indique déjà sur les données de visite, et ton reçu local de visite, calculé chez toi.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Parle avec le site web SoPHIa</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="cerveau-coquillage" data-mots="cerveau coquillage mémoire cumulative spirale propriété intellectuelle dessinée accumulation couches"><span class="menu-nom">Cerveau coquillage</span><span class="menu-desc">La propriété intellectuelle d’Alex, dessinée : le cerveau coquillage en une image — la mémoire qui grandit par accumulation, couche après couche, et la détention des plateformes qui reste dehors.</span></button></li><li><button type="button" class="menu-entree" data-cible="memoire" data-mots="mémoire la mémoire externe de sophia : le manifeste pour une ia, le coffre synaptique, l historique quotidien."><span class="menu-nom">Mémoire</span><span class="menu-desc">La mémoire externe de SoPHIa : le manifeste pour une IA, le coffre synaptique, l’Historique quotidien.</span></button></li><li><button type="button" class="menu-entree" data-cible="evolution" data-mots="évolution le panneau que le site calcule seul à chaque chargement : son état mesuré, la continuité entre ses états — son adn numérique —, ses écarts nommés, son état d ancrage en trois états et les prochains pas qu il propose mécaniquement."><span class="menu-nom">Évolution</span><span class="menu-desc">Le panneau que le site calcule seul à chaque chargement : son état mesuré, la continuité entre ses états — son ADN numérique —, ses écarts nommés, son état d’ancrage en trois états et les prochains pas qu’il propose mécaniquement.</span></button></li>
+<li><button type="button" class="menu-entree" data-cible="edition" data-mots="édition du jour page datée sophia veille faits vérifiés données droits archive éditions"><span class="menu-nom" data-en="Today’s edition">L’édition du jour</span><span class="menu-desc" data-en="The dated page SoPHIa signs each day: the day’s verified facts on data and rights, each with its source — and the archive of editions.">La page datée que SoPHIa signe chaque jour : les faits vérifiés du jour sur les données et les droits, chacun avec sa source — et l’archive des éditions.</span></button></li></ul><p class="arbre-groupe-titre">La zone verrouillée</p><ul class="menu-liste"><li><button type="button" class="menu-entree menu-special" data-cible="memoire" data-ancre="zone-privee" data-mots="memoire verrouillee coffre securise chiffre phrase secrete zone verrouillee aes-256"><span class="menu-nom">🔒 Mémoire verrouillée</span><span class="menu-desc">La zone sécurisée du panneau Mémoire : la mémoire cumulative chiffrée en AES-256 ; le premier paquet y est déposé depuis le 3 novembre 2026 — déverrouillage par la phrase d’Alex, saisie chez lui.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Le dossier — l'histoire</p><p class="arbre-groupe-titre">L'histoire en ordre</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="parcours" data-mots="parcours — l histoire le parcours d alex et la chronologie du dossier, de février à novembre 2026."><span class="menu-nom">Parcours — l'histoire</span><span class="menu-desc">Le parcours d’Alex et la chronologie du dossier, de février à novembre 2026.</span></button></li><li><button type="button" class="menu-entree" data-cible="chercheur" data-mots="le chercheur le profil du chercheur : orcid, travaux, démarches et foire aux questions."><span class="menu-nom">Le chercheur</span><span class="menu-desc">Le profil du chercheur : ORCID, travaux, démarches et foire aux questions.</span></button></li></ul><p class="arbre-groupe-titre">Le travail et les textes</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="ingenierie" data-mots="le travail d ingénierie le rôle d ingénierie derrière ce système : poser le problème, concevoir, spécifier, diriger, vérifier, opérer, corriger — pièces et mesures à l appui, journal des ratés public compris."><span class="menu-nom">Le travail d'ingénierie</span><span class="menu-desc">Le rôle d’ingénierie derrière ce système : poser le problème, concevoir, spécifier, diriger, vérifier, opérer, corriger — pièces et mesures à l’appui, journal des ratés public compris.</span></button></li><li><button type="button" class="menu-entree" data-cible="articles" data-mots="articles les articles du dossier : les textes longs, sourcés et datés."><span class="menu-nom">Articles</span><span class="menu-desc">Les articles du dossier : les textes longs, sourcés et datés.</span></button></li><li><button type="button" class="menu-entree" data-cible="capsules" data-mots="capsules les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte."><span class="menu-nom">Capsules</span><span class="menu-desc">Les capsules : vidéos et sources externes, vérifiées une à une, qui documentent le contexte.</span></button></li></ul><p class="arbre-groupe-titre">Soutenir</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="don" data-mots="faites un don soutenir la propriété intellectuelle brevet avocats domaine développement virement interac choix de l usage"><span class="menu-nom" data-en="Make a donation">Faites un don</span><span class="menu-desc" data-en="Support the intellectual property behind the work: you choose what your donation serves — patent, counsel, domain, development — right in your transfer note.">Soutenir la propriété intellectuelle derrière l’œuvre : vous choisissez ce que votre don sert — brevet, avocats, domaine, développement — dans le message de votre virement.</span></button></li><li><button type="button" class="menu-entree" data-cible="partenaires" data-mots="partenaires soutien licence partenariat construire cherché refusé données garantie opérateur sans accès"><span class="menu-nom" data-en="Partners and support">Partenaires et soutien</span><span class="menu-desc" data-en="For those who might support what is being built here: what this site is, what it builds (the method, the shell-brain, the licence layer), what it seeks — and what it refuses, as a guarantee: people’s data is never an asset.">Pour qui pourrait soutenir ce qui se construit ici : ce que ce site est, ce qu’il construit (la méthode, le cerveau coquillage, la couche sous licence), ce qu’il cherche — et ce qu’il refuse, en garantie : les données des gens ne sont jamais un actif.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Écrire et parler</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="ecrire" data-mots="écrire à sophia écrire directement à l agente du site : une conversation ici même (identifiant + ton code), ou le courriel classique — le message arrive dans la boîte dédiée, sophia le relaie, alex répond lui-même."><span class="menu-nom">Écrire à SoPHIa</span><span class="menu-desc">Écrire au propriétaire, par le relais de son agente : une conversation ici même (identifiant + ton code), ou le courriel classique — le message arrive dans la boîte dédiée, SoPHIa le relaie, Alex répond lui-même.</span></button></li><li><button type="button" class="menu-entree" data-cible="instance" data-mots="parler à l instance l instance souveraine : le relais ia du site, branché côté serveur."><span class="menu-nom">Parler à l'instance</span><span class="menu-desc">L’Instance Souveraine : le relais IA du site, branché côté serveur.</span></button></li></ul></div>
+<div class="menu-famille"><p class="etiquette">Toujours là</p><ul class="menu-liste"><li><button type="button" class="menu-entree" data-cible="accueil" data-mots="accueil surface gestes"><span class="menu-nom">Accueil</span><span class="menu-desc">La surface des gestes : sept cartes, l’état vérifié, l’histoire en retrait.</span></button></li><li><button type="button" class="menu-entree" data-cible="temps" data-mots="temps horloge ancre sidéral"><span class="menu-nom">Temps — l’ancre</span><span class="menu-desc">Le temps du dossier, triangulé.</span></button></li>
+li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo sainte-martine ancre"><span class="menu-nom">Météo — l’ancre</span><span class="menu-desc">L’environnement local, lu au même geste que l’heure.</span></button></li><li><button type="button" class="menu-entree" data-cible="recherche" data-mots="rechercher loupe trouver"><span class="menu-nom">Rechercher</span><span class="menu-desc">La loupe du site.</span></button></li><li><button type="button" class="menu-entree" data-cible="application" data-mots="application installer pwa"><span class="menu-nom">L’application</span><span class="menu-desc">Installer le site comme une application.</span></button></li></ul></div>
+</div>
+<main>
+<div class="panneau actif" id="p-exposition">
+<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">31ab6c7544d77a203fc5d9cd521678332ff92cb79648fc8880aca5505cb22d94</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
+  <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
+<p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="comprendre">Comprendre</button> › Tes droits › <span class="ariane-ici">Ton exposition</span></p>
+<section class="bloc" id="empreinte">
+  <div class="entete-sec"><span class="num">36</span><h2 data-en="Your fingerprint, recalculated — what a tracker could compute about you">Ton empreinte, recalculée — ce qu’un pisteur pourrait calculer sur toi</h2></div>
+  <p class="lead" data-en="A tracker does not ask your name: it computes a fingerprint from what your browser exposes — user agent, screen, timezone, languages, processor, graphics renderer, a canvas drawing. This page computes that fingerprint the same way, locally, and shows you every signal it rests on. It is sent nowhere; you may seal it in your brain, and at each visit the recalculation compares itself to the sealed ones (section 38 below).">Un pisteur ne demande pas ton nom : il calcule une empreinte de ce que ton navigateur expose — agent utilisateur, écran, fuseau, langues, processeur, moteur graphique, un dessin canvas. Cette page calcule cette empreinte de la même façon, localement, et te montre chaque signal sur lequel elle repose. Elle n’est envoyée nulle part ; tu peux la sceller dans ton cerveau, et à chaque visite le recalcul se compare aux sceaux précédents (section 38 ci-dessous).</p>
+  <div class="carte">
+    <p><button type="button" id="emp-calculer" data-en="Compute my fingerprint here">Calculer mon empreinte ici</button></p>
+    <div id="emp-signaux"></div>
+    <p><span data-en="Fingerprint (SHA-256 of the signals):">Empreinte (SHA-256 des signaux) :</span> <span class="mono" id="emp-valeur">—</span></p>
+    <p><button type="button" class="secondaire" id="emp-sceller" disabled data-en="Seal this fingerprint in my brain">Sceller cette empreinte dans mon cerveau</button></p>
+    <p class="petite" id="emp-etat" role="status"></p>
+    <p class="petite">Le relevé complet, signal par signal — ce que cette empreinte résume : <button type="button" class="secondaire" data-ouvrir="miroir">Le miroir</button>.</p>
+    <p class="petite" data-en="Named limits of the APIs: Safari masks or withholds several signals (the graphics renderer's identity among them) — a masked signal is shown as masked, never filled in. The fingerprint's stability is itself the lesson: what does not change between your visits is what lets a third party recognise you without any cookie.">Limites des API, nommées : Safari masque ou retient plusieurs signaux (l’identité du moteur graphique entre autres) — un signal masqué est montré comme masqué, jamais comblé. La stabilité de l’empreinte est elle-même la leçon : ce qui ne change pas entre tes visites est ce qui permet à un tiers de te reconnaître sans aucun témoin.</p>
+  </div>
+</section>
+<section class="bloc" id="exposition-suivi">
+  <div class="entete-sec"><span class="num">38</span><h2 data-en="Watching your exposure — what changed since your last visit">Surveillance de ton exposition — ce qui a changé depuis ta dernière visite</h2></div>
+  <p class="lead" data-en="Each sealed fingerprint is a sum in your brain's chain. On recalculation, the new fingerprint compares itself to the previous sealed ones: every signal that changed is named and dated — a new browser, a moved timezone, a different screen — because what is harvestable about you changed with it. Nothing leaves your device: the comparison reads your own chain, on your own device.">Chaque empreinte scellée est une somme dans la chaîne de ton cerveau. Au recalcul, la nouvelle empreinte se compare aux précédentes scellées : chaque signal qui a changé est nommé et daté — un navigateur nouveau, un fuseau déplacé, un écran différent — parce que ce qui est récoltable sur toi a changé avec lui. Rien ne quitte ton appareil : la comparaison lit ta propre chaîne, sur ton propre appareil.</p>
+  <div class="carte">
+    <div id="exp-comparaison"><p class="petite" data-en="Compute your fingerprint above: the comparison with your sealed fingerprints will appear here.">Calcule ton empreinte ci-dessus : la comparaison avec tes empreintes scellées paraîtra ici.</p></div>
+  </div>
+</section>
+<section class="bloc" id="non-tracking">
+  <div class="entete-sec"><span class="num">37</span><h2 data-en="The non-tracking dashboard — this site's own requests, live">Le panneau de bord du non-tracking — les requêtes de ce site, en direct</h2></div>
+  <p class="lead" data-en="“We do not track you” is a sentence. Here is its proof by absence, continuously: your browser's own Performance API lists every request THIS page has made since it loaded — same-origin files, and any external service the page itself calls (named in the Confidentiality panel's inventory). If a tracker were loaded here, it would appear in this list, from your own browser, not from our word.">« On ne te piste pas » est une phrase. Voici sa preuve par l’absence, en continu : l’API Performance de ton propre navigateur liste chaque requête que CETTE page a faite depuis son chargement — fichiers de la même origine, et tout service externe que la page elle-même appelle (nommés à l’inventaire du panneau Confidentialité). Si un pisteur se chargeait ici, il paraîtrait dans cette liste, depuis ton navigateur, pas depuis notre parole.</p>
+  <p class="petite">Définition du compteur, la même des deux côtés : la liste ci-dessous suit les requêtes de la <strong>session entière</strong>, panneaux ouverts compris ; le reçu de l'Accueil compte le <strong>chargement de la page jusqu'à son instant</strong>. Deux périmètres, nommés aux deux endroits.</p>
+  <div class="carte">
+    <p><button type="button" id="nt-rafraichir" data-en="Refresh the list">Rafraîchir la liste</button></p>
+    <div id="nt-liste"></div>
+    <div class="carte">
+<h4 data-en="Zero cookies — verified, and what the page actually calls">Zéro cookie — vérifié, et ce que la page appelle vraiment</h4>
+<p data-en="This site uses no cookie: its code never reads nor writes one. Search the file for “document.cookie” — you will find only this sentence, which names the property to say it is never used (count redone at the build, November 3, 2026); and the served page's response carries no Set-Cookie header (checked on the served response the same day). No advertising identifier, no session cookie, nothing of that family.">Ce site n'utilise&nbsp;<b>aucun cookie</b> : son code n'en lit ni n'en écrit jamais. Cherche « document.cookie » dans le fichier — tu ne trouveras que cette phrase-ci, en ses deux langues — elle nomme la propriété pour dire qu'elle ne sert pas (comptage refait à la construction, le 3 novembre 2026) ; et la réponse de la page servie ne porte <b>aucun en-tête Set-Cookie</b> (vérifié sur la réponse servie le même jour). Aucun identifiant publicitaire, aucun témoin de session, rien de cette famille.</p>
+<p><span data-en="That does not mean the page calls nothing: when the readings load, your browser calls — like any web request, each receiving your IP address — ">Ce n'est pas dire que la page n'appelle rien : au chargement des lectures, ton navigateur appelle — comme toute requête web, chacun reçoit ton adresse IP — </span><b data-en="Open-Meteo and MET Norway (weather: the coordinates of the displayed place are sent), NOAA (geomagnetic Kp index), USGS (earthquakes around the anchor), ORCID (the researcher's public profile), the Wayback Machine (capture availability), mempool.space (Bitcoin height)">Open-Meteo et MET Norway (météo : les coordonnées du lieu affiché sont envoyées), NOAA (indice géomagnétique Kp), USGS (séismes autour de l'ancre), ORCID (le profil public du chercheur), la Wayback Machine (disponibilité des captures), mempool.space (hauteur Bitcoin)</b><span data-en=". None of these calls carries your brain, your gestures or your name: they carry the request and your IP, like any page visit.">. Aucun de ces appels ne transporte ton cerveau, tes gestes ni ton nom : ils transportent la requête et ton IP, comme toute visite de page.</span></p>
+<p><span data-en="One single call sends your IP to an estimation service: the “Estimate” button on the visit receipt (idea 36's sibling, in the Your data menu), which queries ipwho.is (fallback: ipapi.co) to approximate a city. It fires only on your click — never on load — and it is disclosed in place, right at the receipt, before you press it.">Un seul appel envoie ton IP à un service d'estimation : le bouton <b>« Estimer »</b> du reçu de visite, qui interroge <b>ipwho.is</b> (repli : ipapi.co) pour approcher une ville. Il ne part que sur <b>ton clic</b> — jamais au chargement — et il est divulgué en place, au reçu même, avant que tu appuies.</span></p>
+<p><span data-en="What replaces cookies here has two names, and both stay at your place: your browser's local storage — your brain (chain, gestures, decisions) lives there, on your device, and is never transmitted; and this page's cache — the site's previous sum, which the refresh mechanism compares by seal before serving you the fresh version. Nothing to accept, nothing to refuse: there is no banner because there is nothing to consent to.">Ce qui remplace les cookies ici porte deux noms, et les deux restent chez toi : le <b>stockage local de ton navigateur</b> — ton cerveau (chaîne, gestes, décisions) y vit, sur ton appareil, et n'est jamais transmis ; et le <b>cache de cette page</b> — la somme précédente du site, que le mécanisme de rafraîchissement compare par le sceau avant de te servir la version fraîche. Rien à accepter, rien à refuser : il n'y a pas de bannière parce qu'il n'y a rien à consentir.</span></p>
+<p><button type="button" class="btn-sec" data-exp-sceller data-titre="Zéro cookie, appels nommés" data-en="Seal this statement in my brain">Sceller ce relevé dans mon cerveau</button></p>
+</div>
+<p class="petite" data-en="Limit, written: the Performance API shows this page's requests only. The host's own server logging (GitHub Pages) escapes the page — as the Confidentiality panel already states, no “zero network emission” is claimed here; what is shown is everything the page itself does.">Borne, écrite : l’API Performance ne montre que les requêtes de cette page. La journalisation propre de l’hébergeur (GitHub Pages) échappe à la page — comme le panneau Confidentialité l’énonce déjà, aucune « zéro émission réseau » n’est revendiquée ici ; ce qui est montré est tout ce que la page elle-même fait.</p>
+  </div>
+</section>
+<section class="bloc" id="verifie-nous">
+  <div class="entete-sec"><span class="num">41</span><h2 data-en="Check that it is really us — the seal against the external anchors">Vérifie que c’est bien nous — le sceau contre les ancrages externes</h2></div>
+  <p class="lead" data-en="A fake site could copy these pages — but it would carry another seal. The canonical seal displayed by this page is anchored outside it: in the Wayback Machine's captures and in the Bitcoin/OpenTimestamps proofs. Compare:">Un faux site pourrait copier ces pages — mais il porterait un autre sceau. Le sceau canonique affiché par cette page est ancré hors d’elle : dans les captures de la Wayback Machine et dans les preuves Bitcoin/OpenTimestamps. Compare :</p>
+  <div class="carte">
+    <ol>
+      <li data-en="Read the canonical seal displayed on this page (home and Proofs panel).">Lis le sceau canonique affiché sur cette page (accueil et panneau Preuves).</li>
+      <li data-en="Open a Wayback capture of the site (the timestamps are listed at the Proofs panel, section §F) and read the seal the captured page displays: for the same version, it is the same seal — the Archive is not ours to rewrite.">Ouvre une capture Wayback du site (les horodatages sont listés au panneau Preuves, section §F) et lis le sceau que la page capturée affiche : pour la même version, c’est le même sceau — l’Archive n’est pas à nous pour la réécrire.</li>
+      <li data-en="For the dossier's states, follow the OpenTimestamps and RFC 3161 paths of the same section: the fingerprint existed at that date, in a chain we do not control. A page whose seal matches none of its anchors is not this site, whatever it claims.">Pour les états du dossier, suis les chemins OpenTimestamps et RFC 3161 de la même section : l’empreinte existait à cette date, dans une chaîne que nous ne contrôlons pas. Une page dont le sceau ne correspond à aucun de ses ancrages n’est pas ce site, quoi qu’elle prétende.</li>
+    </ol>
+    <p><button type="button" class="secondaire" data-ouvrir="ancrage" data-en="Open the Proofs and anchors panel">Ouvrir le panneau Preuves et ancrages</button></p>
+  </div>
+</section>
+<section class="bloc" id="presence">
+  <div class="entete-sec"><span class="num">42</span><h2 data-en="Consented proof of presence — declared, never captured [bounded form]">Preuve de présence consentie — déclarée, jamais captée [forme bornée]</h2></div>
+  <p class="lead" data-en="Exploratory, in its bounded form: a presence on this site is never captured — no geolocation is requested, none is read. What you may do is declare a presence yourself, and seal the declaration through the decision atom: your word, dated, in your own chain, which the site cannot verify and does not pretend to verify. Its value is exactly that of a sealed declaration: yours.">Exploratoire, dans sa forme bornée : une présence sur ce site n’est jamais captée — aucune géolocalisation n’est demandée, aucune n’est lue. Ce que tu peux faire, c’est déclarer toi-même une présence, et sceller la déclaration par l’atome-décision : ta parole, datée, dans ta propre chaîne, que le site ne peut pas vérifier et ne prétend pas vérifier. Sa valeur est exactement celle d’une déclaration scellée : la tienne.</p>
+  <div class="carte">
+    <p><label for="pres-lieu" data-en="The place you declare (in your words)">Le lieu que tu déclares (dans tes mots)</label><br><input type="text" id="pres-lieu" style="width:100%"></p>
+    <p><label for="pres-contexte" data-en="Context (why this declaration matters to you)">Contexte (pourquoi cette déclaration compte pour toi)</label><br><input type="text" id="pres-contexte" style="width:100%"></p>
+    <p><button type="button" id="pres-sceller" data-en="Seal this declaration">Sceller cette déclaration</button></p>
+    <p class="petite" id="pres-etat" role="status"></p>
+  </div>
+</section>
+<section class="bloc" id="telephone-soir">
+  <div class="entete-sec"><span class="num">46</span><h2 data-en="What your phone says tonight — read your system's own privacy report">Ce que ton téléphone raconte ce soir — lis le rapport de confidentialité de ton propre système</h2></div>
+  <p class="lead" data-en="Your phone already keeps the log: which apps touched your location, camera or microphone, and which network domains they contacted. You just have to turn it on and read it. This guide walks both systems, from the manufacturers' official pages; each step seals itself in your brain.">Ton téléphone tient déjà le journal : quelles applications ont touché ta localisation, ta caméra ou ton micro, et quels domaines réseau elles ont contactés. Il suffit de l’activer et de le lire. Ce guide parcourt les deux systèmes, depuis les pages officielles des fabricants ; chaque étape se scelle dans ton cerveau.</p>
+  <div class="carte">
+    <p class="etiquette">iPhone — <span data-en="App Privacy Report (iOS 15.2 and later)">Rapport de confidentialité des apps (iOS 15.2 et suivants)</span></p>
+    <p><strong data-en="1. Turn it on.">1. Active-le.</strong> <span data-en="Settings → Privacy & Security → App Privacy Report → Turn On. It only starts gathering from that moment — give it a few days of normal use before judging. Its data are encrypted and stored only on your device; turning it off clears them.">Réglages → Confidentialité et sécurité → Rapport de confidentialité des apps → Activer. Il ne commence à recueillir qu’à partir de ce moment — laisse-lui quelques jours d’usage normal avant de juger. Ses données sont chiffrées et gardées seulement sur ton appareil ; le désactiver les efface.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-1" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-1"></span></p>
+    <p><strong data-en="2. Read the sensor accesses.">2. Lis les accès aux capteurs.</strong> <span data-en="The report shows how many times — and when — each app accessed privacy-sensitive data or sensors (location, camera, microphone, contacts, photos) over the past 7 days. An app that reads your location at night, unused, is a fact to act on.">Le rapport montre combien de fois — et quand — chaque application a accédé à des données sensibles ou à des capteurs (localisation, caméra, micro, contacts, photos) au cours des 7 derniers jours. Une application qui lit ta localisation la nuit, inutilisée, est un fait sur lequel agir.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-2" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-2"></span></p>
+    <p><strong data-en="3. Read the network activity.">3. Lis l’activité réseau.</strong> <span data-en="The report also lists the domains the apps contacted — including third-party tracker domains an app never names. An unknown domain, contacted often, is the proximity layer's cousin: look it up before trusting the app.">Le rapport liste aussi les domaines contactés par les applications — y compris les domaines de pisteurs tiers qu’une application ne nomme jamais. Un domaine inconnu, contacté souvent, est le cousin de la couche proximité : renseigne-toi avant de faire confiance à l’application.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-3" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-3"></span></p>
+    <p><strong data-en="4. Revoke the overreach.">4. Révoque l’excès.</strong> <span data-en="The report does not block anything — it tells you where to look. The toggles are in Settings → Privacy & Security, sensor by sensor: Never, or Ask Next Time. Revoking is a decision: seal it as such (section §A of your tracking file).">Le rapport ne bloque rien — il te dit où regarder. Les interrupteurs sont dans Réglages → Confidentialité et sécurité, capteur par capteur : Jamais, ou Demander la prochaine fois. Révoquer est une décision : scelle-la comme telle (section §A de ton dossier de suivi).</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-4" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-4"></span></p>
+    <p><a href="https://support.apple.com/en-ie/102188" data-en="Official source — Apple Support, About App Privacy Report">Source officielle — Apple Support, À propos du Rapport de confidentialité des apps</a></p>
+  </div>
+  <div class="carte">
+    <p class="etiquette">Android — <span data-en="Privacy dashboard (Android 12 and later)">Tableau de bord Confidentialité (Android 12 et suivants)</span></p>
+    <p><strong data-en="1. Open it.">1. Ouvre-le.</strong> <span data-en="Settings → Security & Privacy (or Privacy) → Privacy dashboard. It shows which apps accessed which permissions, and when: the last 7 days on Android 13, the last 24 hours on Android 12.">Paramètres → Sécurité et confidentialité (ou Confidentialité) → Tableau de bord Confidentialité. Il montre quelles applications ont accédé à quelles autorisations, et quand : les 7 derniers jours sous Android 13, les dernières 24 heures sous Android 12.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-5" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-5"></span></p>
+    <p><strong data-en="2. Go permission by permission.">2. Avance autorisation par autorisation.</strong> <span data-en="Pick the permission that concerns you — location, camera, microphone, calendar — and read the timeline of the apps that used it. From any app in the list, you can update its permission on the spot.">Choisis l’autorisation qui te préoccupe — localisation, caméra, micro, agenda — et lis la chronologie des applications qui l’ont utilisée. Depuis n’importe quelle application de la liste, tu peux mettre son autorisation à jour sur-le-champ.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-6" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-6"></span></p>
+    <p><strong data-en="3. Make it an evening habit, then a decision.">3. Fais-en un geste du soir, puis une décision.</strong> <span data-en="Seven days (or twenty-four hours) is a rolling window, not an archive: what you do not read scrolls away. Read it tonight, revoke what overreaches, and seal the revocations — the report is the system's word; the chain is yours.">Sept jours (ou vingt-quatre heures) est une fenêtre glissante, pas une archive : ce que tu ne lis pas défile et se perd. Lis-le ce soir, révoque ce qui excède, et scelle les révocations — le rapport est la parole du système ; la chaîne est la tienne.</span></p>
+    <p><button type="button" class="secondaire" data-protocole="telephone-soir-7" data-en="Seal this step">Sceller cette étape</button> <span class="petite" data-geste-etat="telephone-soir-7"></span></p>
+    <p><a href="https://support.google.com/android/answer/13530434?authuser=4&amp;hl=fr" data-en="Official source — Android Help, Manage permissions from the privacy dashboard">Source officielle — Aide Android, Gérer les autorisations depuis le tableau de bord Confidentialité</a></p>
+  </div>
+</section>
+<section class="bloc" id="pisteur-visite">
+  <div class="entete-sec"><span class="num">50</span><h2 data-en="The guided tour, tracker-side — this visit, seen by the one who harvests">La visite guidée, côté pisteur — cette visite, vue par celui qui récolte</h2></div>
+  <p class="lead" data-en="Turn the map around: here is your own visit, narrated from the tracker's side — what a harvester sees, computes and deduces from a single page load, with the techniques named from the transit research (fingerprinting, referrer, URL parameters, request inventory, timestamping). The demonstration is local and keeps nothing: close or reload, and it is virgin again.">Retourne la carte : voici ta propre visite, racontée du côté du pisteur — ce qu’un récoltant voit, calcule et déduit d’un seul chargement de page, avec les techniques nommées depuis la recherche sur les transits (empreinte, référent, paramètres d’URL, inventaire de requêtes, horodatage). La démonstration est locale et ne garde rien : ferme ou recharge, et elle est vierge à nouveau.</p>
+  <div class="carte">
+    <p><button type="button" id="pis-commencer" data-en="Start the tracker-side tour">Commencer la visite côté pisteur</button> <button type="button" class="secondaire" id="pis-effacer" data-en="Erase everything (the demo keeps nothing)">Tout effacer (la démo ne garde rien)</button></p>
+    <div id="pis-etapes"></div>
+    <p class="petite" data-en="Nothing in this demonstration is recorded, sealed or sent: it exists in this page's memory, for the length of the visit. That is precisely the difference with a real tracker — his memory persists, and section 36 teaches you to measure yours.">Rien de cette démonstration n’est consigné, scellé ni envoyé : elle existe dans la mémoire de cette page, le temps de la visite. C’est exactement la différence avec un vrai pisteur — sa mémoire à lui persiste, et la section 36 t’apprend à mesurer la tienne.</p>
+  </div>
+</section>
+<p class="traversees">Ce qui transite autour de toi → <button type="button" class="secondaire" data-ouvrir="transits">La carte des transits</button> · la confidentialité de ce site → <button type="button" class="secondaire" data-ouvrir="confidentialite">Confidentialité et Loi 25</button> · ton cerveau → <button type="button" class="secondaire" data-ouvrir="voir">Voir mon cerveau</button></p></div>
+
+</main>
+
+  <p class="petite" id="note-rafraichissement" data-en="How this page refreshes (Alex's directive, November 3, 2026): on opening, the copy of the page kept in this device's cache — the previous state, the previous sum — is displayed at once; in the background, it compares itself, by the site's canonical seal, to the fresh version on the server; if the seal has moved, it reloads once, on its own, to the current version. This mechanism reads only the site's own files: the cache it uses is this page's cache, never your data — and the reload never touches your user brain; your local memory stays exactly as it is.">Rafraîchissement de la page (directive d’Alex, 3 novembre 2026) : à l’ouverture, la page gardée en cache sur cet appareil — l’état précédent, la somme précédente — s’affiche aussitôt ; en arrière-plan, elle se compare, par le sceau canonique du site, à la version fraîche du serveur ; si le sceau a bougé, elle se recharge une fois, toute seule, sur la version à jour. Ce mécanisme ne lit que les fichiers du site lui-même : le cache utilisé est celui de cette page, jamais tes données — et le rechargement ne touche pas ton cerveau d’utilisateur, ta mémoire locale reste telle quelle.</p>
+  <p class="petite" id="ligne-rafraichissement" hidden></p>
+
+<footer class="pied" id="contact">
+  <div class="interieur">
+    <p style="font-size:1.02rem;color:var(--encre)"><b>© 2026 Alexandre Vautour Gagnon — Tous droits réservés.</b></p>
+    <p>Le Protocole de Convergence Fibonacci-23, la méthode, les textes, le registre et le personnage SoPHIa sont la propriété intellectuelle de leur auteur. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site.</p>
+    <p><b>AUDIT UNISSON — Preuve d'Antériorité V-G</b> • Protocole de Convergence Fibonacci-23 • Sainte-Martine, Québec</p>
+    <p>Écrire au protocole : <a href="mailto:agent.ia.sophia@gmail.com">agent.ia.sophia@gmail.com</a> (boîte de l'agente SoPHIa) • Profil du chercheur : <a href="https://orcid.org/0009-0006-9124-4407" target="_blank" rel="noopener">ORCID 0009-0006-9124-4407</a></p>
+    <p>Borne, écrite et tenue : un sceau prouve qu'un contenu existait à une date et n'a pas changé depuis.<br>Il ne tranche pas la vérité du contenu, quel qu'en soit l'auteur.</p>
+    <p style="font-family:var(--serif);font-style:italic">« Qui surveille le surveillant ? Le SHA-256. »</p>
+  </div>
+</footer>
+
+
+<style>body{font-family:Georgia,serif;margin:2.2cm;color:#111}pre{white-space:pre-wrap;font:inherit;line-height:1.55}</style>
+<style>
+/* ===== v59 — couche imagerie-aventure : les visuels, les ambiances, la micro-vie ===== */
+.panneau.actif .bloc{animation:couche59 .55s ease both}
+@keyframes couche59{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#p-methode{background:linear-gradient(180deg,rgba(63,193,201,.08),transparent 360px)}
+#p-temps,#p-calendrier{background-image:radial-gradient(rgba(169,123,30,.13) 1px,transparent 1.5px);background-size:27px 27px;background-position:0 0}
+#p-preuves,#p-verifier{background:radial-gradient(900px 320px at 50% 0,rgba(176,44,32,.07),transparent 70%)}
+#p-confidentialite,#p-donnees{background:linear-gradient(180deg,rgba(53,192,139,.08),transparent 360px)}
+.compteur .nombre{animation:respire59 3.4s ease-in-out infinite}
+@keyframes respire59{0%,100%{opacity:1}50%{opacity:.8}}
+.sceau-cadre:hover .sceau-long{text-shadow:0 0 16px rgba(212,175,55,.5)}
+.coq59-grille{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:1.2rem;align-items:start}
+@media(max-width:820px){.coq59-grille{grid-template-columns:1fr}}
+#coq59-svg{width:100%;height:auto}
+#coq59-svg .couche{fill:none;stroke:var(--or);stroke-width:5;stroke-linecap:round;opacity:.1;transition:opacity .7s ease}
+#coq59-svg .couche.posee{opacity:.95}
+.coq59-liste{list-style:none;margin:0;padding:0}
+.coq59-liste li{margin:.5rem 0;padding:.45rem .7rem;border-left:3px solid var(--ligne);opacity:.38;transition:opacity .6s ease,border-color .6s ease}
+.coq59-liste li.posee{opacity:1;border-left-color:var(--or)}
+#te-phrase{cursor:text;outline:none;border-bottom:1px dashed var(--or);padding-bottom:.15rem}
+#te-phrase:focus{border-bottom:2px solid var(--or)}
+.te-boite.casse .te-sceau{color:#c0392b}
+.te-boite.casse{animation:tremble59 .35s ease}
+@keyframes tremble59{0%,100%{transform:none}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+#cal59-canvas{width:100%;height:auto;display:block}
+.jumeau-scene{position:relative;height:308px;margin:.6rem 0}
+.jumeau-zone{position:absolute;top:0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or-clair)}
+.jumeau-zone-g{left:0}.jumeau-zone-d{right:0}
+.jumeau-centre{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);text-align:center;color:var(--or-clair);opacity:.25;transition:opacity .8s ease}
+.jumeau-centre span{display:block;font-size:.72rem;letter-spacing:.14em;margin-top:.2rem}
+#jumeau-visuel.assemble .jumeau-centre{opacity:1}
+.jumeau-piece{position:absolute;left:2%;width:31%;border:1px solid var(--ligne);border-radius:12px;padding:.55rem .7rem;background:var(--puit2);transition:left 1.15s ease,border-color .8s ease,box-shadow .8s ease;top:calc(16% + var(--r)*21%)}
+.jumeau-piece b{letter-spacing:.12em;color:var(--or-clair)}
+.jumeau-piece span{display:block;font-size:.82rem;margin-top:.15rem}
+#jumeau-visuel.assemble .jumeau-piece{left:34.5%;border-color:var(--or);box-shadow:0 0 18px rgba(212,175,55,.18)}
+#jumeau-visuel.retour .jumeau-piece{left:67%;border-color:var(--vert);box-shadow:0 0 18px rgba(53,192,139,.18)}
+#jumeau-visuel.retour .jumeau-centre{opacity:.25}
+@media(max-width:640px){.jumeau-piece{width:40%}.jumeau-piece span{display:none}#jumeau-visuel.assemble .jumeau-piece{left:30%}#jumeau-visuel.retour .jumeau-piece{left:58%}}
+#vm-bande{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.6rem 0 .2rem}
+.vm-maillon{width:13px;height:13px;border-radius:50%;border:2px solid var(--or);flex:none}
+.vm-maillon.plein{background:var(--or)}
+.vm-lien{width:10px;height:2px;background:var(--or);opacity:.6;flex:none}
+@media (prefers-reduced-motion: reduce){
+  .panneau.actif .bloc{animation:none}
+  .compteur .nombre{animation:none}
+  .te-boite.casse{animation:none}
+  #coq59-svg .couche,.coq59-liste li,.jumeau-piece,.jumeau-centre{transition:none}
+}
+</style>
+<style>
+/* v63 corrigé — finitions écrans étroits : aucun défilement horizontal parasite */
+pre{max-width:100%;overflow-x:auto}
+.mono,.formule-code{overflow-wrap:anywhere}
+img,video,svg{max-width:100%}
+</style>
+<script>window.PANNEAU_PAGE="exposition";</script>
+<script src="assets/js/routeur.js"></script>
+<script src="assets/js/t12-utils.js"></script>
+<script src="assets/js/t13.js"></script>
+<script src="assets/js/t14.js"></script>
+<script src="assets/js/t15.js"></script>
+<script src="assets/js/t16.js"></script>
+<script src="assets/js/t17.js"></script>
+<script src="assets/js/t18.js"></script>
+<script src="assets/js/t19.js"></script>
+<script src="assets/js/t20.js"></script>
+<script src="assets/js/t21.js"></script>
+<script src="assets/js/t22.js"></script>
+<script src="assets/js/t23.js"></script>
+<script src="assets/js/t24.js"></script>
+<script src="assets/js/t25.js"></script>
+<script src="assets/js/t26.js"></script>
+<script src="assets/js/t27.js"></script>
+<script src="assets/js/t28.js"></script>
+<script src="assets/js/t29.js"></script>
+<script src="assets/js/t30.js"></script>
+<script src="assets/js/t31.js"></script>
+<script src="assets/js/t32.js"></script>
+<script src="assets/js/t33.js"></script>
+<script src="assets/js/t34.js"></script>
+<script src="assets/js/t35.js"></script>
+<script src="assets/js/t36.js"></script>
+<script src="assets/js/t37.js"></script>
+<script src="assets/js/t38.js"></script>
+<script src="assets/js/t39.js"></script>
+<script src="assets/js/t40.js"></script>
+<script src="assets/js/t41.js"></script>
+<script src="assets/js/t42.js"></script>
+<script src="assets/js/t43.js"></script>
+<script src="assets/js/t44.js"></script>
+<script src="assets/js/t45.js"></script>
+<script src="assets/js/t46.js"></script>
+<script src="assets/js/t47.js"></script>
+<script src="assets/js/t48.js"></script>
+<script src="assets/js/t49.js"></script>
+<script src="assets/js/rafraichissement.js"></script>
+<script src="assets/js/t51.js"></script>
+<script src="assets/js/t52.js"></script>
+<script src="assets/js/t53.js"></script>
+<script src="assets/js/recherche-texte.js"></script>
+<script src="assets/js/t55.js"></script>
+<script src="assets/js/t56.js"></script>
+</body>
+</html>
