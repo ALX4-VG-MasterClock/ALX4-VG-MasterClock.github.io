@@ -1,0 +1,1782 @@
+{
+ "format": "labyrinthe-sophia/v1",
+ "date": "2026-11-23",
+ "racine": "racine",
+ "principe": "Le site web SoPHIa répond de sa mémoire : des questions et des réponses préparées, tirées de ses propres pages. Aucune réponse n’est générée ; chaque fin de chemin montre la pièce qui porte la réponse, avec son chemin de preuve.",
+ "noeuds": [
+  {
+   "choix": [
+    {
+     "libelle": "La méthode — sceaux, chaîne, vérification",
+     "vers": "b-methode"
+    },
+    {
+     "libelle": "Mes données — récolte, droits, conditions",
+     "vers": "b-donnees"
+    },
+    {
+     "libelle": "Exercer mes droits — l'accompagnement, de A à Z",
+     "vers": "b-droits"
+    },
+    {
+     "libelle": "Les preuves — ancrages, Bitcoin, retour avec ta preuve",
+     "vers": "b-preuves"
+    },
+    {
+     "libelle": "Le dossier — le chercheur, la mémoire, les bornes",
+     "vers": "b-dossier"
+    },
+    {
+     "libelle": "Agir — don, contact",
+     "vers": "b-agir"
+    },
+    {
+     "libelle": "Je ne sais pas par où commencer — le bilan du site (trois questions au plus)",
+     "vers": "b-bilan"
+    }
+   ],
+   "id": "racine",
+   "intro": "Choisis un thème, puis une question. Chaque réponse est tirée des pages du site et montrée avec son chemin de preuve.",
+   "question": "Que veux-tu savoir ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Qu'est-ce qu'un sceau SHA-256 ?",
+     "vers": "q-sceau"
+    },
+    {
+     "libelle": "Comment la chaîne avance-t-elle, maillon par maillon ?",
+     "vers": "q-chaine"
+    },
+    {
+     "libelle": "Comment vérifier la chaîne moi-même ?",
+     "vers": "q-verifier"
+    },
+    {
+     "libelle": "Un sceau prouve-t-il que le contenu est vrai ?",
+     "vers": "q-vrai"
+    }
+   ],
+   "id": "b-methode",
+   "intro": "La recette du site, ses sceaux et la façon de tout recalculer toi-même.",
+   "question": "La méthode — que veux-tu comprendre ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Que détient Google sur moi ?",
+     "vers": "q-google"
+    },
+    {
+     "libelle": "Le site récolte-t-il mes données ?",
+     "vers": "q-recolte"
+    },
+    {
+     "libelle": "Quels sont mes droits sur mes données (Loi 25) ?",
+     "vers": "q-loi25"
+    },
+    {
+     "libelle": "Où lire ce que les plateformes font de mes données ?",
+     "vers": "q-conditions"
+    }
+   ],
+   "id": "b-donnees",
+   "intro": "Ce que les plateformes récoltent, ce que ce site ne récolte pas, et les droits écrits dans les lois.",
+   "question": "Mes données — que veux-tu savoir ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Comment une preuve est-elle ancrée dans Bitcoin ?",
+     "vers": "q-ancrage"
+    },
+    {
+     "libelle": "Puis-je ancrer ma propre mémoire dans Bitcoin ?",
+     "vers": "q-ancrer-soi"
+    },
+    {
+     "libelle": "Je reviens avec ma preuve : que se passe-t-il ?",
+     "vers": "q-reviens"
+    },
+    {
+     "libelle": "Puis-je tout vérifier ici, sans aller ailleurs ?",
+     "vers": "q-tout-verifier"
+    }
+   ],
+   "id": "b-preuves",
+   "intro": "Les ancrages publics du dossier, et les gestes pour ancrer et revérifier toi-même.",
+   "question": "Les preuves — que veux-tu vérifier ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Qui est Alexandre Vautour Gagnon ?",
+     "vers": "q-chercheur"
+    },
+    {
+     "libelle": "Qu'est-ce que la mémoire externe de SoPHIa ?",
+     "vers": "q-memoire"
+    },
+    {
+     "libelle": "Qu'est-ce que ce dossier ne prétend pas ?",
+     "vers": "q-bornes"
+    }
+   ],
+   "id": "b-dossier",
+   "intro": "Le chercheur derrière le site, sa mémoire, et ce que le dossier refuse de prétendre.",
+   "question": "Le dossier — que veux-tu savoir ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Comment faire un don ?",
+     "vers": "q-don"
+    },
+    {
+     "libelle": "Comment contacter Alexandre ?",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-agir",
+   "intro": "Soutenir le dossier, ou joindre un humain.",
+   "question": "Agir — que veux-tu faire ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Commencer le parcours — étape 1 : savoir ce que je peux demander",
+     "vers": "d-savoir"
+    },
+    {
+     "libelle": "Je sais déjà quoi demander — préparer ma demande (étape 3)",
+     "vers": "d-preparer"
+    },
+    {
+     "libelle": "Par plateforme — Google, Apple, Meta, TikTok : marcher le parcours de ma plateforme",
+     "vers": "b-plateformes"
+    },
+    {
+     "libelle": "Le bilan — trois questions au plus, et le site t’aiguille vers le bon parcours",
+     "vers": "b-bilan"
+    }
+   ],
+   "id": "b-droits",
+   "intro": "« L'accompagnement avec la Commission d'accès à l'information, c'est justement rendre la loi accessible. » — Alexandre, 23 novembre 2026. Ce parcours te marche en sept temps, de ce que tu peux demander jusqu'au recours devant la Commission : chaque étape est portée par une pièce du site et montrée avec son chemin de preuve. Information générale — jamais un avis juridique ; le site accompagne, il n'agit pas à ta place.",
+   "question": "Exercer tes droits — l'accompagnement, de A à Z"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Google — ce qu’il détient, où le chercher, la démarche, les délais, la suite",
+     "vers": "p-google-detient"
+    },
+    {
+     "libelle": "Apple — ce qu’il détient, où le chercher, la démarche, les délais, la suite",
+     "vers": "p-apple-detient"
+    },
+    {
+     "libelle": "Meta (Facebook, Instagram, WhatsApp) — ce qu’il détient, où le chercher, la démarche, les délais, la suite",
+     "vers": "p-meta-detient"
+    },
+    {
+     "libelle": "TikTok — ce qu’il détient, où le chercher, la démarche, les délais, la suite",
+     "vers": "p-tiktok-detient"
+    }
+   ],
+   "id": "b-plateformes",
+   "intro": "Le parcours des droits, décliné par plateforme : ce que la plateforme détient, où aller le chercher, la démarche — l'export depuis ton compte, puis la demande formelle —, les délais que ce site tient pour elle, et la suite si l'export est partiel, si la plateforme refuse ou se tait : le détecteur d'export partiel quand la plateforme est dans sa liste, puis le recours du parcours des droits. Chaque étape est portée par la fiche « aller chercher » de la plateforme et montrée avec son chemin de preuve. Information générale — jamais un avis juridique ; le site accompagne, il n'agit pas à ta place.",
+   "question": "Par plateforme — quel parcours veux-tu marcher ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Google",
+     "vers": "b-bilan-google"
+    },
+    {
+     "libelle": "Apple",
+     "vers": "b-bilan-apple"
+    },
+    {
+     "libelle": "Meta — Facebook, Instagram, WhatsApp",
+     "vers": "b-bilan-meta"
+    },
+    {
+     "libelle": "TikTok",
+     "vers": "b-bilan-tiktok"
+    },
+    {
+     "libelle": "Une autre plateforme",
+     "vers": "b-bilan-autre"
+    },
+    {
+     "libelle": "Je ne sais pas",
+     "vers": "b-bilan-autre"
+    }
+   ],
+   "id": "b-bilan",
+   "intro": "Le bilan te pose trois questions au plus, en langage simple, et t'aiguille vers le parcours qui existe déjà sur le site — celui de ta plateforme, le parcours général des droits, le détecteur ou le miroir des exports, ou la porte du courriel quand le bilan ne sait pas. Le bilan ne crée rien et ne promet rien : il aiguille. Information générale — jamais un avis juridique ; le site accompagne, il n'agit pas à ta place.",
+   "question": "Le bilan du site — première question : c'est à propos de quelle plateforme ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Voir ce qu'ils gardent sur moi",
+     "vers": "p-google-detient"
+    },
+    {
+     "libelle": "Récupérer mes données — les télécharger",
+     "vers": "p-google-export"
+    },
+    {
+     "libelle": "Qu'ils corrigent ou effacent quelque chose",
+     "vers": "b-bilan-google-corriger"
+    },
+    {
+     "libelle": "Ils ne me répondent pas — ou l'export reçu est incomplet",
+     "vers": "p-google-partiel"
+    },
+    {
+     "libelle": "Autre chose — ce n'est pas dans ces réponses",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-bilan-google",
+   "intro": "C'est noté : Google. Deuxième question du bilan — choisis ce qui ressemble le plus à ce que tu veux ; le site t'aiguille vers l'étape du parcours Google qui y répond.",
+   "question": "Tu veux quoi, au juste ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, pas encore",
+     "vers": "p-google-demande"
+    },
+    {
+     "libelle": "Oui — ils refusent, ou ils ne répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Je veux d’abord comprendre ce que je peux demander",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-google-corriger",
+   "intro": "La réponse change la destination, c'est pour ça que le bilan la pose : pas encore demandé, la demande formelle est la porte ; déjà demandé et refusé — ou silence —, le recours est la porte.",
+   "question": "Dernière question du bilan : tu leur as déjà demandé de corriger ou d’effacer ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Voir ce qu'ils gardent sur moi",
+     "vers": "p-apple-detient"
+    },
+    {
+     "libelle": "Récupérer mes données — les télécharger",
+     "vers": "p-apple-export"
+    },
+    {
+     "libelle": "Qu'ils corrigent ou effacent quelque chose",
+     "vers": "b-bilan-apple-corriger"
+    },
+    {
+     "libelle": "Ils ne me répondent pas — ou l'export reçu est incomplet",
+     "vers": "p-apple-partiel"
+    },
+    {
+     "libelle": "Autre chose — ce n'est pas dans ces réponses",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-bilan-apple",
+   "intro": "C'est noté : Apple. Deuxième question du bilan — choisis ce qui ressemble le plus à ce que tu veux ; le site t'aiguille vers l'étape du parcours Apple qui y répond.",
+   "question": "Tu veux quoi, au juste ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, pas encore",
+     "vers": "p-apple-demande"
+    },
+    {
+     "libelle": "Oui — ils refusent, ou ils ne répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Je veux d’abord comprendre ce que je peux demander",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-apple-corriger",
+   "intro": "La réponse change la destination, c'est pour ça que le bilan la pose : pas encore demandé, la demande formelle est la porte ; déjà demandé et refusé — ou silence —, le recours est la porte.",
+   "question": "Dernière question du bilan : tu leur as déjà demandé de corriger ou d’effacer ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Voir ce qu'ils gardent sur moi",
+     "vers": "p-meta-detient"
+    },
+    {
+     "libelle": "Récupérer mes données — les télécharger",
+     "vers": "p-meta-export"
+    },
+    {
+     "libelle": "Qu'ils corrigent ou effacent quelque chose",
+     "vers": "b-bilan-meta-corriger"
+    },
+    {
+     "libelle": "Ils ne me répondent pas — ou l'export reçu est incomplet",
+     "vers": "p-meta-partiel"
+    },
+    {
+     "libelle": "Autre chose — ce n'est pas dans ces réponses",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-bilan-meta",
+   "intro": "C'est noté : Meta. Deuxième question du bilan — choisis ce qui ressemble le plus à ce que tu veux ; le site t'aiguille vers l'étape du parcours Meta qui y répond.",
+   "question": "Tu veux quoi, au juste ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, pas encore",
+     "vers": "p-meta-demande"
+    },
+    {
+     "libelle": "Oui — ils refusent, ou ils ne répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Je veux d’abord comprendre ce que je peux demander",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-meta-corriger",
+   "intro": "La réponse change la destination, c'est pour ça que le bilan la pose : pas encore demandé, la demande formelle est la porte ; déjà demandé et refusé — ou silence —, le recours est la porte.",
+   "question": "Dernière question du bilan : tu leur as déjà demandé de corriger ou d’effacer ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Voir ce qu'ils gardent sur moi",
+     "vers": "p-tiktok-detient"
+    },
+    {
+     "libelle": "Récupérer mes données — les télécharger",
+     "vers": "p-tiktok-export"
+    },
+    {
+     "libelle": "Qu'ils corrigent ou effacent quelque chose",
+     "vers": "b-bilan-tiktok-corriger"
+    },
+    {
+     "libelle": "Ils ne me répondent pas — ou l'export reçu est incomplet",
+     "vers": "p-tiktok-partiel"
+    },
+    {
+     "libelle": "Autre chose — ce n'est pas dans ces réponses",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-bilan-tiktok",
+   "intro": "C'est noté : TikTok. Deuxième question du bilan — choisis ce qui ressemble le plus à ce que tu veux ; le site t'aiguille vers l'étape du parcours TikTok qui y répond.",
+   "question": "Tu veux quoi, au juste ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, pas encore",
+     "vers": "p-tiktok-demande"
+    },
+    {
+     "libelle": "Oui — ils refusent, ou ils ne répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Je veux d’abord comprendre ce que je peux demander",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-tiktok-corriger",
+   "intro": "La réponse change la destination, c'est pour ça que le bilan la pose : pas encore demandé, la demande formelle est la porte ; déjà demandé et refusé — ou silence —, le recours est la porte.",
+   "question": "Dernière question du bilan : tu leur as déjà demandé de corriger ou d’effacer ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Voir ce qu'ils gardent sur moi",
+     "vers": "d-savoir"
+    },
+    {
+     "libelle": "Récupérer mes données",
+     "vers": "b-bilan-autre-recuperer"
+    },
+    {
+     "libelle": "Qu'ils corrigent ou effacent quelque chose",
+     "vers": "b-bilan-autre-corriger"
+    },
+    {
+     "libelle": "Ils ne me répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Autre chose — ce n'est pas dans ces réponses",
+     "vers": "fin-courriel"
+    }
+   ],
+   "id": "b-bilan-autre",
+   "intro": "C'est noté : une autre plateforme, ou tu ne sais pas laquelle. Le site n'a pas de parcours par plateforme pour celle-là — mais le parcours général des droits marche pour toute organisation. Deuxième question du bilan :",
+   "question": "Tu veux quoi, au juste ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, je ne sais pas qui décide",
+     "vers": "d-identifier"
+    },
+    {
+     "libelle": "Oui — je veux préparer ma demande",
+     "vers": "d-preparer"
+    },
+    {
+     "libelle": "Je préfère repartir du début du parcours",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-autre-recuperer",
+   "intro": "La réponse change l'étape du parcours par laquelle tu entres : identifier le bon responsable d'abord, ou préparer ta demande tout de suite.",
+   "question": "Dernière question du bilan : tu sais à qui adresser ta demande ?"
+  },
+  {
+   "choix": [
+    {
+     "libelle": "Non, pas encore",
+     "vers": "d-preparer"
+    },
+    {
+     "libelle": "Oui — ils refusent, ou ils ne répondent pas",
+     "vers": "d-recours"
+    },
+    {
+     "libelle": "Je veux d’abord comprendre ce que je peux demander",
+     "vers": "d-savoir"
+    }
+   ],
+   "id": "b-bilan-autre-corriger",
+   "intro": "La réponse change la destination, c'est pour ça que le bilan la pose : pas encore demandé, préparer la demande est la porte ; déjà demandé et refusé — ou silence —, le recours est la porte.",
+   "question": "Dernière question du bilan : tu leur as déjà demandé de corriger ou d’effacer ?"
+  }
+ ],
+ "feuilles": [
+  {
+   "endroit": {
+    "ancre": "faq",
+    "nom": "Foire aux questions",
+    "page": "temps.html"
+   },
+   "id": "q-sceau",
+   "mots": [
+    "sceau",
+    "sha-256",
+    "sha256",
+    "empreinte",
+    "hash",
+    "hachage"
+   ],
+   "question": "Qu'est-ce qu'un sceau SHA-256 ?",
+   "renvoi": {
+    "ancre": "verifie-moi",
+    "libelle": "Vérifier un sceau, à la chambre Vérifier",
+    "page": "verifier.html"
+   },
+   "reponse": "Une empreinte calculée d'un contenu : 64 caractères produits par l'algorithme SHA-256. Si le contenu change d'un seul caractère, l'empreinte change entièrement. Un sceau prouve qu'un contenu existait à une date et n'a pas changé depuis — il ne tranche pas la vérité du contenu. N'importe qui peut recalculer une empreinte et comparer.",
+   "source": "temps.html#faq (réponse publiée de la foire aux questions)",
+   "digest": "e711a641e3eec056865929d97549818922bdfe62314fb13d3c3ca1a97d748866"
+  },
+  {
+   "endroit": {
+    "ancre": "methode-30",
+    "nom": "La méthode en 30 secondes",
+    "page": "index.html"
+   },
+   "id": "q-chaine",
+   "mots": [
+    "chaîne",
+    "chaine",
+    "maillon",
+    "digest",
+    "cumulé",
+    "recette",
+    "somme",
+    "précédents"
+   ],
+   "question": "Comment la chaîne avance-t-elle, maillon par maillon ?",
+   "renvoi": null,
+   "reponse": "Chaque maillon de la chaîne porte un sceau, calculé à partir du sceau du maillon précédent et du texte du maillon : sceau = SHA-256(sceau précédent + texte). Et l'état de la chaîne entière se résume en un digest cumulé, qui avance d'un maillon à l'autre : digest = SHA-256(digest précédent + sceau). Conséquence : toucher à un maillon ancien change son sceau, donc tous les digests qui suivent — la rupture se voit au recalcul, au maillon près.",
+   "source": "index.html#methode-30 (la recette canonique)",
+   "digest": "994bebeb0718fff1ec45ecf3eda36acdaf0f743906d137b1c732f88e24126447"
+  },
+  {
+   "endroit": {
+    "ancre": "faq",
+    "nom": "Foire aux questions",
+    "page": "temps.html"
+   },
+   "id": "q-verifier",
+   "mots": [
+    "vérifier",
+    "verifier",
+    "recalculer",
+    "moi-même",
+    "chaîne",
+    "propre"
+   ],
+   "question": "Comment vérifier la chaîne moi-même ?",
+   "renvoi": {
+    "ancre": "tout-verifier",
+    "libelle": "Tout vérifier ici, à la chambre Vérifier",
+    "page": "verifier.html"
+   },
+   "reponse": "La recette est publique : chaque version du site porte un sceau canonique et un sceau chaîné recalculables, et le Répertoire du propre publie les sceaux maillon par maillon.",
+   "source": "temps.html#faq (réponse publiée de la foire aux questions)",
+   "digest": "12810d48029a1058d8b724ae01455da83bc2f9e834b923d9d0a8af6095f16e63"
+  },
+  {
+   "endroit": {
+    "ancre": "bornes",
+    "nom": "Bornes — ce que ce dossier ne prétend pas",
+    "page": "preuves.html"
+   },
+   "id": "q-vrai",
+   "mots": [
+    "vrai",
+    "vérité",
+    "verite",
+    "prouve",
+    "preuve",
+    "intégrité",
+    "sceau"
+   ],
+   "question": "Un sceau prouve-t-il que le contenu est vrai ?",
+   "renvoi": null,
+   "reponse": "« Un sceau prouve que le contenu est vrai. » Refusé. Il prouve l'intégrité d'un contenu depuis son scellement — jamais sa vérité.",
+   "source": "preuves.html#bornes (le mur des refus)",
+   "digest": "43314dd57b8daaa21a1519138e0edfcd3b583dba629254f7ebc740f801401157"
+  },
+  {
+   "endroit": {
+    "ancre": "faq",
+    "nom": "Foire aux questions",
+    "page": "temps.html"
+   },
+   "id": "q-google",
+   "mots": [
+    "google",
+    "détient",
+    "detient",
+    "données",
+    "donnees",
+    "récolte",
+    "sur moi"
+   ],
+   "question": "Que détient Google sur moi ?",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "Selon le dossier rassemblé ici : ce que tu dis, ce que tu fais, où tu vas et ce que tu écoutes — quatre dimensions de récolte, documentées panneau par panneau.",
+   "source": "temps.html#faq (réponse publiée de la foire aux questions)",
+   "digest": "249983a7e8ecb052f84623d8e51acc0334d4e0a073a864c4c33986b0f91ddca8"
+  },
+  {
+   "endroit": {
+    "ancre": "faq",
+    "nom": "Foire aux questions",
+    "page": "temps.html"
+   },
+   "id": "q-recolte",
+   "mots": [
+    "site",
+    "récolte",
+    "recolte",
+    "données",
+    "cookie",
+    "traqueur",
+    "vie privée",
+    "confidentialité"
+   ],
+   "question": "Le site récolte-t-il mes données ?",
+   "renvoi": {
+    "ancre": "suivi",
+    "libelle": "Agir et suivi",
+    "page": "suivi.html"
+   },
+   "reponse": "Non. Aucun cookie, aucune analytique, aucun traqueur. La mémoire du visiteur (le « cerveau visiteur ») vit dans ton propre navigateur et ne quitte pas ton appareil. Seule exception, à ta demande expresse : l'infolettre mensuelle, par courriel.",
+   "source": "temps.html#faq (réponse publiée de la foire aux questions, renvoi « Agir et suivi » conservé)",
+   "digest": "fe1945d0a560fb9e552c64b36dee7470d8f844899bd9347dbe3100c1b0a5e6d0"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "q-loi25",
+   "mots": [
+    "droits",
+    "loi 25",
+    "loi",
+    "données",
+    "accès",
+    "acces",
+    "recours",
+    "exporter"
+   ],
+   "question": "Quels sont mes droits sur mes données (Loi 25) ?",
+   "renvoi": null,
+   "reponse": "Ce panneau transforme des droits écrits dans des lois en un parcours que tu peux suivre, depuis ton navigateur : comprendre tes droits, récolter directement ce que les plateformes consentent à exporter, demander formellement le reste, exercer un recours si la réponse ne vient pas, puis sceller ta récolte chez toi. Tout ce qui se calcule ici se calcule sur ton appareil. Borne affichée, sans détour : information générale, pas un avis juridique.",
+   "source": "donnees.html#donnees (présentation du panneau)",
+   "digest": "6834fbaa483d36b30a7bdff64691a81d391e2e26f09835fef053f9b3e82440d9"
+  },
+  {
+   "endroit": {
+    "ancre": "conditions",
+    "nom": "Le registre des conditions",
+    "page": "conditions.html"
+   },
+   "id": "q-conditions",
+   "mots": [
+    "conditions",
+    "plateformes",
+    "contrats",
+    "tiktok",
+    "droits",
+    "utilisateurs",
+    "registre"
+   ],
+   "question": "Où lire ce que les plateformes font de mes données ?",
+   "renvoi": null,
+   "reponse": "Personne ne lit les conditions. Alors ce site les lit en entier — onze documents, de A à Z, le 3 novembre 2026 — et tient le registre de ce qu'ils disent des droits des utilisateurs : l'appel que le contrat promet ou ne promet pas, le délai qu'il énonce ou qu'il tait, le for qu'il impose. Information et accompagnement — jamais d'avis juridique.",
+   "source": "conditions.html#conditions (présentation du registre)",
+   "digest": "7285fe6737cfd2657fe07f7232cd9ea20b5c220802e9b3fe0553ab0f412bd22d"
+  },
+  {
+   "endroit": {
+    "ancre": "preuves-chemins",
+    "nom": "Vérifier chez le tiers — le chemin, pas à pas",
+    "page": "ancrage.html"
+   },
+   "id": "q-ancrage",
+   "mots": [
+    "ancrage",
+    "ancrée",
+    "bitcoin",
+    "opentimestamps",
+    "preuve",
+    "tiers",
+    "bloc"
+   ],
+   "question": "Comment une preuve est-elle ancrée dans Bitcoin ?",
+   "renvoi": null,
+   "reponse": "Une preuve externe ne vaut que ce que vaut une vérification indépendante. Pour chaque ancrage de ce dossier : l'empreinte, la date, et le chemin exact pour la vérifier là où elle vit — jamais sur ce site seul.",
+   "source": "ancrage.html#preuves-chemins (présentation de la section §F)",
+   "digest": "b0f20c8eaa91aca983b3c2fc242553460ecf2500b7001e9075f8302758876709"
+  },
+  {
+   "endroit": {
+    "ancre": "ancrer-bitcoin",
+    "nom": "Ancre ta mémoire dans Bitcoin, toi aussi",
+    "page": "ancrage.html"
+   },
+   "id": "q-ancrer-soi",
+   "mots": [
+    "ancrer",
+    "ma propre",
+    "mémoire",
+    "bitcoin",
+    "fichier",
+    "dater"
+   ],
+   "question": "Puis-je ancrer ma propre mémoire dans Bitcoin ?",
+   "renvoi": null,
+   "reponse": "Ce que ce site fait pour sa propre mémoire, tu peux le faire pour la tienne. Pas de compte, pas d'envoi de ton fichier à qui que ce soit : tu ancres son empreinte, et c'est Bitcoin qui garde la date.",
+   "source": "ancrage.html#ancrer-bitcoin (présentation de la section)",
+   "digest": "70b5b377614d1237b01ed8a7298d25accdba11f8b00de3466ed37d4508bd1f42"
+  },
+  {
+   "endroit": {
+    "ancre": "reviens-preuve",
+    "nom": "Reviens avec ta preuve",
+    "page": "ancrage.html"
+   },
+   "id": "q-reviens",
+   "mots": [
+    "reviens",
+    "retour",
+    "preuve",
+    "ots",
+    "document",
+    "sécurisé",
+    "mémoire cumulée"
+   ],
+   "question": "Je reviens avec ma preuve : que se passe-t-il ?",
+   "renvoi": null,
+   "reponse": "Tu as sécurisé un document avec ce site — scellé, daté, ancré. Reviens quand tu veux avec ton document et sa preuve : cette page recalcule tout devant toi et te montre ta mémoire cumulée, entrée par entrée. Rien ne part de ton appareil : les fichiers que tu déposes ici sont lus dans ton navigateur, jamais envoyés.",
+   "source": "ancrage.html#reviens-preuve (présentation de la pièce de retour)",
+   "digest": "8f37d68ce69dd42cd0d59278be26c2aee31a38935710876b1f853ac49b042e04"
+  },
+  {
+   "endroit": {
+    "ancre": "tout-verifier",
+    "nom": "Tout vérifier ici",
+    "page": "verifier.html"
+   },
+   "id": "q-tout-verifier",
+   "mots": [
+    "tout vérifier",
+    "affirmation",
+    "preuve",
+    "registre",
+    "témoignage",
+    "ailleurs"
+   ],
+   "question": "Puis-je tout vérifier ici, sans aller ailleurs ?",
+   "renvoi": null,
+   "reponse": "Le mandat de cette version : que personne n'ait à aller vérifier ailleurs. Chaque affirmation importante du site est reprise ci-dessous avec, en un geste, (a) la pièce du registre qui la porte, (b) le moyen de la recalculer ou sa source primaire, (c) la capture qui la fige datée. Ce qui n'a pas de preuve n'est pas maquillé : il est étiqueté témoignage.",
+   "source": "verifier.html#tout-verifier (présentation de la section)",
+   "digest": "e193b8306ebfe58fd42013a6ac9572b8febdfbb25dab50c517a6885caf491652"
+  },
+  {
+   "endroit": {
+    "ancre": "chercheur",
+    "nom": "Le chercheur",
+    "page": "chercheur.html"
+   },
+   "id": "q-chercheur",
+   "mots": [
+    "alexandre",
+    "vautour",
+    "gagnon",
+    "chercheur",
+    "auteur",
+    "qui est",
+    "orcid"
+   ],
+   "question": "Qui est Alexandre Vautour Gagnon ?",
+   "renvoi": null,
+   "reponse": "L'auteur du protocole : Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur. Le nom nomme la fonction : sans institution ni budget de laboratoire, il pose le problème, conçoit l'architecture, spécifie, dirige la réalisation, vérifie et opère sa méthode au quotidien depuis Sainte-Martine, au Québec.",
+   "source": "chercheur.html#chercheur (paragraphe d'ouverture, premières phrases)",
+   "digest": "2b6e58c95b96ccc0347a781b1a24317df27e79c9ce936b5b1a25cb817dce0b21"
+  },
+  {
+   "endroit": {
+    "ancre": "memoire",
+    "nom": "Mémoire — la mémoire externe de SoPHIa",
+    "page": "memoire.html"
+   },
+   "id": "q-memoire",
+   "mots": [
+    "mémoire",
+    "memoire",
+    "externe",
+    "sophia",
+    "chaîne",
+    "réponses",
+    "scellées"
+   ],
+   "question": "Qu'est-ce que la mémoire externe de SoPHIa ?",
+   "renvoi": null,
+   "reponse": "Ce panneau est la mémoire externe de SoPHIa : sa chaîne de réponses scellées une à une — le compte, la recette, et la façon de tout recalculer toi-même.",
+   "source": "memoire.html#memoire (présentation du panneau, apposition retranchée — voir le rapport du chantier)",
+   "digest": "e0dc0ee8c905738d219b8048efce54d46046f370ade776ad9d24954c5846be58"
+  },
+  {
+   "endroit": {
+    "ancre": "bornes",
+    "nom": "Bornes — ce que ce dossier ne prétend pas",
+    "page": "preuves.html"
+   },
+   "id": "q-bornes",
+   "mots": [
+    "prétend",
+    "pretend",
+    "bornes",
+    "refuse",
+    "limites",
+    "ne prétend pas"
+   ],
+   "question": "Qu'est-ce que ce dossier ne prétend pas ?",
+   "renvoi": null,
+   "reponse": "Un dossier crédible se reconnaît aussi à ce qu'il refuse de dire. Ces quatre phrases sont barrées ici pour de bon : « Un sceau prouve que le contenu est vrai. » Refusé. « Croyez ce site sur parole. » Refusé. Les recettes sont publiques et les outils recalculent devant vous : la confiance n'a pas à intervenir.",
+   "source": "preuves.html#bornes (le mur des refus)",
+   "digest": "d991607a9a2f2a4594c6f917e9945d46a046d5bccddc1e4df707becccca15ed3"
+  },
+  {
+   "endroit": {
+    "ancre": "faq",
+    "nom": "Foire aux questions",
+    "page": "temps.html"
+   },
+   "id": "q-don",
+   "mots": [
+    "don",
+    "donner",
+    "interac",
+    "virement",
+    "soutenir",
+    "argent"
+   ],
+   "question": "Comment faire un don ?",
+   "renvoi": {
+    "ancre": "don-comment",
+    "libelle": "Comment donner, à la page Don",
+    "page": "don.html"
+   },
+   "reponse": "Par virement Interac Autodépôt à agent.ia.sophia@gmail.com, en écrivant le code de l'usage choisi dans le message du virement. Sept usages, comptés en agrégat. Ce n'est pas un organisme de charité : aucun reçu d'impôt n'est émis.",
+   "source": "temps.html#faq (réponse publiée de la foire aux questions)",
+   "digest": "b241ec0ddb1f3114a60421555fa1980a3db8b7b5dd134716ec75b673fa7e91f2"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "d-savoir",
+   "mots": [
+    "droits",
+    "demander",
+    "accès",
+    "acces",
+    "rectification",
+    "portabilité",
+    "portabilite",
+    "désindexation",
+    "desindexation",
+    "renseignements",
+    "parcours",
+    "loi"
+   ],
+   "question": "Étape 1 — Que puis-je demander sur mes données ?",
+   "renvoi": null,
+   "reponse": "Avant toute lettre, sais ce que la loi t'ouvre — le panneau « Tes données, ton dossier » le dit en langage simple, puis précisément. L'accès : savoir ce qu'une organisation détient sur toi et en recevoir communication ou copie (art. 27 de la loi québécoise du secteur privé, la LRPSP). La rectification : faire corriger un renseignement inexact, incomplet ou équivoque (art. 28). La portabilité : repartir avec certains renseignements informatisés dans un format structuré et couramment utilisé. La cessation de diffusion et la désindexation : faire taire un lien qui perpétue un préjudice (art. 28.1). Ce parcours marche la demande d'accès, la plus fréquente ; les autres droits vivent au même panneau. Sa borne, reprise telle quelle : information générale, pas un avis juridique.",
+   "source": "donnees.html#donnees (Étape 1 — Le principe et tes droits : accès art. 27, rectification art. 28, portabilité, cessation de diffusion et désindexation art. 28.1 ; borne « information générale, pas un avis juridique » du panneau)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — à qui adresser ma demande",
+     "vers": "d-identifier"
+    }
+   ],
+   "digest": "4753d62c1e9673b87610706a1896ec39bc649daa37cde0b99fb3a46d308b1ea4"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "d-identifier",
+   "mots": [
+    "responsable",
+    "rprp",
+    "adresser",
+    "organisation",
+    "entreprise",
+    "destinataire",
+    "identifier",
+    "qui"
+   ],
+   "question": "Étape 2 — À qui adresser ma demande ?",
+   "renvoi": {
+    "ancre": "acces",
+    "libelle": "Déterminer la loi applicable, au panneau Mes renseignements",
+    "page": "acces.html"
+   },
+   "reponse": "À l'organisation qui détient tes renseignements — jamais d'abord à la Commission : la première demande se fait par écrit, directement à l'organisation, et le commissariat n'intervient qu'après, en recours. Dans l'organisation, ta demande s'adresse à son responsable de la protection des renseignements personnels — le RPRP : « la personne à qui adresser ta demande », dit le panneau en langage simple. Son nom se lit dans la politique de confidentialité de l'organisation ; si tu le connais, le générateur de lettre du panneau « Mes renseignements » te laisse l'inscrire. C'est aussi ici que la loi applicable se détermine — Québec, fédérale ou régime de la santé : d'elle dépendent le délai et le recours.",
+   "source": "donnees.html#donnees (langage simple : le RPRP, « la personne à qui adresser ta demande ») et acces.html#acces (Étape 1 — la première demande va à l'organisation ; le commissariat n'intervient qu'en recours ; la loi applicable se détermine)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — préparer ma demande",
+     "vers": "d-preparer"
+    }
+   ],
+   "digest": "147798f28e64c9d04762cbc24acff007fcd0bcf8ba11b964c9e80b0f84ad31b6"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "d-preparer",
+   "mots": [
+    "lettre",
+    "préparer",
+    "preparer",
+    "demande",
+    "modèle",
+    "modele",
+    "générateur",
+    "generateur",
+    "écrire",
+    "ecrire",
+    "formulaire"
+   ],
+   "question": "Étape 3 — Comment préparer ma demande ?",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le parcours complet, au panneau Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "Aucun formulaire n'est obligatoire : une demande écrite suffit. Le panneau « Mes renseignements » produit la lettre chez toi, dans ton navigateur — ce panneau ne reçoit ni ne conserve rien de ce que tu y écris. La lettre produite porte en première ligne sa mention : « Modèle d'aide à la rédaction — ce document n'est pas un formulaire officiel et ne constitue pas un avis juridique ». Des lettres types officielles existent, et ce générateur ne les remplace pas : la lettre type de la Commission d'accès à l'information — « Demande d'accès à vos renseignements personnels dans une entreprise privée » — et l'exemple du Commissariat à la protection de la vie privée du Canada. Le panneau lie la page des formulaires et lettres types de la Commission (cai.gouv.qc.ca).",
+   "source": "acces.html#acces (Étape 2 — Produire ta lettre, en local : mention de modèle d'aide portée par la lettre ; lettres types officielles de la CAI et du CPVP liées au panneau, page « formulaires-lettres-types » de la Commission)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — envoyer, et garder ma trace",
+     "vers": "d-envoyer"
+    }
+   ],
+   "digest": "207b2aae72b4555b05056939aae56a347f00f8f25a3b2cf5bfb491ba10c9f277"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "d-envoyer",
+   "mots": [
+    "envoyer",
+    "envoi",
+    "preuve",
+    "garder",
+    "trace",
+    "date",
+    "poster",
+    "copie"
+   ],
+   "question": "Étape 4 — J'envoie ma demande : que dois-je garder ?",
+   "renvoi": null,
+   "reponse": "Envoie ta lettre à l'organisation, et garde ta trace de ton bord : la date d'envoi, le moyen d'envoi, ta copie de la lettre. Le panneau le dit dès l'ouverture de son parcours : « garde tes preuves d'envoi et scelle chaque export reçu ». Cette conversation-ci te donne le même geste : ton parcours, ci-dessous, se consigne en entrées chaînées par SHA-256 dans ton appareil seulement — le site ne garde rien — et il se revérifie à ton retour. Note la date d'envoi : c'est elle qui fait courir le délai de l'étape suivante. Ce que tu gardes daté, personne ne peut le redater.",
+   "source": "donnees.html#donnees (ouverture du parcours : « garde tes preuves d'envoi et scelle chaque export reçu » ; Étape 6 — sécuriser ta récolte) et la mécanique du parcours chaîné de cette salle (section « Ton parcours » de cerveau.html)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — le délai de réponse",
+     "vers": "d-delai"
+    }
+   ],
+   "digest": "d4d2dc3acca6e6493f4c5a63249f285fc948b0ebc055bbb663b2f06c26f3f1f8"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "d-delai",
+   "mots": [
+    "délai",
+    "delai",
+    "jours",
+    "temps",
+    "attendre",
+    "expiration",
+    "silence",
+    "réponse",
+    "reponse"
+   ],
+   "question": "Étape 5 — Combien de temps l'organisation a-t-elle pour répondre ?",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le tableau des juridictions — loi, réponse, recours",
+    "page": "donnees.html"
+   },
+   "reponse": "Le délai dépend de la loi applicable ; le panneau « Mes renseignements » les a vérifiés sur les pages officielles des commissariats, le 3 novembre 2026. Pour une entreprise privée au Québec (LRPSP) : réponse écrite en 30 jours (art. 32). Pour un organisme public québécois : 20 jours, prolongeables de 10 au maximum avec avis écrit. Et la règle qui fait basculer ce parcours : au Québec, l'absence de réponse à l'expiration des 30 jours équivaut à un refus — c'est alors que le recours à la Commission s'ouvre. Le panneau donne aussi les délais fédéral et des autres provinces, et le recours de chaque loi.",
+   "source": "acces.html#acces (Étape 3 — délais vérifiés sur les pages officielles des commissariats le 3 novembre 2026 ; au Québec, l'absence de réponse à l'expiration des 30 jours équivaut à un refus) et donnees.html#donnees (tableau des juridictions : LRPSP 30 jours, art. 32 ; organisme public 20 jours + 10 avec avis écrit)",
+   "suites": [
+    {
+     "libelle": "J'ai reçu une réponse",
+     "vers": "d-reponse"
+    },
+    {
+     "libelle": "Refus — ou silence après le délai",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "5505daf7456cc4e850578ee89249cc9c091a34280f88a78d35706516d29ed830"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "d-reponse",
+   "mots": [
+    "réponse",
+    "reponse",
+    "reçue",
+    "recue",
+    "vérifier",
+    "verifier",
+    "corriger",
+    "rectifier",
+    "inexact",
+    "incomplet"
+   ],
+   "question": "J'ai reçu une réponse — que vérifier, que corriger ?",
+   "renvoi": null,
+   "reponse": "Vérifie d'abord que la réponse couvre ce que tu as demandé. Si un renseignement est inexact, incomplet ou équivoque, la rectification s'ouvre : art. 28 LRPSP, avec réponse écrite en 30 jours (art. 32) ; si elle est accordée, tu reçois gratuitement une copie du renseignement modifié ou ajouté, ou une attestation de suppression (art. 35). Un refus, lui, doit être motivé : la disposition invoquée, les recours et leurs délais (art. 34) — un refus sans motifs est déjà une pièce de ton dossier. Puis sécurise ta récolte chez toi : hacher, chaîner, tenir de ton bord — la dernière étape du panneau. Et si la réponse ne suffit pas, le recours de l'étape suivante reste ouvert.",
+   "source": "donnees.html#donnees (Étape 1 : rectification art. 28, réponse écrite art. 32, copie gratuite ou attestation de suppression art. 35, refus motivé art. 34 ; Étape 6 — sécuriser ta récolte)",
+   "suites": [
+    {
+     "libelle": "La réponse ne suffit pas — le recours",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "9a8338f35582ca715359b4f376720fb29a118664a17beeca951ed8ff7b82eb18"
+  },
+  {
+   "endroit": {
+    "ancre": "donnees",
+    "nom": "Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "id": "d-recours",
+   "mots": [
+    "recours",
+    "commission",
+    "cai",
+    "refus",
+    "révision",
+    "revision",
+    "mésentente",
+    "mesentente",
+    "plainte"
+   ],
+   "question": "Refus ou silence — le recours devant la Commission",
+   "renvoi": {
+    "ancre": "decisions-registre",
+    "libelle": "Les 23 décisions — ce que les recours ont réellement ouvert",
+    "page": "decisions.html"
+   },
+   "reponse": "Au Québec, après un refus — ou le silence qui vaut refus à l'expiration du délai — le recours s'ouvre devant la Commission d'accès à l'information : pour une entreprise privée, l'examen de mésentente (art. 42 LRPSP), à demander dans les 30 jours du refus ou de l'expiration du délai (art. 43). Ce que la Commission peut faire n'est pas théorique : le registre des décisions de ce site montre ses ordonnances réelles — contre Clearview AI, le 14 décembre 2021, la cessation et la destruction des images et identifiants biométriques sous 90 jours. Les formulaires et lettres types de la Commission sont liés depuis les panneaux de ce parcours, et sa page « Recours devant la Commission » est liée au site. Le site t'informe et t'accompagne ; il n'agit pas à ta place — et rien ici n'est un avis juridique.",
+   "source": "donnees.html#donnees (Étape 5 — Le recours : la Commission d'accès à l'information ; tableau des juridictions : examen de mésentente art. 42, dans les 30 jours du refus ou de l'expiration du délai, art. 43) et decisions.html#decisions-registre (nº 3 — ordonnance de la CAI contre Clearview AI, 14 décembre 2021)",
+   "digest": "50c24f2889f5d61e5baa2227a79000ea28ffee05349977d393550422c536c462"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-google",
+    "nom": "Google — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-google-detient",
+   "mots": [
+    "google",
+    "détient",
+    "detient",
+    "photos",
+    "courriels",
+    "gmail",
+    "youtube",
+    "recherches",
+    "activité",
+    "activite",
+    "compte",
+    "données",
+    "donnees"
+   ],
+   "question": "Parcours Google — Ce que Google détient sur moi",
+   "renvoi": null,
+   "reponse": "Le compte Google et ses services : recherche, Gmail, YouTube — historiques et conversations sélectionnables dans l'export — et l'activité consignée dans « Mon activité », dont les conversations de l'assistant (« Gemini Apps »). C'est la fiche « Google — aller chercher » de ce site qui le porte, avec sa récolte documentée : le Transparency Report de Google, publié depuis 2010, compte par pays les demandes de données d'utilisateurs des gouvernements, et le consentement publicitaire de Google a été sanctionné trois fois par la CNIL. En langage simple du dossier : ce que tu dis, ce que tu fais, où tu vas et ce que tu écoutes. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-google (Les données visées ; La récolte documentée) et la réponse de la feuille q-google du labyrinthe",
+   "suites": [
+    {
+     "libelle": "Étape suivante — aller chercher l’export Google (Takeout)",
+     "vers": "p-google-export"
+    }
+   ],
+   "digest": "2557e2882df412152cf51d7071f35c676ab843f918f79a24c0b5f7ac5b4892f7"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-google",
+    "nom": "Google — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-google-export",
+   "mots": [
+    "google",
+    "takeout",
+    "export",
+    "exporter",
+    "télécharger",
+    "telecharger",
+    "activité",
+    "gemini",
+    "aller",
+    "chercher",
+    "archive"
+   ],
+   "question": "Parcours Google — Où aller chercher mes données (Takeout) ?",
+   "renvoi": null,
+   "reponse": "L'export officiel passe par Google Takeout : il exporte les données des produits Google utilisés — par exemple courriels, documents, agenda, photos, vidéos YouTube, inscription et activité du compte — en archives .zip ou .tgz, avec des fichiers HTML, CSV ou JSON selon les produits. Le détour à connaître, établi par l'aide officielle de Google : cocher la case « Gemini » dans Takeout n'exporte que les données des Gems ; pour les conversations de l'assistant, le chemin complet est « Mon activité » → « Toutes les données d'activité incluses » → « Gemini Apps ». Délai annoncé par Google : de quelques minutes à plusieurs jours ; la plupart des utilisateurs reçoivent le lien le jour même. Quand l'export est téléchargé, la fiche propose le geste de clôture : déposer le fichier pour calculer son empreinte SHA-256 dans ton navigateur et sceller l'entrée « export » dans ton cerveau — le fichier ne quitte pas ton appareil. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-google (Le chemin d'accès ; Le geste de clôture — sceller ton export) et donnees.html#donnees (Étape 2 — Google : Takeout, formats, délai annoncé par Google, détour Gemini Apps)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — l’export ne suffit pas : la demande formelle",
+     "vers": "p-google-demande"
+    }
+   ],
+   "digest": "fc0db7e3306ce1b83d37f7959d1b679a39c30b3aa1a40872a34d1f47d59cbe9b"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "p-google-demande",
+   "mots": [
+    "google",
+    "demande",
+    "formelle",
+    "lettre",
+    "rprp",
+    "accès",
+    "acces",
+    "écrire",
+    "ecrire",
+    "reste"
+   ],
+   "question": "Parcours Google — L’export ne suffit pas : la demande formelle",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le parcours complet des droits, au panneau Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "L'outil d'export n'est pas le droit d'accès : « le reste — ce que l'export ne donne pas — se demande par écrit », dit la fiche Google. La demande formelle se prépare au panneau « Mes renseignements » : aucun formulaire n'est obligatoire, une demande écrite suffit, adressée à l'organisation — à son responsable de la protection des renseignements personnels, le RPRP — et le générateur du panneau produit la lettre chez toi, dans ton navigateur, sans rien recevoir ni conserver. Garde ta trace : la date d'envoi, le moyen d'envoi, ta copie de la lettre — c'est la date d'envoi qui fait courir le délai de réponse (au Québec, pour une entreprise privée : réponse écrite en 30 jours, art. 32 LRPSP — l'étape « délai » du parcours des droits le porte). Des lettres types officielles existent : celle de la Commission d'accès à l'information et l'exemple du Commissariat à la protection de la vie privée du Canada, liés au panneau. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-google (« Le reste — ce que l'export ne donne pas — se demande par écrit ») ; acces.html#acces (Étape 2 — produire ta lettre en local ; lettres types officielles de la CAI et du CPVP) ; donnees.html#donnees (réponse écrite en 30 jours, art. 32 LRPSP)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — export partiel, refus ou silence : la suite",
+     "vers": "p-google-partiel"
+    }
+   ],
+   "digest": "90f49626a66221f713ba9a3620a615e3b77244c1f351f8ce09cfc7309cbc6555"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-miroir",
+    "nom": "Le miroir des exports — lis ce qu’ils t’ont donné, lisiblement",
+    "page": "aller.html"
+   },
+   "id": "p-google-partiel",
+   "mots": [
+    "google",
+    "partiel",
+    "incomplet",
+    "refus",
+    "silence",
+    "miroir",
+    "complétion",
+    "completion",
+    "recours",
+    "manque"
+   ],
+   "question": "Parcours Google — Export partiel, refus ou silence : la suite",
+   "renvoi": {
+    "ancre": "aller-detecteur",
+    "libelle": "Le détecteur d’export partiel, à la page Aller chercher",
+    "page": "aller.html"
+   },
+   "reponse": "Si l'export reçu semble incomplet, commence par le lire : le miroir des exports de ce site déploie sa structure ici même, 100 % localement — ce qu'il contient, catégorie par catégorie — et chaque catégorie trouvée est une matière de tes droits : accès (déjà exercé), rectification (si c'est faux), suppression (si ça ne devrait pas être gardé), portabilité. Borne tenue, dite telle quelle : le détecteur d'export partiel du site compare un export aux catégories déclarées pour TikTok, Snapchat, Discord, Meta et X — Google n'est pas dans sa liste ; pour Google, ce qui manque se nomme par écrit, dans une demande de complétion adressée à l'organisation, que le panneau « Mes renseignements » t'aide à produire. Et si la plateforme refuse, ou si le silence dure au-delà du délai de réponse, le recours s'ouvre : l'étape « recours » du parcours des droits le marche — devant la Commission d'accès à l'information, au Québec. Le site t'informe et t'accompagne ; il n'agit pas à ta place — jamais un avis juridique.",
+   "source": "aller.html#aller-miroir (le miroir des exports, 100 % local ; les droits que chaque catégorie ouvre) ; aller.html#aller-detecteur (les plateformes du détecteur : TikTok, Snapchat, Discord, Meta, X) ; donnees.html#donnees (Étape 5 — le recours)",
+   "suites": [
+    {
+     "libelle": "Le recours — refus ou silence (l’étape du parcours des droits, sans la recopier)",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "0b67e748386755573e5297d3edb39f60814e152e549a525cac663be39b0299dd"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-apple",
+    "nom": "Apple — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-apple-detient",
+   "mots": [
+    "apple",
+    "détient",
+    "detient",
+    "icloud",
+    "iphone",
+    "compte",
+    "achats",
+    "appareils",
+    "données",
+    "donnees",
+    "photos"
+   ],
+   "question": "Parcours Apple — Ce qu’Apple détient sur moi",
+   "renvoi": null,
+   "reponse": "Le compte Apple et iCloud : données du compte, contenus synchronisés selon les catégories, historique d'achats et d'appareils. Le panneau des données précise ce que l'export couvre : les coordonnées du compte et les journaux de connexion, les données iCloud (contacts, calendriers, notes, photos, documents), l'utilisation des applications et les relevés d'achats — mais pas le contenu acheté lui-même (seulement la liste), ni le contenu des Messages, chiffré sur l'appareil. La borne d'architecture, documentée à la fiche : avec Advanced Data Protection (décembre 2022), le chiffrement de bout en bout couvre la plupart des catégories iCloud — Apple déclare ne pas détenir les clés et donc ne pas pouvoir produire ce contenu. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-apple (Les données visées ; La récolte documentée — Advanced Data Protection) et donnees.html#donnees (Étape 2 — Apple : le contenu de l'export et ses exclusions)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — aller chercher l’export Apple",
+     "vers": "p-apple-export"
+    }
+   ],
+   "digest": "69e4a1becdff85e91d44fb426a3406cee5b55291522cda56573fef18bc3674ce"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-apple",
+    "nom": "Apple — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-apple-export",
+   "mots": [
+    "apple",
+    "export",
+    "exporter",
+    "télécharger",
+    "telecharger",
+    "confidentialité",
+    "confidentialite",
+    "copie",
+    "privacy",
+    "aller",
+    "chercher"
+   ],
+   "question": "Parcours Apple — Où aller chercher mes données ?",
+   "renvoi": null,
+   "reponse": "L'export officiel se demande depuis le service de confidentialité des données d'Apple : connexion, « Demander une copie de vos données », sélection, puis vérification d'identité par Apple — le panneau des données nomme l'adresse : privacy.apple.com. Le délai tenu par ce site, lu à l'assistance officielle : tu as 14 jours pour télécharger tes données une fois déposées sur la page — ce sont 14 jours de fenêtre de téléchargement, pas un délai de livraison promis ; aucun autre délai n'est prêté à Apple ici. Quand l'archive est téléchargée, la fiche propose le geste de clôture : calculer son empreinte SHA-256 dans ton navigateur et sceller l'entrée « export » dans ton cerveau, datée et chaînée — le fichier ne quitte pas ton appareil. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-apple (Le chemin d'accès ; Le geste de clôture — sceller ton export) et donnees.html#donnees (Étape 2 — Apple : privacy.apple.com ; les 14 jours de fenêtre de téléchargement, assistance officielle)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — l’export ne suffit pas : la demande formelle",
+     "vers": "p-apple-demande"
+    }
+   ],
+   "digest": "e2c075c3d3608615832644892c3a86e79348da2548d1d086fdbab66bc9ee02d5"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "p-apple-demande",
+   "mots": [
+    "apple",
+    "demande",
+    "formelle",
+    "lettre",
+    "rprp",
+    "accès",
+    "acces",
+    "écrire",
+    "ecrire",
+    "reste"
+   ],
+   "question": "Parcours Apple — L’export ne suffit pas : la demande formelle",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le parcours complet des droits, au panneau Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "L'outil d'export n'est pas le droit d'accès : « le reste se demande par écrit », dit la fiche Apple. La demande formelle se prépare au panneau « Mes renseignements » : aucun formulaire n'est obligatoire, une demande écrite suffit, adressée à l'organisation — à son responsable de la protection des renseignements personnels, le RPRP — et le générateur du panneau produit la lettre chez toi, dans ton navigateur, sans rien recevoir ni conserver. Garde ta trace : la date d'envoi, le moyen d'envoi, ta copie de la lettre — c'est la date d'envoi qui fait courir le délai de réponse (au Québec, pour une entreprise privée : réponse écrite en 30 jours, art. 32 LRPSP — l'étape « délai » du parcours des droits le porte). Des lettres types officielles existent : celle de la Commission d'accès à l'information et l'exemple du Commissariat à la protection de la vie privée du Canada, liés au panneau. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-apple (« Le reste se demande par écrit ») ; acces.html#acces (Étape 2 — produire ta lettre en local ; lettres types officielles de la CAI et du CPVP) ; donnees.html#donnees (réponse écrite en 30 jours, art. 32 LRPSP)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — export partiel, refus ou silence : la suite",
+     "vers": "p-apple-partiel"
+    }
+   ],
+   "digest": "529457568aa55917efea16731301e49102d0a5591746787ed895e379a8c50682"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-miroir",
+    "nom": "Le miroir des exports — lis ce qu’ils t’ont donné, lisiblement",
+    "page": "aller.html"
+   },
+   "id": "p-apple-partiel",
+   "mots": [
+    "apple",
+    "répond",
+    "repond",
+    "réponse",
+    "reponse",
+    "silence",
+    "refus",
+    "partiel",
+    "incomplet",
+    "miroir",
+    "recours"
+   ],
+   "question": "Parcours Apple — Quand Apple se tait, refuse ou livre incomplet : la suite",
+   "renvoi": {
+    "ancre": "aller-detecteur",
+    "libelle": "Le détecteur d’export partiel, à la page Aller chercher",
+    "page": "aller.html"
+   },
+   "reponse": "Apple ne me répond pas, refuse, ou l'export reçu semble incomplet : commence par lire ce que tu as reçu — le miroir des exports de ce site déploie sa structure ici même, 100 % localement, catégorie par catégorie, et chaque catégorie trouvée est une matière de tes droits : accès (déjà exercé), rectification (si c'est faux), suppression, portabilité. Borne tenue, dite telle quelle : le détecteur d'export partiel du site compare un export aux catégories déclarées pour TikTok, Snapchat, Discord, Meta et X — Apple n'est pas dans sa liste ; pour Apple, ce qui manque se nomme par écrit, dans une demande de complétion adressée à l'organisation, que le panneau « Mes renseignements » t'aide à produire. Et passé le délai de réponse sans réponse, le silence vaut refus au Québec — le recours s'ouvre alors : l'étape « recours » du parcours des droits le marche, devant la Commission d'accès à l'information. Le site t'informe et t'accompagne ; il n'agit pas à ta place — jamais un avis juridique.",
+   "source": "aller.html#aller-miroir (le miroir des exports, 100 % local) ; aller.html#aller-detecteur (les plateformes du détecteur : TikTok, Snapchat, Discord, Meta, X) ; donnees.html#donnees (le silence à l'expiration du délai vaut refus ; Étape 5 — le recours)",
+   "suites": [
+    {
+     "libelle": "Le recours — refus ou silence (l’étape du parcours des droits, sans la recopier)",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "d40e0a31f971c308410fcd2f55e9518941eab454b5041af4540afcc748b2ffb3"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-meta",
+    "nom": "Meta — Facebook, Instagram, WhatsApp — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-meta-detient",
+   "mots": [
+    "meta",
+    "facebook",
+    "instagram",
+    "whatsapp",
+    "détient",
+    "detient",
+    "profil",
+    "publications",
+    "messages",
+    "activité",
+    "activite",
+    "données",
+    "donnees"
+   ],
+   "question": "Parcours Meta — Ce que Meta détient sur moi (Facebook, Instagram, WhatsApp)",
+   "renvoi": null,
+   "reponse": "Facebook et Instagram : profil, publications, messages, activité — et, propre à Meta, l'activité en dehors de ses services que des tiers lui transmettent. La fonction « Activité en dehors de Facebook » montre une partie des données que des entreprises ont transmises à Meta à ton sujet — c'est là que le plaignant de l'affaire Home Depot a découvert le transit : les conclusions du CPVP nº 2023-001 (26 janvier 2023) établissent que, de 2018 à octobre 2022, Home Depot du Canada transmettait à Meta, via « Conversions hors ligne », l'adresse électronique hachée des clients demandant un reçu électronique et des détails de leurs achats — et que les conditions de Meta lui permettaient d'utiliser ces renseignements à ses propres fins, y compris le profilage et la publicité ciblée. Demander un reçu ne vaut pas consentement. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-meta (Les données visées ; La récolte documentée — conclusions du CPVP nº 2023-001, « Activité en dehors de Facebook »)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — aller chercher l’export Meta",
+     "vers": "p-meta-export"
+    }
+   ],
+   "digest": "9a823d216c98d98d10d6c7f6bae7fae48d31043e6f4aa96e2ac271ff866287ec"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-meta",
+    "nom": "Meta — Facebook, Instagram, WhatsApp — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-meta-export",
+   "mots": [
+    "meta",
+    "facebook",
+    "instagram",
+    "export",
+    "exporter",
+    "télécharger",
+    "telecharger",
+    "informations",
+    "centre",
+    "comptes",
+    "aller",
+    "chercher"
+   ],
+   "question": "Parcours Meta — Où aller chercher mes données ?",
+   "renvoi": null,
+   "reponse": "L'export passe par le Centre de comptes Meta : « Vos informations et autorisations » → « Télécharger vos informations » (accountscenter.facebook.com). La fenêtre de disponibilité du fichier fini est courte — 4 jours selon les guides relus, portée comme délai de guide : Meta ne le met pas en avant. Borne du site, tenue : la recherche aux sources primaires du 3 novembre 2026 n'a pas permis d'ouvrir et de lire une page d'aide officielle de Meta — ce site ne prête donc à Meta ni délai officiel, ni contenu détaillé. Compte désactivé ? L'export est fermé pendant la désactivation : le parcours « Compte suspendu » du site traite ce cas. Quand l'export est téléchargé, la fiche propose le geste de clôture : son empreinte SHA-256 calculée dans ton navigateur, et l'entrée « export » scellée dans ton cerveau — le fichier ne quitte pas ton appareil. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-meta (Le chemin d'accès — Centre de comptes ; fenêtre de 4 jours selon les guides relus ; compte désactivé) et donnees.html#donnees (Étape 2 — Meta : délais et contenus à confirmer sur la page officielle de Meta)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — l’export ne suffit pas : la demande formelle",
+     "vers": "p-meta-demande"
+    }
+   ],
+   "digest": "4e4ffe7f263863f6a4c16eff9a9010ea64201d0a543dc53b9995d62f9019be9b"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "p-meta-demande",
+   "mots": [
+    "meta",
+    "facebook",
+    "instagram",
+    "demande",
+    "formelle",
+    "lettre",
+    "rprp",
+    "accès",
+    "acces",
+    "écrire",
+    "ecrire",
+    "reste"
+   ],
+   "question": "Parcours Meta — L’export ne suffit pas : la demande formelle",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le parcours complet des droits, au panneau Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "L'outil d'export n'est pas le droit d'accès : « le reste se demande par écrit », dit la fiche Meta. La demande formelle se prépare au panneau « Mes renseignements » : aucun formulaire n'est obligatoire, une demande écrite suffit, adressée à l'organisation — à son responsable de la protection des renseignements personnels, le RPRP — et le générateur du panneau produit la lettre chez toi, dans ton navigateur, sans rien recevoir ni conserver. Garde ta trace : la date d'envoi, le moyen d'envoi, ta copie de la lettre — c'est la date d'envoi qui fait courir le délai de réponse (au Québec, pour une entreprise privée : réponse écrite en 30 jours, art. 32 LRPSP — l'étape « délai » du parcours des droits le porte). Des lettres types officielles existent : celle de la Commission d'accès à l'information et l'exemple du Commissariat à la protection de la vie privée du Canada, liés au panneau. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-meta (« Le reste se demande par écrit ») ; acces.html#acces (Étape 2 — produire ta lettre en local ; lettres types officielles de la CAI et du CPVP) ; donnees.html#donnees (réponse écrite en 30 jours, art. 32 LRPSP)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — export partiel, refus ou silence : la suite",
+     "vers": "p-meta-partiel"
+    }
+   ],
+   "digest": "45f7dc0a89387813519c6f573206638f03c61a46eb84398b6b5238799f21867a"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-detecteur",
+    "nom": "Le détecteur d’export partiel",
+    "page": "aller.html"
+   },
+   "id": "p-meta-partiel",
+   "mots": [
+    "meta",
+    "facebook",
+    "instagram",
+    "partiel",
+    "incomplet",
+    "détecteur",
+    "detecteur",
+    "refus",
+    "silence",
+    "recours",
+    "complétion",
+    "completion",
+    "envoyé",
+    "envoye",
+    "attente",
+    "rien"
+   ],
+   "question": "Parcours Meta — Export partiel, refus ou silence : la suite",
+   "renvoi": {
+    "ancre": "aller-miroir",
+    "libelle": "Le miroir des exports — lire ce qui est là, à la page Aller chercher",
+    "page": "aller.html"
+   },
+   "reponse": "Facebook ne t'a rien envoyé, Meta ne répond pas depuis ton envoi : ce silence, un refus ou un export incomplet et partiel se traitent ici. Meta est l'une des plateformes du détecteur d'export partiel de ce site : dépose le fichier de ton export à la page « Aller chercher » — l'analyse se fait sur ton appareil, elle compare ce que le fichier contient aux catégories déclarées à la politique (lue en entier au registre des conditions de ce site), et elle finit en un droit : la lettre de demande de complétion, composée des catégories non repérées. Pour un export en ZIP, décompresse-le d'abord et dépose son fichier JSON — la page lit un fichier à la fois, localement. Et si la plateforme refuse, ou si le silence dure au-delà du délai de réponse, le recours s'ouvre : l'étape « recours » du parcours des droits le marche — devant la Commission d'accès à l'information, au Québec. Le site t'informe et t'accompagne ; il n'agit pas à ta place — jamais un avis juridique.",
+   "source": "aller.html#aller-detecteur (le détecteur d'export partiel — Meta dans sa liste ; la lettre de demande de complétion ; un fichier à la fois, localement) ; donnees.html#donnees (Étape 5 — le recours)",
+   "suites": [
+    {
+     "libelle": "Le recours — refus ou silence (l’étape du parcours des droits, sans la recopier)",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "dc2eda217c09b7f4258fd6e010bb295f7f96eac721a57f4c2b8065832a91e07e"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-tiktok",
+    "nom": "TikTok — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-tiktok-detient",
+   "mots": [
+    "tiktok",
+    "détient",
+    "detient",
+    "sait",
+    "vidéos",
+    "videos",
+    "visionnements",
+    "profil",
+    "appareil",
+    "inférences",
+    "inferences",
+    "biométriques",
+    "données",
+    "donnees",
+    "collecte",
+    "recueille",
+    "connaît",
+    "connait"
+   ],
+   "question": "Parcours TikTok — Que sait TikTok sur moi, ce qu’il détient",
+   "renvoi": null,
+   "reponse": "Ce que TikTok sait de toi — ce qu'il détient sur toi : ton profil, tes vidéos, ton activité et tes visionnements, les données de ton appareil, et des inférences — y compris biométriques. Précisément : les conclusions canadiennes du 23 septembre 2025 (conclusions conjointes LPRPDE nº 2025-003 — CPVP, CAI du Québec, Colombie-Britannique, Alberta, lues au primaire) établissent que TikTok recueille et déduit de vastes quantités de renseignements — contenu vidéo et audio analysé par vision par ordinateur, données d'appareil, géolocalisation approximative, données comportementales, et renseignements biométriques (analyses faciales et vocales déduisant âge, genre et caractéristiques sensibles) — pour des profils de ciblage et de recommandation. L'historique de visionnement visible dans l'application couvre 180 jours ; l'export va au-delà. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-tiktok (Les données visées ; La récolte documentée — conclusions conjointes LPRPDE nº 2025-003 du 23 septembre 2025)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — aller chercher l’export TikTok",
+     "vers": "p-tiktok-export"
+    }
+   ],
+   "digest": "f72fb7d622044f2318dfa6ece228bed2fa4b225eee2e94e009e4c0fa4ecaff61"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-tiktok",
+    "nom": "TikTok — aller chercher",
+    "page": "aller.html"
+   },
+   "id": "p-tiktok-export",
+   "mots": [
+    "tiktok",
+    "export",
+    "exporter",
+    "télécharger",
+    "telecharger",
+    "données",
+    "donnees",
+    "json",
+    "paramètres",
+    "parametres",
+    "compte",
+    "aller",
+    "chercher",
+    "vidéos",
+    "videos"
+   ],
+   "question": "Parcours TikTok — Où aller chercher mes données, exporter mes vidéos ?",
+   "renvoi": null,
+   "reponse": "Le chemin, dans l'application : Profil → menu ☰ → Paramètres et confidentialité → Compte → Télécharger vos données — même fonction sur le web : tiktok.com/setting/download-your-data. Choisis le format JSON (structuré, complet) plutôt que TXT (lisible, réduit). Délai annoncé par TikTok : « quelques jours » de préparation — et le fichier prêt n'est téléchargeable que 4 jours, après quoi il faut redemander. Bornes documentées par TikTok : les dernières 24 à 48 heures d'activité de certaines catégories peuvent manquer ; les données touchant la vie privée d'autrui sont exclues. Quand l'export est téléchargé, la fiche propose le geste de clôture : son empreinte SHA-256 calculée dans ton navigateur, et l'entrée « export » scellée dans ton cerveau — le fichier ne quitte pas ton appareil. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-tiktok (Le chemin d'accès — lien direct ; format JSON ; délai annoncé par TikTok et ses bornes documentées ; Le geste de clôture)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — l’export ne suffit pas : la demande formelle",
+     "vers": "p-tiktok-demande"
+    }
+   ],
+   "digest": "d59633bb91f4b156d813b17ba234512e68b8a0a218ad2c599650e8369c20e64a"
+  },
+  {
+   "endroit": {
+    "ancre": "acces",
+    "nom": "Mes renseignements — préparer une demande d'accès",
+    "page": "acces.html"
+   },
+   "id": "p-tiktok-demande",
+   "mots": [
+    "tiktok",
+    "demande",
+    "formelle",
+    "lettre",
+    "rprp",
+    "accès",
+    "acces",
+    "écrire",
+    "ecrire",
+    "reste"
+   ],
+   "question": "Parcours TikTok — L’export ne suffit pas : la demande formelle",
+   "renvoi": {
+    "ancre": "donnees",
+    "libelle": "Le parcours complet des droits, au panneau Tes données, ton dossier",
+    "page": "donnees.html"
+   },
+   "reponse": "L'outil de téléchargement d'une plateforme n'est pas le droit d'accès — c'est la première phrase du détecteur d'export partiel de ce site, et elle vaut pour TikTok comme pour les autres : ce que l'export ne donne pas se demande par écrit. La demande formelle se prépare au panneau « Mes renseignements » : aucun formulaire n'est obligatoire, une demande écrite suffit, adressée à l'organisation — à son responsable de la protection des renseignements personnels, le RPRP — et le générateur du panneau produit la lettre chez toi, dans ton navigateur, sans rien recevoir ni conserver. Garde ta trace : la date d'envoi, le moyen d'envoi, ta copie de la lettre — c'est la date d'envoi qui fait courir le délai de réponse (au Québec, pour une entreprise privée : réponse écrite en 30 jours, art. 32 LRPSP — l'étape « délai » du parcours des droits le porte). Des lettres types officielles existent : celle de la Commission d'accès à l'information et l'exemple du Commissariat à la protection de la vie privée du Canada, liés au panneau. Information générale — jamais un avis juridique.",
+   "source": "aller.html#aller-detecteur (« L'outil de téléchargement d'une plateforme n'est pas le droit d'accès ») ; acces.html#acces (Étape 2 — produire ta lettre en local ; lettres types officielles de la CAI et du CPVP) ; donnees.html#donnees (réponse écrite en 30 jours, art. 32 LRPSP)",
+   "suites": [
+    {
+     "libelle": "Étape suivante — export partiel, refus ou silence : la suite",
+     "vers": "p-tiktok-partiel"
+    }
+   ],
+   "digest": "84a06c46173f8614b639f9b37a3a80ba88624440c280a8d6f78a85547abfc9a4"
+  },
+  {
+   "endroit": {
+    "ancre": "aller-detecteur",
+    "nom": "Le détecteur d’export partiel",
+    "page": "aller.html"
+   },
+   "id": "p-tiktok-partiel",
+   "mots": [
+    "tiktok",
+    "partiel",
+    "incomplet",
+    "détecteur",
+    "detecteur",
+    "refus",
+    "silence",
+    "recours",
+    "manque",
+    "complétion",
+    "completion"
+   ],
+   "question": "Parcours TikTok — Export partiel, refus ou silence : la suite",
+   "renvoi": {
+    "ancre": "aller-miroir",
+    "libelle": "Le miroir des exports — lire ce qui est là, à la page Aller chercher",
+    "page": "aller.html"
+   },
+   "reponse": "Si ton export TikTok est incomplet — il manque des données que la plateforme déclare recueillir — TikTok est la première plateforme du détecteur d'export partiel de ce site : dépose le fichier de ton export à la page « Aller chercher » — l'analyse se fait sur ton appareil, elle compare ce que le fichier contient aux catégories déclarées à la politique de TikTok (lue en entier au registre des conditions de ce site), et elle finit en un droit : la lettre de demande de complétion, composée des catégories non repérées. Pour un export en ZIP, décompresse-le d'abord et dépose son fichier JSON — la page lit un fichier à la fois, localement. Garde aussi les bornes que TikTok documente lui-même : les dernières 24 à 48 heures d'activité de certaines catégories peuvent manquer à l'export — un trou récent n'est pas encore un refus. Et si la plateforme refuse, ou si le silence dure au-delà du délai de réponse, le recours s'ouvre : l'étape « recours » du parcours des droits le marche — devant la Commission d'accès à l'information, au Québec. Le site t'informe et t'accompagne ; il n'agit pas à ta place — jamais un avis juridique.",
+   "source": "aller.html#aller-detecteur (le détecteur d'export partiel — TikTok en tête de sa liste ; la lettre de demande de complétion) ; aller.html#aller-tiktok (les bornes documentées par TikTok : 24 à 48 heures) ; donnees.html#donnees (Étape 5 — le recours)",
+   "suites": [
+    {
+     "libelle": "Le recours — refus ou silence (l’étape du parcours des droits, sans la recopier)",
+     "vers": "d-recours"
+    }
+   ],
+   "digest": "9127206830c980271f2be8e2bcda9c7d3fcf4b1f495d122850aca75b899f4a42"
+  },
+  {
+   "endroit": {
+    "ancre": "cerveau",
+    "nom": "Parle avec le site web SoPHIa — la conversation",
+    "page": "cerveau.html"
+   },
+   "id": "q-bilan",
+   "mots": [
+    "bilan",
+    "commence",
+    "commencer",
+    "début",
+    "debut",
+    "choisir",
+    "moi",
+    "sais",
+    "faire",
+    "aide",
+    "aidez",
+    "perdu",
+    "trouver",
+    "parcours",
+    "aiguiller",
+    "orientation"
+   ],
+   "question": "Par où je commence, je ne sais pas quoi faire ? — le bilan du site (trois questions au plus)",
+   "renvoi": null,
+   "reponse": "« Je ne sais pas quoi faire. » « Aide-moi à choisir. » « Je suis perdu, je ne sais pas par où commencer. » Si tu te dis ça, le bilan est fait pour toi : il sert à trouver le bon parcours sans tout lire. Trois questions au plus, en langage simple : c'est à propos de quelle plateforme ; tu veux quoi, au juste ; et une question de précision seulement si elle change la destination. Chaque réponse t'aiguille vers une porte qui existe déjà : le parcours de ta plateforme, le parcours général des droits, le détecteur ou le miroir des exports, ou la porte du courriel quand le bilan ne sait pas. Le bilan ne crée rien, ne promet rien et ne garde rien : il aiguille. Information générale — jamais un avis juridique ; le site accompagne, il n'agit pas à ta place.",
+   "source": "cerveau.html#cerveau (la conversation du site — le labyrinthe : la branche des droits et les parcours par plateforme des étages précédents, que le bilan aiguille sans rien y changer)",
+   "suites": [
+    {
+     "libelle": "Commencer le bilan — la première question",
+     "vers": "b-bilan"
+    }
+   ],
+   "digest": "da872b750111bfdd416de59fe482f71bc353bf7fbbb7b3e8c934cccd1fc0857f"
+  },
+  {
+   "endroit": {
+    "ancre": "jour",
+    "nom": "Le site à n’importe quel jour — l’état scellé d’un jour donné",
+    "page": "evolution.html"
+   },
+   "id": "q-jour",
+   "mots": [
+    "jour",
+    "jours",
+    "date",
+    "dates",
+    "ancien",
+    "ancienne",
+    "anciennes",
+    "versions",
+    "version",
+    "était",
+    "etait",
+    "avait",
+    "semaine",
+    "passée",
+    "passee",
+    "passé",
+    "passe",
+    "voir",
+    "montre",
+    "montrer",
+    "état",
+    "etat",
+    "scellé",
+    "scelle",
+    "donné",
+    "donne",
+    "quel",
+    "archive",
+    "archives"
+   ],
+   "question": "Voir le site tel qu’il était un jour donné — les anciennes versions, l’état du site la semaine passée",
+   "renvoi": null,
+   "reponse": "« Qu’est-ce qu’il y avait sur le site la semaine passée ? » « Voir les anciennes versions. » « Le site tel qu’il était à une date donnée. » La page Évolution porte la section « Le site à n’importe quel jour » : tu choisis une date, et le site montre ce qu’une pièce de sa mémoire établit pour ce jour-là — la ou les versions en vigueur (le journal des mises à jour), le sceau maître ancré (les jetons d’ancrage hebdomadaire), la tête de la chaîne et son digest cumulé (l’état de la chaîne), la racine de Merkle du coffre — chaque nombre avec le fichier qui le porte, rassemblés à la construction dans assets/etats-jours.json. Les jours offerts sont seulement ceux qu’une pièce porte. Pour un jour sans pièce, le site le dit honnêtement — « aucune pièce pour ce jour dans la mémoire du site » — et il ne reconstruit rien, n’interpole rien, n’invente aucun sceau. Un sceau prouve qu’un contenu existait à une date et n’a pas changé depuis ; il ne tranche pas la vérité du contenu.",
+   "source": "evolution.html#jour (la section « Le site à n’importe quel jour » de la page Évolution — les états datés y sont lus dans assets/etats-jours.json, construit au build depuis le journal des mises à jour, les jetons d’ancrage, l’arbre de Merkle du coffre, l’Historique, le journal des dépôts et l’état de la chaîne du paquet)",
+   "digest": "3f2c13e7e3f221401626bd54dae7f570c00152cc4de5d54e8fc79196dec57dbe"
+  },
+  {
+   "endroit": {
+    "ancre": "echos",
+    "nom": "La salle des échos — les questions réelles posées au site",
+    "page": "cerveau.html"
+   },
+   "id": "q-echos",
+   "mots": [
+    "échos",
+    "echos",
+    "salle",
+    "gens",
+    "demandent",
+    "demandes",
+    "questions",
+    "visiteurs",
+    "visiteur",
+    "posé",
+    "pose",
+    "posées",
+    "posees",
+    "réelles",
+    "reelles",
+    "public",
+    "autres",
+    "demandé",
+    "demande"
+   ],
+   "question": "La salle des échos — qu’est-ce que les gens demandent au site, les questions des visiteurs",
+   "renvoi": null,
+   "reponse": "« Qu’est-ce que les gens demandent ? » « Les questions des visiteurs. » « La salle des échos. » La chambre du cerveau porte la salle des échos : les questions réelles qu’on a posées au site, quand il y en a de publiables, et la pièce du site qui répond à chacune — la question nettoyée de toute donnée personnelle (aucun nom, aucune adresse courriel, aucun détail identifiable), sa date quand la source la porte, et le renvoi à l’endroit qui y répond. Les échos vivent dans assets/echos.json, construit à la construction du site depuis la liste des questions réelles publiables. À ce jour, la salle est honnêtement vide — « aucun écho publié pour l’instant » : le journal de la messagerie du site ne consigne que des messages d’épreuve de nos propres boîtes et des avis automatisés, aucune question de visiteur réelle publiable. Aucune question inventée, aucun exemple fictif présenté comme réel ne remplit la salle. Le site ne garde rien des visites : rien n’est collecté ici, l’écho ne naît que d’un message réel, relu et nettoyé avant publication.",
+   "source": "cerveau.html#echos (la salle des échos de la chambre du cerveau — les échos y sont lus dans assets/echos.json, construit au build depuis les questions réelles publiables consignées au journal de la messagerie du site)",
+   "digest": "a93e7df629b7142a44dcf3a30c9efbd79dc33a43f124c4c0ce1161e221c35c25"
+  }
+ ],
+ "courriel": {
+  "adresse": "agent.ia.sophia@gmail.com",
+  "endroit": {
+   "ancre": "ecrire",
+   "nom": "Écrire à SoPHIa",
+   "page": "ecrire.html"
+  },
+  "id": "fin-courriel",
+  "mots": [
+   "contacter",
+   "contact",
+   "courriel",
+   "écrire",
+   "ecrire",
+   "humain",
+   "joindre",
+   "relais",
+   "agente",
+   "parler"
+  ],
+  "question": "Comment contacter Alexandre ?",
+  "reponse": "Le seul relais qui existe entre ce site et SoPHIa l'agente, c'est le relais courriel connecté au site — aucune connexion vivante, aucun canal direct vers un serveur d'agent. Ce qui transite vers l'agente passe par le courriel, et la trace de l'échange demeure dans le mail. C'est la porte humaine du site — et la fin honnête de toute question que les réponses préparées ne tiennent pas : le site ne l'inventera pas. Écrire au protocole : agent.ia.sophia@gmail.com.",
+  "source": "ecrire.html#ecrire (Écrire à SoPHIa — le relais courriel du site) et pied de page du site (Écrire au protocole)",
+  "digest": "43b34e230d2915b52e1cf8c80508132bb157531da0f3a5f9b4b3c775b788d089"
+ },
+ "racine_arbre": "ccbb7ace2c342f08b82e2634cc30fd49818775a71a0e43dde0c8273ffa2dee4d",
+ "semantique": {
+  "actif": true,
+  "vecteurs": "assets/semantique/vecteurs/vecteurs.bin",
+  "metadonnees_vecteurs": "assets/semantique/vecteurs/vecteurs.json",
+  "modele": "assets/semantique/modele/modele.json",
+  "module": "assets/js/cerveau-semantique.mjs",
+  "note": "Couche sémantique BRANCHÉE dans ce paquet (étage 1 de la version suivante, 24 novembre 2026) : le modèle de plongement français paraphrase-multilingual-MiniLM-L12-v2 (quantifié q8, 384 dimensions, licence Apache-2.0) est servi par le site lui-même — aucun appel à Hugging Face ni à un CDN au moment de la visite (le module ferme les modèles distants) — et les vecteurs des feuilles et des endroits sont calculés à la construction du site avec ce même modèle. Le palier P1 reste opt-in : rien ne se télécharge avant le geste du visiteur, la taille (environ 147 Mo) est affichée avant, et l’inférence roule en WASM dans son navigateur. La cascade devient : mots-clés (questions préparées), puis le sens (si le palier est activé), puis mots-clés (index plein texte des endroits), puis recouvrement de jetons déterministe, puis la porte du courriel."
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "format": "echos-sophia/v1",
+ "construit": "Au build, par scripts/construire-echos.py (chantier de l’étage 5), depuis echos-source.json — la liste éditable des questions réelles publiables, au chantier. Chaque écho nomme sa source au dossier et la pièce du site qui y répond.",
+ "regle": "La salle des échos ne montre que des questions réelles posées au site, nettoyées de toute donnée personnelle (aucun nom, aucune adresse courriel, aucun détail identifiable — le constructeur refuse toute entrée qui en porte). Aucune question inventée, aucun exemple fictif présenté comme réel. Quand aucune question réelle publiable n’existe, la salle le dit honnêtement : aucun écho publié pour l’instant.",
+ "message_vide": "Aucun écho publié pour l’instant.",
+ "echos": []
+}

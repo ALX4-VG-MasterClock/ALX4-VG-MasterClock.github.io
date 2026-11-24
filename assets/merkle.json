@@ -2,61 +2,61 @@
   "arbre": "merkle-coffre/v1",
   "version_site": "v35",
   "date": "2026-11-03",
-  "source": "assets/coffre.json (coffre synaptique v1 — double empreinte, digest maître 84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc)",
+  "source": "assets/coffre.json (coffre synaptique v2 — réduction publique, digest maître 84ed2e54218f106285a9f6be18b1bd5e0d9cf932a5b9a95e34cc1ba72c7585bc)",
   "recette": "Feuilles dans l'ordre du coffre ; digest de feuille = SHA-256 hex de la chaîne hexadécimale de l'empreinte SHA-256 de l'entrée ; nœud interne = SHA-256 hex de la concaténation (hex gauche + hex droite) ; si un niveau compte un nombre impair de digests, le dernier est dupliqué ; la racine est le digest unique final.",
   "feuilles": [
     {
-      "id": "memoire-curee",
+      "id": "piece-01",
       "empreinte": "fbfaad2d00d984adc53ba6deef5bb3bf624374bb5518acb864a11fc37341d2fa",
       "digest_feuille": "816031853db2d0c4a1f96027fb88867093e9d84975dfca5d560bbcb050b2f71e"
     },
     {
-      "id": "ame-sophia",
+      "id": "piece-02",
       "empreinte": "86defc6d309017328c5d6478ba3680f98b919a1b3cbb2946511b9450e5a8f5d1",
       "digest_feuille": "6c56cc4dded56495888013e8b3e4627be65cea6c9c0c5b99f723d47f65a097f6"
     },
     {
-      "id": "registre-etats-quotidiens",
+      "id": "piece-03",
       "empreinte": "a94c50e109d2c1cb4796ff5812731fbfa1a239226b3f6c0b1973d5fe787ce6c7",
       "digest_feuille": "63898af4dfeae132022432da1914326d0a2c3730d29c11c3ec0c5c923046568a"
     },
     {
-      "id": "plan-nuits-site",
+      "id": "piece-04",
       "empreinte": "ecfad8070994833a67dfd80836d8840d34155e9ba537f2deea4230c9b5497f90",
       "digest_feuille": "2eafa27272699c50604b92381e5566677c2e30d665bdb6f45c58382b53181826"
     },
     {
-      "id": "journal-nuits-site",
+      "id": "piece-05",
       "empreinte": "4a8efa0dde8dd28b0088133cae3eee3004f17f98883fa0bae80a6eefbff5a5db",
       "digest_feuille": "4bc278ab94141b94395cfd6261e885af40ef151014b78c208cf0a6ab033cb6c7"
     },
     {
-      "id": "site-v21-planete",
+      "id": "piece-06",
       "empreinte": "bb60f3ad94fdb71f61fadc518e42c97df6d44b1d940ed476dc4433ee84892a0f",
       "digest_feuille": "ea62a8f10a705450abe2de1ceec03314c729d84906dbffbb830117bb5b8dabc6"
     },
     {
-      "id": "site-v22-rotation",
+      "id": "piece-07",
       "empreinte": "84314daad4cd83c1bd3918fd28b70b1e194ff37409a8576e986f0260997bc1ff",
       "digest_feuille": "0a0779ebdc2c8d3f070112e4ebcde786348a136dbb5c94bb95eeddcf6d65ea61"
     },
     {
-      "id": "site-v23-somme",
+      "id": "piece-08",
       "empreinte": "9c8f5592e4f190fec2a318881044ab596b781dc649af53dd85f903940a54e09c",
       "digest_feuille": "191f48e1198473b6515e34c1451f95ef22cfc7889a791ecf27bb40b1dfa9b85e"
     },
     {
-      "id": "site-v24-amelioration",
+      "id": "piece-09",
       "empreinte": "d52b548f1e84f25908507592d9645a0fb435feddb08d568ffc5f0f8c52c2b96b",
       "digest_feuille": "7e51839b8bdb0effe82c0f12c035ff4d592fec6fc4d04dd3066321d7f1074459"
     },
     {
-      "id": "historique-quotidien-j1",
+      "id": "piece-10",
       "empreinte": "844bffaedca7732b5570959284d3e36d19ce590489fcdc1dc0e80a012952ed5a",
       "digest_feuille": "7bb4c94406791f581fe3c8cb894f4776ddc625bdfd150c846d58e43539b1bdf4"
     },
     {
-      "id": "ancrage-ots-historique-j1",
+      "id": "piece-11",
       "empreinte": "be95537019edc384af5bd127478fdf1c9a2d7687f18ba274d747ed2f93eafca1",
       "digest_feuille": "0cb12239a4d898324734dca0138a4d681e6149026925619999af4d2e3f9e8b66"
     }

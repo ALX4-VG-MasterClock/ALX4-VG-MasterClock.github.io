@@ -1,6 +1,51 @@
 {
  "entrees": [
   {
+   "date": "2026-11-23",
+   "titre": "Version 63 — l'accueil plat, casse-la toi-même, les jetons publiés",
+   "points": [
+    {
+     "texte": "L’ordre d’Alexandre, donné le 23 novembre 2026 : publier la version 62, puis construire la version 63 dans la même journée. La version 62 a été publiée le 23 novembre 2026 et revérifiée MATCH au servi (index de 2 270 041 octets) ; cette version 63 est construite le même jour, sur le chantier des priorités zéro préparé le matin même. Sa publication reste un acte séparé, sur son ordre."
+    },
+    {
+     "texte": "L’accueil devient plat et direct : avant le Voyage, un premier écran dit en langage simple ce que ce site fait — la Loi 25 donne le droit de demander tes données, ce site montre comment, et il porte une preuve d’antériorité que n’importe qui peut recalculer. Le titre de la page et le titre principal portent désormais ces mots-là, avant toute poésie."
+    },
+    {
+     "texte": "Le mini-vérificateur « casse-la toi-même » arrive dès le premier écran : une mini-chaîne de quatre enregistrements, leurs empreintes SHA-256 calculées dans ton navigateur même (crypto.subtle), un bouton pour modifier un enregistrement, un autre pour en supprimer un — et la vérification qui casse visiblement, maillon par maillon. Réinitialiser la refait passer. Aucune librairie externe, aucun appel réseau, rien n’est enregistré : la démo vit dans ta page, comme tout le reste du site."
+    },
+    {
+     "texte": "Les jetons RFC 3161 eux-mêmes sont publiés : sept fichiers .tsr — les ancrages hebdomadaires des 18 et 25 octobre, 1er, 8, 15 et 22 novembre 2026, et l’ancrage en direct du 16 novembre 2026 — téléchargeables depuis le panneau Ancrage, avec leur date, pour être revérifiés chez le tiers avec OpenSSL. Jusqu’ici, le site n’affichait que le verdict « Verification: OK » ; il publie maintenant la pièce."
+    },
+    {
+     "texte": "Les textes des archives sont alignés sur la liste canonique réelle : 23 captures à la Wayback Machine, de la version 7 à la version 61 (instantané 20261119203415, 19 novembre 2026) — les trois endroits qui disaient « 19 captures » sont corrigés, et la liste du panneau Évolution est complétée des captures des versions 55, 58, 60 et 61. La capture de la version 62 a été demandée le 23 novembre 2026 mais n’a pas été confirmée : aucune capture de la version 62 n’est affirmée dans cette version."
+    },
+    {
+     "texte": "La bibliothèque des lois cite désormais le projet de loi C-8 pour ce qu’il est devenu : une loi — sanction royale le 15 juin 2026, Lois du Canada 2026, chapitre 9 ; la partie 1 est en vigueur depuis la sanction, la partie 2 n’est pas encore en vigueur. La note est datée et dit sa borne : le texte officiel de la loi n’est pas encore déposé dans le paquet de la bibliothèque."
+    },
+    {
+     "texte": "Ce que cette version ne contient pas, dit au même endroit : la chambre « La simulation a un prix » et la chambre « L’ADN numérique » ne sont pas intégrées — leurs textes attendent le jugement de l’auteur ; le monde du QG n’est pas intégré non plus — l’auteur n’a pas tranché. Les digests des chambres touchées, les niveaux et la racine du cerveau sont recalculés, et le sceau de la version est rescellé à la clé."
+    },
+    {
+     "texte": "Les replis statiques de la chaîne portent le gel lu à la construction : 4 631 maillons, sommet nº 4630. Le répertoire des maillons publié dans les fichiers du site est régénéré au gel du 23 novembre 2026, et le kit autonome le revérifie en entier : MATCH."
+    },
+    {
+     "texte": "Correctifs portés à cette version avant sa publication, à la demande d’Alex du 23 novembre 2026, 17 h 19 — réparer, à partir de toutes les recherches faites pour ce site, ce que l’audit de navigation du même jour a relevé : le renvoi « Trois foyers » pointe désormais vers le panneau Évolution, où le tableau vit, et les relevés statiques des tuiles Wayback sont alignés sur la liste canonique (23 captures, la plus récente : la version 61, le 19 novembre 2026) ; l’arborescence (le rail) nomme les panneaux Miroir, Modes et 51e État ; les fils d’Ariane suivent l’arborescence (Don et Transparence sous « Soutenir », le groupe « Tes droits » partout où le menu le porte, « Les preuves » et « Le parcours » où ils manquaient) ; l’ancre #temoignages est décrite pour ce qu’elle ouvre — l’item Témoignage du panneau Vérifier ; une page unique « La méthode en 30 secondes » énonce la recette canonique de la chaîne — sceau = SHA-256(sceau précédent + texte), digest = SHA-256(digest précédent + sceau) — et ses variantes nommées (registre historique, journal des dépôts, coffre) ; la formule de la carte « Chaîner » de Faire pareil est complète ; la section « Ancre ta mémoire dans Bitcoin, toi aussi » rejoint le panneau Ancrage, avec le lien opentimestamps.org ; les preuves OpenTimestamps des ancrages hebdomadaires (fichier d’empreintes .txt + preuve .ots) se téléchargent depuis le panneau Ancrage, comme les jetons RFC 3161 — celle du 22 novembre 2026 est nommée en attente de confirmation Bitcoin ; la référence interne en 404 du journal des dépôts est retirée — le fichier porte sa recette en entier ; le panneau Mémoire énonce en une fois ce qui est public (le paquet chiffré téléchargeable, les empreintes, les résumés, les métadonnées) et ce qui ne l’est pas (le contenu, la phrase) ; le relevé météo embarqué est rafraîchi au 23 novembre 2026 et daté ; la phrase « Ce site ne se souvient de rien » est reformulée — le site ne garde rien chez lui, le cerveau local du visiteur vit dans son navigateur ; le compteur du pouls de l’accueil précise qu’il ne bat que panneau Mémoire ouvert."
+    },
+    {
+     "texte": "Pièce « Reviens avec ta preuve » ajoutée au panneau Ancrage, à la suite de la section Bitcoin : le parcours de retour du visiteur y est démontré dans la page — dépôt d’un document et de sa preuve OpenTimestamps (.ots), empreinte recalculée et attestations lues dans le navigateur même (calendriers, bloc Bitcoin quand la preuve est complétée), verdict MATCH ou ÉCART sans simulation ; la mémoire cumulée du visiteur (cerveau local, registre de l’atelier Sceller, export apporté) réaffichée en ordre et revérifiée entrée par entrée ; démonstration en un clic sur le relevé du 15 novembre 2026 et sa preuve publiée, avec le geste « casse l’exemple ». La borne est écrite dans la pièce : le site sécurise — il date, il chaîne, il rend l’altération visible ; il ne prouve pas que ce qui est sécurisé est vrai."
+    },
+    {
+     "texte": "Passe navigation et compréhension, à partir de l’audit de navigation du même jour : la recherche interne couvre désormais le texte complet des panneaux, avec des résultats qui mènent à la section ; le bouton « ← Retour » et l’historique du navigateur reviennent au panneau réellement précédent (le routeur tient l’historique) ; boutons Retour ajoutés aux panneaux Modes, 51e État et Partenaires ; bascule de langue corrigée — les sept boutons « open » sans objet sont traduits, et « Home » / « Search » ne persistent plus au retour en français ; les durées réelles des quatre épisodes du balado sont inscrites sur sa page, mesurées sur les fichiers audio ; un chemin « Commence ici » en trois gestes ouvre la liste des gestes de l’Accueil, et chaque panneau garde son résumé d’ouverture — ajouté à ceux qui n’en avaient pas ; les contrastes des paires de couleurs principales sont vérifiés au calcul (WCAG 2.1 AA, thèmes clair et sombre) et des garde-fous ferment le défilement horizontal sur petits écrans."
+    },
+    {
+     "texte": "Vérification Bitcoin rendue autonome : le site applique désormais, dans le navigateur du visiteur, le chemin d’opérations complet de chaque preuve OpenTimestamps publiée — de l’empreinte du fichier jusqu’au digest engagé par l’attestation — et le compare à la racine de Merkle de l’en-tête réel du bloc attesté. Les en-têtes des seize blocs attestés par les six preuves complétées (hauteurs 972085 à 976193) sont embarqués dans le site (assets/entetes-bitcoin.json : hauteur, hash du bloc, racine de Merkle, en-tête de 80 octets), récupérés le 23 novembre 2026 chez mempool.space et contre-vérifiés octet par octet chez blockstream.info ; à l’ouverture du panneau, le navigateur revérifie que le double-SHA-256 de chaque en-tête redonne le hash consigné. Les verdicts sont calculés chez le visiteur, jamais imprimés par le site : six « MATCH complet — jusqu’à l’en-tête du bloc », et la preuve du 22 novembre 2026 toujours EN ATTENTE (attestations des calendriers seulement), dite telle quelle. La pièce « Reviens avec ta preuve » reçoit le même traitement pour la preuve qu’un visiteur dépose ; pour une hauteur non embarquée, un bouton « Contre-vérifier en direct » propose, au clic seulement et avec divulgation écrite dans l’interface, une seule requête à mempool.space qui n’envoie que le numéro du bloc. Les bornes sont écrites dans la page : le MATCH complet prouve l’existence du fichier au plus tard au moment du bloc nommé ; il ne prouve ni la vérité du contenu ni la propriété, et l’authenticité des en-têtes embarqués repose sur leur preuve de travail revérifiée et sur les sources nommées."
+    },
+    {
+     "texte": "La refonte A — décision d’Alexandre du 23 novembre 2026 : le site passe du fichier unique à des pages par chambre. Un noyau — l’Accueil devenu manifeste — et une page par chambre, chaînés par un manifeste dont chaque version pointe la précédente ; chaque page porte en tête l’empreinte du manifeste auquel elle pend, et chaque endroit (section) garde son adresse propre et reçoit son empreinte. Les anciennes adresses par ancre redirigent vers la page et l’endroit ; le hors-ligne devient celui des pages visitées, dit tel quel. Le kit de vérification autonome vérifie désormais le manifeste chaîné, puis chaque page, puis chaque endroit. Construction au chantier seulement : rien n’est publié à ce stade, la publication reste un acte séparé."
+    }
+   ]
+  },
+  {
    "date": "2026-11-19",
    "titre": "Version 62 — les pages compagnes, être trouvé, la distinction en quatre",
    "points": [
@@ -1271,6 +1316,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v62",
- "date": "2026-11-19"
+ "version": "v63",
+ "date": "2026-11-23"
 }

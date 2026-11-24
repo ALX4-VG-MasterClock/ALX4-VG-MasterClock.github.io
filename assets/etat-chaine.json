@@ -1,9 +1,9 @@
 {
- "maillons": 4381,
- "dernier_maillon": 4380,
- "sceau_dernier": "32cc027522a5cd5074c077b6bd215b86eb65b0a5a4d3bd440f78bee4d0acc033",
- "digest_cumule": "fbcb773e9ba85d271dac8f7a1ddfe551219d1c67b35e6b859ae5fe72539378c8",
- "mis_a_jour": "2026-11-19T21:23:41-05:00",
+ "maillons": 4660,
+ "dernier_maillon": 4659,
+ "sceau_dernier": "9c8e42b031d6df709fd4f26a43762bfe954019145a25735fcf3c8482ab5106ec",
+ "digest_cumule": "33796c0e6e8ed161281e1b3f96f2eac57109277219843d22659f29013f111316",
+ "mis_a_jour": "2026-11-23T21:51:37-05:00",
  "propriete": {
   "createur": "Alexandre Vautour Gagnon",
   "qualite": "concepteur indépendant de systèmes et développeur",

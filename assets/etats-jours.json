@@ -1,0 +1,307 @@
+{
+ "format": "etats-jours-sophia/v1",
+ "construit": "Au build, par scripts/construire-etats-jours.py (chantier de l’étage 4), depuis les seules pièces datées du paquet — chaque champ nomme son fichier source.",
+ "regle": "Le site ne montre que les jours qu’une pièce porte. Aucun jour sans pièce, aucun état interpolé, aucun sceau inventé ni complété : un champ qu’aucune pièce ne porte au complet est absent. Pour un jour absent de cette liste, la réponse honnête du site est : aucune pièce pour ce jour dans la mémoire du site.",
+ "jours": [
+  {
+   "date": "2026-10-18",
+   "sources": [
+    "assets/jetons/ancrage-hebdo-empreintes-2026-10-18.txt"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "54093f13adc9a1754ea1ed4fa1681c56e5fbcc94efd37144f94efc033cac6339",
+    "registre_propre": "80f44da47c4d8144c32270be74b449e74b2a0e7e049483b7e92025deb75fe033",
+    "catalogue_documents": "4c8726b40abaa910187dce4125edf3691ae1bb5a33a1e7eaa1c0e5957a5e6d3d",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-10-18.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-10-18.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-10-18.tsr"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "sources": [
+    "assets/jetons/ancrage-hebdo-empreintes-2026-10-25.txt"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "2af023645b13473caeac01de784e99a6e37c8266cb41129118ad3005065283e9",
+    "registre_propre": "80f44da47c4d8144c32270be74b449e74b2a0e7e049483b7e92025deb75fe033",
+    "catalogue_documents": "8842fb8e114518ee79461293bcb8783884de8249ef2566ab0401433586f11588",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-10-25.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-10-25.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-10-25.tsr"
+   }
+  },
+  {
+   "date": "2026-10-29",
+   "sources": [
+    "ancrage.html#ancrages"
+   ],
+   "instantane_ancrage": {
+    "heure": "2026-10-29, 10 h 26 (heure de l’Est)",
+    "maillons": 2149,
+    "sceau_maillon_2148": "2102e46202fedbbd8ee697da4eb05ecd1a7e40b785bc48a1eeb2cdf69521b632",
+    "digest_cumule": "ce0423140d4ece9d0487951350cc2a89b04ed255fb1aa4d1a8699972389fdd9d",
+    "source": "ancrage.html#ancrages"
+   }
+  },
+  {
+   "date": "2026-11-01",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/jetons/ancrage-hebdo-empreintes-2026-11-01.txt"
+   ],
+   "versions": [
+    "Version 12 — les trois maquettes deviennent le site",
+    "Correctif du 1er novembre — la photo réaliste est retirée",
+    "Protéger l'œuvre — les démarches sont lancées",
+    "Version 9 — le site complet : tout se vérifie sur place",
+    "Le site devient indépendant des abonnements"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "29b5e2316e9bf7eba3fddcd6c340d680eac624eb4d9bc9cdded51e19505f0686",
+    "registre_propre": "137d3f3d286fefc127f636cb6ea0d1b23b5a24190d5740b31c896d478593ba0f",
+    "catalogue_documents": "1670369c9b1ae62e27b412d3496509d8ea0dd9b6cb6e3891cb8dc586554fa762",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-11-01.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-11-01.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-11-01.tsr"
+   }
+  },
+  {
+   "date": "2026-11-02",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/historique.json"
+   ],
+   "versions": [
+    "Premier envoi externe du dossier — le commentaire NCCoE/NIST est soumis",
+    "ICO — les décisions sont tranchées, le texte final est gelé",
+    "Version 28 — « Le choix d’abord »",
+    "Version 27 — « Le clair d’abord »",
+    "Version 26 — « Le cerveau visible »",
+    "Version 25 — « Le dossier en lumière »",
+    "Version 24 — « Comme il se doit »",
+    "Version 16 — le 2 novembre : triangulation, salle des pièces, thème sombre, Instance branchée, capsules externes, « Trouve l’écart », le Temps planétaire, l’ancrage ressenti et démontré, l’onglet Météo et la recherche reliée"
+   ],
+   "historique": {
+    "digest_maitre_coffre_a_la_cloture": "fff20c7c368499f9ba99ac9d7978187d26d5269c71818b054fdc0eff3cbe57e5",
+    "entrees_coffre": 7,
+    "source": "assets/historique.json"
+   }
+  },
+  {
+   "date": "2026-11-03",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/merkle.json"
+   ],
+   "versions": [
+    "Version 43 — « Profondeur : l’atome-décision, le registre des conditions, la carte des transits et la proximité »",
+    "Version 42 — « Aller chercher : les sections de la récolte, les caméras, l'explication des décisions, le registre et le compte suspendu »",
+    "Version 41 — « Le site purifié : menus interconnectés, reçu de visite et le cerveau de l’utilisateur »",
+    "Production consolidée — préparée en interne (aperçu avant publication)",
+    "Version 40 — « L’évolution »",
+    "Version 39 — « Tes données, ton dossier »",
+    "Version 38 — « L'interconnexion »",
+    "Version 37 — « L'état conscient »",
+    "Version 36 — « Les chambres »",
+    "Version 35 — « L’arbre et l’archive »",
+    "Version 34 — « L'ordre et la confiance »",
+    "Version 33 — « La forme juste »",
+    "Version 32 — « Le parcours d’accès »",
+    "Version 31 — « La nuit porte »",
+    "Version 30 — « L’attribution »",
+    "Version 29 — « La transmission »"
+   ],
+   "merkle_coffre": {
+    "version_site": "v35",
+    "racine": "46a543821c54db6e443295f284761da1f8815dd69b20331bf510d67e8a4e62bf",
+    "nombre_feuilles": 11,
+    "source": "assets/merkle.json"
+   }
+  },
+  {
+   "date": "2026-11-04",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/journal-depots.json"
+   ],
+   "versions": [
+    "Version 49 — « Dépose ton empreinte »",
+    "Correctif ciblé — « Le site servi réparé »",
+    "Version 48 — « Les textes validés »",
+    "Version 47 — « Les inclusions »",
+    "Version 46 — « Les textes du site »",
+    "Version 45 — « Faites un don »",
+    "Version 44 — « Les compteurs en direct »"
+   ],
+   "journal_depots": {
+    "version_ouverture": "v49",
+    "racine_courante_a_l_ouverture": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
+    "compte_a_l_ouverture": 0,
+    "source": "assets/journal-depots.json"
+   }
+  },
+  {
+   "date": "2026-11-05",
+   "sources": [
+    "assets/journal-mises-a-jour.json"
+   ],
+   "versions": [
+    "Correctif ciblé — « La chambre des versions recalculée »",
+    "Version 50 — « Le Voyage »",
+    "Correctif ciblé — « L’icône du cerveau-coquillage »"
+   ]
+  },
+  {
+   "date": "2026-11-06",
+   "sources": [
+    "assets/journal-mises-a-jour.json"
+   ],
+   "versions": [
+    "Version 51 — « Le nom »"
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "sources": [
+    "assets/journal-mises-a-jour.json"
+   ],
+   "versions": [
+    "Version 58 — les réparations de l’audit tour 5 : le minuteur réparé, les éditions à jour",
+    "Version 57 — les finitions de l’audit tour 4 : le journal réparé, les sources étiquetées",
+    "Version 56 — la stabilisation démontrée : l’audit du servi devient la construction",
+    "Version 55 — la base stable : la vague de stabilisation",
+    "Version 54 — la vague d’amélioration : panneaux réparés, fonctions spécifiées, archives unifiées",
+    "Version 53 — réparation du même jour : le point météo aligné sur l’ancrage canonique",
+    "Version 53 — ajout du même jour : la météo triangulée",
+    "Version 53 — ajout du même jour : les soudures de couture du Voyage",
+    "Version 53 — ajout du même jour : la suppression symétrique, et sa conséquence",
+    "Version 53 — « La bannière, le miroir, les portes ouvertes »",
+    "Version 52 — correctif : le nom complet sur les textes d’Alex",
+    "Version 52 — « La base B5 »"
+   ]
+  },
+  {
+   "date": "2026-11-08",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/jetons/ancrage-hebdo-empreintes-2026-11-08.txt",
+    "ancrage.html#ancrage-2026-11-08"
+   ],
+   "versions": [
+    "Version 59 — le sceau chaîné, les liens profonds réparés, la couche imagerie-aventure"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "07bc0bc50a72ef316a9c6180590df971d457808cc3792e3117de98ec7f37fbcd",
+    "registre_propre": "137d3f3d286fefc127f636cb6ea0d1b23b5a24190d5740b31c896d478593ba0f",
+    "catalogue_documents": "5b6ca148913c220fb2071cf5af86da045d3a7b4e1a11fda67f527b3d20dfc089",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-11-08.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-11-08.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-11-08.tsr"
+   },
+   "passe_ancrage": {
+    "hauteur_maillon": 3535,
+    "empreinte_ancree": "602ff36d765d068c2c29d13e6ee2511466f69f9533d02cea66ff6e5860ea88c7",
+    "source": "ancrage.html#ancrage-2026-11-08"
+   }
+  },
+  {
+   "date": "2026-11-09",
+   "sources": [
+    "assets/journal-mises-a-jour.json"
+   ],
+   "versions": [
+    "Version 60 — le site construit dans l’image des 32 vues"
+   ]
+  },
+  {
+   "date": "2026-11-15",
+   "sources": [
+    "assets/jetons/ancrage-hebdo-empreintes-2026-11-15.txt",
+    "ancrage.html#ancrage-2026-11-15"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "4baa3783ce096b92974e3576f3c6b0904aee6496ac127309f41e948fd2dd0717",
+    "registre_propre": "137d3f3d286fefc127f636cb6ea0d1b23b5a24190d5740b31c896d478593ba0f",
+    "catalogue_documents": "fafa36351585e962417a41dda2acf52fad836f4cd227d917192568864142fa21",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-11-15.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-11-15.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-11-15.tsr"
+   },
+   "passe_ancrage": {
+    "hauteur_maillon": 4114,
+    "empreinte_ancree": "b031d3efa594ee6c33cc47238cbd7863996283a29ee04765d1bed2a8c74f1613",
+    "source": "ancrage.html#ancrage-2026-11-15"
+   }
+  },
+  {
+   "date": "2026-11-16",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/jetons/ancrage-live-empreintes-2026-11-16.txt",
+    "ancrage.html#ancrage-2026-11-16"
+   ],
+   "versions": [
+    "Version 61 — les replis alignés, les archives rattrapées, les ancrages du 15 et du 16 novembre"
+   ],
+   "ancrage_live": {
+    "digest_cumule_a_4180": "1e94bfc485b4a4ace1493b579b0a0eb5af4f9fa8be96fa158e1b2addf43f9ad3",
+    "sceau_tete_4180": "ad67ca003d8feadbf9ffac5279ef5ca3d1f8ffd75a075ba1817b95c2485e86a9",
+    "empreinte_note_du_jour": "17c5ec9040f89b556b316fc1cd7470b34740724b9f683c7f19ea47fa35c139e6",
+    "source": "assets/jetons/ancrage-live-empreintes-2026-11-16.txt"
+   },
+   "passe_ancrage": {
+    "hauteur_maillon": 4180,
+    "empreinte_ancree": "d6ef1b5284f14632fd0a06eb503a7aa7ea43d87885b7761c61b5b646488100cd",
+    "source": "ancrage.html#ancrage-2026-11-16"
+   }
+  },
+  {
+   "date": "2026-11-19",
+   "sources": [
+    "assets/journal-mises-a-jour.json"
+   ],
+   "versions": [
+    "Version 62 — les pages compagnes, être trouvé, la distinction en quatre"
+   ]
+  },
+  {
+   "date": "2026-11-22",
+   "sources": [
+    "assets/jetons/ancrage-hebdo-empreintes-2026-11-22.txt"
+   ],
+   "ancrage_hebdo": {
+    "sceau_maitre": "b141606f4db3f2cc0c5a3b10d9e992b7fc589d72d31f432144ada7bc3805a004",
+    "registre_propre": "137d3f3d286fefc127f636cb6ea0d1b23b5a24190d5740b31c896d478593ba0f",
+    "catalogue_documents": "18fd911aafb450be63422e180b46085ece72a1233b8308ea9b23dbd28dc41a9e",
+    "source": "assets/jetons/ancrage-hebdo-empreintes-2026-11-22.txt",
+    "preuve_opentimestamps": "assets/jetons/ancrage-hebdo-empreintes-2026-11-22.txt.ots",
+    "jeton_rfc3161": "assets/jetons/ancrage-hebdo-jeton-2026-11-22.tsr"
+   }
+  },
+  {
+   "date": "2026-11-23",
+   "sources": [
+    "assets/journal-mises-a-jour.json",
+    "assets/etat-chaine.json",
+    "assets/manifeste.json"
+   ],
+   "versions": [
+    "Version 63 — l'accueil plat, casse-la toi-même, les jetons publiés"
+   ],
+   "chaine": {
+    "maillons": 4660,
+    "dernier_maillon": 4659,
+    "sceau_dernier": "9c8e42b031d6df709fd4f26a43762bfe954019145a25735fcf3c8482ab5106ec",
+    "digest_cumule": "33796c0e6e8ed161281e1b3f96f2eac57109277219843d22659f29013f111316",
+    "mis_a_jour": "2026-11-23T21:51:37-05:00",
+    "source": "assets/etat-chaine.json"
+   },
+   "version_en_vigueur": {
+    "version": "Version 63 — refonte A (pages par chambre)",
+    "date": "2026-11-23",
+    "source": "assets/manifeste.json (version et date seulement — les sceaux du manifeste courant se lisent sur le manifeste lui-même, ils changent à chaque re-scellement)"
+   }
+  }
+ ]
+}

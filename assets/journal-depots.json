@@ -1,6 +1,6 @@
 {
- "ancrages": "Aucun ancrage de ce journal n'existe encore. La racine courante sera ancrée à chaque version du site et au moins une fois par mois, à compter du premier ancrage — qui suivra la première entrée inscrite : OpenTimestamps/Bitcoin systématique, RFC 3161 à chaque ancrage de version (spec §2.3). Chaque ancrage posé sera consigné ici avec sa preuve, et ce libellé passera au présent pour ce qui aura été fait. Seuls des nombres partent chez les tiers d'ancrage.",
- "aucun_autre_champ": "Aucun champ libre, aucun nom, aucune identité, aucun nom de fichier : le dépôt est un nombre, pas un message (spec §2.2).",
+ "ancrages": "Aucun ancrage de ce journal n'existe encore. La racine courante sera ancrée à chaque version du site et au moins une fois par mois, à compter du premier ancrage — qui suivra la première entrée inscrite : OpenTimestamps/Bitcoin systématique, RFC 3161 à chaque ancrage de version. Chaque ancrage posé sera consigné ici avec sa preuve, et ce libellé passera au présent pour ce qui aura été fait. Seuls des nombres partent chez les tiers d'ancrage.",
+ "aucun_autre_champ": "Aucun champ libre, aucun nom, aucune identité, aucun nom de fichier : le dépôt est un nombre, pas un message.",
  "champs_entree": {
   "date": "ISO 8601 avec fuseau, America/Toronto — date et heure d'inscription",
   "empreinte": "64 caractères hexadécimaux — l'empreinte SHA-256 déposée, et rien d'autre",
@@ -23,8 +23,8 @@
  "nature": "Journal public chaîné : entrées appendues seulement, jamais réécrites. Publié tel quel à assets/journal-depots.json à la version d'ouverture (v49).",
  "racine_courante": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
  "recette_chainage": "sceau(seq) = SHA-256( sceau_prec ‖ empreinte ‖ date ) — où ‖ est la concaténation des chaînes hexadécimales et de la date telles qu'écrites dans l'entrée. La racine du journal à un instant = le sceau de sa dernière entrée.",
- "spec": "hidden_files/spec-depose-ton-empreinte-2026-11-04.md (§2)",
- "statut": "Ouvert à la version 49 du site (4 novembre 2026) — aucune entrée réelle à l'ouverture ; la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur (spec §7.4, étape 5).",
+ "spec": "Spécification du journal tenue au dossier de l’auteur (document interne du 4 novembre 2026) ; la recette et les règles du journal sont énoncées en entier dans ce fichier même — champs des entrées, recette de chaînage, genèse.",
+ "statut": "Ouvert à la version 49 du site (4 novembre 2026) — aucune entrée réelle à l'ouverture ; la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur.",
  "version_ouverture": "v49",
  "version_structure": 1
 }

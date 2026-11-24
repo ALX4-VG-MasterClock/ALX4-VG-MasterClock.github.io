@@ -1,0 +1,288 @@
+{
+ "arbre": "merkle-conversation/v1",
+ "date": "2026-11-23",
+ "source": "assets/labyrinthe.json — les feuilles sont les réponses préparées de la conversation du site web SoPHIa, dans l’ordre du fichier.",
+ "recette": "Digest de feuille = SHA-256 de la forme canonique de la feuille (JSON : endroit {ancre, page}, id, question, reponse — clés triées, séparateurs compacts, UTF-8). Nœud interne = SHA-256 hex de la concaténation (hex gauche + hex droite) ; si un niveau compte un nombre impair de digests, le dernier est dupliqué ; la racine est le digest unique final. Même recette que l’arbre du coffre (assets/merkle.json).",
+ "feuilles": [
+  {
+   "id": "q-sceau",
+   "digest": "e711a641e3eec056865929d97549818922bdfe62314fb13d3c3ca1a97d748866"
+  },
+  {
+   "id": "q-chaine",
+   "digest": "994bebeb0718fff1ec45ecf3eda36acdaf0f743906d137b1c732f88e24126447"
+  },
+  {
+   "id": "q-verifier",
+   "digest": "12810d48029a1058d8b724ae01455da83bc2f9e834b923d9d0a8af6095f16e63"
+  },
+  {
+   "id": "q-vrai",
+   "digest": "43314dd57b8daaa21a1519138e0edfcd3b583dba629254f7ebc740f801401157"
+  },
+  {
+   "id": "q-google",
+   "digest": "249983a7e8ecb052f84623d8e51acc0334d4e0a073a864c4c33986b0f91ddca8"
+  },
+  {
+   "id": "q-recolte",
+   "digest": "fe1945d0a560fb9e552c64b36dee7470d8f844899bd9347dbe3100c1b0a5e6d0"
+  },
+  {
+   "id": "q-loi25",
+   "digest": "6834fbaa483d36b30a7bdff64691a81d391e2e26f09835fef053f9b3e82440d9"
+  },
+  {
+   "id": "q-conditions",
+   "digest": "7285fe6737cfd2657fe07f7232cd9ea20b5c220802e9b3fe0553ab0f412bd22d"
+  },
+  {
+   "id": "q-ancrage",
+   "digest": "b0f20c8eaa91aca983b3c2fc242553460ecf2500b7001e9075f8302758876709"
+  },
+  {
+   "id": "q-ancrer-soi",
+   "digest": "70b5b377614d1237b01ed8a7298d25accdba11f8b00de3466ed37d4508bd1f42"
+  },
+  {
+   "id": "q-reviens",
+   "digest": "8f37d68ce69dd42cd0d59278be26c2aee31a38935710876b1f853ac49b042e04"
+  },
+  {
+   "id": "q-tout-verifier",
+   "digest": "e193b8306ebfe58fd42013a6ac9572b8febdfbb25dab50c517a6885caf491652"
+  },
+  {
+   "id": "q-chercheur",
+   "digest": "2b6e58c95b96ccc0347a781b1a24317df27e79c9ce936b5b1a25cb817dce0b21"
+  },
+  {
+   "id": "q-memoire",
+   "digest": "e0dc0ee8c905738d219b8048efce54d46046f370ade776ad9d24954c5846be58"
+  },
+  {
+   "id": "q-bornes",
+   "digest": "d991607a9a2f2a4594c6f917e9945d46a046d5bccddc1e4df707becccca15ed3"
+  },
+  {
+   "id": "q-don",
+   "digest": "b241ec0ddb1f3114a60421555fa1980a3db8b7b5dd134716ec75b673fa7e91f2"
+  },
+  {
+   "id": "d-savoir",
+   "digest": "4753d62c1e9673b87610706a1896ec39bc649daa37cde0b99fb3a46d308b1ea4"
+  },
+  {
+   "id": "d-identifier",
+   "digest": "147798f28e64c9d04762cbc24acff007fcd0bcf8ba11b964c9e80b0f84ad31b6"
+  },
+  {
+   "id": "d-preparer",
+   "digest": "207b2aae72b4555b05056939aae56a347f00f8f25a3b2cf5bfb491ba10c9f277"
+  },
+  {
+   "id": "d-envoyer",
+   "digest": "d4d2dc3acca6e6493f4c5a63249f285fc948b0ebc055bbb663b2f06c26f3f1f8"
+  },
+  {
+   "id": "d-delai",
+   "digest": "5505daf7456cc4e850578ee89249cc9c091a34280f88a78d35706516d29ed830"
+  },
+  {
+   "id": "d-reponse",
+   "digest": "9a8338f35582ca715359b4f376720fb29a118664a17beeca951ed8ff7b82eb18"
+  },
+  {
+   "id": "d-recours",
+   "digest": "50c24f2889f5d61e5baa2227a79000ea28ffee05349977d393550422c536c462"
+  },
+  {
+   "id": "p-google-detient",
+   "digest": "2557e2882df412152cf51d7071f35c676ab843f918f79a24c0b5f7ac5b4892f7"
+  },
+  {
+   "id": "p-google-export",
+   "digest": "fc0db7e3306ce1b83d37f7959d1b679a39c30b3aa1a40872a34d1f47d59cbe9b"
+  },
+  {
+   "id": "p-google-demande",
+   "digest": "90f49626a66221f713ba9a3620a615e3b77244c1f351f8ce09cfc7309cbc6555"
+  },
+  {
+   "id": "p-google-partiel",
+   "digest": "0b67e748386755573e5297d3edb39f60814e152e549a525cac663be39b0299dd"
+  },
+  {
+   "id": "p-apple-detient",
+   "digest": "69e4a1becdff85e91d44fb426a3406cee5b55291522cda56573fef18bc3674ce"
+  },
+  {
+   "id": "p-apple-export",
+   "digest": "e2c075c3d3608615832644892c3a86e79348da2548d1d086fdbab66bc9ee02d5"
+  },
+  {
+   "id": "p-apple-demande",
+   "digest": "529457568aa55917efea16731301e49102d0a5591746787ed895e379a8c50682"
+  },
+  {
+   "id": "p-apple-partiel",
+   "digest": "d40e0a31f971c308410fcd2f55e9518941eab454b5041af4540afcc748b2ffb3"
+  },
+  {
+   "id": "p-meta-detient",
+   "digest": "9a823d216c98d98d10d6c7f6bae7fae48d31043e6f4aa96e2ac271ff866287ec"
+  },
+  {
+   "id": "p-meta-export",
+   "digest": "4e4ffe7f263863f6a4c16eff9a9010ea64201d0a543dc53b9995d62f9019be9b"
+  },
+  {
+   "id": "p-meta-demande",
+   "digest": "45f7dc0a89387813519c6f573206638f03c61a46eb84398b6b5238799f21867a"
+  },
+  {
+   "id": "p-meta-partiel",
+   "digest": "dc2eda217c09b7f4258fd6e010bb295f7f96eac721a57f4c2b8065832a91e07e"
+  },
+  {
+   "id": "p-tiktok-detient",
+   "digest": "f72fb7d622044f2318dfa6ece228bed2fa4b225eee2e94e009e4c0fa4ecaff61"
+  },
+  {
+   "id": "p-tiktok-export",
+   "digest": "d59633bb91f4b156d813b17ba234512e68b8a0a218ad2c599650e8369c20e64a"
+  },
+  {
+   "id": "p-tiktok-demande",
+   "digest": "84a06c46173f8614b639f9b37a3a80ba88624440c280a8d6f78a85547abfc9a4"
+  },
+  {
+   "id": "p-tiktok-partiel",
+   "digest": "9127206830c980271f2be8e2bcda9c7d3fcf4b1f495d122850aca75b899f4a42"
+  },
+  {
+   "id": "q-bilan",
+   "digest": "da872b750111bfdd416de59fe482f71bc353bf7fbbb7b3e8c934cccd1fc0857f"
+  },
+  {
+   "id": "q-jour",
+   "digest": "3f2c13e7e3f221401626bd54dae7f570c00152cc4de5d54e8fc79196dec57dbe"
+  },
+  {
+   "id": "q-echos",
+   "digest": "a93e7df629b7142a44dcf3a30c9efbd79dc33a43f124c4c0ce1161e221c35c25"
+  },
+  {
+   "id": "fin-courriel",
+   "digest": "43b34e230d2915b52e1cf8c80508132bb157531da0f3a5f9b4b3c775b788d089"
+  }
+ ],
+ "niveaux": [
+  [
+   "e711a641e3eec056865929d97549818922bdfe62314fb13d3c3ca1a97d748866",
+   "994bebeb0718fff1ec45ecf3eda36acdaf0f743906d137b1c732f88e24126447",
+   "12810d48029a1058d8b724ae01455da83bc2f9e834b923d9d0a8af6095f16e63",
+   "43314dd57b8daaa21a1519138e0edfcd3b583dba629254f7ebc740f801401157",
+   "249983a7e8ecb052f84623d8e51acc0334d4e0a073a864c4c33986b0f91ddca8",
+   "fe1945d0a560fb9e552c64b36dee7470d8f844899bd9347dbe3100c1b0a5e6d0",
+   "6834fbaa483d36b30a7bdff64691a81d391e2e26f09835fef053f9b3e82440d9",
+   "7285fe6737cfd2657fe07f7232cd9ea20b5c220802e9b3fe0553ab0f412bd22d",
+   "b0f20c8eaa91aca983b3c2fc242553460ecf2500b7001e9075f8302758876709",
+   "70b5b377614d1237b01ed8a7298d25accdba11f8b00de3466ed37d4508bd1f42",
+   "8f37d68ce69dd42cd0d59278be26c2aee31a38935710876b1f853ac49b042e04",
+   "e193b8306ebfe58fd42013a6ac9572b8febdfbb25dab50c517a6885caf491652",
+   "2b6e58c95b96ccc0347a781b1a24317df27e79c9ce936b5b1a25cb817dce0b21",
+   "e0dc0ee8c905738d219b8048efce54d46046f370ade776ad9d24954c5846be58",
+   "d991607a9a2f2a4594c6f917e9945d46a046d5bccddc1e4df707becccca15ed3",
+   "b241ec0ddb1f3114a60421555fa1980a3db8b7b5dd134716ec75b673fa7e91f2",
+   "4753d62c1e9673b87610706a1896ec39bc649daa37cde0b99fb3a46d308b1ea4",
+   "147798f28e64c9d04762cbc24acff007fcd0bcf8ba11b964c9e80b0f84ad31b6",
+   "207b2aae72b4555b05056939aae56a347f00f8f25a3b2cf5bfb491ba10c9f277",
+   "d4d2dc3acca6e6493f4c5a63249f285fc948b0ebc055bbb663b2f06c26f3f1f8",
+   "5505daf7456cc4e850578ee89249cc9c091a34280f88a78d35706516d29ed830",
+   "9a8338f35582ca715359b4f376720fb29a118664a17beeca951ed8ff7b82eb18",
+   "50c24f2889f5d61e5baa2227a79000ea28ffee05349977d393550422c536c462",
+   "2557e2882df412152cf51d7071f35c676ab843f918f79a24c0b5f7ac5b4892f7",
+   "fc0db7e3306ce1b83d37f7959d1b679a39c30b3aa1a40872a34d1f47d59cbe9b",
+   "90f49626a66221f713ba9a3620a615e3b77244c1f351f8ce09cfc7309cbc6555",
+   "0b67e748386755573e5297d3edb39f60814e152e549a525cac663be39b0299dd",
+   "69e4a1becdff85e91d44fb426a3406cee5b55291522cda56573fef18bc3674ce",
+   "e2c075c3d3608615832644892c3a86e79348da2548d1d086fdbab66bc9ee02d5",
+   "529457568aa55917efea16731301e49102d0a5591746787ed895e379a8c50682",
+   "d40e0a31f971c308410fcd2f55e9518941eab454b5041af4540afcc748b2ffb3",
+   "9a823d216c98d98d10d6c7f6bae7fae48d31043e6f4aa96e2ac271ff866287ec",
+   "4e4ffe7f263863f6a4c16eff9a9010ea64201d0a543dc53b9995d62f9019be9b",
+   "45f7dc0a89387813519c6f573206638f03c61a46eb84398b6b5238799f21867a",
+   "dc2eda217c09b7f4258fd6e010bb295f7f96eac721a57f4c2b8065832a91e07e",
+   "f72fb7d622044f2318dfa6ece228bed2fa4b225eee2e94e009e4c0fa4ecaff61",
+   "d59633bb91f4b156d813b17ba234512e68b8a0a218ad2c599650e8369c20e64a",
+   "84a06c46173f8614b639f9b37a3a80ba88624440c280a8d6f78a85547abfc9a4",
+   "9127206830c980271f2be8e2bcda9c7d3fcf4b1f495d122850aca75b899f4a42",
+   "da872b750111bfdd416de59fe482f71bc353bf7fbbb7b3e8c934cccd1fc0857f",
+   "3f2c13e7e3f221401626bd54dae7f570c00152cc4de5d54e8fc79196dec57dbe",
+   "a93e7df629b7142a44dcf3a30c9efbd79dc33a43f124c4c0ce1161e221c35c25",
+   "43b34e230d2915b52e1cf8c80508132bb157531da0f3a5f9b4b3c775b788d089"
+  ],
+  [
+   "705f607829a09422412d42ab833f844a4a104e089d1ccc1417b143e4f5dbd00e",
+   "40b4b360cf2a42fe05bda35e8f36336451bee30371f808b40e39e263a1fe3f06",
+   "1c8ca6b30cc88ed1f188a4142d54167470abe76950009f290d9df678955032c8",
+   "c4f8abd5dfd1a98f0c5b875d63765ba9510211dff79f682dd2629170e1b52b84",
+   "3bf897b5c49b68ffb97d458e87115c474245cbf6fa60fc3f29edeb102e2bfb36",
+   "d8627bb26564b7fd297126e357ec382413b38b82486c5dd1201154a8644b91d2",
+   "d528b569904759abd6bcb010a57c56fa7e1f99bb2afa6af81183c9d54ccd536a",
+   "7743f35e7a870e05a3e3c438705977bdbb6075656605848318b4f03e673df441",
+   "3f55a0c2c185ec98259a809b4056a365380efe108772c76e83c1f119fab864f5",
+   "9e8bbe58dd1a90fdf8d075a0218ac2851e5d153c0da04decae3f50bbe6a8535d",
+   "b58a2c183dfe18b171b89342bb718e43f72ebe343cd07f8944d1a2127e8a5ac7",
+   "2d10e2f5668955feabebbcacee71af807873552bdbaedf38c625017632a7d75f",
+   "05d52517e5e0317c535335a512a2bddfc74a3a1d1f2a9b5121c3461a63c3f25d",
+   "42b11576fbd81803ab7590248cd8893c34bf9ec80500f1a89abc03b9e76502db",
+   "c36a93e485ee45123f377f8e957c046f1cc450852a7bf966b4697a7aac92b844",
+   "3bf5fe325c9465199b2a65a4b61508ef01f42273a66e3ad3d6047f334c296196",
+   "4f41b0bafe9d5cc711758286740ab9714d3381ec8301db445f174d21c1dc291a",
+   "14bd79dccb09c952b8c39af3f4f1c2ea2a80168aae73b1392480b5c4de0d3ac9",
+   "6d14c5d57cae46a37e241c22534c0786e2be6cbe61497976c595151e42917af1",
+   "3f8059da50addcb8a908259a7737426c5ff067557f4762cf97b1bd87fd302bec",
+   "bc9b420d4dc1706d4b4a13027d0be7d91ae54faef4113767bf96ef9cf1913a41",
+   "695ae8392f9197c23ef9c83e4a605747f93ddee44e44a0848b22640eeeef4ff2"
+  ],
+  [
+   "0ab4b41f79c807cbcf12c30b3a77ad211e3d7c352f8c9e75547aa166e5665805",
+   "5743ea8dbeb053c16c79fec374f0079fe6e3d725cb6cf22a5dd4044ac4cb1e53",
+   "7752727453f472295a67a35e62b2ef5a867ca8d110eef9115ba8d6a8c7581689",
+   "5d5720f18df302382161869da9cc44f04e1342e3c765e3f5ae0f868b37d40164",
+   "eb2cda5443b1d274b1582171cc93a882c32997fdde515a7a46070fe86e35c496",
+   "903ac76cbca772f19de79a1a5e6337a86b4e4abe320ac6335035ce28bb41e661",
+   "553d0a57a9bde9b5f327a3bf6f9eb8e69c134f6adb40b5e0c46177731b068d8e",
+   "56da0bee5cff30c409c33a7d05279219b2a3a3c3db786ad74092c59a1d87c08d",
+   "50fbedadabf379703b00cfe4036643d09d9fb1a3a6f7c7cbdce1d355f32da2fd",
+   "e9385985292c48feef23e6876108788fb295fbb61a11ada97f89e150a76100e0",
+   "2516bfabd46c139472c49ba67cb3f1db962762f3c9f343d7796d304556fbfa8c"
+  ],
+  [
+   "8dd7cdde2c1389b34b6147d836fb1ddf963a62b901049545ec02a49131446e42",
+   "fa9e5b72a59117877dc3fb14559a05e3f95edeb8a576c536102312bd8ad1cbfa",
+   "704cd5be8dc0b646100cca12a076845000ac41b20075cd9a49b74a4825638c9c",
+   "87db66cc58de4abc8fe02907025b55804a860d9ff31f630d51eec52eba8eb910",
+   "3b1e646739fcc06dc709340994db9511ac883f11763540fe1b7de3118bb8e529",
+   "4599efcf7443fd8c5bb5f90448758db4a4af992b1bd8d63a7c388158b32fc794"
+  ],
+  [
+   "cb1877d708b7199a194aa8245839ab12b85a2a74f8dfc05cd1cffaab0d097c94",
+   "c482b0b8a152a0c3889a6fc61059feb75faab5fb40b558d90ef449cd329d4018",
+   "fe3a58687c35e36a1cc535a52931129e837e78919ebafc88466850416f6ee5c5"
+  ],
+  [
+   "37e064b3588665dbd5f8128078a668fc4d558aea0d2c9184d17743d8b4e1ce2f",
+   "458b804bf4e26596a55f5e58e6c31706106f90e240cf20d5712688783fb8db0c"
+  ],
+  [
+   "ccbb7ace2c342f08b82e2634cc30fd49818775a71a0e43dde0c8273ffa2dee4d"
+  ]
+ ],
+ "nombre_feuilles": 43,
+ "profondeur": 6,
+ "racine": "ccbb7ace2c342f08b82e2634cc30fd49818775a71a0e43dde0c8273ffa2dee4d",
+ "propriete": "La racine engage l’ensemble des réponses préparées servies par assets/labyrinthe.json : toute réponse modifiée change sa feuille, donc la racine — et le fichier est lui-même un actif du manifeste chaîné du site."
+}

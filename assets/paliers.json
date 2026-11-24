@@ -1,0 +1,64 @@
+{
+ "format": "paliers-sophia/v1",
+ "date": "2026-11-23",
+ "principe": "Plancher universel, plafond qui monte avec le matériel (Alexandre, 23 novembre 2026) : le site donne le plus de capacités qu'il peut ; plus le téléphone du visiteur est récent, plus il accède à de la profondeur ; le site ne se limite pas à un seul style. L'échelle est ouverte — elle se bâtit pour les générations futures : les iPhone fonctionnels d'aujourd'hui seront les vieux iPhone de demain, et les paliers futurs s'ajouteront à cette liste comme des couches, sans rebâtir le site. La détection se fonde sur les capacités réelles de l'appareil, jamais sur le nom de son modèle.",
+ "capacites": [
+  {
+   "detail": "l'accès du navigateur au processeur graphique — présent dans Safari depuis iOS 26, absent des iPhone plus anciens",
+   "id": "webgpu",
+   "nom": "WebGPU"
+  },
+  {
+   "detail": "le code compilé que le navigateur exécute à pleine vitesse — présent dans tous les navigateurs actuels",
+   "id": "webassembly",
+   "nom": "WebAssembly"
+  },
+  {
+   "detail": "la mémoire que l'appareil accepte d'annoncer au navigateur — certains navigateurs ne l'exposent pas, et c'est leur droit",
+   "id": "memoire",
+   "nom": "Mémoire exposée"
+  },
+  {
+   "detail": "le nombre de cœurs logiques que l'appareil expose au navigateur",
+   "id": "concurrence",
+   "nom": "Cœurs logiques"
+  },
+  {
+   "detail": "la largeur de l'écran, en pixels CSS",
+   "id": "ecran",
+   "nom": "Largeur d'écran"
+  }
+ ],
+ "paliers": [
+  {
+   "capacites": [],
+   "debloque": "La conversation de la salle du cerveau au complet : le labyrinthe de questions préparées, la cascade par mots-clés puis par recouvrement de mots, l'arbre de Merkle recalculé chez le visiteur, son parcours chaîné gardé sur son appareil. C'est le plancher — il ne demande rien de spécial, et il est le même pour tous.",
+   "etat": "livre",
+   "id": "P0",
+   "nom": "La base — le labyrinthe et les mots-clés"
+  },
+  {
+   "capacites": [
+    {
+     "id": "webassembly"
+    }
+   ],
+   "debloque": "Retrouver une réponse par le sens d'une question, pas seulement par ses mots — la couche sémantique de la cascade, branchée dans ce paquet (étage 1 de la version suivante, 24 novembre 2026). Le modèle de plongement français du site (paraphrase-multilingual-MiniLM-L12-v2, quantifié q8, 384 dimensions, licence Apache-2.0) est servi par le site lui-même, en morceaux d'au plus 24 Mo par fichier ; les vecteurs des feuilles et des endroits sont calculés à la construction du site. Le palier ne s'active qu'à ta demande (opt-in, environ 147 Mo affichés avant le téléchargement) : tout se calcule ensuite dans ton navigateur (WASM), aucun appel à Hugging Face ni à un CDN, et ta question ne quitte pas ton appareil. Tant que tu ne l'actives pas, la cascade reste aux mots-clés — rien n'est simulé.",
+   "etat": "livre",
+   "id": "P1",
+   "nom": "La recherche par le sens"
+  },
+  {
+   "capacites": [
+    {
+     "id": "webgpu"
+    }
+   ],
+   "debloque": "Un petit modèle de langage roulant dans le navigateur, en option consentie, borné aux passages que le site détient, ses citations vérifiées par le code ou sa réponse jetée. Pas encore livré : aucun modèle n'est chargé, rien n'est promis en silence. La recherche du dossier l'a mesuré fragile sur les appareils d'aujourd'hui — ce palier viendra quand le matériel le portera pour de vrai.",
+   "etat": "a-venir",
+   "id": "P2",
+   "nom": "La génération en option"
+  }
+ ],
+ "note": "Échelle ouverte : ajouter un palier futur = ajouter une entrée à la liste des paliers dans la source du cerveau (cerveau-source.json, au chantier), puis reconstruire. La détection se fait dans le navigateur du visiteur, sur les capacités réelles — jamais sur le nom du modèle — et rien n’est envoyé ni gardé. Un palier d’état « pret » est branchable mais pas branché ; un palier « a-venir » n’est pas livré : le site le nomme, il ne le simule pas."
+}
