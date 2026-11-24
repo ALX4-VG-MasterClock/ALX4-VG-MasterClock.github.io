@@ -1,0 +1,1685 @@
+{
+ "format": "vecteurs-sophia/v1",
+ "date": "2026-11-24",
+ "modele": {
+  "nom": "paraphrase-multilingual-MiniLM-L12-v2",
+  "dtype": "q8 — onnx/model_quantized.onnx (quantification dynamique int8)",
+  "sha256_modele": "66fc00f5f29afcaff34092e1bdd20008ca3918265a82fb9695a551e510cc4ebc",
+  "dimensions": 384,
+  "max_jetons": 128,
+  "pooling": "moyen masqué + normalisation L2"
+ },
+ "quantification": "int8, échelle 127 (vecteurs L2-normalisés avant quantification)",
+ "echelle_int8": 127,
+ "dimensions": 384,
+ "texte_feuille": "question + mots-clés + réponse de la feuille (assets/labyrinthe.json)",
+ "texte_endroit": "titre + texte de l’endroit (assets/recherche-index.json), empreintes SHA-256 affichées neutralisées en 64 zéros avant plongement — comme pour les empreintes du manifeste",
+ "entrees": [
+  {
+   "type": "feuille",
+   "id": "q-sceau"
+  },
+  {
+   "type": "feuille",
+   "id": "q-chaine"
+  },
+  {
+   "type": "feuille",
+   "id": "q-verifier"
+  },
+  {
+   "type": "feuille",
+   "id": "q-vrai"
+  },
+  {
+   "type": "feuille",
+   "id": "q-google"
+  },
+  {
+   "type": "feuille",
+   "id": "q-recolte"
+  },
+  {
+   "type": "feuille",
+   "id": "q-loi25"
+  },
+  {
+   "type": "feuille",
+   "id": "q-conditions"
+  },
+  {
+   "type": "feuille",
+   "id": "q-ancrage"
+  },
+  {
+   "type": "feuille",
+   "id": "q-ancrer-soi"
+  },
+  {
+   "type": "feuille",
+   "id": "q-reviens"
+  },
+  {
+   "type": "feuille",
+   "id": "q-tout-verifier"
+  },
+  {
+   "type": "feuille",
+   "id": "q-chercheur"
+  },
+  {
+   "type": "feuille",
+   "id": "q-memoire"
+  },
+  {
+   "type": "feuille",
+   "id": "q-bornes"
+  },
+  {
+   "type": "feuille",
+   "id": "q-don"
+  },
+  {
+   "type": "feuille",
+   "id": "d-savoir"
+  },
+  {
+   "type": "feuille",
+   "id": "d-identifier"
+  },
+  {
+   "type": "feuille",
+   "id": "d-preparer"
+  },
+  {
+   "type": "feuille",
+   "id": "d-envoyer"
+  },
+  {
+   "type": "feuille",
+   "id": "d-delai"
+  },
+  {
+   "type": "feuille",
+   "id": "d-reponse"
+  },
+  {
+   "type": "feuille",
+   "id": "d-recours"
+  },
+  {
+   "type": "feuille",
+   "id": "p-google-detient"
+  },
+  {
+   "type": "feuille",
+   "id": "p-google-export"
+  },
+  {
+   "type": "feuille",
+   "id": "p-google-demande"
+  },
+  {
+   "type": "feuille",
+   "id": "p-google-partiel"
+  },
+  {
+   "type": "feuille",
+   "id": "p-apple-detient"
+  },
+  {
+   "type": "feuille",
+   "id": "p-apple-export"
+  },
+  {
+   "type": "feuille",
+   "id": "p-apple-demande"
+  },
+  {
+   "type": "feuille",
+   "id": "p-apple-partiel"
+  },
+  {
+   "type": "feuille",
+   "id": "p-meta-detient"
+  },
+  {
+   "type": "feuille",
+   "id": "p-meta-export"
+  },
+  {
+   "type": "feuille",
+   "id": "p-meta-demande"
+  },
+  {
+   "type": "feuille",
+   "id": "p-meta-partiel"
+  },
+  {
+   "type": "feuille",
+   "id": "p-tiktok-detient"
+  },
+  {
+   "type": "feuille",
+   "id": "p-tiktok-export"
+  },
+  {
+   "type": "feuille",
+   "id": "p-tiktok-demande"
+  },
+  {
+   "type": "feuille",
+   "id": "p-tiktok-partiel"
+  },
+  {
+   "type": "feuille",
+   "id": "q-bilan"
+  },
+  {
+   "type": "feuille",
+   "id": "q-jour"
+  },
+  {
+   "type": "feuille",
+   "id": "q-echos"
+  },
+  {
+   "type": "feuille",
+   "id": "fin-courriel"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "accueil-plat",
+   "titre": "Casse-la toi-même — le mini-vérificateur",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal1",
+   "titre": "Déjà à toi",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal2",
+   "titre": "Déjà là. Déjà à toi.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal3",
+   "titre": "Ton téléphone garde tout. Le site, rien.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal4",
+   "titre": "Savoir comment tes données transitent.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal5",
+   "titre": "Accéder à ce qu’ils détiennent sur toi.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal6",
+   "titre": "Garder la mémoire, de ton bord.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal7",
+   "titre": "Une histoire qui se prouve.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal8",
+   "titre": "Tout part d’une décision.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal9",
+   "titre": "La somme porte tout.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "gradMetal10",
+   "titre": "Dans ton appareil.",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "menus",
+   "titre": "Les six menus, en ordre",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "surface-compteurs",
+   "titre": "Accueil",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "surface-gestes",
+   "titre": "Que veux-tu faire ?",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "surface-histoire",
+   "titre": "Le dossier — l'histoire",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "recu-visite-accueil",
+   "titre": "Ton reçu de visite — ce que cette page a vu de toi",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "temps.html",
+   "ancre": "temps",
+   "titre": "La triangulation du temps — l’ancrage de Sainte-Martine",
+   "panneauNom": "Temps — l’ancre"
+  },
+  {
+   "type": "endroit",
+   "page": "temps.html",
+   "ancre": "faq",
+   "titre": "Foire aux questions",
+   "panneauNom": "faq"
+  },
+  {
+   "type": "endroit",
+   "page": "temps.html",
+   "ancre": "repertoire",
+   "titre": "Le Répertoire du propre — les sceaux, maillon par maillon",
+   "panneauNom": "repertoire"
+  },
+  {
+   "type": "endroit",
+   "page": "temps.html",
+   "ancre": "vision",
+   "titre": "La vision de la v60 — les images qui ont spécifié cette version",
+   "panneauNom": "vision"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier",
+   "titre": "Le calendrier 13 × 28 — le compte sidéral, démontré",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-compte",
+   "titre": "Le compte, en direct",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-structure",
+   "titre": "La structure : un compte continu, une lecture rythmée",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-departs",
+   "titre": "Les quatre départs, confrontés",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-gregorien",
+   "titre": "Confrontation grégorienne — le premier cycle",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-recupere",
+   "titre": "Le jour récupéré",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-bissextile",
+   "titre": "La bissextile, montrée au lieu d'être décrétée",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-retomber",
+   "titre": "« Retomber » : la spirale, pas le cercle",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-histoire",
+   "titre": "La confrontation historique, au complet",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "calendrier.html",
+   "ancre": "calendrier-formules",
+   "titre": "Les formules — tout se recalcule",
+   "panneauNom": "Le calendrier 13 × 28"
+  },
+  {
+   "type": "endroit",
+   "page": "meteo.html",
+   "ancre": "meteo",
+   "titre": "Météo — le ciel de l’ancre, en direct",
+   "panneauNom": "Météo — l’ancre"
+  },
+  {
+   "type": "endroit",
+   "page": "methode.html",
+   "ancre": "coquillage-scrub",
+   "titre": "Le coquillage — la méthode se voit",
+   "panneauNom": "Méthode"
+  },
+  {
+   "type": "endroit",
+   "page": "methode.html",
+   "ancre": "methode",
+   "titre": "La méthode, dans les mots de son auteur",
+   "panneauNom": "Méthode"
+  },
+  {
+   "type": "endroit",
+   "page": "methode.html",
+   "ancre": "coquillage",
+   "titre": "Le cerveau coquillage numérique — la forme qui se construit par les conversations",
+   "panneauNom": "Méthode"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "methode-30",
+   "titre": "La méthode en 30 secondes",
+   "panneauNom": "La méthode en 30 secondes"
+  },
+  {
+   "type": "endroit",
+   "page": "transmission.html",
+   "ancre": "transmission",
+   "titre": "Faire pareil — la méthode, transmise",
+   "panneauNom": "Faire pareil"
+  },
+  {
+   "type": "endroit",
+   "page": "confidentialite.html",
+   "ancre": "confidentialite",
+   "titre": "Confidentialité et Loi 25",
+   "panneauNom": "Confidentialité et Loi 25"
+  },
+  {
+   "type": "endroit",
+   "page": "contact.html",
+   "ancre": "contact-temoin",
+   "titre": "Nous joindre — déménagé, pas supprimé",
+   "panneauNom": "contact"
+  },
+  {
+   "type": "endroit",
+   "page": "acces.html",
+   "ancre": "acces",
+   "titre": "Mes renseignements — préparer une demande d’accès",
+   "panneauNom": "Mes renseignements"
+  },
+  {
+   "type": "endroit",
+   "page": "donnees.html",
+   "ancre": "donnees",
+   "titre": "Tes données, ton dossier",
+   "panneauNom": "Bibliothèque des lois"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-cadre",
+   "titre": "Le cadre — comment les données transitent, avant les plateformes",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-google",
+   "titre": "Google — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-apple",
+   "titre": "Apple — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-meta",
+   "titre": "Meta — Facebook, Instagram, WhatsApp — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-amazon",
+   "titre": "Amazon — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-microsoft",
+   "titre": "Microsoft — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-tiktok",
+   "titre": "TikTok — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-snapchat",
+   "titre": "Snapchat — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-x",
+   "titre": "X (ex-Twitter) — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-discord",
+   "titre": "Discord — aller chercher",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-detecteur",
+   "titre": "Le détecteur d’export partiel — ce que tu as reçu est-il tout ce qu’ils déclarent ?",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "aller.html",
+   "ancre": "aller-miroir",
+   "titre": "Le miroir des exports — lis ce qu’ils t’ont donné, lisiblement",
+   "panneauNom": "Aller chercher ce qu’ils ont récolté"
+  },
+  {
+   "type": "endroit",
+   "page": "cameras.html",
+   "ancre": "cameras-transit",
+   "titre": "Ce qui transite d'une caméra domestique — le documenté",
+   "panneauNom": "Caméras et appareils connectés"
+  },
+  {
+   "type": "endroit",
+   "page": "cameras.html",
+   "ancre": "cameras-regulateurs",
+   "titre": "Ce que les régulateurs ont établi",
+   "panneauNom": "Caméras et appareils connectés"
+  },
+  {
+   "type": "endroit",
+   "page": "cameras.html",
+   "ancre": "cameras-reglages",
+   "titre": "Les réglages qui comptent — et ce qui n'est pas encore établi",
+   "panneauNom": "Caméras et appareils connectés"
+  },
+  {
+   "type": "endroit",
+   "page": "cameras.html",
+   "ancre": "cameras-chemin",
+   "titre": "Obtenir — et fermer — ses données de caméra",
+   "panneauNom": "Caméras et appareils connectés"
+  },
+  {
+   "type": "endroit",
+   "page": "cameras.html",
+   "ancre": "cameras-effaceur",
+   "titre": "L’effaceur de métadonnées — ce que tes photos racontent, et la copie nettoyée",
+   "panneauNom": "Caméras et appareils connectés"
+  },
+  {
+   "type": "endroit",
+   "page": "explication.html",
+   "ancre": "explication-lois",
+   "titre": "Les trois textes — cités exactement, de la bibliothèque du site",
+   "panneauNom": "Demander l’explication d’une décision automatisée"
+  },
+  {
+   "type": "endroit",
+   "page": "explication.html",
+   "ancre": "explication-parcours",
+   "titre": "Le parcours, en quatre pas",
+   "panneauNom": "Demander l’explication d’une décision automatisée"
+  },
+  {
+   "type": "endroit",
+   "page": "explication.html",
+   "ancre": "explication-generateur",
+   "titre": "Le générateur — ta demande, produite chez toi",
+   "panneauNom": "Demander l’explication d’une décision automatisée"
+  },
+  {
+   "type": "endroit",
+   "page": "decisions.html",
+   "ancre": "decisions-registre",
+   "titre": "Les 23 décisions — Canada, Québec, Europe, États-Unis",
+   "panneauNom": "Le registre des décisions"
+  },
+  {
+   "type": "endroit",
+   "page": "decisions.html",
+   "ancre": "decisions-attente",
+   "titre": "La liste d’attente — trois décisions nommées, pas admises",
+   "panneauNom": "Le registre des décisions"
+  },
+  {
+   "type": "endroit",
+   "page": "suspendu.html",
+   "ancre": "suspendu-premiere-heure",
+   "titre": "Le protocole de la première heure — compte suspendu ou compromis",
+   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre"
+  },
+  {
+   "type": "endroit",
+   "page": "suspendu.html",
+   "ancre": "suspendu-parcours",
+   "titre": "Le parcours, en trois questions",
+   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre"
+  },
+  {
+   "type": "endroit",
+   "page": "suspendu.html",
+   "ancre": "suspendu-fiches",
+   "titre": "Les fiches, plateforme par plateforme",
+   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre"
+  },
+  {
+   "type": "endroit",
+   "page": "suspendu.html",
+   "ancre": "suspendu-droit",
+   "titre": "Ce que le droit donne — et ce qu'il ne donne pas",
+   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre"
+  },
+  {
+   "type": "endroit",
+   "page": "suspendu.html",
+   "ancre": "suspendu-memoire",
+   "titre": "La leçon « mémoire avant » — et le geste de clôture",
+   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre"
+  },
+  {
+   "type": "endroit",
+   "page": "for.html",
+   "ancre": "for-carte",
+   "titre": "La carte des clauses — ce que les contrats imposent",
+   "panneauNom": "Le for est ailleurs, tes recours sont ici"
+  },
+  {
+   "type": "endroit",
+   "page": "for.html",
+   "ancre": "for-recours",
+   "titre": "Tes recours, exercables d’ici",
+   "panneauNom": "Le for est ailleurs, tes recours sont ici"
+  },
+  {
+   "type": "endroit",
+   "page": "for.html",
+   "ancre": "for-lettre",
+   "titre": "Le modèle de réponse — quand la plateforme invoque son for",
+   "panneauNom": "Le for est ailleurs, tes recours sont ici"
+  },
+  {
+   "type": "endroit",
+   "page": "for.html",
+   "ancre": "for-verifier",
+   "titre": "Ce que les lois d’ici écrivent déjà — vérifié au primaire",
+   "panneauNom": "Le for est ailleurs, tes recours sont ici"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrages",
+   "titre": "Preuves et ancrages — l'empreinte publique, le contenu chez l'auteur",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "preuves-chemins",
+   "titre": "Vérifier chez le tiers — le chemin, pas à pas",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrage-anteriorite",
+   "titre": "L’antériorité pour tous — scelle l’empreinte de ton propre fichier",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrer-bitcoin",
+   "titre": "Ancre ta mémoire dans Bitcoin, toi aussi",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "reviens-preuve",
+   "titre": "Reviens avec ta preuve — le retour, démontré ici",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrage-2026-11-08",
+   "titre": "La passe du 8 novembre 2026 — les valeurs, relues au terminal",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrage-2026-11-15",
+   "titre": "La passe du 15 novembre 2026 — les valeurs, relues au terminal",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "ancrage.html",
+   "ancre": "ancrage-2026-11-16",
+   "titre": "L’ancrage spécial du 16 novembre 2026 — la journée, ancrée le jour même",
+   "panneauNom": "Ancrage — les preuves chez les tiers"
+  },
+  {
+   "type": "endroit",
+   "page": "sceller.html",
+   "ancre": "outils",
+   "titre": "2 Vérifie toi-même — l'atelier en trois panneaux",
+   "panneauNom": "Sceller — l'atelier"
+  },
+  {
+   "type": "endroit",
+   "page": "verifier.html",
+   "ancre": "parcours-sceptique",
+   "titre": "Parcours du sceptique — les trois questions d'Alex",
+   "panneauNom": "Vérifier"
+  },
+  {
+   "type": "endroit",
+   "page": "verifier.html",
+   "ancre": "verifie-moi",
+   "titre": "✦ Vérifier un sceau",
+   "panneauNom": "Vérifier"
+  },
+  {
+   "type": "endroit",
+   "page": "verifier.html",
+   "ancre": "tout-verifier",
+   "titre": "Tout vérifier ici — chaque affirmation, sa preuve, son chemin",
+   "panneauNom": "Vérifier"
+  },
+  {
+   "type": "endroit",
+   "page": "verifier.html",
+   "ancre": "trouve-ecart",
+   "titre": "Trouve l'écart — un caractère suffit",
+   "panneauNom": "Vérifier"
+  },
+  {
+   "type": "endroit",
+   "page": "application.html",
+   "ancre": "application",
+   "titre": "Le site, en application",
+   "panneauNom": "L’application"
+  },
+  {
+   "type": "endroit",
+   "page": "registre.html",
+   "ancre": "registre",
+   "titre": "Registre d'antériorité — les onze dépôts publics de ce site",
+   "panneauNom": "Registre"
+  },
+  {
+   "type": "endroit",
+   "page": "preuves.html",
+   "ancre": "sceptique",
+   "titre": "Le test du sceptique — une affirmation, sa preuve, sa borne",
+   "panneauNom": "Preuves"
+  },
+  {
+   "type": "endroit",
+   "page": "preuves.html",
+   "ancre": "resultats",
+   "titre": "Résultats mesurés — ce qui tient, ce qui ne tient pas",
+   "panneauNom": "Preuves"
+  },
+  {
+   "type": "endroit",
+   "page": "preuves.html",
+   "ancre": "defaillances",
+   "titre": "Classes de défaillance — ce que le dossier a mesuré chez les plateformes",
+   "panneauNom": "Preuves"
+  },
+  {
+   "type": "endroit",
+   "page": "preuves.html",
+   "ancre": "bornes",
+   "titre": "Bornes — ce que ce dossier ne prétend pas",
+   "panneauNom": "Preuves"
+  },
+  {
+   "type": "endroit",
+   "page": "parcours.html",
+   "ancre": "histoire",
+   "titre": "L'histoire — la chronologie dorée",
+   "panneauNom": "Parcours — l'histoire"
+  },
+  {
+   "type": "endroit",
+   "page": "parcours.html",
+   "ancre": "chronologie",
+   "titre": "Chronologie de genèse — les dates vérifiées au corpus",
+   "panneauNom": "Parcours — l'histoire"
+  },
+  {
+   "type": "endroit",
+   "page": "parcours.html",
+   "ancre": "terrains",
+   "titre": "Terrains d'application — où la moitié utilisateur de la preuve manque",
+   "panneauNom": "Parcours — l'histoire"
+  },
+  {
+   "type": "endroit",
+   "page": "parcours.html",
+   "ancre": "probleme",
+   "titre": "Le problème : le seul enregistrement appartient à l'autre partie",
+   "panneauNom": "Parcours — l'histoire"
+  },
+  {
+   "type": "endroit",
+   "page": "ingenierie.html",
+   "ancre": "ingenierie",
+   "titre": "Le travail d’ingénierie",
+   "panneauNom": "Le travail d'ingénierie"
+  },
+  {
+   "type": "endroit",
+   "page": "chercheur.html",
+   "ancre": "chercheur",
+   "titre": "Le chercheur",
+   "panneauNom": "Le chercheur"
+  },
+  {
+   "type": "endroit",
+   "page": "chercheur.html",
+   "ancre": "documents",
+   "titre": "Documents et ressources",
+   "panneauNom": "Le chercheur"
+  },
+  {
+   "type": "endroit",
+   "page": "chercheur.html",
+   "ancre": "faq",
+   "titre": "Questions fréquentes",
+   "panneauNom": "Le chercheur"
+  },
+  {
+   "type": "endroit",
+   "page": "chercheur.html",
+   "ancre": "chercheur-pi",
+   "titre": "La propriété intellectuelle du dossier",
+   "panneauNom": "Le chercheur"
+  },
+  {
+   "type": "endroit",
+   "page": "articles.html",
+   "ancre": "articles",
+   "titre": "Articles — les sources primaires qui documentent les thèses du dossier",
+   "panneauNom": "Articles"
+  },
+  {
+   "type": "endroit",
+   "page": "capsules.html",
+   "ancre": "capsules",
+   "titre": "Capsules — les vidéos du site, sur place",
+   "panneauNom": "Capsules"
+  },
+  {
+   "type": "endroit",
+   "page": "capsules.html",
+   "ancre": "capsules-externes",
+   "titre": "Capsules externes — pour aller plus loin",
+   "panneauNom": "Capsules"
+  },
+  {
+   "type": "endroit",
+   "page": "droits.html",
+   "ancre": "droits",
+   "titre": "Droits et lois — ce qui est établi, vérifié au primaire",
+   "panneauNom": "Droits et lois"
+  },
+  {
+   "type": "endroit",
+   "page": "droits.html",
+   "ancre": "demo-decisions",
+   "titre": "Essaie : tes décisions, ta somme",
+   "panneauNom": "Droits et lois"
+  },
+  {
+   "type": "endroit",
+   "page": "transparence.html",
+   "ancre": "transparence",
+   "titre": "Transparence — les flux de données de ce site",
+   "panneauNom": "transparence"
+  },
+  {
+   "type": "endroit",
+   "page": "instance.html",
+   "ancre": "recherche-reliee",
+   "titre": "6 Instance Souveraine — SoPHIa",
+   "panneauNom": "Parler à l'instance"
+  },
+  {
+   "type": "endroit",
+   "page": "memoire.html",
+   "ancre": "memoire",
+   "titre": "Mémoire — ce site est la mémoire externe de SoPHIa",
+   "panneauNom": "Mémoire"
+  },
+  {
+   "type": "endroit",
+   "page": "memoire.html",
+   "ancre": "couche-chaine",
+   "titre": "Le compteur des maillons",
+   "panneauNom": "Mémoire"
+  },
+  {
+   "type": "endroit",
+   "page": "memoire.html",
+   "ancre": "couche-registre",
+   "titre": "Le compteur des pièces",
+   "panneauNom": "Mémoire"
+  },
+  {
+   "type": "endroit",
+   "page": "memoire.html",
+   "ancre": "couche-pouls",
+   "titre": "Le compteur du pouls",
+   "panneauNom": "Mémoire"
+  },
+  {
+   "type": "endroit",
+   "page": "memoire.html",
+   "ancre": "couche-sceaux",
+   "titre": "Le compteur des sceaux publics",
+   "panneauNom": "Mémoire"
+  },
+  {
+   "type": "endroit",
+   "page": "evolution.html",
+   "ancre": "evolution",
+   "titre": "Évolution — le site travaille sur soi-même",
+   "panneauNom": "Évolution"
+  },
+  {
+   "type": "endroit",
+   "page": "evolution.html",
+   "ancre": "direct",
+   "titre": "Ce site, branché en direct",
+   "panneauNom": "Évolution"
+  },
+  {
+   "type": "endroit",
+   "page": "evolution.html",
+   "ancre": "foyers",
+   "titre": "Trois foyers, un sceau — le site se vérifie lui-même",
+   "panneauNom": "Évolution"
+  },
+  {
+   "type": "endroit",
+   "page": "evolution.html",
+   "ancre": "journal",
+   "titre": "Journal des mises à jour — le site suit nos échanges",
+   "panneauNom": "Évolution"
+  },
+  {
+   "type": "endroit",
+   "page": "don.html",
+   "ancre": "don-pourquoi",
+   "titre": "Pourquoi un don",
+   "panneauNom": "Faites un don"
+  },
+  {
+   "type": "endroit",
+   "page": "don.html",
+   "ancre": "don-usages",
+   "titre": "À quoi peut servir votre argent — la liste",
+   "panneauNom": "Faites un don"
+  },
+  {
+   "type": "endroit",
+   "page": "don.html",
+   "ancre": "don-choix",
+   "titre": "Choisissez l’usage de votre don",
+   "panneauNom": "Faites un don"
+  },
+  {
+   "type": "endroit",
+   "page": "don.html",
+   "ancre": "don-comment",
+   "titre": "Comment donner",
+   "panneauNom": "Faites un don"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-preambule",
+   "titre": "Conditions d’utilisation du site",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-est",
+   "titre": "Ce que ce site est — et ce qu'il n'est pas",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-qui",
+   "titre": "Qui le publie — et la marque de propriété intellectuelle",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-faire",
+   "titre": "Ce que tu peux faire ici",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-ecrire",
+   "titre": "Écrire à SoPHIa — les bornes écrites de la connexion",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-dons",
+   "titre": "Les dons",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-preuve",
+   "titre": "La preuve : le registre scellé des actions du site",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-modifications",
+   "titre": "Modifications de ces conditions",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-cadre",
+   "titre": "Cadre et recours",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions-site.html",
+   "ancre": "conditions-site-conformite",
+   "titre": "Table de conformité",
+   "panneauNom": "Conditions d’utilisation du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-preambule",
+   "titre": "Politique du site — confidentialité et données",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-non-fait",
+   "titre": "Ce que ce site ne fait pas",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-cerveau",
+   "titre": "Ce qui reste sur ton appareil : ton cerveau local",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-verrouillee",
+   "titre": "La Mémoire verrouillée",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-ecrire",
+   "titre": "Quand tu écris : la messagerie « Écrire à SoPHIa »",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-dons",
+   "titre": "Les dons",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-droits",
+   "titre": "Tes droits et tes recours",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-mineurs",
+   "titre": "Les mineurs",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-modifications",
+   "titre": "Modifications de cette politique",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "politique-site.html",
+   "ancre": "politique-conformite",
+   "titre": "Table de conformité — la Loi 25 (LRPSP) et la couche fédérale (LPRPDE)",
+   "panneauNom": "Politique du site"
+  },
+  {
+   "type": "endroit",
+   "page": "petitions.html",
+   "ancre": "petitions",
+   "titre": "Pétitions — une par juridiction, fondée sur ce qui lui manque",
+   "panneauNom": "Pétitions"
+  },
+  {
+   "type": "endroit",
+   "page": "ecrire.html",
+   "ancre": "ecrire",
+   "titre": "Écrire à SoPHIa",
+   "panneauNom": "Écrire à SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "recu.html",
+   "ancre": "recu-visite",
+   "titre": "Le reçu de visite — ce que cette visite donne, et à qui",
+   "panneauNom": "Le reçu de visite"
+  },
+  {
+   "type": "endroit",
+   "page": "recus.html",
+   "ancre": "recus-gestes",
+   "titre": "Tes reçus et tes gestes — ton cerveau, sur ton appareil",
+   "panneauNom": "Tes reçus et tes gestes"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi.html",
+   "ancre": "suivi",
+   "titre": "Ton dossier de suivi — tes démarches, leurs délais, leurs réponses",
+   "panneauNom": "Ton dossier de suivi"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi.html",
+   "ancre": "decisions-atome",
+   "titre": "Les décisions — l’atome de ta mémoire",
+   "panneauNom": "Ton dossier de suivi"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi.html",
+   "ancre": "suivi-silence",
+   "titre": "Le silence consigné — un non-réponse devient une pièce de plainte",
+   "panneauNom": "Ton dossier de suivi"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi.html",
+   "ancre": "infolettre",
+   "titre": "L’infolettre mensuelle — par courriel seulement",
+   "panneauNom": "Ton dossier de suivi"
+  },
+  {
+   "type": "endroit",
+   "page": "voir.html",
+   "ancre": "voir-cerveau",
+   "titre": "Voir mon cerveau — lire ta mémoire, réellement",
+   "panneauNom": "Voir mon cerveau"
+  },
+  {
+   "type": "endroit",
+   "page": "voir.html",
+   "ancre": "voir-enveloppe",
+   "titre": "L’enveloppe « en cas d’incapacité » — chiffrée par ta phrase, dans ton cerveau [exploratoire, bornée]",
+   "panneauNom": "Voir mon cerveau"
+  },
+  {
+   "type": "endroit",
+   "page": "bris.html",
+   "ancre": "bris",
+   "titre": "La chambre des bris — là où le déclaré et le réel se séparent",
+   "panneauNom": "La chambre des bris"
+  },
+  {
+   "type": "endroit",
+   "page": "depose-empreinte.html",
+   "ancre": "depose-empreinte",
+   "titre": "Dépose ton empreinte",
+   "panneauNom": "Dépose ton empreinte"
+  },
+  {
+   "type": "endroit",
+   "page": "fenetres.html",
+   "ancre": "fenetres",
+   "titre": "Le minuteur de fenêtre — les délais qui se ferment, et les silences",
+   "panneauNom": "Le minuteur de fenêtre"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions.html",
+   "ancre": "conditions",
+   "titre": "Le registre des conditions — ce que leurs contrats disent de tes droits",
+   "panneauNom": "Le registre des conditions"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions.html",
+   "ancre": "conditions-enfants",
+   "titre": "La laisse numérique des enfants — les clauses, en mots clairs, au moment de l’acceptation",
+   "panneauNom": "Le registre des conditions"
+  },
+  {
+   "type": "endroit",
+   "page": "conditions.html",
+   "ancre": "conditions-consentements",
+   "titre": "La carte des consentements — d’une acceptation consignée au chemin de son retrait",
+   "panneauNom": "Le registre des conditions"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "transits",
+   "titre": "La carte des transits — comment tes données voyagent, et qui peut les obtenir",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "transits-proximite",
+   "titre": "La couche proximité — ce qui passe dans l’air autour de toi",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "transits-lieux",
+   "titre": "Le registre des lieux-relais — les lieux prouvés comme récoltant la proximité",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "transits-voyage",
+   "titre": "Le protocole anti-suivi de voyage — avant, pendant, après",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "transits-kit",
+   "titre": "Le kit « premier traqueur » — avant d’acheter un AirTag ou un Tile",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "transits.html",
+   "ancre": "portes-documentees",
+   "titre": "Les portes documentées — les transits prouvés, pas seulement déclarés",
+   "panneauNom": "La carte des transits"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "empreinte",
+   "titre": "Ton empreinte, recalculée — ce qu’un pisteur pourrait calculer sur toi",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "exposition-suivi",
+   "titre": "Surveillance de ton exposition — ce qui a changé depuis ta dernière visite",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "non-tracking",
+   "titre": "Le panneau de bord du non-tracking — les requêtes de ce site, en direct",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "verifie-nous",
+   "titre": "Vérifie que c’est bien nous — le sceau contre les ancrages externes",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "presence",
+   "titre": "Preuve de présence consentie — déclarée, jamais captée [forme bornée]",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "telephone-soir",
+   "titre": "Ce que ton téléphone raconte ce soir — lis le rapport de confidentialité de ton propre système",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "exposition.html",
+   "ancre": "pisteur-visite",
+   "titre": "La visite guidée, côté pisteur — cette visite, vue par celui qui récolte",
+   "panneauNom": "Ton exposition"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-pourquoi",
+   "titre": "Pourquoi : le sens unique, et le retour",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-tableau",
+   "titre": "Le tableau de la récolte — passé au calcul",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-plusloin",
+   "titre": "Pour aller plus loin",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-recherche",
+   "titre": "Chercher avec DuckDuckGo — à ton choix",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-local",
+   "titre": "Le mode local — le défaut",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-serveurs",
+   "titre": "Le mode démonstration avec serveurs — à ton choix",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-jamais",
+   "titre": "Ce qui ne change jamais",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "modes.html",
+   "ancre": "modes-choix",
+   "titre": "Ton choix",
+   "panneauNom": "Les deux modes"
+  },
+  {
+   "type": "endroit",
+   "page": "miroir.html",
+   "ancre": "miroir-modes",
+   "titre": "Le mode de cette démonstration",
+   "panneauNom": "Le miroir"
+  },
+  {
+   "type": "endroit",
+   "page": "miroir.html",
+   "ancre": "miroir-releve",
+   "titre": "Le miroir — tout ce qu'une simple visite révèle de toi",
+   "panneauNom": "Le miroir"
+  },
+  {
+   "type": "endroit",
+   "page": "miroir.html",
+   "ancre": "miroir-transit",
+   "titre": "Ce qui transite nécessairement — et vers qui",
+   "panneauNom": "Le miroir"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-these",
+   "titre": "La thèse, dans ses formes",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-assemblage",
+   "titre": "Comment l'assemblage se fait : l'ADN numérique et le jumeau numérique",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-portes",
+   "titre": "Qui tient les portes",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-tableau",
+   "titre": "Le tableau de la récolte — passé au calcul",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-plusloin",
+   "titre": "Pour aller plus loin",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "etat51.html",
+   "ancre": "etat51-etat",
+   "titre": "L'étage État — ce qu'un État peut en faire",
+   "panneauNom": "Le 51e État numérique"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-ceque",
+   "titre": "Ce que ce site est",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-construit",
+   "titre": "Ce qui se construit : la méthode, et deux produits",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-cherche",
+   "titre": "Ce qui est cherché",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-refus",
+   "titre": "Ce qui est refusé — la garantie",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-relation",
+   "titre": "Entrer en relation",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "partenaires.html",
+   "ancre": "partenaires-fonctions",
+   "titre": "Ce que ça fait — les fonctions, et les problèmes qu'elles règlent",
+   "panneauNom": "Partenaires et soutien"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-sommaire",
+   "titre": "Les assurances : ce que ton assureur sait, décide et partage",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-1",
+   "titre": "Ce que ton assureur détient sur toi",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-2",
+   "titre": "Ton dossier de sinistres — le Fichier central (FCSA)",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-3",
+   "titre": "La décision automatisée : ton droit d'obtenir l'explication",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-4",
+   "titre": "Tes appels à ton assureur sont enregistrés",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-5",
+   "titre": "Le régulateur et les plaintes",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "assurances.html",
+   "ancre": "assurances-6",
+   "titre": "Ce que cette fiche ne prétend pas",
+   "panneauNom": "Les assurances"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-sommaire",
+   "titre": "Le suivi familial et la localisation : ce que ces applications voient, partagent et vendent",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-1",
+   "titre": "Ce que ces applications récoltent — et ce qu'elles en font",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-2",
+   "titre": "La catégorie, ici — au Québec et au Canada",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-3",
+   "titre": "Tes droits quand c'est toi, la personne suivie",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-4",
+   "titre": "Supprimer — ce qui peut l'être, et comment",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "suivi-familial.html",
+   "ancre": "suivi-familial-5",
+   "titre": "Ce que cette fiche ne prétend pas",
+   "panneauNom": "Le suivi familial et la localisation"
+  },
+  {
+   "type": "endroit",
+   "page": "edition.html",
+   "ancre": "edition-jour",
+   "titre": "L’édition du jour — la page datée que SoPHIa signe",
+   "panneauNom": "L’édition du jour"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "favoris",
+   "titre": "Tes favoris, comme sur ton poste : la page, et l’endroit exact",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "index.html",
+   "ancre": "manifeste",
+   "titre": "Le site est un cerveau qui communique : voici son manifeste",
+   "panneauNom": "Accueil"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "cerveau",
+   "titre": "Parle avec le site web SoPHIa — la conversation",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "cerveau-libre",
+   "titre": "Ou pose ta question en texte libre",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "cerveau-parcours",
+   "titre": "Ton parcours — une conversation chaînée, gardée sur ton appareil",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "cerveau-paliers",
+   "titre": "Les paliers — la profondeur que ton appareil peut porter",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "cerveau-preuve",
+   "titre": "Comment la preuve marche ici",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  },
+  {
+   "type": "endroit",
+   "page": "cerveau.html",
+   "ancre": "echos",
+   "titre": "La salle des échos — les questions qu’on a posées au site",
+   "panneauNom": "Parle avec le site web SoPHIa"
+  }
+ ],
+ "nombre": 256,
+ "octets": 98304,
+ "sha256": "d675ec38d5dfa3ca7e00baf6194f51725f45cc8dad34037410727c1066e39358"
+}
