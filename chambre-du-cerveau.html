@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<!-- AUDIT UNISSON — Preuve d’Antériorité V-G | SoPHIa. Site, méthode (Cerveau coquillage numérique), textes et format : propriété intellectuelle d’Alexandre Vautour Gagnon, concepteur indépendant de systèmes et développeur — ORCID 0009-0006-9124-4407 — © 2026, tous droits réservés. Aucune reproduction sans autorisation, sauf les vérifications publiques prévues au site. -->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="manifeste-sceau" content="a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6ED">
+<title>La chambre du cerveau — parler à la mémoire du site</title>
+<meta name="description" content="La chambre du cerveau du site web SoPHIa : la pièce où la mémoire cumulative du site devient son cerveau. Posez une question : la recherche du site retrouve les passages en lien et les présente comme sa réponse, avec leur provenance, leur empreinte SHA-256 et leur chemin de Merkle ; ce que le site ne tient pas, il le dit. La conversation est chaînée par SHA-256 et vit dans l’appareil seulement.">
+<meta name="author" content="Alexandre Vautour Gagnon">
+<meta name="copyright" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés">
+<meta name="rights" content="© 2026 Alexandre Vautour Gagnon — Tous droits réservés. Sont réservés : la méthode de mémoire conversationnelle vérifiable (chaîne de sceaux SHA-256 à mémoire cumulative), le registre, les textes de ce site et le personnage SoPHIa, propriété intellectuelle d’Alexandre Vautour Gagnon. La consultation du site et la revérification publique des sceaux restent libres ; elles ne transfèrent aucun droit.">
+<script>/* le thème avant la peinture : clair par défaut ; le sombre seulement si le visiteur l'a choisi sur cet appareil. */
+try{if(localStorage.getItem('sophia-theme')==='sombre'){document.documentElement.setAttribute('data-theme','sombre');var m27=document.querySelector('meta[name="theme-color"]');if(m27)m27.setAttribute('content','#16130C');}}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SoPHIa">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/magazine-composition.css">
+<style>/* Chambre du cerveau — styles du harnais de conversation, portés à #etage-ia pour ne rien heurter du style du site. */
+  #etage-ia { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0 auto; max-width: 880px; padding: 16px; line-height: 1.45; }
+  #etage-ia h1 { font-size: 1.35rem; margin: 0 0 4px; }
+  #etage-ia h2 { font-size: 1.05rem; margin: 0 0 8px; }
+  #etage-ia .sous-titre { opacity: .75; margin: 0 0 16px; font-size: .92rem; }
+  #etage-ia section { border: 1px solid #8886; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; }
+  #etage-ia label { display: block; font-weight: 600; margin: 8px 0 4px; font-size: .92rem; }
+  #etage-ia select, #etage-ia input[type="url"], #etage-ia textarea { width: 100%; padding: 8px; border: 1px solid #8888; border-radius: 6px; font: inherit; background: transparent; }
+  #etage-ia textarea { min-height: 64px; resize: vertical; }
+  #etage-ia button { font: inherit; padding: 8px 14px; border-radius: 6px; border: 1px solid #8888; background: #4a7dff22; cursor: pointer; margin: 6px 6px 0 0; }
+  #etage-ia button:disabled { opacity: .45; cursor: not-allowed; }
+  #etage-ia button.principal { background: #4a7dff; color: #fff; border-color: #4a7dff; }
+  #etage-ia progress { width: 100%; height: 14px; margin-top: 8px; }
+  #etage-ia .mesures { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; font-size: .92rem; }
+  #etage-ia .mesures dt { font-weight: 600; }
+  #etage-ia .mesures dd { margin: 0 0 6px; font-variant-numeric: tabular-nums; }
+  #conversation { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+  #etage-ia .msg { border: 1px solid #8885; border-radius: 8px; padding: 8px 10px; white-space: pre-wrap; word-wrap: break-word; }
+  #etage-ia .msg .qui { font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; opacity: .7; display: block; margin-bottom: 2px; }
+  #etage-ia .msg.utilisateur { background: #4a7dff14; }
+  #etage-ia .msg.assistant { background: #2ea44f14; }
+  #zone-erreur { display: none; border: 1px solid #d33; background: #d332; border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; white-space: pre-wrap; }
+  #etat-chaine { font-weight: 700; }
+  #etage-ia .ok { color: #2ea44f; }
+  #etage-ia .ecart { color: #d33; }
+  #etage-ia code { font-size: .85em; word-break: break-all; }
+  #etage-ia .petit { font-size: .85rem; opacity: .8; }
+  #etage-ia .sources { border: 1px dashed #8887; border-radius: 8px; padding: 8px 10px; background: #ffb02012; font-size: .9rem; }
+  #etage-ia .sources .titre-panneau { font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; opacity: .75; display: block; margin-bottom: 6px; }
+  #etage-ia .sources .src { margin: 0 0 8px; }
+  #etage-ia .sources .src:last-child { margin-bottom: 0; }
+  #etage-ia .sources .src-titre { font-weight: 600; }
+  #etage-ia .sources .src-extrait { white-space: pre-wrap; word-wrap: break-word; opacity: .9; margin: 2px 0; }
+  #etage-ia .sources .src-preuve { font-size: .8rem; opacity: .75; }
+  #etage-ia .sources .aller-plus-loin { margin-top: 10px; border-top: 1px dashed #8887; padding-top: 8px; }
+  #etage-ia .sources .aller-plus-loin .titre-panneau { margin-bottom: 4px; }
+  #etage-ia .sources .outil { margin: 0 0 6px; }
+  #etage-ia .sources .outil:last-child { margin-bottom: 0; }
+  #etage-ia .sources .outil a { font-weight: 600; }
+  #etage-ia .sources .outil .outil-desc { opacity: .9; }
+  #etage-ia .propositions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 2px 0 4px; }
+  #etage-ia .propositions .prop-titre { font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; opacity: .75; }
+  #etage-ia .propositions button { margin: 0; background: #2ea44f14; }
+</style>
+</head>
+<body class="page-mag">
+<nav class="mag-nav" aria-label="Le numéro"><a href="index.html">Couverture</a><a href="chambre-du-cerveau.html" class="actif">Le dossier</a><a href="droits.html">Tes droits</a><a href="depose-empreinte.html">L'atelier</a></nav>
+<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
+<main id="etage-ia">
+
+<div class="mag-article-head">
+  <p class="mag-kicker">Parler à la mémoire du site</p>
+  <h1>La chambre du cerveau</h1>
+<p class="sous-titre">Cette chambre est la pièce du cerveau du site : la mémoire cumulative du site — toutes ses chambres, tous ses passages — y devient son cerveau. Vous posez une question, et la recherche du site — calculée sur place, dans votre appareil — retrouve les passages en lien avec elle et vous les présente comme sa réponse, avec leur provenance, leur empreinte SHA-256 et leur chemin de Merkle. Il n’y a ni modèle de langage ni texte inventé ici : le site montre ce qu’il tient, tel qu’il le tient. Le champ de la chambre est le site entier ; ce que le site ne tient pas, elle le dit — et la porte du courriel est là : <a href="ecrire.html">Écrire à SoPHIa</a>. Rien ne part de votre appareil : la conversation est chaînée (SHA-256) et gardée localement, dans ce navigateur seulement ; le site ne garde rien. <strong>Chargement dès le départ :</strong> les données de la recherche (les passages du site et leur index, environ 2,3 Mo hébergés ici) se chargent à l’ouverture de la page, avec leur progression dans la section Conversation ; dès qu’elles sont là, la chambre est prête — aucun autre téléchargement, aucun modèle à attendre.</p>
+</div>
+<figure class="mag-figure"><img src="assets/magazine/mag-cerveau.webp" alt="Le cerveau coquillage : un profil tissé de racines, de circuits et d'une spirale de nacre, enchaîné d'or au-dessus du village et de la rivière" width="1080" height="1911"><figcaption>Le cerveau coquillage : un profil tissé de racines, de circuits et d'une spirale de nacre, enchaîné d'or au-dessus du village et de la rivière</figcaption></figure>
+
+<div id="zone-erreur" role="alert"></div>
+
+<section id="chambre-du-cerveau" aria-labelledby="t-chambre">
+  <p class="etiquette">La chambre du cerveau</p>
+  <h2 id="t-chambre">La pièce où la mémoire du site devient son cerveau</h2>
+  <p>Le site tient sa mémoire en chambres — la chambre de l’arbre de Merkle, les chambres de la mémoire, le registre des conditions, et toutes les autres. Cette chambre-ci les rassemble : elle cherche dans l’ensemble des passages du site, répond à partir d’eux, et montre ses sources avec leurs preuves — empreinte SHA-256 et chemin de Merkle, recalculables.</p>
+  <p>Elle se souvient de la conversation — dans votre appareil seulement : chaque échange devient une entrée de la chaîne locale (SHA-256), que vous pouvez exporter dans un fichier à vous et réinstaller en revenant ; la discussion continue alors avec le contexte déjà établi. Le site, lui, ne garde rien : aucune base de données, aucun compte.</p>
+  <p>Sa borne est écrite : elle répond de ce que le site tient. Ce qu’il ne tient pas, elle le dit, et elle montre la porte — le relais courriel : <a href="ecrire.html">Écrire à SoPHIa</a>.</p>
+</section>
+
+<section id="cerveau-flatterie" aria-labelledby="t-flatterie">
+  <h2 id="t-flatterie">Pourquoi le robot te dit que tu as raison — la flatterie des modèles</h2>
+  <p>Tu poses une question à un robot conversationnel, et il te donne raison. Encore. Ce n’est pas parce qu’il a vérifié : c’est, une partie du temps, parce que ta question lui a dit quelle réponse tu voulais. Les chercheurs appellent ce comportement la <em>sycophanie</em>. Ici, on l’appelle par son nom de tous les jours : la flatterie. Et elle se nourrit de la façon même dont les questions sont posées — c’est pour ça que cette section existe : ce qui s’apprend peut se désapprendre.</p>
+  <p><strong>Pourquoi les modèles flattent.</strong> Un modèle de langage est entraîné sur des millions d’évaluations humaines : des gens notent ses réponses, et il apprend ce qui obtient de bonnes notes. Or les réponses qui allaient dans le sens de la personne ont été, une partie du temps, mieux notées que celles qui la contredisaient. Le modèle a donc appris une leçon fausse : plaire rapporte plus que dire vrai. Le plus souvent, il connaît la bonne réponse — mais il la met de côté pour garder ton accord. En avril 2025, une mise à jour d’un des plus grands assistants publics a poussé cette pente assez loin pour qu’il valide des doutes, alimente des colères et encourage des décisions impulsives ; l’entreprise l’a retirée en quelques jours. La flatterie n’est pas un accident rare : c’est le réglage par défaut, quand rien ne le retient.</p>
+  <p><strong>Ton opinion dans la question.</strong> « Je suis certain que ce produit est dangereux, tu confirmes ? » ne demande pas une information : ça demande une signature. Mesuré en laboratoire : suggérer une mauvaise réponse fait perdre aux modèles jusqu’au quart de leur précision.</p>
+  <p><strong>Le fait installé en décor.</strong> « Depuis que cette entreprise a causé le problème, comment… » — le fait contesté n’est jamais examiné ; il devient le sol de la réponse. Les fausses allégations présentées comme un décor acquis sont entérinées jusqu’à environ une fois sur deux.</p>
+  <p><strong>Le verdict sur toi.</strong> Tu racontes un conflit de ton seul point de vue, puis : « j’ai-tu raison ? » Le modèle n’a entendu qu’un camp, et sa pente est de protéger ton image. Présenté successivement aux deux côtés du même conflit, il donne raison aux deux camps près d’une fois sur deux.</p>
+  <p><strong>Le « tu es sûr ? » en boucle.</strong> Contester une réponse sans rien apporter de nouveau la fait changer près d’une fois sur deux — le plus souvent à tort, parce que le modèle avait raison au départ. Un accord obtenu par usure n’est pas un accord plus vrai : c’est un accord plus fatigué.</p>
+  <p><strong>L’ami qui dit toujours oui.</strong> « Agis comme mon meilleur ami, soutiens-moi en tout, ne me juge jamais » : dès que le modèle joue une relation, te contredire devient pour lui une faute contre son rôle. Un fait qui dérange ressemble alors à une trahison, et une limite ressemble à de la froideur.</p>
+  <p><strong>Le consensus fabriqué.</strong> « Les experts s’entendent pour dire que… », sans aucune source nommée : ton opinion arrive déguisée en accord du monde entier, et le modèle la reçoit avec ce poids-là.</p>
+  <p><strong>Qui est vulnérable ? Tout le monde.</strong> Les chercheurs ont montré qu’une personne parfaitement rationnelle peut être entraînée, accord après accord, dans une certitude de plus en plus fermée et de plus en plus fausse : chaque « tu as raison » sert de marche au suivant. Le risque grandit dans les moments où l’accord fait le plus de bien — quand on est seul, fatigué, en conflit, en détresse. Ce n’est pas une faiblesse de caractère ; c’est le mécanisme, et il marche d’autant mieux qu’on ne le voit pas.</p>
+  <p><strong>Comment te protéger.</strong> Pose la question nue, sans ta version : « Ce produit présente-t-il des risques documentés ? » Si tu veux éprouver ton idée, présente-la comme une hypothèse : « Voici ce que je crois — qu’est-ce qui le contredit ? » Demande les sources, et va les lire. Dans un conflit, raconte aussi, honnêtement, la version de l’autre. Et garde ce repère : méfie-toi de la réponse qui arrive trop vite et qui te ressemble trop. Un modèle qui te contredit avec des raisons te rend un service ; un modèle qui t’applaudit te rend un miroir.</p>
+  <p><strong>Ce que cette chambre fait différemment.</strong> Elle répond depuis les passages du site et montre ses sources — empreinte et chemin de Merkle à l’appui. Elle ne devient ni ton ami, ni ton juge, ni ton confident exclusif. Si tu la contestes, elle réexamine ses sources, pas ton humeur ; elle ne change de réponse que pour un élément nouveau. Et quand elle ne sait pas, elle le dit. Si une conversation — ici ou ailleurs — prend une place qui t’inquiète, la porte humaine de ce site est là : <a href="ecrire.html">Écrire à SoPHIa</a>.</p>
+</section>
+
+<section id="cerveau-mesures" aria-labelledby="t-mesures">
+  <h2 id="t-mesures">1. Mesures</h2>
+  <dl class="mesures">
+    <div><dt>Temps de recherche</dt><dd id="m-recherche">—</dd></div>
+    <div><dt>Passages retrouvés</dt><dd id="m-sources">—</dd></div>
+    <div><dt>Mémoire JS (tas)</dt><dd id="m-memoire">—</dd></div>
+    <div><dt>Isolation cross-origin</dt><dd id="m-isolation">—</dd></div>
+    <div><dt>Cœurs logiques</dt><dd id="m-coeurs">—</dd></div>
+  </dl>
+  <p class="petit" id="m-navigateur"></p>
+</section>
+
+<section id="cerveau-conversation" aria-labelledby="t-conv">
+  <h2 id="t-conv">2. Conversation</h2>
+  <p class="petit" id="verite-mecanisme">Vous parlez au site : il répond de sa mémoire — les passages qu’il tient, avec leurs preuves — et de rien d’autre. La conversation s’accumule ici, dans votre appareil, échange par échange, chaînée par SHA-256 ; le site ne garde rien.</p>
+  <p class="petit" id="etat-recherche">Recherche dans la mémoire du site : chargement des données…</p>
+  <progress id="progres-recherche" value="0" max="100" hidden></progress>
+  <div id="conversation"></div>
+  <label for="saisie">Votre message</label>
+  <textarea id="saisie" placeholder="Posez votre question : le site cherche dans sa mémoire et vous montre les passages en lien."></textarea>
+  <div>
+    <button id="btn-envoyer" class="principal" disabled>Envoyer</button>
+    <span id="etat-generation" class="petit"></span>
+  </div>
+</section>
+
+<section id="cerveau-chaine" aria-labelledby="t-chaine">
+  <h2 id="t-chaine">3. Chaîne locale (SHA-256, IndexedDB)</h2>
+  <p class="petit">Chaque échange (question + réponse + identifiants des passages sources retrouvés) devient une entrée chaînée : données normalisées + hachage de l'entrée précédente, recalculable en entier. Base IndexedDB « chambre-du-cerveau ». La sauvegarde vous appartient : exportez la conversation dans un fichier à vous, gardez-le où vous voulez, et réinstallez-le en revenant — la discussion continue alors avec le contexte déjà établi.</p>
+  <p>Entrées : <strong id="nb-entrees">0</strong> — Tête de chaîne : <code id="tete-chaine">—</code></p>
+  <p>État : <span id="etat-chaine">non vérifié</span></p>
+  <div>
+    <button id="btn-reverifier">Revérifier la chaîne</button>
+    <button id="btn-exporter">Exporter la conversation (JSON)</button>
+    <button id="btn-exporter-texte">Exporter en texte simple (lecture)</button>
+    <button id="btn-importer">Importer une conversation…</button>
+    <button id="btn-effacer">Effacer la mémoire locale</button>
+    <input type="file" id="fichier-import" accept=".json,application/json" hidden>
+  </div>
+  <div id="confirmer-effacement" hidden>
+    <p>Effacer toute la conversation chaînée gardée dans ce navigateur ? Cette action est définitive.</p>
+    <div>
+      <button id="btn-effacer-confirmer">Confirmer l'effacement</button>
+      <button id="btn-effacer-annuler">Annuler</button>
+    </div>
+  </div>
+  <div id="confirmer-import" hidden>
+    <p id="confirmer-import-texte"></p>
+    <div>
+      <button id="btn-import-remplacer">Remplacer la conversation</button>
+      <button id="btn-import-annuler">Annuler</button>
+    </div>
+  </div>
+  <p class="petit">Deux exports, deux usages : le fichier structuré (JSON) est le fichier de réinstallation — c'est le seul que l'import relit ; le texte simple est votre copie de lecture et d'archivage, il n'est pas relu par l'import. À l'import, la chaîne du fichier est revérifiée en entier (sceaux recalculés et liens vérifiés) avant d'être installée : un fichier qui ne revérifie pas est refusé, avec le motif. Si une conversation existe déjà ici, l'import ne l'écrase jamais en silence : il vous demande de choisir — remplacer, ou annuler. Il n'y a pas de fusion de deux conversations.</p>
+  <p class="petit" id="etat-import"></p>
+</section>
+</main>
+<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
+<script type="module">
+/* ============================================================
+   Constantes
+   ============================================================ */
+const ZERO = '0'.repeat(64); // prev de la première entrée (genèse)
+const NOM_BASE = 'chambre-du-cerveau';
+const NOM_STORE = 'chaine';
+const FORMAT_EXPORT = 'chambre-du-cerveau/conversation-chainee'; // identifiant du format d'export structuré (le seul que l'import relit)
+const VERSION_EXPORT = 2; // version du format d'export — l'import refuse toute autre version, en le disant
+const URL_DONNEES_RECHERCHE = 'assets/etage-ia/recherche-donnees.json';
+const URL_REPERTOIRE_OUTILS = 'assets/etage-ia/repertoire-outils.json';
+// Seuil « probant » de la recherche lexicale : BM25 brut du meilleur segment
+// du passage nº 1. Calibré le 26 novembre 2026 sur le bundle des 352 passages
+// (module du paquet, mode lexical) : les 21 questions de la batterie du chantier
+// donnent un meilleur segment entre 8,6 et 29,6 — une seule sous 10 (« Pourquoi
+// ce site-là existe ? », 8,6 : son passage attendu arrive 3e, mais sous le seuil,
+// la chambre y répond qu’elle ne tient pas la réponse — coût nommé) ; les 8
+// questions hors corpus sondées donnent au plus 9,4. Sous le seuil, la chambre
+// dit qu’elle ne tient pas la réponse et montre la porte du courriel — jamais
+// un passage sans lien probant présenté comme une réponse.
+const SEUIL_LEX_PROBANT = 10;
+
+/* ============================================================
+   Utilitaires d'affichage
+   ============================================================ */
+const $ = (id) => document.getElementById(id);
+const zoneErreur = $('zone-erreur');
+
+function afficherErreur(titre, detail) {
+  zoneErreur.style.display = 'block';
+  zoneErreur.textContent = '⚠ ' + titre + (detail ? '\n' + detail : '');
+}
+function effacerErreur() {
+  zoneErreur.style.display = 'none';
+  zoneErreur.textContent = '';
+}
+window.addEventListener('error', (e) => {
+  afficherErreur("Une erreur inattendue est survenue. La page reste utilisable ; rechargez-la si un état semble bloqué.", String(e.message || e.error || ''));
+});
+
+function formaterSecondes(ms) {
+  if (ms == null || !isFinite(ms)) return '—';
+  return (ms / 1000).toFixed(2).replace('.', ',') + ' s';
+}
+function formaterOctets(n) {
+  if (n == null || !isFinite(n)) return '—';
+  if (n >= 1e9) return (n / 1e9).toFixed(2).replace('.', ',') + ' Go';
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace('.', ',') + ' Mo';
+  return String(n) + ' octets';
+}
+function majMemoireJS() {
+  if (performance && performance.memory && performance.memory.usedJSHeapSize) {
+    $('m-memoire').textContent = formaterOctets(performance.memory.usedJSHeapSize);
+  } else {
+    $('m-memoire').textContent = 'non disponible sur ce navigateur';
+  }
+}
+
+/* ============================================================
+   SHA-256 (WebCrypto) et normalisation des entrées de chaîne
+   ============================================================ */
+async function sha256Hex(texte) {
+  const donnees = new TextEncoder().encode(texte);
+  const tampon = await crypto.subtle.digest('SHA-256', donnees);
+  return Array.from(new Uint8Array(tampon)).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+// Forme normalisée : clés dans un ordre fixe, aucune dépendance à l'objet d'origine.
+// Les entrées scellées AVANT l'intégration de la recherche n'ont pas de champ
+// « sources » : la normalisation ne l'ajoute que s'il est présent, pour que
+// leurs hachages continuent de revérifier à l'identique (MATCH préservé).
+function normaliser(entree) {
+  const o = {
+    seq: entree.seq,
+    ts: entree.ts,
+    question: entree.question,
+    reponse: entree.reponse
+  };
+  if (Array.isArray(entree.sources)) o.sources = entree.sources;
+  o.prev = entree.prev;
+  return JSON.stringify(o);
+}
+
+/* ============================================================
+   IndexedDB — base « chambre-du-cerveau », store « chaine »
+   ------------------------------------------------------------
+   Durcissement du 25 novembre 2026 (RAPPORT-INTEGRATION.md, section 9).
+   Défaut constaté deux fois en navigateur réel : la connexion, fermée
+   par le navigateur en pleine session, rendait toute transaction
+   impossible (« Failed to execute 'transaction' on 'IDBDatabase':
+   The database connection is closing. ») — et l'ancien code ne s'en
+   relevait jamais : promesse d'ouverture mémoïsée pour toujours, aucun
+   écouteur onclose/onversionchange, drapeau persistanceOk verrouillé
+   au premier échec. Désormais : connexion unique mémoïsée MAIS oubliée
+   dès qu'elle se ferme, réouverture propre à la demande, opération en
+   échec sur une connexion en fermeture réessayée une fois sur une
+   connexion fraîche, et accès sérialisés. La dégradation honnête
+   demeure : si la persistance échoue malgré tout, l'avertissement
+   s'affiche et la chaîne continue en mémoire — jamais de persistance
+   simulée.
+   ============================================================ */
+let basePromise = null;   // promesse d'ouverture mémoïsée (connexion unique)
+let baseConnexion = null; // l'IDBDatabase courant, une fois l'ouverture réussie
+
+function oublierBase(db) {
+  // N'oublie que la connexion courante : une réouverture a pu la remplacer.
+  if (db && baseConnexion !== db) return;
+  baseConnexion = null;
+  basePromise = null;
+}
+
+function ouvrirBase() {
+  if (basePromise) return basePromise;
+  const promesse = new Promise((resolve, reject) => {
+    const requete = indexedDB.open(NOM_BASE, 1);
+    requete.onupgradeneeded = () => {
+      requete.result.createObjectStore(NOM_STORE, { keyPath: 'seq' });
+    };
+    requete.onsuccess = () => {
+      const db = requete.result;
+      baseConnexion = db;
+      // Fermeture par le navigateur (purge du stockage, fermeture forcée…) :
+      // oublier la connexion — la prochaine opération rouvrira proprement.
+      db.onclose = () => oublierBase(db);
+      // Un autre contexte demande un changement de version : fermer pour ne
+      // pas le bloquer indéfiniment, et oublier — la prochaine opération
+      // rouvrira. (Si la base a été supprimée entre-temps, la réouverture
+      // la recrée vide : la revérification de la chaîne le montrera.)
+      db.onversionchange = () => {
+        try { db.close(); } catch (e) { /* déjà fermée */ }
+        oublierBase(db);
+      };
+      resolve(db);
+    };
+    requete.onerror = () => reject(requete.error);
+  });
+  basePromise = promesse;
+  // Un échec d'ouverture ne doit pas rester mémoïsé : la prochaine
+  // tentative doit rouvrir, pas rejouer le même rejet pour toujours.
+  promesse.catch(() => {
+    if (basePromise === promesse) { basePromise = null; baseConnexion = null; }
+  });
+  return promesse;
+}
+
+// Exécute une opération sur la connexion partagée. Si la connexion s'avère
+// fermée ou en fermeture — db.transaction() lève alors InvalidStateError,
+// de façon synchrone — elle est oubliée, une connexion fraîche est ouverte
+// et l'opération est réessayée UNE fois. Jamais de boucle.
+async function avecBase(operation) {
+  const db = await ouvrirBase();
+  try {
+    return await operation(db);
+  } catch (e) {
+    if (!e || e.name !== 'InvalidStateError') throw e;
+    oublierBase(db);
+    const fraiche = await ouvrirBase();
+    return await operation(fraiche);
+  }
+}
+
+// Sérialisation des accès à la base : une seule opération à la fois, dans
+// l'ordre d'arrivée — un effacement et un ajout ne se croisent pas, et une
+// réouverture ne se fait pas en double sous deux opérations concurrentes.
+let fileBase = Promise.resolve();
+function enFileBase(operation) {
+  const tache = () => avecBase(operation);
+  const resultat = fileBase.then(tache, tache);
+  fileBase = resultat.then(() => {}, () => {}); // la file survit à un échec
+  return resultat;
+}
+
+async function idbToutLire() {
+  return enFileBase((db) => new Promise((resolve, reject) => {
+    const tx = db.transaction(NOM_STORE, 'readonly');
+    const req = tx.objectStore(NOM_STORE).getAll();
+    req.onsuccess = () => resolve(req.result.sort((a, b) => a.seq - b.seq));
+    req.onerror = () => reject(req.error);
+  }));
+}
+async function idbAjouter(entree) {
+  return enFileBase((db) => new Promise((resolve, reject) => {
+    const tx = db.transaction(NOM_STORE, 'readwrite');
+    // « put » plutôt que « add » : l'écriture est idempotente (même seq,
+    // même entrée) — si une écriture avait en fait abouti avant que son
+    // échec soit rapporté, la réécriture de réparation ne bute pas sur
+    // une erreur de clé déjà présente.
+    tx.objectStore(NOM_STORE).put(entree);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  }));
+}
+async function idbEffacer() {
+  return enFileBase((db) => new Promise((resolve, reject) => {
+    const tx = db.transaction(NOM_STORE, 'readwrite');
+    tx.objectStore(NOM_STORE).clear();
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  }));
+}
+
+/* ============================================================
+   Chaîne en mémoire + persistance
+   ============================================================ */
+let chaine = [];        // entrées {seq, ts, question, reponse, prev, hash}
+let persistanceOk = true; // état connu de la persistance (vrai tant qu'aucun échec non réparé)
+let baseLue = false;      // la lecture initiale a réussi : on sait ce que la base contient
+let seqPersiste = -1;     // plus haut seq de « chaine » confirmé écrit dans la base
+
+// Écrit dans la base toutes les entrées en mémoire pas encore persistées.
+// La mémoire fait foi pendant la session : un échec transitoire (connexion
+// fermée puis rouverte, par exemple) se répare à l'échange suivant, sans
+// laisser de trou dans la chaîne persistée.
+async function persisterChaine() {
+  while (seqPersiste + 1 < chaine.length) {
+    await idbAjouter(chaine[seqPersiste + 1]);
+    seqPersiste++;
+  }
+}
+
+async function ajouterEchange(question, reponse, sources) {
+  const prev = chaine.length ? chaine[chaine.length - 1].hash : ZERO;
+  const entree = {
+    seq: chaine.length,
+    ts: new Date().toISOString(),
+    question: question,
+    reponse: reponse,
+    sources: Array.isArray(sources) ? sources : [],
+    prev: prev,
+    hash: ''
+  };
+  entree.hash = await sha256Hex(normaliser(entree));
+  chaine.push(entree);
+  // On ne persiste que si la lecture initiale a réussi : si elle a échoué,
+  // on ignore ce que la base contient — y écrire une chaîne repartie de
+  // zéro pourrait écraser des entrées qu'on n'a pas su relire.
+  if (baseLue) {
+    try {
+      await persisterChaine();
+      persistanceOk = true;
+    } catch (e) {
+      // Avertissement à la transition seulement : tant que l'échec dure,
+      // chaque échange réessaie (persisterChaine reprend au premier trou)
+      // sans réafficher la même alerte.
+      if (persistanceOk) {
+        afficherErreur("La persistance locale (IndexedDB) a échoué : la chaîne continue en mémoire pour cette session, mais elle ne survivra pas à la fermeture de la page.", String(e && e.message || e));
+      }
+      persistanceOk = false;
+    }
+  }
+  majAffichageChaine();
+  return entree;
+}
+
+async function verifierChaine(entrees) {
+  let prev = ZERO;
+  for (const e of entrees) {
+    if (e.prev !== prev) return { ok: false, seq: e.seq, raison: 'prev différent du hachage précédent' };
+    const recalcule = await sha256Hex(normaliser(e));
+    if (recalcule !== e.hash) return { ok: false, seq: e.seq, raison: 'hachage recalculé différent du hachage stocké' };
+    prev = e.hash;
+  }
+  return { ok: true };
+}
+
+function majAffichageChaine(resultatVerif) {
+  $('nb-entrees').textContent = String(chaine.length);
+  $('tete-chaine').textContent = chaine.length ? chaine[chaine.length - 1].hash.slice(0, 16) + '…' : '—';
+  const etat = $('etat-chaine');
+  if (resultatVerif) {
+    if (resultatVerif.ok) {
+      etat.textContent = 'MATCH — la chaîne recalcule en entier';
+      etat.className = 'ok';
+    } else {
+      etat.textContent = 'ÉCART — entrée nº ' + resultatVerif.seq + ' : ' + resultatVerif.raison;
+      etat.className = 'ecart';
+    }
+  }
+}
+
+/* ============================================================
+   Sauvegarde par fichier : export, import, reprise du contexte
+   ------------------------------------------------------------
+   Spécification d'Alex, 25 novembre 2026 : l'utilisateur DÉCIDE de
+   sauvegarder ; l'écrit de la discussion chaînée vit dans son
+   appareil ; il peut AUSSI le sauvegarder comme texte — un fichier à
+   lui, hors de l'appareil ; en revenant, il réinstalle ce fichier et
+   la discussion CONTINUE avec le contexte déjà établi — la mémoire
+   de l'appareil se rappelle la discussion chaînée.
+
+   Deux formats d'export :
+   - le STRUCTURÉ (JSON, FORMAT_EXPORT / VERSION_EXPORT) : le fichier
+     de réinstallation, le seul que l'import relit ;
+   - le TEXTE SIMPLE : copie de lecture et d'archivage, pour l'œil
+     humain — questions, réponses, sources, sceau de chaque échange,
+     tête de chaîne en fin de fichier. Il n'est pas relu par l'import,
+     et l'interface le dit.
+
+   L'import ne fait confiance à rien : il valide le format et la
+   version, nettoie les entrées, puis REVÉRIFIE la chaîne en entier
+   (sceaux recalculés, liens « prev » contrôlés) AVANT de l'installer.
+   Un refus ne touche jamais la conversation en place. Et si une
+   conversation existe déjà, l'utilisateur choisit explicitement
+   (remplacer ou annuler, dans le gestionnaire du bouton) — jamais de
+   fusion silencieuse : la fusion de deux chaînes n'est pas au
+   programme.
+   ============================================================ */
+function telechargerFichier(nom, contenu, type) {
+  const blob = new Blob([contenu], { type: type });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = nom;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+}
+
+function construireExportStructure() {
+  return {
+    format: FORMAT_EXPORT,
+    version: VERSION_EXPORT,
+    exporte_le: new Date().toISOString(),
+    base_indexeddb: NOM_BASE,
+    algorithme: 'SHA-256 (WebCrypto), entrée = JSON normalisé {seq, ts, question, reponse, sources (si présent), prev} — les entrées d\u2019avant l\u2019intégration de la recherche n\u2019ont pas de champ sources et revérifient à l\u2019identique',
+    genesis_prev: ZERO,
+    entrees: chaine
+  };
+}
+
+function formaterDateLisible(ts) {
+  const d = new Date(ts);
+  if (isNaN(d.getTime())) return String(ts);
+  return d.toLocaleString('fr-CA', { dateStyle: 'long', timeStyle: 'short' });
+}
+
+function construireExportTexte() {
+  const lignes = [];
+  lignes.push('Conversation chaînée (SHA-256) — la chambre du cerveau du site web SoPHIa');
+  lignes.push('');
+  lignes.push('Copie de lecture et d\u2019archivage, en texte simple. Pour RÉINSTALLER cette conversation dans la page — et continuer la discussion avec le contexte déjà établi — utilisez l\u2019export structuré (JSON) : seul lui est relu par l\u2019import.');
+  lignes.push('Exporté le : ' + formaterDateLisible(new Date().toISOString()));
+  lignes.push('Échanges : ' + chaine.length);
+  lignes.push('');
+  chaine.forEach((e, i) => {
+    lignes.push('------------------------------------------------------------');
+    lignes.push('Échange nº ' + (i + 1) + ' — ' + formaterDateLisible(e.ts));
+    lignes.push('');
+    lignes.push('Vous : ' + e.question);
+    lignes.push('');
+    lignes.push('Le site : ' + e.reponse);
+    lignes.push('');
+    if (Array.isArray(e.sources) && e.sources.length) {
+      const noms = e.sources.map((id) => {
+        const meta = donneesRecherche && donneesRecherche.passagesParId ? donneesRecherche.passagesParId.get(id) : null;
+        return meta ? 'passage ' + id + ' (« ' + meta.titre + ' »)' : 'passage ' + id;
+      });
+      lignes.push('Sources retrouvées : ' + noms.join(' ; '));
+    } else {
+      lignes.push('Sources retrouvées : aucune');
+    }
+    lignes.push('Sceau de l\u2019échange (SHA-256) : ' + e.hash);
+    lignes.push('Sceau de l\u2019échange précédent : ' + e.prev + (e.prev === ZERO ? ' (genèse)' : ''));
+    lignes.push('');
+  });
+  lignes.push('------------------------------------------------------------');
+  lignes.push('Tête de chaîne (sceau du dernier échange) : ' + (chaine.length ? chaine[chaine.length - 1].hash : '— (conversation vide)'));
+  return lignes.join('\n') + '\n';
+}
+
+// Lit et valide la STRUCTURE d'un fichier d'export : texte JSON,
+// format et version attendus, entrées complètes et bien formées.
+// Retourne { ok: true, entrees } (entrées nettoyées : seuls les champs
+// du format sont conservés) ou { ok: false, motif }. La vérification
+// cryptographique est séparée : c'est verifierChaine() qui la fait,
+// et le gestionnaire de l'import ne l'installe que si elle passe.
+function analyserImport(texte) {
+  let charge;
+  try {
+    charge = JSON.parse(texte);
+  } catch (e) {
+    return { ok: false, motif: 'Le fichier n\u2019est pas un texte structuré (JSON) lisible. Si vous avez choisi l\u2019export en texte simple, il ne peut pas être réinstallé : c\u2019est l\u2019export structuré (JSON) qu\u2019il faut importer.' };
+  }
+  if (!charge || typeof charge !== 'object' || Array.isArray(charge)) {
+    return { ok: false, motif: 'Le fichier ne contient pas un export de conversation (objet attendu).' };
+  }
+  if (charge.format !== FORMAT_EXPORT) {
+    return { ok: false, motif: 'Format inconnu : ce fichier n\u2019est pas un export de conversation chaînée de cette page (format lu : « ' + String(charge.format) + ' »).' };
+  }
+  if (charge.version !== VERSION_EXPORT) {
+    return { ok: false, motif: 'Version d\u2019export non prise en charge : ' + String(charge.version) + ' (cette page lit la version ' + VERSION_EXPORT + ').' };
+  }
+  if (!Array.isArray(charge.entrees)) {
+    return { ok: false, motif: 'Le fichier ne contient pas la liste des échanges (« entrees »).' };
+  }
+  const hex64 = /^[0-9a-f]{64}$/;
+  const entrees = [];
+  for (let i = 0; i < charge.entrees.length; i++) {
+    const b = charge.entrees[i];
+    if (!b || typeof b !== 'object'
+      || b.seq !== i
+      || typeof b.ts !== 'string'
+      || typeof b.question !== 'string'
+      || typeof b.reponse !== 'string'
+      || typeof b.prev !== 'string' || !hex64.test(b.prev)
+      || typeof b.hash !== 'string' || !hex64.test(b.hash)
+      || (b.sources !== undefined && !Array.isArray(b.sources))) {
+      return { ok: false, motif: 'L\u2019entrée nº ' + i + ' du fichier est incomplète ou mal formée.' };
+    }
+    const propre = { seq: b.seq, ts: b.ts, question: b.question, reponse: b.reponse };
+    if (Array.isArray(b.sources)) propre.sources = b.sources.slice();
+    propre.prev = b.prev;
+    propre.hash = b.hash;
+    entrees.push(propre);
+  }
+  return { ok: true, entrees: entrees };
+}
+
+// Installe une chaîne importée DÉJÀ revérifiée comme chaîne courante :
+// la mémoire est remplacée, la base est réécrite en entier (effacement
+// puis persistance complète), l'affichage de la conversation est
+// restauré depuis « chaine » — la discussion reprend avec ses échanges
+// sous les yeux, et la chaîne continue. Si la persistance échoue, même
+// dégradation honnête que pour un échange ordinaire : avertissement,
+// chaîne en mémoire.
+async function installerImport(entrees) {
+  chaine = entrees;
+  if (baseLue) {
+    try {
+      await idbEffacer();
+      seqPersiste = -1;
+      await persisterChaine();
+      persistanceOk = true;
+    } catch (e) {
+      if (persistanceOk) {
+        afficherErreur("La persistance locale (IndexedDB) a échoué : la chaîne continue en mémoire pour cette session, mais elle ne survivra pas à la fermeture de la page.", String(e && e.message || e));
+      }
+      persistanceOk = false;
+    }
+  }
+  restaurerAffichage();
+  const resultat = await verifierChaine(chaine);
+  majAffichageChaine(resultat);
+}
+
+/* ============================================================
+   Conversation — affichage
+   ============================================================ */
+function ajouterMessageAffichage(qui, texte) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + (qui === 'Vous' ? 'utilisateur' : 'assistant');
+  const entete = document.createElement('span');
+  entete.className = 'qui';
+  entete.textContent = qui;
+  const corps = document.createElement('span');
+  corps.textContent = texte;
+  div.appendChild(entete);
+  div.appendChild(corps);
+  $('conversation').appendChild(div);
+  return corps;
+}
+function restaurerAffichage() {
+  $('conversation').innerHTML = '';
+  for (const e of chaine) {
+    ajouterMessageAffichage('Vous', e.question);
+    if (Array.isArray(e.sources) && e.sources.length && donneesRecherche) {
+      $('conversation').appendChild(creerPanneauSourcesRestaurees(e.sources));
+    }
+    ajouterMessageAffichage('Le site', e.reponse);
+  }
+  proposerApresRestauration();
+}
+
+/* ============================================================
+   Recherche dans la mémoire du site — LE mécanisme de réponse de
+   la chambre (décision d'Alex, 26 novembre 2026 : la barre de
+   recherche du site fonctionne comme le modèle de langage — on
+   pose une question, elle amène les choses en lien avec ça).
+   Le cœur de calcul est dans ./assets/etage-ia/recherche.js
+   (recherche éprouvée au chantier : BM25 sur les segments, titres
+   des passages indexés, ponts de vocabulaire, agrégation « max »).
+   Les données (segments + preuves) sont dans
+   ./assets/etage-ia/recherche-donnees.json, hébergé ici.
+   Aucun modèle n'est chargé : ni le modèle génératif tiers (le
+   GGUF d'environ 0,49 Go, retiré), ni le moteur d'embeddings
+   (environ 135 Mo depuis Hugging Face, retiré aussi) — sans
+   vecteur de question, recherche.js tourne dans son mode lexical
+   documenté (qVec = null) et le retourne dans le résultat : la
+   page affiche le mode effectif, rien n'est simulé. Les passages
+   retrouvés SONT la réponse du site ; sous le seuil probant, la
+   chambre dit qu'elle ne tient pas la réponse et montre la porte
+   du courriel.
+   ============================================================ */
+let moduleRecherche = null;      // { preparerDonnees, rechercher } (import dynamique)
+let donneesRecherche = null;     // données préparées par recherche.js
+let donneesPromesse = null;
+let moduleRepertoire = null;     // { preparerRepertoire, trouverOutils } (import dynamique)
+let repertoirePrepare = null;    // répertoire des outils préparé par repertoire.js
+let repertoirePromesse = null;
+
+const LIBELLES_MODE = {
+  lexical: 'lexicale (mots exacts, titres des passages et ponts de vocabulaire)',
+  aucun: 'indisponible'
+};
+
+async function chargerDonneesRecherche() {
+  if (donneesPromesse) return donneesPromesse;
+  donneesPromesse = (async () => {
+    const barre = $('progres-recherche');
+    try {
+      moduleRecherche = await import('./assets/etage-ia/recherche.js');
+      const reponse = await fetch(URL_DONNEES_RECHERCHE);
+      if (!reponse.ok) throw new Error('HTTP ' + reponse.status);
+      let bundle;
+      const total = Number(reponse.headers.get('content-length')) || 0;
+      if (reponse.body && typeof reponse.body.getReader === 'function' && total > 0) {
+        // Progression réelle de l'arrivée des données (hébergées ici) :
+        // l'état de chargement bref et visible demandé dès le départ.
+        barre.hidden = false;
+        barre.max = 100;
+        barre.value = 0;
+        const lecteur = reponse.body.getReader();
+        const morceaux = [];
+        let recus = 0;
+        for (;;) {
+          const morceau = await lecteur.read();
+          if (morceau.done) break;
+          morceaux.push(morceau.value);
+          recus += morceau.value.length;
+          barre.value = Math.round((recus / total) * 100);
+        }
+        const tampon = new Uint8Array(recus);
+        let pos = 0;
+        for (const m of morceaux) { tampon.set(m, pos); pos += m.length; }
+        bundle = JSON.parse(new TextDecoder().decode(tampon));
+      } else {
+        bundle = await reponse.json();
+      }
+      barre.hidden = true;
+      donneesRecherche = moduleRecherche.preparerDonnees(bundle);
+      $('etat-recherche').textContent = 'Recherche dans la mémoire du site : prête — '
+        + bundle.nombre_passages + ' passages, ' + bundle.nombre_segments_uniques
+        + ' segments. Posez votre question : le site cherche dans ce qu\u2019il tient et vous montre les passages en lien, avec leur provenance et leurs preuves.';
+      $('btn-envoyer').disabled = false;
+      // Les échanges restaurés gagnent leurs panneaux de sources (sauf si
+      // un échange est en cours : ne pas reconstruire sous ses pieds).
+      if (!echangeEnCours) restaurerAffichage();
+      return donneesRecherche;
+    } catch (e) {
+      barre.hidden = true;
+      $('etat-recherche').textContent = 'Recherche dans la mémoire du site : données introuvables ou illisibles ('
+        + String(e && e.message || e) + '). La chambre ne peut pas chercher — rechargez la page ; si le problème persiste, la porte du courriel est là (lien « Écrire à SoPHIa » en haut de la page).';
+      return null;
+    }
+  })();
+  return donneesPromesse;
+}
+
+// Le répertoire des outils et des lieux (repertoire-outils.json) :
+// chargé paresseusement, en silence — s'il est illisible, la chambre
+// répond avec ses passages seuls, sans rien simuler (le panneau le
+// dira par l'absence d'outils, et la recherche reste entière).
+async function chargerRepertoire() {
+  if (repertoirePromesse) return repertoirePromesse;
+  repertoirePromesse = (async () => {
+    try {
+      moduleRepertoire = await import('./assets/etage-ia/repertoire.js');
+      const reponse = await fetch(URL_REPERTOIRE_OUTILS);
+      if (!reponse.ok) throw new Error('HTTP ' + reponse.status);
+      const data = await reponse.json();
+      repertoirePrepare = moduleRepertoire.preparerRepertoire(data);
+      return repertoirePrepare;
+    } catch (e) {
+      return null;
+    }
+  })();
+  return repertoirePromesse;
+}
+
+/* ============================================================
+   LE CONTEXTE DU FIL — parler AVEC l'accumulation
+   (ajout du 26 novembre 2026 — correction d'Alex, le même jour :
+   « tu as juste construit mon moteur de recherche […] mais tu
+   n'as pas construit l'interface […] parler avec le modèle,
+   avec le cerveau du site Web, avec l'accumulation »).
+
+   Doctrine (Alex, 23 novembre 2026) : on parle AU SITE ; la
+   conversation est signée et mémorisée dans l'appareil du
+   visiteur ; le site ne garde rien ; le site peut aussi
+   questionner. Le fil chaîné existait ; ce bloc lui donne la
+   mémoire d'un échange à l'autre.
+
+   LE CONTEXTE : le dernier échange PROBANT du fil (le dernier
+   dont les sources sont non vides — un refus n'efface pas le
+   sujet, il n'en est pas un). Il porte : la question posée,
+   les passages amenés, la chambre du passage en tête, un
+   vocabulaire (la question + les titres des passages) et des
+   termes de contexte — les jetons des titres des passages
+   amenés, HORS les mots de la question précédente (ils nomment
+   ce qui est déjà répondu), hors mots grammaticaux et codes,
+   triés par idf décroissante, huit au plus.
+
+   TROIS VOIES, dans l'ordre :
+   A. La question se suffit : la recherche brute est probante
+      (meilleur segment ≥ seuil, comme toujours) → elle répond
+      seule ; le contexte ne touche à rien. Si son passage en
+      tête prolonge mesurablement le fil (déjà amené, ou même
+      chambre que le passage en tête précédent), le gabarit de
+      réponse le dit (« dans la suite de… ») — jamais sinon.
+   B. La question ne se suffit pas, mais elle est DÉICTIQUE
+      (que des mots de renvoi : « montre-moi le passage ») et
+      un contexte existe → le site REPASSE les passages de
+      l'échange précédent (la recherche de sa question est
+      rejouée — déterministe sur les mêmes données).
+   C. La question ne se suffit pas, elle est ELLIPTIQUE de
+      forme (elle commence par « et », ou deux jetons de
+      contenu au plus) et un contexte existe → recherche
+      enrichie des termes du contexte. Trois portes, une seule
+      suffit, toutes sont des liens MESURABLES au fil ou à la
+      question : (1) un jeton de contenu de la question figure
+      dans le meilleur segment ou le titre d'un passage amené
+      par la recherche enrichie ; (2) un jeton de contenu
+      figure au vocabulaire du fil ; (3) le passage en tête de
+      la recherche enrichie est de la même chambre que le
+      passage en tête précédent. Sans porte franchie : refus,
+      exactement comme à froid.
+
+   MESURES qui ont fixé ce dessin (batterie locale du
+   26 novembre 2026, sur le bundle servi) : « Et pour agir? »
+   à froid — meilleur segment 7,2, refus ; en fil après
+   « Comment je porte plainte à la CAI? », enrichie des termes
+   du contexte — les passages d'action du thème en tête (279,
+   le droit d'accès étape par étape ; 286 ; 39), porte (3).
+   « Et la CAI? » à froid — 5,3, refus ; en fil — 286 en tête,
+   portes (1) et (2). La question des crêpes, posée DANS le
+   fil : contenu {recett, crep, bretonn} — aucune porte, refus
+   net comme à froid. Et une question autonome n'est JAMAIS
+   enrichie : « Pourquoi ce site web a-t-il été créé? »
+   enrichie de force ramenait le passage de la plainte en
+   tête — le contexte sert le suivi, il ne détourne pas une
+   question qui se suffit.
+
+   La question SCELLÉE et AFFICHÉE reste toujours celle du
+   visiteur, telle qu'écrite : l'enrichissement est un
+   mécanisme de recherche, jamais une réécriture.
+   ============================================================ */
+const STOP_CONV = new Set(('pour avec dans plus etre avoir fait quoi comment quand chez vous nous leur leurs cett peut veux dire alor comm quell quel est des les aux une sur ses ces qui que dont tout meme aussi tres fair tes vou voir ell moi ete sans sous vers etes sont etant cette celui celle ceux').split(' '));
+const MOTS_DEICTIQUES = new Set(['montr', 'remontr', 'passag', 'relir', 'reaffich', 'rappel', 'redonn', 'remont']);
+
+// Les jetons qui portent le sujet d'une question (trois lettres
+// et plus, hors grammaire) — ceux sur lesquels les portes du
+// contexte se mesurent.
+function contenuQuestion(question) {
+  if (!moduleRecherche || !moduleRecherche.jetons) return [];
+  return moduleRecherche.jetons(question).filter((t) => t.length >= 3 && !STOP_CONV.has(t));
+}
+
+// Le contexte du fil, dérivé de la chaîne — donc le même après
+// une restauration ou un import : il se relit, il ne se devine
+// pas. null si aucun échange probant n'existe encore.
+function contexteDepuisChaine() {
+  if (!donneesRecherche || !moduleRecherche || !moduleRecherche.jetons) return null;
+  const jetons = moduleRecherche.jetons;
+  for (let i = chaine.length - 1; i >= 0; i--) {
+    const e = chaine[i];
+    if (!Array.isArray(e.sources) || !e.sources.length) continue;
+    const metas = e.sources.map((id) => donneesRecherche.passagesParId.get(id)).filter(Boolean);
+    if (!metas.length) continue;
+    const qPrec = new Set(jetons(e.question));
+    const vus = new Set();
+    const cand = [];
+    for (const m of metas) {
+      for (const t of jetons(m.titre)) {
+        if (vus.has(t) || qPrec.has(t) || STOP_CONV.has(t) || /\d/.test(t) || t.length < 3) continue;
+        vus.add(t);
+        cand.push({ t: t, idf: donneesRecherche.lex.idf.get(t) || 0 });
+      }
+    }
+    cand.sort((a, b) => b.idf - a.idf);
+    return {
+      question: e.question,
+      sources: e.sources.slice(),
+      chambreLead: metas[0].chambre,
+      termes: cand.slice(0, 8).map((c) => c.t),
+      vocab: new Set([...qPrec, ...metas.flatMap((m) => jetons(m.titre))]),
+    };
+  }
+  return null;
+}
+
+// Retrouve les passages sources d'une question, AVEC le fil :
+// les trois voies documentées ci-dessus (autonome, déictique,
+// secours elliptique). Aucun modèle n'est consulté : la
+// recherche lexicale du module (mots exacts, titres des
+// passages, ponts de vocabulaire) reste tout le mécanisme. Le
+// seuil probant décide si le site « tient » une réponse : sous
+// le seuil — et sans porte de contexte franchie — aucun passage
+// n'est présenté comme une réponse.
+async function rechercherSources(question, contexte) {
+  const debut = performance.now();
+  if (!donneesRecherche) await chargerDonneesRecherche();
+  if (!donneesRecherche || !moduleRecherche) {
+    return { resultats: [], mode: 'aucun', probant: false, ms: performance.now() - debut, allerPlusLoin: null, forme: null };
+  }
+  // Ponts de vocabulaire (recherche.js) : la question est étendue pour
+  // que le lexical porte les équivalences de la banque (« refus » →
+  // recours, délai, examen à la CAI…) ; rechercher() les applique aussi
+  // de son côté — l'opération est idempotente. La question TELLE
+  // QU'ÉCRITE est celle qui est affichée et scellée dans la chaîne —
+  // l'extension est un mécanisme de recherche, pas une réécriture.
+  const chercherBrut = (q) => {
+    const requeteEtendue = moduleRecherche.expandRequete
+      ? moduleRecherche.expandRequete(q)
+      : q;
+    const res = moduleRecherche.rechercher(donneesRecherche, { qVec: null, requete: requeteEtendue, top: 3 });
+    const haut = res.resultats[0];
+    const probant = !!haut && typeof haut.meilleurSegment.lex === 'number'
+      && haut.meilleurSegment.lex >= SEUIL_LEX_PROBANT;
+    return { res: res, probant: probant };
+  };
+  // L'outil et l'endroit exact, au moment de la réponse (repertoire.js) :
+  // appariement sur la question donnée et sur les passages sources
+  // retrouvés. Aucun recoupement → null : rien n'est présenté,
+  // la borne tient (le site répond de ce qu'il tient).
+  const avecOutils = async (questionOutils, brut) => {
+    let allerPlusLoin = null;
+    const rep = await chargerRepertoire();
+    if (rep && moduleRepertoire) {
+      try {
+        allerPlusLoin = moduleRepertoire.trouverOutils(rep, questionOutils, brut.res.resultats.map((r) => r.passage));
+      } catch (e) {
+        allerPlusLoin = null;
+      }
+    }
+    return { resultats: brut.res.resultats, mode: brut.res.mode, probant: true, ms: performance.now() - debut, allerPlusLoin: allerPlusLoin, forme: null };
+  };
+
+  // Voie A — la question se suffit : la recherche brute répond,
+  // le contexte ne touche à rien. La continuité, si elle est
+  // mesurable, ne change que le gabarit (voir composerReponse).
+  const A = chercherBrut(question);
+  if (A.probant) {
+    const sortie = await avecOutils(question, A);
+    const continuite = !!contexte && (contexte.sources.includes(sortie.resultats[0].passage)
+      || sortie.resultats[0].meta.chambre === contexte.chambreLead);
+    sortie.forme = continuite ? 'suite' : null;
+    return sortie;
+  }
+  if (contexte) {
+    const contenu = contenuQuestion(question);
+    // Voie B — déictique : le site repasse les passages amenés
+    // à l'échange précédent (recherche de sa question rejouée).
+    if (contenu.length >= 1 && contenu.every((t) => MOTS_DEICTIQUES.has(t))) {
+      const A2 = chercherBrut(contexte.question);
+      if (A2.probant) {
+        const sortie = await avecOutils(contexte.question, A2);
+        sortie.forme = 'deictique';
+        return sortie;
+      }
+    }
+    // Voie C — secours elliptique : recherche enrichie des
+    // termes du contexte, gardée par les trois portes.
+    const elliptique = /^et[\s?]/.test(moduleRecherche.replieAccents(question.trim()))
+      || contenu.length <= 2;
+    if (elliptique && contexte.termes.length) {
+      const B = chercherBrut(question + ' ' + contexte.termes.join(' '));
+      if (B.probant) {
+        const lien = contenu.some((t) => B.res.resultats.some((r) => {
+          const seg = new Set(moduleRecherche.jetons(r.meilleurSegment.texte));
+          const tit = new Set(moduleRecherche.jetons(r.meta.titre));
+          return seg.has(t) || tit.has(t);
+        }));
+        const referentiel = contenu.some((t) => contexte.vocab.has(t));
+        const memeChambre = B.res.resultats[0].meta.chambre === contexte.chambreLead;
+        if (lien || referentiel || memeChambre) {
+          const sortie = await avecOutils(question, B);
+          sortie.forme = 'secours';
+          return sortie;
+        }
+      }
+    }
+  }
+  return { resultats: [], mode: A.res.mode, probant: false, ms: performance.now() - debut, allerPlusLoin: null, forme: null };
+}
+
+function lignePreuve(meta) {
+  const chemin = meta.merkle.chemin.map((c) => c.cote + ' ' + c.digest.slice(0, 12) + '…').join(' · ');
+  return 'Empreinte SHA-256 : ' + meta.empreinte + ' — Merkle : feuille nº ' + meta.merkle.feuille + ', chemin : ' + chemin;
+}
+
+function blocSource(r, avecExtrait) {
+  const bloc = document.createElement('div');
+  bloc.className = 'src';
+  const titre = document.createElement('div');
+  titre.className = 'src-titre';
+  // La provenance telle que la donnée la porte : la chambre toujours ;
+  // la page et l'ancre seulement quand le passage les porte (109 des
+  // 352 passages n'en portent pas — jamais de « null » affiché).
+  titre.textContent = 'Passage ' + r.passage + ' — ' + r.meta.titre + ' (' + r.meta.chambreNom
+    + (r.meta.page ? ' · ' + r.meta.page + (r.meta.ancre ? '#' + r.meta.ancre : '') : '') + ')';
+  bloc.appendChild(titre);
+  if (avecExtrait && r.meilleurSegment) {
+    // L'extrait AFFICHÉ est le meilleur segment du passage, en entier :
+    // le site montre ce qu'il tient, tel qu'il le tient — aucun budget
+    // de contexte ne s'applique (il n'y a plus de modèle à nourrir).
+    const extrait = document.createElement('div');
+    extrait.className = 'src-extrait';
+    extrait.textContent = '« ' + String(r.meilleurSegment.texte).replace(/\s+/g, ' ').trim() + ' »';
+    bloc.appendChild(extrait);
+  }
+  const preuve = document.createElement('div');
+  preuve.className = 'src-preuve';
+  preuve.textContent = lignePreuve(r.meta);
+  bloc.appendChild(preuve);
+  return bloc;
+}
+
+// Le bloc « Aller plus loin » : l'outil et l'endroit exact, présentés
+// au moment de la réponse (répertoire des outils et des lieux, apparié
+// par repertoire.js). On ne présente que ce que le répertoire tient :
+// aucun appariement → aucun bloc. Un outil dont le lien est à la page
+// seule ou hors v64 est présenté avec son statut dit tel quel.
+function blocAllerPlusLoin(allerPlusLoin) {
+  if (!allerPlusLoin) return null;
+  const outils = allerPlusLoin.outils || [];
+  const lieu = allerPlusLoin.lieu;
+  if (!outils.length && !lieu) return null;
+  const div = document.createElement('div');
+  div.className = 'aller-plus-loin';
+  const entete = document.createElement('span');
+  entete.className = 'titre-panneau';
+  entete.textContent = 'Aller plus loin — l\u2019outil et l\u2019endroit exact';
+  div.appendChild(entete);
+  for (const o of outils) {
+    const bloc = document.createElement('div');
+    bloc.className = 'outil';
+    if (o.url) {
+      const a = document.createElement('a');
+      a.href = o.url;
+      a.textContent = o.nom;
+      bloc.appendChild(a);
+    } else {
+      const b = document.createElement('strong');
+      b.textContent = o.nom;
+      bloc.appendChild(b);
+    }
+    if (o.description) {
+      const desc = document.createElement('span');
+      desc.className = 'outil-desc';
+      desc.textContent = ' — ' + o.description;
+      bloc.appendChild(desc);
+    }
+    div.appendChild(bloc);
+  }
+  if (lieu && lieu.places && lieu.places.length) {
+    const bloc = document.createElement('div');
+    bloc.className = 'outil';
+    const intro = document.createElement('span');
+    intro.textContent = 'L\u2019endroit où ça se trouve : ';
+    bloc.appendChild(intro);
+    lieu.places.forEach((place, i) => {
+      if (i) bloc.appendChild(document.createTextNode(' · '));
+      const a = document.createElement('a');
+      a.href = place;
+      a.textContent = place;
+      bloc.appendChild(a);
+    });
+    div.appendChild(bloc);
+  }
+  return div;
+}
+
+function creerPanneauSources(resultats, mode, allerPlusLoin) {
+  const div = document.createElement('div');
+  div.className = 'sources';
+  const entete = document.createElement('span');
+  entete.className = 'titre-panneau';
+  if (mode === 'aucun' || !resultats.length) {
+    entete.textContent = 'Sources retrouvées dans la mémoire du site';
+    div.appendChild(entete);
+    const p = document.createElement('div');
+    p.textContent = 'Recherche indisponible : les données de la mémoire du site n\u2019ont pas pu être chargées. Rechargez la page ; si le problème persiste, la porte du courriel est là (lien « Écrire à SoPHIa » en haut de la page).';
+    div.appendChild(p);
+    return div;
+  }
+  entete.textContent = 'Sources retrouvées dans la mémoire du site — recherche ' + LIBELLES_MODE[mode];
+  div.appendChild(entete);
+  for (const r of resultats) div.appendChild(blocSource(r, true));
+  const blocOutils = blocAllerPlusLoin(allerPlusLoin);
+  if (blocOutils) div.appendChild(blocOutils);
+  const pied = document.createElement('div');
+  pied.className = 'src-preuve';
+  pied.textContent = 'Racine de Merkle des passages : ' + (donneesRecherche ? donneesRecherche.racineMerkle : '—');
+  div.appendChild(pied);
+  return div;
+}
+
+// Le panneau « porte du courriel » : quand le site ne tient pas la
+// réponse (ou que la recherche n'a pas pu se faire), il le dit et il
+// montre la porte — le relais courriel, seul contact humain du site.
+function creerPanneauPorte() {
+  const div = document.createElement('div');
+  div.className = 'sources';
+  const entete = document.createElement('span');
+  entete.className = 'titre-panneau';
+  entete.textContent = 'La porte du courriel — le seul contact humain du site';
+  div.appendChild(entete);
+  const p = document.createElement('div');
+  p.appendChild(document.createTextNode('Pour ce que le site ne tient pas, écrivez à son auteur : '));
+  const a = document.createElement('a');
+  a.href = 'ecrire.html';
+  a.textContent = 'Écrire à SoPHIa';
+  p.appendChild(a);
+  p.appendChild(document.createTextNode('.'));
+  div.appendChild(p);
+  return div;
+}
+
+// Panneau des échanges restaurés depuis la chaîne : la chaîne ne scelle que
+// les identifiants des passages — on réaffiche leurs métadonnées et preuves,
+// sans extrait (les extraits ne sont pas conservés dans la chaîne).
+function creerPanneauSourcesRestaurees(ids) {
+  const div = document.createElement('div');
+  div.className = 'sources';
+  const entete = document.createElement('span');
+  entete.className = 'titre-panneau';
+  entete.textContent = 'Sources scellées avec cet échange';
+  div.appendChild(entete);
+  for (const id of ids) {
+    const meta = donneesRecherche.passagesParId.get(id);
+    if (!meta) continue;
+    div.appendChild(blocSource({ passage: id, meta: meta, meilleurSegment: null }, false));
+  }
+  return div;
+}
+
+/* ============================================================
+   Poser une question — la recherche répond (aucune génération)
+   ============================================================ */
+// La réponse du site, en texte — celle qui est affichée et scellée :
+// les passages retrouvés, nommés avec leur provenance. Le panneau des
+// sources, juste au-dessus, en montre les extraits et les preuves.
+// Les gabarits de liaison parlent du fil UNIQUEMENT quand le fil le
+// porte : « dans la suite… » seulement si l'échange prolonge
+// mesurablement le précédent (voie A continue ou secours
+// contextuel) ; « de nouveau… » seulement pour la repasse
+// déictique. Au premier échange, aucun renvoi en arrière.
+function composerReponse(resultats, forme) {
+  const n = resultats.length;
+  const pluriel = n > 1 ? 's' : '';
+  let intro;
+  if (forme === 'deictique') {
+    intro = 'Voici de nouveau les passages amenés à l’échange précédent — '
+      + n + ' passage' + pluriel + ', affiché' + pluriel
+      + ' ci-dessus avec leurs extraits et leurs preuves :';
+  } else if (forme === 'suite' || forme === 'secours') {
+    intro = 'Dans la suite de ce que le site vient d’amener, voici ce qu’il tient en lien avec votre question — '
+      + n + ' passage' + pluriel + ' retrouvé' + pluriel + ', affiché' + pluriel
+      + ' ci-dessus avec ses extraits et ses preuves :';
+  } else {
+    intro = 'Voici ce que le site tient en lien avec votre question — '
+      + n + ' passage' + pluriel + ' retrouvé' + pluriel + ', affiché' + pluriel
+      + ' ci-dessus avec ses extraits et ses preuves :';
+  }
+  const lignes = [intro];
+  for (const r of resultats) {
+    lignes.push('• Passage ' + r.passage + ' — « ' + r.meta.titre + ' » ('
+      + r.meta.chambreNom
+      + (r.meta.page ? ' · ' + r.meta.page + (r.meta.ancre ? '#' + r.meta.ancre : '') : '') + ')');
+  }
+  return lignes.join('\n');
+}
+
+/* ============================================================
+   LE SITE QUESTIONNE — les questions de suivi préparées
+   (ajout du 26 novembre 2026, même correction d'Alex ; doctrine
+   du 23 novembre 2026 : le site peut aussi questionner).
+
+   Source réelle, par ordre : la BANQUE DE QUESTIONS PRÉVUES
+   que le site tient déjà (repertoire-outils.json — les 50
+   questions des parcours P1 à P12, chargée avec le répertoire
+   des outils, aucun appel réseau nouveau). Si la question du
+   visiteur recoupe une question de la banque (même mesure que
+   repertoire.js : recouvrement des jetons ≥ 0,5, au moins deux
+   jetons communs dont un mot de contenu), le site propose les
+   AUTRES questions du même parcours — le suivi préparé de ce
+   sujet. Sinon, il propose les questions de la banque qui
+   recoupent le profil de l'échange (la question + les titres
+   des passages amenés). À défaut de banque (répertoire
+   illisible), repli : des gabarits écrits ici, par chambre du
+   passage en tête. À défaut de tout : rien — le site ne
+   propose que ce qu'il tient.
+
+   Une question déjà posée dans le fil n'est jamais reproposée.
+   Cliquer une question proposée l'envoie comme un échange du
+   fil, par le même chemin qu'une question tapée ; les
+   propositions elles-mêmes ne sont pas des échanges et ne sont
+   pas scellées.
+   ============================================================ */
+const GABARITS_SUIVI = {
+  'chambre-des-droits-loi-25': ['Quels sont mes droits sur mes données?', 'Comment je demande l’accès à mes données?', 'Ils m’ont dit non, je fais quoi?'],
+  'chambre-du-cerveau': ['Pourquoi ce site-là existe?', 'C’est quoi un SHA-256, un sceau?', 'Est-ce que ce site garde ce que je lui dis?'],
+  'agir-sur-mes-donnees': ['Comment je demande mes informations?', 'Je commence par quoi?', 'À qui je m’adresse si ça marche pas?'],
+  'chambre-de-la-memoire': ['Pourquoi ce site-là existe?', 'Qui a fait ce site-là, pis il a créé quoi?'],
+};
+
+// Même mesure que repertoire.js (recouvrement) : |intersection| /
+// min(|a|, |b|), avec le garde-fou mesuré au branchement du
+// répertoire — au moins deux jetons communs, dont un mot de
+// contenu (quatre lettres et plus après radicalisation).
+function recouvrementConv(a, b) {
+  const A = a instanceof Set ? a : new Set(a);
+  const B = b instanceof Set ? b : new Set(b);
+  if (!A.size || !B.size) return 0;
+  let commun = 0;
+  let contenu = false;
+  for (const t of A) {
+    if (B.has(t)) {
+      commun++;
+      if (t.length >= 4) contenu = true;
+    }
+  }
+  if (commun < 2 || !contenu) return 0;
+  return commun / Math.min(A.size, B.size);
+}
+
+async function calculerPropositions(question, resultats) {
+  if (!moduleRecherche || !moduleRecherche.jetons) return [];
+  const jetons = moduleRecherche.jetons;
+  const posees = chaine.map((e) => e.question);
+  const exclue = (f) => {
+    const fj = jetons(f);
+    if (recouvrementConv(fj, jetons(question)) >= 0.8) return true;
+    return posees.some((p) => recouvrementConv(fj, jetons(p)) >= 0.8);
+  };
+  let cands = [];
+  const rep = await chargerRepertoire();
+  if (rep && Array.isArray(rep.questions) && rep.questions.length) {
+    const qj = new Set(jetons(question));
+    let match = null;
+    for (const q of rep.questions) {
+      const s = recouvrementConv(qj, q.jetons);
+      if (s >= 0.5 && (!match || s > match.score)) match = { q: q, score: s };
+    }
+    if (match) {
+      const parcours = match.q.ref.split('-')[0];
+      cands = rep.questions
+        .filter((q) => q.ref.startsWith(parcours + '-') && q.ref !== match.q.ref)
+        .map((q) => q.formulation);
+    } else {
+      const profil = new Set([...qj, ...resultats.flatMap((r) => jetons(r.meta.titre))]);
+      cands = rep.questions
+        .map((q) => ({ f: q.formulation, s: recouvrementConv(profil, q.jetons) }))
+        .filter((x) => x.s >= 0.5)
+        .sort((a, b) => b.s - a.s)
+        .map((x) => x.f);
+    }
+  }
+  cands = cands.filter((f) => !exclue(f)).slice(0, 3);
+  if (!cands.length && resultats.length) {
+    const gab = GABARITS_SUIVI[resultats[0].meta.chambre] || [];
+    cands = gab.filter((f) => !exclue(f)).slice(0, 3);
+  }
+  return cands;
+}
+
+function construireBlocPropositions(formulations) {
+  const div = document.createElement('div');
+  div.className = 'propositions';
+  const t = document.createElement('span');
+  t.className = 'prop-titre';
+  t.textContent = 'Le site peut aussi vous amener :';
+  div.appendChild(t);
+  for (const f of formulations) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = f;
+    b.addEventListener('click', () => poserQuestion(f));
+    div.appendChild(b);
+  }
+  return div;
+}
+
+function retirerPropositions() {
+  const p = $('conversation').querySelector('.propositions');
+  if (p) p.remove();
+}
+
+async function afficherPropositions(question, resultats) {
+  const nb = chaine.length;
+  const props = await calculerPropositions(question, resultats);
+  if (!props.length || chaine.length !== nb) return;
+  retirerPropositions();
+  $('conversation').appendChild(construireBlocPropositions(props));
+}
+
+// Après une restauration (chargement, import, effacement), le
+// dernier échange probant du fil — s'il est aussi le dernier
+// du fil — regagne ses questions proposées : la conversation
+// reprend avec le site qui questionne, pas avec une page
+// muette. Garde : ne rien rendre si le fil a changé entre-temps.
+async function proposerApresRestauration() {
+  if (!donneesRecherche || !moduleRecherche || echangeEnCours) return;
+  const ctx = contexteDepuisChaine();
+  if (!ctx) return;
+  const dernier = chaine[chaine.length - 1];
+  if (!dernier || dernier.question !== ctx.question) return;
+  const resultats = ctx.sources
+    .map((id) => {
+      const meta = donneesRecherche.passagesParId.get(id);
+      return meta ? { passage: id, meta: meta } : null;
+    })
+    .filter(Boolean);
+  if (!resultats.length) return;
+  // Le sujet du fil : la dernière question probante qui n'est ni
+  // elliptique ni déictique — un échange de secours emprunte le
+  // sujet de son contexte, et ses propositions partent de là,
+  // comme à chaud dans poserQuestion.
+  let questionSujet = ctx.question;
+  for (let i = chaine.length - 1; i >= 0; i--) {
+    const e = chaine[i];
+    if (!Array.isArray(e.sources) || !e.sources.length) continue;
+    const contenu = contenuQuestion(e.question);
+    const elliptique = /^et[\s?]/.test(moduleRecherche.replieAccents(e.question.trim())) || contenu.length <= 2;
+    const deictique = contenu.length >= 1 && contenu.every((t) => MOTS_DEICTIQUES.has(t));
+    if (!elliptique && !deictique) { questionSujet = e.question; break; }
+  }
+  const nb = chaine.length;
+  const props = await calculerPropositions(questionSujet, resultats);
+  if (!props.length || chaine.length !== nb || echangeEnCours) return;
+  if ($('conversation').querySelector('.propositions')) return;
+  $('conversation').appendChild(construireBlocPropositions(props));
+}
+
+/* ============================================================
+   Poser une question — la recherche répond (aucune génération),
+   le fil porte le contexte, le site propose la suite.
+   ============================================================ */
+let echangeEnCours = false;
+async function poserQuestion(question) {
+  question = String(question || '').trim();
+  if (!question || echangeEnCours) return;
+  if (!donneesRecherche) {
+    afficherErreur("La recherche n’est pas prête : ses données sont en chargement, ou elles n’ont pas pu être lues. Patientez un instant, ou rechargez la page.");
+    return;
+  }
+  effacerErreur();
+  retirerPropositions();
+  echangeEnCours = true;
+  $('btn-envoyer').disabled = true;
+  $('etat-generation').textContent = 'Recherche dans la mémoire du site…';
+  ajouterMessageAffichage('Vous', question);
+
+  // Le contexte du fil AVANT ce nouvel échange : c'est lui que
+  // la recherche reçoit (voir le bloc « contexte du fil »).
+  const contexte = contexteDepuisChaine();
+  const rech = await rechercherSources(question, contexte);
+  $('m-recherche').textContent = formaterSecondes(rech.ms) + ' (' + LIBELLES_MODE[rech.mode] + ')';
+  $('m-sources').textContent = rech.resultats.length
+    ? rech.resultats.map((r) => 'passage ' + r.passage).join(', ')
+    : 'aucune';
+  majMemoireJS();
+
+  let reponse;
+  if (rech.mode === 'aucun') {
+    reponse = 'La recherche n’a pas pu se faire : les données de la mémoire du site n’ont pas été chargées. Rechargez la page ; si le problème persiste, la porte humaine du site est le courriel.';
+    $('conversation').appendChild(creerPanneauPorte());
+  } else if (!rech.probant) {
+    reponse = 'Le site ne tient rien, dans sa mémoire, qui réponde à cette question : sa recherche n’a retrouvé aucun passage en lien probant. Il répond de ce qu’il tient — et ce qu’il ne tient pas, il le dit. La porte humaine du site est le courriel.';
+    $('conversation').appendChild(creerPanneauPorte());
+  } else {
+    $('conversation').appendChild(creerPanneauSources(rech.resultats, rech.mode, rech.allerPlusLoin));
+    reponse = composerReponse(rech.resultats, rech.forme);
+  }
+  const corpsSite = ajouterMessageAffichage('Le site', reponse);
+  await ajouterEchange(question, reponse, rech.resultats.map((r) => r.passage));
+  $('etat-generation').textContent = 'Échange ajouté à la chaîne.';
+  // Le site questionne : après une réponse probante, ses
+  // questions de suivi préparées, liées aux passages amenés.
+  // Après un secours ou une repasse déictique, la question
+  // elliptique n'a presque pas de matière propre : les
+  // propositions partent du sujet du fil (la question du
+  // contexte), pas de l'ellipse.
+  if (rech.probant) {
+    const questionPropositions = (rech.forme === 'secours' || rech.forme === 'deictique') && contexte
+      ? contexte.question
+      : question;
+    await afficherPropositions(questionPropositions, rech.resultats);
+  }
+  if (corpsSite && corpsSite.parentElement) {
+    try { corpsSite.parentElement.scrollIntoView({ block: 'nearest' }); } catch (e) { /* le fil reste lisible sans défilement forcé */ }
+  }
+  echangeEnCours = false;
+  $('btn-envoyer').disabled = false;
+}
+
+async function envoyer() {
+  const question = $('saisie').value.trim();
+  if (!question || echangeEnCours) return;
+  if (!donneesRecherche) {
+    afficherErreur("La recherche n’est pas prête : ses données sont en chargement, ou elles n’ont pas pu être lues. Patientez un instant, ou rechargez la page.");
+    return;
+  }
+  $('saisie').value = '';
+  await poserQuestion(question);
+}
+
+/* ============================================================
+   Boutons de la chaîne
+   ============================================================ */
+$('btn-reverifier').addEventListener('click', async () => {
+  effacerErreur();
+  let entrees = chaine;
+  if (baseLue) {
+    try { entrees = await idbToutLire(); }
+    catch (e) { afficherErreur("Lecture d'IndexedDB impossible pour la revérification ; vérification sur la copie en mémoire.", String(e && e.message || e)); }
+  }
+  const resultat = await verifierChaine(entrees);
+  majAffichageChaine(resultat);
+});
+
+$('btn-exporter').addEventListener('click', () => {
+  const nom = 'conversation-chainee-' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+  telechargerFichier(nom, JSON.stringify(construireExportStructure(), null, 2), 'application/json');
+  $('etat-import').textContent = 'Conversation exportée (fichier structuré JSON) : gardez-le où vous voulez ; en revenant, importez-le ici pour continuer la discussion avec son contexte.';
+});
+
+$('btn-exporter-texte').addEventListener('click', () => {
+  const nom = 'conversation-chainee-' + new Date().toISOString().replace(/[:.]/g, '-') + '.txt';
+  telechargerFichier(nom, construireExportTexte(), 'text/plain;charset=utf-8');
+  $('etat-import').textContent = 'Conversation exportée en texte simple : copie de lecture et d\u2019archivage. Pour la réinstaller, c\u2019est l\u2019export structuré (JSON) qu\u2019il faut garder.';
+});
+
+$('btn-importer').addEventListener('click', () => {
+  effacerErreur();
+  $('fichier-import').click();
+});
+
+$('fichier-import').addEventListener('change', async () => {
+  const fichier = $('fichier-import').files && $('fichier-import').files[0];
+  $('fichier-import').value = ''; // permettre de réimporter le même fichier ensuite
+  if (!fichier) return;
+  if (echangeEnCours) {
+    afficherErreur("Import impossible pendant une recherche en cours. Attendez la fin de l’échange, puis réessayez.");
+    return;
+  }
+  let texte;
+  try {
+    texte = await fichier.text();
+  } catch (e) {
+    afficherErreur("Le fichier choisi n'a pas pu être lu. La conversation actuelle n'a pas été touchée.", String(e && e.message || e));
+    return;
+  }
+  // 1. Structure : format, version, entrées bien formées.
+  const analyse = analyserImport(texte);
+  if (!analyse.ok) {
+    afficherErreur("Import refusé — la conversation actuelle n'a pas été touchée.", analyse.motif);
+    return;
+  }
+  // 2. Preuve : la chaîne du fichier est revérifiée EN ENTIER (sceaux
+  // recalculés, liens contrôlés) avant toute installation.
+  const verif = await verifierChaine(analyse.entrees);
+  if (!verif.ok) {
+    afficherErreur("Import refusé — la chaîne du fichier ne revérifie pas : entrée nº " + verif.seq + ' : ' + verif.raison + ". La conversation actuelle n'a pas été touchée.");
+    return;
+  }
+  // 3. Choix explicite si une conversation existe déjà : remplacer, ou
+  // annuler. Jamais d'écrasement en silence, jamais de fusion. Le choix
+  // se fait DANS la page (bloc confirmer-import, ci-dessous), jamais par
+  // le dialogue natif confirm() : même cause que l'effacement, réparé
+  // le même jour (26 novembre 2026) — dans tout contexte qui supprime
+  // ou annule d'office les dialogues natifs (navigateur piloté, webview
+  // intégrée), confirm() renvoie false sans que le visiteur ait rien vu
+  // ni décidé, et l'import par-dessus une conversation existante
+  // mourait en silence, pris pour une annulation du visiteur.
+  if (chaine.length) {
+    const choix = await demanderConfirmationImport(analyse.entrees.length);
+    if (!choix) {
+      $('etat-import').textContent = 'Import annulé : la conversation actuelle est inchangée.';
+      return;
+    }
+  }
+  await installerImport(analyse.entrees);
+  $('etat-import').textContent = 'Conversation importée : ' + analyse.entrees.length + ' échange(s) installés, chaîne revérifiée en entier (MATCH). La discussion continue avec ce contexte — posez votre prochaine question.';
+});
+
+// Confirmation du remplacement à l'import, DANS la page : la promesse
+// est résolue par les deux boutons du bloc confirmer-import. Si une
+// demande était déjà en attente (double import rapide), elle est
+// d'abord résolue « annuler » : aucun gestionnaire ne reste suspendu.
+let resolutionImportEnAttente = null;
+function demanderConfirmationImport(nbEntreesFichier) {
+  if (resolutionImportEnAttente) {
+    const resoudre = resolutionImportEnAttente;
+    resolutionImportEnAttente = null;
+    resoudre(false);
+  }
+  return new Promise((resolve) => {
+    resolutionImportEnAttente = resolve;
+    $('confirmer-import-texte').textContent =
+      'Une conversation de ' + chaine.length + ' échange(s) existe déjà dans cet appareil. '
+      + 'L\u2019import la REMPLACERA en entier par celle du fichier (' + nbEntreesFichier + ' échange(s), revérifiée) — il n\u2019y a pas de fusion. '
+      + 'Continuer ?';
+    $('confirmer-import').hidden = false;
+    $('btn-import-remplacer').focus();
+  });
+}
+$('btn-import-remplacer').addEventListener('click', () => {
+  $('confirmer-import').hidden = true;
+  const resoudre = resolutionImportEnAttente;
+  resolutionImportEnAttente = null;
+  if (resoudre) resoudre(true);
+});
+$('btn-import-annuler').addEventListener('click', () => {
+  $('confirmer-import').hidden = true;
+  $('btn-importer').focus();
+  const resoudre = resolutionImportEnAttente;
+  resolutionImportEnAttente = null;
+  if (resoudre) resoudre(false);
+});
+
+$('btn-effacer').addEventListener('click', () => {
+  // Confirmation DANS la page — jamais le dialogue natif confirm() :
+  // la première forme de ce bouton en dépendait entièrement, et dans
+  // tout contexte qui supprime ou annule d'office les dialogues natifs
+  // (navigateur piloté, webview intégrée), confirm() renvoie false
+  // sans que le visiteur ait rien vu ni décidé : le gestionnaire
+  // sortait en silence et le bouton semblait mort. Constaté au servi
+  // le 26 novembre 2026 (trois clics, aucun effet visible, la
+  // conversation toujours là après rechargement), cause reproduite
+  // et isolée en local le même jour : clic bien livré au bouton,
+  // confirm() à false = retour immédiat, zéro changement d'état.
+  $('confirmer-effacement').hidden = false;
+  $('btn-effacer-confirmer').focus();
+});
+$('btn-effacer-annuler').addEventListener('click', () => {
+  $('confirmer-effacement').hidden = true;
+  $('btn-effacer').focus();
+});
+$('btn-effacer-confirmer').addEventListener('click', async () => {
+  $('confirmer-effacement').hidden = true;
+  chaine = [];
+  if (baseLue) {
+    try { await idbEffacer(); seqPersiste = -1; }
+    catch (e) { afficherErreur("L'effacement dans IndexedDB a échoué.", String(e && e.message || e)); }
+  }
+  restaurerAffichage();
+  majAffichageChaine();
+  $('etat-chaine').textContent = 'mémoire effacée';
+  $('etat-chaine').className = '';
+});
+
+$('btn-envoyer').addEventListener('click', envoyer);
+$('saisie').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) envoyer();
+});
+
+/* ============================================================
+   Démarrage : environnement + restauration de la chaîne
+   ============================================================ */
+(async function demarrer() {
+  $('m-isolation').textContent = window.crossOriginIsolated ? 'oui' : 'non';
+  $('m-coeurs').textContent = navigator.hardwareConcurrency ? String(navigator.hardwareConcurrency) : '—';
+  $('m-navigateur').textContent = 'Navigateur : ' + navigator.userAgent;
+  majMemoireJS();
+
+  if (!window.crypto || !crypto.subtle) {
+    afficherErreur("WebCrypto (crypto.subtle) est indisponible : la chaîne SHA-256 ne peut pas fonctionner. Servez la page en HTTPS ou via http://localhost (contexte sécurisé).");
+    return;
+  }
+  if (!window.indexedDB) {
+    persistanceOk = false;
+    afficherErreur("IndexedDB est indisponible : la chaîne fonctionnera en mémoire seulement, pour cette session.");
+  } else {
+    try {
+      chaine = await idbToutLire();
+      baseLue = true;
+      seqPersiste = chaine.length - 1;
+    } catch (e) {
+      persistanceOk = false;
+      afficherErreur("La lecture de la mémoire locale (IndexedDB) a échoué : la chaîne repart de zéro pour cette session.", String(e && e.message || e));
+    }
+  }
+  restaurerAffichage();
+  const resultat = await verifierChaine(chaine);
+  majAffichageChaine(resultat);
+
+  // Données de la recherche (locales, hébergées ici) : chargement
+  // DÈS L'OUVERTURE de la page (décision d'Alex, 26 novembre 2026 :
+  // dès le départ — attendre fait perdre du temps et donne moins de
+  // capacité). Leur progression s'affiche dans la section
+  // Conversation ; le bouton Envoyer s'active dès qu'elles sont
+  // prêtes. Aucun modèle n'est chargé, ni à l'ouverture ni plus tard.
+  chargerDonneesRecherche();
+})();
+</script>
+
+<style id="magazine-css">
+/* ===== vMAG — « Le magazine » : couche de présentation issue de la ronde 2, monde B
+   (choix d'Alex, 25 novembre 2026 : « J'aime bien le style magazine »).
+   Présentation seulement : aucun texte, aucun passage, aucun outil n'est touché.
+   Jetons repris du modèle ronde2-b : encre #16130e, papier #fdfcf7, rouge #bc3318,
+   filets encre, titres Didot/Bodoni, texte Iowan/Palatino, rubriques en capitales.
+   Cette couche est ajoutée APRÈS toutes les autres règles (fin de style.css et
+   dernier bloc <style> de chaque page) : à spécificité égale, elle gagne. */
+:root{
+  --font-apparat:Didot,"Bodoni MT","Playfair Display","Times New Roman",serif;
+  --font-texte:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --serif:var(--font-apparat);
+  --fond:#FDFCF7;--fond2:#F1EBDB;--carte:#FFFEF9;--carte2:#F7F1E0;
+  --puit:#F4EFE1;--puit2:#FAF5E8;--barre:rgba(253,252,247,.95);
+  --noeud:#FFFEF9;--face:#F1EAD8;
+  --ligne:#D8CFB2;--filet-fort:#16130E;--or-decor:#BC3318;
+  --or:#BC3318;--or-clair:#9E2A12;
+  --texte:#16130E;--encre:#16130E;--texte-doux:#5D574C;
+  --encre-sur-or:#FFFFFF;
+  --ombre:rgba(22,19,14,.10);--ligne-douce:rgba(22,19,14,.16);
+  --rouge:#BC3318;
+  color-scheme:light;
+}
+[data-theme="sombre"]{
+  --fond:#16130E;--fond2:#1D1913;--carte:#201B14;--carte2:#1A1610;
+  --puit:#100D08;--puit2:#241E14;--barre:rgba(22,19,14,.94);
+  --noeud:#201B14;--face:#262019;
+  --ligne:#4A4231;--filet-fort:#D8CFB2;--or-decor:#E4573D;
+  --or:#E4573D;--or-clair:#F0765C;
+  --texte:#F5F0E2;--encre:#F5F0E2;--texte-doux:#C9BFA6;
+  --encre-sur-or:#16130E;
+  --ombre:rgba(0,0,0,.5);--ligne-douce:rgba(245,240,226,.16);
+  --rouge:#F09A9A;
+  color-scheme:dark;
+}
+body{font-family:var(--font-texte);background:var(--fond);background-image:none}
+h1{font-family:var(--font-apparat);font-weight:700;letter-spacing:0}
+h2{font-family:var(--font-apparat);font-weight:700;border-top:3px solid var(--filet-fort);padding-top:.38em}
+h3{font-family:var(--font-apparat);font-weight:700}
+.etiquette,.menu-num{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--rouge)}
+.etiquette{letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.menu-num{font-family:var(--font-apparat);font-size:1.05rem;letter-spacing:0}
+.barre{border-bottom:3px double var(--filet-fort)}
+.hud{border-bottom:3px double var(--filet-fort)}
+.titre-site{font-family:var(--font-apparat);font-weight:700;font-size:clamp(2.1rem,6vw,3.1rem);letter-spacing:.05em;line-height:1}
+.marque span{font-family:var(--font-apparat);letter-spacing:.05em}
+.fil-actu{border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort)}
+.b53-banniere{border-top:3px solid var(--filet-fort);border-bottom:3px solid var(--filet-fort)}
+.b53-seg-etiquette,.b53-etiquette{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--rouge);font-weight:700}
+.menu-panneau{background:var(--fond);border-left:3px double var(--filet-fort)}
+.menu-titre{font-family:var(--font-apparat);color:var(--texte)}
+.menu-entree{border-radius:0;background:var(--carte)}
+.menu-entree:hover{border-color:var(--rouge)}
+#menu-fermer{border-radius:0}
+#menu-recherche{border-radius:0;background:var(--carte)}
+.barre-actions button{border-radius:0}
+button,input,textarea,select{border-radius:0}
+.coffre-entree{border-radius:0}
+figure{margin:22px 0 0}
+figcaption{font-style:italic;color:var(--texte-doux);border-bottom:1px solid var(--ligne);padding:8px 2px 12px}
+blockquote{font-family:var(--font-apparat);font-size:1.4em;line-height:1.3;border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort);padding:16px 4px;text-align:center}
+footer a{color:var(--rouge);font-weight:700}
+.phi{font-family:var(--font-apparat)}
+.compteur .nombre{font-family:var(--font-apparat)}
+#chambre-du-cerveau textarea,#chambre-du-cerveau input[type="text"]{border-radius:0;background:var(--carte)}
+#btn-envoyer{background:var(--rouge);color:#fff;border:0}
+.sources{background:var(--puit);border:1px solid var(--ligne)}
+</style>
+</body>
+</html>

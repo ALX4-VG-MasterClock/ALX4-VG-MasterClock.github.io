@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="manifeste-sceau" content="6c86ea9847b475cb49237822016879a0ccb932a878c1daed4d1dc1097803d3d4">
+<meta name="manifeste-sceau" content="a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#FAF6ED">
 <title>Faites un don — SoPHIa</title>
@@ -306,7 +306,7 @@ li><button type="button" class="menu-entree" data-cible="meteo" data-mots="meteo
 </div>
 <main>
 <div class="panneau actif" id="p-don">
-<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">6c86ea9847b475cb49237822016879a0ccb932a878c1daed4d1dc1097803d3d4</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
+<p class="rattachement-manifeste petite">Page rattachée au manifeste du site — sceau du manifeste : <span class="mono">a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78</span> · <a href="index.html#manifeste">le manifeste et les favoris, au noyau</a></p>
   <p class="retour-haut"><button type="button" class="secondaire nav-retour">← Retour</button></p>
   <p class="ariane"><button type="button" data-ouvrir="accueil">Accueil</button> › <button type="button" data-ouverture-menu="dossier">Le dossier — l’histoire</button> › Soutenir › <span class="ariane-ici">Faites un don</span></p>
 <div class="motif-panneau" aria-hidden="true"><svg viewBox="0 0 72 72" role="presentation"><circle cx="27" cy="36" r="11" class="motif-fin"/><circle cx="45" cy="36" r="11" class="motif-fin"/><path d="M36 14 V20 M36 52 V58" class="motif-doux"/></svg></div>
@@ -474,5 +474,74 @@ img,video,svg{max-width:100%}
 <script src="assets/js/recherche-texte.js"></script>
 <script src="assets/js/t55.js"></script>
 <script src="assets/js/t56.js"></script>
+
+<style id="magazine-css">
+/* ===== vMAG — « Le magazine » : couche de présentation issue de la ronde 2, monde B
+   (choix d'Alex, 25 novembre 2026 : « J'aime bien le style magazine »).
+   Présentation seulement : aucun texte, aucun passage, aucun outil n'est touché.
+   Jetons repris du modèle ronde2-b : encre #16130e, papier #fdfcf7, rouge #bc3318,
+   filets encre, titres Didot/Bodoni, texte Iowan/Palatino, rubriques en capitales.
+   Cette couche est ajoutée APRÈS toutes les autres règles (fin de style.css et
+   dernier bloc <style> de chaque page) : à spécificité égale, elle gagne. */
+:root{
+  --font-apparat:Didot,"Bodoni MT","Playfair Display","Times New Roman",serif;
+  --font-texte:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --serif:var(--font-apparat);
+  --fond:#FDFCF7;--fond2:#F1EBDB;--carte:#FFFEF9;--carte2:#F7F1E0;
+  --puit:#F4EFE1;--puit2:#FAF5E8;--barre:rgba(253,252,247,.95);
+  --noeud:#FFFEF9;--face:#F1EAD8;
+  --ligne:#D8CFB2;--filet-fort:#16130E;--or-decor:#BC3318;
+  --or:#BC3318;--or-clair:#9E2A12;
+  --texte:#16130E;--encre:#16130E;--texte-doux:#5D574C;
+  --encre-sur-or:#FFFFFF;
+  --ombre:rgba(22,19,14,.10);--ligne-douce:rgba(22,19,14,.16);
+  --rouge:#BC3318;
+  color-scheme:light;
+}
+[data-theme="sombre"]{
+  --fond:#16130E;--fond2:#1D1913;--carte:#201B14;--carte2:#1A1610;
+  --puit:#100D08;--puit2:#241E14;--barre:rgba(22,19,14,.94);
+  --noeud:#201B14;--face:#262019;
+  --ligne:#4A4231;--filet-fort:#D8CFB2;--or-decor:#E4573D;
+  --or:#E4573D;--or-clair:#F0765C;
+  --texte:#F5F0E2;--encre:#F5F0E2;--texte-doux:#C9BFA6;
+  --encre-sur-or:#16130E;
+  --ombre:rgba(0,0,0,.5);--ligne-douce:rgba(245,240,226,.16);
+  --rouge:#F09A9A;
+  color-scheme:dark;
+}
+body{font-family:var(--font-texte);background:var(--fond);background-image:none}
+h1{font-family:var(--font-apparat);font-weight:700;letter-spacing:0}
+h2{font-family:var(--font-apparat);font-weight:700;border-top:3px solid var(--filet-fort);padding-top:.38em}
+h3{font-family:var(--font-apparat);font-weight:700}
+.etiquette,.menu-num{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--rouge)}
+.etiquette{letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.menu-num{font-family:var(--font-apparat);font-size:1.05rem;letter-spacing:0}
+.barre{border-bottom:3px double var(--filet-fort)}
+.hud{border-bottom:3px double var(--filet-fort)}
+.titre-site{font-family:var(--font-apparat);font-weight:700;font-size:clamp(2.1rem,6vw,3.1rem);letter-spacing:.05em;line-height:1}
+.marque span{font-family:var(--font-apparat);letter-spacing:.05em}
+.fil-actu{border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort)}
+.b53-banniere{border-top:3px solid var(--filet-fort);border-bottom:3px solid var(--filet-fort)}
+.b53-seg-etiquette,.b53-etiquette{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--rouge);font-weight:700}
+.menu-panneau{background:var(--fond);border-left:3px double var(--filet-fort)}
+.menu-titre{font-family:var(--font-apparat);color:var(--texte)}
+.menu-entree{border-radius:0;background:var(--carte)}
+.menu-entree:hover{border-color:var(--rouge)}
+#menu-fermer{border-radius:0}
+#menu-recherche{border-radius:0;background:var(--carte)}
+.barre-actions button{border-radius:0}
+button,input,textarea,select{border-radius:0}
+.coffre-entree{border-radius:0}
+figure{margin:22px 0 0}
+figcaption{font-style:italic;color:var(--texte-doux);border-bottom:1px solid var(--ligne);padding:8px 2px 12px}
+blockquote{font-family:var(--font-apparat);font-size:1.4em;line-height:1.3;border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort);padding:16px 4px;text-align:center}
+footer a{color:var(--rouge);font-weight:700}
+.phi{font-family:var(--font-apparat)}
+.compteur .nombre{font-family:var(--font-apparat)}
+#chambre-du-cerveau textarea,#chambre-du-cerveau input[type="text"]{border-radius:0;background:var(--carte)}
+#btn-envoyer{background:var(--rouge);color:#fff;border:0}
+.sources{background:var(--puit);border:1px solid var(--ligne)}
+</style>
 </body>
 </html>
