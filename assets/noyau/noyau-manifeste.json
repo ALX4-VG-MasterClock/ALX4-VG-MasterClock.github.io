@@ -1,11 +1,11 @@
 {
  "nom": "SoPHIa, mémoire cumulative chaînée",
  "format": "noyau-index-eclats/v1",
- "date": "2026-11-24",
+ "date": "2026-11-25",
  "principe": "Le noyau du site répond à partir de ce qu’il tient : son index, construit d’avance depuis les passages du site, en éclats par chambre. Tout s’exécute dans l’appareil du visiteur ; aucune base de données, aucun serveur, rien ne part.",
- "racine_merkle_passages": "b1ff39f1c5e202242d3e1a93ef0215841131694cbbfb768fc28b319fd26469f8",
- "nombre_passages": 213,
- "nombre_mots_indexes": 8538,
+ "racine_merkle_passages": "23ba423356aafdb6e5da35e8e71745a013eab0f19bcff4b137bbd05ac1e8533d",
+ "nombre_passages": 216,
+ "nombre_mots_indexes": 8560,
  "seuils": {
   "couverture": 0.5,
   "score": 3,
@@ -15,8 +15,8 @@
   "index.html#manifeste — le tableau des sceaux : son texte porte les sceaux courants du site, il change à chaque re-scellement ; ce n’est pas une réponse."
  ],
  "actions": {
-  "passages_porteurs": 20,
-  "total": 41,
+  "passages_porteurs": 21,
+  "total": 42,
   "principe": "Chaque réponse du noyau dont un passage tenu mène à un parcours ou à une démarche porte le bouton de l’action : le libellé nomme le geste, le lien mène à l’étape exacte (page + ancre + fragment). Sans action du site qui corresponde : la porte du courriel, seule."
  },
  "chambres": [
@@ -102,7 +102,7 @@
    "panneauNom": "Parle avec le site web SoPHIa",
    "fichier": "chambre-cerveau.json",
    "passages": 7,
-   "octets": 49893
+   "octets": 50081
   },
   {
    "panneau": "chercheur",
@@ -150,8 +150,8 @@
    "panneau": "depose-empreinte",
    "panneauNom": "Dépose ton empreinte",
    "fichier": "chambre-depose-empreinte.json",
-   "passages": 1,
-   "octets": 19148
+   "passages": 4,
+   "octets": 52250
   },
   {
    "panneau": "don",
