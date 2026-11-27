@@ -1,7 +1,7 @@
 {
  "format": "manifeste-site/v1",
- "version": "Version 63 — refonte A (pages par chambre)",
- "date": "2026-11-23",
+ "version": "Version 64 — le dépôt public revérifiable (pages par chambre)",
+ "date": "2026-11-25",
  "principe": "Le site web peut être un cerveau qui communique (Alexandre, 23 novembre 2026) : ce manifeste est son noyau — il liste les pages et leurs endroits, avec l’empreinte de chacun, et chaque page porte en tête l’empreinte du manifeste auquel elle pend.",
  "precedent": "6743b0df1a46b55d18ff1a1f520efac6d64d9d0dd316eff6f09ea91926c9db34",
  "precedent_detail": "Sceau chaîné du fichier unique augmenté (paquet corrigé du 23 novembre 2026) : la genèse de la chaîne des manifestes.",
@@ -18,8 +18,8 @@
    "fichier": "index.html",
    "panneau": "accueil+methode-30",
    "nom": "Accueil — le noyau (avec la Méthode en 30 secondes)",
-   "empreinte": "77a211a693421a3683906dbcde4c1251edb0340b974dfe1adcdaf3c46f0c13a5",
-   "octets": 344211,
+   "empreinte": "d5b4cfeba771a6171f95589288164a82de2db525e8783105b2d9d9dd97418b6e",
+   "octets": 345263,
    "endroits": [
     {
      "id": "accueil-plat",
@@ -63,7 +63,7 @@
     },
     {
      "id": "gradMetal10",
-     "empreinte": "e546e688b21d5526af5b6526be8c6427632459ba18a844312ee5e5e264102c75"
+     "empreinte": "521705083ec2d6d1f11607d76bc435fe78b3b11a98bedd2c8ab1cbbbc0991700"
     },
     {
      "id": "menus",
@@ -91,11 +91,11 @@
     },
     {
      "id": "manifeste",
-     "empreinte": "cfacd7e68736a8e5e6ae6d963d7cb2e876a6a0ed9595fba8782e63b22effbb88"
+     "empreinte": "6929a0c41267e5534d3be02ae2ac604c17bac8e2811a55c53850092733a209de"
     },
     {
      "id": "foyers",
-     "empreinte": "7d32b66a1578f1a1011a647984d9aefa313478c709d5a0b584fb27e2ef88499c"
+     "empreinte": "aee82693f7752aca63a0a33b18beedf6f97966867e22e5a190fe80b94316d164"
     },
     {
      "id": "methode-30",
@@ -495,12 +495,12 @@
    "fichier": "ancrage.html",
    "panneau": "ancrage",
    "nom": "Ancrage — les preuves chez les tiers",
-   "empreinte": "b7f3d4cccb4587ea5005984dfbc5935c5802372d1650ceeb9486f2ed5118fcb1",
+   "empreinte": "c29764b3b15825f788e9a05121658ae94d5158e7560f6fe14b240a0ae95f093a",
    "octets": 134358,
    "endroits": [
     {
      "id": "ancrages",
-     "empreinte": "db45833dd0725358ac907463ad4dd5e009b912a30982d52ae58d711bd22ff26b"
+     "empreinte": "ff68514b1ff3178013432408034171646f59004eb31e1aa02e4471140aaeb9b7"
     },
     {
      "id": "preuves-chemins",
@@ -549,7 +549,7 @@
    "fichier": "verifier.html",
    "panneau": "verifier",
    "nom": "Vérifier",
-   "empreinte": "448f2f4448c60af59855defeea837e1352fe8843842c40f425260766264cb92e",
+   "empreinte": "0671ca48fb1c88ac43c905f61a74ef5f479a6f4071034ac51958423faa4ced05",
    "octets": 107302,
    "endroits": [
     {
@@ -774,12 +774,12 @@
    "fichier": "memoire.html",
    "panneau": "memoire",
    "nom": "Mémoire",
-   "empreinte": "8d3dd644fba75571bdffdddcf4e5dfe69b58e4963b4d8e37322ad83691d3b76f",
+   "empreinte": "78e8bc504ddc7d0e7d9d7eaceff7c029782cc8e8ee6613628dfd2624446cb0ef",
    "octets": 147616,
    "endroits": [
     {
      "id": "memoire",
-     "empreinte": "d59b271f73c7e9448d6ac402857e6453ca2f60a95d104cccb8ce4af8d656d82a"
+     "empreinte": "9fb247c71cdd5f114dab7e03878e440cfd941c5ec20f965cb06abf3770c99280"
     },
     {
      "id": "couche-chaine",
@@ -803,7 +803,7 @@
    "fichier": "evolution.html",
    "panneau": "evolution",
    "nom": "Évolution",
-   "empreinte": "32e0b8284cd1123753b17d9615da37f5bbd4feeedeb1ce2d0be28f2f61295419",
+   "empreinte": "1c40aabd9110038a57f583c4dbb6e62d988d5e7ba5ff08148ddbd26e9b7c9e9c",
    "octets": 216053,
    "endroits": [
     {
@@ -816,7 +816,7 @@
     },
     {
      "id": "foyers",
-     "empreinte": "31102ab6262e19c945263c977988134200cf04336f68a63cdcf293319baca036"
+     "empreinte": "e29d9544fe0a71af668dcdc26159761d2d2ef8e33d39ed53df3a8e2717645c88"
     },
     {
      "id": "journal",
@@ -1070,12 +1070,24 @@
    "fichier": "depose-empreinte.html",
    "panneau": "depose-empreinte",
    "nom": "Dépose ton empreinte",
-   "empreinte": "445e7d083ac6c8344898655d1067a14082bc945f37734553aaf3f3d0265e46e9",
-   "octets": 102536,
+   "empreinte": "977c130ed425f4b8e07529466eed8d8c82ecb45befeab6f9fe164855bfefd178",
+   "octets": 120240,
    "endroits": [
     {
      "id": "depose-empreinte",
-     "empreinte": "0e9d8d5fa8a050137f6f3827c5d36e73ed42308a453ecd14803a4f0d473bdf7b"
+     "empreinte": "b95c7573e8d11dfe3b8bddef9de63bf2f55151d3346bd33be6ab59016c6be3ac"
+    },
+    {
+     "id": "depot-registre",
+     "empreinte": "e508267c0c7ca14178240be3d2ced0edb8387f3bb6f3d3dc68e1f78f43bd7f34"
+    },
+    {
+     "id": "depot-verifier",
+     "empreinte": "168a9d673a4de7c8712bd73525e0f52e6f267ea3aaaf87d27c771dfbc1dbd5fd"
+    },
+    {
+     "id": "depot-bitcoin",
+     "empreinte": "d769a2f157019757b3aea263514a6f47ac809479c1a2e41bf23e136058576338"
     }
    ]
   },
@@ -1430,8 +1442,8 @@
    "fichier": "kit-verification.html",
    "panneau": null,
    "nom": "kit-verification.html",
-   "empreinte": "f0acf8ff47846053fd7b8be564fe3025f2d8f620dd621269e329fdf98db1b379",
-   "octets": 3153,
+   "empreinte": "b7a336d482626bb11e9089334676717c83a30bf19d796761e638c5c4d4d72838",
+   "octets": 3208,
    "endroits": []
   },
   {
@@ -1569,7 +1581,7 @@
   },
   {
    "fichier": "sw.js",
-   "empreinte": "0f12ae2093e11cf30e1985d9d73f577720c8bbf8e6a58fb1024348e6f4303bf3"
+   "empreinte": "71ac5aac6bce34f27ee1d9cba6e26d2f5969313525c7de418b104471142e3d25"
   },
   {
    "fichier": "assets/js/cerveau-conversation.js",
@@ -1764,6 +1776,14 @@
    "empreinte": "ad412bcbdbf13508a9c9e1cce203732c77283ee02b7a860cbdcf060b5cf0f51a"
   },
   {
+   "fichier": "assets/js/depot-public.js",
+   "empreinte": "d1495d8e803f0a8ed16bb25bec485de5ec33d3bd2e6d36d5386a4cd1e9a7004e"
+  },
+  {
+   "fichier": "assets/js/depot-bitcoin.js",
+   "empreinte": "d1582cdb546d5c40dc3a5f83caf41f44e17285301338ecf8425e3ac797915d87"
+  },
+  {
    "fichier": "assets/js/t51.js",
    "empreinte": "0ab92e08a24f343789c6753b8a5ac5a01c88a4867b6d1d79d559bdc65fd070a8"
   },
@@ -1869,247 +1889,247 @@
   },
   {
    "fichier": "assets/noyau/noyau-manifeste.json",
-   "empreinte": "1ae419dc5e7d0b0320dccf12eff75b3b9c6082de908d1f6d3a3b2772517586a7"
+   "empreinte": "06003abd3ed298d107ca65f48c7ab1356416e08d366559a2d5a3914313693159"
   },
   {
    "fichier": "assets/noyau/chambre-acces.json",
-   "empreinte": "481781dbbf5baf5b1b8d5210344313aa8d3a833011724e49f1ab0facc97bb2e2"
+   "empreinte": "1523180022c03e4718ff94659fc306f0f491dea0be23c74a13afecad2df5c034"
   },
   {
    "fichier": "assets/noyau/chambre-accueil.json",
-   "empreinte": "50814a44845ec0c3a4fda8bc51cd59a92cc4086d24ef565acb53c94dbec2b05f"
+   "empreinte": "38d6fafc02060470fd3f47267ae20dec1992e3bbad461dda30226c49df42677d"
   },
   {
    "fichier": "assets/noyau/chambre-aller.json",
-   "empreinte": "1d9a8c25dccddd38bdd7d50753e9fd3d218975f08483d7ce0c8967baa1075209"
+   "empreinte": "bd710b683099c3430e49f33322eb7b6a9e8612ed417eaf4c3a3ea1c1387213e9"
   },
   {
    "fichier": "assets/noyau/chambre-ancrage.json",
-   "empreinte": "7fef24e9101bf9f6077a14218d673f936a30857b83e4a10a29bd62451527c186"
+   "empreinte": "9f9f14f420e8eef68cf007aed430b4574cfefe71aa6fe24d94ccdfa6e47a5d37"
   },
   {
    "fichier": "assets/noyau/chambre-application.json",
-   "empreinte": "cad936cddb598cf03801798a39e029dbeb0b8b6b10c99b58f7866f8c93af7154"
+   "empreinte": "69fc0b0a49d84ab28ccbcc9bf941a018368559ffb61faf54d34ab98a25d0aa37"
   },
   {
    "fichier": "assets/noyau/chambre-articles.json",
-   "empreinte": "6e63fe4d2c4873a8a39449b8e5e5fd4c8ddfd8ba02605ede808baad42391540e"
+   "empreinte": "dd3f10c5e420a1c1dfce1714b3eca3af77296ee3dacf48e5b86795d605891ee9"
   },
   {
    "fichier": "assets/noyau/chambre-assurances.json",
-   "empreinte": "24b961b5058fdd72d4b75514e3a406a4923f732081252ec58683c1d441c892d4"
+   "empreinte": "e414ecd984970164bb29a24c79aa7004d81b8d9d4a5b77fb51a9eb9473660f78"
   },
   {
    "fichier": "assets/noyau/chambre-bris.json",
-   "empreinte": "71cb161f2dc5bf03c0585158a2e810eb7d7e4072ecb32b88f9bc5b954b40c498"
+   "empreinte": "d6d824ce36c561470b4040fef0a8bfb3d606613a44082733edcf420bc2e274cd"
   },
   {
    "fichier": "assets/noyau/chambre-calendrier.json",
-   "empreinte": "2c4904853ba20fa6c6b68bf9e557d8571f19517a019059e9e5bcc883c9ca08be"
+   "empreinte": "17e3041832b101d3fe28875959d7d71aa66b12dec5a23db1c8f80dc6e8174c33"
   },
   {
    "fichier": "assets/noyau/chambre-cameras.json",
-   "empreinte": "7d6d569eb65b9c81f6803c62fa2ce9bcf6ae277bfa5dd2e8f01ed999b315335d"
+   "empreinte": "914ffcbbbe6c44ab839d0983dbc3b62b46c981bb0be7fcb83d8e2329109c1161"
   },
   {
    "fichier": "assets/noyau/chambre-capsules.json",
-   "empreinte": "f09ede3bb629bb3832bc3900efa71da733d44e0655afc1f20aef52695c8ef70d"
+   "empreinte": "262996c1437910a1c358e95054acf53126049ceaec66601487f85afe07148ab7"
   },
   {
    "fichier": "assets/noyau/chambre-cerveau.json",
-   "empreinte": "8efa8b7c3e9ae84dc057ce795086ef23d0df615cc3a2e0b700208b748fe7ab85"
+   "empreinte": "72e4828f6825f2594234c676f7b343f7f9b8707b26215ba27bd3766226086560"
   },
   {
    "fichier": "assets/noyau/chambre-chercheur.json",
-   "empreinte": "add4c8b41b2e2eb851a8d642dd6248c99d1e56e6266a76d300b22148bee0a010"
+   "empreinte": "1e93f34c4555cefbf33224ac469e3975f115bfd56175bbb04c06d8a26094e6b3"
   },
   {
    "fichier": "assets/noyau/chambre-conditions-site.json",
-   "empreinte": "410b7a8f75467af26d12b01527198ce0494723eae1d483b2450e29ce5f0c51ec"
+   "empreinte": "a88d629532b1a8c806325627cf3c15088145ce3ec60637b0e97e371fd052e320"
   },
   {
    "fichier": "assets/noyau/chambre-conditions.json",
-   "empreinte": "3a0292b2957fd5dbea704029d80b8ad4b180a7d6326d390bbc463136a5e3fae1"
+   "empreinte": "64d491050f7a93072a1a6d81f28dee4177b16151c254ba2764ad6951533f28b8"
   },
   {
    "fichier": "assets/noyau/chambre-confidentialite.json",
-   "empreinte": "b6fbac5f6fb41d58119bdc1da8a62b17b68d9a6d4d06d4fb86d72d509e9f3ee8"
+   "empreinte": "1e722ebcbc15563775c14a7ce3acfde8c85959a4f95e05e5c7a61bcb9af6c093"
   },
   {
    "fichier": "assets/noyau/chambre-contact.json",
-   "empreinte": "c217638f77ba11330fa254aa2f6ab71e3d6bd1223df210cf4a02c67d1ac10a5c"
+   "empreinte": "ce9f310e3ee458614f403ed492206334b1fc52cc62da110340e9035005fcf2e6"
   },
   {
    "fichier": "assets/noyau/chambre-decisions.json",
-   "empreinte": "fd3f4ee8aaaa7054decf819e81f203001b2131ca5ab3b767d8e1a46e9540d4f1"
+   "empreinte": "a39f10a0c3d55076f33bf072d3f4afc517f0a3facaa7e4a95a59547ac27bd9d7"
   },
   {
    "fichier": "assets/noyau/chambre-depose-empreinte.json",
-   "empreinte": "ba86c6c481f4e687e0891f8f2f641d1b7eaf4a3ef30be13c06a767fdc2d8b379"
+   "empreinte": "09abe45786c5d654a60a27e6eda8d58d29d9b734ab37b8c3700147893756157f"
   },
   {
    "fichier": "assets/noyau/chambre-don.json",
-   "empreinte": "c589787c01258121d7a5b9367956cbcbd84f837b99e61e1d1b20bcb2fa7cabed"
+   "empreinte": "629cfdbc03fc9542bf60b8027225eda90ebc18613a9f37bf21c5e98617aa57b1"
   },
   {
    "fichier": "assets/noyau/chambre-donnees.json",
-   "empreinte": "f1d1f9a24365a88eb8432b0ebd15cf68b733b18828704424f21f96bee3b8fbe3"
+   "empreinte": "1f23608cbe5e81ee1cf9e7673c9d4415abaf10bd32f3ccb46b781577cc803f0a"
   },
   {
    "fichier": "assets/noyau/chambre-droits.json",
-   "empreinte": "5135f152669d1f975f4a42d1ba8b4f14c622533a58bccf7a507cbf11c0e82e78"
+   "empreinte": "db3c0b2505118aa42b685f566bd8374a04bd1c14a671f684007bebf4aa5a0178"
   },
   {
    "fichier": "assets/noyau/chambre-ecrire.json",
-   "empreinte": "f1920758655821646b4e0b6512fea03adef9f190feebe21246e180b89a7528f5"
+   "empreinte": "cb7eff57e9ad15f80520038ccfefb94e2d5232b5c473f61b6fdc46d41e508b1e"
   },
   {
    "fichier": "assets/noyau/chambre-edition.json",
-   "empreinte": "d3ee4a7602ffd7fe53d035ace2ddf9e0d0083cf74171f7d8e5d731f8e72d0aa8"
+   "empreinte": "00f0dae8e2833f866ff003d7ff38be3c033f5d99d5c2a86ed1b4c0af6dd6d72b"
   },
   {
    "fichier": "assets/noyau/chambre-etat51.json",
-   "empreinte": "234653db30328e6900b5ead3f79b7ca7132050776fa6c6ce6136943a020baf24"
+   "empreinte": "3449320a64eed34cb3e2f52acca53016014160326c0cb220100577897e003c4b"
   },
   {
    "fichier": "assets/noyau/chambre-evolution.json",
-   "empreinte": "e3ac4ab74a0bfce0c93cd8c86ca1d5e7705cb46dbead28c4251a62be1ab4f4b2"
+   "empreinte": "4ea349bfcc5bac484a64f9a7c4e9c114f892a1927b5af7e009c0f8dd87a62d52"
   },
   {
    "fichier": "assets/noyau/chambre-explication.json",
-   "empreinte": "38dbc4de45e3e25a1d3dae311056dce8dfce55021afd4db2a0d891e0f35c7f5c"
+   "empreinte": "b7e4b876e8f8d4b67023b7ed81f9ebbb140638501667d5194efbce6726b7a387"
   },
   {
    "fichier": "assets/noyau/chambre-exposition.json",
-   "empreinte": "47dad03fe936038ff65a8c9c2affeba96217dd3856dd9ebf39b8baf49906a795"
+   "empreinte": "135934a41af781b8570e1e5105d685c7b55657f86ec20c7ba3ffe37e7d8b8da8"
   },
   {
    "fichier": "assets/noyau/chambre-faq.json",
-   "empreinte": "8479d4a5925664dd210f840876a631ed9c2c82472fbde8d46c1238e1c880d39e"
+   "empreinte": "4ce84452357442da0c1b4118fa8cadaaa42bd339e09c1c71bb34ce79b6121564"
   },
   {
    "fichier": "assets/noyau/chambre-fenetres.json",
-   "empreinte": "b4199556eeae3220c12bea9f839d674deefdcd4c2ca2da725822959095d7bcf2"
+   "empreinte": "8773ce9f4fd4482636f740fddc365cb67ce1a3b401fc6e9f5b6675ae770a1ff4"
   },
   {
    "fichier": "assets/noyau/chambre-for.json",
-   "empreinte": "c5e39806ee6657d7d87737c591acc76eb2c7778d3721c36511ccf0792bbdcaa6"
+   "empreinte": "24fafaa4ee3f7525c0d3cfb9d386b0ecd618f534e2aefe89028774a156b3458c"
   },
   {
    "fichier": "assets/noyau/chambre-ingenierie.json",
-   "empreinte": "7ed5f710dc70ebc4df58866eb6e5b8ac7276bb783c345fa4a351b6120ce44568"
+   "empreinte": "d03267b528e059090382cea33a202fae8cf7ebc40253fe0d4ab44db2219b904b"
   },
   {
    "fichier": "assets/noyau/chambre-instance.json",
-   "empreinte": "0a54d183744ebb42b1a160fc7eecbcc4304ef79076e24a39bd404228027b2edd"
+   "empreinte": "57148d7a8cdefadbbe3d237f73eb1f9375b731a42a47bf3f1cc76671dd675421"
   },
   {
    "fichier": "assets/noyau/chambre-memoire.json",
-   "empreinte": "40a1cfaa7083db7a199ef0978178ee947722558ddfb0b94ebd75bc255cce62ff"
+   "empreinte": "ad90d161bc62e8e730348ee436765ea770c19f32d89ce125b7fa1eacbaaa92e5"
   },
   {
    "fichier": "assets/noyau/chambre-meteo.json",
-   "empreinte": "b7323a6cc6ee8195d3fd957b482e2bbe11c3932a06d71de32ed8203996195ff4"
+   "empreinte": "936f489f6d07f1b03736e1650ccba989e3e5359982559c5c0284322f4c38e28d"
   },
   {
    "fichier": "assets/noyau/chambre-methode-30.json",
-   "empreinte": "269edd0ff3d06f0e44436f8314b7e9c786ec1e86e0730137e3c95f7635260d74"
+   "empreinte": "ae7bbd343fe0616604bcbf31b916fa715e6f3a63fabb74aecaf8ff528d4c9f13"
   },
   {
    "fichier": "assets/noyau/chambre-methode.json",
-   "empreinte": "45c1e1c3fd26a4e42c657112be9233b0ea4bc4c185bd0296578d44356b628443"
+   "empreinte": "52621c7b021a365cf3bf307ef4aec3c450d65f3db447500448a7783eb030b03e"
   },
   {
    "fichier": "assets/noyau/chambre-miroir.json",
-   "empreinte": "6853adc35b80def3113c678bd0cd083bf397d1e5efe7a74d85589fcc1e8adb2f"
+   "empreinte": "f353214dcec528f0851b5e0434f0ef616821d3d8db1c176f06d7209d4585b4c9"
   },
   {
    "fichier": "assets/noyau/chambre-modes.json",
-   "empreinte": "359d794f0baa37ff4c56fa7084ad8aa80588375c02b990e98f016b10a9b1c046"
+   "empreinte": "4f7979112aac920f481b85c3ff414aa983d643a47660b934cafb5a731601d3ff"
   },
   {
    "fichier": "assets/noyau/chambre-parcours.json",
-   "empreinte": "275d92409e90d7443890c7849a769cdbe764c8095b36b5dfe2589b498a6b9893"
+   "empreinte": "cb11c4b371553ef9c1bf9592034f36896e304474d01c1dd0ccf102d511d0e3f2"
   },
   {
    "fichier": "assets/noyau/chambre-partenaires.json",
-   "empreinte": "3e669a9f92d8b804f056c8496d33a582d79df161f5ca501c11bdc0c5abfe2f31"
+   "empreinte": "f31d40da3692fbcc9dbda8a33e70edadecd048e64ec219a6239e33d90aec452e"
   },
   {
    "fichier": "assets/noyau/chambre-petitions.json",
-   "empreinte": "1664173b3ca29345822510ebf3d97f32430b78935332a0e5c4ceb9edf1750712"
+   "empreinte": "9b750fc3c2481324f0399b43ac52b1babec31a1e88eb2aa18780f0e3778c2fed"
   },
   {
    "fichier": "assets/noyau/chambre-politique-site.json",
-   "empreinte": "7639e2b7a27d8e512ce52502d4ba3b4d98d30d4e2a2f82d9189758bee9be91ea"
+   "empreinte": "6a90e05e088da24481b6e77ae8fd553aacc30374169eda86fd2d488a881b70d8"
   },
   {
    "fichier": "assets/noyau/chambre-preuves.json",
-   "empreinte": "aaa369c7324201d7bfd47fe6f645fd82fa1d1fc83b7b911b7211e96489d34e87"
+   "empreinte": "4e2fd5ce7d007c869d60cf7381c7bb7d2eb8dbda2bbda3333773b99cc7201b54"
   },
   {
    "fichier": "assets/noyau/chambre-recu.json",
-   "empreinte": "77d81b406e0da1ca3587a9fd30c579725127e4631a58d84c3363135ba7c565a7"
+   "empreinte": "bfaa75b99b0675fd194a3b73470b901da29c478b109d1719cfd9987120f5bb14"
   },
   {
    "fichier": "assets/noyau/chambre-recus.json",
-   "empreinte": "16dc74697ff591e6bf9b9f736b50a49b4edfb5b028877f0c1f9e5041b1814cb1"
+   "empreinte": "3a913c81a83b607ef1b58441376c9cc2470fb6a3923c2af6be063773ab6e3b8e"
   },
   {
    "fichier": "assets/noyau/chambre-registre.json",
-   "empreinte": "86edd561500896e215dcc6ca8fdeeaf18a6a66a747c175261a020206d8a87d2b"
+   "empreinte": "4f2fd664a59fe43ec84254232dfa9b24fd2a933f8768246e98eb4ebc7d4653ca"
   },
   {
    "fichier": "assets/noyau/chambre-repertoire.json",
-   "empreinte": "c79eca039ff92c7c8cab00fe3179b87f1e6ac1f76c31443a915801f93c14cae9"
+   "empreinte": "ebb772a9ed3869f74219cd91e7b3d65d598ab5a2e960cd6d1c548d1224b932bd"
   },
   {
    "fichier": "assets/noyau/chambre-sceller.json",
-   "empreinte": "49cc16e76b0fded54ed511d3ff2c5d599be3d7bdfe68dccbbf0ffe613417772d"
+   "empreinte": "5e2cd2ece5ffde73b6abefe83994c2445b2960c7f6f854e86bebf37d1cf2a6b4"
   },
   {
    "fichier": "assets/noyau/chambre-suivi-familial.json",
-   "empreinte": "dba7305c92a33de13aff48bf0f24c97cc9d1792b87192a0fc762e6e8afc6db7a"
+   "empreinte": "094006d22892b2858238bc174b08e1f073fe19da7370994e9a48840a1d51a9e1"
   },
   {
    "fichier": "assets/noyau/chambre-suivi.json",
-   "empreinte": "f3c8fbecacc08d1e2c676e9e0fd225ae14e0b2eebc70de4b6aed3a78fedfef02"
+   "empreinte": "70d7046f0101aa206ef3649243563c19b4275215d0cfb659c08e8f38fd665304"
   },
   {
    "fichier": "assets/noyau/chambre-suspendu.json",
-   "empreinte": "e4ab60a12a250f7e7d44bcb68222779bc8294e5ced0c4805fb856aa627633610"
+   "empreinte": "dd144fea11ace4c41d5cbc5edd6e9ddc562dc9093313a4ecf1cd8f91b060bef5"
   },
   {
    "fichier": "assets/noyau/chambre-temps.json",
-   "empreinte": "7efcb05ecabb20d9ac0ef909c9a120c944e5a874402f5c194c0ab0700cc997b9"
+   "empreinte": "cefb30434df9f113e3c8e95b71c21cc4caccffde4024b4119b377868aab2a85f"
   },
   {
    "fichier": "assets/noyau/chambre-transits.json",
-   "empreinte": "6548716680c0c4db9f90eeb7a5cbbbd4167d112e5ad5336318bd7889476b221b"
+   "empreinte": "3bf56e876790222b963486f338f2e8ebb40f377d17b34644936b7c55d3e81294"
   },
   {
    "fichier": "assets/noyau/chambre-transmission.json",
-   "empreinte": "b8ca879a87aa55af0240b0738440d3a207fe3259da4c2a2c8ecf2abab0172adc"
+   "empreinte": "5b07cf858c8f49a9c2c3d46b43e1a9ee909f5e164b22635e3560f4db6c0755ba"
   },
   {
    "fichier": "assets/noyau/chambre-transparence.json",
-   "empreinte": "8127960d99f21d56e7ececbe7a0474ae705020d24269a89fa23873058101e9da"
+   "empreinte": "0b88aebd3259a7bf8da7f0b5ab570294d4d1f14ee1542cf8651baf655b22fca8"
   },
   {
    "fichier": "assets/noyau/chambre-verifier.json",
-   "empreinte": "c8aea2cd7f0c1536ebb199a657f2d971f6763986fb3a17e21f15743299c36120"
+   "empreinte": "5173e1ed721fa22a4e3c96576f034f2ec11a493e7c4ddc19156814dd35b9d917"
   },
   {
    "fichier": "assets/noyau/chambre-vision.json",
-   "empreinte": "b62cf47ff907a8d59711634155b65543dc08034f63831527dc59e97f42418fd5"
+   "empreinte": "b65dfc5bff5dd8ef85c5258197d6e5fa64eee5126416d4f9661d86763f7406d9"
   },
   {
    "fichier": "assets/noyau/chambre-voir.json",
-   "empreinte": "f855ccedada7ae7385379bfbcafc85186a76d4002cc0cfabab7ada23ffcc4492"
+   "empreinte": "896aad4b404bb1b9ea90badaf2d2a82a2cb600d117ad8a79883b4e2c62acd88e"
   }
  ],
  "index_recherche": "assets/recherche-index.json — index plein texte dérivé des pages finales (régénéré à la construction) ; sa source est les pages elles-mêmes, déjà empreintées ci-dessus.",
- "sceau_canonique_noyau": "a393517c3e62b4b99c410266be68677e394dc494a2fb4c5d57102bba4a6e665a",
- "sceau_chaine_version": "ac0acb5e6acba051042b641687836f9778d3f0d1cd35de7ded1862e451843dec",
- "sceau": "31ab6c7544d77a203fc5d9cd521678332ff92cb79648fc8880aca5505cb22d94"
+ "sceau_canonique_noyau": "f8591ddbdadf0a34a34bf32ffbfd37d079d4426e0e77504f26cd47e1ffca8f8a",
+ "sceau_chaine_version": "01bbe4a2b7531c9a729ade64b77ce6802cfc8ea54444f308c43ae3a4d5b547bf",
+ "sceau": "6c86ea9847b475cb49237822016879a0ccb932a878c1daed4d1dc1097803d3d4"
 }
