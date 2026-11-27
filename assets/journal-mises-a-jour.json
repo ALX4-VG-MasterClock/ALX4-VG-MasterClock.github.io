@@ -1,6 +1,43 @@
 {
  "entrees": [
   {
+   "date": "25 novembre 2026",
+   "titre": "Version 64 — le dépôt public des empreintes, revérifiable par Merkle",
+   "resume": "L’ordre d’Alex, donné le 25 novembre 2026 : « la reproductibilité sur mon site web doit être faite ». Le dépôt public des empreintes — décidé par lui le 23 novembre 2026 — devient revérifiable de bout en bout. Le journal des dépôts gagne son arbre de Merkle : chaque entrée est une feuille, la racine engage toutes les feuilles à la fois, et les chemins sont publiés dans le fichier même du registre. Le registre est vide à ce jour — aucun dépôt reçu — et sa racine est publiée dès maintenant : c’est le SHA-256 de la chaîne vide, la racine d’un arbre sans feuille, affichée sur la page pour que la première feuille venue se revérifie contre un état qui existait avant elle. La page « Dépose ton empreinte » montre désormais le registre en entier et revérifie n’importe quel code dans le navigateur du visiteur, par son chemin de Merkle : MATCH, ÉCART ou ABSENT, jamais confondus. Les entrées peuvent porter une courte étiquette choisie par le déposant — jamais un nom, jamais une identité. Le même jour, sur son ordre de 08 h 39, le site devient aussi l’outil du second dépôt : la même empreinte s’estampille dans Bitcoin depuis la page elle-même — soumise aux calendriers publics OpenTimestamps depuis le navigateur du visiteur, seuls 32 octets partent, le site ne reçoit rien —, la preuve .ots se télécharge chez le visiteur et se met à niveau sur la même page quand l’ancrage est revenu. Le même jour, à 09 h 01, il donne à cette page son accroche — « Ne vous faites pas copier. Sécurisez votre travail avec la blockchain. » — inscrite en tête de page, au-dessus des bornes qui disent ce que le dépôt prouve et ne prouve pas. Rien n’est publié sans la visite d’Alex sur son iPhone et son go.",
+   "points": [
+    {
+     "texte": "Le dépôt public des empreintes, décidé par Alex le 23 novembre 2026 (ses mots : le site comme infrastructure publique d’ancrage extérieur pour les mémoires des gens, sans récolte et sans monétisation), reçoit sa couche de reproductibilité : tout dépôt publié se revérifie par n’importe qui, sans dépendre de l’opérateur du site."
+    },
+    {
+     "texte": "Le journal des dépôts (assets/journal-depots.json) gagne son arbre de Merkle, publié dans le fichier même : digest de feuille = SHA-256 du JSON canonique de l’entrée {date, empreinte, etiquette, seq} ; nœud = SHA-256 des deux hexadécimaux concaténés ; niveau impair, le dernier digest est dupliqué ; chemins publiés feuille par feuille."
+    },
+    {
+     "texte": "Le registre est vide — aucun dépôt reçu à ce jour — et il s’affiche honnêtement vide, comme la salle des échos. Sa racine de Merkle est calculée et publiée dès maintenant : e3b0c442…, le SHA-256 de la chaîne vide, pour que la première feuille se revérifie contre un état antérieur à elle."
+    },
+    {
+     "texte": "La page « Dépose ton empreinte » affiche le registre public des dépôts (date, empreinte, étiquette) et le revérifie à l’ouverture, dans le navigateur : chaîne des sceaux et racine recalculée, verdicts affichés."
+    },
+    {
+     "texte": "Le vérificateur de dépôt, sur la même page : le visiteur colle un SHA-256 ; la page refait son chemin de Merkle jusqu’à la racine publiée et revérifie la chaîne des sceaux. Trois verdicts distincts — MATCH, ÉCART, ABSENT. Tout en local : le code vérifié ne part nulle part."
+    },
+    {
+     "texte": "Les entrées du registre peuvent porter une courte étiquette choisie par le déposant — un repère de lecture, jamais un nom ni une identité. Le dépôt ne garde rien d’autre : l’empreinte, la date, l’étiquette optionnelle."
+    },
+    {
+     "texte": "L’inscription reste au relais courriel et se publie par lots, comme feuilles datées : la page le dit sans promettre d’instantané — c’est l’entrée au registre qui date, pas l’envoi."
+    },
+    {
+     "texte": "La racine du registre suivra le même régime d’ancrage public que les sceaux du site (Bitcoin, RFC 3161) dès la première feuille ; le premier dépôt sera le dépôt d’épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur."
+    },
+    {
+     "texte": "Le dépôt dans Bitcoin, accompli depuis la page (directive d’Alex du 25 novembre 2026, 08 h 39 : « Il faut qu’on se serve de mon site web aussi pour déposer les empreintes autant sur Bitcoin que sur mon site web ») : la même empreinte se soumet aux calendriers publics OpenTimestamps depuis le navigateur du visiteur ; la preuve .ots, avec ses attestations en attente, se télécharge chez lui ; la mise à niveau se fait sur la même page quand l’ancrage Bitcoin est revenu ; la revérification passe par le panneau Ancrage (« Reviens avec ta preuve ») ou par opentimestamps.org. Les échecs de calendriers sont nommés un à un, jamais silencieux."
+    },
+    {
+     "texte": "Paquet construit le 25 novembre 2026, marqué À PUBLIER : rien ne paraît sans la visite d’Alex sur son iPhone et son go de publication."
+    }
+   ]
+  },
+  {
    "date": "2026-11-23",
    "titre": "Version 63 — l'accueil plat, casse-la toi-même, les jetons publiés",
    "points": [
@@ -1316,6 +1353,6 @@
   "propriete_intellectuelle": "© 2026 Alexandre Vautour Gagnon — tous droits réservés",
   "site": "AUDIT UNISSON — Preuve d'Antériorité V-G | SoPHIa"
  },
- "version": "v63",
- "date": "2026-11-23"
+ "version": "v64",
+ "date": "2026-11-25"
 }

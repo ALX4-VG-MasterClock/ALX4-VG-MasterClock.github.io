@@ -1,7 +1,7 @@
 {
  "format": "cerveau-coquillage/v1",
- "version_site": "v63",
- "date": "2026-11-23",
+ "version_site": "v64",
+ "date": "2026-11-25",
  "titre": "Le Cerveau coquillage — la mémoire du site, par chambres",
  "principe": "Des matières séparées — l’agente, le site, les archives — qu’aucune pièce seule ne constitue ; unifiées par les sceaux et la somme des précédents, elles forment le cerveau. Il fonctionne par chambres, comme le coquillage, et par interconnexions.",
  "chambres": [
@@ -12,7 +12,7 @@
    "digest": "146aa51e7d47eaa49b23586343b820d41b5255b06d7ff40b732343cbd4d28f84",
    "recette": "La valeur digest_cumule portée par assets/etat-chaine.json — borne : le fichier complet de la chaîne n’est pas sur le site ; la chambre affiche le digest déclaré par l’état publié.",
    "role": "La chaîne des réponses de l’agente : chaque maillon est la somme de son précédent, scellée en SHA-256, et le digest cumulé atteste l’ensemble.",
-   "derniere_croissance": "État rafraîchi à la construction de la version 63 : 4631 maillons, sommet nº 4630 (23 novembre 2026). À partir de la version 59, la chambre se rafraîchit à chaque version."
+   "derniere_croissance": "État rafraîchi à la construction de la version 64 : 4631 maillons, sommet nº 4630 (25 novembre 2026). À partir de la version 59, la chambre se rafraîchit à chaque version."
   },
   {
    "id": "coffre",
@@ -45,10 +45,10 @@
    "id": "versions",
    "nom": "Les Versions",
    "source": "assets/journal-mises-a-jour.json",
-   "digest": "ce736bfca4163657bfb71815fbfc91d2734fffe0f65e88c99316edad91beefb5",
-   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json, tel que servi — 57 entrées à la version 63.",
+   "digest": "c64207e8a7701717f23fbcd4ea93b2d09016354df97fb37f3608e6b926604ac4",
+   "recette": "SHA-256 des octets de assets/journal-mises-a-jour.json, tel que servi — 58 entrées à la version 64.",
    "role": "Le journal des mises à jour du site : chaque version et ses points, jamais de remplissage — la croissance de cette mémoire, écrite.",
-   "derniere_croissance": "Version 63 — l'accueil plat, casse-la toi-même, les jetons publiés, 23 novembre 2026."
+   "derniere_croissance": "Version 64 — le dépôt public des empreintes, revérifiable par Merkle, et le dépôt de la même empreinte dans Bitcoin depuis la page, 25 novembre 2026."
   },
   {
    "id": "archives",
@@ -192,7 +192,7 @@
    "preuve": "Le bouton « Vérifie le cerveau » du panneau Mémoire recalcule chaque digest de chambre depuis sa source, puis la racine : la racine affichée égale la recalculée, ou l’écart est dit."
   }
  ],
- "racine_cerveau": "2dc6066b21e796a0a401f66282ad91b5c1bb676d2d026e9771af5187f57220bd",
+ "racine_cerveau": "4e1a4b4f52e6bcb540c401829604602103104133834b771699fb8a9b73011950",
  "recette_racine": "Arbre de Merkle sur les six digests de chambres, dans l’ordre du manifeste — même recette que l’arbre du coffre (assets/merkle.json) : feuille = SHA-256 de la chaîne hexadécimale du digest ; nœud = SHA-256 de la concaténation (hex gauche + hex droite) ; dernier digest dupliqué si le niveau est impair ; niveaux [6, 3, 2, 1].",
  "niveaux": [
   [
@@ -200,21 +200,21 @@
    "24174b4529b43acd4a4568e5d9b8860864b6f4fb3451a3467faaf55e096072e5",
    "87cc10ae60117f9fa2fafb2da470662b6092387ed8da7cc70fbd559a2b075e92",
    "948bf9b20a935eb4d9e96894b9939f176b60a8a928a62c5adb6f11e51a001099",
-   "c89af061132f7c208cb99d6a937b8ccc3b370730cb4accf94694ae6b7b8a2fb8",
+   "cbf458bcb94b4a32249017df235352ccd519cf9e32314d44b63718c4f04e9b54",
    "2e9cfd6fd8842b9e3e2a8ded63a2a820476bde9febc0d5b402c2633a6a6b3bfd"
   ],
   [
    "b21ad663ffd7f6b1fdb19a122922b4c27f5ebb6a18735bb508a7b384dbff1946",
    "d2b32d49e2af130774e58adb36aba547aba3d9789a4dd3e470cedbdec428db74",
-   "b8115a35df30a7c88eb6ff3e3ef4e8d736fb2114f3d5386e1f301f502f63ea9e",
-   "b8115a35df30a7c88eb6ff3e3ef4e8d736fb2114f3d5386e1f301f502f63ea9e"
+   "2c0f738ca63cc837471528173d8d60a0b3a8fed9e9d81761e51f81d439c13046",
+   "2c0f738ca63cc837471528173d8d60a0b3a8fed9e9d81761e51f81d439c13046"
   ],
   [
    "93bbbabb157c47ad4dc21b5aaa33f07119e0cb233e871900f41857a0caa87bb4",
-   "c89689b79e062ef269780792d6b43d191cbfa2bb375515c06c180491f7e1c76f"
+   "0419670db6bbe8db3920d27eea480bbd3423fc62bb2908cda8f49f08574496bc"
   ],
   [
-   "2c4a927a0285b1294bb92539aa6ce4a8232b1d566464c346ebc4e6a67865ec0e"
+   "4e1a4b4f52e6bcb540c401829604602103104133834b771699fb8a9b73011950"
   ]
  ],
  "propriete": {

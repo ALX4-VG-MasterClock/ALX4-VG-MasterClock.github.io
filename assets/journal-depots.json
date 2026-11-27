@@ -1,9 +1,10 @@
 {
  "ancrages": "Aucun ancrage de ce journal n'existe encore. La racine courante sera ancrée à chaque version du site et au moins une fois par mois, à compter du premier ancrage — qui suivra la première entrée inscrite : OpenTimestamps/Bitcoin systématique, RFC 3161 à chaque ancrage de version. Chaque ancrage posé sera consigné ici avec sa preuve, et ce libellé passera au présent pour ce qui aura été fait. Seuls des nombres partent chez les tiers d'ancrage.",
- "aucun_autre_champ": "Aucun champ libre, aucun nom, aucune identité, aucun nom de fichier : le dépôt est un nombre, pas un message.",
+ "aucun_autre_champ": "Aucun nom, aucune identité, aucun nom de fichier, aucune donnée personnelle : le dépôt est un nombre (l'empreinte), sa date d'inscription, et — seulement si le déposant le choisit — un court libellé. Rien d'autre ne part, rien d'autre n'est gardé.",
  "champs_entree": {
   "date": "ISO 8601 avec fuseau, America/Toronto — date et heure d'inscription",
   "empreinte": "64 caractères hexadécimaux — l'empreinte SHA-256 déposée, et rien d'autre",
+  "etiquette": "optionnel — libellé court choisi par le déposant, publié tel quel à côté de son empreinte ; ce n'est ni un nom, ni une identité, ni un nom de fichier : un repère de lecture, rien de plus. Absent = aucun libellé.",
   "sceau": "64 caractères hexadécimaux — SHA-256( sceau_prec ‖ empreinte ‖ date )",
   "sceau_prec": "64 caractères hexadécimaux — sceau de l'entrée précédente",
   "seq": "entier, à partir de 1 — position de l'entrée dans le journal"
@@ -11,6 +12,7 @@
  "compte": 0,
  "date_ouverture": "2026-11-04",
  "entrees": [],
+ "extension_v64": "Version 64 du site (25 novembre 2026) — le dépôt public devient revérifiable de bout en bout : le journal gagne son arbre de Merkle (champ « merkle ») et l'étiquette optionnelle des entrées (structure 2) ; la page « Dépose ton empreinte » affiche le registre public des dépôts et revérifie chaque dépôt par son chemin de Merkle, dans le navigateur du visiteur. La recette de chaînage des sceaux, la genèse et les entrées (aucune) sont inchangées par cette extension.",
  "fonction": "Dépose ton empreinte",
  "genese": {
   "champ_a_figer_au_lancement": "racine_cerveau_au_lancement",
@@ -20,11 +22,20 @@
   "seq": 0
  },
  "journal": "journal-des-depots",
+ "merkle": {
+  "arbre": "merkle-depots/v1",
+  "chemins": {},
+  "nombre_feuilles": 0,
+  "racine": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "racine_registre_vide": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recette": "Feuilles : les entrées du journal, dans l'ordre des seq. Digest d'une feuille : SHA-256 hexadécimal du JSON canonique de l'entrée {date, empreinte, etiquette, seq} — clés triées, séparateurs compacts, UTF-8 ; etiquette vaut la chaîne vide quand l'entrée n'en porte pas. Nœud interne : SHA-256 hexadécimal de la concaténation (hex de gauche + hex de droite) ; si un niveau compte un nombre impair de digests, le dernier est dupliqué. La racine est le digest unique final. Registre vide (aucune feuille) : la racine est le SHA-256 de la chaîne vide. Chemins : pour chaque seq, la liste des digests voisins, de la feuille vers la racine, chacun avec son côté (gauche ou droite) — de quoi recalculer la racine depuis la seule feuille, sans dépendre de l'opérateur du site.",
+  "statut": "Mécanisme posé à la version 64 du site (25 novembre 2026). Le registre est vide : la racine publiée ci-dessus est celle du registre vide, recalculable par quiconque avec n'importe quel outil SHA-256. À la première entrée, la racine et le chemin de la feuille seront recalculés et publiés ici, à la même place."
+ },
  "nature": "Journal public chaîné : entrées appendues seulement, jamais réécrites. Publié tel quel à assets/journal-depots.json à la version d'ouverture (v49).",
  "racine_courante": "2f64fa6a9776b7e966d0776f733306cb7a36a011294a5423fd3f269b6a9dc920",
  "recette_chainage": "sceau(seq) = SHA-256( sceau_prec ‖ empreinte ‖ date ) — où ‖ est la concaténation des chaînes hexadécimales et de la date telles qu'écrites dans l'entrée. La racine du journal à un instant = le sceau de sa dernière entrée.",
  "spec": "Spécification du journal tenue au dossier de l’auteur (document interne du 4 novembre 2026) ; la recette et les règles du journal sont énoncées en entier dans ce fichier même — champs des entrées, recette de chaînage, genèse.",
  "statut": "Ouvert à la version 49 du site (4 novembre 2026) — aucune entrée réelle à l'ouverture ; la première inscription sera le dépôt d'épreuve de SoPHIa, vérifié de bout en bout avant tout dépôt de visiteur.",
  "version_ouverture": "v49",
- "version_structure": 1
+ "version_structure": 2
 }
