@@ -1,437 +1,556 @@
 {
- "nom": "SoPHIa, mémoire cumulative chaînée",
- "format": "noyau-index-eclats/v1",
- "date": "2026-11-25",
- "principe": "Le noyau du site répond à partir de ce qu’il tient : son index, construit d’avance depuis les passages du site, en éclats par chambre. Tout s’exécute dans l’appareil du visiteur ; aucune base de données, aucun serveur, rien ne part.",
- "racine_merkle_passages": "23ba423356aafdb6e5da35e8e71745a013eab0f19bcff4b137bbd05ac1e8533d",
- "nombre_passages": 216,
- "nombre_mots_indexes": 8560,
- "seuils": {
-  "couverture": 0.5,
-  "score": 3,
-  "max_passages": 7
- },
- "exclusions": [
-  "index.html#manifeste — le tableau des sceaux : son texte porte les sceaux courants du site, il change à chaque re-scellement ; ce n’est pas une réponse."
- ],
- "actions": {
-  "passages_porteurs": 21,
-  "total": 42,
-  "principe": "Chaque réponse du noyau dont un passage tenu mène à un parcours ou à une démarche porte le bouton de l’action : le libellé nomme le geste, le lien mène à l’étape exacte (page + ancre + fragment). Sans action du site qui corresponde : la porte du courriel, seule."
- },
- "chambres": [
-  {
-   "panneau": "acces",
-   "panneauNom": "Mes renseignements",
-   "fichier": "chambre-acces.json",
-   "passages": 1,
-   "octets": 21816
+  "nom": "SoPHIa, mémoire cumulative chaînée",
+  "format": "noyau-index-eclats/v1",
+  "date": "2026-11-25",
+  "principe": "Le noyau du site répond à partir de ce qu’il tient : son index, construit d’avance depuis les passages du site, en éclats par chambre. Tout s’exécute dans l’appareil du visiteur ; aucune base de données, aucun serveur, rien ne part.",
+  "racine_merkle_passages": "fe9a74f9950f458f822d7ed2f8b7281f2eff65ed02ce1bdad6a1a259011b1249",
+  "nombre_passages": 243,
+  "nombre_mots_indexes": 9448,
+  "seuils": {
+    "couverture": 0.5,
+    "score": 3,
+    "max_passages": 7
   },
-  {
-   "panneau": "accueil",
-   "panneauNom": "Accueil",
-   "fichier": "chambre-accueil.json",
-   "passages": 17,
-   "octets": 123507
+  "exclusions": [
+    "index.html#manifeste — le tableau des sceaux : son texte porte les sceaux courants du site, il change à chaque re-scellement ; ce n’est pas une réponse."
+  ],
+  "actions": {
+    "passages_porteurs": 21,
+    "total": 42,
+    "principe": "Chaque réponse du noyau dont un passage tenu mène à un parcours ou à une démarche porte le bouton de l’action : le libellé nomme le geste, le lien mène à l’étape exacte (page + ancre + fragment). Sans action du site qui corresponde : la porte du courriel, seule."
   },
-  {
-   "panneau": "aller",
-   "panneauNom": "Aller chercher ce qu’ils ont récolté",
-   "fichier": "chambre-aller.json",
-   "passages": 12,
-   "octets": 130903
-  },
-  {
-   "panneau": "ancrage",
-   "panneauNom": "Ancrage — les preuves chez les tiers",
-   "fichier": "chambre-ancrage.json",
-   "passages": 8,
-   "octets": 155729
-  },
-  {
-   "panneau": "application",
-   "panneauNom": "L’application",
-   "fichier": "chambre-application.json",
-   "passages": 1,
-   "octets": 11220
-  },
-  {
-   "panneau": "articles",
-   "panneauNom": "Articles",
-   "fichier": "chambre-articles.json",
-   "passages": 1,
-   "octets": 24595
-  },
-  {
-   "panneau": "assurances",
-   "panneauNom": "Les assurances",
-   "fichier": "chambre-assurances.json",
-   "passages": 7,
-   "octets": 79960
-  },
-  {
-   "panneau": "bris",
-   "panneauNom": "La chambre des bris",
-   "fichier": "chambre-bris.json",
-   "passages": 1,
-   "octets": 8196
-  },
-  {
-   "panneau": "calendrier",
-   "panneauNom": "Le calendrier 13 × 28",
-   "fichier": "chambre-calendrier.json",
-   "passages": 10,
-   "octets": 68601
-  },
-  {
-   "panneau": "cameras",
-   "panneauNom": "Caméras et appareils connectés",
-   "fichier": "chambre-cameras.json",
-   "passages": 5,
-   "octets": 31503
-  },
-  {
-   "panneau": "capsules",
-   "panneauNom": "Capsules",
-   "fichier": "chambre-capsules.json",
-   "passages": 2,
-   "octets": 24760
-  },
-  {
-   "panneau": "cerveau",
-   "panneauNom": "Parle avec le site web SoPHIa",
-   "fichier": "chambre-cerveau.json",
-   "passages": 7,
-   "octets": 50081
-  },
-  {
-   "panneau": "chercheur",
-   "panneauNom": "Le chercheur",
-   "fichier": "chambre-chercheur.json",
-   "passages": 4,
-   "octets": 56986
-  },
-  {
-   "panneau": "conditions",
-   "panneauNom": "Le registre des conditions",
-   "fichier": "chambre-conditions.json",
-   "passages": 3,
-   "octets": 56600
-  },
-  {
-   "panneau": "conditions-site",
-   "panneauNom": "Conditions d’utilisation du site",
-   "fichier": "chambre-conditions-site.json",
-   "passages": 10,
-   "octets": 64741
-  },
-  {
-   "panneau": "confidentialite",
-   "panneauNom": "Confidentialité et Loi 25",
-   "fichier": "chambre-confidentialite.json",
-   "passages": 1,
-   "octets": 43610
-  },
-  {
-   "panneau": "contact",
-   "panneauNom": "contact",
-   "fichier": "chambre-contact.json",
-   "passages": 1,
-   "octets": 3892
-  },
-  {
-   "panneau": "decisions",
-   "panneauNom": "Le registre des décisions",
-   "fichier": "chambre-decisions.json",
-   "passages": 2,
-   "octets": 34674
-  },
-  {
-   "panneau": "depose-empreinte",
-   "panneauNom": "Dépose ton empreinte",
-   "fichier": "chambre-depose-empreinte.json",
-   "passages": 4,
-   "octets": 52250
-  },
-  {
-   "panneau": "don",
-   "panneauNom": "Faites un don",
-   "fichier": "chambre-don.json",
-   "passages": 4,
-   "octets": 18443
-  },
-  {
-   "panneau": "donnees",
-   "panneauNom": "Bibliothèque des lois",
-   "fichier": "chambre-donnees.json",
-   "passages": 1,
-   "octets": 148509
-  },
-  {
-   "panneau": "droits",
-   "panneauNom": "Droits et lois",
-   "fichier": "chambre-droits.json",
-   "passages": 2,
-   "octets": 35463
-  },
-  {
-   "panneau": "ecrire",
-   "panneauNom": "Écrire à SoPHIa",
-   "fichier": "chambre-ecrire.json",
-   "passages": 1,
-   "octets": 39667
-  },
-  {
-   "panneau": "edition",
-   "panneauNom": "L’édition du jour",
-   "fichier": "chambre-edition.json",
-   "passages": 1,
-   "octets": 8569
-  },
-  {
-   "panneau": "etat51",
-   "panneauNom": "Le 51e État numérique",
-   "fichier": "chambre-etat51.json",
-   "passages": 6,
-   "octets": 113984
-  },
-  {
-   "panneau": "evolution",
-   "panneauNom": "Évolution",
-   "fichier": "chambre-evolution.json",
-   "passages": 4,
-   "octets": 359811
-  },
-  {
-   "panneau": "explication",
-   "panneauNom": "Demander l’explication d’une décision automatisée",
-   "fichier": "chambre-explication.json",
-   "passages": 3,
-   "octets": 25910
-  },
-  {
-   "panneau": "exposition",
-   "panneauNom": "Ton exposition",
-   "fichier": "chambre-exposition.json",
-   "passages": 7,
-   "octets": 49249
-  },
-  {
-   "panneau": "faq",
-   "panneauNom": "faq",
-   "fichier": "chambre-faq.json",
-   "passages": 1,
-   "octets": 9136
-  },
-  {
-   "panneau": "fenetres",
-   "panneauNom": "Le minuteur de fenêtre",
-   "fichier": "chambre-fenetres.json",
-   "passages": 1,
-   "octets": 9919
-  },
-  {
-   "panneau": "for",
-   "panneauNom": "Le for est ailleurs, tes recours sont ici",
-   "fichier": "chambre-for.json",
-   "passages": 4,
-   "octets": 65289
-  },
-  {
-   "panneau": "ingenierie",
-   "panneauNom": "Le travail d'ingénierie",
-   "fichier": "chambre-ingenierie.json",
-   "passages": 1,
-   "octets": 17845
-  },
-  {
-   "panneau": "instance",
-   "panneauNom": "Parler à l'instance",
-   "fichier": "chambre-instance.json",
-   "passages": 1,
-   "octets": 6915
-  },
-  {
-   "panneau": "memoire",
-   "panneauNom": "Mémoire",
-   "fichier": "chambre-memoire.json",
-   "passages": 5,
-   "octets": 168110
-  },
-  {
-   "panneau": "meteo",
-   "panneauNom": "Météo — l’ancre",
-   "fichier": "chambre-meteo.json",
-   "passages": 1,
-   "octets": 42062
-  },
-  {
-   "panneau": "methode",
-   "panneauNom": "Méthode",
-   "fichier": "chambre-methode.json",
-   "passages": 3,
-   "octets": 76414
-  },
-  {
-   "panneau": "methode-30",
-   "panneauNom": "La méthode en 30 secondes",
-   "fichier": "chambre-methode-30.json",
-   "passages": 1,
-   "octets": 10315
-  },
-  {
-   "panneau": "miroir",
-   "panneauNom": "Le miroir",
-   "fichier": "chambre-miroir.json",
-   "passages": 3,
-   "octets": 21432
-  },
-  {
-   "panneau": "modes",
-   "panneauNom": "Les deux modes",
-   "fichier": "chambre-modes.json",
-   "passages": 8,
-   "octets": 82610
-  },
-  {
-   "panneau": "parcours",
-   "panneauNom": "Parcours — l'histoire",
-   "fichier": "chambre-parcours.json",
-   "passages": 4,
-   "octets": 39763
-  },
-  {
-   "panneau": "partenaires",
-   "panneauNom": "Partenaires et soutien",
-   "fichier": "chambre-partenaires.json",
-   "passages": 6,
-   "octets": 61939
-  },
-  {
-   "panneau": "petitions",
-   "panneauNom": "Pétitions",
-   "fichier": "chambre-petitions.json",
-   "passages": 1,
-   "octets": 44652
-  },
-  {
-   "panneau": "politique-site",
-   "panneauNom": "Politique du site",
-   "fichier": "chambre-politique-site.json",
-   "passages": 10,
-   "octets": 118164
-  },
-  {
-   "panneau": "preuves",
-   "panneauNom": "Preuves",
-   "fichier": "chambre-preuves.json",
-   "passages": 4,
-   "octets": 30357
-  },
-  {
-   "panneau": "recu",
-   "panneauNom": "Le reçu de visite",
-   "fichier": "chambre-recu.json",
-   "passages": 1,
-   "octets": 25144
-  },
-  {
-   "panneau": "recus",
-   "panneauNom": "Tes reçus et tes gestes",
-   "fichier": "chambre-recus.json",
-   "passages": 1,
-   "octets": 29916
-  },
-  {
-   "panneau": "registre",
-   "panneauNom": "Registre",
-   "fichier": "chambre-registre.json",
-   "passages": 1,
-   "octets": 15262
-  },
-  {
-   "panneau": "repertoire",
-   "panneauNom": "repertoire",
-   "fichier": "chambre-repertoire.json",
-   "passages": 1,
-   "octets": 7090
-  },
-  {
-   "panneau": "sceller",
-   "panneauNom": "Sceller — l'atelier",
-   "fichier": "chambre-sceller.json",
-   "passages": 1,
-   "octets": 7793
-  },
-  {
-   "panneau": "suivi",
-   "panneauNom": "Ton dossier de suivi",
-   "fichier": "chambre-suivi.json",
-   "passages": 4,
-   "octets": 33372
-  },
-  {
-   "panneau": "suivi-familial",
-   "panneauNom": "Le suivi familial et la localisation",
-   "fichier": "chambre-suivi-familial.json",
-   "passages": 6,
-   "octets": 90017
-  },
-  {
-   "panneau": "suspendu",
-   "panneauNom": "Compte suspendu : ravoir, savoir, reprendre",
-   "fichier": "chambre-suspendu.json",
-   "passages": 5,
-   "octets": 55421
-  },
-  {
-   "panneau": "temps",
-   "panneauNom": "Temps — l’ancre",
-   "fichier": "chambre-temps.json",
-   "passages": 1,
-   "octets": 102855
-  },
-  {
-   "panneau": "transits",
-   "panneauNom": "La carte des transits",
-   "fichier": "chambre-transits.json",
-   "passages": 6,
-   "octets": 123701
-  },
-  {
-   "panneau": "transmission",
-   "panneauNom": "Faire pareil",
-   "fichier": "chambre-transmission.json",
-   "passages": 1,
-   "octets": 20704
-  },
-  {
-   "panneau": "transparence",
-   "panneauNom": "transparence",
-   "fichier": "chambre-transparence.json",
-   "passages": 1,
-   "octets": 13201
-  },
-  {
-   "panneau": "verifier",
-   "panneauNom": "Vérifier",
-   "fichier": "chambre-verifier.json",
-   "passages": 4,
-   "octets": 77226
-  },
-  {
-   "panneau": "vision",
-   "panneauNom": "vision",
-   "fichier": "chambre-vision.json",
-   "passages": 1,
-   "octets": 5328
-  },
-  {
-   "panneau": "voir",
-   "panneauNom": "Voir mon cerveau",
-   "fichier": "chambre-voir.json",
-   "passages": 2,
-   "octets": 19856
-  }
- ]
+  "chambres": [
+    {
+      "panneau": "acces",
+      "panneauNom": "Mes renseignements",
+      "fichier": "chambre-acces.json",
+      "passages": 1,
+      "octets": 21816
+    },
+    {
+      "panneau": "accueil",
+      "panneauNom": "Accueil",
+      "fichier": "chambre-accueil.json",
+      "passages": 18,
+      "octets": 175632
+    },
+    {
+      "panneau": "aller",
+      "panneauNom": "Aller chercher ce qu’ils ont récolté",
+      "fichier": "chambre-aller.json",
+      "passages": 12,
+      "octets": 130903
+    },
+    {
+      "panneau": "ancrage",
+      "panneauNom": "Ancrage — les preuves chez les tiers",
+      "fichier": "chambre-ancrage.json",
+      "passages": 8,
+      "octets": 155729
+    },
+    {
+      "panneau": "application",
+      "panneauNom": "L’application",
+      "fichier": "chambre-application.json",
+      "passages": 1,
+      "octets": 11220
+    },
+    {
+      "panneau": "articles",
+      "panneauNom": "Articles",
+      "fichier": "chambre-articles.json",
+      "passages": 1,
+      "octets": 24595
+    },
+    {
+      "panneau": "assurances",
+      "panneauNom": "Les assurances",
+      "fichier": "chambre-assurances.json",
+      "passages": 7,
+      "octets": 80524
+    },
+    {
+      "panneau": "bris",
+      "panneauNom": "La chambre des bris",
+      "fichier": "chambre-bris.json",
+      "passages": 1,
+      "octets": 8196
+    },
+    {
+      "panneau": "calendrier",
+      "panneauNom": "Le calendrier 13 × 28",
+      "fichier": "chambre-calendrier.json",
+      "passages": 10,
+      "octets": 68601
+    },
+    {
+      "panneau": "cameras",
+      "panneauNom": "Caméras et appareils connectés",
+      "fichier": "chambre-cameras.json",
+      "passages": 5,
+      "octets": 31503
+    },
+    {
+      "panneau": "capsules",
+      "panneauNom": "Capsules",
+      "fichier": "chambre-capsules.json",
+      "passages": 2,
+      "octets": 24760
+    },
+    {
+      "panneau": "cerveau",
+      "panneauNom": "Parle avec le site web SoPHIa",
+      "fichier": "chambre-cerveau.json",
+      "passages": 7,
+      "octets": 51209
+    },
+    {
+      "panneau": "chercheur",
+      "panneauNom": "Le chercheur",
+      "fichier": "chambre-chercheur.json",
+      "passages": 4,
+      "octets": 56986
+    },
+    {
+      "panneau": "conditions",
+      "panneauNom": "Le registre des conditions",
+      "fichier": "chambre-conditions.json",
+      "passages": 3,
+      "octets": 56600
+    },
+    {
+      "panneau": "conditions-site",
+      "panneauNom": "Conditions d’utilisation du site",
+      "fichier": "chambre-conditions-site.json",
+      "passages": 10,
+      "octets": 64741
+    },
+    {
+      "panneau": "confidentialite",
+      "panneauNom": "Confidentialité et Loi 25",
+      "fichier": "chambre-confidentialite.json",
+      "passages": 1,
+      "octets": 43610
+    },
+    {
+      "panneau": "contact",
+      "panneauNom": "contact",
+      "fichier": "chambre-contact.json",
+      "passages": 1,
+      "octets": 3892
+    },
+    {
+      "panneau": "decisions",
+      "panneauNom": "Le registre des décisions",
+      "fichier": "chambre-decisions.json",
+      "passages": 2,
+      "octets": 34674
+    },
+    {
+      "panneau": "depose-empreinte",
+      "panneauNom": "Dépose ton empreinte",
+      "fichier": "chambre-depose-empreinte.json",
+      "passages": 4,
+      "octets": 52814
+    },
+    {
+      "panneau": "don",
+      "panneauNom": "Faites un don",
+      "fichier": "chambre-don.json",
+      "passages": 4,
+      "octets": 18443
+    },
+    {
+      "panneau": "donnees",
+      "panneauNom": "Bibliothèque des lois",
+      "fichier": "chambre-donnees.json",
+      "passages": 1,
+      "octets": 148509
+    },
+    {
+      "panneau": "droits",
+      "panneauNom": "Droits et lois",
+      "fichier": "chambre-droits.json",
+      "passages": 2,
+      "octets": 35463
+    },
+    {
+      "panneau": "ecrire",
+      "panneauNom": "Écrire à SoPHIa",
+      "fichier": "chambre-ecrire.json",
+      "passages": 1,
+      "octets": 39667
+    },
+    {
+      "panneau": "edition",
+      "panneauNom": "L’édition du jour",
+      "fichier": "chambre-edition.json",
+      "passages": 1,
+      "octets": 8663
+    },
+    {
+      "panneau": "etat51",
+      "panneauNom": "Le 51e État numérique",
+      "fichier": "chambre-etat51.json",
+      "passages": 6,
+      "octets": 113984
+    },
+    {
+      "panneau": "evolution",
+      "panneauNom": "Évolution",
+      "fichier": "chambre-evolution.json",
+      "passages": 5,
+      "octets": 365958
+    },
+    {
+      "panneau": "explication",
+      "panneauNom": "Demander l’explication d’une décision automatisée",
+      "fichier": "chambre-explication.json",
+      "passages": 3,
+      "octets": 25910
+    },
+    {
+      "panneau": "exposition",
+      "panneauNom": "Ton exposition",
+      "fichier": "chambre-exposition.json",
+      "passages": 7,
+      "octets": 49249
+    },
+    {
+      "panneau": "faq",
+      "panneauNom": "faq",
+      "fichier": "chambre-faq.json",
+      "passages": 1,
+      "octets": 9136
+    },
+    {
+      "panneau": "fenetres",
+      "panneauNom": "Le minuteur de fenêtre",
+      "fichier": "chambre-fenetres.json",
+      "passages": 1,
+      "octets": 9919
+    },
+    {
+      "panneau": "for",
+      "panneauNom": "Le for est ailleurs, tes recours sont ici",
+      "fichier": "chambre-for.json",
+      "passages": 4,
+      "octets": 65289
+    },
+    {
+      "panneau": "ingenierie",
+      "panneauNom": "Le travail d'ingénierie",
+      "fichier": "chambre-ingenierie.json",
+      "passages": 1,
+      "octets": 17845
+    },
+    {
+      "panneau": "instance",
+      "panneauNom": "Parler à l'instance",
+      "fichier": "chambre-instance.json",
+      "passages": 1,
+      "octets": 6915
+    },
+    {
+      "panneau": "memoire",
+      "panneauNom": "Mémoire",
+      "fichier": "chambre-memoire.json",
+      "passages": 5,
+      "octets": 168110
+    },
+    {
+      "panneau": "meteo",
+      "panneauNom": "Météo — l’ancre",
+      "fichier": "chambre-meteo.json",
+      "passages": 1,
+      "octets": 42062
+    },
+    {
+      "panneau": "methode",
+      "panneauNom": "Méthode",
+      "fichier": "chambre-methode.json",
+      "passages": 3,
+      "octets": 76414
+    },
+    {
+      "panneau": "methode-30",
+      "panneauNom": "La méthode en 30 secondes",
+      "fichier": "chambre-methode-30.json",
+      "passages": 1,
+      "octets": 10315
+    },
+    {
+      "panneau": "miroir",
+      "panneauNom": "Le miroir",
+      "fichier": "chambre-miroir.json",
+      "passages": 3,
+      "octets": 21432
+    },
+    {
+      "panneau": "modes",
+      "panneauNom": "Les deux modes",
+      "fichier": "chambre-modes.json",
+      "passages": 8,
+      "octets": 82610
+    },
+    {
+      "panneau": "parcours",
+      "panneauNom": "Parcours — l'histoire",
+      "fichier": "chambre-parcours.json",
+      "passages": 4,
+      "octets": 39763
+    },
+    {
+      "panneau": "partenaires",
+      "panneauNom": "Partenaires et soutien",
+      "fichier": "chambre-partenaires.json",
+      "passages": 6,
+      "octets": 61939
+    },
+    {
+      "panneau": "petitions",
+      "panneauNom": "Pétitions",
+      "fichier": "chambre-petitions.json",
+      "passages": 1,
+      "octets": 44652
+    },
+    {
+      "panneau": "politique-site",
+      "panneauNom": "Politique du site",
+      "fichier": "chambre-politique-site.json",
+      "passages": 10,
+      "octets": 118164
+    },
+    {
+      "panneau": "preuves",
+      "panneauNom": "Preuves",
+      "fichier": "chambre-preuves.json",
+      "passages": 4,
+      "octets": 30357
+    },
+    {
+      "panneau": "recu",
+      "panneauNom": "Le reçu de visite",
+      "fichier": "chambre-recu.json",
+      "passages": 1,
+      "octets": 25144
+    },
+    {
+      "panneau": "recus",
+      "panneauNom": "Tes reçus et tes gestes",
+      "fichier": "chambre-recus.json",
+      "passages": 1,
+      "octets": 29916
+    },
+    {
+      "panneau": "registre",
+      "panneauNom": "Registre",
+      "fichier": "chambre-registre.json",
+      "passages": 1,
+      "octets": 15262
+    },
+    {
+      "panneau": "repertoire",
+      "panneauNom": "repertoire",
+      "fichier": "chambre-repertoire.json",
+      "passages": 1,
+      "octets": 7090
+    },
+    {
+      "panneau": "sceller",
+      "panneauNom": "Sceller — l'atelier",
+      "fichier": "chambre-sceller.json",
+      "passages": 1,
+      "octets": 7793
+    },
+    {
+      "panneau": "suivi",
+      "panneauNom": "Ton dossier de suivi",
+      "fichier": "chambre-suivi.json",
+      "passages": 4,
+      "octets": 33372
+    },
+    {
+      "panneau": "suivi-familial",
+      "panneauNom": "Le suivi familial et la localisation",
+      "fichier": "chambre-suivi-familial.json",
+      "passages": 6,
+      "octets": 90581
+    },
+    {
+      "panneau": "suspendu",
+      "panneauNom": "Compte suspendu : ravoir, savoir, reprendre",
+      "fichier": "chambre-suspendu.json",
+      "passages": 5,
+      "octets": 55421
+    },
+    {
+      "panneau": "temps",
+      "panneauNom": "Temps — l’ancre",
+      "fichier": "chambre-temps.json",
+      "passages": 1,
+      "octets": 102855
+    },
+    {
+      "panneau": "transits",
+      "panneauNom": "La carte des transits",
+      "fichier": "chambre-transits.json",
+      "passages": 6,
+      "octets": 123701
+    },
+    {
+      "panneau": "transmission",
+      "panneauNom": "Faire pareil",
+      "fichier": "chambre-transmission.json",
+      "passages": 1,
+      "octets": 20704
+    },
+    {
+      "panneau": "transparence",
+      "panneauNom": "transparence",
+      "fichier": "chambre-transparence.json",
+      "passages": 1,
+      "octets": 13201
+    },
+    {
+      "panneau": "verifier",
+      "panneauNom": "Vérifier",
+      "fichier": "chambre-verifier.json",
+      "passages": 4,
+      "octets": 77226
+    },
+    {
+      "panneau": "vision",
+      "panneauNom": "vision",
+      "fichier": "chambre-vision.json",
+      "passages": 1,
+      "octets": 5328
+    },
+    {
+      "panneau": "voir",
+      "panneauNom": "Voir mon cerveau",
+      "fichier": "chambre-voir.json",
+      "passages": 2,
+      "octets": 19856
+    },
+    {
+      "panneau": "recherche",
+      "panneauNom": "Rechercher — dans tout le site, sur place",
+      "fichier": "chambre-recherche.json",
+      "passages": 1,
+      "octets": 5490
+    },
+    {
+      "panneau": "ouverture",
+      "panneauNom": "Tes données",
+      "fichier": "chambre-ouverture.json",
+      "passages": 1,
+      "octets": 13080
+    },
+    {
+      "panneau": "balado",
+      "panneauNom": "Le récit — le balado de l'auteur",
+      "fichier": "chambre-balado.json",
+      "passages": 1,
+      "octets": 6672
+    },
+    {
+      "panneau": "accessibilite",
+      "panneauNom": "Accessibilité",
+      "fichier": "chambre-accessibilite.json",
+      "passages": 1,
+      "octets": 9543
+    },
+    {
+      "panneau": "errata",
+      "panneauNom": "Errata",
+      "fichier": "chambre-errata.json",
+      "passages": 1,
+      "octets": 11108
+    },
+    {
+      "panneau": "glossaire",
+      "panneauNom": "Glossaire",
+      "fichier": "chambre-glossaire.json",
+      "passages": 1,
+      "octets": 14565
+    },
+    {
+      "panneau": "kit-verification",
+      "panneauNom": "Kit de vérification autonome",
+      "fichier": "chambre-kit-verification.json",
+      "passages": 1,
+      "octets": 9930
+    },
+    {
+      "panneau": "note-c2pa",
+      "panneauNom": "Note comparative : deux provenances",
+      "fichier": "chambre-note-c2pa.json",
+      "passages": 1,
+      "octets": 11854
+    },
+    {
+      "panneau": "atelier-chiffrement",
+      "panneauNom": "La phrase",
+      "fichier": "chambre-atelier-chiffrement.json",
+      "passages": 2,
+      "octets": 12035
+    },
+    {
+      "panneau": "404",
+      "panneauNom": "Cette page n’existe pas — et c’est vérifiable.",
+      "fichier": "chambre-404.json",
+      "passages": 1,
+      "octets": 3098
+    },
+    {
+      "panneau": "edition-2026-11-04",
+      "panneauNom": "Édition du mercredi 4 novembre 2026",
+      "fichier": "chambre-edition-2026-11-04.json",
+      "passages": 1,
+      "octets": 87243
+    },
+    {
+      "panneau": "edition-2026-11-05",
+      "panneauNom": "Édition du jeudi 5 novembre 2026",
+      "fichier": "chambre-edition-2026-11-05.json",
+      "passages": 1,
+      "octets": 23637
+    },
+    {
+      "panneau": "edition-2026-11-06",
+      "panneauNom": "Édition du vendredi 6 novembre 2026",
+      "fichier": "chambre-edition-2026-11-06.json",
+      "passages": 1,
+      "octets": 25725
+    },
+    {
+      "panneau": "edition-2026-11-07",
+      "panneauNom": "Édition du samedi 7 novembre 2026",
+      "fichier": "chambre-edition-2026-11-07.json",
+      "passages": 1,
+      "octets": 27572
+    },
+    {
+      "panneau": "agir-sur-mes-donnees",
+      "panneauNom": "Agir sur mes données",
+      "fichier": "chambre-agir-sur-mes-donnees.json",
+      "passages": 8,
+      "octets": 67385
+    },
+    {
+      "panneau": "cerveau-coquillage",
+      "panneauNom": "Cerveau coquillage",
+      "fichier": "chambre-cerveau-coquillage.json",
+      "passages": 1,
+      "octets": 9336
+    },
+    {
+      "panneau": "transparence-audit-unisson",
+      "panneauNom": "Transparence",
+      "fichier": "chambre-transparence-audit-unisson.json",
+      "passages": 1,
+      "octets": 28740
+    }
+  ]
 }
