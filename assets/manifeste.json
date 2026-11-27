@@ -1,6 +1,6 @@
 {
  "format": "manifeste-site/v1",
- "version": "Version 64 — le dépôt public revérifiable (pages par chambre)",
+ "version": "Version suivante (chantier, non publiée) — base Version 64 + la chambre du cerveau (étage IA)",
  "date": "2026-11-25",
  "principe": "Le site web peut être un cerveau qui communique (Alexandre, 23 novembre 2026) : ce manifeste est son noyau — il liste les pages et leurs endroits, avec l’empreinte de chacun, et chaque page porte en tête l’empreinte du manifeste auquel elle pend.",
  "precedent": "6743b0df1a46b55d18ff1a1f520efac6d64d9d0dd316eff6f09ea91926c9db34",
@@ -18,13 +18,26 @@
    "fichier": "index.html",
    "panneau": "accueil+methode-30",
    "nom": "Accueil — le noyau (avec la Méthode en 30 secondes)",
-   "empreinte": "d5b4cfeba771a6171f95589288164a82de2db525e8783105b2d9d9dd97418b6e",
-   "octets": 345263,
+   "empreinte": "3c591bba9ca597eb7ff7e7f6e8d6c5da8e897e9d83adfa0814f7dfdf079b8ed7",
+   "octets": 29672,
    "endroits": [
     {
      "id": "accueil-plat",
-     "empreinte": "039dd857fa856eda27f9f3d6c8cdb6207f12e326e0f10bab7540ed2cc0dea5b5"
+     "empreinte": "22815b16a9eb31bba940531acc53930797255152250d6cc0a24e83a99e730c23"
     },
+    {
+     "id": "methode-30",
+     "empreinte": "5579482642ce9553cc01bdbc757117ef808e7b25ed13e8a8b541d74b4c8ef2d8"
+    }
+   ]
+  },
+  {
+   "fichier": "voyage.html",
+   "panneau": "voyage",
+   "nom": "Le Voyage",
+   "empreinte": "9dc50e0229e5419fc189ebae06eadd923cbbc7a3c7e1e4e160d5710a7cf021b5",
+   "octets": 185462,
+   "endroits": [
     {
      "id": "gradMetal1",
      "empreinte": "a474bb58be4c9d4281e0b62308795cb94e1f738dd55578917d1ec0938ab00117"
@@ -72,34 +85,6 @@
     {
      "id": "surface-compteurs",
      "empreinte": "d45348784e70aedb25b6f4b19776dac4fd663d22e7038870558ed45918d7ce40"
-    },
-    {
-     "id": "surface-gestes",
-     "empreinte": "5db779494054df623738391c3d1b06ef8f2d3109e4ddc2ab02e5365036a21ae3"
-    },
-    {
-     "id": "surface-histoire",
-     "empreinte": "a3e74c053138d0b2a1fd8c8e8cbf1fffb588c8e76bfac6644bcf5368461784f7"
-    },
-    {
-     "id": "recu-visite-accueil",
-     "empreinte": "14ccfb3a31c9d68de618dfcbff56f1056cfd3a7bce9be53f44cfd2a1212464a5"
-    },
-    {
-     "id": "favoris",
-     "empreinte": "80983cf6fd4936e99cafeafba9bce1bf3fdfb995c591a99f5556ae5311d88e77"
-    },
-    {
-     "id": "manifeste",
-     "empreinte": "6929a0c41267e5534d3be02ae2ac604c17bac8e2811a55c53850092733a209de"
-    },
-    {
-     "id": "foyers",
-     "empreinte": "aee82693f7752aca63a0a33b18beedf6f97966867e22e5a190fe80b94316d164"
-    },
-    {
-     "id": "methode-30",
-     "empreinte": "5579482642ce9553cc01bdbc757117ef808e7b25ed13e8a8b541d74b4c8ef2d8"
     }
    ]
   },
@@ -107,8 +92,8 @@
    "fichier": "cerveau.html",
    "panneau": "cerveau",
    "nom": "Parle avec le site web SoPHIa",
-   "empreinte": "0354cf6d9e86a617c92c4e884667cd7891871aa567f6300870ab67f5a5040fdd",
-   "octets": 95068,
+   "empreinte": "9cb66ac099e124876268a8fcb8d1ba7e9a9677d60077076f65229df1f7265297",
+   "octets": 99179,
    "endroits": [
     {
      "id": "cerveau",
@@ -141,11 +126,36 @@
    ]
   },
   {
+   "fichier": "chambre-du-cerveau.html",
+   "panneau": "chambre-du-cerveau",
+   "nom": "La chambre du cerveau — la pièce où la mémoire cumulative du site devient son cerveau",
+   "empreinte": "699d4e3da47a46214c2d8af67f13da1693beebe20ce2913456b8e07525c8b73c",
+   "octets": 88376,
+   "endroits": [
+    {
+     "id": "chambre-du-cerveau",
+     "empreinte": "e58e17e62b3f94d1bad0523d962e58764e31604f5de28fed527f6ce301fd739b"
+    },
+    {
+     "id": "cerveau-mesures",
+     "empreinte": "d714fe807e70ca3e83bed7adc22a5a5e6acbe7795fabd2bb9a15254f9942368d"
+    },
+    {
+     "id": "cerveau-conversation",
+     "empreinte": "4e9dc3465136cd868a15789d1157eac73399eb5a719a473918657442578e1a8c"
+    },
+    {
+     "id": "cerveau-chaine",
+     "empreinte": "c9ed93d49a9f7d1ad112bce2b394e0db28faf6163cff86ee3ad4bbe63df2bbdf"
+    }
+   ]
+  },
+  {
    "fichier": "temps.html",
    "panneau": "temps",
    "nom": "Temps — l’ancre",
-   "empreinte": "c1702f64a0ee9ff8f41e6347ed9efa1d223813b506e78bb6d847871af920f7ec",
-   "octets": 132983,
+   "empreinte": "b1e0086dd817c26d42e3501b02853f28011b64067172d792d0b8c417d74b5848",
+   "octets": 137094,
    "endroits": [
     {
      "id": "temps",
@@ -169,8 +179,8 @@
    "fichier": "calendrier.html",
    "panneau": "calendrier",
    "nom": "Le calendrier 13 × 28",
-   "empreinte": "b7b5a4c411842f21802522c2df9fc5d048135eb0eb69107966635d10e8d729c7",
-   "octets": 102041,
+   "empreinte": "0ca07c4532f6f174697a99385a2167b2a3e6adf3f456b37f15261327cfd48d90",
+   "octets": 106152,
    "endroits": [
     {
      "id": "calendrier",
@@ -218,8 +228,8 @@
    "fichier": "meteo.html",
    "panneau": "meteo",
    "nom": "Météo — l’ancre",
-   "empreinte": "b106935a93d384efb700dae040ae4826d776b4a56ee029a1f4b9f43a1aa439a9",
-   "octets": 99443,
+   "empreinte": "d3deb3be2407692faf14aca8ba1244d25e537f3eb777d68ad9d6b31c5804ee14",
+   "octets": 103554,
    "endroits": [
     {
      "id": "meteo",
@@ -231,8 +241,8 @@
    "fichier": "methode.html",
    "panneau": "methode",
    "nom": "Méthode",
-   "empreinte": "3f5f0a36abbdc12326d37de8b1dde0cbbb9fc3bd93a7a9bb842288d514c1b4d2",
-   "octets": 106305,
+   "empreinte": "d80cd2f33235e1583029dd009d4065a9ff586835ff512246d18b3fa6e2fc79fd",
+   "octets": 110416,
    "endroits": [
     {
      "id": "coquillage-scrub",
@@ -252,8 +262,8 @@
    "fichier": "transmission.html",
    "panneau": "transmission",
    "nom": "Faire pareil",
-   "empreinte": "50a3eefdaba2dd52e0da85bef140fb4383437a9ac963ef6f617621dc10639e8d",
-   "octets": 90471,
+   "empreinte": "081564de51fedfe1152aa390eb9eb2de5e34a5d907f7e1b826c8a30efa895030",
+   "octets": 94582,
    "endroits": [
     {
      "id": "transmission",
@@ -265,8 +275,8 @@
    "fichier": "confidentialite.html",
    "panneau": "confidentialite",
    "nom": "Confidentialité et Loi 25",
-   "empreinte": "af29a3f8b5bbe3e66bb033971f1752a60af20d1d153312d7de6aedec4eb2986b",
-   "octets": 99627,
+   "empreinte": "f78e2047e8526e3a72857c749619763e574f1bc76bbf342e4b0e492f37e70729",
+   "octets": 103738,
    "endroits": [
     {
      "id": "confidentialite",
@@ -278,8 +288,8 @@
    "fichier": "contact.html",
    "panneau": "contact",
    "nom": "contact",
-   "empreinte": "f86d98fe374b2df7d15cc5f6743b8449c05c1a7b01276d1c5d49ccf0cb3e955c",
-   "octets": 79996,
+   "empreinte": "11701430e0bad906b9aab160ae7f3bd06f0e7b6a343bb10b2d6832ae6244fb2d",
+   "octets": 84107,
    "endroits": [
     {
      "id": "contact-temoin",
@@ -291,8 +301,8 @@
    "fichier": "acces.html",
    "panneau": "acces",
    "nom": "Mes renseignements",
-   "empreinte": "f847c4a72a99ec4cb9ec7228d2697383f65bdce92c26febca73c0b60294db18c",
-   "octets": 92229,
+   "empreinte": "b1fa46fee4937166657de7d72d4638179b0b25b4109099c218c38f9102f74dd4",
+   "octets": 96340,
    "endroits": [
     {
      "id": "acces",
@@ -304,8 +314,8 @@
    "fichier": "donnees.html",
    "panneau": "donnees",
    "nom": "Bibliothèque des lois",
-   "empreinte": "a569e95cc4aa2fbdf70e859cb1597dbff17280645f7e9d24798de4302a31fcb7",
-   "octets": 136908,
+   "empreinte": "1c62c1c01c1ea703e82e126aed689e97c1334aff421c597ffc32513136eefd6c",
+   "octets": 141019,
    "endroits": [
     {
      "id": "donnees",
@@ -317,8 +327,8 @@
    "fichier": "aller.html",
    "panneau": "aller",
    "nom": "Aller chercher ce qu’ils ont récolté",
-   "empreinte": "9f3dc83f014864a56f8e7630d36568f713996569d8274481c9a226c1c97c96e9",
-   "octets": 151672,
+   "empreinte": "ac48a479ec9fed6b1d8b12049ea3c22b7732563a782b3586a7181346948dcdd6",
+   "octets": 155783,
    "endroits": [
     {
      "id": "aller-cadre",
@@ -374,8 +384,8 @@
    "fichier": "cameras.html",
    "panneau": "cameras",
    "nom": "Caméras et appareils connectés",
-   "empreinte": "9cbcdee69a1b3b86ea17e4e5873778e27e492f41f5bc9aa85f4819894e849804",
-   "octets": 95275,
+   "empreinte": "a569ef4b24e3c9e9015076db76970f5bb2335cd9f7b054195b12bc8eadc9ffb8",
+   "octets": 99386,
    "endroits": [
     {
      "id": "cameras-transit",
@@ -403,8 +413,8 @@
    "fichier": "explication.html",
    "panneau": "explication",
    "nom": "Demander l’explication d’une décision automatisée",
-   "empreinte": "85cacc90fe638f27fac0664a1522eb152d1272b99c467bf58bbf0140cc94498e",
-   "octets": 94629,
+   "empreinte": "c07d3778e9af81ab30f175b6a6cbbf92c37d27fc56f28cf11f520e4ac38bd226",
+   "octets": 98740,
    "endroits": [
     {
      "id": "explication-lois",
@@ -424,8 +434,8 @@
    "fichier": "decisions.html",
    "panneau": "decisions",
    "nom": "Le registre des décisions",
-   "empreinte": "dbc90471b2bd7df1e989d3d4913967d21d03556894a22dafd673f5bacb859670",
-   "octets": 102659,
+   "empreinte": "92fd458dd642c146c4f9509910e1158be59e5d27777ea5df7a8366598ac62b33",
+   "octets": 106770,
    "endroits": [
     {
      "id": "decisions-registre",
@@ -441,8 +451,8 @@
    "fichier": "suspendu.html",
    "panneau": "suspendu",
    "nom": "Compte suspendu : ravoir, savoir, reprendre",
-   "empreinte": "e03374b3d0d9348d4d52c177fbc95fe1ad35588b86b21dd82e40e7b6fc78b1b1",
-   "octets": 113245,
+   "empreinte": "51fe3130da959090f932df6bfe8e7ce7d3b6ed7fa08444bbfef56023c90423e5",
+   "octets": 117356,
    "endroits": [
     {
      "id": "suspendu-premiere-heure",
@@ -470,8 +480,8 @@
    "fichier": "for.html",
    "panneau": "for",
    "nom": "Le for est ailleurs, tes recours sont ici",
-   "empreinte": "9dab0104e0fcdcba8b02f288d502f031ace25efc2169fb928241b3f34ce6e555",
-   "octets": 117993,
+   "empreinte": "482821f9034be12bb80d44500448b072fb6085d78ada17acf434e92ab2954a58",
+   "octets": 122104,
    "endroits": [
     {
      "id": "for-carte",
@@ -495,8 +505,8 @@
    "fichier": "ancrage.html",
    "panneau": "ancrage",
    "nom": "Ancrage — les preuves chez les tiers",
-   "empreinte": "c29764b3b15825f788e9a05121658ae94d5158e7560f6fe14b240a0ae95f093a",
-   "octets": 134358,
+   "empreinte": "b4f3bab1885041db2024e7bda239ed434dd4188035c148e5c9293215be2792e9",
+   "octets": 138469,
    "endroits": [
     {
      "id": "ancrages",
@@ -536,8 +546,8 @@
    "fichier": "sceller.html",
    "panneau": "sceller",
    "nom": "Sceller — l'atelier",
-   "empreinte": "2158fd766bf6fc7caf3f3ef5e08a2de04758f3f108c31978217ae6c4ff14fd3d",
-   "octets": 83224,
+   "empreinte": "ec075a7cb36e220238c66727bf1938744c61c52bed30e7f44c9073da1a56d77b",
+   "octets": 87335,
    "endroits": [
     {
      "id": "outils",
@@ -549,8 +559,8 @@
    "fichier": "verifier.html",
    "panneau": "verifier",
    "nom": "Vérifier",
-   "empreinte": "0671ca48fb1c88ac43c905f61a74ef5f479a6f4071034ac51958423faa4ced05",
-   "octets": 107302,
+   "empreinte": "a01310aa86ba5a6df232d1c5c07fbafa26d2a08756d8e032d991e52cba2e3074",
+   "octets": 111413,
    "endroits": [
     {
      "id": "parcours-sceptique",
@@ -574,8 +584,8 @@
    "fichier": "application.html",
    "panneau": "application",
    "nom": "L’application",
-   "empreinte": "5431d2c2130c621041986ae8409b4386ac7db2cfedb95af35883ded69d51a02a",
-   "octets": 82530,
+   "empreinte": "5411a92676454afcfa738935bd5eeb5ad8319945239c976f55713237314f89b0",
+   "octets": 86641,
    "endroits": [
     {
      "id": "application",
@@ -587,8 +597,8 @@
    "fichier": "registre.html",
    "panneau": "registre",
    "nom": "Registre",
-   "empreinte": "cbb580eb362868c401407371c3019ec82de9029850f2686e9577a2920395215a",
-   "octets": 85310,
+   "empreinte": "c72858a55afad3a4fdf0d5169bf721dc2936807c73bd8da2f45a00c02448f2fb",
+   "octets": 89421,
    "endroits": [
     {
      "id": "registre",
@@ -600,8 +610,8 @@
    "fichier": "preuves.html",
    "panneau": "preuves",
    "nom": "Preuves",
-   "empreinte": "3f4d772b448a6af89be24fb7fce7c23b06d25ccebb7cf8248ea39dcb8b87750c",
-   "octets": 88302,
+   "empreinte": "88be631638a1894a56d58234102aabd5c58a003d50a78557cccc48eb85338baf",
+   "octets": 92413,
    "endroits": [
     {
      "id": "sceptique",
@@ -625,8 +635,8 @@
    "fichier": "parcours.html",
    "panneau": "parcours",
    "nom": "Parcours — l'histoire",
-   "empreinte": "bf0b591ccd82737b3ab8d16bd95d66f4686b42508d483cfb7e187b63304530b1",
-   "octets": 99504,
+   "empreinte": "581fa3d4e3cdda1f0b72e057363771766339aa3ddf273c9d65a14643e44eaa19",
+   "octets": 103615,
    "endroits": [
     {
      "id": "histoire",
@@ -650,8 +660,8 @@
    "fichier": "ingenierie.html",
    "panneau": "ingenierie",
    "nom": "Le travail d'ingénierie",
-   "empreinte": "45e814b7472e1ca3eeaed19e8516689c5478ccd3682a08160aff24b66293ab3a",
-   "octets": 83640,
+   "empreinte": "d12172a3ee65767f398bc4bae15a3b903d56f24af2590bd8030dbe37d9767e3d",
+   "octets": 87751,
    "endroits": [
     {
      "id": "ingenierie",
@@ -663,8 +673,8 @@
    "fichier": "chercheur.html",
    "panneau": "chercheur",
    "nom": "Le chercheur",
-   "empreinte": "8247ce29d36e23eaa5ec61170fdaa3fb0c8affbde69c51ba006b262337f6a746",
-   "octets": 95792,
+   "empreinte": "40b6ddbaf6135c730827ad608bd80bda00bf4d37208ac723ac4912ba8f65bb97",
+   "octets": 99903,
    "endroits": [
     {
      "id": "chercheur",
@@ -688,8 +698,8 @@
    "fichier": "articles.html",
    "panneau": "articles",
    "nom": "Articles",
-   "empreinte": "f93e144454d6e3b2055884b5918d0e47a0bf3d08a38b687f031e1dc839f8ff4a",
-   "octets": 88026,
+   "empreinte": "34be2e80691cca295c493aa2cbc5611f615ae885d3ed76f327ad3782690b9a6d",
+   "octets": 92137,
    "endroits": [
     {
      "id": "articles",
@@ -701,8 +711,8 @@
    "fichier": "capsules.html",
    "panneau": "capsules",
    "nom": "Capsules",
-   "empreinte": "e526d703305868bcc323b0058df40585e594f54160c4528b3669c2d907a0dc88",
-   "octets": 88674,
+   "empreinte": "746ab9ffa21b9552e9affd84d68ced151ce89c4b6169765824c761143f47937e",
+   "octets": 92785,
    "endroits": [
     {
      "id": "capsules",
@@ -718,8 +728,8 @@
    "fichier": "recherche.html",
    "panneau": "recherche",
    "nom": "Rechercher",
-   "empreinte": "432c7ba2db17965acecc9beeff38e89d32f1cd3ad2bb20a06373e481f1eacf80",
-   "octets": 80844,
+   "empreinte": "a1c5c572d6099f6dd1e55ef3225ac9557cfd348ee4cafc962a51dd59dd2bd662",
+   "octets": 84955,
    "endroits": [
     {
      "id": "recherche",
@@ -731,12 +741,12 @@
    "fichier": "droits.html",
    "panneau": "droits",
    "nom": "Droits et lois",
-   "empreinte": "56167dac683362d2bc331e35c7cbf47e85cb644f5c330ac7cd98c82dd0c004f6",
-   "octets": 91034,
+   "empreinte": "5f1139e3d79f724dda4019964cfe5b2febd3960cab2c8694deb7ebeb1e206603",
+   "octets": 50943,
    "endroits": [
     {
      "id": "droits",
-     "empreinte": "c83033586487ff8c406827a7b5461da1edfe7e456bc7263a1b6483bf16e3f53a"
+     "empreinte": "e72dbb348a16d9a81d2b87422013c3e5a9c0f6bb302193f69510f90bb62fc377"
     },
     {
      "id": "demo-decisions",
@@ -748,8 +758,8 @@
    "fichier": "transparence.html",
    "panneau": "transparence",
    "nom": "transparence",
-   "empreinte": "3fde44f20be20c465831432de5ff22d2eff143aec7b95738ef7e5143e29802a5",
-   "octets": 83966,
+   "empreinte": "fc6548ab0021d65966451c605998a6b43ea4e04d7871ddb89d8e0a19a2c5a2f3",
+   "octets": 88077,
    "endroits": [
     {
      "id": "transparence",
@@ -761,8 +771,8 @@
    "fichier": "instance.html",
    "panneau": "instance",
    "nom": "Parler à l'instance",
-   "empreinte": "94b93d8793c9aa998385344ed0e7fd10a33a50a9d5e49695261edee7c2fa8235",
-   "octets": 82018,
+   "empreinte": "96da1d9658b3dc9a96f54f4816f8deb7f750955f4a16f0da40e0a44af4f164d1",
+   "octets": 86129,
    "endroits": [
     {
      "id": "recherche-reliee",
@@ -774,8 +784,8 @@
    "fichier": "memoire.html",
    "panneau": "memoire",
    "nom": "Mémoire",
-   "empreinte": "78e8bc504ddc7d0e7d9d7eaceff7c029782cc8e8ee6613628dfd2624446cb0ef",
-   "octets": 147616,
+   "empreinte": "17bee02b59e7797dfd89622028fa209016f9a87f77540b65f1cdc1a28ee2d759",
+   "octets": 151727,
    "endroits": [
     {
      "id": "memoire",
@@ -803,8 +813,8 @@
    "fichier": "evolution.html",
    "panneau": "evolution",
    "nom": "Évolution",
-   "empreinte": "1c40aabd9110038a57f583c4dbb6e62d988d5e7ba5ff08148ddbd26e9b7c9e9c",
-   "octets": 216053,
+   "empreinte": "fe088ec993c0d39c9ef8370cbe6dc6f5a072f79cc9a14450617d676b98a195a6",
+   "octets": 220164,
    "endroits": [
     {
      "id": "evolution",
@@ -832,8 +842,8 @@
    "fichier": "don.html",
    "panneau": "don",
    "nom": "Faites un don",
-   "empreinte": "82c87d49205352895aa8930a1752e1e012554797f088edcad042515c0acd4d0e",
-   "octets": 86878,
+   "empreinte": "69430c9197b3613bd2103ab753d9f66d4390017836e8e0f1888d661fec86d0f8",
+   "octets": 90989,
    "endroits": [
     {
      "id": "don-pourquoi",
@@ -857,8 +867,8 @@
    "fichier": "conditions-site.html",
    "panneau": "conditions-site",
    "nom": "Conditions d’utilisation du site",
-   "empreinte": "34a9c0a0a12a9f3711290f6b559854046828893f4dd2d9220e7c5620dc8afa1d",
-   "octets": 109465,
+   "empreinte": "00c94b6de1f5a8a076b26b1ab4d9d425251c4fb9765fa54853956135b7510e69",
+   "octets": 113576,
    "endroits": [
     {
      "id": "conditions-site-preambule",
@@ -906,8 +916,8 @@
    "fichier": "politique-site.html",
    "panneau": "politique-site",
    "nom": "Politique du site",
-   "empreinte": "2b7b651d928987905238eb74207f538041500fbed6d86ea189ff689bda2cb242",
-   "octets": 141349,
+   "empreinte": "8f9d42f3e37e6f00a404ebcf2ca08e1e7e2903bce7cbaabbb1c6c81546542605",
+   "octets": 145460,
    "endroits": [
     {
      "id": "politique-preambule",
@@ -955,8 +965,8 @@
    "fichier": "petitions.html",
    "panneau": "petitions",
    "nom": "Pétitions",
-   "empreinte": "62fb3e7fef5680c78a826baa82af0b3fdc444f6a33c631550cf8da810050e12a",
-   "octets": 95239,
+   "empreinte": "ad53dbfefea8b9ae14fc8561768448729d1e741d055a19bd9bd2f64b3a90a0bf",
+   "octets": 99350,
    "endroits": [
     {
      "id": "petitions",
@@ -968,8 +978,8 @@
    "fichier": "ecrire.html",
    "panneau": "ecrire",
    "nom": "Écrire à SoPHIa",
-   "empreinte": "bb2f73f78e8b2cc84ffe6ed58a52edfa23d8e06b9dd69d39899f616912cccd30",
-   "octets": 129360,
+   "empreinte": "7357f3b708b7d62820709022523552b6378693d575ad0973c832cfde1291bbf6",
+   "octets": 133471,
    "endroits": [
     {
      "id": "ecrire",
@@ -981,8 +991,8 @@
    "fichier": "recu.html",
    "panneau": "recu",
    "nom": "Le reçu de visite",
-   "empreinte": "f221e808fe2d80fd5af067d4ac3338d9652da5cd4bf78581a1e29afc53390b81",
-   "octets": 87283,
+   "empreinte": "34b61728a90d31f4d5702c264e7144044ef82e9fb75f01efe1d58cd68fc89677",
+   "octets": 91394,
    "endroits": [
     {
      "id": "recu-visite",
@@ -994,8 +1004,8 @@
    "fichier": "recus.html",
    "panneau": "recus",
    "nom": "Tes reçus et tes gestes",
-   "empreinte": "f5c17a58596c3dd49ba3d73d19f2720778db49e1c8d9acf8763afc17d1404125",
-   "octets": 89966,
+   "empreinte": "441d35c4b25002e87da73fe9070916b7e4739e1274f1cd36a6384db0f5f4c288",
+   "octets": 94077,
    "endroits": [
     {
      "id": "recus-gestes",
@@ -1007,8 +1017,8 @@
    "fichier": "suivi.html",
    "panneau": "suivi",
    "nom": "Ton dossier de suivi",
-   "empreinte": "2dbc9ba8700bb36193319687e118ec871d0bd687250e1042c6deda3d93fb2598",
-   "octets": 91426,
+   "empreinte": "e2a4ad2fbf808fedf1da213f68b112d52234a53dcf9004655040377462fe0e9f",
+   "octets": 95537,
    "endroits": [
     {
      "id": "suivi",
@@ -1032,8 +1042,8 @@
    "fichier": "voir.html",
    "panneau": "voir",
    "nom": "Voir mon cerveau",
-   "empreinte": "9f2949740a826450570d0696c54798e3f0c8e50fd04df7e26dafb9ed3ef97896",
-   "octets": 86848,
+   "empreinte": "b6c0940616836e82f74dc1699e9fb1eab1f0d552e3a37e67937dc8d3557837b9",
+   "octets": 90959,
    "endroits": [
     {
      "id": "voir-cerveau",
@@ -1049,16 +1059,16 @@
    "fichier": "ouverture.html",
    "panneau": "ouverture",
    "nom": "ouverture",
-   "empreinte": "60d1553acda2147da80c76b73cf82fa2672e29bcb555decdbac5aa966515b5a9",
-   "octets": 87199,
+   "empreinte": "1c474e79b96b8cd3c951728eb9a0fa6e63372ea891cb3ee511b344a26cd3e813",
+   "octets": 91310,
    "endroits": []
   },
   {
    "fichier": "bris.html",
    "panneau": "bris",
    "nom": "La chambre des bris",
-   "empreinte": "791634497d1a88347765c3adb56638125f8e2b2a1fc24e9238e1b4b0beec1259",
-   "octets": 83102,
+   "empreinte": "5f7f72aa09f3ef1cc9f0c77c088e870942cae5d27863ddf8ae8dbeb93afe1643",
+   "octets": 87213,
    "endroits": [
     {
      "id": "bris",
@@ -1070,12 +1080,12 @@
    "fichier": "depose-empreinte.html",
    "panneau": "depose-empreinte",
    "nom": "Dépose ton empreinte",
-   "empreinte": "977c130ed425f4b8e07529466eed8d8c82ecb45befeab6f9fe164855bfefd178",
-   "octets": 120240,
+   "empreinte": "b7870cb0c3cddf5216d6c58ff117ac3213c05239563d973d9dae0b54041b6ec7",
+   "octets": 80375,
    "endroits": [
     {
      "id": "depose-empreinte",
-     "empreinte": "b95c7573e8d11dfe3b8bddef9de63bf2f55151d3346bd33be6ab59016c6be3ac"
+     "empreinte": "16bab81942723a1429224640b5e567e95e2dd3b597063e2567f4356764b1922b"
     },
     {
      "id": "depot-registre",
@@ -1095,8 +1105,8 @@
    "fichier": "fenetres.html",
    "panneau": "fenetres",
    "nom": "Le minuteur de fenêtre",
-   "empreinte": "612ca41b1989a214ac585acd0eca7f76aa5fed924572beb7f25fcf9600deecb8",
-   "octets": 87829,
+   "empreinte": "4d1e08954e4682d8599bebbaa1cbb2fc3d3f1a877f7eecb7ae44a0df2aa8ef78",
+   "octets": 91940,
    "endroits": [
     {
      "id": "fenetres",
@@ -1108,8 +1118,8 @@
    "fichier": "conditions.html",
    "panneau": "conditions",
    "nom": "Le registre des conditions",
-   "empreinte": "e62fa72df56c8819ec417a7a02b986571c9fd24e37a3d68b85fc4b906594b19c",
-   "octets": 108574,
+   "empreinte": "0a9e748450184d4f8fd907b0cd4bddff3e360a3a463f4a5cabca0c88c650a13a",
+   "octets": 112685,
    "endroits": [
     {
      "id": "conditions",
@@ -1129,8 +1139,8 @@
    "fichier": "transits.html",
    "panneau": "transits",
    "nom": "La carte des transits",
-   "empreinte": "e9e0475f4f3b8005af6d8369eaf91638763118950f9a2b31ef93542214aa7f3a",
-   "octets": 140348,
+   "empreinte": "8f2b1bc3018fb004388c3cb087cf9a7aa9009dca96f96fdecc62db268ff4c16c",
+   "octets": 144459,
    "endroits": [
     {
      "id": "transits",
@@ -1162,8 +1172,8 @@
    "fichier": "exposition.html",
    "panneau": "exposition",
    "nom": "Ton exposition",
-   "empreinte": "af2e790dc3b3f97a04999c2920e2fd0866aed2e4a99c3d921b804686b7406a79",
-   "octets": 103558,
+   "empreinte": "4361f37e2207d6e7ad28eb2451ba2a55cf35ef007b4713a2f3a7e7626b05f135",
+   "octets": 107669,
    "endroits": [
     {
      "id": "empreinte",
@@ -1199,8 +1209,8 @@
    "fichier": "modes.html",
    "panneau": "modes",
    "nom": "Les deux modes",
-   "empreinte": "2b8f7e9f131237dce8e3a26484f2a6c867731428a3d154b19679829dcf6c5850",
-   "octets": 116426,
+   "empreinte": "30a43458d5079fc4fda306d5d94be594b70583d25ca751e834d187dc5b631276",
+   "octets": 120537,
    "endroits": [
     {
      "id": "modes-pourquoi",
@@ -1240,8 +1250,8 @@
    "fichier": "miroir.html",
    "panneau": "miroir",
    "nom": "Le miroir",
-   "empreinte": "98097c5c573f743bf9070a9397bb68c97585716a1c85e31bfa298d706c44b0da",
-   "octets": 88731,
+   "empreinte": "f7fca90a8378cafe99b3e7214030da21b40b9b8eea9ce3cd66c5c4e7b530a735",
+   "octets": 92842,
    "endroits": [
     {
      "id": "miroir-modes",
@@ -1261,8 +1271,8 @@
    "fichier": "etat51.html",
    "panneau": "etat51",
    "nom": "Le 51e État numérique",
-   "empreinte": "e1127143a0e4c6d60b3769d55ee0a45e47694c9916e54c60ca7fc4334d8e1ffe",
-   "octets": 121216,
+   "empreinte": "8c9ca560d5e781494c67caef0b9e18ecd9d7bcba01cd6b1d85ca8543a666aaa3",
+   "octets": 125327,
    "endroits": [
     {
      "id": "etat51-these",
@@ -1294,8 +1304,8 @@
    "fichier": "partenaires.html",
    "panneau": "partenaires",
    "nom": "Partenaires et soutien",
-   "empreinte": "a92c60154539ab33320daf78411bb3b691f1e2a3e4528f5c2fbf8a8a6979f075",
-   "octets": 101641,
+   "empreinte": "66b965868c19986d2b21e01ce4089c5f8081a517f485e17145a0ee94b8ed3c77",
+   "octets": 105752,
    "endroits": [
     {
      "id": "partenaires-ceque",
@@ -1327,8 +1337,8 @@
    "fichier": "assurances.html",
    "panneau": "assurances",
    "nom": "Les assurances",
-   "empreinte": "9cf67b804f640d4b3f8f7e64a2b3daf90d4640a8015784d973841f56265877e0",
-   "octets": 119726,
+   "empreinte": "1920bf16654bac6450b4e43afa98bf5454539bbd79a6b3431c7a6d2e7ba6fcd7",
+   "octets": 123837,
    "endroits": [
     {
      "id": "assurances-sommaire",
@@ -1364,8 +1374,8 @@
    "fichier": "suivi-familial.html",
    "panneau": "suivi-familial",
    "nom": "Le suivi familial et la localisation",
-   "empreinte": "48440bdab1c157766a1f45b278a87b7ffa4e82e9b3d5f63b43360c3a6c305503",
-   "octets": 127114,
+   "empreinte": "bee57de257c56eea850b6c9ba35e2b4917db48f4eb2200bffc971f0775e31b53",
+   "octets": 131225,
    "endroits": [
     {
      "id": "suivi-familial-sommaire",
@@ -1397,8 +1407,8 @@
    "fichier": "edition.html",
    "panneau": "edition",
    "nom": "L’édition du jour",
-   "empreinte": "383a3d949f9683a21d415e443902683ae7b7324bfc236a57f6a1b0439240950c",
-   "octets": 82705,
+   "empreinte": "ffc45a05a1681ffde485a8e908ea43d3597482b49fa2ae11fdea25543ebcdda6",
+   "octets": 86816,
    "endroits": [
     {
      "id": "edition-jour",
@@ -1410,56 +1420,56 @@
    "fichier": "balado.html",
    "panneau": null,
    "nom": "balado.html",
-   "empreinte": "8c3c8596e3be714a09b65e5d984e659594910b9d8730524cc8f71e1c2a0a7a24",
-   "octets": 2634,
+   "empreinte": "c0bdb529cc4e8eae5e79ae9073c52cae26e75bd6a1b833338174587b2ecad4dd",
+   "octets": 6745,
    "endroits": []
   },
   {
    "fichier": "accessibilite.html",
    "panneau": null,
    "nom": "accessibilite.html",
-   "empreinte": "8a6337528be9868ab3a3b1e1087473cb72bf53d14aa11873b4212a009a29f3ef",
-   "octets": 2920,
+   "empreinte": "e0505ff2657a326d12d555d3e2b7659d8042183b8a8994648e73f062f9af6ca0",
+   "octets": 7031,
    "endroits": []
   },
   {
    "fichier": "errata.html",
    "panneau": null,
    "nom": "errata.html",
-   "empreinte": "4de9c9ec70e2e0e695cc559bf387d89ac046b64f2e0a0cbb092f96e197720d84",
-   "octets": 3279,
+   "empreinte": "f0e173fbcf3fd53a844ab19aaf81bd5593d38223c944b1b55b221d5eb76cc3ec",
+   "octets": 7390,
    "endroits": []
   },
   {
    "fichier": "glossaire.html",
    "panneau": null,
    "nom": "glossaire.html",
-   "empreinte": "fbc931411185ad2f5c4cc5ed7afb55254c18a7a1f2a140ca07fb69f29f3fb378",
-   "octets": 4308,
+   "empreinte": "988c055e62d5429f352e47cb6ec1180eb4d91c315838d0b37c09c77b2496a74f",
+   "octets": 8419,
    "endroits": []
   },
   {
    "fichier": "kit-verification.html",
    "panneau": null,
    "nom": "kit-verification.html",
-   "empreinte": "b7a336d482626bb11e9089334676717c83a30bf19d796761e638c5c4d4d72838",
-   "octets": 3208,
+   "empreinte": "4ce8c3d2e0eff7e61cc99e0ca25d3312c18ee343b17758657c1f126dfda0a53a",
+   "octets": 7319,
    "endroits": []
   },
   {
    "fichier": "note-c2pa.html",
    "panneau": null,
    "nom": "note-c2pa.html",
-   "empreinte": "5cbc297a29feb3234ff7a632ac80e9b5e3558d82c4c7c658c5630d4e2cd9e56b",
-   "octets": 3607,
+   "empreinte": "0a7f9fbb5b9be531e5e0f6a1081b67692f7e9626fc9f192da1aa619d35a35799",
+   "octets": 7718,
    "endroits": []
   },
   {
    "fichier": "atelier-chiffrement.html",
    "panneau": null,
    "nom": "atelier-chiffrement.html",
-   "empreinte": "487e44681ff5b9e0acac5f28977f4ef20a8ec72d66df7dfca5e144f83f2fe509",
-   "octets": 29713,
+   "empreinte": "9e728f1307cddcfc81897720d2bd080cf0c1901879c10d9f9e781b5e52b071ce",
+   "octets": 33824,
    "endroits": [
     {
      "id": "fichier-clairs",
@@ -1475,48 +1485,48 @@
    "fichier": "404.html",
    "panneau": null,
    "nom": "404.html",
-   "empreinte": "103fe404c24286631b9bee4039cdfcf6640cc435714665d022ba1d5323b8a3d6",
-   "octets": 1122,
+   "empreinte": "39a7fe9858630d310da95b83761e8d532e8c09e524d1f9adfaab3e13cef9ed9f",
+   "octets": 5233,
    "endroits": []
   },
   {
    "fichier": "edition-2026-11-04.html",
    "panneau": null,
    "nom": "edition-2026-11-04.html",
-   "empreinte": "282ccb8fb44284b00a9c702293e35ca6423f5fd87de50a408b1efe6b39f717bf",
-   "octets": 34057,
+   "empreinte": "cd1a72f184ec6d5561ff6e7bc434a4804815f8e1847dbdc3a8edbf6d2c5e41c4",
+   "octets": 38168,
    "endroits": []
   },
   {
    "fichier": "edition-2026-11-05.html",
    "panneau": null,
    "nom": "edition-2026-11-05.html",
-   "empreinte": "11fabf040bf86eb8a2e95fbb7fc0d138fadce027c0299dd2fb79f10a698edba5",
-   "octets": 12584,
+   "empreinte": "11bf38af8d914a8c31242636c00234a26a65c062c6c70f18bd54aa69eec21595",
+   "octets": 16695,
    "endroits": []
   },
   {
    "fichier": "edition-2026-11-06.html",
    "panneau": null,
    "nom": "edition-2026-11-06.html",
-   "empreinte": "56c844b3e0bb63047f2afab2b7f35fec2d16b4218b4f401eef83ce000e1f70b1",
-   "octets": 13737,
+   "empreinte": "c57dcfc8221f03ce82dc7835b3ce74856e2e5a3449a86a8baacb99e6abe01fe6",
+   "octets": 17848,
    "endroits": []
   },
   {
    "fichier": "edition-2026-11-07.html",
    "panneau": null,
    "nom": "edition-2026-11-07.html",
-   "empreinte": "004c2c3db6dd6fad3fc0ebfd42c4275e093f8a460079d9b7b133fb709e8ace46",
-   "octets": 13665,
+   "empreinte": "6bbd81d7308e8d1bc4d0bf443aab75297583e32d1195dea1f7e5d60290e70dae",
+   "octets": 17776,
    "endroits": []
   },
   {
    "fichier": "agir-sur-mes-donnees.html",
    "panneau": "agir",
    "nom": "Agir sur mes données",
-   "empreinte": "54d931ef6535f95148d273fddb35ff7487679bb9242da3a0b5d03ac4c02528a7",
-   "octets": 117389,
+   "empreinte": "35f9905f1f1673a72f794916b45c796ddf32ea24b9157caba698fdf95e4b9ff9",
+   "octets": 121500,
    "endroits": [
     {
      "id": "parcours",
@@ -1556,8 +1566,8 @@
    "fichier": "cerveau-coquillage.html",
    "panneau": "cerveau-coquillage",
    "nom": "Cerveau coquillage",
-   "empreinte": "b1bec83a28cf5e2bb3ad8d311d9a183ad0c193a9fc1350f633f237f0283024ff",
-   "octets": 105184,
+   "empreinte": "781158d51e3320af04206e7bfb28c0dbabd5447a486c35d8164f60ac7d93f53f",
+   "octets": 109295,
    "endroits": [
     {
      "id": "cerveau-coquillage",
@@ -1569,19 +1579,19 @@
    "fichier": "transparence-audit-unisson.html",
    "panneau": "transparence-audit",
    "nom": "Transparence — SoPHIa mémoire cumulative chaînée",
-   "empreinte": "1aad76961dcbf8dc0d0b3f92caddbe201aa7892911c7d7984b9513b5e2ff7adb",
-   "octets": 92096,
+   "empreinte": "6b07502567eef88e7f79dc677158a82da6ec8a0d71b9c47e77a9c9d59af1effc",
+   "octets": 96207,
    "endroits": []
   }
  ],
  "actifs": [
   {
    "fichier": "assets/style.css",
-   "empreinte": "845216ffbb8dd24c881c558dd760c561126da1f8a7cd7c2d0e6f3efee5f0387b"
+   "empreinte": "2e9233871db81334520536dab01500b9711f423b5b9c95917756317bda7ab6f6"
   },
   {
    "fichier": "sw.js",
-   "empreinte": "71ac5aac6bce34f27ee1d9cba6e26d2f5969313525c7de418b104471142e3d25"
+   "empreinte": "0110e5394f837ff209d9bcf85205d3ea982ff03c10c83323692a2b7a4980d042"
   },
   {
    "fichier": "assets/js/cerveau-conversation.js",
@@ -1597,7 +1607,7 @@
   },
   {
    "fichier": "assets/js/rafraichissement.js",
-   "empreinte": "50cf59a2bc7c8162818f09f410ee8aa3235fbcaa5c65a9dd142ef0277afffc2f"
+   "empreinte": "81ac4578a9e836e071a66add7897801f0890150131258e55cfdfcbbb19d28bcd"
   },
   {
    "fichier": "assets/js/recherche-texte.js",
@@ -1605,7 +1615,7 @@
   },
   {
    "fichier": "assets/js/routeur.js",
-   "empreinte": "3f158d879b9fbae7bf36d0dda284b72124848bcbc93f1912d21b96f6e3b02d03"
+   "empreinte": "a05a9cadd42b7513cee4b5805147f784175b5af7331d358c245af5f70570c2fa"
   },
   {
    "fichier": "assets/js/t12-instance.js",
@@ -1889,247 +1899,711 @@
   },
   {
    "fichier": "assets/noyau/noyau-manifeste.json",
-   "empreinte": "06003abd3ed298d107ca65f48c7ab1356416e08d366559a2d5a3914313693159"
+   "empreinte": "067e5a60e081206a5dd75a795dbfcb1dfc6f2df9f8d5270631e1e150b3481783"
   },
   {
    "fichier": "assets/noyau/chambre-acces.json",
-   "empreinte": "1523180022c03e4718ff94659fc306f0f491dea0be23c74a13afecad2df5c034"
+   "empreinte": "1b61fe4a6849638e08e6dfdd9207dd280a378354aac3436ec6b33daeec0def58"
   },
   {
    "fichier": "assets/noyau/chambre-accueil.json",
-   "empreinte": "38d6fafc02060470fd3f47267ae20dec1992e3bbad461dda30226c49df42677d"
+   "empreinte": "367d59a0688d6c7ea1cb70cfe02dd872fe7b75d6f428f3a408399e2bd8956ac3"
   },
   {
    "fichier": "assets/noyau/chambre-aller.json",
-   "empreinte": "bd710b683099c3430e49f33322eb7b6a9e8612ed417eaf4c3a3ea1c1387213e9"
+   "empreinte": "d3b02d1d9fc6d6a3638db91e51e05ddbc7199741556a2adde4434af3596eb774"
   },
   {
    "fichier": "assets/noyau/chambre-ancrage.json",
-   "empreinte": "9f9f14f420e8eef68cf007aed430b4574cfefe71aa6fe24d94ccdfa6e47a5d37"
+   "empreinte": "123f757858c0b58aeb2f9fa55a7f1b9855747fdd7acdccf54eeb850785a95fa9"
   },
   {
    "fichier": "assets/noyau/chambre-application.json",
-   "empreinte": "69fc0b0a49d84ab28ccbcc9bf941a018368559ffb61faf54d34ab98a25d0aa37"
+   "empreinte": "0f07b6b7a25b7f343aae6154ead5c703b10d6f549ae845cadef628f797638286"
   },
   {
    "fichier": "assets/noyau/chambre-articles.json",
-   "empreinte": "dd3f10c5e420a1c1dfce1714b3eca3af77296ee3dacf48e5b86795d605891ee9"
+   "empreinte": "9cd94a380af7800f98c5ff3c22ebdb9ad571a7cbd313eafda01284d48bf10c8d"
   },
   {
    "fichier": "assets/noyau/chambre-assurances.json",
-   "empreinte": "e414ecd984970164bb29a24c79aa7004d81b8d9d4a5b77fb51a9eb9473660f78"
+   "empreinte": "7ba12eed33f46d2de864d37e167963625cf3921120d6b74de8de82c8775edae8"
   },
   {
    "fichier": "assets/noyau/chambre-bris.json",
-   "empreinte": "d6d824ce36c561470b4040fef0a8bfb3d606613a44082733edcf420bc2e274cd"
+   "empreinte": "05dd1b81b198c37f5b3a9ae3366eadce543413af4c654722f42a52f61cc14fac"
   },
   {
    "fichier": "assets/noyau/chambre-calendrier.json",
-   "empreinte": "17e3041832b101d3fe28875959d7d71aa66b12dec5a23db1c8f80dc6e8174c33"
+   "empreinte": "f4b3588a2f4b4f981d408dd9035462eaad224e6be1c413697918f4123a001071"
   },
   {
    "fichier": "assets/noyau/chambre-cameras.json",
-   "empreinte": "914ffcbbbe6c44ab839d0983dbc3b62b46c981bb0be7fcb83d8e2329109c1161"
+   "empreinte": "9ee06371b6d050367c6cf1eb32eb0752089edf3d12383330df29dab6128157ed"
   },
   {
    "fichier": "assets/noyau/chambre-capsules.json",
-   "empreinte": "262996c1437910a1c358e95054acf53126049ceaec66601487f85afe07148ab7"
+   "empreinte": "eddde4e406bf5b5ca427f909ab135153df1feb33c4be7c585f2c7a103fd77609"
   },
   {
    "fichier": "assets/noyau/chambre-cerveau.json",
-   "empreinte": "72e4828f6825f2594234c676f7b343f7f9b8707b26215ba27bd3766226086560"
+   "empreinte": "8ab3e1855e7e78759efddf6b0526f4efaa13f271592892cddf2289b6755b9b95"
   },
   {
    "fichier": "assets/noyau/chambre-chercheur.json",
-   "empreinte": "1e93f34c4555cefbf33224ac469e3975f115bfd56175bbb04c06d8a26094e6b3"
+   "empreinte": "926268ea5ef46c1495bec6a6be11dac5275a901bbde6848bea520548e476d980"
   },
   {
    "fichier": "assets/noyau/chambre-conditions-site.json",
-   "empreinte": "a88d629532b1a8c806325627cf3c15088145ce3ec60637b0e97e371fd052e320"
+   "empreinte": "02c589d632bf2ad06b13ded569cd74b4ae46231ac0441693524ea63e60831f0c"
   },
   {
    "fichier": "assets/noyau/chambre-conditions.json",
-   "empreinte": "64d491050f7a93072a1a6d81f28dee4177b16151c254ba2764ad6951533f28b8"
+   "empreinte": "2b99c907f7ea037846cd4e1f8dc75a76e0759aa0a6a3d10783a68bb4598aefab"
   },
   {
    "fichier": "assets/noyau/chambre-confidentialite.json",
-   "empreinte": "1e722ebcbc15563775c14a7ce3acfde8c85959a4f95e05e5c7a61bcb9af6c093"
+   "empreinte": "1068e05ad2e920e1f24f35d90d3f6a2f5377468dfd160eb7bcb6fecfba25c548"
   },
   {
    "fichier": "assets/noyau/chambre-contact.json",
-   "empreinte": "ce9f310e3ee458614f403ed492206334b1fc52cc62da110340e9035005fcf2e6"
+   "empreinte": "22a121396ff2455634a3708240754283fddb10ddf95b3106daa9e83de543c2f9"
   },
   {
    "fichier": "assets/noyau/chambre-decisions.json",
-   "empreinte": "a39f10a0c3d55076f33bf072d3f4afc517f0a3facaa7e4a95a59547ac27bd9d7"
+   "empreinte": "575dfd82c05bf7c05eb40ec535c3ba20657da7cf13a624216b80bc053d635eb3"
   },
   {
    "fichier": "assets/noyau/chambre-depose-empreinte.json",
-   "empreinte": "09abe45786c5d654a60a27e6eda8d58d29d9b734ab37b8c3700147893756157f"
+   "empreinte": "9c6dd2ccf4381f2018d1a5b6e61eddab3c8d0d8a6377b8aec99fc34a09442e9b"
   },
   {
    "fichier": "assets/noyau/chambre-don.json",
-   "empreinte": "629cfdbc03fc9542bf60b8027225eda90ebc18613a9f37bf21c5e98617aa57b1"
+   "empreinte": "e1979c64b7dc7afe388a1e7c9b5a3dd448a91c3173415631dc5f3c0dfe9b55af"
   },
   {
    "fichier": "assets/noyau/chambre-donnees.json",
-   "empreinte": "1f23608cbe5e81ee1cf9e7673c9d4415abaf10bd32f3ccb46b781577cc803f0a"
+   "empreinte": "89d4e2e459f0e21a33eeffe7702b8dc6959c7d81905ddac48947bcace43ddb3e"
   },
   {
    "fichier": "assets/noyau/chambre-droits.json",
-   "empreinte": "db3c0b2505118aa42b685f566bd8374a04bd1c14a671f684007bebf4aa5a0178"
+   "empreinte": "427ab42062545de8cc794b68f18e545c84157fe94046c2f37620cf076364b946"
   },
   {
    "fichier": "assets/noyau/chambre-ecrire.json",
-   "empreinte": "cb7eff57e9ad15f80520038ccfefb94e2d5232b5c473f61b6fdc46d41e508b1e"
+   "empreinte": "63021f146425e3c7575d510a185fa4be6fa457ed1cda0051cf92b2f9811e007d"
   },
   {
    "fichier": "assets/noyau/chambre-edition.json",
-   "empreinte": "00f0dae8e2833f866ff003d7ff38be3c033f5d99d5c2a86ed1b4c0af6dd6d72b"
+   "empreinte": "40635f9d93f9c881ee10a60f4f6879c731837ef81d496af449a2c11d2f8d21f5"
   },
   {
    "fichier": "assets/noyau/chambre-etat51.json",
-   "empreinte": "3449320a64eed34cb3e2f52acca53016014160326c0cb220100577897e003c4b"
+   "empreinte": "941be06113a64db2009812d429f564a72de8de5cbc70ea182af1558d550bb0a9"
   },
   {
    "fichier": "assets/noyau/chambre-evolution.json",
-   "empreinte": "4ea349bfcc5bac484a64f9a7c4e9c114f892a1927b5af7e009c0f8dd87a62d52"
+   "empreinte": "7ef2973b20aac9bebc9244589e81d7fc3b2eec6a957197069a1c047f0b69ff1b"
   },
   {
    "fichier": "assets/noyau/chambre-explication.json",
-   "empreinte": "b7e4b876e8f8d4b67023b7ed81f9ebbb140638501667d5194efbce6726b7a387"
+   "empreinte": "db04ef20792234c4245c7d89273b029c36fcf52533e6051aa00523ea762a4972"
   },
   {
    "fichier": "assets/noyau/chambre-exposition.json",
-   "empreinte": "135934a41af781b8570e1e5105d685c7b55657f86ec20c7ba3ffe37e7d8b8da8"
+   "empreinte": "68a27b75a2ca9ab093994e6ff36e59206798fc065711f63f50239163ee4e317f"
   },
   {
    "fichier": "assets/noyau/chambre-faq.json",
-   "empreinte": "4ce84452357442da0c1b4118fa8cadaaa42bd339e09c1c71bb34ce79b6121564"
+   "empreinte": "5b8e46c2f8d8cd199bac0fae1152823df6a9c83d99442fdb1714c984a6997545"
   },
   {
    "fichier": "assets/noyau/chambre-fenetres.json",
-   "empreinte": "8773ce9f4fd4482636f740fddc365cb67ce1a3b401fc6e9f5b6675ae770a1ff4"
+   "empreinte": "30bb2cb99bb1a274e09e68da1dbe2d8c4383b160241477cb509059aa7f3e969a"
   },
   {
    "fichier": "assets/noyau/chambre-for.json",
-   "empreinte": "24fafaa4ee3f7525c0d3cfb9d386b0ecd618f534e2aefe89028774a156b3458c"
+   "empreinte": "39a37c4404bb5ad72c446ef643560b7ecef1cab863c34c71c23929b62e337e3c"
   },
   {
    "fichier": "assets/noyau/chambre-ingenierie.json",
-   "empreinte": "d03267b528e059090382cea33a202fae8cf7ebc40253fe0d4ab44db2219b904b"
+   "empreinte": "f77f725f948e41a68311765f5a67381af8c2b20d0118aee05861e8823c6d7587"
   },
   {
    "fichier": "assets/noyau/chambre-instance.json",
-   "empreinte": "57148d7a8cdefadbbe3d237f73eb1f9375b731a42a47bf3f1cc76671dd675421"
+   "empreinte": "dd1a4e4336be27ea4e5b06d3de411b60e4819dc4746471ab1600ce8719dc46e1"
   },
   {
    "fichier": "assets/noyau/chambre-memoire.json",
-   "empreinte": "ad90d161bc62e8e730348ee436765ea770c19f32d89ce125b7fa1eacbaaa92e5"
+   "empreinte": "8c7576a72ed47ee74ca9b55138f5020abe059fd171038544df162fbe78df2cab"
   },
   {
    "fichier": "assets/noyau/chambre-meteo.json",
-   "empreinte": "936f489f6d07f1b03736e1650ccba989e3e5359982559c5c0284322f4c38e28d"
+   "empreinte": "3a378b39e915802bffcb164325022dc47d9939d9348f8df2be64531c3478d7d0"
   },
   {
    "fichier": "assets/noyau/chambre-methode-30.json",
-   "empreinte": "ae7bbd343fe0616604bcbf31b916fa715e6f3a63fabb74aecaf8ff528d4c9f13"
+   "empreinte": "b3f79bf9767570a8ccb2bf0bc1b9db5d58211261ae6707fc360692fe72119955"
   },
   {
    "fichier": "assets/noyau/chambre-methode.json",
-   "empreinte": "52621c7b021a365cf3bf307ef4aec3c450d65f3db447500448a7783eb030b03e"
+   "empreinte": "90c1182d4fa5245f00adab17525ed77e2e44cc19ad407b7ab8b51e66bb0c6832"
   },
   {
    "fichier": "assets/noyau/chambre-miroir.json",
-   "empreinte": "f353214dcec528f0851b5e0434f0ef616821d3d8db1c176f06d7209d4585b4c9"
+   "empreinte": "8c2f368e0cbebd0641df4da19da62e970487e00c0413debdd92e2637a07ed0fd"
   },
   {
    "fichier": "assets/noyau/chambre-modes.json",
-   "empreinte": "4f7979112aac920f481b85c3ff414aa983d643a47660b934cafb5a731601d3ff"
+   "empreinte": "3cf62be31f5a4e8037a8627de93b88fb047395d27c40cdd35a0310409ad0e653"
   },
   {
    "fichier": "assets/noyau/chambre-parcours.json",
-   "empreinte": "cb11c4b371553ef9c1bf9592034f36896e304474d01c1dd0ccf102d511d0e3f2"
+   "empreinte": "341ec1ea317ea35889c0d7f5284b023167310808f2b1d41b0957ef87e7ab146e"
   },
   {
    "fichier": "assets/noyau/chambre-partenaires.json",
-   "empreinte": "f31d40da3692fbcc9dbda8a33e70edadecd048e64ec219a6239e33d90aec452e"
+   "empreinte": "0f694cc85cabca2d9a940e95b2650ed31d2f484ccba62a1b1bf7ae5111855784"
   },
   {
    "fichier": "assets/noyau/chambre-petitions.json",
-   "empreinte": "9b750fc3c2481324f0399b43ac52b1babec31a1e88eb2aa18780f0e3778c2fed"
+   "empreinte": "227c578b235ebfc1deddd6c5b36eda0e70f46aa9ae6bee462940352ac0c8f282"
   },
   {
    "fichier": "assets/noyau/chambre-politique-site.json",
-   "empreinte": "6a90e05e088da24481b6e77ae8fd553aacc30374169eda86fd2d488a881b70d8"
+   "empreinte": "b65f1604108995d8b905326c0e84d3e7b3bd93e88c9be0edee856f049cab0d31"
   },
   {
    "fichier": "assets/noyau/chambre-preuves.json",
-   "empreinte": "4e2fd5ce7d007c869d60cf7381c7bb7d2eb8dbda2bbda3333773b99cc7201b54"
+   "empreinte": "f607320beec4ffbc9ff870419f90a9544c8648caf057c1d0b87ada9ce1d7fd0b"
   },
   {
    "fichier": "assets/noyau/chambre-recu.json",
-   "empreinte": "bfaa75b99b0675fd194a3b73470b901da29c478b109d1719cfd9987120f5bb14"
+   "empreinte": "b3c4f2670ee98370feeda2ae4a0cf1e6cd87cd372b529482ad0a66627e30e52b"
   },
   {
    "fichier": "assets/noyau/chambre-recus.json",
-   "empreinte": "3a913c81a83b607ef1b58441376c9cc2470fb6a3923c2af6be063773ab6e3b8e"
+   "empreinte": "666ecbe54ce29e89cfecc65202dc8e24b0d9f76282b0be7803085283a8eac25a"
   },
   {
    "fichier": "assets/noyau/chambre-registre.json",
-   "empreinte": "4f2fd664a59fe43ec84254232dfa9b24fd2a933f8768246e98eb4ebc7d4653ca"
+   "empreinte": "83acfcbb7d4cd06b3db5a73227f66eb85265e897f629ddc1bbea78bf4f2e277c"
   },
   {
    "fichier": "assets/noyau/chambre-repertoire.json",
-   "empreinte": "ebb772a9ed3869f74219cd91e7b3d65d598ab5a2e960cd6d1c548d1224b932bd"
+   "empreinte": "7fa4576edd67bdcfe81c8429543e262a9511d3d861d9939c5795c242b916d5e7"
   },
   {
    "fichier": "assets/noyau/chambre-sceller.json",
-   "empreinte": "5e2cd2ece5ffde73b6abefe83994c2445b2960c7f6f854e86bebf37d1cf2a6b4"
+   "empreinte": "8a8dcbfb539cfbfc9a4861255ba91f6e335c94a42115b7e3d147e622e4d2b24a"
   },
   {
    "fichier": "assets/noyau/chambre-suivi-familial.json",
-   "empreinte": "094006d22892b2858238bc174b08e1f073fe19da7370994e9a48840a1d51a9e1"
+   "empreinte": "ce1649f97ca77f8aa986417c7866a40b119bdd77153166c8bfc2ff7f3e075e7d"
   },
   {
    "fichier": "assets/noyau/chambre-suivi.json",
-   "empreinte": "70d7046f0101aa206ef3649243563c19b4275215d0cfb659c08e8f38fd665304"
+   "empreinte": "1350e47250d443537325d43dc7c9d8ab5e10d8dfb19287bf717bb7788fe4100f"
   },
   {
    "fichier": "assets/noyau/chambre-suspendu.json",
-   "empreinte": "dd144fea11ace4c41d5cbc5edd6e9ddc562dc9093313a4ecf1cd8f91b060bef5"
+   "empreinte": "24454960ec4bf77bd859d1e81de1fb71e066064d746a5f2f287a5fae481ea733"
   },
   {
    "fichier": "assets/noyau/chambre-temps.json",
-   "empreinte": "cefb30434df9f113e3c8e95b71c21cc4caccffde4024b4119b377868aab2a85f"
+   "empreinte": "7b41903fc6fc56afb038357933719f16fe3d8773c052994c4e15882d69f0d7a0"
   },
   {
    "fichier": "assets/noyau/chambre-transits.json",
-   "empreinte": "3bf56e876790222b963486f338f2e8ebb40f377d17b34644936b7c55d3e81294"
+   "empreinte": "cea67c3543300d5d88407a5cc4ea8cbc6ad15f46a5ea1becb2c23adbe9e77321"
   },
   {
    "fichier": "assets/noyau/chambre-transmission.json",
-   "empreinte": "5b07cf858c8f49a9c2c3d46b43e1a9ee909f5e164b22635e3560f4db6c0755ba"
+   "empreinte": "c90fc2df21a00ee72ccbced30580cb477d12d6948332d77230c154a8167d3858"
   },
   {
    "fichier": "assets/noyau/chambre-transparence.json",
-   "empreinte": "0b88aebd3259a7bf8da7f0b5ab570294d4d1f14ee1542cf8651baf655b22fca8"
+   "empreinte": "3842bbad66bbf6c34d001f18b650befc1dad5603ae1cf3d559146c2dee61218c"
   },
   {
    "fichier": "assets/noyau/chambre-verifier.json",
-   "empreinte": "5173e1ed721fa22a4e3c96576f034f2ec11a493e7c4ddc19156814dd35b9d917"
+   "empreinte": "e060de8e2286d05f9a044d3227fb3506df471ec42bd69186ef75c2bbf16ef00c"
   },
   {
    "fichier": "assets/noyau/chambre-vision.json",
-   "empreinte": "b65dfc5bff5dd8ef85c5258197d6e5fa64eee5126416d4f9661d86763f7406d9"
+   "empreinte": "f284de58d9d3da6f977da1328857ac33bcc226cded86d7b796a6262c41544d53"
   },
   {
    "fichier": "assets/noyau/chambre-voir.json",
-   "empreinte": "896aad4b404bb1b9ea90badaf2d2a82a2cb600d117ad8a79883b4e2c62acd88e"
+   "empreinte": "07443fbcf6b6e6fd3e05f5c1eba7283287dc1606e6369b5f3361a34f4783a50e"
+  },
+  {
+   "fichier": "assets/noyau/chambre-404.json",
+   "empreinte": "7b75dd3a16f88cce4c5c3535ce24133562cb04deb9cc77d66c6359d054cf31f8"
+  },
+  {
+   "fichier": "assets/noyau/chambre-accessibilite.json",
+   "empreinte": "0966b7766fc28b61ff9755b92f8321c0038be0abd6b901d16a23eb9938a14345"
+  },
+  {
+   "fichier": "assets/noyau/chambre-agir-sur-mes-donnees.json",
+   "empreinte": "fdcddfcd8a2ec0f781c122e95266e704d7f145a91eb7adb14855d7c279cecea7"
+  },
+  {
+   "fichier": "assets/noyau/chambre-atelier-chiffrement.json",
+   "empreinte": "f2f01190115979ab996f6a3a703ce4d376f050b89608d206043de2ae9e2750cf"
+  },
+  {
+   "fichier": "assets/noyau/chambre-balado.json",
+   "empreinte": "b9cef1a35ef44136b6bc7a3a6509a663d4014af81b6ed4734d8d994a25d06ce1"
+  },
+  {
+   "fichier": "assets/noyau/chambre-cerveau-coquillage.json",
+   "empreinte": "2b8d32b1c6af0295708557a891eef399e44bb50e7c3201d4a79407741f4e29ce"
+  },
+  {
+   "fichier": "assets/noyau/chambre-edition-2026-11-04.json",
+   "empreinte": "93307ddb8a1a117655ed1010e14935c31de5e93a55162fe827bdb619225ea5e4"
+  },
+  {
+   "fichier": "assets/noyau/chambre-edition-2026-11-05.json",
+   "empreinte": "76fb9699d66942aec5ffe388734bee2c9e26112e0764e16508ac57748021a92f"
+  },
+  {
+   "fichier": "assets/noyau/chambre-edition-2026-11-06.json",
+   "empreinte": "a6e92029b61c6dfb415a21ad3fee6a7afb0445b6cdc25f96ce1fcf4c6506415d"
+  },
+  {
+   "fichier": "assets/noyau/chambre-edition-2026-11-07.json",
+   "empreinte": "2c9df329bfb1b7537d94443c2c53b4ea955e7a1ac90b7bfd19d02150918c34ae"
+  },
+  {
+   "fichier": "assets/noyau/chambre-errata.json",
+   "empreinte": "00f278e4129a00bbda6da41903326cd54a060e598caaec7fb6436c8ddbfdbb57"
+  },
+  {
+   "fichier": "assets/noyau/chambre-glossaire.json",
+   "empreinte": "ee1646eb328135507bdf7d7fdd046a11ba7229c8fd7d2e205df83e9fbff15e89"
+  },
+  {
+   "fichier": "assets/noyau/chambre-kit-verification.json",
+   "empreinte": "cf9403adfdf700a5162be618433db75a0ae7706d7fdd7d3b905092cccc4ebbfb"
+  },
+  {
+   "fichier": "assets/noyau/chambre-note-c2pa.json",
+   "empreinte": "d963f813fd53eed3f48ab88e51e919f938ba88ae63cd5418c333f0785ec4b094"
+  },
+  {
+   "fichier": "assets/noyau/chambre-ouverture.json",
+   "empreinte": "2287ebed8f1637d34584a5540d490d8dcd6ecc3ecfd3d6c80efd9ef84223f86b"
+  },
+  {
+   "fichier": "assets/noyau/chambre-recherche.json",
+   "empreinte": "eb7f2e3353566acce18c901ad1b0021c649638d40c935eb2a6a6a1afd76fb228"
+  },
+  {
+   "fichier": "assets/noyau/chambre-transparence-audit-unisson.json",
+   "empreinte": "6ff68015fc3d2e8f967cf9ffd705838576ff7ed45a7933a94b1c5ab9f55049c8"
+  },
+  {
+   "fichier": "assets/etage-ia/CREDITS.md",
+   "empreinte": "9ae0cb10dae7398c9e2f8735855204a8738e3ae263eef0191d05702fbbbd9325"
+  },
+  {
+   "fichier": "assets/etage-ia/rapport-alimentation.json",
+   "empreinte": "c6dd24191b5c8c72a9fdf06a352e4ea5e880ab69cfd3569fdc80d3a383970d39"
+  },
+  {
+   "fichier": "assets/etage-ia/recherche-donnees.json",
+   "empreinte": "95b573e14d4f784cd1acdaf3b7bb0d246eb779ab94954c0055801d21a4ac0dbd"
+  },
+  {
+   "fichier": "assets/etage-ia/recherche.js",
+   "empreinte": "467543a11959ad8b95b92cc36120fdc99d42b7a35504367e443b24b7f44507e1"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/LICENCE-wllama.txt",
+   "empreinte": "5866e3bd7e3cbd3f7c8bea6efd8a1e7fa7cc8de68c30f428aff7c6584a0fb720"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/esm/index.js",
+   "empreinte": "062c3fbaa266dea3ee991c699c176c21cf22e7199b0cac6481182b8708fc703b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/esm/wasm/wllama.wasm",
+   "empreinte": "b012436a101ede8c877f2d26644c3181429d4fb8da4fd90c356110d86bfd74a6"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/compat/wasm/wllama.js",
+   "empreinte": "38a3626b134c49d81ec9e1f96b58d63613afd23b7e76e8e2677cd59fb6d76212"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/compat/wasm/wllama.wasm",
+   "empreinte": "6c5445f579a152c19ccad65aacebb57084d1db2f1b87ad473fa3acc0051ac72f"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/LICENCE-transformers.txt",
+   "empreinte": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/transformers.web.min.js",
+   "empreinte": "ecaf2c7dce4bcbe882d1ec6e67c2f537720e0e47169e5f7e60f2c019fba91682"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort/ort-wasm-simd-threaded.mjs",
+   "empreinte": "c57ca56328877353a575e51bbca6f18450027d6c9bf2307a2cb2c41363b4de9f"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort/ort-wasm-simd-threaded.wasm",
+   "empreinte": "06ba057753da3847e4c24f02d91ab133455b0817c69a44993a9a53a2146df9e3"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort/ort.webgpu.min.mjs",
+   "empreinte": "5dd65363be87d182ce0617665489cab4b78359cea9f04d813b2a423c9be651a1"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend-impl.d.ts",
+   "empreinte": "bd0d40e4018db385fbe93aac3df8ea3b1d02c815f64b30cddd35a68d94efea45"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend-impl.d.ts.map",
+   "empreinte": "11a2fe9c890d62cf7ac33620b6ba808c5b3e248a896f6f9a8a7070f2bb263ed9"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend-impl.js",
+   "empreinte": "97dd81b055a06f61120f09468fe59f046a9262b7b87bf5d05bceb085bf4f5558"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend-impl.js.map",
+   "empreinte": "9e7139c194620f996ce7df480e655f24372be1335da109e65be9aaeffb5214d2"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend.d.ts",
+   "empreinte": "5653631cdce23a8be640e48ecdae8a6eb46ef10d2040428395842e64915a8908"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend.d.ts.map",
+   "empreinte": "e6bf817557c0b73c34dc16da4dad5a9c8862a0a9438eecf5ebd407e91a9fd612"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend.js",
+   "empreinte": "017ce2ec9dc2021ebc1ef2c4f04e1bc74276c65921b0297e7ed8cc16e640495b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/backend.js.map",
+   "empreinte": "378edd183061dfea1255d5e30441441c118d15d73a4f55ee9893ae9e459a54ae"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env-impl.d.ts",
+   "empreinte": "727057116fb089d326c340d96948f1ad4583a14a88ec414ef58a51ed38ee698e"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env-impl.d.ts.map",
+   "empreinte": "1bd023add62d88790addd59711b71840d4f018cbffada119bda3fc9fb477bfcf"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env-impl.js",
+   "empreinte": "0da4c562a49fe147e19320a64cbb456184eb0e6242b1fe69c65c8368c55f3d97"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env-impl.js.map",
+   "empreinte": "7d088b8943ec0e7e1c8974d005b9f7ffe181a4d244cc300564c06362c0029ef4"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env.d.ts",
+   "empreinte": "7d19a1ff1a618b06fa781362607385503cf73e163272adad485de9c38b7935f5"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env.d.ts.map",
+   "empreinte": "4b7539e422a36e833612def9bf76bebed69b3da2ab0ee5cf76cb2847afd0df5d"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env.js",
+   "empreinte": "b2bbd3d3b00a95765713c57cd0f5ef73718ae5b8322e07cb47a43e2accb21f15"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/env.js.map",
+   "empreinte": "3971fefb94b17324a58d700c8ac1ef436ebcb88516ba4aca85a20ab991f7e6bb"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/index.d.ts",
+   "empreinte": "497c4cbc0466d090b730e71a473e6834259ffa31600b091619927b79bbf56f9f"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/index.d.ts.map",
+   "empreinte": "63bc976e2c8c30fa0fe4762e938c591fef33808a4c3f823e6926dea68490dc19"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/index.js",
+   "empreinte": "ad23f6d6ce2c99c449031f24a5181f259516c64a9a67428c98a8539b857729bd"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/index.js.map",
+   "empreinte": "04071a75a57723acae3137b219ac368c42a3ceecabefc57a24837bafa96e1d6b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session-impl.d.ts",
+   "empreinte": "0c8ca97861939d697b44168e2e1de42206ac509d66aa8e4b5ed8fae8d90c8078"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session-impl.d.ts.map",
+   "empreinte": "2983e1efe8b6d2fe381793d822545a31d8aeac61021ff48a910b5f344c21c751"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session-impl.js",
+   "empreinte": "0446814a392c147b5c38ba242d9911ee54002b5d01a8e19fb4895fb8f8a0cdd3"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session-impl.js.map",
+   "empreinte": "e7b131cfc1d1b9bf0ebd36a78d3883a5da5d161d2e9ba75cb709bb0f73cfb062"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session.d.ts",
+   "empreinte": "5873346c8cd767fe692935a0dae51d4ec87a92fba553dbbcd1061dbf7d44a0bc"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session.d.ts.map",
+   "empreinte": "91d16900d8eaf3995a1726719529e95d89ea7a8031efeb228163e4c0d22c2104"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session.js",
+   "empreinte": "3ad4271a88edb3d242dc1e0e7bbf66510f9a56eff874c433b3b37f900ac007b1"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/inference-session.js.map",
+   "empreinte": "accc22be8db94a7ff7b9f385c254c46fe47cc16f00ac8dce6fea7772e8ad9dcc"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-model.d.ts",
+   "empreinte": "82fae3b4bd4fd41ddec85d4a8e3351bc3c9fa0e418d2eecffeb65b0677070c08"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-model.d.ts.map",
+   "empreinte": "93ce1490667c68e384748ca91880dfa899fdb97d3949db8db024e525cbe71211"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-model.js",
+   "empreinte": "9e9dc8678be0ea04575a542894508db355a4f9f2155ac7f4c17a697c5f843382"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-model.js.map",
+   "empreinte": "ee06020c28414dfed22ad0ded9436c2996f8fd7450aa827f429278133399b500"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-value.d.ts",
+   "empreinte": "2d1be07df40c1da6220c9717644a93630855ea8c068f8a4bc9bab32e72af704b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-value.d.ts.map",
+   "empreinte": "a7c4b0a89729cfc4a659d85e03bf69e0aeab79c67b0470817174cadd849ddbdc"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-value.js",
+   "empreinte": "33dc232498753fc9026dfa44c99440cb1a6d29f3e53e1ad2fb8b696705158f06"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/onnx-value.js.map",
+   "empreinte": "cfa14e63ce9bb3b8a64271014ffa4f64696906f9e9a40cf2105effddc19bb31f"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/package.json",
+   "empreinte": "e3d5a4a2d8551aa52c5a01d2a0efb2e06a2d9711b4f5c5f1d20de6e21807e2cd"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion-impl.d.ts",
+   "empreinte": "4efbe2fc7c074e2040e2b6808883707ff1167c870efd8dc2bfe55d26d2c9d5a5"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion-impl.d.ts.map",
+   "empreinte": "771436ac420108264f3a408af98d903cef9b1f8d7a14c2a1e8158b99181ef71a"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion-impl.js",
+   "empreinte": "df6fa3cd1813c2d3e588cc07973cfe5ea2ab8647c957168200caa58e51440161"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion-impl.js.map",
+   "empreinte": "4b53080a9f82419a089c741a654d70018330805ee0d462171532972c2fa07937"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion.d.ts",
+   "empreinte": "b5c7ddba6ed8e41b6ab71ff62ba6189d615f08f617843ef570edb09fb7ced882"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion.d.ts.map",
+   "empreinte": "6f4fa51a5b6501c1a8214a85c9b9d389b04bfbe0d3e59cfd122fffb309788a67"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion.js",
+   "empreinte": "8c43ec1d061ab71032a1b28f45d85ef95f8d7bd2d4cd71d059e96d83e3a8f422"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-conversion.js.map",
+   "empreinte": "1626b7382607c77e31e53f6a7c3be122f2a6b0851617d1336fb1f29eb2a6de45"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory-impl.d.ts",
+   "empreinte": "5b3183961388699dd9f7bc1638e546a31d3b3f0e1d396f60a5c70d279bf77887"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory-impl.d.ts.map",
+   "empreinte": "a9bdd72daefb0ce2b8456ad3b122d993e1e154eace858b187fc250d897d2c8cd"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory-impl.js",
+   "empreinte": "cf5606fe23461e01bff59c2d72ac47d74e652548718f1e5fab07a22b441379b4"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory-impl.js.map",
+   "empreinte": "7f81d43deb853b53d6f4b459702afda6c86a9fc6778dfe1988c56d234166eab3"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory.d.ts",
+   "empreinte": "4bbf58af95c745c404c7aad88e36b1e9490b3236a9819175acad099508d519d4"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory.d.ts.map",
+   "empreinte": "a86e5a12803bb7fc7a432e82f223330176d9f85b5e7ef5bcec98563c97b04828"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory.js",
+   "empreinte": "68b9f4f4573f25012ce8a4f73c9a2cee3a28db91de8bbb0a20ddb08bcba33c4b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-factory.js.map",
+   "empreinte": "de392d5a5afb6bd6a0e72fabca836976b2d595494b9ee0877563d054bde706e7"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl-type-mapping.d.ts",
+   "empreinte": "5ca748ccfcb1d430c355aa5c19909569fbe9e3b475a3e5263288d2e20d720f31"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl-type-mapping.d.ts.map",
+   "empreinte": "1865e78cd55a546634777d96cebf3d7665fa7a6ff5a314bc867218c2dc59c84e"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl-type-mapping.js",
+   "empreinte": "20bd5ddb858954cf071bace6c7a6628c8e311433798ec172f4c778bebd81d407"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl-type-mapping.js.map",
+   "empreinte": "fea47c5ea4a2a3b6bb9358601a45e794881e33e63d4a12bc73c301d0ef462944"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl.d.ts",
+   "empreinte": "1b4d2a5e8531db01cb9c2a4d2d09e0805f56696bbfca6b164bee9ed1d1e02831"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl.d.ts.map",
+   "empreinte": "548efb8f62410a7c015bb3c71fc59ae9ecfe4afc8e3ae9514e66bf52cdd71f6d"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl.js",
+   "empreinte": "6a749be63055f9d21069566b1515412484a3a03448ca20427c8f8d29328a2843"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-impl.js.map",
+   "empreinte": "4e4891f3ebfd30005ed1af0f98876ef67988c23c6a4f11e3e2974106bad4dbc4"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils-impl.d.ts",
+   "empreinte": "69cd3333d205f279d0db5e2ad6166d1f9dd520cc21a8d995d5d6fe3c35a09738"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils-impl.d.ts.map",
+   "empreinte": "cae9cc94d5fa7f9692302476e7ab68fd400f5c935ed929ef4c9d2e31de83c019"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils-impl.js",
+   "empreinte": "87d3e07c153616138c2f57846545eea9c47957c714d50c0264696bdc293e6732"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils-impl.js.map",
+   "empreinte": "c0bc6729a8c22d116b2babdec5c0bdaacaf47764f43edff6f902204e702f7315"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils.d.ts",
+   "empreinte": "208abeb6168785830877b91f7224c112ac56c3973d51cc50ece014e61efe98df"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils.d.ts.map",
+   "empreinte": "9784ff3fe1102ec2ad45fb9592c6f5082a08386f5cf24585afdf57c4ca1686a5"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils.js",
+   "empreinte": "7acfdb2f8403ae84b7ae62d55d6eeb01519108be8874337b317b911ed60190cd"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor-utils.js.map",
+   "empreinte": "990c27d18665344f487792e9530c4237efec8b0419d32fe36c4cbf2d938cd316"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor.d.ts",
+   "empreinte": "f7fb8b79a47ca55a656bdacc70fe4fc2bc0884f27efc9ee142a7d217098821d6"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor.d.ts.map",
+   "empreinte": "ed5d26a586ee8021d6d90692893b2351289e9fb2517cc66f71842c99a0f5226a"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor.js",
+   "empreinte": "721d24a538de5333057bfc423bc00c3453a1c483f4495c857d0a6f9b8f2d330e"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/tensor.js.map",
+   "empreinte": "76298bb9afed1e5c1eca99aaff1c60e8d9a6e780272934f35066c1ffb2ebce07"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/trace.d.ts",
+   "empreinte": "d310376ece0d657e18c98909ed15684bc535e23a089e3da87adbce8a7e1d0a9b"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/trace.d.ts.map",
+   "empreinte": "7cc7b6bf8ad0378a2f9b09087ffe057e3c4576f4731f2a97df630bcb565bfff3"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/trace.js",
+   "empreinte": "9b87e6309a1c502b03558aa94b0a65c8ea1e8eb59cb46090f54f6eacd191b841"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/trace.js.map",
+   "empreinte": "d927bb262364fc469c116feef894604d4eebe413dc2b4d7c7d6d23d41d5bcd08"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/type-helper.d.ts",
+   "empreinte": "c16ecf73bb75fc2218e4e1a80273f4196579217172468c17d4923b64cf0d225d"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/type-helper.d.ts.map",
+   "empreinte": "3eaaba36581e3d6442d1f76572b4ba88d73b6fd7337e94ead793123130356387"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/type-helper.js",
+   "empreinte": "3e2588c6a5ee7b9755e199eef10c6aa2e777d0366ea47d27953657a5638deeae"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/type-helper.js.map",
+   "empreinte": "fa3d99e26dec5b7ca602c59d9c6eb57aa16050fba63706e6bac58525eed3a70d"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/version.d.ts",
+   "empreinte": "7da5a05e1c5b62bbebf9263fdfd28b23168a37339466cc97907ff148d38ada0d"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/version.d.ts.map",
+   "empreinte": "f897b2d0247fc7886cc198a3f40730727ec9479ee3d71367d7c359b74bacf2b1"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/version.js",
+   "empreinte": "75e3afe6a5bb6266240ece32c41b7a0f3534725ca58b52c758a346b49eceb56c"
+  },
+  {
+   "fichier": "assets/etage-ia/vendor/transformers/ort-common/esm/version.js.map",
+   "empreinte": "acbc4808a3ab96b3f5ae79dd496be93ce4c0809a1d86243ba03faefd0ed6b161"
   }
  ],
  "index_recherche": "assets/recherche-index.json — index plein texte dérivé des pages finales (régénéré à la construction) ; sa source est les pages elles-mêmes, déjà empreintées ci-dessus.",
- "sceau_canonique_noyau": "f8591ddbdadf0a34a34bf32ffbfd37d079d4426e0e77504f26cd47e1ffca8f8a",
- "sceau_chaine_version": "01bbe4a2b7531c9a729ade64b77ce6802cfc8ea54444f308c43ae3a4d5b547bf",
- "sceau": "6c86ea9847b475cb49237822016879a0ccb932a878c1daed4d1dc1097803d3d4"
+ "sceau_canonique_noyau": "32647e8992ed1d20f2b60c715ffe476e3a153799092b6e99674348a3694ce521",
+ "sceau_chaine_version": "49883c4e278057a5730bd1bbb3911dcf54e3f7bcb3ae307b719e031228d12d3e",
+ "sceau": "a57347c9abab1c9bf3533f582aea34b651342cf565c68e7003fa7e749da5bd78"
 }
