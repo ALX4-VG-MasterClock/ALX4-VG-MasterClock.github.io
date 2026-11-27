@@ -1,0 +1,217 @@
+/* ===== vMAG-COMP — « Le magazine », DEUXIÈME passe : la COMPOSITION (25 novembre 2026).
+   Après le verdict d'Alex sur la première passe (« Il est comme il était avant, il n'est pas
+   sur le style que tu m'as proposé style de magazine ») : ceci n'est plus une couche de
+   couleurs sur l'ancien gabarit, mais la structure même du monde B de la ronde 2 —
+   nav de revue, masthead, bandeau, COUVERTURE pleine page, sommaire du numéro,
+   têtes d'article (kicker, gros titre, chapô, filets). Structure reprise du modèle
+   ronde2-b (chantier-etage-ia/modeles-20261125), classes préfixées « mag- » pour ne
+   rien heurter du site existant. Présentation seulement : aucun texte du site n'est
+   modifié par cette feuille. ===== */
+.mag-nav,.mag-masthead,.mag-bandeau,.mag-couv,.mag-sommaire,.mag-exergue,.mag-article-head,.mag-figure{
+  --m-encre:#16130e;--m-papier:#fdfcf7;--m-rouge:#bc3318;--m-gris:#5d574c;--m-filet:#16130e;--m-ligne:#ddd6c4;
+  --m-display:Didot,"Bodoni MT","Playfair Display","Times New Roman",serif;
+  --m-texte:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --m-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* — La barre du numéro (nav de revue, modèle B : nav.mag) — */
+/* statique (pas sticky) : le site a déjà sa barre fixe (.barre, top:0) — la bande du
+   numéro s'imprime en tête de page, comme sur une couverture, sans la recouvrir. */
+.mag-nav{display:flex;border-bottom:3px double var(--m-filet);padding:10px 16px;gap:4px;background:var(--m-papier)}
+.mag-nav a{flex:1;text-align:center;color:var(--m-encre);text-decoration:none;font-family:var(--m-sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 2px}
+.mag-nav a.actif{color:var(--m-rouge);box-shadow:inset 0 -3px 0 var(--m-rouge)}
+/* — Le masthead : le nom du site comme titre de revue — */
+.mag-masthead{text-align:center;padding:22px 16px 12px;border-bottom:1px solid var(--m-filet);background:var(--m-papier);color:var(--m-encre)}
+.mag-masthead .mag-nom{font-family:var(--m-display);font-size:clamp(44px,10vw,58px);letter-spacing:.06em;line-height:1;margin:0;font-weight:700}
+.mag-masthead .mag-devise{font-family:var(--m-sans);font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--m-gris);margin:9px 0 0}
+/* — Le bandeau du numéro — */
+.mag-bandeau{display:flex;justify-content:space-between;gap:8px;border-bottom:3px solid var(--m-filet);padding:7px 16px;font-family:var(--m-sans);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--m-papier);color:var(--m-encre)}
+.mag-bandeau .r{color:var(--m-rouge);font-weight:700}
+/* — LA COUVERTURE pleine page — */
+.mag-couv{position:relative;background:#0a0a0e}
+.mag-couv img{display:block;width:100%;height:min(88vh,760px);object-fit:cover;object-position:center}
+.mag-couv .mag-cartouche{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(10,10,14,.88) 42%);padding:64px 20px 18px;color:#fdfcf7}
+.mag-couv .mag-kicker{font-family:var(--m-sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#ffb59f;font-weight:700;margin:0 0 8px}
+.mag-couv h1{font-family:var(--m-display);font-size:clamp(34px,9.5vw,56px);line-height:1.0;margin:0 0 10px;font-weight:700;color:#fdfcf7;border:0;padding:0}
+.mag-couv .mag-chapeau{font-family:var(--m-texte);font-size:17px;line-height:1.5;margin:0;color:#e9e4d8;max-width:62ch}
+/* — Rubriques et sommaire du numéro — */
+.mag-rubrique{font-family:var(--m-sans);font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--m-rouge);border-top:3px solid var(--m-filet);padding-top:12px;margin:34px 20px 6px;font-weight:700}
+.mag-sommaire{border-top:1px solid var(--m-filet);margin:0 20px}
+.mag-sommaire a{display:flex;gap:14px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--m-ligne);text-decoration:none;color:var(--m-encre)}
+.mag-sommaire .folio{font-family:var(--m-display);font-size:24px;color:var(--m-rouge);min-width:44px}
+.mag-sommaire .t{font-weight:700;font-size:19px;font-family:var(--m-texte)}
+.mag-sommaire .d{display:block;font-weight:400;font-size:15.5px;color:var(--m-gris);font-family:var(--m-texte);line-height:1.45}
+/* — L'exergue (citation d'Alex, modèle B) — */
+.mag-exergue{font-family:var(--m-display);font-size:clamp(23px,6vw,28px);line-height:1.25;border-top:1px solid var(--m-filet);border-bottom:1px solid var(--m-filet);padding:18px 4px;margin:28px 20px 4px;text-align:center;color:var(--m-encre)}
+.mag-exergue .attrib{display:block;font-family:var(--m-sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--m-gris);margin-top:10px}
+/* — Têtes d'article des pages intérieures (modèle B : kicker, h1, chapô) — */
+.mag-article-head{padding:26px 20px 4px;max-width:700px;margin:0 auto}
+.mag-kicker{font-family:var(--m-sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--m-rouge);font-weight:700;margin:0 0 8px}
+.mag-kicker .mag-num{color:var(--m-rouge)}
+.mag-article-head h1,.mag-article-head .mag-titre{font-family:var(--m-display);font-size:clamp(34px,9.5vw,50px);line-height:1.02;margin:0 0 12px;font-weight:700;color:var(--m-encre);border:0;padding:0}
+.mag-article-head .mag-chapo{font-family:var(--m-texte);font-size:19.5px;line-height:1.55;color:#33302a;border-bottom:1px solid var(--m-filet);padding-bottom:16px;margin:0}
+/* la chambre : son h1 et son sous-titre existants deviennent la tête d'article */
+.mag-article-head .sous-titre{max-width:none;margin:0;color:#33302a;font-size:19.5px;line-height:1.55;border-bottom:1px solid var(--m-filet);padding-bottom:16px}
+/* l'accroche de la page de dépôt, promue chapô : son style propre (#p-depose-empreinte
+   .de-accroche) continue de s'appliquer ; on la resserre en chapô de revue */
+.mag-article-head .de-accroche{font-family:var(--m-display);font-weight:700;color:var(--m-encre)}
+/* — Figures de revue — */
+.mag-figure{margin:20px auto 0;max-width:700px;padding:0 20px}
+.mag-figure img{display:block;width:100%;height:auto}
+.mag-figure-haut{margin-top:0;padding:0;max-width:none}
+.mag-figure-haut img{width:100%}
+/* fond papier de revue derrière les blocs de composition, dans les panneaux du site */
+.mag-fond{background:var(--m-papier);color:var(--m-encre);padding-bottom:10px}
+
+/* ===== vMAG-RÉPARATION (26 novembre 2026) — pages réparées : accueil reconstruit,
+   droits, dépose-empreinte, chambre du cerveau. Ces pages portent la classe
+   « page-mag » sur leur <body> ; AUCUNE autre page du paquet n'est affectée.
+   Défauts traités : ancien en-tête fixe et barre latérale masqués, colonne de
+   lecture centrée (~74ch), boutons et formulaires au style revue, couverture
+   dans le premier écran, bandeau non tronqué, citation de revue. ===== */
+body.page-mag{
+  --m-encre:#16130e;--m-papier:#fdfcf7;--m-rouge:#bc3318;--m-gris:#5d574c;--m-filet:#16130e;--m-ligne:#ddd6c4;
+  --m-display:Didot,"Bodoni MT","Playfair Display","Times New Roman",serif;
+  --m-texte:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --m-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* — Ancien chrome : ni en-tête fixe, ni barre latérale, ni panneau de menu — */
+body.page-mag .barre,body.page-mag .rail-arbre,body.page-mag .menu-panneau{display:none!important}
+@media(min-width:1280px){body.page-mag{padding-left:0}}
+/* — Bandeau du numéro : jamais tronqué — */
+body.page-mag .mag-bandeau{flex-wrap:wrap}
+body.page-mag .mag-bandeau span{white-space:nowrap}
+/* — La couverture DANS le premier écran (accueil reconstruit) — */
+body.page-mag .mag-couv img{height:min(62vh,540px)}
+/* — Colonne de lecture centrée — */
+body.page-mag section.bloc,
+body.page-mag #p-depose-empreinte>section,
+body.page-mag #etage-ia>section{max-width:74ch;margin-left:auto;margin-right:auto}
+body.page-mag #accueil-plat{max-width:74ch;margin:0 auto;padding:14px 20px 4px}
+/* — Ligne de rattachement au manifeste, en capitales de revue — */
+body.page-mag .rattachement-manifeste{font-family:var(--m-sans);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--m-gris);max-width:none}
+/* — Boutons au style revue (fond encre, texte papier, coins nets) — */
+body.page-mag section.bloc button,
+body.page-mag #mini-verificateur button,
+body.page-mag #etage-ia button,
+body.page-mag #p-depose-empreinte button{
+  background:var(--m-encre);color:var(--m-papier);border:1px solid var(--m-encre);
+  padding:.55em 1.15em;font-family:var(--m-sans);font-size:14px;font-weight:700;
+  letter-spacing:.05em;cursor:pointer;border-radius:0;text-transform:none}
+body.page-mag section.bloc button:hover,
+body.page-mag #mini-verificateur button:hover,
+body.page-mag #etage-ia button:hover,
+body.page-mag #p-depose-empreinte button:hover{background:var(--m-rouge);border-color:var(--m-rouge)}
+body.page-mag section.bloc button.secondaire,
+body.page-mag #etage-ia button.secondaire{background:var(--m-papier);color:var(--m-encre)}
+body.page-mag section.bloc button.secondaire:hover,
+body.page-mag #etage-ia button.secondaire:hover{background:var(--m-encre);color:var(--m-papier)}
+/* — Formulaires au style revue (Dépose ton empreinte, chambre du cerveau) — */
+body.page-mag #p-depose-empreinte fieldset{border:1px solid var(--m-filet);padding:1.1em 1.2em;margin:1.2em 0;background:#fff}
+body.page-mag #p-depose-empreinte legend{font-family:var(--m-sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--m-rouge);padding:0 .5em}
+body.page-mag #p-depose-empreinte input[type="text"],
+body.page-mag #p-depose-empreinte textarea,
+body.page-mag #etage-ia input[type="text"],
+body.page-mag #etage-ia textarea,
+body.page-mag #etage-ia select{
+  border:1px solid var(--m-encre);background:#fff;color:var(--m-encre);
+  padding:.55em .65em;font-family:var(--m-texte);font-size:15.5px;border-radius:0;box-sizing:border-box}
+body.page-mag #p-depose-empreinte ::file-selector-button{
+  background:var(--m-encre);color:var(--m-papier);border:1px solid var(--m-encre);
+  padding:.5em 1em;font-family:var(--m-sans);font-size:13.5px;font-weight:700;cursor:pointer;border-radius:0;margin-right:.7em}
+body.page-mag #p-depose-empreinte .de-resultat,
+body.page-mag #p-depose-empreinte .de-empreinte{
+  border-left:3px solid var(--m-rouge);background:#fff;padding:.7em .9em;margin-top:.7em;word-break:break-all}
+body.page-mag #p-depose-empreinte .de-message{
+  border:1px dashed var(--m-encre);background:var(--m-papier);padding:.8em .9em;white-space:pre-wrap;word-break:break-all}
+/* — Figure de revue à hauteur contenue (Dépose ton empreinte) — */
+body.page-mag #p-depose-empreinte .mag-figure img{height:min(46vh,430px);object-fit:cover;object-position:center}
+/* — Légendes de figures — */
+.mag-figure figcaption{font-family:var(--m-sans);font-size:12.5px;letter-spacing:.04em;color:var(--m-gris);padding-top:8px;line-height:1.5}
+/* — La chambre du cerveau : typographie serif du site, tête et corps en revue — */
+body.page-mag #etage-ia{font-family:var(--m-texte);color:var(--m-encre)}
+body.page-mag #etage-ia h2{font-family:var(--m-display);color:var(--m-encre)}
+body.page-mag #etage-ia .etiquette{font-family:var(--m-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--m-rouge);font-size:12px;font-weight:700}
+/* — Le mini-vérificateur, stylé magazine (accueil) — */
+body.page-mag #mini-verificateur{border:1px solid var(--m-filet);background:#fff;padding:20px 22px;margin:24px 0}
+body.page-mag #mini-verificateur h2{font-family:var(--m-display);font-size:27px;line-height:1.1;margin:0 0 10px;color:var(--m-encre)}
+body.page-mag #mv-liste{margin:12px 0;padding-left:24px;line-height:1.55}
+body.page-mag #mv-verdict{font-weight:700;font-family:var(--m-texte)}
+/* — Le texte d'Alex du 20 mars 2017 : bloc citation de revue (orthographe d'origine intacte) — */
+body.page-mag .piece52-cloture{max-width:74ch;margin:36px auto 6px;padding:28px 22px;border-top:3px solid var(--m-filet);border-bottom:1px solid var(--m-filet);text-align:center;background:var(--m-papier)}
+body.page-mag .piece52-date{font-family:var(--m-sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-rouge);font-weight:700;max-width:none}
+body.page-mag .piece52-texte{font-family:var(--m-display);font-size:clamp(22px,5.4vw,28px);line-height:1.4;color:var(--m-encre);border:0;margin:10px 0;padding:0}
+body.page-mag .piece52-prov{font-size:14.5px;line-height:1.6;color:var(--m-gris);max-width:62ch;margin:14px auto 0;text-align:left}
+/* — Pied de page court de la une reconstruite — */
+.mag-pied{border-top:3px double var(--m-filet);margin:42px 20px 0;padding:16px 2px 28px;color:var(--m-encre)}
+.mag-pied p{margin:0 0 9px;font-size:14.5px;line-height:1.6;max-width:none}
+.mag-pied .mag-pied-liens{font-family:var(--m-sans);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.mag-pied .mag-pied-liens a{color:var(--m-encre);text-decoration:none}
+.mag-pied .mag-pied-liens a:hover{color:var(--m-rouge)}
+
+/* ===== vMAG-RÉPARATION RONDE 2 (26 novembre 2026) — restes de la revérification
+   visuelle indépendante : devise du masthead centrée, formule du mini-vérificateur
+   sans coupure de mot, légende de fieldset en pastille, champ fichier fini,
+   boutons du panneau Droits couverts, chambre : colonne épinglée et figure à
+   hauteur contenue pour que sa légende se voie. ===== */
+/* — (5b) La devise du masthead : bloc centré, plus de bloc étroit à gauche — */
+body.page-mag .mag-devise{max-width:110ch;margin-left:auto;margin-right:auto}
+/* — (5a) La formule du mini-vérificateur : les mots restent entiers ;
+   seuls les sceaux des enregistrements (listes, hors <p>) gardent break-all — */
+body.page-mag #mini-verificateur p .mono{word-break:normal;overflow-wrap:normal}
+/* — (5d) Le sceau canonique du noyau, sur sa propre ligne au pied de la une — */
+.mag-pied .mag-sceau-ligne{margin-top:2px}
+/* — (3) Droits : tous les boutons du panneau au style revue — */
+body.page-mag #p-droits button{
+  background:var(--m-encre);color:var(--m-papier);border:1px solid var(--m-encre);
+  padding:.55em 1.15em;font-family:var(--m-sans);font-size:14px;font-weight:700;
+  letter-spacing:.05em;cursor:pointer;border-radius:0;text-transform:none}
+body.page-mag #p-droits button:hover{background:var(--m-rouge);border-color:var(--m-rouge)}
+body.page-mag #p-droits button.secondaire{background:var(--m-papier);color:var(--m-encre)}
+body.page-mag #p-droits button.secondaire:hover{background:var(--m-encre);color:var(--m-papier)}
+/* — (3) Dépose : légende en pastille sur le fieldset, champ fichier fini — */
+body.page-mag #p-depose-empreinte fieldset{background:var(--m-papier)}
+body.page-mag #p-depose-empreinte legend{
+  background:var(--m-encre);color:var(--m-papier);border:1px solid var(--m-encre);
+  padding:.35em .8em}
+body.page-mag #p-depose-empreinte input[type="file"]{
+  border:1px solid var(--m-encre);background:#fff;color:var(--m-encre);
+  padding:.45em .6em;font-family:var(--m-texte);font-size:15px;
+  max-width:100%;box-sizing:border-box;border-radius:0}
+body.page-mag #p-depose-empreinte ::-webkit-file-upload-button{
+  background:var(--m-encre);color:var(--m-papier);border:1px solid var(--m-encre);
+  padding:.5em 1em;font-family:var(--m-sans);font-size:13.5px;font-weight:700;cursor:pointer;border-radius:0;margin-right:.7em}
+/* — (6) Chambre du cerveau : colonne épinglée et centrée, figure contenue
+   (la légende se voit sous l'image), URL du modèle qui se replie au complet — */
+body.page-mag #etage-ia{max-width:880px;margin-left:auto;margin-right:auto}
+body.page-mag #etage-ia .mag-figure{max-width:none;padding:0}
+body.page-mag #etage-ia .mag-figure img{height:min(52vh,520px);object-fit:cover;object-position:center}
+body.page-mag #etage-ia textarea#url-modele{word-break:break-all;line-height:1.45;resize:vertical}
+
+/* — Ronde 3 (26 novembre 2026, revérification en profil vierge) —
+   1. Ligne de rattachement au manifeste : sur les pages pleine largeur
+   (Voyage, chambre), elle commençait collée au bord gauche (x=0), sans la
+   marge que les pages à panneau centré ont d'office. Marge horizontale,
+   boîte contenue à la fenêtre et coupure permise des longues chaînes :
+   le début de la ligne reste visible au complet, en toute largeur.
+   2. Chambre : la colonne épinglée à 880 px (ronde 2) ne portait pas le
+   texte — l'en-tête restait contraint à 700 px (règle de base du gabarit)
+   et les paragraphes à 72ch/74ch. L'en-tête et les sections prennent la
+   pleine largeur du conteneur, les paragraphes aussi : le texte respire
+   à la largeur de l'image (848 px de contenu).
+   3. Voyage : les scènes 02 à 10 (pleine page, fils SVG lourds) ne sont
+   rendues qu'à l'approche du viewport (content-visibility) — le haut de
+   la page (navigation, masthead, station 01) se peint immédiatement ;
+   la mesure du voyage (36/36, somme 1 618) et les scènes sont inchangées. */
+body.page-mag .rattachement-manifeste{padding-left:16px;padding-right:16px;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
+body.page-mag #etage-ia .mag-article-head{max-width:none;padding-left:0;padding-right:0}
+body.page-mag #etage-ia>section{max-width:880px}
+body.page-mag #etage-ia p{max-width:none}
+body.page-mag .b5w .scene:not(.b5-s1){content-visibility:auto;contain-intrinsic-size:auto 100svh}
+
+/* — Ronde 4 (26 novembre 2026, revérification au servi) —
+   Voyage : le voile de marque (règle de base du gabarit : fondu de 0,5 s
+   après un délai de 1 s) couvrait tout l'écran d'un beige opaque pendant
+   environ 1,5 s après la première peinture, le contenu déjà au DOM.
+   Le fondu part désormais dès la première peinture : le geste de marque
+   reste (un fondu bref), l'écran vide disparaît. Aucun texte touché. */
+body.page-mag .b5w #voile{animation:voileOut .35s ease 0s forwards}
