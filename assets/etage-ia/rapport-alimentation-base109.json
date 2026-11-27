@@ -1,0 +1,16 @@
+{
+  "genere_le": "2026-11-25T21:48:57.001Z",
+  "base": "atelier, versement nº 4 (109 passages)",
+  "racine_merkle_passages": "382c2aaa8f43e0e80b89e159fff4a07b3c20d51655ec180cd03e7e2f3861b218",
+  "nombre_passages": 109,
+  "nombre_segments_bruts": 190,
+  "nombre_segments_uniques": 190,
+  "segments_reutilises_du_cache": 147,
+  "segments_calcules": 43,
+  "empreintes_identiques_atelier": true,
+  "chemins_merkle_replies": "109/109",
+  "fidelite_int8_cosinus_moyen": 0.99997,
+  "fidelite_int8_cosinus_min": 0.99995,
+  "bundle_octets": 365586,
+  "bundle": "assets/etage-ia/recherche-donnees-base109.json"
+}

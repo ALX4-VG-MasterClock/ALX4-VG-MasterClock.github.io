@@ -1,0 +1,14 @@
+{
+  "genere_le": "2026-11-25T18:37:44.011252+00:00",
+  "paquet": "site-version-suivante-etage-ia-20261125",
+  "ancienne_racine_merkle_passages": "23ba423356aafdb6e5da35e8e71745a013eab0f19bcff4b137bbd05ac1e8533d",
+  "nouvelle_racine_merkle_passages": "fe9a74f9950f458f822d7ed2f8b7281f2eff65ed02ce1bdad6a1a259011b1249",
+  "racine_changee": true,
+  "nombre_passages": 243,
+  "nombre_segments_bruts": 1164,
+  "nombre_segments_uniques": 1135,
+  "segments_reutilises_du_cache": 1055,
+  "segments_calcules": 109,
+  "bundle_octets": 1934784,
+  "bundle": "/home/hatch/workspace/goals/site-web-du-dossier-ia/files/site-version-suivante-etage-ia-20261125/assets/etage-ia/recherche-donnees.json"
+}

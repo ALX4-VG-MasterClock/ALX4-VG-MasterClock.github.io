@@ -1,0 +1,3472 @@
+{
+ "format": "etage-ia/repertoire-outils/v1",
+ "source": "chantier-etage-ia/repertoire-outils-liens-20261125.md — répertoire établi le 25 novembre 2026 (ancres vérifiées dans le paquet v64 ; la chambre du cerveau vit au paquet site-version-suivante-etage-ia-20261125)",
+ "documentation": {
+  "usage": "À chaque question d’un visiteur, la chambre retrouve d’abord les passages (recherche hybride), puis présente l’outil ou le lieu exact à ouvrir : questions_arrivee (lecture par outil), questions (lecture par question de la banque), orientation (formulations d’une personne perdue → place exacte).",
+  "outils[].lien.statut": "verifiee = ancre id=\"…\" confirmée dans la page du paquet ; page-seulement = la page ne porte aucun id (lien à la page) ; hors-paquet-v64 = la page vit au paquet de la version suivante (chambre du cerveau).",
+  "questions[].ref": "Référence de la banque de questions prévues (P = parcours, Q = question), même numérotation que banque-questions-prevues-20261125.md.",
+  "passages_porteurs": "Numéros des passages du noyau (base 243) dont le contexte scellé porte ou portera le lien."
+ },
+ "outils": [
+  {
+   "id": "A1",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Dépose ton empreinte — le dépôt public des SHA-256",
+   "description": "déposer publiquement l'empreinte SHA-256 d'un fichier, calculée chez le visiteur — le fichier ne quitte jamais son appareil.",
+   "contextes": "dès qu'une personne parle de dater, prouver l'existence ou protéger un document, un texte, une œuvre ; après le calcul local d'une empreinte (C7), le pas suivant est le dépôt.",
+   "lien": {
+    "url": "depose-empreinte.html#depose-empreinte",
+    "page": "depose-empreinte.html",
+    "ancre": "depose-empreinte",
+    "statut": "verifiee",
+    "brut": "`depose-empreinte.html#depose-empreinte` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q1",
+     "formulation": "Je veux dater mon document sans le montrer à personne "
+    },
+    {
+     "ref": "P10-Q2",
+     "formulation": "Ça prouve quoi, au juste, ton dépôt ? "
+    },
+    {
+     "ref": "P10-Q4",
+     "formulation": null
+    },
+    {
+     "ref": "P11-Q2",
+     "formulation": "Je veux prouver que mon œuvre existait à telle date "
+    }
+   ],
+   "questions_brut": "P10-Q1 (« Je veux dater mon document sans le montrer à personne »), P10-Q2 (« Ça prouve quoi, au juste, ton dépôt ? »), P10-Q4 (« Mon document est court, tout le monde pourrait le deviner, non ? » — l'empreinte renforcée), P11-Q2 (« Je veux prouver que mon œuvre existait à telle date »).",
+   "passages_porteurs": [
+    150,
+    213,
+    237,
+    73,
+    71
+   ],
+   "passages_brut": "nº 150 (l'outil lui-même), nº 213, nº 237, nº 73, nº 71."
+  },
+  {
+   "id": "A2",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Le registre public des dépôts",
+   "description": "voir les dépôts publics inscrits comme feuilles datées dans la mémoire cumulative du site, engagées dans l'arbre de Merkle.",
+   "contextes": "quand la personne veut voir à quoi un dépôt ressemble avant de faire le sien ; quand elle cherche un dépôt déjà fait (le sien ou celui du site).",
+   "lien": {
+    "url": "depose-empreinte.html#depot-registre",
+    "page": "depose-empreinte.html",
+    "ancre": "depot-registre",
+    "statut": "verifiee",
+    "brut": "`depose-empreinte.html#depot-registre` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P11-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q2 (« Ça prouve quoi, ton dépôt ? » — voir un dépôt réel et sa portée), P11-Q2 (prouver l'existence d'une œuvre à une date).",
+   "passages_porteurs": [
+    213,
+    150,
+    85
+   ],
+   "passages_brut": "nº 213, nº 150, nº 85."
+  },
+  {
+   "id": "A3",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Revérifier un dépôt — le vérificateur Merkle en local",
+   "description": "revérifier un dépôt par son chemin de Merkle jusqu'à la racine, en local chez le visiteur, à partir du site seul.",
+   "contextes": "au retour d'une personne qui a déposé ; quand quelqu'un doute d'un dépôt ou veut refaire la preuve lui-même ; c'est la surface actionnable de la **chambre de l'arbre de Merkle** (répertoire de l'atelier, id 4 — voir écart E6).",
+   "lien": {
+    "url": "depose-empreinte.html#depot-verifier",
+    "page": "depose-empreinte.html",
+    "ancre": "depot-verifier",
+    "statut": "verifiee",
+    "brut": "`depose-empreinte.html#depot-verifier` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": "Plus tard, je revérifie ça comment ? "
+    }
+   ],
+   "questions_brut": "P10-Q3 (« Plus tard, je revérifie ça comment ? »).",
+   "passages_porteurs": [
+    214,
+    72,
+    75,
+    150
+   ],
+   "passages_brut": "nº 214, nº 72, nº 75, nº 150."
+  },
+  {
+   "id": "A4",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Voie additionnelle — déposer la même empreinte directement dans Bitcoin (OpenTimestamps)",
+   "description": "estampiller la même empreinte directement dans Bitcoin depuis la page, en plus de l'architecture propre du site — jamais à sa place.",
+   "contextes": "quand la personne demande « et si le site disparaît? » ou veut une preuve qui ne dépend d'aucun site.",
+   "lien": {
+    "url": "depose-empreinte.html#depot-bitcoin",
+    "page": "depose-empreinte.html",
+    "ancre": "depot-bitcoin",
+    "statut": "verifiee",
+    "brut": "`depose-empreinte.html#depot-bitcoin` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q3 (revérifier — la voie Bitcoin est l'autre chemin de preuve), P10-Q1 (dater un document, quand la personne veut l'ancrage le plus externe).",
+   "passages_porteurs": [
+    215,
+    74,
+    71
+   ],
+   "passages_brut": "nº 215, nº 74, nº 71."
+  },
+  {
+   "id": "A5",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Sceller l'empreinte de ton propre fichier — l'antériorité pour tous",
+   "description": "sceller soi-même l'empreinte de son fichier, le geste d'antériorité offert à tous sur la page des ancrages.",
+   "contextes": "créateurs, auteurs, chercheurs qui veulent dater une version sans passer par le registre public.",
+   "lien": {
+    "url": "ancrage.html#ancrage-anteriorite",
+    "page": "ancrage.html",
+    "ancre": "ancrage-anteriorite",
+    "statut": "verifiee",
+    "brut": "`ancrage.html#ancrage-anteriorite` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P11-Q2",
+     "formulation": "Je veux prouver que mon œuvre existait à telle date "
+    },
+    {
+     "ref": "P10-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P11-Q2 (« Je veux prouver que mon œuvre existait à telle date »), P10-Q1 (dater sans montrer).",
+   "passages_porteurs": [
+    73,
+    150,
+    71
+   ],
+   "passages_brut": "nº 73, nº 150, nº 71."
+  },
+  {
+   "id": "A6",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Ancrer ta mémoire dans Bitcoin, toi aussi",
+   "description": "ancrer sa propre mémoire (sa chaîne) dans Bitcoin, comme le site ancre la sienne.",
+   "contextes": "quand la conversation du visiteur, gardée sur son appareil, veut sa propre preuve externe.",
+   "lien": {
+    "url": "ancrage.html#ancrer-bitcoin",
+    "page": "ancrage.html",
+    "ancre": "ancrer-bitcoin",
+    "statut": "verifiee",
+    "brut": "`ancrage.html#ancrer-bitcoin` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (« Toi, le cerveau, t'es quoi ? Tu gardes mes questions ? » — la mémoire du visiteur peut s'ancrer comme celle du site), P10-Q3 (revérifier, côté ancrage).",
+   "passages_porteurs": [
+    74,
+    240,
+    209
+   ],
+   "passages_brut": "nº 74, nº 240, nº 209."
+  },
+  {
+   "id": "A7",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Reviens avec ta preuve — le retour, démontré",
+   "description": "montrer le retour d'une preuve : revenir avec son empreinte et la faire revérifier, le geste démontré sur place.",
+   "contextes": "la personne qui revient des jours ou des mois après son dépôt ; la démonstration précède le vérificateur (A3).",
+   "lien": {
+    "url": "ancrage.html#reviens-preuve",
+    "page": "ancrage.html",
+    "ancre": "reviens-preuve",
+    "statut": "verifiee",
+    "brut": "`ancrage.html#reviens-preuve` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": "Plus tard, je revérifie ça comment ? "
+    }
+   ],
+   "questions_brut": "P10-Q3 (« Plus tard, je revérifie ça comment ? »).",
+   "passages_porteurs": [
+    75,
+    214,
+    72
+   ],
+   "passages_brut": "nº 75, nº 214, nº 72."
+  },
+  {
+   "id": "A8",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Vérifier chez le tiers — le chemin, pas à pas",
+   "description": "suivre le chemin de vérification chez le tiers (l'ancrage externe), étape par étape, sans dépendre du site.",
+   "contextes": "la personne expérimentée qui veut la preuve complète, hors du site ; la suite naturelle d'A3 et d'A7.",
+   "lien": {
+    "url": "ancrage.html#preuves-chemins",
+    "page": "ancrage.html",
+    "ancre": "preuves-chemins",
+    "statut": "verifiee",
+    "brut": "`ancrage.html#preuves-chemins` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q3 (revérifier un dépôt par son chemin).",
+   "passages_porteurs": [
+    72,
+    214,
+    75
+   ],
+   "passages_brut": "nº 72, nº 214, nº 75."
+  },
+  {
+   "id": "A9",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Le registre d'antériorité du site — les onze dépôts publics",
+   "description": "lire les onze dépôts publics du site lui-même — la preuve d'antériorité du dossier, dépôts par dépôts.",
+   "contextes": "quand on demande ce que le site a déposé, daté, prouvé de son propre dossier.",
+   "lien": {
+    "url": "registre.html#registre",
+    "page": "registre.html",
+    "ancre": "registre",
+    "statut": "verifiee",
+    "brut": "`registre.html#registre` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q3 (« Qui a fait ce site-là, pis il a créé quoi ? » — les dépôts font partie de l'inventaire des créations).",
+   "passages_porteurs": [
+    85,
+    213,
+    98
+   ],
+   "passages_brut": "nº 85, nº 213, nº 98."
+  },
+  {
+   "id": "A10",
+   "famille": "A",
+   "famille_nom": "Déposer, sceller, ancrer",
+   "nom": "Le Répertoire du propre — les sceaux, maillon par maillon",
+   "description": "parcourir les sceaux de la chaîne du site, maillon par maillon, dans la chambre du temps.",
+   "contextes": "la personne qui veut voir la chaîne elle-même plutôt qu'une explication.",
+   "lien": {
+    "url": "temps.html#repertoire",
+    "page": "temps.html",
+    "ancre": "repertoire",
+    "statut": "verifiee",
+    "brut": "`temps.html#repertoire` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (comment le noyau répond et ce que la chaîne tient), P9-Q5 (« C'est quoi un SHA-256, un sceau, ces affaires-là ? » — voir les sceaux réels après les définitions).",
+   "passages_porteurs": [
+    18,
+    107,
+    208
+   ],
+   "passages_brut": "nº 18, nº 107, nº 208."
+  },
+  {
+   "id": "B1",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Le mini-vérificateur de l'accueil — « Casse-la toi-même »",
+   "description": "casser et recalculer un sceau dès le premier écran, pour éprouver la preuve avec les mains.",
+   "contextes": "le sceptique dès l'arrivée ; toute explication du sceau peut se terminer par « essaie-le ici ».",
+   "lien": {
+    "url": "index.html#accueil-plat",
+    "page": "index.html",
+    "ancre": "accueil-plat",
+    "statut": "verifiee",
+    "brut": "`index.html#accueil-plat` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q5 (« C'est quoi un SHA-256, un sceau ? » — après le glossaire H10, l'épreuve), P10-Q3 (revérifier — la forme la plus simple du geste).",
+   "passages_porteurs": [
+    0,
+    223,
+    83
+   ],
+   "passages_brut": "nº 0, nº 223, nº 83."
+  },
+  {
+   "id": "B2",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Vérifier un sceau",
+   "description": "coller un sceau et son contenu, et laisser la page recalculer — MATCH ou ÉCART.",
+   "contextes": "la personne qui tient un sceau précis (un dépôt, un maillon, un reçu) et veut le verdict.",
+   "lien": {
+    "url": "verifier.html#verifie-moi",
+    "page": "verifier.html",
+    "ancre": "verifie-moi",
+    "statut": "verifiee",
+    "brut": "`verifier.html#verifie-moi` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q3 (revérifier), P9-Q5 (les sceaux, en pratique).",
+   "passages_porteurs": [
+    81,
+    82,
+    214
+   ],
+   "passages_brut": "nº 81, nº 82, nº 214."
+  },
+  {
+   "id": "B3",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Tout vérifier ici — chaque affirmation, sa preuve, son chemin",
+   "description": "vérifier sur une seule page chaque affirmation du site avec sa preuve et son chemin de recalcul.",
+   "contextes": "le visiteur méthodique ou sceptique qui veut l'ensemble des preuves, pas une seule.",
+   "lien": {
+    "url": "verifier.html#tout-verifier",
+    "page": "verifier.html",
+    "ancre": "tout-verifier",
+    "statut": "verifiee",
+    "brut": "`verifier.html#tout-verifier` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q1 (« Pourquoi ce site-là existe ? » — quand la réponse doit se prouver), P9-Q3 (ce qu'il a créé, vérifiable pièce par pièce).",
+   "passages_porteurs": [
+    82,
+    86,
+    87
+   ],
+   "passages_brut": "nº 82, nº 86, nº 87."
+  },
+  {
+   "id": "B4",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Trouve l'écart — un caractère suffit",
+   "description": "l'exercice où un seul caractère changé fait basculer le verdict — la falsification se voit au recalcul.",
+   "contextes": "pédagogie de la preuve ; la personne qui demande « et si quelqu'un change un mot? ».",
+   "lien": {
+    "url": "verifier.html#trouve-ecart",
+    "page": "verifier.html",
+    "ancre": "trouve-ecart",
+    "statut": "verifiee",
+    "brut": "`verifier.html#trouve-ecart` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q5 (comprendre le sceau par l'écart).",
+   "passages_porteurs": [
+    83,
+    81,
+    0
+   ],
+   "passages_brut": "nº 83, nº 81, nº 0."
+  },
+  {
+   "id": "B5",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "L'atelier « Vérifie toi-même » en trois panneaux (page Sceller)",
+   "description": "l'atelier complet de vérification en trois panneaux, sur la page du scellement.",
+   "contextes": "la personne qui veut sceller et vérifier dans le même geste, guidée panneau par panneau.",
+   "lien": {
+    "url": "sceller.html#outils",
+    "page": "sceller.html",
+    "ancre": "outils",
+    "statut": "verifiee",
+    "brut": "`sceller.html#outils` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q1 (sceller/dater soi-même), P9-Q5 (les outils du sceau).",
+   "passages_porteurs": [
+    79,
+    73,
+    81
+   ],
+   "passages_brut": "nº 79, nº 73, nº 81."
+  },
+  {
+   "id": "B6",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Le kit de vérification autonome",
+   "description": "le kit complet pour revérifier le site hors ligne, sans dépendre du site.",
+   "contextes": "la personne expérimentée qui veut la vérification indépendante, chez elle.",
+   "lien": {
+    "url": "kit-verification.html",
+    "page": "kit-verification.html",
+    "ancre": null,
+    "statut": "page-seulement",
+    "brut": "`kit-verification.html` — **page seulement** (la page ne porte aucun `id` dans le paquet ; aucune ancre n'existe à citer)."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q3 (revérifier — la forme autonome), P9-Q4 (que conserve le noyau, et comment le contrôler de l'extérieur).",
+   "passages_porteurs": [
+    224,
+    72,
+    82
+   ],
+   "passages_brut": "nº 224, nº 72, nº 82."
+  },
+  {
+   "id": "B7",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Le test du sceptique — une affirmation, sa preuve, sa borne",
+   "description": "prendre une affirmation du dossier et la passer au test : sa preuve, et la borne de ce qu'elle n'établit pas.",
+   "contextes": "toute affirmation forte du site que le visiteur conteste ou veut éprouver.",
+   "lien": {
+    "url": "preuves.html#sceptique",
+    "page": "preuves.html",
+    "ancre": "sceptique",
+    "statut": "verifiee",
+    "brut": "`preuves.html#sceptique` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q1 (pourquoi le site existe — la réponse éprouvée), P10-Q2 (« Ça prouve quoi, au juste ? » — la borne fait partie de la réponse).",
+   "passages_porteurs": [
+    86,
+    89,
+    82
+   ],
+   "passages_brut": "nº 86, nº 89, nº 82."
+  },
+  {
+   "id": "B8",
+   "famille": "B",
+   "famille_nom": "Vérifier par soi-même",
+   "nom": "Vérifie que c'est bien nous — le sceau contre les ancrages externes",
+   "description": "vérifier que le site qu'on visite est bien le vrai, son sceau confronté aux ancrages externes.",
+   "contextes": "la personne qui arrive par un lien partagé et veut s'assurer du site avant de l'utiliser.",
+   "lien": {
+    "url": "exposition.html#verifie-nous",
+    "page": "exposition.html",
+    "ancre": "verifie-nous",
+    "statut": "verifiee",
+    "brut": "`exposition.html#verifie-nous` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q5 (« Est-ce que ce site garde ce que je lui dis ? » — la méfiance envers le site lui-même se répond aussi par sa vérification).",
+   "passages_porteurs": [
+    164,
+    104,
+    82
+   ],
+   "passages_brut": "nº 164, nº 104, nº 82."
+  },
+  {
+   "id": "C1",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Le parcours conseillé d'« Agir sur mes données »",
+   "description": "le parcours complet, de la question à la démarche, en huit pas — la porte visible du parcours des droits.",
+   "contextes": "toute personne qui arrive sans savoir par où commencer ; c'est aussi l'entrée du répertoire de l'atelier (id 1).",
+   "lien": {
+    "url": "agir-sur-mes-donnees.html#parcours",
+    "page": "agir-sur-mes-donnees.html",
+    "ancre": "parcours",
+    "statut": "verifiee",
+    "brut": "`agir-sur-mes-donnees.html#parcours` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q1",
+     "formulation": "Je commence par quoi ? "
+    },
+    {
+     "ref": "P1-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P2-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q1 (« Je commence par quoi ? »), P1-Q2 (« Je leur écris quoi, exactement ? » — le pas 2 du parcours), P2-Q1 (comment demander ses renseignements).",
+   "passages_porteurs": [
+    233,
+    234,
+    13,
+    5
+   ],
+   "passages_brut": "nº 233, nº 234, nº 13, nº 5."
+  },
+  {
+   "id": "C2",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Préparer une demande d'accès",
+   "description": "préparer sa demande d'accès à ses renseignements, étape par étape, avec la loi applicable et les délais.",
+   "contextes": "le cœur de l'accompagnement ; après un refus, on y revient pour vérifier la demande avant l'escalade (P3).",
+   "lien": {
+    "url": "acces.html#acces",
+    "page": "acces.html",
+    "ancre": "acces",
+    "statut": "verifiee",
+    "brut": "`acces.html#acces` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P2-Q1",
+     "formulation": "Comment je demande mes informations à une entreprise ? "
+    },
+    {
+     "ref": "P2-Q2",
+     "formulation": "Quelle loi s'applique à moi ? "
+    },
+    {
+     "ref": "P2-Q3",
+     "formulation": "Ils ont combien de temps pour me répondre ? "
+    },
+    {
+     "ref": "P1-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P7-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P2-Q1 (« Comment je demande mes informations à une entreprise ? »), P2-Q2 (« Quelle loi s'applique à moi ? »), P2-Q3 (« Ils ont combien de temps pour me répondre ? »), P1-Q2 (quoi écrire), P7-Q3 (« Si mon compte est fermé, mes données sont perdues ? » — la demande vise la détention, pas le compte).",
+   "passages_porteurs": [
+    38,
+    234,
+    68
+   ],
+   "passages_brut": "nº 38, nº 234, nº 68."
+  },
+  {
+   "id": "C3",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "La bibliothèque des lois et les lettres types",
+   "description": "la bibliothèque du site (les textes cités exactement) et les lettres types avec leurs bases légales — dont la demande à une plateforme d'IA.",
+   "contextes": "dès que la personne passe de comprendre à écrire ; le générateur local produit la lettre chez elle.",
+   "lien": {
+    "url": "donnees.html#donnees",
+    "page": "donnees.html",
+    "ancre": "donnees",
+    "statut": "verifiee",
+    "brut": "`donnees.html#donnees` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P2-Q4",
+     "formulation": "Je veux la lettre déjà faite "
+    },
+    {
+     "ref": "P2-Q5",
+     "formulation": null
+    },
+    {
+     "ref": "P2-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P8-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P2-Q4 (« Je veux la lettre déjà faite »), P2-Q5 (« Je peux demander la même chose à ChatGPT ? » — la lettre « Demande à une plateforme d'IA » y est prévue), P2-Q3 (les délais, par les lettres et leurs bases), P8-Q2 (« Je peux faire effacer mes affaires d'un site ? » — cessation et désindexation parmi les demandes types).",
+   "passages_porteurs": [
+    39,
+    38,
+    57
+   ],
+   "passages_brut": "nº 39, nº 38, nº 57."
+  },
+  {
+   "id": "C4",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Le générateur de la demande d'explication (décision automatisée)",
+   "description": "produire chez le visiteur sa demande d'explication d'une décision automatisée (art. 12.1 LRPSP).",
+   "contextes": "après le parcours en quatre pas (C5), le geste d'écrire.",
+   "lien": {
+    "url": "explication.html#explication-generateur",
+    "page": "explication.html",
+    "ancre": "explication-generateur",
+    "statut": "verifiee",
+    "brut": "`explication.html#explication-generateur` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P6-Q2",
+     "formulation": "Je fais la demande comment ? "
+    },
+    {
+     "ref": "P6-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P6-Q3",
+     "formulation": "Mon assureur a décidé avec un algorithme "
+    }
+   ],
+   "questions_brut": "P6-Q2 (« Je fais la demande comment ? »), P6-Q1 (« Un ordinateur a décidé de me refuser, j'ai le droit de savoir pourquoi ? » — le pas qui suit l'explication), P6-Q3 (« Mon assureur a décidé avec un algorithme »).",
+   "passages_porteurs": [
+    59,
+    58,
+    57
+   ],
+   "passages_brut": "nº 59, nº 58, nº 57."
+  },
+  {
+   "id": "C5",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Le parcours de la décision automatisée, en quatre pas",
+   "description": "le parcours complet de la demande d'explication, en quatre pas, du droit à la lettre.",
+   "contextes": "refus de crédit, d'emploi, d'assurance ou de service rendu par un système automatisé.",
+   "lien": {
+    "url": "explication.html#explication-parcours",
+    "page": "explication.html",
+    "ancre": "explication-parcours",
+    "statut": "verifiee",
+    "brut": "`explication.html#explication-parcours` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P6-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P6-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P3-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P6-Q1, P6-Q2, P3-Q1 (« Ils m'ont dit non, je fais quoi ? » — quand le « non » vient d'une décision automatisée, ce parcours est le recours préparé).",
+   "passages_porteurs": [
+    58,
+    57,
+    59
+   ],
+   "passages_brut": "nº 58, nº 57, nº 59."
+  },
+  {
+   "id": "C6",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Le modèle de réponse — quand la plateforme invoque son for",
+   "description": "le modèle de réponse à opposer quand une plateforme invoque sa clause de for (tribunal étranger).",
+   "contextes": "la personne découragée par une clause de for ; la carte des clauses (`for.html#for-carte`, nº 67) et les recours d'ici (nº 68) l'entourent.",
+   "lien": {
+    "url": "for.html#for-lettre",
+    "page": "for.html",
+    "ancre": "for-lettre",
+    "statut": "verifiee",
+    "brut": "`for.html#for-lettre` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P3-Q3",
+     "formulation": "Leur contrat dit que c'est un tribunal en Californie, je suis bloqué ? "
+    }
+   ],
+   "questions_brut": "P3-Q3 (« Leur contrat dit que c'est un tribunal en Californie, je suis bloqué ? »).",
+   "passages_porteurs": [
+    69,
+    67,
+    68,
+    70
+   ],
+   "passages_brut": "nº 69, nº 67, nº 68, nº 70."
+  },
+  {
+   "id": "C7",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Calculer une empreinte SHA-256 locale",
+   "description": "calculer l'empreinte SHA-256 d'un fichier dans son navigateur, sans l'envoyer nulle part.",
+   "contextes": "le premier geste du dépôt (A1) et du scellement (A5) ; aussi l'étape « hash » du parcours conseillé.",
+   "lien": {
+    "url": "agir-sur-mes-donnees.html#hash",
+    "page": "agir-sur-mes-donnees.html",
+    "ancre": "hash",
+    "statut": "verifiee",
+    "brut": "`agir-sur-mes-donnees.html#hash` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P10-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P10-Q1 (dater sans montrer — le calcul précède le dépôt), P10-Q4 (l'empreinte renforcée, quand le contenu est devinable).",
+   "passages_porteurs": [
+    237,
+    150,
+    73
+   ],
+   "passages_brut": "nº 237, nº 150, nº 73."
+  },
+  {
+   "id": "C8",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Google Takeout, guidé prudemment",
+   "description": "récupérer ses données Google par Takeout et les examiner prudemment, pas à pas.",
+   "contextes": "la récolte chez Google, la plateforme la plus demandée ; la prudence d'abord (pas d'IA sur l'archive avant les bornes du pas 6, nº 238).",
+   "lien": {
+    "url": "agir-sur-mes-donnees.html#google",
+    "page": "agir-sur-mes-donnees.html",
+    "ancre": "google",
+    "statut": "verifiee",
+    "brut": "`agir-sur-mes-donnees.html#google` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q4",
+     "formulation": "Google Takeout, c'est quoi ? Je peux m'en servir ? "
+    },
+    {
+     "ref": "P5-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q4 (« Google Takeout, c'est quoi ? Je peux m'en servir ? »), P5-Q2 (« Pis pour Google ? » — la fiche nº 41 complète).",
+   "passages_porteurs": [
+    236,
+    41,
+    238
+   ],
+   "passages_brut": "nº 236, nº 41, nº 238."
+  },
+  {
+   "id": "C9",
+   "famille": "C",
+   "famille_nom": "Agir sur ses données : parcours et générateurs",
+   "nom": "Vers quelle instance s'orienter (CAI, CPVP, OIPC)",
+   "description": "le tableau d'orientation : selon la situation, l'instance compétente au Canada — CAI, Commissariat fédéral ou autre autorité.",
+   "contextes": "le moment de l'escalade, dans les parcours 3 et 4 ; le cerveau oriente et fonde, il ne dépose pas la plainte (la borne est au nº 235 lui-même).",
+   "lien": {
+    "url": "agir-sur-mes-donnees.html#cai",
+    "page": "agir-sur-mes-donnees.html",
+    "ancre": "cai",
+    "statut": "verifiee",
+    "brut": "`agir-sur-mes-donnees.html#cai` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q3",
+     "formulation": "À qui je m'adresse si ça marche pas ? "
+    },
+    {
+     "ref": "P4-Q1",
+     "formulation": "Comment je porte plainte à la CAI ? "
+    },
+    {
+     "ref": "P4-Q3",
+     "formulation": "C'est la CAI ou le fédéral, pour mon cas ? "
+    },
+    {
+     "ref": "P3-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q3 (« À qui je m'adresse si ça marche pas ? »), P4-Q1 (« Comment je porte plainte à la CAI ? »), P4-Q3 (« C'est la CAI ou le fédéral, pour mon cas ? »), P3-Q1 (« Ils m'ont dit non, je fais quoi ? » — l'escalade après le refus).",
+   "passages_porteurs": [
+    235,
+    68,
+    58
+   ],
+   "passages_brut": "nº 235, nº 68, nº 58."
+  },
+  {
+   "id": "D1",
+   "famille": "D",
+   "famille_nom": "Aller chercher : les fiches de récolte",
+   "nom": "Les fiches « aller chercher », plateforme par plateforme",
+   "contextes": "la récolte est le geste le plus demandé du site ; le cerveau nomme la fiche de LA plateforme dont la personne parle, jamais la liste entière.",
+   "lien": {
+    "url": "aller.html#aller-cadre",
+    "page": "aller.html",
+    "ancre": "aller-cadre",
+    "statut": "verifiee",
+    "liens_multiples": [
+     {
+      "url": "aller.html#aller-cadre",
+      "page": "aller.html",
+      "ancre": "aller-cadre",
+      "passage": 40
+     },
+     {
+      "url": "aller.html#aller-google",
+      "page": "aller.html",
+      "ancre": "aller-google",
+      "passage": 41
+     },
+     {
+      "url": "aller.html#aller-apple",
+      "page": "aller.html",
+      "ancre": "aller-apple",
+      "passage": 42
+     },
+     {
+      "url": "aller.html#aller-meta",
+      "page": "aller.html",
+      "ancre": "aller-meta",
+      "passage": 43
+     },
+     {
+      "url": "aller.html#aller-amazon",
+      "page": "aller.html",
+      "ancre": "aller-amazon",
+      "passage": 44
+     },
+     {
+      "url": "aller.html#aller-microsoft",
+      "page": "aller.html",
+      "ancre": "aller-microsoft",
+      "passage": 45
+     },
+     {
+      "url": "aller.html#aller-tiktok",
+      "page": "aller.html",
+      "ancre": "aller-tiktok",
+      "passage": 46
+     },
+     {
+      "url": "aller.html#aller-snapchat",
+      "page": "aller.html",
+      "ancre": "aller-snapchat",
+      "passage": 47
+     },
+     {
+      "url": "aller.html#aller-x",
+      "page": "aller.html",
+      "ancre": "aller-x",
+      "passage": 48
+     },
+     {
+      "url": "aller.html#aller-discord",
+      "page": "aller.html",
+      "ancre": "aller-discord",
+      "passage": 49
+     }
+    ],
+    "brut": "le cadre d'abord — `#aller-cadre` (nº 40) ; puis Google `#aller-google` (nº 41), Apple `#aller-apple` (nº 42), Meta — Facebook, Instagram, WhatsApp `#aller-meta` (nº 43), Amazon `#aller-amazon` (nº 44), Microsoft `#aller-microsoft` (nº 45), TikTok `#aller-tiktok` (nº 46), Snapchat `#aller-snapchat` (nº 47), X `#aller-x` (nº 48), Discord `#aller-discord` (nº 49)."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P5-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P5-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P1-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P5-Q1 (« Comment je télécharge tout ce que Facebook a sur moi ? » → la fiche Meta), P5-Q2 (« Pis pour Google ? Apple ? TikTok ? Discord ? » → chaque fiche nommée), P1-Q4 (Takeout → la fiche Google, avec C8).",
+   "passages_porteurs": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    233
+   ],
+   "passages_brut": "nº 40 et nº 41 à 49 (chaque fiche porte son propre lien), nº 233."
+  },
+  {
+   "id": "D2",
+   "famille": "D",
+   "famille_nom": "Aller chercher : les fiches de récolte",
+   "nom": "Le détecteur d'export partiel",
+   "description": "confronter l'export reçu à ce que la plateforme déclare détenir, pour voir ce qui manque.",
+   "contextes": "juste après une récolte (D1) ; le doute sur la complétude se traite avec l'outil, pas avec une impression.",
+   "lien": {
+    "url": "aller.html#aller-detecteur",
+    "page": "aller.html",
+    "ancre": "aller-detecteur",
+    "statut": "verifiee",
+    "brut": "`aller.html#aller-detecteur` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P5-Q3",
+     "formulation": "J'ai reçu un fichier, mais je pense qu'il manque des affaires dedans "
+    }
+   ],
+   "questions_brut": "P5-Q3 (« J'ai reçu un fichier, mais je pense qu'il manque des affaires dedans »).",
+   "passages_porteurs": [
+    50,
+    51,
+    40
+   ],
+   "passages_brut": "nº 50, nº 51, nº 40."
+  },
+  {
+   "id": "D3",
+   "famille": "D",
+   "famille_nom": "Aller chercher : les fiches de récolte",
+   "nom": "Le miroir des exports",
+   "description": "lire l'export reçu de façon lisible, dans le navigateur du visiteur.",
+   "contextes": "après la récolte et le détecteur ; avant d'utiliser une IA pour comprendre l'archive (prudence du nº 238).",
+   "lien": {
+    "url": "aller.html#aller-miroir",
+    "page": "aller.html",
+    "ancre": "aller-miroir",
+    "statut": "verifiee",
+    "brut": "`aller.html#aller-miroir` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P5-Q4",
+     "formulation": "Le fichier qu'ils m'ont donné, je sais pas le lire "
+    }
+   ],
+   "questions_brut": "P5-Q4 (« Le fichier qu'ils m'ont donné, je sais pas le lire »).",
+   "passages_porteurs": [
+    51,
+    50,
+    236
+   ],
+   "passages_brut": "nº 51, nº 50, nº 236."
+  },
+  {
+   "id": "D4",
+   "famille": "D",
+   "famille_nom": "Aller chercher : les fiches de récolte",
+   "nom": "L'effaceur de métadonnées",
+   "description": "voir ce que les métadonnées d'une photo racontent, et produire la copie nettoyée.",
+   "contextes": "quand la personne parle de ses photos, de leur localisation cachée, ou de partager une image sans son sillage.",
+   "lien": {
+    "url": "cameras.html#cameras-effaceur",
+    "page": "cameras.html",
+    "ancre": "cameras-effaceur",
+    "statut": "verifiee",
+    "brut": "`cameras.html#cameras-effaceur` (ancre vérifiée)"
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune question de la banque ne le nomme directement — il arrive par le fil de la conversation (photos, caméras, partage d'images), voir lecture 2, note N2.",
+   "passages_porteurs": [
+    56,
+    52,
+    55
+   ],
+   "passages_brut": "nº 56, nº 52, nº 55."
+  },
+  {
+   "id": "E1",
+   "famille": "E",
+   "famille_nom": "Compte suspendu",
+   "nom": "Le protocole de la première heure",
+   "description": "les gestes de la première heure quand un compte est suspendu ou compromis — avant tout le reste.",
+   "contextes": "l'urgence ; le cerveau donne ce lien avant toute explication longue.",
+   "lien": {
+    "url": "suspendu.html#suspendu-premiere-heure",
+    "page": "suspendu.html",
+    "ancre": "suspendu-premiere-heure",
+    "statut": "verifiee",
+    "brut": "`suspendu.html#suspendu-premiere-heure` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P7-Q1",
+     "formulation": "Mon compte est fermé, je panique, je fais quoi en premier ? "
+    }
+   ],
+   "questions_brut": "P7-Q1 (« Mon compte est fermé, je panique, je fais quoi en premier ? »).",
+   "passages_porteurs": [
+    62,
+    63
+   ],
+   "passages_brut": "nº 62, nº 63."
+  },
+  {
+   "id": "E2",
+   "famille": "E",
+   "famille_nom": "Compte suspendu",
+   "nom": "Le parcours compte suspendu — trois questions, fiches par plateforme",
+   "description": "le parcours en trois questions (savoir, ravoir, reprendre), avec les fiches d'appel interne plateforme par plateforme et ce que le droit donne — et ne donne pas.",
+   "contextes": "après la première heure (E1) ; l'appel interne a des fenêtres — le minuteur (F3) peut suivre.",
+   "lien": {
+    "url": "suspendu.html#suspendu-parcours",
+    "page": "suspendu.html",
+    "ancre": "suspendu-parcours",
+    "statut": "verifiee",
+    "brut": "`suspendu.html#suspendu-parcours` (nº 63), `suspendu.html#suspendu-fiches` (nº 64), `suspendu.html#suspendu-droit` (nº 65) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P7-Q2",
+     "formulation": "Je peux ravoir mon compte ? "
+    },
+    {
+     "ref": "P7-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P7-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P7-Q2 (« Je peux ravoir mon compte ? »), P7-Q3 (« Si mon compte est fermé, mes données sont perdues ? » — avec C2), P7-Q4 (« La loi peut forcer la plateforme à rouvrir mon compte ? » — la réponse-borne est au nº 65, l'outil la montre).",
+   "passages_porteurs": [
+    63,
+    64,
+    65,
+    66
+   ],
+   "passages_brut": "nº 63, nº 64, nº 65, nº 66."
+  },
+  {
+   "id": "F1",
+   "famille": "F",
+   "famille_nom": "Suivi et délais",
+   "nom": "Ton dossier de suivi",
+   "description": "tenir ses démarches, leurs délais et leurs réponses, sur l'appareil du visiteur — l'atome de sa mémoire de démarches.",
+   "contextes": "dès qu'une demande part (C2, C4), le cerveau propose d'ouvrir le dossier de suivi ; c'est l'outil du « entre-temps » de tous les parcours.",
+   "lien": {
+    "url": "suivi.html#suivi",
+    "page": "suivi.html",
+    "ancre": "suivi",
+    "statut": "verifiee",
+    "brut": "`suivi.html#suivi` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P2-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P3-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P3-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P2-Q3 (« Ils ont combien de temps pour me répondre ? » — le délai se suit ici), P3-Q1 (« Ils m'ont dit non » — la démarche et sa réponse s'y consignent), P3-Q2 (le silence, suivi jour par jour).",
+   "passages_porteurs": [
+    143,
+    144,
+    151
+   ],
+   "passages_brut": "nº 143, nº 144, nº 151."
+  },
+  {
+   "id": "F2",
+   "famille": "F",
+   "famille_nom": "Suivi et délais",
+   "nom": "Le silence consigné",
+   "description": "consigner le silence d'une organisation pour qu'une non-réponse devienne une pièce de plainte.",
+   "contextes": "le jour où le délai de 30 jours expire sans réponse ; prépare l'escalade (C9).",
+   "lien": {
+    "url": "suivi.html#suivi-silence",
+    "page": "suivi.html",
+    "ancre": "suivi-silence",
+    "statut": "verifiee",
+    "brut": "`suivi.html#suivi-silence` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P3-Q2",
+     "formulation": "Ils répondent juste pas, ça fait un mois "
+    },
+    {
+     "ref": "P4-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P3-Q2 (« Ils répondent juste pas, ça fait un mois »), P4-Q2 (« J'ai combien de temps pour me plaindre ? » — le silence consigné fonde le délai échu).",
+   "passages_porteurs": [
+    145,
+    68,
+    143
+   ],
+   "passages_brut": "nº 145, nº 68, nº 143."
+  },
+  {
+   "id": "F3",
+   "famille": "F",
+   "famille_nom": "Suivi et délais",
+   "nom": "Le minuteur de fenêtre",
+   "description": "suivre les délais qui se ferment — fenêtres de recours, d'appel, de réponse — et les silences qui comptent.",
+   "contextes": "partout où un délai court : recours (P3, P4), appel interne d'un compte suspendu (E2), réponse à une demande (C2).",
+   "lien": {
+    "url": "fenetres.html#fenetres",
+    "page": "fenetres.html",
+    "ancre": "fenetres",
+    "statut": "verifiee",
+    "brut": "`fenetres.html#fenetres` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P4-Q2",
+     "formulation": "J'ai combien de temps pour me plaindre ? "
+    },
+    {
+     "ref": "P2-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P3-Q2",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P4-Q2 (« J'ai combien de temps pour me plaindre ? »), P2-Q3 (le délai de réponse), P3-Q2 (le mois écoulé).",
+   "passages_porteurs": [
+    151,
+    145,
+    58
+   ],
+   "passages_brut": "nº 151, nº 145, nº 58."
+  },
+  {
+   "id": "F4",
+   "famille": "F",
+   "famille_nom": "Suivi et délais",
+   "nom": "Tes reçus et tes gestes — et le reçu de visite",
+   "description": "retrouver ses reçus et ses gestes, gardés dans son propre cerveau local ; et lire le reçu de la visite en cours — ce que la page a vu du visiteur.",
+   "contextes": "la transparence en acte ; la personne qui veut la preuve de ce que le site a vu d'elle.",
+   "lien": {
+    "url": "recus.html#recus-gestes",
+    "page": "recus.html",
+    "ancre": "recus-gestes",
+    "statut": "verifiee",
+    "brut": "`recus.html#recus-gestes` (nº 142), `recu.html#recu-visite` (nº 141), `index.html#recu-visite-accueil` (nº 15) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q5 (« Est-ce que ce site garde ce que je lui dis ? » — la réponse se montre : le reçu dit ce qui est gardé, et où).",
+   "passages_porteurs": [
+    142,
+    141,
+    15,
+    104
+   ],
+   "passages_brut": "nº 142, nº 141, nº 15, nº 104."
+  },
+  {
+   "id": "G1",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "Voir mon cerveau",
+   "description": "lire sa propre mémoire locale, réellement — ce que son appareil garde de ses démarches et conversations.",
+   "contextes": "la méfiance légitime envers le cerveau lui-même ; la porte de la politique du cerveau local (nº 131).",
+   "lien": {
+    "url": "voir.html#voir-cerveau",
+    "page": "voir.html",
+    "ancre": "voir-cerveau",
+    "statut": "verifiee",
+    "brut": "`voir.html#voir-cerveau` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    },
+    {
+     "ref": "P1-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (« Tu gardes mes questions ? » — la réponse se visite), P1-Q5 (ce que le site garde : rien ; ce que l'appareil garde : ici).",
+   "passages_porteurs": [
+    147,
+    131,
+    209
+   ],
+   "passages_brut": "nº 147, nº 131, nº 209."
+  },
+  {
+   "id": "G2",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "L'enveloppe « en cas d'incapacité »",
+   "description": "préparer une enveloppe chiffrée par sa propre phrase, à ouvrir en cas d'incapacité — dans son appareil.",
+   "contextes": "quand la conversation touche la transmission de sa mémoire à ses proches.",
+   "lien": {
+    "url": "voir.html#voir-enveloppe",
+    "page": "voir.html",
+    "ancre": "voir-enveloppe",
+    "statut": "verifiee",
+    "brut": "`voir.html#voir-enveloppe` (ancre vérifiée)"
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune de la banque — arrive par le fil (transmission, proches, « et si je ne suis plus là »), voir note N2.",
+   "passages_porteurs": [
+    148,
+    147,
+    35
+   ],
+   "passages_brut": "nº 148, nº 147, nº 35."
+  },
+  {
+   "id": "G3",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "Ton empreinte, recalculée — ce qu'un pisteur peut calculer sur toi",
+   "description": "recalculer l'empreinte du navigateur du visiteur et montrer ce qu'un pisteur peut en tirer, plus la surveillance de son exposition entre visites.",
+   "contextes": "la personne qui se sent suivie ; la démonstration précède les réglages.",
+   "lien": {
+    "url": "exposition.html#empreinte",
+    "page": "exposition.html",
+    "ancre": "empreinte",
+    "statut": "verifiee",
+    "brut": "`exposition.html#empreinte` (nº 161), `exposition.html#exposition-suivi` (nº 162) — ancres vérifiées."
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune de la banque directement — arrive par le fil (suivi publicitaire, « ils me suivent partout »), voir note N2.",
+   "passages_porteurs": [
+    161,
+    162,
+    177
+   ],
+   "passages_brut": "nº 161, nº 162, nº 177."
+  },
+  {
+   "id": "G4",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "Le miroir — tout ce qu'une simple visite révèle de toi",
+   "description": "montrer, en direct, tout ce qu'une simple visite révèle du visiteur et ce qui transite nécessairement, et vers qui.",
+   "contextes": "le début d'une visite sceptique ; la version vécue du panneau de non-tracking (`exposition.html#non-tracking`, nº 163).",
+   "lien": {
+    "url": "miroir.html#miroir-releve",
+    "page": "miroir.html",
+    "ancre": "miroir-releve",
+    "statut": "verifiee",
+    "brut": "`miroir.html#miroir-releve` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q5 (ce que le site voit et garde — le miroir le montre au lieu de le promettre).",
+   "passages_porteurs": [
+    177,
+    178,
+    163
+   ],
+   "passages_brut": "nº 177, nº 178, nº 163."
+  },
+  {
+   "id": "G5",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "Les modes et la recherche par DuckDuckGo",
+   "description": "choisir son mode (local par défaut, démonstration avec serveurs à son choix) et chercher avec DuckDuckGo quand la personne le choisit.",
+   "contextes": "quand la personne veut chercher au-delà du site sans être suivie.",
+   "lien": {
+    "url": "modes.html#modes-recherche",
+    "page": "modes.html",
+    "ancre": "modes-recherche",
+    "statut": "verifiee",
+    "brut": "`modes.html#modes-recherche` (nº 171), `modes.html#modes-local` (nº 172), `modes.html#modes-choix` (nº 175) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P1-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P1-Q5 (ce que le site fait de la visite — le mode local est la réponse par défaut).",
+   "passages_porteurs": [
+    171,
+    172,
+    168,
+    174
+   ],
+   "passages_brut": "nº 171, nº 172, nº 168, nº 174."
+  },
+  {
+   "id": "G6",
+   "famille": "G",
+   "famille_nom": "Voir, mesurer, comprendre",
+   "nom": "« Essaie : tes décisions, ta somme »",
+   "description": "la démonstration où les décisions du visiteur forment sa somme — la mécanique de la mémoire cumulative, éprouvée avec les mains.",
+   "contextes": "la personne qui comprend mieux en faisant ; le pont entre les droits (la page) et la mécanique (la somme).",
+   "lien": {
+    "url": "droits.html#demo-decisions",
+    "page": "droits.html",
+    "ancre": "demo-decisions",
+    "statut": "verifiee",
+    "brut": "`droits.html#demo-decisions` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q5",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (comment le noyau tient sa mémoire — la démo la fait toucher), P9-Q5 (la somme des précédents, après le glossaire).",
+   "passages_porteurs": [
+    103,
+    102,
+    144
+   ],
+   "passages_brut": "nº 103, nº 102, nº 144."
+  },
+  {
+   "id": "H1",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Parle avec le site — la conversation et le labyrinthe",
+   "description": "la salle de conversation du site : des questions préparées (le labyrinthe), des réponses tirées de sa mémoire, chacune montrée avec son chemin de preuve ; et la question en texte libre.",
+   "contextes": "la page principale mène ici ; une personne perdue y demande son chemin (lecture 3).",
+   "lien": {
+    "url": "cerveau.html#cerveau",
+    "page": "cerveau.html",
+    "ancre": "cerveau",
+    "statut": "verifiee",
+    "brut": "`cerveau.html#cerveau` (nº 206), `cerveau.html#cerveau-libre` (nº 207), `cerveau.html#cerveau-parcours` (nº 209) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (« Toi, le cerveau, t'es quoi ? » — on y est), et en vérité **toutes** : la conversation est le lieu depuis lequel chaque lien de ce répertoire se présente.",
+   "passages_porteurs": [
+    206,
+    207,
+    208,
+    209,
+    211
+   ],
+   "passages_brut": "nº 206, nº 207, nº 208, nº 209, nº 211."
+  },
+  {
+   "id": "H2",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "La salle des échos",
+   "description": "les questions qu'on a posées au site — la mémoire publique des questions, qui montre à chacun qu'il n'est pas seul à demander.",
+   "contextes": "la personne qui ne sait pas formuler sa question trouve celles des autres.",
+   "lien": {
+    "url": "cerveau.html#echos",
+    "page": "cerveau.html",
+    "ancre": "echos",
+    "statut": "verifiee",
+    "brut": "`cerveau.html#echos` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P9-Q1",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q2 (« C'est quoi le but du site ? » — les échos montrent le site à l'œuvre), P9-Q1 (pourquoi il existe, par les questions des autres).",
+   "passages_porteurs": [
+    212,
+    206
+   ],
+   "passages_brut": "nº 212, nº 206."
+  },
+  {
+   "id": "H3",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Écrire à SoPHIa — la porte humaine (le relais courriel)",
+   "description": "écrire à SoPHIa par le seul relais du site : le courriel. Alex répond lui-même, dans la langue de la personne ; SoPHIa reçoit et relaie.",
+   "contextes": "la fin de tout parcours bloqué ; la porte que le cerveau montre quand sa mémoire ne tient pas la réponse (avec le registre des manques).",
+   "lien": {
+    "url": "ecrire.html#ecrire",
+    "page": "ecrire.html",
+    "ancre": "ecrire",
+    "statut": "verifiee",
+    "brut": "`ecrire.html#ecrire` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P12-Q1",
+     "formulation": "Je veux que quelqu'un m'aide pour vrai, pas juste un site "
+    },
+    {
+     "ref": "P12-Q2",
+     "formulation": null
+    },
+    {
+     "ref": "P4-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P12-Q1 (« Je veux que quelqu'un m'aide pour vrai, pas juste un site »), P12-Q2 (« Comment Alex peut m'accompagner ? » — au-delà de cette porte, l'offre n'est pas décrite : manque G2), P4-Q4 (« Le site peut faire la plainte pour moi ? » — non ; mais un humain peut être joint ici).",
+   "passages_porteurs": [
+    140,
+    123,
+    37
+   ],
+   "passages_brut": "nº 140, nº 123, nº 37 (`contact.html#contact-temoin`)."
+  },
+  {
+   "id": "H4",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Rechercher — dans tout le site, sur place",
+   "description": "la recherche par mots-clés dans tout le site, sur place, sans rien envoyer nulle part.",
+   "contextes": "la personne qui connaît le mot exact qu'elle cherche ; le complément lexical de la recherche par le sens (H1).",
+   "lien": {
+    "url": "recherche.html#recherche",
+    "page": "recherche.html",
+    "ancre": "recherche",
+    "statut": "verifiee",
+    "brut": "`recherche.html#recherche` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "toutes, en repli : quand la conversation ne suffit pas, la recherche par mots reste ouverte ; P9-Q3 (retrouver une création nommée).",
+   "passages_porteurs": [
+    217,
+    11
+   ],
+   "passages_brut": "nº 217, nº 11."
+  },
+  {
+   "id": "H5",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Tes favoris — la page, et l'endroit exact",
+   "description": "les favoris du visiteur, comme sur son poste : chaque favori mène à la page ET à l'endroit exact dedans.",
+   "contextes": "chaque lien ouvert depuis le cerveau peut devenir un favori ; le répertoire entier vit par ce mécanisme.",
+   "lien": {
+    "url": "index.html#favoris",
+    "page": "index.html",
+    "ancre": "favoris",
+    "statut": "verifiee",
+    "brut": "`index.html#favoris` (ancre vérifiée)"
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune de la banque — c'est l'outil du retour : la personne qui revient à un outil de ce répertoire le retrouve ici (voir note N2).",
+   "passages_porteurs": [
+    205,
+    11
+   ],
+   "passages_brut": "nº 205, nº 11."
+  },
+  {
+   "id": "H6",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Le site à n'importe quel jour",
+   "description": "voir l'état scellé du site à un jour donné — le site dans le temps, jour par jour.",
+   "contextes": "la personne qui veut l'état du site à la date d'un dépôt ou d'une affirmation.",
+   "lien": {
+    "url": "evolution.html#jour",
+    "page": "evolution.html",
+    "ancre": "jour",
+    "statut": "verifiee",
+    "brut": "`evolution.html#jour` (ancre vérifiée)"
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q1",
+     "formulation": null
+    },
+    {
+     "ref": "P10-Q3",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q1 (pourquoi le site existe — son histoire se lit aussi dans ses jours), P10-Q3 (revérifier — l'état d'un jour donné fait partie du chemin de preuve).",
+   "passages_porteurs": [
+    218,
+    111,
+    114
+   ],
+   "passages_brut": "nº 218, nº 111, nº 114."
+  },
+  {
+   "id": "H7",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Le site, en application",
+   "description": "installer le site comme une application sur son appareil.",
+   "contextes": "après un premier parcours réussi ; l'outil du retour, avec H5.",
+   "lien": {
+    "url": "application.html#application",
+    "page": "application.html",
+    "ancre": "application",
+    "statut": "verifiee",
+    "brut": "`application.html#application` (ancre vérifiée)"
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune de la banque — arrive par le fil, quand la personne veut revenir souvent (suivi F1, dépôts A1).",
+   "passages_porteurs": [
+    84,
+    205
+   ],
+   "passages_brut": "nº 84, nº 205."
+  },
+  {
+   "id": "H8",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Faire un don — choisir l'usage de son don",
+   "description": "donner au site et choisir à quoi l'argent sert, dans la liste des usages.",
+   "contextes": "la fin d'un accompagnement réussi ; jamais poussé, toujours offert.",
+   "lien": {
+    "url": "don.html#don-comment",
+    "page": "don.html",
+    "ancre": "don-comment",
+    "statut": "verifiee",
+    "brut": "`don.html#don-comment` (nº 118), `don.html#don-choix` (nº 117) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P12-Q3",
+     "formulation": "Je peux soutenir le site ? "
+    }
+   ],
+   "questions_brut": "P12-Q3 (« Je peux soutenir le site ? »).",
+   "passages_porteurs": [
+    118,
+    117,
+    115,
+    116
+   ],
+   "passages_brut": "nº 118, nº 117, nº 115, nº 116."
+  },
+  {
+   "id": "H9",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Le registre des conditions — les contrats, lus",
+   "description": "lire ce que les contrats des plateformes disent des droits des gens, plateforme par plateforme (passe 1 : TikTok, Snapchat, Discord, Meta, X — onze documents lus en entier), avec la carte des consentements.",
+   "contextes": "c'est le registre qu'Alex tient lu chaque jour ; quand la question porte sur un contrat, c'est ici que le cerveau lit avant de répondre.",
+   "lien": {
+    "url": "conditions.html#conditions",
+    "page": "conditions.html",
+    "ancre": "conditions",
+    "statut": "verifiee",
+    "brut": "`conditions.html#conditions` (nº 152), `conditions.html#conditions-consentements` (nº 154), `conditions.html#conditions-enfants` (nº 153) — ancres vérifiées."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P5-Q5",
+     "formulation": "Qu'est-ce que le contrat de TikTok ou de Facebook dit de mes droits ? "
+    },
+    {
+     "ref": "P8-Q3",
+     "formulation": null
+    },
+    {
+     "ref": "P5-Q6",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P5-Q5 (« Qu'est-ce que le contrat de TikTok ou de Facebook dit de mes droits ? »), P8-Q3 (« J'avais dit oui, je peux changer d'idée ? » — la carte des consentements), P5-Q6 (le contrat de Google ou d'Apple — **le registre s'arrête à la passe 1 : manque G4**, le cerveau le dit et inscrit le manque).",
+   "passages_porteurs": [
+    152,
+    154,
+    153,
+    13
+   ],
+   "passages_brut": "nº 152, nº 154, nº 153, nº 13 (le rôle permanent du registre)."
+  },
+  {
+   "id": "H10",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "Le glossaire",
+   "description": "chaque terme du dossier défini au même endroit, dans le sens du site : sceau, digest, maillon, ancrage, somme des précédents.",
+   "contextes": "à chaque mot du dossier qu'une réponse emploie ; la définition précède l'épreuve (B1, B4, G6).",
+   "lien": {
+    "url": "glossaire.html",
+    "page": "glossaire.html",
+    "ancre": null,
+    "statut": "page-seulement",
+    "brut": "`glossaire.html` — **page seulement** (la page ne porte aucun `id` dans le paquet)."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q5",
+     "formulation": "C'est quoi un SHA-256, un sceau, ces affaires-là ? "
+    }
+   ],
+   "questions_brut": "P9-Q5 (« C'est quoi un SHA-256, un sceau, ces affaires-là ? »).",
+   "passages_porteurs": [
+    223,
+    0
+   ],
+   "passages_brut": "nº 223, nº 0."
+  },
+  {
+   "id": "H11",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "L'atelier de chiffrement — la phrase et le paquet",
+   "description": "le parcours en cinq pas pour chiffrer un fichier par sa phrase, et le rouvrir.",
+   "contextes": "quand la démarche produit un fichier sensible à transmettre (plainte, dossier de suivi).",
+   "lien": {
+    "url": "atelier-chiffrement.html#fichier-paquet",
+    "page": "atelier-chiffrement.html",
+    "ancre": "fichier-paquet",
+    "statut": "verifiee",
+    "brut": "`atelier-chiffrement.html#fichier-paquet` (nº 227), `atelier-chiffrement.html#fichier-clairs` (nº 226) — ancres vérifiées."
+   },
+   "questions_arrivee": [],
+   "questions_brut": "aucune de la banque — arrive par le fil (protéger un fichier avant de le transmettre ; l'enveloppe G2 est sa voisine).",
+   "passages_porteurs": [
+    227,
+    226,
+    148
+   ],
+   "passages_brut": "nº 227, nº 226, nº 148."
+  },
+  {
+   "id": "H12",
+   "famille": "H",
+   "famille_nom": "Parler, écrire, se repérer",
+   "nom": "La chambre du cerveau — la page du cerveau lui-même",
+   "contextes": "dès la prochaine version ; en attendant, H1 (cerveau.html) tient la conversation.",
+   "lien": {
+    "url": "chambre-du-cerveau.html",
+    "page": "chambre-du-cerveau.html",
+    "ancre": null,
+    "statut": "hors-paquet-v64",
+    "brut": "`chambre-du-cerveau.html` — **HORS PAQUET v64** (écart E1) : la page existe au paquet `site-version-suivante-etage-ia-20261125`, avec ses ancres de conversation (dont `cerveau-conversation`, vérifiée là-bas). Dans le paquet du dépôt public, aucun lien ne peut encore y mener."
+   },
+   "questions_arrivee": [
+    {
+     "ref": "P9-Q4",
+     "formulation": null
+    }
+   ],
+   "questions_brut": "P9-Q4 (le cerveau, lui-même), et toutes — c'est le lieu d'où ce répertoire parlera.",
+   "passages_porteurs": [],
+   "passages_brut": "aucun dans les 243 (la page est postérieure à l'extraction) — à verser à la prochaine extraction."
+  }
+ ],
+ "questions": [
+  {
+   "ref": "P1-Q1",
+   "formulation": "Je commence par quoi ?",
+   "outils_ouverts": [
+    "C1",
+    "C2"
+   ],
+   "outils_brut": "**C1** le parcours conseillé ; **C2** préparer une demande d'accès",
+   "ouvertures_en_cours": "une fois la demande partie : **F1** dossier de suivi, **F3** minuteur"
+  },
+  {
+   "ref": "P1-Q2",
+   "formulation": "Je leur écris quoi, exactement ?",
+   "outils_ouverts": [
+    "C3",
+    "C2",
+    "C1"
+   ],
+   "outils_brut": "**C3** lettres types ; **C2** ; **C1** (pas 2)",
+   "ouvertures_en_cours": "la lettre produite : **F1** pour la consigner"
+  },
+  {
+   "ref": "P1-Q3",
+   "formulation": "À qui je m'adresse si ça marche pas ?",
+   "outils_ouverts": [
+    "C9"
+   ],
+   "outils_brut": "**C9** orientation vers l'instance",
+   "ouvertures_en_cours": "selon l'instance : **F3** minuteur des délais de plainte"
+  },
+  {
+   "ref": "P1-Q4",
+   "formulation": "Google Takeout, c'est quoi ?",
+   "outils_ouverts": [
+    "C8",
+    "D1"
+   ],
+   "outils_brut": "**C8** Takeout guidé ; **D1** fiche Google",
+   "ouvertures_en_cours": "l'export reçu : **D2** détecteur, **D3** miroir des exports"
+  },
+  {
+   "ref": "P1-Q5",
+   "formulation": "Est-ce que ce site garde ce que je lui dis ?",
+   "outils_ouverts": [
+    "F4",
+    "G1",
+    "G4",
+    "G5"
+   ],
+   "outils_brut": "**F4** reçus et gestes ; **G1** voir mon cerveau ; **G4** le miroir ; **G5** les modes",
+   "ouvertures_en_cours": "la réponse tient aussi dans la politique du site (orientation, lieu « Politique du site »)"
+  },
+  {
+   "ref": "P2-Q1",
+   "formulation": "Comment je demande mes informations ?",
+   "outils_ouverts": [
+    "C2"
+   ],
+   "outils_brut": "**C2**",
+   "ouvertures_en_cours": "**F1**, **F3** dès l'envoi"
+  },
+  {
+   "ref": "P2-Q2",
+   "formulation": "Quelle loi s'applique à moi ?",
+   "outils_ouverts": [
+    "C2"
+   ],
+   "outils_brut": "**C2** (étape 1)",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P2-Q3",
+   "formulation": "Ils ont combien de temps pour me répondre ?",
+   "outils_ouverts": [
+    "C2",
+    "C3",
+    "F3",
+    "F1"
+   ],
+   "outils_brut": "**C2**, **C3** (les bases), **F3** minuteur, **F1** suivi",
+   "ouvertures_en_cours": "au jour 30 sans réponse : **F2** silence consigné, puis **C9**"
+  },
+  {
+   "ref": "P2-Q4",
+   "formulation": "Je veux la lettre déjà faite",
+   "outils_ouverts": [
+    "C3",
+    "C2"
+   ],
+   "outils_brut": "**C3** lettres types ; **C2** (étape 2)",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P2-Q5",
+   "formulation": "Je peux demander la même chose à ChatGPT ?",
+   "outils_ouverts": [
+    "C3"
+   ],
+   "outils_brut": "**C3** (la lettre « Demande à une plateforme d'IA »)",
+   "ouvertures_en_cours": "ce que le contrat de la plateforme dit : **manque G1** — le cerveau le dit, **H3** en repli"
+  },
+  {
+   "ref": "P3-Q1",
+   "formulation": "Ils m'ont dit non, je fais quoi ?",
+   "outils_ouverts": [
+    "C9",
+    "C2",
+    "C5"
+   ],
+   "outils_brut": "**C9** orientation ; **C2** (revérifier sa demande) ; **C5** si le refus est automatisé",
+   "ouvertures_en_cours": "**F1** consigner le refus ; **F3** le délai d'examen"
+  },
+  {
+   "ref": "P3-Q2",
+   "formulation": "Ils répondent juste pas, ça fait un mois",
+   "outils_ouverts": [
+    "F2",
+    "F3",
+    "C9"
+   ],
+   "outils_brut": "**F2** silence consigné ; **F3** ; **C9**",
+   "ouvertures_en_cours": "le silence consigné devient la pièce de la plainte (P4)"
+  },
+  {
+   "ref": "P3-Q3",
+   "formulation": "Tribunal en Californie, je suis bloqué ?",
+   "outils_ouverts": [
+    "C6"
+   ],
+   "outils_brut": "**C6** modèle de réponse au for",
+   "ouvertures_en_cours": "la carte des clauses et les recours d'ici entourent (lieu « Le for »)"
+  },
+  {
+   "ref": "P3-Q4",
+   "formulation": "Faut-tu que je prenne un avocat ?",
+   "outils_ouverts": [],
+   "outils_brut": "— réponse préparée (« sans avocat », nº 68)",
+   "ouvertures_en_cours": "si la personne veut quand même un humain : **H3**"
+  },
+  {
+   "ref": "P4-Q1",
+   "formulation": "Comment je porte plainte à la CAI ?",
+   "outils_ouverts": [
+    "C9"
+   ],
+   "outils_brut": "**C9** orientation et formulaires liés (nº 68)",
+   "ouvertures_en_cours": "**F3** le délai ; **F1** le suivi de la plainte. Borne tenue : pas de parcours pas-à-pas de la plainte elle-même dans les passages (partiel de la banque)"
+  },
+  {
+   "ref": "P4-Q2",
+   "formulation": "J'ai combien de temps pour me plaindre ?",
+   "outils_ouverts": [
+    "F3",
+    "C9",
+    "F2"
+   ],
+   "outils_brut": "**F3** minuteur ; **C9** ; **F2** si le délai vient du silence",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P4-Q3",
+   "formulation": "C'est la CAI ou le fédéral ?",
+   "outils_ouverts": [
+    "C9"
+   ],
+   "outils_brut": "**C9**",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P4-Q4",
+   "formulation": "Le site peut faire la plainte pour moi ?",
+   "outils_ouverts": [],
+   "outils_brut": "— réponse-borne (« Ce site ne dépose pas une plainte à votre place », nº 235)",
+   "ouvertures_en_cours": "la porte humaine reste : **H3**"
+  },
+  {
+   "ref": "P5-Q1",
+   "formulation": "Télécharger tout ce que Facebook a sur moi",
+   "outils_ouverts": [
+    "D1"
+   ],
+   "outils_brut": "**D1** fiche Meta",
+   "ouvertures_en_cours": "export reçu : **D2**, **D3**"
+  },
+  {
+   "ref": "P5-Q2",
+   "formulation": "Pis pour Google ? Apple ? TikTok ? Discord ?",
+   "outils_ouverts": [
+    "D1",
+    "C8"
+   ],
+   "outils_brut": "**D1** chaque fiche nommée ; **C8** pour Google",
+   "ouvertures_en_cours": "idem, par plateforme"
+  },
+  {
+   "ref": "P5-Q3",
+   "formulation": "Il manque des affaires dans mon fichier",
+   "outils_ouverts": [
+    "D2"
+   ],
+   "outils_brut": "**D2** détecteur d'export partiel",
+   "ouvertures_en_cours": "si le manque se confirme : **C2** (demande complétée), **F1**"
+  },
+  {
+   "ref": "P5-Q4",
+   "formulation": "Je sais pas lire le fichier reçu",
+   "outils_ouverts": [
+    "D3"
+   ],
+   "outils_brut": "**D3** miroir des exports",
+   "ouvertures_en_cours": "avant toute IA sur l'archive : la prudence du nº 238 (lieu « Agir sur mes données », pas 6)"
+  },
+  {
+   "ref": "P5-Q5",
+   "formulation": "Le contrat de TikTok ou Facebook dit quoi de mes droits ?",
+   "outils_ouverts": [
+    "H9"
+   ],
+   "outils_brut": "**H9** registre des conditions",
+   "ouvertures_en_cours": "la carte des consentements si la question devient « retirer mon oui »"
+  },
+  {
+   "ref": "P5-Q6",
+   "formulation": "Pis le contrat de Google ou d'Apple ?",
+   "outils_ouverts": [
+    "H9"
+   ],
+   "outils_brut": "**H9** — mais le registre s'arrête à la passe 1 : **manque G4**",
+   "ouvertures_en_cours": "le cerveau guide la récolte (**D1**) mais dit le manque sur le contrat ; **H3** en repli"
+  },
+  {
+   "ref": "P6-Q1",
+   "formulation": "Un ordinateur a décidé de me refuser",
+   "outils_ouverts": [
+    "C5",
+    "C4"
+   ],
+   "outils_brut": "**C5** le parcours en quatre pas ; **C4** le générateur",
+   "ouvertures_en_cours": "**F1** suivre la demande d'explication"
+  },
+  {
+   "ref": "P6-Q2",
+   "formulation": "Je fais la demande comment ?",
+   "outils_ouverts": [
+    "C4",
+    "C5"
+   ],
+   "outils_brut": "**C4**, **C5**",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P6-Q3",
+   "formulation": "Mon assureur a décidé avec un algorithme",
+   "outils_ouverts": [
+    "C4",
+    "C5"
+   ],
+   "outils_brut": "**C4**, **C5** ; orientation vers la fiche assurances (lieu « Les assurances »)",
+   "ouvertures_en_cours": "le régulateur et les plaintes : nº 196, même lieu"
+  },
+  {
+   "ref": "P7-Q1",
+   "formulation": "Mon compte est fermé, je fais quoi en premier ?",
+   "outils_ouverts": [
+    "E1"
+   ],
+   "outils_brut": "**E1** protocole de la première heure",
+   "ouvertures_en_cours": "ensuite seulement : **E2**"
+  },
+  {
+   "ref": "P7-Q2",
+   "formulation": "Je peux ravoir mon compte ?",
+   "outils_ouverts": [
+    "E2"
+   ],
+   "outils_brut": "**E2** parcours et fiches d'appel",
+   "ouvertures_en_cours": "**F3** les fenêtres d'appel"
+  },
+  {
+   "ref": "P7-Q3",
+   "formulation": "Mes données sont perdues ?",
+   "outils_ouverts": [
+    "E2",
+    "C2"
+   ],
+   "outils_brut": "**E2** (question 3) ; **C2** demande d'accès",
+   "ouvertures_en_cours": "**F1**"
+  },
+  {
+   "ref": "P7-Q4",
+   "formulation": "La loi peut forcer la réouverture ?",
+   "outils_ouverts": [
+    "E2"
+   ],
+   "outils_brut": "**E2** — la section « ce que le droit donne » (nº 65) porte la borne",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P8-Q1",
+   "formulation": "C'est quoi, la Loi 25 ? Ça me donne quels droits ?",
+   "outils_ouverts": [],
+   "outils_brut": "— réponse depuis l'exposé (nº 36) ; orientation vers les lieux « Confidentialité et Loi 25 » et « Droits et lois »",
+   "ouvertures_en_cours": "quand un droit nommé devient un geste : **C1** ou **C2**"
+  },
+  {
+   "ref": "P8-Q2",
+   "formulation": "Je peux faire effacer mes affaires d'un site ?",
+   "outils_ouverts": [
+    "C3",
+    "C2"
+   ],
+   "outils_brut": "**C3** (demandes types : cessation, désindexation) ; **C2**",
+   "ouvertures_en_cours": "**F1**"
+  },
+  {
+   "ref": "P8-Q3",
+   "formulation": "J'avais dit oui, je peux changer d'idée ?",
+   "outils_ouverts": [
+    "H9",
+    "C3"
+   ],
+   "outils_brut": "**H9** carte des consentements ; **C3**",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P8-Q4",
+   "formulation": "ChatGPT garde-tu mes conversations ?",
+   "outils_ouverts": [],
+   "outils_brut": "**manque G1** — aucune condition de plateforme d'IA au registre",
+   "ouvertures_en_cours": "le cerveau le dit, propose la demande (**C3**, lettre plateforme d'IA) et **H3**"
+  },
+  {
+   "ref": "P9-Q1",
+   "formulation": "Pourquoi ce site-là existe ?",
+   "outils_ouverts": [
+    "B3",
+    "B7",
+    "H6",
+    "H2"
+   ],
+   "outils_brut": "**B3** tout vérifier ; **B7** test du sceptique ; **H6** le site à n'importe quel jour ; **H2** la salle des échos",
+   "ouvertures_en_cours": "le récit : lieu « Parcours — l'histoire » ; le balado : lieu « Le récit »"
+  },
+  {
+   "ref": "P9-Q2",
+   "formulation": "C'est quoi le but du site ?",
+   "outils_ouverts": [
+    "H2"
+   ],
+   "outils_brut": "**H2** les échos ; orientation vers l'accueil (SAVOIR / ACCÉDER / MÉMOIRE)",
+   "ouvertures_en_cours": "**C1** si le but devient un geste"
+  },
+  {
+   "ref": "P9-Q3",
+   "formulation": "Qui a fait ce site-là, pis il a créé quoi ?",
+   "outils_ouverts": [
+    "A9",
+    "B3",
+    "H4"
+   ],
+   "outils_brut": "**A9** registre d'antériorité ; **B3** ; **H4** recherche",
+   "ouvertures_en_cours": "les lieux « Le chercheur », « Le travail d'ingénierie », « Partenaires et soutien »"
+  },
+  {
+   "ref": "P9-Q4",
+   "formulation": "Toi, le cerveau, t'es quoi ? Tu gardes mes questions ?",
+   "outils_ouverts": [
+    "H1",
+    "G1",
+    "A6",
+    "B6",
+    "H12"
+   ],
+   "outils_brut": "**H1** la conversation ; **G1** voir mon cerveau ; **A6** ancrer sa mémoire ; **B6** le kit autonome ; **H12** la chambre du cerveau (paquet suivant)",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P9-Q5",
+   "formulation": "C'est quoi un SHA-256, un sceau ?",
+   "outils_ouverts": [
+    "H10",
+    "B1",
+    "B4",
+    "G6",
+    "A10"
+   ],
+   "outils_brut": "**H10** glossaire ; puis l'épreuve : **B1** mini-vérificateur, **B4** trouve l'écart, **G6** ta somme, **A10** le Répertoire du propre",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P9-Q6",
+   "formulation": "Qu'est-ce qui est arrivé le 31 janvier 2026 ?",
+   "outils_ouverts": [],
+   "outils_brut": "**manque G5** — le récit n'existe qu'en titre de jalon (nº 90)",
+   "ouvertures_en_cours": "le lieu « Parcours — l'histoire » montre le jalon ; le cerveau nomme le manque"
+  },
+  {
+   "ref": "P10-Q1",
+   "formulation": "Dater mon document sans le montrer",
+   "outils_ouverts": [
+    "C7",
+    "A1",
+    "A5",
+    "B5"
+   ],
+   "outils_brut": "**C7** calcul local ; **A1** le dépôt ; **A5** sceller son fichier ; **B5** l'atelier",
+   "ouvertures_en_cours": "après le dépôt : **A2** le voir au registre"
+  },
+  {
+   "ref": "P10-Q2",
+   "formulation": "Ça prouve quoi, au juste ?",
+   "outils_ouverts": [
+    "A1",
+    "A2",
+    "B7"
+   ],
+   "outils_brut": "**A1**, **A2** ; **B7** la borne éprouvée",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P10-Q3",
+   "formulation": "Plus tard, je revérifie comment ?",
+   "outils_ouverts": [
+    "A3",
+    "A7",
+    "A8",
+    "A4",
+    "B2",
+    "B6",
+    "H6"
+   ],
+   "outils_brut": "**A3** vérificateur Merkle ; **A7** reviens avec ta preuve ; **A8** chez le tiers ; **A4** voie Bitcoin ; **B2** vérifier un sceau ; **B6** kit autonome ; **H6** l'état du jour du dépôt",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P10-Q4",
+   "formulation": "Mon document est court, on peut le deviner ?",
+   "outils_ouverts": [
+    "A1",
+    "C7"
+   ],
+   "outils_brut": "**A1** (empreinte renforcée) ; **C7**",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P11-Q1",
+   "formulation": "C'est quoi, le passeport de l'œuvre ?",
+   "outils_ouverts": [],
+   "outils_brut": "**manque G3** — aucune page, aucun passage : une spécification, pas un outil",
+   "ouvertures_en_cours": "le cerveau nomme le manque ; **H3** si la personne veut en parler à Alex"
+  },
+  {
+   "ref": "P11-Q2",
+   "formulation": "Prouver que mon œuvre existait à telle date",
+   "outils_ouverts": [
+    "A1",
+    "A5",
+    "A2"
+   ],
+   "outils_brut": "**A1** dépôt ; **A5** sceller ; **A2** registre",
+   "ouvertures_en_cours": "l'historique des versions du dossier d'œuvre : pas encore un outil (voir P11-Q1)"
+  },
+  {
+   "ref": "P12-Q1",
+   "formulation": "Je veux que quelqu'un m'aide pour vrai",
+   "outils_ouverts": [
+    "H3"
+   ],
+   "outils_brut": "**H3** écrire à SoPHIa — la porte humaine",
+   "ouvertures_en_cours": "—"
+  },
+  {
+   "ref": "P12-Q2",
+   "formulation": "Comment Alex peut m'accompagner ? Ça coûte quoi ?",
+   "outils_ouverts": [
+    "H3"
+   ],
+   "outils_brut": "**H3** — et au-delà, **manque G2** : l'offre n'est décrite nulle part",
+   "ouvertures_en_cours": "le cerveau ne peut pas inventer les tranches ; il mène à la porte"
+  },
+  {
+   "ref": "P12-Q3",
+   "formulation": "Je peux soutenir le site ?",
+   "outils_ouverts": [
+    "H8"
+   ],
+   "outils_brut": "**H8** faire un don",
+   "ouvertures_en_cours": "—"
+  }
+ ],
+ "orientation": [
+  {
+   "lieu": "L'accueil — les menus et les gestes",
+   "places": [
+    "index.html#menus",
+    "index.html#surface-gestes"
+   ],
+   "place_brut": "`index.html#menus` ; `index.html#surface-gestes`",
+   "formulations": [
+    "Je suis perdu, je sais pas où aller. ",
+    "Qu'est-ce que je peux faire ici ? ",
+    "C'est où, les menus ? "
+   ]
+  },
+  {
+   "lieu": "Parle avec le site — la conversation",
+   "places": [
+    "cerveau.html#cerveau"
+   ],
+   "place_brut": "`cerveau.html#cerveau`",
+   "formulations": [
+    "Où je peux poser ma question ? ",
+    "Je cherche quelqu'un à qui parler sur ce site. ",
+    "Pose ta question en texte libre, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "La chambre du cerveau",
+   "places": [
+    "chambre-du-cerveau.html"
+   ],
+   "place_brut": "`chambre-du-cerveau.html` — **hors paquet v64 (E1)**",
+   "formulations": [
+    "C'est où, le cerveau du site ? ",
+    "Où je peux lui demander n'importe quoi du site ? "
+   ]
+  },
+  {
+   "lieu": "Rechercher dans tout le site",
+   "places": [
+    "recherche.html#recherche"
+   ],
+   "place_brut": "`recherche.html#recherche`",
+   "formulations": [
+    "Je cherche un mot précis sur le site. ",
+    "Où est la barre de recherche ? "
+   ]
+  },
+  {
+   "lieu": "Tes favoris",
+   "places": [
+    "index.html#favoris"
+   ],
+   "place_brut": "`index.html#favoris`",
+   "formulations": [
+    "Où je retrouve la page que j'avais gardée ? ",
+    "C'est où, mes favoris ? "
+   ]
+  },
+  {
+   "lieu": "Le glossaire",
+   "places": [
+    "glossaire.html"
+   ],
+   "place_brut": "`glossaire.html` — page seulement",
+   "formulations": [
+    "C'est quoi, ce mot-là ? ",
+    "Où sont les définitions ? "
+   ]
+  },
+  {
+   "lieu": "L'accessibilité",
+   "places": [
+    "accessibilite.html"
+   ],
+   "place_brut": "`accessibilite.html` — page seulement",
+   "formulations": [
+    "Je cherche les réglages d'accessibilité. ",
+    "Le site est-il accessible ? "
+   ]
+  },
+  {
+   "lieu": "La page 404",
+   "places": [
+    "404.html"
+   ],
+   "place_brut": "`404.html` — page seulement",
+   "formulations": [
+    "La page existe pas, je fais quoi ? "
+   ]
+  },
+  {
+   "lieu": "Agir sur mes données — le parcours",
+   "places": [
+    "agir-sur-mes-donnees.html#parcours"
+   ],
+   "place_brut": "`agir-sur-mes-donnees.html#parcours`",
+   "formulations": [
+    "Je veux agir sur mes données, je commence où ? ",
+    "Qu'est-ce que je peux faire pour reprendre mes données ? "
+   ]
+  },
+  {
+   "lieu": "Préparer une demande d'accès",
+   "places": [
+    "acces.html#acces"
+   ],
+   "place_brut": "`acces.html#acces`",
+   "formulations": [
+    "Où je prépare ma demande d'accès ? ",
+    "Je cherche le formulaire pour demander mes renseignements. "
+   ]
+  },
+  {
+   "lieu": "La bibliothèque des lois et les lettres types",
+   "places": [
+    "donnees.html#donnees"
+   ],
+   "place_brut": "`donnees.html#donnees`",
+   "formulations": [
+    "Où sont les lettres déjà faites ? ",
+    "Je cherche les textes de loi du site. "
+   ]
+  },
+  {
+   "lieu": "Demander l'explication d'une décision automatisée",
+   "places": [
+    "explication.html#explication-parcours"
+   ],
+   "place_brut": "`explication.html#explication-parcours`",
+   "formulations": [
+    "Un robot m'a refusé, je peux faire quoi ? ",
+    "Où je demande l'explication ? "
+   ]
+  },
+  {
+   "lieu": "Le for est ailleurs, tes recours sont ici",
+   "places": [
+    "for.html#for-carte"
+   ],
+   "place_brut": "`for.html#for-carte`",
+   "formulations": [
+    "Leur contrat parle d'un tribunal ailleurs, c'est où que je lis mes recours ? "
+   ]
+  },
+  {
+   "lieu": "Droits et lois — ce qui est établi",
+   "places": [
+    "droits.html#droits"
+   ],
+   "place_brut": "`droits.html#droits`",
+   "formulations": [
+    "C'est quoi, mes droits, au juste ? ",
+    "Où sont les lois, expliquées ? "
+   ]
+  },
+  {
+   "lieu": "Confidentialité et Loi 25",
+   "places": [
+    "confidentialite.html#confidentialite"
+   ],
+   "place_brut": "`confidentialite.html#confidentialite`",
+   "formulations": [
+    "Je cherche ce que la Loi 25 dit de la confidentialité. "
+   ]
+  },
+  {
+   "lieu": "Le registre des décisions",
+   "places": [
+    "decisions.html#decisions-registre"
+   ],
+   "place_brut": "`decisions.html#decisions-registre`",
+   "formulations": [
+    "Où sont les décisions des tribunaux et des commissaires ? ",
+    "Je cherche une décision précise. "
+   ]
+  },
+  {
+   "lieu": "Compte suspendu",
+   "places": [
+    "suspendu.html#suspendu-premiere-heure"
+   ],
+   "place_brut": "`suspendu.html#suspendu-premiere-heure`",
+   "formulations": [
+    "Mon compte est fermé, c'est où qu'on règle ça ? ",
+    "Qu'est-ce que je peux faire, là, tout de suite ? "
+   ]
+  },
+  {
+   "lieu": "Pétitions",
+   "places": [
+    "petitions.html#petitions"
+   ],
+   "place_brut": "`petitions.html#petitions`",
+   "formulations": [
+    "Où je peux signer ou appuyer quelque chose ? "
+   ]
+  },
+  {
+   "lieu": "Aller chercher ce qu'ils ont récolté",
+   "places": [
+    "aller.html#aller-cadre"
+   ],
+   "place_brut": "`aller.html#aller-cadre`",
+   "formulations": [
+    "Où je peux aller chercher ce que Facebook a sur moi ? ",
+    "Je cherche la fiche pour ma plateforme. "
+   ]
+  },
+  {
+   "lieu": "Caméras et appareils connectés",
+   "places": [
+    "cameras.html#cameras-transit"
+   ],
+   "place_brut": "`cameras.html#cameras-transit`",
+   "formulations": [
+    "Ma caméra envoie quoi, où ? ",
+    "Je cherche ce qui transite d'une caméra de maison. "
+   ]
+  },
+  {
+   "lieu": "La carte des transits",
+   "places": [
+    "transits.html#transits"
+   ],
+   "place_brut": "`transits.html#transits`",
+   "formulations": [
+    "Mes données voyagent comment ? ",
+    "Qui peut les voir passer ? "
+   ]
+  },
+  {
+   "lieu": "Ton exposition",
+   "places": [
+    "exposition.html#empreinte"
+   ],
+   "place_brut": "`exposition.html#empreinte`",
+   "formulations": [
+    "Qu'est-ce qu'un pisteur peut calculer sur moi ? ",
+    "Je veux voir mon exposition. "
+   ]
+  },
+  {
+   "lieu": "Le miroir",
+   "places": [
+    "miroir.html#miroir-releve"
+   ],
+   "place_brut": "`miroir.html#miroir-releve`",
+   "formulations": [
+    "Qu'est-ce que ce site voit de moi, là, maintenant ? "
+   ]
+  },
+  {
+   "lieu": "Les deux modes",
+   "places": [
+    "modes.html#modes-pourquoi"
+   ],
+   "place_brut": "`modes.html#modes-pourquoi`",
+   "formulations": [
+    "C'est quoi, le mode local ? ",
+    "Où je choisis comment le site fonctionne ? "
+   ]
+  },
+  {
+   "lieu": "Les assurances",
+   "places": [
+    "assurances.html#assurances-sommaire"
+   ],
+   "place_brut": "`assurances.html#assurances-sommaire`",
+   "formulations": [
+    "Mon assureur sait quoi sur moi ? ",
+    "Je cherche mon dossier de sinistres. "
+   ]
+  },
+  {
+   "lieu": "Le suivi familial et la localisation",
+   "places": [
+    "suivi-familial.html#suivi-familial-sommaire"
+   ],
+   "place_brut": "`suivi-familial.html#suivi-familial-sommaire`",
+   "formulations": [
+    "Mon conjoint me suit avec une application, je peux faire quoi ? ",
+    "C'est où, les applications de localisation ? "
+   ]
+  },
+  {
+   "lieu": "Le 51e État numérique",
+   "places": [
+    "etat51.html#etat51-these"
+   ],
+   "place_brut": "`etat51.html#etat51-these`",
+   "formulations": [
+    "Je cherche l'affaire de l'ADN numérique, du jumeau numérique. "
+   ]
+  },
+  {
+   "lieu": "Dépose ton empreinte",
+   "places": [
+    "depose-empreinte.html#depose-empreinte"
+   ],
+   "place_brut": "`depose-empreinte.html#depose-empreinte`",
+   "formulations": [
+    "Où je peux déposer mon empreinte ? ",
+    "Je cherche le dépôt des SHA-256. "
+   ]
+  },
+  {
+   "lieu": "Le registre public des dépôts",
+   "places": [
+    "depose-empreinte.html#depot-registre"
+   ],
+   "place_brut": "`depose-empreinte.html#depot-registre`",
+   "formulations": [
+    "C'est où, la liste des dépôts ? "
+   ]
+  },
+  {
+   "lieu": "Revérifier un dépôt",
+   "places": [
+    "depose-empreinte.html#depot-verifier"
+   ],
+   "place_brut": "`depose-empreinte.html#depot-verifier`",
+   "formulations": [
+    "Où je revérifie un dépôt ? ",
+    "C'est où, l'arbre de Merkle ? "
+   ]
+  },
+  {
+   "lieu": "Ancrage — les preuves chez les tiers",
+   "places": [
+    "ancrage.html#ancrages"
+   ],
+   "place_brut": "`ancrage.html#ancrages`",
+   "formulations": [
+    "Où sont les ancrages, les preuves dans Bitcoin ? ",
+    "Je veux ancrer quelque chose, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "Le registre d'antériorité",
+   "places": [
+    "registre.html#registre"
+   ],
+   "place_brut": "`registre.html#registre`",
+   "formulations": [
+    "Où sont les dépôts publics du site lui-même ? "
+   ]
+  },
+  {
+   "lieu": "Vérifier",
+   "places": [
+    "verifier.html#verifie-moi"
+   ],
+   "place_brut": "`verifier.html#verifie-moi`",
+   "formulations": [
+    "Où je peux vérifier un sceau ? ",
+    "Je cherche le vérificateur. "
+   ]
+  },
+  {
+   "lieu": "Sceller — l'atelier",
+   "places": [
+    "sceller.html#outils"
+   ],
+   "place_brut": "`sceller.html#outils`",
+   "formulations": [
+    "Où je peux sceller quelque chose moi-même ? "
+   ]
+  },
+  {
+   "lieu": "Preuves",
+   "places": [
+    "preuves.html#sceptique"
+   ],
+   "place_brut": "`preuves.html#sceptique`",
+   "formulations": [
+    "Où sont les preuves ? ",
+    "Je veux tester une affirmation. "
+   ]
+  },
+  {
+   "lieu": "Le kit de vérification autonome",
+   "places": [
+    "kit-verification.html"
+   ],
+   "place_brut": "`kit-verification.html` — page seulement",
+   "formulations": [
+    "Je cherche le kit pour tout revérifier chez moi. "
+   ]
+  },
+  {
+   "lieu": "Temps — l'ancre, et le Répertoire du propre",
+   "places": [
+    "temps.html#temps",
+    "temps.html#repertoire"
+   ],
+   "place_brut": "`temps.html#temps` ; `temps.html#repertoire`",
+   "formulations": [
+    "C'est quoi, l'heure de l'ancre ? ",
+    "Où sont les sceaux, un par un ? "
+   ]
+  },
+  {
+   "lieu": "Le calendrier 13 × 28",
+   "places": [
+    "calendrier.html#calendrier"
+   ],
+   "place_brut": "`calendrier.html#calendrier`",
+   "formulations": [
+    "Je cherche le calendrier spécial, le 13 × 28. ",
+    "Le compte en direct, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "La note C2PA — deux provenances",
+   "places": [
+    "note-c2pa.html"
+   ],
+   "place_brut": "`note-c2pa.html` — page seulement",
+   "formulations": [
+    "C'est où, la comparaison des provenances de photos ? "
+   ]
+  },
+  {
+   "lieu": "L'atelier de chiffrement",
+   "places": [
+    "atelier-chiffrement.html#fichier-paquet"
+   ],
+   "place_brut": "`atelier-chiffrement.html#fichier-paquet`",
+   "formulations": [
+    "Où je peux chiffrer un fichier ? "
+   ]
+  },
+  {
+   "lieu": "Ton dossier de suivi",
+   "places": [
+    "suivi.html#suivi"
+   ],
+   "place_brut": "`suivi.html#suivi`",
+   "formulations": [
+    "Où je suis mes démarches ? ",
+    "C'est où, mon dossier ? "
+   ]
+  },
+  {
+   "lieu": "Le minuteur de fenêtre",
+   "places": [
+    "fenetres.html#fenetres"
+   ],
+   "place_brut": "`fenetres.html#fenetres`",
+   "formulations": [
+    "Où je vois les délais qui me restent ? ",
+    "Mon temps pour me plaindre, il est où ? "
+   ]
+  },
+  {
+   "lieu": "Tes reçus et tes gestes",
+   "places": [
+    "recus.html#recus-gestes"
+   ],
+   "place_brut": "`recus.html#recus-gestes`",
+   "formulations": [
+    "Où sont mes reçus ? ",
+    "Qu'est-ce que j'ai fait sur ce site, déjà ? "
+   ]
+  },
+  {
+   "lieu": "Le reçu de visite",
+   "places": [
+    "recu.html#recu-visite"
+   ],
+   "place_brut": "`recu.html#recu-visite`",
+   "formulations": [
+    "Je veux voir le reçu de ma visite. "
+   ]
+  },
+  {
+   "lieu": "Voir mon cerveau",
+   "places": [
+    "voir.html#voir-cerveau"
+   ],
+   "place_brut": "`voir.html#voir-cerveau`",
+   "formulations": [
+    "Où je peux voir mon cerveau, ma mémoire à moi ? "
+   ]
+  },
+  {
+   "lieu": "La chambre des bris",
+   "places": [
+    "bris.html#bris"
+   ],
+   "place_brut": "`bris.html#bris`",
+   "formulations": [
+    "C'est où, quand le déclaré et le réel se séparent ? "
+   ]
+  },
+  {
+   "lieu": "Écrire à SoPHIa",
+   "places": [
+    "ecrire.html#ecrire"
+   ],
+   "place_brut": "`ecrire.html#ecrire`",
+   "formulations": [
+    "Où je peux écrire à quelqu'un ? ",
+    "Je cherche le courriel, le contact humain. "
+   ]
+  },
+  {
+   "lieu": "Nous joindre",
+   "places": [
+    "contact.html#contact-temoin"
+   ],
+   "place_brut": "`contact.html#contact-temoin`",
+   "formulations": [
+    "Comment je vous joins ? "
+   ]
+  },
+  {
+   "lieu": "La méthode",
+   "places": [
+    "methode.html#methode"
+   ],
+   "place_brut": "`methode.html#methode`",
+   "formulations": [
+    "C'est quoi, sa méthode ? ",
+    "Le cerveau coquillage, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "Faire pareil — la transmission",
+   "places": [
+    "transmission.html#transmission"
+   ],
+   "place_brut": "`transmission.html#transmission`",
+   "formulations": [
+    "Où j'apprends à faire pareil ? "
+   ]
+  },
+  {
+   "lieu": "Parcours — l'histoire",
+   "places": [
+    "parcours.html#histoire"
+   ],
+   "place_brut": "`parcours.html#histoire`",
+   "formulations": [
+    "C'est quoi, l'histoire du site ? ",
+    "D'où ça part, tout ça ? "
+   ]
+  },
+  {
+   "lieu": "Le chercheur",
+   "places": [
+    "chercheur.html#chercheur"
+   ],
+   "place_brut": "`chercheur.html#chercheur`",
+   "formulations": [
+    "Qui a fait ce site ? ",
+    "Où sont ses documents ? "
+   ]
+  },
+  {
+   "lieu": "Le travail d'ingénierie",
+   "places": [
+    "ingenierie.html#ingenierie"
+   ],
+   "place_brut": "`ingenierie.html#ingenierie`",
+   "formulations": [
+    "Je cherche le côté ingénierie, technique. "
+   ]
+  },
+  {
+   "lieu": "Parler à l'instance — SoPHIa",
+   "places": [
+    "instance.html#recherche-reliee"
+   ],
+   "place_brut": "`instance.html#recherche-reliee`",
+   "formulations": [
+    "C'est où, l'instance de SoPHIa ? "
+   ]
+  },
+  {
+   "lieu": "Mémoire — la mémoire externe du site",
+   "places": [
+    "memoire.html#memoire"
+   ],
+   "place_brut": "`memoire.html#memoire`",
+   "formulations": [
+    "Où est la mémoire du site ? ",
+    "Les compteurs, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "Évolution — et le site à n'importe quel jour",
+   "places": [
+    "evolution.html#evolution",
+    "evolution.html#jour"
+   ],
+   "place_brut": "`evolution.html#evolution` ; `evolution.html#jour`",
+   "formulations": [
+    "Le site a l'air de quoi, à telle date ? ",
+    "Où est le journal des mises à jour ? "
+   ]
+  },
+  {
+   "lieu": "L'édition du jour (et les éditions datées)",
+   "places": [
+    "edition.html#edition-jour",
+    "edition-2026-11-04.html",
+    "edition-2026-11-07.html"
+   ],
+   "place_brut": "`edition.html#edition-jour` ; `edition-2026-11-04.html` à `edition-2026-11-07.html` — page seulement",
+   "formulations": [
+    "C'est quoi, les nouvelles du jour sur le site ? ",
+    "Je cherche l'édition de telle date. "
+   ]
+  },
+  {
+   "lieu": "Le récit — le balado",
+   "places": [
+    "balado.html"
+   ],
+   "place_brut": "`balado.html` — page seulement",
+   "formulations": [
+    "Où j'écoute le balado ? ",
+    "Le récit de l'auteur, c'est où ? "
+   ]
+  },
+  {
+   "lieu": "Articles — les sources primaires",
+   "places": [
+    "articles.html#articles"
+   ],
+   "place_brut": "`articles.html#articles`",
+   "formulations": [
+    "Où sont les articles, les sources ? "
+   ]
+  },
+  {
+   "lieu": "Capsules — les vidéos",
+   "places": [
+    "capsules.html#capsules"
+   ],
+   "place_brut": "`capsules.html#capsules`",
+   "formulations": [
+    "Je cherche les vidéos. "
+   ]
+  },
+  {
+   "lieu": "Partenaires et soutien",
+   "places": [
+    "partenaires.html#partenaires-ceque"
+   ],
+   "place_brut": "`partenaires.html#partenaires-ceque`",
+   "formulations": [
+    "C'est quoi, ce site, pour un partenaire ? ",
+    "Qu'est-ce qui se construit ? "
+   ]
+  },
+  {
+   "lieu": "Faites un don",
+   "places": [
+    "don.html#don-pourquoi"
+   ],
+   "place_brut": "`don.html#don-pourquoi`",
+   "formulations": [
+    "Où je peux donner ? ",
+    "À quoi sert l'argent ? "
+   ]
+  },
+  {
+   "lieu": "Transparence — les flux du site",
+   "places": [
+    "transparence.html#transparence"
+   ],
+   "place_brut": "`transparence.html#transparence`",
+   "formulations": [
+    "Le site fait quoi de mes visites ? ",
+    "Où est la transparence ? "
+   ]
+  },
+  {
+   "lieu": "Transparence des données de visite",
+   "places": [
+    "transparence-audit-unisson.html"
+   ],
+   "place_brut": "`transparence-audit-unisson.html` — page seulement",
+   "formulations": [
+    "Je cherche la page de transparence des données de visite. "
+   ]
+  },
+  {
+   "lieu": "Le registre des conditions",
+   "places": [
+    "conditions.html#conditions"
+   ],
+   "place_brut": "`conditions.html#conditions`",
+   "formulations": [
+    "Où je lis les contrats des plateformes ? ",
+    "Qu'est-ce que TikTok dit de mes droits ? "
+   ]
+  },
+  {
+   "lieu": "Les conditions du site",
+   "places": [
+    "conditions-site.html#conditions-site-preambule"
+   ],
+   "place_brut": "`conditions-site.html#conditions-site-preambule`",
+   "formulations": [
+    "C'est où, les conditions de CE site ? "
+   ]
+  },
+  {
+   "lieu": "La politique du site",
+   "places": [
+    "politique-site.html#politique-preambule"
+   ],
+   "place_brut": "`politique-site.html#politique-preambule`",
+   "formulations": [
+    "Où est la politique de confidentialité du site ? ",
+    "Qu'est-ce que le site ne fait pas ? "
+   ]
+  },
+  {
+   "lieu": "Météo — le ciel de l'ancre",
+   "places": [
+    "meteo.html#meteo"
+   ],
+   "place_brut": "`meteo.html#meteo`",
+   "formulations": [
+    "C'est quoi, la météo de l'ancre ? "
+   ]
+  },
+  {
+   "lieu": "Le site, en application",
+   "places": [
+    "application.html#application"
+   ],
+   "place_brut": "`application.html#application`",
+   "formulations": [
+    "Je peux installer le site ? ",
+    "Où est l'application ? "
+   ]
+  },
+  {
+   "lieu": "Tes données (l'ouverture)",
+   "places": [
+    "ouverture.html"
+   ],
+   "place_brut": "`ouverture.html` — page seulement",
+   "formulations": [
+    "Je cherche la page d'ouverture sur mes données. "
+   ]
+  },
+  {
+   "lieu": "Errata",
+   "places": [
+    "errata.html"
+   ],
+   "place_brut": "`errata.html` — page seulement",
+   "formulations": [
+    "Où sont les corrections, les errata ? "
+   ]
+  },
+  {
+   "lieu": "Le site-fichier",
+   "places": [
+    "site-fichier.html"
+   ],
+   "place_brut": "`site-fichier.html` — page seulement, **aucun passage (E2)**",
+   "formulations": [
+    "C'est quoi, le site-fichier ? "
+   ]
+  }
+ ],
+ "chambres_noyau": [
+  {
+   "chambre": "Cette page n’existe pas — et c’est vérifiable.",
+   "page": "404.html",
+   "passages": "nº 228 (1)"
+  },
+  {
+   "chambre": "Mes renseignements",
+   "page": "acces.html",
+   "passages": "nº 38 (1)"
+  },
+  {
+   "chambre": "Accessibilité",
+   "page": "accessibilite.html",
+   "passages": "nº 221 (1)"
+  },
+  {
+   "chambre": "Agir sur mes données",
+   "page": "agir-sur-mes-donnees.html",
+   "passages": "nº 233 à 240 (8)"
+  },
+  {
+   "chambre": "Aller chercher ce qu’ils ont récolté",
+   "page": "aller.html",
+   "passages": "nº 40 à 51 (12)"
+  },
+  {
+   "chambre": "Ancrage — les preuves chez les tiers",
+   "page": "ancrage.html",
+   "passages": "nº 71 à 78 (8)"
+  },
+  {
+   "chambre": "L’application",
+   "page": "application.html",
+   "passages": "nº 84 (1)"
+  },
+  {
+   "chambre": "Articles",
+   "page": "articles.html",
+   "passages": "nº 99 (1)"
+  },
+  {
+   "chambre": "Les assurances",
+   "page": "assurances.html",
+   "passages": "nº 191 à 197 (7)"
+  },
+  {
+   "chambre": "La phrase",
+   "page": "atelier-chiffrement.html",
+   "passages": "nº 226 à 227 (2)"
+  },
+  {
+   "chambre": "Le récit — le balado de l'auteur",
+   "page": "balado.html",
+   "passages": "nº 220 (1)"
+  },
+  {
+   "chambre": "La chambre des bris",
+   "page": "bris.html",
+   "passages": "nº 149 (1)"
+  },
+  {
+   "chambre": "Le calendrier 13 × 28",
+   "page": "calendrier.html",
+   "passages": "nº 20 à 29 (10)"
+  },
+  {
+   "chambre": "Caméras et appareils connectés",
+   "page": "cameras.html",
+   "passages": "nº 52 à 56 (5)"
+  },
+  {
+   "chambre": "Capsules",
+   "page": "capsules.html",
+   "passages": "nº 100 à 101 (2)"
+  },
+  {
+   "chambre": "Cerveau coquillage",
+   "page": "cerveau-coquillage.html",
+   "passages": "nº 241 (1)"
+  },
+  {
+   "chambre": "Parle avec le site web SoPHIa",
+   "page": "cerveau.html",
+   "passages": "nº 206 à 212 (7)"
+  },
+  {
+   "chambre": "Le chercheur",
+   "page": "chercheur.html",
+   "passages": "nº 95 à 98 (4)"
+  },
+  {
+   "chambre": "Conditions d’utilisation du site",
+   "page": "conditions-site.html",
+   "passages": "nº 119 à 128 (10)"
+  },
+  {
+   "chambre": "Le registre des conditions",
+   "page": "conditions.html",
+   "passages": "nº 152 à 154 (3)"
+  },
+  {
+   "chambre": "Confidentialité et Loi 25",
+   "page": "confidentialite.html",
+   "passages": "nº 36 (1)"
+  },
+  {
+   "chambre": "contact",
+   "page": "contact.html",
+   "passages": "nº 37 (1)"
+  },
+  {
+   "chambre": "Le registre des décisions",
+   "page": "decisions.html",
+   "passages": "nº 60 à 61 (2)"
+  },
+  {
+   "chambre": "Dépose ton empreinte",
+   "page": "depose-empreinte.html",
+   "passages": "nº 150 à 215 (4)"
+  },
+  {
+   "chambre": "Faites un don",
+   "page": "don.html",
+   "passages": "nº 115 à 118 (4)"
+  },
+  {
+   "chambre": "Bibliothèque des lois",
+   "page": "donnees.html",
+   "passages": "nº 39 (1)"
+  },
+  {
+   "chambre": "Droits et lois",
+   "page": "droits.html",
+   "passages": "nº 102 à 103 (2)"
+  },
+  {
+   "chambre": "Écrire à SoPHIa",
+   "page": "ecrire.html",
+   "passages": "nº 140 (1)"
+  },
+  {
+   "chambre": "Édition du mercredi 4 novembre 2026",
+   "page": "edition-2026-11-04.html",
+   "passages": "nº 229 (1)"
+  },
+  {
+   "chambre": "Édition du jeudi 5 novembre 2026",
+   "page": "edition-2026-11-05.html",
+   "passages": "nº 230 (1)"
+  },
+  {
+   "chambre": "Édition du vendredi 6 novembre 2026",
+   "page": "edition-2026-11-06.html",
+   "passages": "nº 231 (1)"
+  },
+  {
+   "chambre": "Édition du samedi 7 novembre 2026",
+   "page": "edition-2026-11-07.html",
+   "passages": "nº 232 (1)"
+  },
+  {
+   "chambre": "L’édition du jour",
+   "page": "edition.html",
+   "passages": "nº 204 (1)"
+  },
+  {
+   "chambre": "Errata",
+   "page": "errata.html",
+   "passages": "nº 222 (1)"
+  },
+  {
+   "chambre": "Le 51e État numérique",
+   "page": "etat51.html",
+   "passages": "nº 179 à 184 (6)"
+  },
+  {
+   "chambre": "Évolution",
+   "page": "evolution.html",
+   "passages": "nº 111 à 218 (5)"
+  },
+  {
+   "chambre": "Demander l’explication d’une décision automatisée",
+   "page": "explication.html",
+   "passages": "nº 57 à 59 (3)"
+  },
+  {
+   "chambre": "Ton exposition",
+   "page": "exposition.html",
+   "passages": "nº 161 à 167 (7)"
+  },
+  {
+   "chambre": "Le minuteur de fenêtre",
+   "page": "fenetres.html",
+   "passages": "nº 151 (1)"
+  },
+  {
+   "chambre": "Le for est ailleurs, tes recours sont ici",
+   "page": "for.html",
+   "passages": "nº 67 à 70 (4)"
+  },
+  {
+   "chambre": "Glossaire",
+   "page": "glossaire.html",
+   "passages": "nº 223 (1)"
+  },
+  {
+   "chambre": "Accueil",
+   "page": "index.html",
+   "passages": "nº 0 à 216 (18)"
+  },
+  {
+   "chambre": "La méthode en 30 secondes",
+   "page": "index.html",
+   "passages": "nº 34 (1)"
+  },
+  {
+   "chambre": "Le travail d'ingénierie",
+   "page": "ingenierie.html",
+   "passages": "nº 94 (1)"
+  },
+  {
+   "chambre": "Parler à l'instance",
+   "page": "instance.html",
+   "passages": "nº 105 (1)"
+  },
+  {
+   "chambre": "Kit de vérification autonome",
+   "page": "kit-verification.html",
+   "passages": "nº 224 (1)"
+  },
+  {
+   "chambre": "Mémoire",
+   "page": "memoire.html",
+   "passages": "nº 106 à 110 (5)"
+  },
+  {
+   "chambre": "Météo — l’ancre",
+   "page": "meteo.html",
+   "passages": "nº 30 (1)"
+  },
+  {
+   "chambre": "Méthode",
+   "page": "methode.html",
+   "passages": "nº 31 à 33 (3)"
+  },
+  {
+   "chambre": "Le miroir",
+   "page": "miroir.html",
+   "passages": "nº 176 à 178 (3)"
+  },
+  {
+   "chambre": "Les deux modes",
+   "page": "modes.html",
+   "passages": "nº 168 à 175 (8)"
+  },
+  {
+   "chambre": "Note comparative : deux provenances",
+   "page": "note-c2pa.html",
+   "passages": "nº 225 (1)"
+  },
+  {
+   "chambre": "Tes données",
+   "page": "ouverture.html",
+   "passages": "nº 219 (1)"
+  },
+  {
+   "chambre": "Parcours — l'histoire",
+   "page": "parcours.html",
+   "passages": "nº 90 à 93 (4)"
+  },
+  {
+   "chambre": "Partenaires et soutien",
+   "page": "partenaires.html",
+   "passages": "nº 185 à 190 (6)"
+  },
+  {
+   "chambre": "Pétitions",
+   "page": "petitions.html",
+   "passages": "nº 139 (1)"
+  },
+  {
+   "chambre": "Politique du site",
+   "page": "politique-site.html",
+   "passages": "nº 129 à 138 (10)"
+  },
+  {
+   "chambre": "Preuves",
+   "page": "preuves.html",
+   "passages": "nº 86 à 89 (4)"
+  },
+  {
+   "chambre": "Rechercher — dans tout le site, sur place",
+   "page": "recherche.html",
+   "passages": "nº 217 (1)"
+  },
+  {
+   "chambre": "Le reçu de visite",
+   "page": "recu.html",
+   "passages": "nº 141 (1)"
+  },
+  {
+   "chambre": "Tes reçus et tes gestes",
+   "page": "recus.html",
+   "passages": "nº 142 (1)"
+  },
+  {
+   "chambre": "Registre",
+   "page": "registre.html",
+   "passages": "nº 85 (1)"
+  },
+  {
+   "chambre": "Sceller — l'atelier",
+   "page": "sceller.html",
+   "passages": "nº 79 (1)"
+  },
+  {
+   "chambre": "Le suivi familial et la localisation",
+   "page": "suivi-familial.html",
+   "passages": "nº 198 à 203 (6)"
+  },
+  {
+   "chambre": "Ton dossier de suivi",
+   "page": "suivi.html",
+   "passages": "nº 143 à 146 (4)"
+  },
+  {
+   "chambre": "Compte suspendu : ravoir, savoir, reprendre",
+   "page": "suspendu.html",
+   "passages": "nº 62 à 66 (5)"
+  },
+  {
+   "chambre": "Temps — l’ancre",
+   "page": "temps.html",
+   "passages": "nº 16 (1)"
+  },
+  {
+   "chambre": "faq",
+   "page": "temps.html",
+   "passages": "nº 17 (1)"
+  },
+  {
+   "chambre": "repertoire",
+   "page": "temps.html",
+   "passages": "nº 18 (1)"
+  },
+  {
+   "chambre": "vision",
+   "page": "temps.html",
+   "passages": "nº 19 (1)"
+  },
+  {
+   "chambre": "La carte des transits",
+   "page": "transits.html",
+   "passages": "nº 155 à 160 (6)"
+  },
+  {
+   "chambre": "Faire pareil",
+   "page": "transmission.html",
+   "passages": "nº 35 (1)"
+  },
+  {
+   "chambre": "Transparence",
+   "page": "transparence-audit-unisson.html",
+   "passages": "nº 242 (1)"
+  },
+  {
+   "chambre": "transparence",
+   "page": "transparence.html",
+   "passages": "nº 104 (1)"
+  },
+  {
+   "chambre": "Vérifier",
+   "page": "verifier.html",
+   "passages": "nº 80 à 83 (4)"
+  },
+  {
+   "chambre": "Voir mon cerveau",
+   "page": "voir.html",
+   "passages": "nº 147 à 148 (2)"
+  }
+ ],
+ "ecarts": [
+  {
+   "id": "E1",
+   "titre": "La chambre du cerveau est hors paquet.",
+   "texte": "La chambre du cerveau est hors paquet. La page `chambre-du-cerveau.html` — l'outil central, celui d'où les liens parleront — n'existe pas dans le paquet du dépôt public ; elle est construite au paquet `site-version-suivante-etage-ia-20261125`. Tous les liens de ce répertoire sont prêts pour elle, mais dans le paquet v64, H12 ne peut pas être ouvert."
+  },
+  {
+   "id": "E2",
+   "titre": "`site-fichier.html` est dans le paquet mais absente des 243 passages.",
+   "texte": "`site-fichier.html` est dans le paquet mais absente des 243 passages. Aucun passage ne la porte : le cerveau, qui répond depuis sa mémoire, ne peut pas mener à un lieu qu'il ne tient pas. À verser à la prochaine extraction."
+  },
+  {
+   "id": "E3",
+   "titre": "Deux pages sans aucun `id` : `kit-verification.html` et `glossaire.html`.",
+   "texte": "Deux pages sans aucun `id` : `kit-verification.html` et `glossaire.html`. Leurs liens restent « page seulement » ; une ancre d'entrée y serait à créer à la construction, pas à inventer ici."
+  },
+  {
+   "id": "E4",
+   "titre": "Treize ancres de passages n'existent pas dans les pages du paquet",
+   "texte": "Treize ancres de passages n'existent pas dans les pages du paquet (nº 219 à 232, nº 242 : ouverture, balado, accessibilité, errata, glossaire, kit de vérification, note C2PA, 404, les quatre éditions datées, transparence-audit-unisson). Leurs lieux sont couverts en « page seulement » ; le rattrapage est un geste de construction (ajouter les `id`), pas de répertoire."
+  },
+  {
+   "id": "E5",
+   "titre": "Deux entrées du répertoire de l'atelier sans page.",
+   "texte": "Deux entrées du répertoire de l'atelier sans page. « Le passeport de l'œuvre » (id 12) n'existe qu'en spécification — c'est le manque G3 de la banque, retrouvé ici côté liens : aucun lien ne peut y mener. « La transparence autonome » (id 3, statut « à relier » dans l'atelier) n'a pas de page dédiée sous ce nom dans le paquet ; `transparence.html` porte un autre contenu (nº 104, les flux du site)."
+  },
+  {
+   "id": "E6",
+   "titre": "La chambre de l'arbre de Merkle n'est pas une page.",
+   "texte": "La chambre de l'arbre de Merkle n'est pas une page. C'est une chambre du noyau (répertoire de l'atelier, id 4) : sa surface actionnable est le vérificateur (`depose-empreinte.html#depot-verifier`, A3), secondée par les ancrages (famille A). Aucun lien ne peut ouvrir « la chambre » elle-même dans ce paquet — quand Alex dit « que ça ouvre les pages, l'arbre de Merkle », l'arbre s'ouvre par ses feuilles : le dépôt, son chemin, sa racine."
+  },
+  {
+   "id": "E7",
+   "titre": "Le répertoire de l'atelier (14 entrées) ne nomme presque aucun outil.",
+   "texte": "Le répertoire de l'atelier (14 entrées) ne nomme presque aucun outil. Il inventorie les chambres, les mécanismes fondateurs et les pièces — pas les vérificateurs de `verifier.html`, ni les générateurs, ni le suivi, ni le minuteur, ni les fiches. Le présent répertoire couvre ces outils ; le versement inverse (ces outils comme entrées du répertoire de l'atelier, par `addrepertoireitem`) reste à faire pour que les deux inventaires se rejoignent."
+  }
+ ]
+}
