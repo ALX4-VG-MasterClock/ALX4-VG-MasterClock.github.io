@@ -14,16 +14,24 @@
   var CLE = 'sophia-rafraichissement-v1';
   function sceauAffiche() {
     var el = document.getElementById('sceau-version-affiche');
-    if (el) return (el.textContent || '').trim();
+    if (el) return { v: (el.textContent || '').trim(), source: 'noyau' };
     /* Refonte A — sur une page de chambre, le sceau affiché de la page est
        celui du manifeste auquel elle pend (méta de l'en-tête). */
     var m = document.querySelector('meta[name="manifeste-sceau"]');
-    return m ? (m.getAttribute('content') || '').trim() : '';
+    return m ? { v: (m.getAttribute('content') || '').trim(), source: 'manifeste' } : { v: '', source: '' };
   }
-  function sceauDuTexte(texte) {
+  function sceauDuTexte(texte, source) {
+    /* Correctif ronde 2 (26 novembre 2026) : comparer des sceaux de même
+       nature. Avant ce correctif, une page de chambre comparait son sceau
+       du manifeste (méta) au sceau canonique du noyau lu dans index.html —
+       deux valeurs différentes par construction : chaque page de chambre
+       annonçait donc à tort « une version plus récente existe… mais le
+       cache refuse encore ». Désormais, la source qui a donné le sceau
+       local (noyau ou manifeste) est celle qu'on relit dans le texte frais. */
+    var m2 = /name=\"manifeste-sceau\" content=\"([0-9a-f]{64})\"/.exec(texte || '');
+    if (source === 'manifeste') return m2 ? m2[1] : '';
     var mm = /id=\"sceau-version-affiche\"[^>]*>([0-9a-f]{64})</.exec(texte || '');
     if (mm) return mm[1];
-    var m2 = /name=\"manifeste-sceau\" content=\"([0-9a-f]{64})\"/.exec(texte || '');
     return m2 ? m2[1] : '';
   }
   function lireMarqueur() {
@@ -48,7 +56,8 @@
     catch (e) { return new Date().toISOString(); }
   }
   function demarrer() {
-    var affiche = sceauAffiche();
+    var lu = sceauAffiche();
+    var affiche = lu.v;
     if (!affiche) return;
     var m = lireMarqueur();
     if (m && m.vers) {
@@ -66,7 +75,7 @@
     }
     if (typeof fetch !== 'function') return;
     fetch('index.html', { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (texte) {
-      var reseau = sceauDuTexte(texte);
+      var reseau = sceauDuTexte(texte, lu.source);
       if (reseau && reseau !== affiche) {
         if (ecrireMarqueur({ depuis: affiche, vers: reseau })) { location.reload(); }
       }
